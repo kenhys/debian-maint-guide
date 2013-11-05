@@ -39,7 +39,7 @@ LANGS_PO	:= ca de es fr it ja ru de zh-cn zh-tw
 # 
 # dblatex is used as the default PDF build tool
 # No PDF build for these lunguages (in case of error, use this as work around)
-LANGS_NOPDF		:= 
+LANGS_NOPDF		:= zh-cn zh-tw 
 # all languages to build
 LANGS		:= $(LANGS_EN) $(LANGS_PO)
 # local script file directory

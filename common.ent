@@ -117,7 +117,7 @@ Remember, the *first* definition of an entity wins.
 <!ENTITY menu-structure "http://www.debian.org/doc/packaging-manuals/menu-policy/ch2.html#s2.1">
 <!ENTITY multiarchimplementation "http://wiki.debian.org/Multiarch/Implementation">
 <!ENTITY multiarchspec "https://wiki.ubuntu.com/MultiarchSpec">
-<!ENTITY nm-do "http://nm.debian.org/">
+<!ENTITY nm-do "https://nm.debian.org/">
 <!ENTITY packages-do "http://www.debian.org/distrib/packages">
 <!ENTITY packages-qa-do "http://packages.qa.debian.org/common/index.html">
 <!ENTITY pbuilder "http://www.netfort.gr.jp/~dancer/software/pbuilder.html">
@@ -169,7 +169,7 @@ Remember, the *first* definition of an entity wins.
 <!ENTITY utf8 "http://en.wikipedia.org/wiki/UTF-8">
 <!ENTITY virtual-package "http://www.debian.org/doc/packaging-manuals/virtual-package-names-list.txt">
 <!ENTITY wnpp-bts "http://bugs.debian.org/wnpp">
-<!ENTITY wnpp-debtags "http://members.hellug.gr/serzan/wnpp/">
+<!ENTITY wnpp-debtags "http://wnpp-by-tags.debian.net/">
 <!ENTITY wnpp-dn "http://wnpp.debian.net/">
 <!ENTITY wnpp-do "http://www.debian.org/devel/wnpp/">
 

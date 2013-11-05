@@ -33,7 +33,7 @@ for people to check official documentations.
 <title>Debian New Maintainers' Guide</title>
 <bookinfo>
 <authorgroup>
-<!-- Do not use firstname and surname tags it braks Japanese.  -->
+<!-- Do not use firstname and surname tags it breaks Japanese.  -->
 <!-- The same with othercredit -->
 <author> <personname>Josip Rodin</personname> <email>joy-mg@debian.org</email> <contrib>original contents</contrib> </author>
 <author> <personname>Osamu Aoki</personname> <email>osamu@debian.org</email> <contrib>updated contents</contrib> </author>
@@ -1793,8 +1793,8 @@ created for us:
  2 Section: unknown
  3 Priority: extra
  4 Maintainer: Josip Rodin &lt;joy-mg@debian.org&gt;
- 5 Build-Depends: debhelper (&gt;= 7.0.50~)
- 6 Standards-Version: 3.8.4
+ 5 Build-Depends: debhelper (&gt;=9)
+ 6 Standards-Version: 3.9.4
  7 Homepage: &lt;insert the upstream URL, if relevant&gt;
  8
  9 Package: gentoo
@@ -1894,7 +1894,7 @@ binary package dependencies to find out more about the syntax of these lines.
 <para>
 For all packages packaged with the <command>dh</command> command in the
 <filename>debian/rules</filename> file, you must have <literal>debhelper
-(&gt;=7.0.50~)</literal> in the <literal>Build-Depends</literal> field to
+(&gt;=9)</literal> in the <literal>Build-Depends</literal> field to
 satisfy the Debian Policy requirement for the <literal>clean</literal> target.
 </para>
 </listitem>
@@ -2223,8 +2223,8 @@ Finally, here is the updated <filename>control</filename> file:
  2 Section: x11
  3 Priority: optional
  4 Maintainer: Josip Rodin &lt;joy-mg@debian.org&gt;
- 5 Build-Depends: debhelper (&gt;= 7.0.5), xlibs-dev, libgtk1.2-dev, libglib1.2-dev
- 6 Standards-Version: 3.8.4
+ 5 Build-Depends: debhelper (&gt;=9), xlibs-dev, libgtk1.2-dev, libglib1.2-dev
+ 6 Standards-Version: 3.9.4
  7 Vcs-Git: git://git.debian.org/git/collab-maint/gentoo.git
  8 Vcs-browser: http://git.debian.org/?p=collab-maint/gentoo.git
  9 Homepage: &gentoo;
@@ -2457,6 +2457,18 @@ formatted documents in the build-tree.  (Required)
 </listitem>
 <listitem>
 <para>
+<literal>build-arch</literal> target: to build the source into arch-dependent
+compiled programs in the build-tree.  (Required)
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>build-indep</literal> target: to build the source into
+arch-independent formatted documents in the build-tree.  (Required)
+</para>
+</listitem>
+<listitem>
+<para>
 <literal>install</literal> target: to install files into a file tree for each
 binary package under the <filename>debian</filename> directory.  If defined,
 <literal>binary*</literal> targets effectively depend on this target.
@@ -2544,7 +2556,7 @@ anything from you.
 <para>
 Lines 12 and 13 are where all the work is done with an implicit rule using the pattern rule.  The percent sign means "any
 targets", which then call a single program, <command>dh</command>, with the target
-name.  <footnote><para> This uses the new <systemitem role="package">debhelper</systemitem> v7 features.  Its design concepts are
+name.  <footnote><para> This uses the new <systemitem role="package">debhelper</systemitem> v7+ features.  Its design concepts are
 explained in <ulink url="&debhelper-slides;">Not Your
 Grandpa's Debhelper</ulink> presented at DebConf9 by the <systemitem role="package">debhelper</systemitem> upstream.  Under
 <literal>lenny</literal>, <command>dh_make</command> created a much more
@@ -3220,11 +3232,11 @@ If you have nothing to be documented, remove this file.  See <citerefentry>
 <section id="compat"><title><filename>compat</filename></title>
 <para>
 The <filename>compat</filename> file defines the <systemitem role="package">debhelper</systemitem> compatibility level.  Currently, you
-should set it to the <systemitem role="package">debhelper</systemitem> v7 as
+should set it to the <systemitem role="package">debhelper</systemitem> v9 as
 follows:
 </para>
 <screen>
-$ echo 7 &gt; debian/compat
+$ echo 9 &gt; debian/compat
 </screen>
 </section>
 <section id="conffiles"><title><filename>conffiles</filename></title>
@@ -4417,8 +4429,7 @@ follows:
 <itemizedlist>
 <listitem>
 <para>
-setting the <filename>/var/cache/pbuilder/result</filename> directory writable by
-for your user account.
+setting the <filename>/var/cache/pbuilder/result</filename> directory writable by your user account.
 </para>
 </listitem>
 <listitem>
@@ -5371,7 +5382,7 @@ the <literal>--addmissing</literal> option.  Then edit them appropriately.
 </listitem>
 <listitem>
 <para>
-If the package has not been updated to use the <systemitem role="package">debhelper</systemitem> v7 <command>dh</command> syntax for the
+If the package has not been updated to use the <systemitem role="package">debhelper</systemitem> v7+ <command>dh</command> syntax for the
 <filename>debian/rules</filename> file, update it to use <command>dh</command>.
 Update the <filename>debian/control</filename> file accordingly.
 </para>
@@ -5897,7 +5908,7 @@ Update <filename>debian/control</filename>.
 <itemizedlist>
 <listitem>
 <para>
-Add <literal>Build-Depends: debhelper (>= 9)</literal> for the source package section.
+Add <literal>Build-Depends: debhelper (>=9)</literal> for the source package section.
 </para>
 </listitem>
 <listitem>
