@@ -43,7 +43,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide 1.116\n"
-"POT-Creation-Date: 2013-08-27 22:56+0900\n"
+"POT-Creation-Date: 2013-11-05 23:18+0900\n"
 "PO-Revision-Date: 2013-01-28 18:38+0100\n"
 "Last-Translator: Innocent De Marchi <tangram.peces@gmail.com>\n"
 "Language-Team: Debian l10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
@@ -2853,12 +2853,20 @@ msgid "Setting up <command>quilt</command>"
 msgstr "Configurar <command>quilt</command>"
 
 #. type: Content of: <book><chapter><section><para>
+#, fuzzy
+#| msgid ""
+#| "The program <command>quilt</command> offers a basic method for recording "
+#| "modifications to the upstream source for Debian packaging.  It's useful "
+#| "to have a slightly customized default, so let's create an alias "
+#| "<command>dquilt</command> for Debian packaging by adding the following "
+#| "line to <filename>~/.bashrc</filename>."
 msgid ""
 "The program <command>quilt</command> offers a basic method for recording "
 "modifications to the upstream source for Debian packaging.  It's useful to "
 "have a slightly customized default, so let's create an alias "
 "<command>dquilt</command> for Debian packaging by adding the following line "
-"to <filename>~/.bashrc</filename>."
+"to <filename>~/.bashrc</filename>.  The second line ensures that this alias "
+"benefits of the same shell completion features than quilt itself."
 msgstr ""
 "El programa <command>quilt</command> ofrece un método básico para realizar y "
 "a guardar las modificaciones del código fuente para construir paquetes "
@@ -2868,8 +2876,11 @@ msgstr ""
 "siguiente linea en el archivo <filename>~/.bashrc</filename>."
 
 #. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "alias dquilt=\"quilt --quiltrc=${HOME}/.quiltrc-dpkg\"\n"
+#, fuzzy, no-wrap
+#| msgid "alias dquilt=\"quilt --quiltrc=${HOME}/.quiltrc-dpkg\"\n"
+msgid ""
+"alias dquilt=\"quilt --quiltrc=${HOME}/.quiltrc-dpkg\"\n"
+"complete -F _quilt_completion $_quilt_complete_opt dquilt\n"
 msgstr "alias dquilt=\"quilt --quiltrc=${HOME}/.quiltrc-dpkg\"\n"
 
 #. type: Content of: <book><chapter><section><para>

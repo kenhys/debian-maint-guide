@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide HEAD\n"
-"POT-Creation-Date: 2013-08-27 22:56+0900\n"
+"POT-Creation-Date: 2013-11-05 23:18+0900\n"
 "PO-Revision-Date: 2010-12-19 20:51+0900\n"
 "Last-Translator: Aron Xu <happyaron.xu@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
@@ -2935,7 +2935,8 @@ msgid ""
 "modifications to the upstream source for Debian packaging.  It's useful to "
 "have a slightly customized default, so let's create an alias "
 "<command>dquilt</command> for Debian packaging by adding the following line "
-"to <filename>~/.bashrc</filename>."
+"to <filename>~/.bashrc</filename>.  The second line ensures that this alias "
+"benefits of the same shell completion features than quilt itself."
 msgstr ""
 "<command>quilt</command> 程式爲 Debian 工作提供了對源碼修改的基本記錄方法。由"
 "於我們的需求與默認設定相當的不同，我們把 <filename>~/.quiltrc</filename> 設置"
@@ -2943,7 +2944,9 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
-msgid "alias dquilt=\"quilt --quiltrc=${HOME}/.quiltrc-dpkg\"\n"
+msgid ""
+"alias dquilt=\"quilt --quiltrc=${HOME}/.quiltrc-dpkg\"\n"
+"complete -F _quilt_completion $_quilt_complete_opt dquilt\n"
 msgstr ""
 
 #. type: Content of: <book><chapter><section><para>
