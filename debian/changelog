@@ -4,9 +4,12 @@ maint-guide (1.2.32) UNRELEASED; urgency=low
     build-indep targets. Closes: #698717.
   * Update to current Debian Policy 3.9.4 and debhelper v9.  
     Closes: #699168
-  * Updated translations: ja, fr, it, es, ca, ru.
-    Closes: #693706, #696428
+  * Updated translations: ja, fr, it, es, ca, ru, de.
+    Closes: #693706, #696428, #717351
   * Removed zero width spaces from it, BOMs from ca.
+  * Updated URL for wnpp-by-tags.  Closes: #701617
+  * Add bash completion for dquilt. Closes: #706515
+  * Typo fix. Closes: #720759
 
  -- Osamu Aoki <osamu@debian.org>  Thu, 24 Jan 2013 21:26:31 +0900
 
