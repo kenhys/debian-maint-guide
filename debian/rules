@@ -1,0 +1,54 @@
+#!/usr/bin/make -f
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+DEBIAN_DIR	:= $(CURDIR)/debian
+MANUAL		:= maint-guide
+
+# Language which is the base of all files
+LANGS_EN	:= en
+
+# Languages which generate DocBook XML files from PO files
+LANGS_PO        := ca es fr it ja ru
+# ca: 99%
+# de: 24%
+# es: 97%
+# fr: 100%
+# it: 100%
+# ja: 100%
+# ru: 100%
+# zh-cn: 33%
+# zh-tw:28%
+
+# Override main Makefile to build CJK under sid
+# No PDF build for these lunguages
+LANGS_NOPDF            :=  
+
+# Language groups
+LANGS		:= $(LANGS_EN) $(LANGS_PO)
+#######################################################################
+prep:
+	-rm -f $(DEBIAN_DIR)/*.install $(DEBIAN_DIR)/*.doc-base $(DEBIAN_DIR)/*.lintian-overrides
+	sed -e '/^Package: maint-guide-/,$$d' <$(DEBIAN_DIR)/control | sponge $(DEBIAN_DIR)/control
+	$(DEBIAN_DIR)/language "en" < $(DEBIAN_DIR)/template/install > $(DEBIAN_DIR)/$(MANUAL).install
+	$(DEBIAN_DIR)/language "en" < $(DEBIAN_DIR)/template/doc-base > $(DEBIAN_DIR)/$(MANUAL).doc-base
+	$(DEBIAN_DIR)/language "en" < $(DEBIAN_DIR)/template/lintian-overrides > $(DEBIAN_DIR)/$(MANUAL).lintian-overrides
+	for x in $(LANGS_PO); do \
+		$(DEBIAN_DIR)/language $$x < $(DEBIAN_DIR)/template/control-body >> $(DEBIAN_DIR)/control; \
+		$(DEBIAN_DIR)/language $$x < $(DEBIAN_DIR)/template/install > $(DEBIAN_DIR)/$(MANUAL)-$$x.install; \
+		$(DEBIAN_DIR)/language $$x < $(DEBIAN_DIR)/template/doc-base > $(DEBIAN_DIR)/$(MANUAL)-$$x.doc-base; \
+		$(DEBIAN_DIR)/language $$x < $(DEBIAN_DIR)/template/lintian-overrides > $(DEBIAN_DIR)/$(MANUAL)-$$x.lintian-overrides; \
+	done
+.PHONY: prep
+#######################################################################
+%:
+	dh  $@
+
+override_dh_auto_build:
+	dh_auto_build -- html txt pdf "MANUAL=$(MANUAL)" \
+		"LANGS_EN=$(LANGS_EN)" "LANGS_PO=$(LANGS_PO)" "LANGS=$(LANGS)" \
+		"LANGS_NOPDF=$(LANGS_NOPDF)"
+
+override_dh_auto_clean:
+	dh_auto_clean
+

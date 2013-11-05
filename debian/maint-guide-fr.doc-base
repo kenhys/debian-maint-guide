@@ -1,0 +1,19 @@
+Document: maint-guide-fr
+Title: Debian New Maintainers' Guide (French)
+Author: Josip Rodin, Osamu Aoki
+Abstract: This document tries to describe building of a Debian package to the
+ common Debian user, and wannabe developer. It uses pretty common
+ language, and it's well covered with working examples.
+ .
+ This is French translation.
+Section: Debian
+
+Format: text
+Files: /usr/share/doc/maint-guide-fr/maint-guide.fr.txt.gz
+
+Format: HTML
+Index: /usr/share/doc/maint-guide-fr/html/index.fr.html
+Files: /usr/share/doc/maint-guide-fr/html/*.fr.html
+
+Format: PDF
+Files: /usr/share/doc/maint-guide-fr/maint-guide.fr.pdf.gz

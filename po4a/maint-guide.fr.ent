@@ -1,0 +1,30 @@
+<!--
+This is UTF-8 file.
+Remember, the *first* definition of an entity wins.
+-->
+
+<!ENTITY othercredit '
+<othercredit role="translation"><personname>Frédéric Dumont</personname><email>frederic.dumont@easynet.be</email><contrib>traduction française</contrib></othercredit>
+<othercredit role="translation"><personname>Mohammed Adnène Trojette</personname><email>adn+deb@diwi.org</email><contrib>traduction française</contrib></othercredit>
+<othercredit role="translation"><personname>David Prévot</personname><email>david@tilapin.org</email><contrib>traduction française</contrib></othercredit>
+<othercredit role="translation"><personname>les membres de la liste debian-l10n-french</personname><email>debian-l10n-french@lists.debian.org</email><contrib>traduction française</contrib></othercredit>
+'>
+
+<!-- overwrite Wikipiédia links available in French -->
+<!ENTITY autoconf "http://fr.wikipedia.org/wiki/Autoconf">
+<!ENTITY automake "http://fr.wikipedia.org/wiki/GNU_Automake">
+<!ENTITY cmake "http://fr.wikipedia.org/wiki/CMake">
+<!ENTITY c-program "http://fr.wikipedia.org/wiki/C_(langage)">
+<!ENTITY cxx "http://fr.wikipedia.org/wiki/C++">
+<!ENTITY elf "http://fr.wikipedia.org/wiki/Executable_and_Linkable_Format">
+<!ENTITY gettext "http://fr.wikipedia.org/wiki/GNU_gettext">
+<!ENTITY gnu-build-system "http://fr.wikipedia.org/wiki/Autotools">
+<!ENTITY library "http://fr.wikipedia.org/wiki/Bibliothèque_logicielle">
+<!ENTITY libtool "http://fr.wikipedia.org/wiki/GNU_Libtool">
+<!ENTITY utf8 "http://fr.wikipedia.org/wiki/UTF-8">
+
+<!-- overwrite Debian Wiki links available in French -->
+<!ENTITY debianwikihelp "http://wiki.debian.org/fr/HelpDebian">
+
+<!-- The Developers' Reference is also available in French -->
+<!ENTITY developers-refpdf "/usr/share/doc/developers-reference-fr/developers-reference.pdf">

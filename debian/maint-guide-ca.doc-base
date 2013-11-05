@@ -1,0 +1,19 @@
+Document: maint-guide-ca
+Title: Debian New Maintainers' Guide (Catalan)
+Author: Josip Rodin, Osamu Aoki
+Abstract: This document tries to describe building of a Debian package to the
+ common Debian user, and wannabe developer. It uses pretty common
+ language, and it's well covered with working examples.
+ .
+ This is Catalan translation.
+Section: Debian
+
+Format: text
+Files: /usr/share/doc/maint-guide-ca/maint-guide.ca.txt.gz
+
+Format: HTML
+Index: /usr/share/doc/maint-guide-ca/html/index.ca.html
+Files: /usr/share/doc/maint-guide-ca/html/*.ca.html
+
+Format: PDF
+Files: /usr/share/doc/maint-guide-ca/maint-guide.ca.pdf.gz

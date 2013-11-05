@@ -1,0 +1,12 @@
+<!--
+This is UTF-8 file.
+Remember, the *first* definition of an entity wins.
+-->
+
+<!ENTITY othercredit '
+<othercredit role="translator"><personname>倉澤 望</personname><email>nabetaro@debian.or.jp</email><contrib>日本語訳</contrib></othercredit> 
+<othercredit role="translator"><personname>八津尾 雄介</personname><email>yyatsuo@gmail.com</email><contrib>日本語訳</contrib></othercredit>
+<othercredit role="translator"><personname>佐々木 洋平</personname><email>uwabami@gfd-dennou.org</email><contrib>日本語訳</contrib></othercredit>
+<othercredit role="translator"><personname>倉敷 悟</personname><email>lurdan@gmail.com</email><contrib>日本語訳</contrib></othercredit> 
+<othercredit role="translator"><personname>青木 修</personname><email>osamu@debian.org</email><contrib>日本語訳</contrib></othercredit>
+'>

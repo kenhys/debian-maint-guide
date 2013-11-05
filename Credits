@@ -1,0 +1,110 @@
+#!/bin/sh
+sed -n -e "s/^@.* <\([^ ]*@[^ ]*\)>.*$/\1, /p" <<EOF | sort | uniq | xargs echo mutt
+This lists all active translator contacts with leading "@".  You can execute 
+this as a shell script to create a mail command line text.
+
+The translator contacts with leading "!" are not reachable any more.
+
+=============================================================================
+People who contributed to the Debian New Maintainers' Guide are:
+=============================================================================
+
+- Josip Rodin <joy-mg@debian.org> (Original author)
+- Osamu Aoki <osamu@debian.org>   (Care taker and recent author)
+- Craig Small <csmall@debian.org> (Major help for squeeze version)
+- Raphaël Hertzog <hertzog@debian.org> (Major help for squeeze version)
+
+=============================================================================
+Notable Contributions:
+=============================================================================
+
+- Jaldhar Vyas <jaldhar@debian.org>
+- Will Lowe <lowe@debian.org>
+
+- Christophe Le Bars <clebars@debian.org>
+- Frédéric Dumont <frederic.dumont@freeworld.be>
+
+- Zygo Blaxell <zygo@furryterror.org>
+- James R. Van Zandt <jrv@vanzandt.mv.com>
+
+=============================================================================
+TRANSLATOR's LIST
+=============================================================================
+
+This is the list of the translators who contributed to translation activities.
+They are the ones who provided very precise review of the original English text
+and also provided good improvements to the original text.
+
+The package maintainer understands that the person with ** are the currently
+active ones who cordinate translation of this document.
+
+If you find any descrepancy from the reality, let the package maintainer know
+the situation to update this list.
+
+* Catalan:
+@ Innocent De Marchi <tangram.peces@gmail.com>,2010
+@ Debian Catalan l10n team <debian-l10n-catalan@lists.debian.org>
+
+* German:
+@ Tobias Quathamer <toddy@debian.org>, 2010 **
+- Frank Lichtenheld <frank@lichtenheld.de>
+- Erik Schanze <mail@erikschanze.de>, 2005.
+- Eduard Bloch <blade@debian.org>, 2000, 2003, 2004.
+@ Debian German l10n team <debian-l10n-german@lists.debian.org>
+
+* Spanish:
+@ Javier Fernández-Sanguino Peña <jfs@debian.org>, 2003-2010 **
+- Innocent De Marchi <tangram.peces@gmail.com>,2010
+- David Martinez <david.martinez@rediris.es>
+@ Debian Spanish l10n team <debian-l10n-spanish@lists.debian.org>
+
+* French:
+@ David Prévot <david@tilapin.org>, 2010 **
+- Frédéric Dumont <frederic.dumont@easynet.be>, 1999-2005.
+- Mohammed Adnène Trojette <adn+deb@diwi.org>, 2005.
+- Paul Wise <pabs3@bonedaddy.net>
+@ Debian French l10n team <debian-l10n-french@lists.debian.org>
+
+* Italian: 
+@ Calogero Lo Leggio <kalos@nerdrug.org>, 2010 **
+@ Jacopo Reggiani <jacopo.reggiani@gmail.com>, 2010.
+
+* Japanese : 
+- 八田真行, Masayuki Hatta <mhatta@debian.or.jp>
+- 佐野武俊, Taketoshi Sano <sano@debian.org>
+@ Satoru KURASHIKI <lurdan@gmail.com> **
+- Takeshi Abe <tabe@fixedpoint.jp>
+@ debian-doc@debian.or.jp
+
+* Korean: (outdated and removed.)
+! 류창우 <cwryu@debian.org>
+! 양유성 <yooseong@debian.org>
+
+* Polish: (outdated and removed.)
+! Paweł Tęcza <pawel.tecza@poczta.fm>
+! Pawel Tecza <ptecza@debianusers.pl>
+@ Marcin Owsiany <porridge@debian.org>
+@ Wojciech Zaręba <wojtekz@comp.waw.pl>
+
+* Portuguese: (outdated and removed.)
+! Mahdi <mahdi@dcc.ufmg.br>
+! Priscilla Pimenta <priscilla@minaslivre.org>
+
+* Russian: (outdated and removed.)
+@ Михаил Соболев <mss@transas.com>
+! Алексей Выскубов <alexey@pepper.spb.ru>
+
+* Chinese (zh_CN): 
+@ Aron Xu <happyaron.xu@gmail.com>
+- 李凌, Ling Li <lilingv@yahoo.com.cn>
+* 郑原真, <ycheng@slat.org>
+@ Chinese (simplified) <i18n-zh@googlegroups.com>
+
+* Chinese (zh_TW): 
+[ Note: This is now created by the automatic conversion from zh_CN to zh_TW 
+        using the external opencc program and the internal cn2tw.sed script.]
+Chinese (zh_TW) conversion by:
+@ 陳侃如 <koster@debian.org>
+- 青木修 <osamu@debian.org> (I do not speak chinese.)
+
+EOF

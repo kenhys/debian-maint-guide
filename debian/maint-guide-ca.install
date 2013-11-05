@@ -1,0 +1,4 @@
+*.ca.html          usr/share/doc/maint-guide-ca/html/
+maint-guide.css           usr/share/doc/maint-guide-ca/html/
+maint-guide.ca.txt usr/share/doc/maint-guide-ca/
+maint-guide.ca.pdf usr/share/doc/maint-guide-ca/

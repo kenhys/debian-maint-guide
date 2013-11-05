@@ -1,0 +1,19 @@
+Document: maint-guide@@@XLNG@@@
+Title: Debian New Maintainers' Guide (@@@LNGNAME@@@)
+Author: Josip Rodin, Osamu Aoki
+Abstract: This document tries to describe building of a Debian package to the
+ common Debian user, and wannabe developer. It uses pretty common
+ language, and it's well covered with working examples.
+ .
+ This is @@@LNGNAME@@@ translation.
+Section: Debian
+
+Format: text
+Files: /usr/share/doc/maint-guide@@@XLNG@@@/maint-guide.@@@LNG@@@.txt.gz
+
+Format: HTML
+Index: /usr/share/doc/maint-guide@@@XLNG@@@/html/index.@@@LNG@@@.html
+Files: /usr/share/doc/maint-guide@@@XLNG@@@/html/*.@@@LNG@@@.html
+
+Format: PDF
+Files: /usr/share/doc/maint-guide@@@XLNG@@@/maint-guide.@@@LNG@@@.pdf.gz

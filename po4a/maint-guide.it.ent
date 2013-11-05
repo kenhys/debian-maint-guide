@@ -1,0 +1,10 @@
+<!--
+This is UTF-8 file.
+Remember, the *first* definition of an entity wins.
+-->
+
+<!ENTITY othercredit '
+<othercredit role="translator"><personname>Calogero Lo Leggio</personname><email>kalos@nerdrug.org</email><contrib>Traduzione italiana</contrib></othercredit>
+<othercredit role="translator"><personname>Jacopo Reggiani</personname><email>jacopo.reggiani@gmail.com</email><contrib>Traduzione italiana</contrib></othercredit>
+<othercredit role="translator"><personname>Francesco P. Lovergine</personname><contrib>Traduzione italiana</contrib></othercredit>
+'>

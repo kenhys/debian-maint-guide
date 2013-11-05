@@ -1,0 +1,10 @@
+<!--
+This is UTF-8 file.
+Remember, the *first* definition of an entity wins.
+-->
+
+<!ENTITY othercredit '
+<othercredit role="translation"><personname>Tobias Quathamer</personname><email>toddy@debian.org</email><contrib>Deutsche Übersetzung</contrib></othercredit>
+<othercredit role="translation"><personname>Erik Schanze</personname><email>mail@erikschanze.de</email><contrib>Deutsche Übersetzung</contrib></othercredit>
+<othercredit role="translation"><personname>Eduard Bloch</personname><email>blade@debian.org</email><contrib>Deutsche Übersetzung</contrib></othercredit>
+'>

@@ -1,0 +1,175 @@
+<!--  ( This is taken from debian-reference)
+This is UTF-8 file.
+Remember, the *first* definition of an entity wins.
+-->
+
+<!--
+  * This is the oldest base release name on which NM guide contents apply.
+  * Update this release name only when this document includes newer features.
+  * Do not update this for every Debian release automatically.
+  * 2 global entities exist to match case.
+     Current English text uses lower case exclusively for release name.
+     These 2 entity allow us to switch style later with minimal friction.
+     Some thinks that Use of uppercase for code name has been used in recent
+     release note.  It gives an easy way to use the codename starting with an
+     uppercase after a period, and offer a way to languages that always use
+     uppercase to use a global entity.
+-->
+<!ENTITY base-release "squeeze">
+<!ENTITY Base-release "Squeeze">
+
+<!-- Non breakable space entity is not available in DocBook XML -->
+<!ENTITY nbsp "&#160;">
+
+<!-- Update this list of URL as you update English version -->
+<!-- Style Guide:
+     http://...  HTML link to HTML page
+
+     Do not use
+     file:///... Local file link
+     
+     If you need local FS pointer, use <filename>/path/to/doc</filename>
+     This local link to file:/// does not work for PDF readers and browsers due
+     to some security concern (= disabled.)
+     
+-->
+
+<!ENTITY autoconf "http://en.wikipedia.org/wiki/Autoconf">
+<!ENTITY automake "http://en.wikipedia.org/wiki/Automake">
+<!ENTITY autotools-readme "/usr/share/doc/autotools-dev/README.Debian.gz">
+<!ENTITY autotools-tutorial "http://www.lrde.epita.fr/~adl/autotools.html">
+<!ENTITY bts "http://www.debian.org/Bugs/">
+<!ENTITY buildd-do "http://buildd.debian.org/">
+<!ENTITY buildd "http://www.debian.org/devel/buildd/">
+<!ENTITY cdbs-doc "/usr/share/doc/cdbs/cdbs-doc.pdf.gz">
+<!ENTITY cdbs-tutorial "http://meetings-archive.debian.net/pub/debian-meetings/2009/fosdem/slides/The_Common_Debian_Build_System_CDBS/">
+<!ENTITY cmake "http://en.wikipedia.org/wiki/CMake">
+<!ENTITY c-program "http://en.wikipedia.org/wiki/C_(programming_language)">
+<!ENTITY cxx "http://en.wikipedia.org/wiki/C++">
+<!ENTITY ddtp "http://www.debian.org/intl/l10n/ddtp">
+<!ENTITY deb3 "http://bugs.debian.org/581186">
+<!ENTITY deb-archive "http://wiki.debian.org/HowToSetupADebianRepository">
+<!ENTITY debhelper-slides "http://joey.kitenet.net/talks/debhelper/debhelper-slides.pdf">
+<!ENTITY debian-alioth "http://alioth.debian.org/">
+<!ENTITY debian-alioth-wiki "http://wiki.debian.org/Alioth">
+<!ENTITY debian-devel-announce-ldo "http://lists.debian.org/debian-devel-announce/">
+<!ENTITY debian-devel-changes-ldo "http://lists.debian.org/debian-devel-changes/">
+<!ENTITY debian-devel-ldo "http://lists.debian.org/debian-devel/">
+<!ENTITY debianfaqhelp "http://www.debian.org/doc/FAQ/ch-contributing">
+<!ENTITY debian-legal-ldo "http://lists.debian.org/debian-legal/">
+<!ENTITY debianlibrarypackagingguide "http://www.netfort.gr.jp/~dancer/column/libpkg-guide/libpkg-guide.html">
+<!ENTITY debianmentorfaq "http://wiki.debian.org/DebianMentorsFaq">
+<!ENTITY debian-mentors-ldo "http://lists.debian.org/debian-mentors/">
+<!ENTITY debianorghelp "http://www.debian.org/intro/help">
+<!ENTITY debian-packages-git "https://honk.sigxcpu.org/piki/development/debian_packages_in_git/">
+<!ENTITY debian-policy "http://www.debian.org/doc/devel-manuals#policy">
+<!ENTITY debianwikihelp "http://wiki.debian.org/HelpDebian">
+<!ENTITY debpkg-tutorial0 "http://www.debian.org/doc/packaging-manuals/packaging-tutorial/packaging-tutorial">
+<!ENTITY debref "http://www.debian.org/doc/manuals/debian-reference/">
+<!ENTITY debref-make "http://www.debian.org/doc/manuals/debian-reference/ch12#_make">
+<!ENTITY debref-vcs "http://www.debian.org/doc/manuals/debian-reference/ch10#_version_control_systems">
+<!ENTITY debsrc3 "http://wiki.debian.org/Projects/DebSrc3.0">
+<!ENTITY dehs "http://wiki.debian.org/DEHS">
+<!ENTITY dep3 "http://dep.debian.net/deps/dep3/">
+<!ENTITY dep5 "http://dep.debian.net/deps/dep5/">
+<!ENTITY dep "http://dep.debian.net/">
+<!ENTITY developers-reference "http://www.debian.org/doc/devel-manuals#devref">
+<!ENTITY developers-refpdf "/usr/share/doc/developers-reference/developers-reference.pdf">
+<!ENTITY devref-adopt "http://www.debian.org/doc/manuals/developers-reference/pkgs.html#adopting">
+<!ENTITY devref-bpp-vcs "http://www.debian.org/doc/manuals/developers-reference/best-pkging-practices.html#bpp-vcs">
+<!ENTITY devref-bug-handling "http://www.debian.org/doc/manuals/developers-reference/pkgs.html#bug-handling">
+<!ENTITY devref-newpackage "http://www.debian.org/doc/developers-reference/pkgs.html#newpackage">
+<!ENTITY devref-nmu "http://www.debian.org/doc/developers-reference/pkgs.html#nmu-qa-upload">
+<!ENTITY devref-upload "http://www.debian.org/doc/manuals/developers-reference/pkgs.html#upload">
+<!ENTITY devscripts-readme "/usr/share/doc/devscripts/README.gz">
+<!ENTITY dfsg "http://www.debian.org/social_contract#guidelines">
+<!ENTITY doc-base "/usr/share/doc/doc-base/doc-base.html/index.html">
+<!ENTITY elf "http://en.wikipedia.org/wiki/Executable_and_Linkable_Format">
+<!ENTITY fhs "http://www.debian.org/doc/packaging-manuals/fhs/fhs-2.3.html">
+<!ENTITY fhs-pdf "/usr/share/doc/debian-policy/fhs/fhs-2.3.pdf.gz">
+<!ENTITY gentoo "http://www.obsession.se/gentoo/">
+<!ENTITY gentoo-package "http://packages.qa.debian.org/g/gentoo.html">
+<!ENTITY gettext "http://en.wikipedia.org/wiki/GNU_gettext">
+<!ENTITY git-buildpackage-doc "/usr/share/doc/git-buildpackage/manual-html/gbp.html">
+<!ENTITY git-debian-packaging "http://www.eyrie.org/~eagle/notes/debian/git.html">
+<!ENTITY git-doc "/usr/share/doc/git-doc/index.html">
+<!ENTITY git-dpm "http://git-dpm.alioth.debian.org/">
+<!ENTITY gnu-build-system "http://en.wikipedia.org/wiki/GNU_build_system">
+<!ENTITY gnu-destdir "http://www.gnu.org/prep/standards/html_node/DESTDIR.html#DESTDIR">
+<!ENTITY gnu-maintainer "http://www.gnu.org/prep/maintain/html_node/index.html">
+<!ENTITY gnu-maintainer-pdf "/usr/share/doc/gnu-standards/maintain.pdf.gz">
+<!ENTITY gnu-make "http://www.gnu.org/software/make/manual/html_node/index.html">
+<!ENTITY gnu-standard "http://www.gnu.org/prep/standards/html_node/index.html">
+<!ENTITY gnu-standard-pdf "/usr/share/doc/gnu-standards/standards.pdf.gz">
+<!ENTITY howto-copyright "http://lists.debian.org/debian-devel-announce/2006/03/msg00023.html">
+<!ENTITY irc-debian "http://www.debian.org/support#irc">
+<!ENTITY keycreate "http://keyring.debian.org/creating-key.html">
+<!ENTITY keyring "http://keyring.debian.org">
+<!ENTITY keysigning "http://wiki.debian.org/Keysigning">
+<!ENTITY launchpad-build-depends-indep "https://bugs.launchpad.net/launchpad-buildd/+bug/238141">
+<!ENTITY library "http://en.wikipedia.org/wiki/Library_(computing)">
+<!ENTITY libtool "http://en.wikipedia.org/wiki/GNU_Libtool">
+<!ENTITY lintian-doc "/usr/share/doc/lintian/lintian.html/index.html">
+<!ENTITY logiciellibre "http://upsilon.cc/~zack/talks/2011/20110321-taipei.pdf">
+<!ENTITY lsb "http://www.linuxfoundation.org/collaborate/workgroups/lsb">
+<!ENTITY maint-guide "http://www.debian.org/doc/maint-guide/">
+<!ENTITY mentors-dn "http://mentors.debian.net/">
+<!ENTITY menu-structure "http://www.debian.org/doc/packaging-manuals/menu-policy/ch2.html#s2.1">
+<!ENTITY multiarchimplementation "http://wiki.debian.org/Multiarch/Implementation">
+<!ENTITY multiarchspec "https://wiki.ubuntu.com/MultiarchSpec">
+<!ENTITY nm-do "http://nm.debian.org/">
+<!ENTITY packages-do "http://www.debian.org/distrib/packages">
+<!ENTITY packages-qa-do "http://packages.qa.debian.org/common/index.html">
+<!ENTITY pbuilder "http://www.netfort.gr.jp/~dancer/software/pbuilder.html">
+<!ENTITY policy-architecture "http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Architecture">
+<!ENTITY policy-build-depends-indep "http://www.debian.org/doc/debian-policy/footnotes.html#f55">
+<!ENTITY policy-conffiles "http://www.debian.org/doc/debian-policy/ap-pkg-controlfields.html#s-pkg-f-Conffiles">
+<!ENTITY policy-control "http://www.debian.org/doc/debian-policy/ch-controlfields.html">
+<!ENTITY policy-copyright "http://www.debian.org/doc/debian-policy/ch-docs.html#s-copyrightfile">
+<!ENTITY policy-debianrules "http://www.debian.org/doc/debian-policy/ch-source.html#s-debianrules">
+<!ENTITY policy-dev "http://www.debian.org/doc/debian-policy/ch-sharedlibs.html#s-sharedlibs-dev">
+<!ENTITY policy-dpkgchangelog "http://www.debian.org/doc/debian-policy/ch-source.html#s-dpkgchangelog">
+<!ENTITY policy-fhs "http://www.debian.org/doc/debian-policy/ch-opersys.html#s-fhs">
+<!ENTITY policy-java "http://www.debian.org/doc/packaging-manuals/java-policy/">
+<!ENTITY policy-ldconfig "http://www.debian.org/doc/debian-policy/ch-sharedlibs.html#s-ldconfig">
+<!ENTITY policy-libraries "http://www.debian.org/doc/debian-policy/ch-files.html#s-libraries">
+<!ENTITY policy-library-abi "http://www.debian.org/doc/debian-policy/ch-sharedlibs.html#s-sharedlibs-updates">
+<!ENTITY policy-library-shlibs "http://www.debian.org/doc/debian-policy/ch-sharedlibs.html#s-sharedlibs-shlibdeps">
+<!ENTITY policy-library-symbols "http://www.debian.org/doc/debian-policy/ch-sharedlibs.html#s-sharedlibs-symbols">
+<!ENTITY policy-mantainerscripts "http://www.debian.org/doc/debian-policy/ch-maintainerscripts.html">
+<!ENTITY policy-menu "http://www.debian.org/doc/packaging-manuals/menu-policy/">
+<!ENTITY policy-package "http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Package">
+<!ENTITY policy-pdf "/usr/share/doc/debian-policy/policy.pdf.gz">
+<!ENTITY policy-perl "http://www.debian.org/doc/packaging-manuals/perl-policy/">
+<!ENTITY policy-priorities "http://www.debian.org/doc/debian-policy/ch-archive.html#s-priorities">
+<!ENTITY policy-python "http://www.debian.org/doc/packaging-manuals/python-policy/">
+<!ENTITY policy-relationships "http://www.debian.org/doc/debian-policy/ch-relationships.html">
+<!ENTITY policy-runtime "http://www.debian.org/doc/debian-policy/ch-sharedlibs.html#s-sharedlibs-runtime">
+<!ENTITY policy-sharedlibraries "http://www.debian.org/doc/debian-policy/ch-sharedlibs.html">
+<!ENTITY policy-sourcebinarydeps "http://www.debian.org/doc/debian-policy/ch-relationships.html#s-sourcebinarydeps">
+<!ENTITY policy-source "http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Source">
+<!ENTITY policy-static "http://www.debian.org/doc/debian-policy/ch-sharedlibs.html#s-sharedlibs-static">
+<!ENTITY policy-subsections "http://www.debian.org/doc/debian-policy/ch-archive.html#s-subsections">
+<!ENTITY policy-version "http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">
+<!ENTITY ports "http://www.debian.org/ports/">
+<!ENTITY qa-do "http://qa.debian.org/">
+<!ENTITY quilt-pdf "/usr/share/doc/quilt/quilt.pdf.gz">
+<!ENTITY removela "http://wiki.debian.org/ReleaseGoals/LAFileRemoval">
+<!ENTITY rpathissues "http://wiki.debian.org/RpathIssue">
+<!ENTITY sections-unstable "http://packages.debian.org/unstable/">
+<!ENTITY sf-net "http://sf.net">
+<!ENTITY snapshot "http://snapshot.debian.org/">
+<!ENTITY soname "http://en.wikipedia.org/wiki/Soname">
+<!ENTITY symbol "http://en.wikipedia.org/wiki/Symbol_(programming)">
+<!ENTITY teams "http://wiki.debian.org/Teams">
+<!ENTITY topgit "http://git.debian.org/?p=collab-maint/topgit.git;a=blob_plain;f=debian/HOWTO-tg2quilt;hb=HEAD">
+<!ENTITY uploadqueue "ftp://ftp.upload.debian.org/pub/UploadQueue/">
+<!ENTITY uploadqueue-readme "ftp://ftp.upload.debian.org/pub/UploadQueue/README">
+<!ENTITY usingsymbolsfiles "http://wiki.debian.org/UsingSymbolsFiles">
+<!ENTITY utf8 "http://en.wikipedia.org/wiki/UTF-8">
+<!ENTITY virtual-package "http://www.debian.org/doc/packaging-manuals/virtual-package-names-list.txt">
+<!ENTITY wnpp-bts "http://bugs.debian.org/wnpp">
+<!ENTITY wnpp-debtags "http://members.hellug.gr/serzan/wnpp/">
+<!ENTITY wnpp-dn "http://wnpp.debian.net/">
+<!ENTITY wnpp-do "http://www.debian.org/devel/wnpp/">
+

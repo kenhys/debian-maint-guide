@@ -1,0 +1,21 @@
+<!--
+This is UTF-8 file.
+Remember, the *first* definition of an entity wins.
+-->
+
+<!ENTITY othercredit '
+<othercredit role="translator"><personname>Innocent De Marchi</personname><email>tangram.peces@gmail.com</email><contrib>Traducció al català</contrib></othercredit>
+'>
+
+<!-- overwrite Wikipiédia links available in Spanish -->
+<!ENTITY autoconf "http://ca.wikipedia.org/wiki/Autoconf">
+<!ENTITY automake "http://es.wikipedia.org/wiki/Automake">
+<!ENTITY cmake "http://es.wikipedia.org/wiki/CMake">
+<!ENTITY c-program "http://ca.wikipedia.org/wiki/Llenguatge_C">
+<!ENTITY cxx "http://ca.wikipedia.org/wiki/C++">
+<!ENTITY gettext "http://ca.wikipedia.org/wiki/Gettext">
+<!ENTITY gnu-build-system "http://es.wikipedia.org/wiki/Autotools">
+<!ENTITY libtool "http://es.wikipedia.org/wiki/GNU_Libtool">
+<!ENTITY elf "http://es.wikipedia.org/wiki/Executable_and_Linkable_Format">
+<!ENTITY library "http://ca.wikipedia.org/wiki/Llibreria_informàtica">
+<!ENTITY utf8 "http://ca.wikipedia.org/wiki/UTF-8">

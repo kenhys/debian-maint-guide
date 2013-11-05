@@ -1,0 +1,655 @@
+maint-guide (1.2.31) unstable; urgency=low
+
+  * Correct ML reference to debian-devel-changes. Closes: #671703
+  * Correct URL links. Closes: #678041, #692210
+  * Document dh_link(1) and debian/links debian/symbols, --with gir.
+    and shared libraries. Closes: #668935, #691094
+  * Updated translations: ja fr it es ca ru Closes: #688243, #696255 
+
+ -- Osamu Aoki <osamu@debian.org>  Mon, 24 Dec 2012 23:32:31 +0900
+
+maint-guide (1.2.30) unstable; urgency=low
+
+  [ David Prévot ]
+  * Use UTF-8 locale to prepare the text version. See: #658839
+
+  [ Osamu Aoki ]
+  * Fixed typo for foo_newversion.orig.tar.gz.  Closes: #688072 
+
+ -- Osamu Aoki <osamu@debian.org>  Fri, 21 Sep 2012 00:04:00 +0900
+
+maint-guide (1.2.29) unstable; urgency=low
+
+  * Add tipa to build-dep and use xCJK package only for CJK PDF 
+    documents.  Closes: #666569
+  * Updated policy to 3.9.3
+  * Fixed manpage section for dh_make. Closes: #663087
+  * Fixed typo. Closes: #658631
+
+ -- Osamu Aoki <osamu@debian.org>  Sun, 15 Apr 2012 17:40:47 +0900
+
+maint-guide (1.2.28) unstable; urgency=low
+
+  * Lintian touch up 
+  * Promoted new dh_python2 while deprecating older python-support and
+    python-central. Closes: #633112
+  * Substituted New Maintainer site with New Member site.  Thanks
+    Salvatore Bonaccorso. Closes: #648834
+  * Updated URL for packaging-tutorial. Closes: #652635
+  * Removed all URL references with file:///... . Closes: #646283
+  * Fixed pbuilder hook script bugs caused by the XML conversion
+    of the old buggy debiandoc-sgml. Closes: #637928, #642599
+  * Add Russian.  Thanks Yuri Kozlov. Closes: #646330
+  * Build: en ca es fr it ja ru
+
+ -- Osamu Aoki <osamu@debian.org>  Fri, 17 Feb 2012 01:15:39 +0900
+
+maint-guide (1.2.27) unstable; urgency=low
+
+  * Fixed dh command argument order. Closes: #625735
+  * Fixed alias for dquilt. Closes: #626565
+  * Updated Catalan and Spanish translations. Closes: #628330, #628331
+  * Updated build script and package dependencies to build all PDF using XeTeX
+    backend. Now ' and ` in <screen> are correct. Closes: #627466, #629258
+  * Build packages for all good translations: ca es en fr ja
+
+ -- Osamu Aoki <osamu@debian.org>  Sun, 05 Jun 2011 21:06:27 +0900
+
+maint-guide (1.2.26) unstable; urgency=low
+
+  * Converted to DocBook XML format. Closes: #609679
+  * Organized all URL references into common.ent. 
+  * Complete English style checks and corrections by Justin B Rye.
+  * Fixed issues caused by debiandoc-sgml bugs #624099 and #624097 manually.
+    Closes: #621817, #623116
+  * Converted document to use dquilt to keep quilt default untouched.
+  * Rewrote and reorganized entire document with inputs from the BTS reports,
+    Justin B Rye, David Prévot, Serafeim Zanikolas, and others.  Chapter 1 had
+    major addition of "Social dynamics of Debian" with pointers to Stefano
+    Zacchiroli's PDF slides.  Chapter 2 was reorganized with new detailed
+    explanation on "Package name and version" and clear mention of non-native
+    and native packages.  Chapter 3 added DEP-3 for "Fixing upstream bugs".
+    Chapter 4 added DEP-5 for "copyright".  Chapter 5 fixed LSB for
+    "package.init and package.default" and added "source/options".  Chapter 7
+    added "Suspicious changes".  Contents relating to "Including orig.tar.gz for
+    upload" were moved from Chapter 6 to Chapter 8 and reorganized.
+    Closes: #609607, #609937, #610362, #611769, #618352
+  * Updated Japanese and French translation to be 100% current.
+  * Build packages only for good translations: en fr ja
+
+ -- Osamu Aoki <osamu@debian.org>  Thu, 05 May 2011 16:47:13 +0900
+
+maint-guide (1.2.25) unstable; urgency=low
+
+  * Fixed typo: s/DSFG/DFSG/g by Tobias Quathamer.
+  * Updated uscan watch file examples. Closes: #602454
+  * Made text compatible with non-Bash. Closes: #605976
+  * Converted Japanese translation to PO (100% translation). Closes: #597594
+  * Converted Spanish translation to PO (100% translation). Closes: #604710
+  * Converted German translation to PO (60% translation) and built from 
+    updated SGML for now. Closes: #604767
+  * Updated French, Italian, Chinese(cn,tw) translations (100%).
+
+ -- Osamu Aoki <osamu@debian.org>  Sun, 19 Dec 2010 16:28:06 +0900
+
+maint-guide (1.2.24) unstable; urgency=low
+
+  * Dropped accidentally included opencc dependency for squeeze.
+
+ -- Osamu Aoki <osamu@debian.org>  Thu, 30 Sep 2010 23:49:19 +0900
+
+maint-guide (1.2.23) unstable; urgency=low
+
+  * Debian is not just *Linux* distrubution.  Closes: #595507
+  * Added "source/local-options file" section.
+  * Updated fr translation (100%).
+  * Added zh-cn, zh-tw, and it translation (100%) using po4a
+    Closes: #593663
+
+ -- Osamu Aoki <osamu@debian.org>  Mon, 27 Sep 2010 22:40:55 +0900
+
+maint-guide (1.2.22) unstable; urgency=low
+
+  [ David Prévot ]
+  * s/git-core/git/g. Closes: #593416
+
+  [ Osamu Aoki ]
+  * Converted to use UTF-8 across build. Closes: #593678 
+  * Reactvate ps/pdf for Chinese (zh-cn/zh-tw). Closes: #490161
+
+ -- Osamu Aoki <osamu@debian.org>  Sat, 21 Aug 2010 03:54:38 +0900
+
+maint-guide (1.2.21) unstable; urgency=low
+
+  * Fixed missing list in the package description last paragraph
+    of Spanish translation. Closes: #588559
+  * Clarified that "package" is place holder and added an example.
+    following suggestion of David Prévot. Closes: #590033
+  * Encouraged work on already packaged programs following 
+    suggestion of Serafeim Zanikolas. Closes: #590162
+  * Documented Breaks for policy 3.9.0. Closes: #590185
+  * Removed bashism from Makefile. 
+  * Removed texlive-full from Build-Depends-Indep. Closes: #564241
+
+ -- Osamu Aoki <osamu@debian.org>  Sun, 01 Aug 2010 21:27:00 +0900
+
+maint-guide (1.2.20) unstable; urgency=low
+
+  [ Osamu Aoki ]
+  * Fixed problematic ways of presenting configuration files.
+  * Fixed typo. Closes: #585475
+  * Distinguish Debian and Debian archive. Closes: #586421
+
+  [ David Prévot ]
+  * Fixed typos, style and oudated mentions. Closes: #585551
+  * Updated French translation with po4a.
+
+ -- Osamu Aoki <osamu@debian.org>  Sat, 26 Jun 2010 11:43:14 -0400
+
+maint-guide (1.2.19) unstable; urgency=low
+
+  * Used the WWW resource URI according to docbook-xsl. Closes: #581961
+  * Swapped Maintainer and Uploaders to reflect the role for last 5 years.
+  * Added Homepage in control.
+  * Updated Italian translation.
+  * Documented dh_installchangelogs description.
+  * Updated Autotools related contents. 
+
+ -- Osamu Aoki <osamu@debian.org>  Sat, 29 May 2010 01:57:57 +0900
+
+maint-guide (1.2.18) unstable; urgency=low
+
+  * Described URL redirect for http://sf.net. Closes: #578059
+  * Used empty override target instead of :. 
+  * Updated Italian translation by Calogero Lo Leggio et al with po4a. 
+  * Added po4a dependency. 
+  * Updated .quitrc example inspired by discussion with Ivan Borzenkov.
+  * Updated .bashrc to export DEBFULLNAME DEBEMAIL. Closes: #581772
+  * Documented dh --no-act as footnote.  Closes: #581814
+  * Added pointer to Debconf9 presentation on debhelper. 
+  * Fixed many minor bugs.
+
+ -- Osamu Aoki <osamu@debian.org>  Sun, 16 May 2010 18:29:35 +0900
+
+maint-guide (1.2.17) unstable; urgency=low
+
+  [ Osamu Aoki ]
+  * Fixed typos. 
+  * Updated quilt usage examples.
+  * Updated debian/rules to match the recommendation by this documentation.
+  * Added lintian-overrides, info, manpages to "Other files under debian
+    directory" and sorted its section by the meaningful part of the title.
+    Closes: #575693
+  * Recommended usage of "dh_auto_* -- additional parameters" syntax in
+    override_dh_auto_* target customization. Closes: #575694
+
+  [ Raphaël Hertzog ]
+  * Drop --quilt option of dh_make, it's not needed now that "3.0 (quilt)"
+    source packages are created by default.
+  * Enhance sample .quiltrc with what's suggested in quilt's README.source.
+  * Numerous fixes and simplifications (drop uninteresting "-j1" option in
+    sample make commands, drop "-rfakeroot" in dpkg-buildpackage call, use
+    ftp.upload.debian.org instead of ftp-master.debian.org, etc.)
+  * Clarify explanations about "3.0 (quilt)" source format.
+
+  [ Osamu Aoki ]
+  * Enhanced quiltrc in again based on blog by Torsten Landschoff.
+  * Updated "6.4 pbuilder package" including B90lintian.
+  * Reverted to explain "7.7 interdiff command" and made complete overhaul of
+    "7 Checking the package for errors".
+  * Simplified "8.1 Uploading to the Debian archive" since local queue is not
+    so useful these days and no need to copy the default configuration here.
+  * Rewrote and reorganized major parts of "9 Updating the package".
+  * Converted Credits to UTF-8.
+  * Harmonized URL references to the Debian Policy Manual. 
+  * Explained autobuilder, Build-Depends: and Build-Depends-Indep: fields.
+  * Placed a bit more note on dput. Closes: #576424
+  * Added dh --with description.
+  * Made many touch-ups and shortened text as much as possible. 
+
+ -- Osamu Aoki <osamu@debian.org>  Fri, 16 Apr 2010 00:23:01 +0900
+
+maint-guide (1.2.16) unstable; urgency=low
+
+  * Fixed file name of doc-debian for pt-br. 
+  * Fixed changelog typo for bug#. s/544173/554173/.
+  * Updated contents to reflect squeeze situation.
+  * Updated to autogenerate version from changelog.
+  * Fixed references related to dpkg-buildpackage with -i -I -sa.
+  * Updated to use debian/install & dh_install in the text. Closes: #573621
+  * Added list of program for development: python, quilt, git-core.
+  * Updated to use xutils-dev instead. Closes: #573642
+  * Updated to address 3.0(quilt) format, quilt usage, and dpatch to quilt
+    migration. Closes: #573730, #573160
+  * .quiltrc copied from Adeodato Simó's example.
+  * debhelper in examples to >=7.0.50 for correct dh handling.
+  * Updated rule file description for dh. Closes: #573732 
+  * Updated private archive section by the URL pointer. Closes: #573735
+  * Updated checksums to use MD5/SHA1/SHA256. Closes: #573856
+  * Added Vcs-* fields description to debian/control. Closes: #573990
+  * Updated that DD is not the only one uploading ... Closes: #574456
+  * Documented compat etc. Closes: #574457
+  * Added reference to mentors.debian.net.
+  * Added Craig Small as author for his recent SVN commits.
+  * Removed docbook2x usage for manpages.xml. Closes: #574946
+  * Added quilt to Recommends of the binary package.
+  * Made many URL links and consistent tagging.
+  * Updated "Installation of files to the destination" contents.
+  * Added references and pointers to CDBS.
+
+ -- Osamu Aoki <osamu@debian.org>  Wed, 24 Mar 2010 01:41:52 +0900
+
+maint-guide (1.2.15) unstable; urgency=low
+
+  [ Osamu Aoki ]
+  * Removed linda from recommends since is is not used any more.
+    Closes: #554173
+  * Fixed the Vcs-Cvs field per James Vega. Closes: #561242 
+  * Updated this package to debhelper 7 with dh, dpkg source format 3.0
+    (native).  Updated dependency and doc-base files.
+  * Renamed file and package names to simplify situation by using newer locale
+    support capabilities available in debiandoc-sgml (>=1.2.8). 
+  * Removed freetype2-demos build dependency. 
+  * "Copyright information" is now in 12.5. Closes: #572857
+
+  [ Craig Small ]
+  * Changed example to docbook2x-man Closes: #498017
+  * Changed menu examples Closes: #437750
+  * g77 changed to gfortran Closes: #505514
+  * Updated links to developers reference Closes: #516467
+  * Fixed 2 minor typos Closes: #527290
+  * Use dpkg-depcheck instead of script Closes: #554180
+  * Changed version section to remove reference to 0.0 Closes: #554948
+  * Updated watch file example Closes: #437847
+  * Updated doc-base.EX section
+  * Added build-essential to packages needed
+  * Changed rules file to debhelper 7 Closes: #511549, #549289
+  * Adjusted French document to not use tags in sections Closes: #562325
+
+ -- Osamu Aoki <osamu@debian.org>  Tue, 09 Mar 2010 02:01:04 +0900
+
+maint-guide (1.2.14) unstable; urgency=low
+
+  * Fixed old DH_COMPAT=4 examples for all languages and packaging of 
+    this package itself by creating debian/compat.
+  * Fixed Italian section 4.1 per Riccardo Brigo. Closes: 436046
+  * Fixed versioned dependencies issue. Closes: 438176
+  * Fixed maint-guide-pl.doc-base file encoding. Closes: 473166
+  * Removed reference of deprecated 'x' suffix for X manpage for 
+    all languages. Closes: 437747
+  * Added manpage creation from the XML template. Closes: 437751
+  * Fixed Vcs-Svn/Vcs-Browser fields per Jelmer Vernooij. Closes: 492810
+
+ -- Osamu Aoki <osamu@debian.org>  Sat, 06 Sep 2008 13:30:57 +0900
+
+maint-guide (1.2.13) unstable; urgency=low
+
+  * Acknowledged NMU and updated upstream subversion.
+  * Made Makefile compatible with special version numbers. Closes: 483320
+  * Removed linda package reference from all languages. Closes: 474244
+  * Updated VCS fields.
+  * Used proper version. Closes: 479407
+
+ -- Osamu Aoki <osamu@debian.org>  Thu, 05 Jun 2008 22:36:34 +0900
+
+maint-guide (1.2.12+nmu1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Deprecate Freetype 1 (Closes: #481788)
+
+ -- Moritz Muehlenhoff <jmm@debian.org>  Wed, 21 May 2008 22:53:46 +0200
+
+maint-guide (1.2.12) unstable; urgency=low
+
+  * Fixed wrong package reference -pt-br. (closes: 430631)
+  * Updated requirements for main by the policy document. (closes: 431012)
+  * Treated quilt being possible alternative to dpatch since
+    its use has been significant and as good. (closes: 434156)
+  * Reference git-buildpackage instead of tla-buildpackage.
+  * Fixed typos. (closes: 434680, 435567)
+  * Fixed /usr/doc -> /usr/share/doc path for French. (closes: 435395)
+  * Updated debian/copyright. (closes: 437844)
+  * Temporariry stop building Korean PDF/PS due to TeX-live
+    issues. (closes: 439495)
+  * Added missing line in example A.2. (closes: 457912)
+  * Updated Build-Depends*: to texlive-full, cjk-latex-all, ghostscript
+
+ -- Osamu Aoki <osamu@debian.org>  Sun, 13 Jan 2008 15:07:09 +0900
+
+maint-guide (1.2.11) unstable; urgency=high
+
+  * Fixed bad grep examples for all languages. (closes: Bug#375456) 
+  * Updated build date, source version, copyright for the English.
+    I added myself to the copyright since my additions have been more 
+    than minor fixes.  This should make easy to diferentiate old 
+    translations based on the old English version.
+  * Fixed dpatch example to use Build-Depends: in control.
+
+ -- Osamu Aoki <osamu@debian.org>  Fri, 12 Jan 2007 20:42:33 +0900
+
+maint-guide (1.2.10) unstable; urgency=high
+
+  * Fixed lintian "Build-Depends-Indep debhelper" error.
+  * Reorganized WNPP reference. (closes: Bug#405855)
+  * Updated dh_make results and dpatch references.
+    (closes: Bug#373076, Bug#328294)
+  * Updated debian/copyright file section by pointing to
+    the debian-devel-announce HOWTO. (closes: Bug#366084)
+
+ -- Osamu Aoki <osamu@debian.org>  Thu, 11 Jan 2007 01:22:31 +0900
+
+maint-guide (1.2.9) unstable; urgency=high
+
+  * Adjusted Policy manual references for all languages.
+    (closes: Bug#385918, Bug#384833)
+  * Fixed Italian translation. (closes: Bug#386538)
+  * Provided French translation with a link to the reference English
+    document. (closes: Bug#399863)
+  * Updated build dependency to one works for zh_TW.
+
+ -- Osamu Aoki <osamu@debian.org>  Sun, 24 Dec 2006 22:13:41 +0900
+
+maint-guide (1.2.8) unstable; urgency=high
+
+  * Fixed latex-cjk-* and font dependency issues. (closes: Bug#403200)
+  * Fixed typo caught by s. keeling s/enconter/encounter/ .
+  * Fixed clean target to remove tex-in etc..
+  * Rebuilt with debiandoc-sgml 1.1.100.
+
+ -- Osamu Aoki <osamu@debian.org>  Sun, 17 Dec 2006 01:07:38 +0900
+
+maint-guide (1.2.7) unstable; urgency=low
+
+  * Updated Simplified Chinese (zh_CN) translation and added new
+    Traditional Chinese (zh_TW) translation from Ling Li
+    <lilingv@gmail.com> [CVS commit by Jens Seidel].
+  * Register Korean, Japanese and Chinese PDF and PS files as
+    documentation.
+  * Fixed two minor typos and translations in English and translations
+    with help from Colin Tuckley. Closes: Bug#318161
+  * Added link to example of installing additional html documentation
+    with help from Colin Tuckley. Closes: Bug#306204
+  * Updated to DH_COMPAT=4 and changed debian/control .
+  * Removed UTF-8 encoded Japanese words from control file.
+    Closes: Bug#345947
+  * Made temporary package build directory example only to be 
+    <file>debian/packagename</file> in line with new debhelper
+    behavior.
+  * Added section for Official Debian Developer reflecting the
+    New Maintainer process.  Closes: Bug#331176
+ 
+ -- Osamu Aoki <osamu@debian.org>  Sat,  7 Jan 2006 18:03:19 +0900
+  
+maint-guide (1.2.6) unstable; urgency=low
+
+  * Made CVS source tree to build DDP web pages on woody machine.
+  * DE major translation update. (Thanks Erik Schanze)
+
+ -- Osamu Aoki <osamu@debian.org>  Sat, 16 Apr 2005 21:46:21 +0200
+
+maint-guide (1.2.5) unstable; urgency=low
+
+  * Added me to uploader to stop NMU madness. 
+  * Adjusted control to match overide (closes: #296702)
+  * Updated German (minor).
+
+ -- Osamu Aoki <osamu@debian.org>  Tue, 15 Mar 2005 23:39:26 +0100
+
+maint-guide (1.2.4) unstable; urgency=low
+
+  * NMU, partially blessed by the maintainer (follow-up).
+  * Updated build script and dependency to accomodate Korean PDF under
+    the new debiandoc-sgml. (closes: #293753)
+  * Updated description matching with new pdebuild behavior.
+  * Updated required version of debiandoc-sgml.
+  * Updated Italian translation to be current.
+  * Removed TAB from source (Better TeX interaction, i.e., Better
+    PS/PDF generation) (all lang) (closes: #210785)
+  * Removed absolute path from docbook-to-man in debian/rule
+    following the latest dh_make result. (closes: #255441)
+
+ -- Osamu Aoki <osamu@debian.org>  Thu, 24 Feb 2005 06:11:06 +0100
+
+maint-guide (1.2.3) unstable; urgency=low
+
+  * NMU, partially blessed by the maintainer.
+  * Added Korean translation by Yooseong Yang <yooseong@debian.org> .
+  * Fixed bashism using /usr/sbin/[ and add gs to control. (closes: #264044)
+  * Fixed Debian Policy chapter for changelog. (all lang.)
+    (closes: #216405, #243339)
+  * Fixed debian/rules examples. (all lang.) (closes: #244463)
+  * Converted debian/control to UTF-8 and fix FR. (closes: #283696)
+  * Fix debian/control description according to developers-reference 
+    6.2.2 (all lang.) (closes: #291943)
+  * Listed <package/xutils/  for all but old ES and RU. (closes: #167395)
+  * Made script readable for all but old ES and RU. (closes: #285824)
+  * Expanded Chapter 6 - 9 and added appendix. (No translation) [osamu]
+    - Updated dupload section and added more examples. (closes: #114948)
+    - Addressed issues of Debian native package. (closes: #128077)
+    - Added reference to buildd and FTBFS in pbuilder. (closes: #138575)
+    - Pointed to the autotools-dev documentation. (closes: #159169)
+    - Made working directory name consistent: ~/gentoo/ . (closes: #174816)
+    - Fixed file location while introducing default.ent. (closes: #203609)
+    - Mentioned dh_make -o . (closes: #203685)
+    - Minor wording polishes and tag updates. (closes: #258273)
+    - Added mentors-FAQ URL. (closes: #279312)
+    - Added linda and pbuilder. (closes: #287064)
+    - Added -sa option, cvs-buildackage etc., dpatch.
+    - Added Build dep method per virlon's debian-mentor posting.
+    - Expanded section on "Checking the package for errors" and
+      "New upstream release" based on debian-mentor postings.
+      (no debconf message for broken upgrade reminded.)
+    - Added appendix to provide more examples.
+  * Fixed typo in Spanish and German. (closes: #225432, #276529)
+  * Translation updated with CVS.
+
+ -- Osamu Aoki <osamu@debian.org>  Sun, 23 Jan 2005 22:16:58 +0100
+
+maint-guide (1.2.2) unstable; urgency=low
+
+  * NMU, partially blessed by the maintainer (ignoring bugs where I have no
+    instructions for)
+  * Minor changes in maint-guide (version 1.2.2, by Josip)
+  * German translation overhaul (update to version 1.2.2 by Erik Schanze
+    <mail@erikschanze.de>, Frank Lichtenheld <frank@lichtenheld.de>, 
+    closes: #241950, #150188)
+  * Translation updates (to version 1.2.2): maint-guide-es, maint-guide-fr,
+    maint-guide-it, maint-guide-ja, maint-guide-pl, maint-guide-zh
+
+ -- Eduard Bloch <blade@debian.org>  Sat, 17 Jul 2004 17:09:34 +0200
+
+maint-guide (1.2.1) unstable; urgency=low
+
+  * Updated various translations from CVS.
+  * Updated Italian translation to 1.2, closes: #154941.
+  * Added Chinese translation in maint-guide-zh, version 1.2. No PDFs.
+  * Fixed various typos and other language issues in the English version,
+    closes: #159218, #171833.
+  * Removed byhand files, cf. bug #184082.
+  * Updated standards version (no more postinst and prerm hacks, yay).
+
+ -- Josip Rodin <joy-packages@debian.org>  Wed,  9 Jul 2003 18:30:21 +0200
+
+maint-guide (1.2) unstable; urgency=high
+
+  * New English version of the guide, closes: #106060, #108763, #108854,
+    #119729, #127186, #132241, #118769, #85897, #115864.
+  * Updated French translation to 1.2.
+  * Updated Japanese translation to 1.2.
+  * Added maint-guide-it, version 1.0.2, closes: #115366.
+  * Added Polish translation, version 1.2, in maint-guide-pl.
+  * Added the packages we recommend in the Suggests: fields, closes: #77900.
+  * Added index.xy.html symlink to fix the links in the doc-base files,
+    closes: #106833.
+  * Added PDF versions everywhere, except for Japanese which unfortunately
+    doesn't build properly.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sun, 28 Apr 2002 11:04:42 +0200
+
+maint-guide (1.0.2) unstable; urgency=low
+
+  * Major updates to the Spanish translation.
+  * Some updates to the French translation.
+  * Minor fix to the Japanese translation.
+  * Removed the paragraph that mentioned packaging-manual, closes: #89986.
+  * Upped all translations versions to 1.0.2, my copyright to 2001, and
+    the date to 10 June 2001 -- hope babelfishing worked :)
+  * Forced $LANG=C in rules file to work around bug #76037 in debiandoc-sgml,
+    closes: #87283.
+  * Added Build-Depends-Indep: tetex-bin, tetex-extra, closes: #92293.
+  * Fixed minor mistakes and style problems Neil Conway
+    <nconway@klamath.dyndns.org> pointed out, closes: #97864.
+  * Fixed that small problem with grep being an it, not a he, closes: #89628.
+  * Policy 3.5.5, no changes.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sun, 10 Jun 2001 03:10:47 +0200
+
+maint-guide (1.0.1) unstable; urgency=low
+
+  * Added German translation, kindly provided by Eduard Bloch
+    <edi@ka.linux.de>.
+  * Added Portuguese (Brazilian) translation, kindly provided by
+    Gustavo Noronha Silva (KoV) <dockov@zaz.com.br>.
+    It's going to be contained in maint-guide-pt package, Portuguese (real)
+    translation can be added later if someone wants.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Tue,  2 Jan 2001 23:18:16 +0100
+
+maint-guide (1.0) frozen unstable; urgency=low
+
+  * Final version :) Changed all (0.99.1) version numbers to be 1.0.
+  * Fixed path of the .tar.gz file in dh_make invocation, reported by
+    Bruce Sass.
+  * Updated Russian translation to version 0.99.1.
+
+  * Changed doc-base paths to use /usr/share/doc, to prevent any problems
+    related to .dhelp files under /usr/doc, closes: #52488.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sun, 28 May 2000 14:31:41 +0200
+
+maint-guide (0.99.1.0) frozen unstable; urgency=low
+
+  * Updated Spanish translation to version 0.99.1.
+  * Updated French translation to version 0.99.1 (plus some typos fixed).
+
+  * Revived Russian .txt, debiandoc-sgml has been fixed.
+  * Added PostScript version, it's useful for printing. Only for English,
+    for now (I might not have appropriate teTeX fonts, so let's not screw
+    up something now).
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Wed, 15 Mar 2000 23:45:58 +0100
+
+maint-guide (0.99.1) frozen unstable; urgency=low
+
+  * Added a few extra notes about Makefiles in autoconfized/automaked
+    sources. That is about it for 0.99.1. If I ever get all the
+    translations updated, that'll be upped to 1.0.
+
+  * Added Spanish translation, version 0.95 for now, package version
+    0.97.0.1 (to not have to add epoch). Fixed author/copyright statement.
+  * Added Russian translation, version 0.97 for now, by Mihail Sobolev.
+    The text version doesn't seem to be working so good, disabled for now,
+    bug filed on debiandoc2text about it.
+  * Added Japanese translation of this version.
+  * Fixed Japanese charset, closes: #55421. Did the same for other langs.
+    Added translated names in translation packages' descriptions.
+  * Fixed s/text.gz/txt/ in filenames in doc-base files.
+    Removed extra ${lang} in the files, closes: #58967.
+  * Removed extra entries from Build-Depends:, debiandoc-sgml is fixed now.
+  * Optimized debian/rules a bit. Removed unused version.ent stuff.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Thu, 25 Jan 2000 23:59:59 +0100
+
+maint-guide (0.99) frozen unstable; urgency=low
+
+  * Followed a couple of useful suggestions from Zygo Blaxell, regarding
+    the build directory and several technical fixes in the text.
+  * Moved description of changelog and copyright files under "Required
+    files". The description of control and rules is there, of course, but
+    with some things fixed and updated (WRT new dh_make).
+  * Changed license to solely GPL.
+  * Used several corrections and additions from James R. Van Zandt, most
+    notably a new section about updating the package, and several grammar
+    and style fixes.
+
+  * Updated for new debiandoc-sgml. Removed postscript files.
+  * Added a new file, called "Credits", containing names and mails of
+    people involved in making this document. Please contact me if you
+    helped and I forgot to add your name there.
+  * The French translation wasn't updated, but this upload contains it
+    (version 0.97.1) because of these:
+    * Fixed French text file byhand entry.
+    * Created /usr/doc/maint-guide symlink in maint-guide-fr
+      postinst/prerm, closes: #49567.
+  * This upload also contains maint-guide-ja package, containing the
+    Japanese translation, version 0.97.
+  * Standards-Version: 3.1.1. Added Build-Depends: (although it is a bit
+    pointless, as this is an arch-indep package :o). Some other fixes
+    to debian/*.
+  * Currently, I have French and Japanese translation of version 0.97,
+    and Spanish of 0.95. When I get updated copies of all of these, I'll
+    release 1.0. This is a call for help - please translators, do this
+    before release.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Tue, 28 Dec 1999 02:45:44 +0100
+
+maint-guide (0.97) unstable; urgency=low
+
+  * Numerous corrections to the wording/grammar/spelling.
+  * Added a little comment at the top, to help translators identify
+    themselves.
+  * Updated the needed programs/sections list to current slink/potato state.
+  * Separated the note about debmake in its own paragraph.
+  * Added "0.0." in the example where a date is to be used as a version,
+    and added in a short explanation why that should be done (closes: #45657).
+  * Updated the dh_make e-mail setting method to match the way current
+    potato script does it, and updated most of the auto-generated files
+    with those from the current version.
+  * Updated the signing info with newer GPG and non-US data.
+  * Added a note about autoconf-ized programs in the partly rewritten and
+    renamed section about changing upstream Makefiles to fix $DESTDIR
+    problem. (closes: #42614)
+  * Updated the section about package relationships, with notes about APT
+    and a bit of rewording.
+  * Fixed the note about maintainer scripts.
+  * Added the "watch" file, described its usefulness a bit.
+  * Some fixes to the section about the menu file.
+  * Fixed the dupload related stuff, as noted by Stephane Bortzmeyer (thanks
+    for the useful tip!).
+  * Rearrangements in the resulting files section, added description of
+    the .diff.gz file, fixed description of the .changes file.
+
+  * Added French translation in the source package, build it as a separate
+    binary(-all) packages. Many thanks to Frederic Dumont
+    <frederic.dumont@freeworld.be>, for providing the translation.
+  * Currently waiting for the Spanish and the Japanese translations to
+    get updated from 0.95 to this version.
+
+  * Updated packages for Policy 3.x compliance. Major rearrangements in the
+    rules file.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sun, 19 Sep 1999 21:24:33 +0200
+
+maint-guide (0.95) unstable; urgency=low
+
+  * New version, mostly bug fixes... see the log in CVS.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sat,  3 Apr 1999 17:52:38 +0200
+
+maint-guide (0.9) unstable; urgency=low
+
+  * New version, bug fixes and other boring stuff :)
+  * Beautified doc-base file.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Wed, 24 Mar 1999 21:52:46 +0100
+
+maint-guide (0.8) unstable; urgency=low
+
+  * Initial release as a package.
+
+ -- Josip Rodin <jrodin@jagor.srce.hr>  Sun, 14 Mar 1999 16:28:14 +0100
+
+Local variables:
+mode: debian-changelog
+mode: auto-fill
+End:

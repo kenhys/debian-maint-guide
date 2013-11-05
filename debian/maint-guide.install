@@ -1,0 +1,4 @@
+*.en.html          usr/share/doc/maint-guide/html/
+maint-guide.css           usr/share/doc/maint-guide/html/
+maint-guide.en.txt usr/share/doc/maint-guide/
+maint-guide.en.pdf usr/share/doc/maint-guide/

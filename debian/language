@@ -1,0 +1,65 @@
+#!/bin/sh -e
+# vim: set sts=2 expandtab:
+# Copyright (C) 2011 Osamu Aoki <osamu@debian.org>, Public Domain
+
+longname () {
+  case $1 in
+    ca)
+      echo -n "Catalan"
+      ;;
+    de)
+      echo -n "German"
+      ;;
+    en)
+      echo -n "English"
+      ;;
+    es)
+      echo -n "Spanish"
+      ;;
+    fr)
+      echo -n "French"
+      ;;
+    it)
+      echo -n "Italian"
+      ;;
+    ja)
+      echo -n "Japanese"
+      ;;
+    ko)
+      echo -n "Korean"
+      ;;
+    pt)
+      echo -n "Portuguese"
+      ;;
+    pt-br)
+      echo -n "Portuguese(br)"
+      ;;
+    ru)
+      echo -n "Russian"
+      ;;
+    zh-cn)
+      echo -n "Chinese(cn)"
+      ;;
+    zh-tw)
+      echo -n "Chinese(tw)"
+      ;;
+    *)
+      echo -n "$1"
+      ;;
+  esac
+}
+
+xname () {
+  if [ "$1" = "en" ]; then
+    echo -n ""
+  else
+    echo -n "-$1"
+  fi
+}
+
+LNG="$1"
+XLNG="$(xname $LNG)"
+LNGNAME="$(longname $LNG)"
+
+sed -e "s/@@@LNG@@@/$LNG/g" -e "s/@@@XLNG@@@/$XLNG/g" -e "s/@@@LNGNAME@@@/$LNGNAME/g" -e "s/English translation/English original/"
+

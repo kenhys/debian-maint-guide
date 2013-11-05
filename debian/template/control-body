@@ -1,0 +1,25 @@
+Package: maint-guide@@@XLNG@@@
+Architecture: all
+Priority: extra
+Depends: ${misc:Depends}
+Suggests: doc-base, dh-make, devscripts, fakeroot, lintian, dupload | dput, debian-policy, developers-reference, pbuilder, quilt
+Description: Debian New Maintainers' Guide (@@@LNGNAME@@@)
+ This package contains the Debian New Maintainers' Guide.
+ .
+ This document tries to describe the building of a Debian package to ordinary
+ Debian users and prospective developers. It uses fairly non-technical
+ language, and it's well covered with working examples.
+ .
+ The document contains these chapters:
+     * 1 Getting started The Right Way
+     * 2 First steps
+     * 3 Modifying the source
+     * 4 Required files under debian directory
+     * 5 Other files under debian directory
+     * 6 Building the package
+     * 7 Checking the package for errors
+     * 8 Uploading the package
+     * 9 Updating the package
+ .
+ This is @@@LNGNAME@@@ translation.
+

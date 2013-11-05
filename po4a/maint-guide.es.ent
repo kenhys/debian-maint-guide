@@ -1,0 +1,25 @@
+<!--
+This is UTF-8 file.
+Remember, the *first* definition of an entity wins.
+-->
+
+<!ENTITY othercredit '
+<othercredit role="translator"><personname><firstname>Javier</firstname> <othername>Fernández-Sanguino</othername> <surname>Peña</surname><contrib>(Traducción al español)</contrib></personname><email>jfs@debian.org</email></othercredit>
+<othercredit role="translator"><personname><firstname>David</firstname> <surname>Martínez</surname><contrib>(Traducción al español)</contrib></personname><email>ender@debian.org</email></othercredit>
+<othercredit role="translator"><personname><firstname>Ana</firstname> <othername>Beatriz Guerrero</othername> <surname>López</surname><contrib>(Traducción al español)</contrib></personname><email>ana@debian.org</email></othercredit>
+<othercredit role="translator"><personname><firstname>Francisco</firstname> <othername>Javier</othername> <surname>Cuadrado</surname><contrib>(Traducción al español)</contrib></personname><email>fcocuadrado@gmail.com</email></othercredit>
+<othercredit role="translator"><personname><firstname>Innocent</firstname> <othername>De</othername> <surname>Marchi</surname><contrib>(Traducción al español)</contrib></personname><email>tangram.peces@gmail.com</email></othercredit>
+'>
+
+<!-- overwrite Wikipiédia links available in Spanish -->
+<!ENTITY autoconf "http://es.wikipedia.org/wiki/Autoconf">
+<!ENTITY automake "http://es.wikipedia.org/wiki/Automake">
+<!ENTITY cmake "http://es.wikipedia.org/wiki/CMake">
+<!ENTITY c-program "http://es.wikipedia.org/wiki/C_(lenguaje_de_programación)">
+<!ENTITY cxx "http://es.wikipedia.org/wiki/C++">
+<!ENTITY gettext "http://es.wikipedia.org/wiki/Gettext">
+<!ENTITY gnu-build-system "http://es.wikipedia.org/wiki/Autotools">
+<!ENTITY libtool "http://es.wikipedia.org/wiki/GNU_Libtool">
+<!ENTITY elf "http://es.wikipedia.org/wiki/Executable_and_Linkable_Format">
+<!ENTITY library "http://es.wikipedia.org/wiki/Biblioteca_(informática)">
+<!ENTITY utf8 "http://es.wikipedia.org/wiki/UTF-8">
