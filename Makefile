@@ -45,7 +45,7 @@ LANGS		:= $(LANGS_EN) $(LANGS_PO)
 # local script file directory
 SCRIPT		:= script
 # translation contents directory such as PO file
-PO4A		:= po4a
+PO4A		:= po
 # The translation threshold percent should be 80, if translation is completed.
 THRESHOLD	:= 0
 # XSLT (Extensible Stylesheet Language Transformations) file directory
@@ -112,8 +112,8 @@ html:	$(foreach lng,$(LANGS), index.$(lng).html)
 pdf:	$(foreach lng,$(LANGS), $(MANUAL).$(lng).pdf)
 po:
 	touch $(MANUAL).en.dbk
-	$(MAKE) $(foreach lng, $(LANGS_PO), $(PO4A)/$(MANUAL).$(lng).po) POMODE=update
-pot:	$(PO4A)/$(MANUAL).pot
+	$(MAKE) $(foreach lng, $(LANGS_PO), $(PO4A)/$(lng).po) POMODE=update
+pot:	$(PO4A)/templates.pot
 dbk:	$(foreach lng,$(LANGS_PO), $(MANUAL).$(lng).dbk)
 
 ##############################################################################
@@ -167,18 +167,18 @@ ifeq ($(POMODE),update)
 # Always update localized PO files while making PO template(pot) as needed
 # .PHONY as follows does not work nicely with %, thus FORCE is used here.
 #.PHONY: $(foreach lng, $(LANGS_PO), $(PO4A)/$(MANUAL).$(lng).po)
-$(PO4A)/$(MANUAL).%.po: FORCE
-	$(MAKE) $(PO4A)/$(MANUAL).pot
-	msgmerge --update --previous $@ $(PO4A)/$(MANUAL).pot
+$(PO4A)/%.po: FORCE
+	$(MAKE) $(PO4A)/templates.pot
+	msgmerge --update --previous $@ $(PO4A)/templates.pot
 else
 
-$(PO4A)/$(MANUAL).%.po: FORCE
+$(PO4A)/%.po: FORCE
 	: # do nothing
 endif
 
 # Generate PO template(pot) file from English DocBook XML file
 # make sure no location line for easier merge.
-$(PO4A)/$(MANUAL).pot: $(MANUAL).en.dbk
+$(PO4A)/templates.pot: $(MANUAL).en.dbk
 	po4a-gettextize --format docbook --master-charset UTF-8 --master $< |\
 	msgcat --no-location - > $@
 

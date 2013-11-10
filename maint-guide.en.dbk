@@ -3,7 +3,7 @@
 <!-- vim:set tw=0 ts=8 et: -->
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" 
 "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
-<!ENTITY % trans    SYSTEM "po4a/maint-guide.en.ent">   %trans;
+<!ENTITY % trans    SYSTEM "po/maint-guide.en.ent">   %trans;
 <!ENTITY % common   SYSTEM "common.ent">   %common;
 <!ENTITY % version  SYSTEM "version.ent">  %version;
 ]>
@@ -37,7 +37,7 @@ for people to check official documentations.
 <!-- The same with othercredit -->
 <author> <personname>Josip Rodin</personname> <email>joy-mg@debian.org</email> <contrib>original contents</contrib> </author>
 <author> <personname>Osamu Aoki</personname> <email>osamu@debian.org</email> <contrib>updated contents</contrib> </author>
-<!-- translator credits in po4a/translator.*.ent -->
+<!-- translator credits in po/translator.*.ent -->
 &othercredit;
 </authorgroup>
 <releaseinfo>version &docversion;</releaseinfo>

@@ -18,7 +18,7 @@
   <xsl:template match="book|article" mode="docinfo">
     <!-- Apply default settings -->
     <xsl:apply-imports/>
-    <xsl:text>\input{</xsl:text>po4a/hyphenation.<xsl:value-of select="$lingua"/><xsl:text>.tex}</xsl:text>
+    <xsl:text>\input{</xsl:text>po/hyphenation.<xsl:value-of select="$lingua"/><xsl:text>.tex}</xsl:text>
   </xsl:template>
 </xsl:stylesheet>
 
