@@ -25,10 +25,10 @@ Build-Depends-Indep:
 # ttf-arphic-gbsn00lp,
 # ttf-arphic-bsmi00lp,
 # ttf-wqy-zenhei,
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
+Vcs-Git: git://anonscm.debian.org/ddp/maint-guide.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=ddp/maint-guide.git
 Homepage: http://www.debian.org/doc/devel-manuals#maint-guide
-Vcs-Svn: svn://svn.debian.org/svn/ddp/manuals/trunk/maint-guide
-Vcs-Browser: http://svn.debian.org/viewsvn/ddp/manuals/trunk/maint-guide/
 
 Package: maint-guide
 Architecture: all
