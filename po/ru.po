@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide 1.2.30\n"
-"POT-Creation-Date: 2013-11-05 23:18+0900\n"
+"POT-Creation-Date: 2013-11-24 00:32+0900\n"
 "PO-Revision-Date: 2013-01-28 20:14+0400\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
@@ -2624,7 +2624,8 @@ msgid ""
 "have a slightly customized default, so let's create an alias "
 "<command>dquilt</command> for Debian packaging by adding the following line "
 "to <filename>~/.bashrc</filename>.  The second line ensures that this alias "
-"benefits of the same shell completion features than quilt itself."
+"benefits of the same shell completion features than <command>quilt</command> "
+"itself."
 msgstr ""
 "Программа <command>quilt</command> предлагает простой способ записи "
 "изменений, произведённых в исходном коде для пакетирования. Для удобства "
@@ -2633,12 +2634,13 @@ msgstr ""
 "<filename>~/.bashrc</filename> следующую строку:"
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
-#| msgid "alias dquilt=\"quilt --quiltrc=${HOME}/.quiltrc-dpkg\"\n"
+#, no-wrap
 msgid ""
 "alias dquilt=\"quilt --quiltrc=${HOME}/.quiltrc-dpkg\"\n"
 "complete -F _quilt_completion $_quilt_complete_opt dquilt\n"
-msgstr "alias dquilt=\"quilt --quiltrc=${HOME}/.quiltrc-dpkg\"\n"
+msgstr ""
+"alias dquilt=\"quilt --quiltrc=${HOME}/.quiltrc-dpkg\"\n"
+"complete -F _quilt_completion $_quilt_complete_opt dquilt\n"
 
 #. type: Content of: <book><chapter><section><para>
 msgid "Then let's create <filename>~/.quiltrc-dpkg</filename> as follows."
