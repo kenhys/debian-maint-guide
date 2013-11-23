@@ -3,7 +3,7 @@
 <!-- vim:set tw=0 ts=8 et: -->
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" 
 "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
-<!ENTITY % trans    SYSTEM "po/maint-guide.en.ent">   %trans;
+<!ENTITY % trans    SYSTEM "po/en.ent">   %trans;
 <!ENTITY % common   SYSTEM "common.ent">   %common;
 <!ENTITY % version  SYSTEM "version.ent">  %version;
 ]>
