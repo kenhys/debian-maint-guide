@@ -9,8 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide\n"
-"POT-Creation-Date: 2013-11-24 00:32+0900\n"
-"PO-Revision-Date: 2013-07-16 21:30+0200\n"
+"POT-Creation-Date: 2013-11-05 23:18+0900\n"
+"PO-Revision-Date: 2013-12-09 21:05+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
@@ -2683,28 +2683,22 @@ msgstr "Einrichten von <command>quilt</command>"
 
 # FIXME: Doppelpunkt
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
-#| msgid ""
-#| "The program <command>quilt</command> offers a basic method for recording "
-#| "modifications to the upstream source for Debian packaging.  It's useful "
-#| "to have a slightly customized default, so let's create an alias "
-#| "<command>dquilt</command> for Debian packaging by adding the following "
-#| "line to <filename>~/.bashrc</filename>."
 msgid ""
 "The program <command>quilt</command> offers a basic method for recording "
 "modifications to the upstream source for Debian packaging.  It's useful to "
 "have a slightly customized default, so let's create an alias "
 "<command>dquilt</command> for Debian packaging by adding the following line "
 "to <filename>~/.bashrc</filename>.  The second line ensures that this alias "
-"benefits of the same shell completion features than <command>quilt</command> "
-"itself."
+"benefits of the same shell completion features than quilt itself."
 msgstr ""
 "Das Programm <command>quilt</command> bietet eine grundlegende Methode, um "
 "Änderungen an den ursprünglichen Quellen für das Debian-Paket aufzuzeichnen. "
 "Es ist sinnvoll, eine leicht geänderte Voreinstellungen zu verwenden, daher "
 "sollte ein Alias <command>dquilt</command> für die Debian-Paketierung "
 "erstellt werden, indem folgendes zur <filename>~/.bashrc</filename> "
-"hinzugefügt wird:"
+"hinzugefügt wird; dabei stellt die zweite Zeile sicher, dass dieser Alias von "
+"den gleichen Shell-Vervollständigkeitsfunktionalitäten wie auch Quilt selbst "
+"profitiert:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -10593,31 +10587,42 @@ msgstr ""
 
 #. type: Content of: <book><appendix><section><para>
 msgid "Here are some oversimplified hints for you to get started."
-msgstr "Es folgen einige stark vereinfachte Tips für den Anfang."
+msgstr "Es folgen einige stark vereinfachte Tipps für den Anfang."
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
 "Shared libraries are <ulink url=\"&elf;\">ELF</ulink> object files "
 "containing compiled code."
 msgstr ""
+"Laufzeitbibliotheken (engl. »shared libraries«) sind <ulink "
+"url=\"&elf;\">ELF</ulink>-Objektdateien, die übersetzten Code enthalten."
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
 "Shared libraries are distributed as <filename>*.so</filename> files. "
 "(Neither <filename>*.a</filename> files nor <filename>*.la</filename> files)"
 msgstr ""
+"Laufzeitbibliotheken werden als <filename>*.so</filename>-Dateien vertrieben, "
+"d.h. weder als <filename>*.a</filename>- noch als <filename>*.la</filename>-"
+"Dateien."
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
 "Shared libraries are mainly used to share common codes among multiple "
 "executables with the <command>ld</command> mechanism."
 msgstr ""
+"Laufzeitbibliotheken werden hauptsächlich benutzt, um gemeinsamen "
+"Programmcode aus mehreren Programmen mittels des <command>ld</command>-"
+"Mechanismus gemeinsam zu benutzen."
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
 "Shared libraries are sometimes used to provide multiple plugins to an "
 "executable with the <command>dlopen</command> mechanism."
 msgstr ""
+"Laufzeitbibliotheken werden manchmal dazu benutzt, mehrere Erweiterungen "
+"eines Programms mittels des <command>dlopen</command>-Mechanismus "
+"bereitzustellen."
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -10642,12 +10647,19 @@ msgid ""
 "<replaceable>1</replaceable> | grep SONAME</literal> <placeholder type="
 "\"footnote\" id=\"0\"/>"
 msgstr ""
+"Der <ulink url=\"&soname;\">SONAME</ulink> einer Laufzeitbibliothek "
+"<filename>lib<replaceable>foo</replaceable>.so</filename>.<replaceable>1</"
+"replaceable>: <literal>objdump -p lib<replaceable>foo</replaceable>.so."
+"<replaceable>1</replaceable> | grep SONAME</literal> <placeholder type="
+"\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
 "The SONAME of a shared library usually matches the library file name (but "
 "not always)."
 msgstr ""
+"Der SONAME einer Laufzeitbibliothek passt typischerweise (aber nicht immer) "
+"auf den Dateinamen der Bibliothek."
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
 msgid ""
@@ -10664,6 +10676,10 @@ msgid ""
 "replaceable> | grep NEEDED</literal> <placeholder type=\"footnote\" id=\"0\"/"
 ">"
 msgstr ""
+"Der SONAME von Laufzeitbibliotheken, die nach <filename><replaceable>/usr/bin/"
+"foo</replaceable></filename> gelinkt sind: <literal>objdump -p <replaceable>/usr/bin/foo</"
+"replaceable> | grep NEEDED</literal> <placeholder type=\"footnote\" id=\"0\"/"
+">"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
 msgid ""
@@ -10681,6 +10697,11 @@ msgid ""
 "<replaceable>1</replaceable></filename> with the SONAME ABI version "
 "<replaceable>1</replaceable>.<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
+"<systemitem role=\"package\">lib<replaceable>foo</"
+"replaceable><replaceable>1</replaceable></systemitem>: das Bibliothekspaket "
+"für die Laufzeitbibliothek <filename>lib<replaceable>foo</replaceable>.so."
+"<replaceable>1</replaceable></filename> mit der SONAME-ABI-Version "
+"<replaceable>1</replaceable>.<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
 msgid ""
