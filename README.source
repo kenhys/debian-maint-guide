@@ -1,0 +1,232 @@
+==============================================================================
+#                       README.source for maint-guide                        #
+#                     Fri, 13 Dec 2013 14:14:37 +0000                        #
+#                    Osamu Aoki, osamu at debian dot org                     #
+==============================================================================
+
+The web pages generated for the DDP are build directly from the released
+package.  You can find them linked from:
+  http://www.debian.org/doc/devel-manuals#maint-guide
+
+= Social rules for translation work =
+
+If you are going to update a translation, in order to ensure that nobody is
+currently working already on a translation of this document and no efforts are
+duplicated, please contact the following persons to notify your intent:
+
+ a) the previous translator(s) if they exist,
+ b) the translation team for your language,
+ c) the current package maintainer of this package.
+
+To find who to contact in a), please review the 'Credits' file available with
+the sources as this lists all the previous translators.
+
+For b), you should use the translation team for your language. Translation
+teams usually use distribution lists which are named as:
+debian-l10n-<language>@lists.debian.org (replace <language> with the
+ISO language name such as "es", for Spanish).  You can find a good list of such
+team at http://lists.debian.org/i18n.html .
+
+If no translation team exists yet for your language, you might consider setting
+up an official list to coordinate translations.
+
+If one exists, please note that translation teams usually have their rules and
+styles related to the translation (to maintain consistency across all
+translations being produced), you should review the existing rules and
+try to adhere to these too.
+
+The "Credits" file in this source is just a place holder information for the
+maintainer of this document but it still is a good starting point for people to
+identify their possible contacts. You should also use the latest
+information from the header of PO files etc. too.
+
+When contacting people, please give a few weeks before calling anyone
+non-responsive. The  Debian BTS for maint-guide
+(http://bugs.debian.org/cgi-bin/pkgreport.cgi?src=maint-guide)
+and its mailing list (debian-doc@lists.debian.org) are also other good
+backup contact points in case you don't obtain answers to your initial emails.
+
+
+ -- Sun, 05 Dec 2010 22:11:06 +0100
+
+ Osamu Aoki <osamu@debian.org>
+ Javier Fernandez-Sanguino <jfs@debian.org>
+
+= Quick start =
+
+The latest source is viewable via HTTP:
+ http://anonscm.debian.org/gitweb/?p=ddp/maint-guide.git
+
+When you commit a translation file, please only commit the updated
+po/<language>.po to the master branch.  (No po/templates.pot, *.xml, nor *.ent)
+
+If you are not familiar with git, it may be a good idea to submit
+po/<language>.po to the BTS.  Then the package maintainer can update the
+source.
+
+This source is maintained in the alioth ddp maint-guide git repository as
+indicated in the Vcs-Git control fields.  You can get the source as:
+ $ git clone git://anonscm.debian.org/ddp/maint-guide.git
+ $ cd maint-guide
+or if you already have local copy:
+ $ cd path/to/maint-guide
+ $ git checkout master
+ $ git pull
+
+It is good idea to create a local branch local-1 and work on it as:
+ $ git checkout -b local-1
+  ... edit and test   <----------------\<------------------------------------\
+ $ git commit -a -m "Describe ..."     ^                                     ^
+ $ make wrap;make po                   | (check fuzzy.log)                   |
+  ... go back to edit ---------------->/                                     |
+                                                                             |
+Since po/*.po files are not easy to be merged with git, I suggest to commit  |
+only updated po/*.po files to the master branch.                             |
+                                                                             |
+After everything is fine in the local branch, update master tree not by      |
+using "git merge" but by "git checkout <branch> <file>" to the master        |
+branch as:                                                                   |
+ $ git checkout master                                                       |
+ $ git checkout local-1 po/<language>.po                                     |
+ $ make wrap;make po                     (check fuzzy.log)                   |
+ $ git add po/<language>.po                                                  |
+ $ git commit -m "Describe commit ..."                                       | 
+ $ git checkout -b local-2 (repeat for local-2 in place for local-1) ------->/
+
+Before start making commits to the alioth repo directly, please make sure to
+coordinate with the maintainer.
+
+The Alioth write access can be gained by joining the ddp group as described
+in:
+  https://wiki.debian.org/Teams/DDP
+
+Alioth write access is normally done via SSH (password-less login).
+
+== Test building after translation ==
+
+If you just translated a PO file, e.g. "it.po", please
+reformat and test it first by:
+ $ make wrap
+ $ make test "LANGPO=it"
+
+You have HTML files under the html/ directory.
+
+Specifying "LANGPO" variable as above saves build time by skipping other
+languages.
+
+== English updates ==
+
+For English updates in maint-guide.dbk files, please test them first by:
+ $ make test "LANGPO="
+
+If this test causes no error, clean the source tree and commit it with:
+ $ make clean
+ $ git add maint-guide.dbk 
+ $ git commit -m "Updated ...."
+ $ make wrap; make po; make clean
+ $ git commit -a -m "make po"
+
+==============================================================================
+= Build environment =
+
+Required packages for the local test building:
+ * Packages listed in Build-Depends and Build-Depends-Indep stanza found 
+   in debian/control.
+ * wget
+ * devscripts and its recommended packages
+ * PO file editor such as poedit
+ * git and gitk
+
+For the package building, it is good idea to use tools such as
+ * pbuilder
+ * cowbuilder
+ * git-buildpackage
+
+==============================================================================
+= Flow chart for the building of this documentation =
+
+The English source is kept as maint-guide.en.dbk.
+The translation source is kept as PO files under po/.
+
+  >>> maint-guide.en.dbk     common.ent
+        |                        |     
+        v                        |     
+      templates.pot              |     
+        |                        |     
+        v (make po)              |     
+  >>> po/ja.po                   |     
+        |    fuzzy.log (+)       |     
+        v                        |     
+      maint-guide.ja.dbk         |     
+        |                        |     
+        v                        v     
+        +----------+-------------+
+                   |(make all), (make test),
+                   |(make html), (make txt), (make pdf), ...  (#)
+                   v
+      all documents (*.*.html *.*.txt *.*.pdf)
+
+(+)  fuzzy.log file contain # of fuzzy translation.  If not zero, please update
+     PO file.
+(#)  PDF files may not be buildable due to tool chain issues.
+
+==============================================================================
+= Tips for working with PO files =
+
+Sanity check of a PO file:
+ $ msgcat some.po >/dev/null
+
+ -> Look for unquoted " and accidental folding of lines.
+
+Remove duplicate entries in a PO file:
+ $ mv some.po some.old.po
+ $ msguniq some.old.po >some.po
+
+Merge PO files:
+
+When 2 person update a PO file, you need to merge them using gettext tools.
+
+You can check if 2 PO files are different using:
+ $ msgcat --less-than=2 filename.po.mine filename.po.their
+
+If you have no order of preference:
+ $ msgmerge --no-wrap filename.po.mine filename.po.their >filename.po
+
+Look for "#-#-#-#-#" where manual resolution is needed and resolve it
+via editor.
+
+Add a new PO:
+
+You can create a new template PO file for a new language and edit it as:
+
+ $ cd po
+ $ cp templates.pot ??.po
+ $ poedit ??.po
+
+Wikipedia URLs:
+
+bin/interwiki script can be used to check translated URLs.
+
+==============================================================================
+= List of make targets =
+
+ $ make all       # build all
+ $ make test      # build html for testing (for Translator)
+ $ make package   # build html and text from RAWXML/PO for DDP
+ $ make publish   # build html text pdf from RAWXML/PO for DDP
+ $ make clean     # clean files ready for tar 
+ $ make distclean # clean files to reset RAWXML/ENT/POT
+ $ make rawxml    # update RAWXML from ASCIIDOC
+ $ make entity    # update ENT and local cache data from RAWXML/REMOTE
+ $ make po        # update all PO from RAWXML
+ $ make wrap      # wrap all PO
+ $ make xml       # update all *.XML from RAWXML/ENT/PO/ADD
+ $ make css       # update CSS and IMAGES in $(PUBLISHDIR)
+ $ make html      # update all HTML in $(PUBLISHDIR)
+ $ make txt       # update all Plain TEXT in $(PUBLISHDIR)
+ $ make pdf       # update all PDF in $(PUBLISHDIR)
+ $ make tex       # update all TeX source in $(PUBLISHDIR)
+ $ make url       # check duplicate URL references
+
+Osamu
+
