@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-11-24 00:32+0900\n"
+"POT-Creation-Date: 2013-12-13 23:02+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -5709,7 +5709,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "DEBSIGN_KEYID=Your_GPG_keyID\n"
-"DEBUILD_LINTIAN_OPTS=-i -I --show-overrides\n"
+"DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
 msgstr ""
 
 #. type: Content of: <book><chapter><section><para>

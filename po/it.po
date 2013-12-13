@@ -8312,10 +8312,10 @@ msgstr ""
 #, no-wrap
 msgid ""
 "DEBSIGN_KEYID=Your_GPG_keyID\n"
-"DEBUILD_LINTIAN_OPTS=-i -I --show-overrides\n"
+"DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
 msgstr ""
 "DEBSIGN_KEYID=ID_della_vostra_chiave_GPG\n"
-"DEBUILD_LINTIAN_OPTS=-i -I --show-overrides\n"
+"DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""

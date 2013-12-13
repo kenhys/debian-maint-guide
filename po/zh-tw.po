@@ -9576,18 +9576,13 @@ msgstr ""
 "下幾項："
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
-#| msgid ""
-#| "DEBSIGN_KEYID=Your_GPG_keyID\n"
-#| "DEBUILD_LINTIAN=yes\n"
-#| "DEBUILD_LINTIAN_OPTS=-i -I --show-overrides\n"
+#, no-wrap
 msgid ""
 "DEBSIGN_KEYID=Your_GPG_keyID\n"
-"DEBUILD_LINTIAN_OPTS=-i -I --show-overrides\n"
+"DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
 msgstr ""
 "DEBSIGN_KEYID=Your_GPG_keyID\n"
-"DEBUILD_LINTIAN=yes\n"
-"DEBUILD_LINTIAN_OPTS=-i -I --show-overrides\n"
+"DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy

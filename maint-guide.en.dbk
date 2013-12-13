@@ -4384,7 +4384,7 @@ Customization of the <command>debuild</command> command can be done through
 </para>
 <screen>
 DEBSIGN_KEYID=Your_GPG_keyID
-DEBUILD_LINTIAN_OPTS=-i -I --show-overrides
+DEBUILD_LINTIAN_OPTS="-i -I --show-overrides"
 </screen>
 <para>
 With these, packages are signed by your specified GPG key ID (good for
