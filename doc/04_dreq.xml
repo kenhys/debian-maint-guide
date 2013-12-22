@@ -1,0 +1,1372 @@
+<chapter id="dreq"><title>Required files under the <filename>debian</filename> directory</title>
+<para>
+There is a new subdirectory under the program's source directory, called
+<filename>debian</filename>.  There are a number of files in this directory
+that we should edit in order to customize the behavior of the package.  The
+most important of them are <filename>control</filename>,
+<filename>changelog</filename>, <filename>copyright</filename>, and
+<filename>rules</filename>, which are required for all packages.
+<footnote><para>
+In this chapter, files in the <filename>debian</filename> directory are
+referred to without the leading <filename>debian/</filename> for simplicity whenever
+the meaning is obvious.
+</para></footnote>
+</para>
+<section id="control"><title><filename>control</filename></title>
+<para>
+This file contains various values which <command>dpkg</command>,
+<command>dselect</command>, <command>apt-get</command>,
+<command>apt-cache</command>, <command>aptitude</command>, and other package
+management tools will use to manage the package.  It is defined by the
+<ulink url="&policy-control;">Debian Policy Manual, 5 "Control files and their fields"</ulink>.
+</para>
+<para>
+Here is the <filename>control</filename> file <command>dh_make</command>
+created for us:
+</para>
+<screen>
+ 1 Source: gentoo
+ 2 Section: unknown
+ 3 Priority: extra
+ 4 Maintainer: Josip Rodin &lt;joy-mg@debian.org&gt;
+ 5 Build-Depends: debhelper (&gt;=9)
+ 6 Standards-Version: 3.9.4
+ 7 Homepage: &lt;insert the upstream URL, if relevant&gt;
+ 8
+ 9 Package: gentoo
+10 Architecture: any
+11 Depends: ${shlibs:Depends}, ${misc:Depends}
+12 Description: &lt;insert up to 60 chars description&gt;
+13  &lt;insert long description, indented with spaces&gt;
+</screen>
+<para>
+(I've added the line numbers.)
+</para>
+<para>
+Lines 1-7 are the control information for the source package.
+Lines 9-13 are the control information for the binary package.
+</para>
+<para>
+Line 1 is the name of the source package.
+</para>
+<para>
+Line 2 is the section of the distribution the source package goes into.
+</para>
+<para>
+As you may have noticed, the Debian archive is divided into multiple areas:
+<literal>main</literal> (the free software), <literal>non-free</literal> (the
+not really free software) and <literal>contrib</literal> (free software that
+depends on non-free software).  Each of these is divided into sections that
+classify packages into rough categories.  So we have <literal>admin</literal>
+for administrator-only programs,
+<literal>devel</literal> for programmer tools, <literal>doc</literal> for
+documentation, <literal>libs</literal> for libraries, <literal>mail</literal>
+for email readers and daemons, <literal>net</literal> for network apps and
+daemons, <literal>x11</literal> for X11 programs that don't fit anywhere else,
+and many more.
+<footnote> <para>See 
+<ulink url="&policy-subsections;">Debian Policy Manual, 2.4 "Sections"</ulink> and 
+<ulink url="&sections-unstable;">List of sections in <literal>sid</literal></ulink>.</para>
+</footnote>
+</para>
+<para>
+Let's change it then to x11.  (A <literal>main/</literal> prefix is implied so
+we can omit it.)
+</para>
+<para>
+Line 3 describes how important it is that the user installs this package.
+<footnote> <para>See 
+<ulink url="&policy-priorities;">Debian Policy Manual, 2.5 "Priorities"</ulink>.
+</para>
+</footnote>
+</para>
+<itemizedlist>
+<listitem>
+<para>
+The <literal>optional</literal> priority will usually work for new packages
+that do not conflict with others claiming <literal>required</literal>,
+<literal>important</literal>, or <literal>standard</literal> priority.
+</para>
+</listitem>
+<listitem>
+<para>
+The <literal>extra</literal> priority will usually work for new packages that
+conflict with others with non-<literal>extra</literal> priorities.
+</para>
+</listitem>
+</itemizedlist>
+<para>
+Section and priority are used by front-ends like <command>aptitude</command>
+when they sort packages and select defaults.  Once you upload the package to
+Debian, the value of these two fields can be overridden by the archive
+maintainers, in which case you will be notified by email.
+</para>
+<para>
+As this is a normal priority package and doesn't conflict with anything else,
+we will change the priority to <literal>optional</literal>.
+</para>
+<para>
+Line 4 is the name and email address of the maintainer.  Make sure that this
+field includes a valid <literal>To</literal> header for email, because after
+you upload it, the bug tracking system will use it to deliver bug emails to
+you.  Avoid using commas, ampersands, or parentheses.
+</para>
+<para>
+Line 5 includes the list of packages required to build your package as
+the <literal>Build-Depends</literal> field.  You can also have the
+<literal>Build-Depends-Indep</literal> field as an additional line, here.
+<footnote><para>See 
+<ulink url="&policy-relationships;#s-sourcebinarydeps">Debian Policy Manual, 7.7 "Relationships between source and binary packages - Build-Depends, Build-Depends-Indep, Build-Conflicts, Build-Conflicts-Indep"</ulink>.</para></footnote>
+Some packages like 
+<systemitem role="package">gcc</systemitem> and 
+<systemitem role="package">make</systemitem> which are required by the 
+<systemitem role="package">build-essential</systemitem> package are implied.  If you need
+to have other tools to build your package, you should add them to these fields.
+Multiple entries are separated with commas; read on for the explanation of
+binary package dependencies to find out more about the syntax of these lines.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+For all packages packaged with the <command>dh</command> command in the
+<filename>debian/rules</filename> file, you must have <literal>debhelper
+(&gt;=9)</literal> in the <literal>Build-Depends</literal> field to
+satisfy the Debian Policy requirement for the <literal>clean</literal> target.
+</para>
+</listitem>
+<listitem>
+<para>
+Source packages which have binary packages with <literal>Architecture:
+any</literal> are rebuilt by the autobuilder.  Since this autobuilder
+procedure installs only the packages listed in the
+<literal>Build-Depends</literal> field before running
+<literal>debian/rules build</literal> (see <xref
+linkend="autobuilder"/>), the <literal>Build-Depends</literal> field
+needs to  list practically all the required packages and
+<literal>Build-Depends-Indep</literal> is rarely used.
+</para>
+</listitem>
+<listitem>
+<para>
+For source packages with binary packages all of which are <literal>Architecture:
+all</literal>, the <literal>Build-Depends-Indep</literal> field may list all
+the required packages unless they are already listed in the
+<literal>Build-Depends</literal> field to satisfy the Debian Policy requirement
+for the <literal>clean</literal> target.
+</para>
+</listitem>
+</itemizedlist>
+<para>
+If you are not sure which one should be used, use the
+<literal>Build-Depends</literal> field to be on the safe side.
+<footnote><para> This somewhat strange situation is a feature well documented
+in the <ulink url="&policy-build-depends-indep;">Debian Policy
+Manual, Footnotes 55</ulink>.  This is not due to the use of the
+<command>dh</command> command in the <filename>debian/rules</filename> file but
+due to how the <command>dpkg-buildpackage</command> works.  The same situation
+applies to the <ulink url="https://bugs.launchpad.net/launchpad-buildd/+bug/238141">auto build system
+for Ubuntu</ulink>.  </para> </footnote>
+</para>
+<para>
+To find out what packages your package needs to be built run the command:
+</para>
+<screen>
+$ dpkg-depcheck -d ./configure
+</screen>
+<para>
+To manually find exact build dependencies for
+<command><replaceable>/usr/bin/foo</replaceable></command>, execute
+</para>
+<screen>
+$ objdump -p <replaceable>/usr/bin/foo</replaceable> | grep NEEDED
+</screen>
+<para>
+and for each library listed, e.g., <command>libfoo.so.6</command>, execute
+</para>
+<screen>
+$ dpkg -S libfoo.so.6
+</screen>
+<para>
+Then just take the <literal>-dev</literal> version of every package as a
+<literal>Build-Depends</literal> entry.  If you use <command>ldd</command> for
+this purpose, it will report indirect lib dependencies as well, resulting in
+the problem of excessive build dependencies.
+</para>
+<para>
+<systemitem role="package">gentoo</systemitem> also happens to require
+<systemitem role="package">xlibs-dev</systemitem>, <systemitem role="package">libgtk1.2-dev</systemitem> and <systemitem role="package">libglib1.2-dev</systemitem> to build, so we'll add them here
+next to <systemitem role="package">debhelper</systemitem>.
+</para>
+<para>
+Line 6 is the version of the <ulink url="&debian-policy;">Debian Policy
+Manual</ulink> standards this package follows, the one you read while making
+your package.
+</para>
+<para>
+On line 7 you can put the URL of the software's upstream homepage.
+</para>
+<para>
+Line 9 is the name of the binary package.  This is usually the same as the name
+of the source package, but it doesn't necessarily have to be that way.
+</para>
+<para>
+Line 10 describes the architectures the binary package can be compiled for.
+This value is usually one of the following depending
+on the type of the binary package.
+<footnote><para>See 
+<ulink url="&policy-architecture;">Debian Policy Manual, 5.6.8 "Architecture"</ulink>
+for exact details.
+</para></footnote>
+</para>
+<itemizedlist>
+<listitem><para><literal>Architecture: any</literal></para>
+<itemizedlist>
+<listitem><para>The generated binary package is an architecture dependent one
+usually in a compiled language.</para></listitem>
+</itemizedlist>
+</listitem>
+<listitem><para><literal>Architecture: all</literal></para>
+<itemizedlist>
+<listitem><para>The generated binary package is an architecture independent
+one usually consisting of text, images, or scripts in an interpreted
+language.</para></listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+<para>
+We leave line 10 as is since this is written in C.
+<citerefentry><refentrytitle>dpkg-gencontrol</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+will fill in the appropriate architecture value for any machine this source
+package gets compiled on.
+</para>
+<para>
+If your package is architecture independent (for example, a shell or Perl
+script, or a document), change this to <literal>all</literal>, and read later
+in <xref linkend="rules"/> about using the <literal>binary-indep</literal> rule
+instead of <literal>binary-arch</literal> for building the package.
+</para>
+<para>
+Line 11 shows one of the most powerful features of the Debian packaging system.
+Packages can relate to each other in various ways.  Apart from
+<literal>Depends</literal>, other relationship fields are
+<literal>Recommends</literal>, <literal>Suggests</literal>,
+<literal>Pre-Depends</literal>, <literal>Breaks</literal>,
+<literal>Conflicts</literal>, <literal>Provides</literal>, and
+<literal>Replaces</literal>.
+</para>
+<para>
+The package management tools usually behave the same way when dealing with
+these relations; if not, it will be explained.  (See <citerefentry>
+<refentrytitle>dpkg</refentrytitle> <manvolnum>8</manvolnum> </citerefentry>,
+<citerefentry> <refentrytitle>dselect</refentrytitle> <manvolnum>8</manvolnum>
+</citerefentry>, <citerefentry> <refentrytitle>apt</refentrytitle>
+<manvolnum>8</manvolnum> </citerefentry>, <citerefentry>
+<refentrytitle>aptitude</refentrytitle> <manvolnum>1</manvolnum>
+</citerefentry>, etc.)
+</para>
+<para>
+Here is a simplified description of package relationships.
+<footnote><para>See 
+<ulink url="&policy-relationships;">Debian Policy Manual, 7 "Declaring relationships between packages"</ulink>.
+</para></footnote>
+</para>
+<itemizedlist>
+<listitem>
+<para>
+<literal>Depends</literal>
+</para>
+<para>
+The package will not be installed unless the packages it depends on are
+installed.  Use this if your program absolutely will not run (or will cause
+severe breakage) unless a particular package is present.
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>Recommends</literal>
+</para>
+<para>
+Use this for packages that are not strictly necessary but are typically used
+with your program.  When a user installs your program, all front-ends will
+probably prompt them to install the recommended packages.
+<command>aptitude</command> and <command>apt-get</command> install recommended
+packages along with your package by default (but the user can disable this
+behavior).  <command>dpkg</command> will ignore this field.
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>Suggests</literal>
+</para>
+<para>
+Use this for packages which will work nicely with your program but are not at
+all necessary.  When a user installs your program, they will probably not be
+prompted to install suggested packages.  <command>aptitude</command> can
+be configured to install suggested packages along with your package but this is
+not its default.  <command>dpkg</command> and <command>apt-get</command> will
+ignore this field.
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>Pre-Depends</literal>
+</para>
+<para>
+This is stronger than <literal>Depends</literal>.  The package will not be
+installed unless the packages it pre-depends on are installed and
+<emphasis>correctly configured</emphasis>.  Use this <emphasis>very</emphasis>
+sparingly and only after discussing it on the <ulink url="&debian-devel-ldo;">debian-devel@lists.debian.org</ulink>
+mailing list.  Read: don't use it at all.  :-)
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>Conflicts</literal>
+</para>
+<para>
+The package will not be installed until all the packages it conflicts with have
+been removed.  Use this if your program absolutely will not run or will cause
+severe problems if a particular package is present.
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>Breaks</literal>
+</para>
+<para>
+When installed the package will break all the listed packages.
+Normally a <literal>Breaks</literal> entry specifies that it applies to versions earlier than a certain value.
+The resolution is generally to use higher-level package management tools to upgrade the listed packages.
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>Provides</literal>
+</para>
+<para>
+For some types of packages where there are multiple alternatives virtual names
+have been defined.  You can get the full list in the
+<ulink url="&virtual-package;">virtual-package-names-list.txt.gz</ulink>
+file.  Use this if your program provides a function of an existing virtual
+package.
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>Replaces</literal>
+</para>
+<para>
+Use this when your program replaces files from another package, or completely
+replaces another package (used in conjunction with
+<literal>Conflicts</literal>).  Files from the named packages will be
+overwritten with the files from your package.
+</para>
+</listitem>
+</itemizedlist>
+<para>
+All these fields have uniform syntax.  They are a list of package names
+separated by commas.  These package names may also be lists of alternative
+package names, separated by vertical bar symbols <literal>|</literal> (pipe
+symbols).
+</para>
+<para>
+The fields may restrict their applicability to particular versions of each
+named package.  The restriction of each individual package is listed in
+parentheses after its name, and should contain a relation from the list below
+followed by a version number value.  
+The relations allowed are: <literal>&lt;&lt;</literal>,
+<literal>&lt;=</literal>, <literal>=</literal>, <literal>&gt;=</literal>, and
+<literal>&gt;&gt;</literal> for strictly lower, lower or equal, exactly equal,
+greater or equal, and strictly greater, respectively.  For example,
+</para>
+<screen>
+Depends: foo (&gt;= 1.2), libbar1 (= 1.3.4)
+Conflicts: baz
+Recommends: libbaz4 (&gt;&gt; 4.0.7)
+Suggests: quux
+Replaces: quux (&lt;&lt; 5), quux-foo (&lt;= 7.6)
+</screen>
+<para>
+The last feature you need to know about is
+<literal>${shlibs:Depends}</literal>, <literal>${perl:Depends}</literal>,
+<literal>${misc:Depends}</literal>, etc.
+</para>
+<para>
+<citerefentry> <refentrytitle>dh_shlibdeps</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry> calculates shared library dependencies
+for binary packages.  It generates a list of <ulink url="&elf;">ELF</ulink> executables and shared
+libraries it has found for each binary package.  This list is used for
+substituting <literal>${shlibs:Depends}</literal>.
+</para>
+<para>
+<citerefentry> <refentrytitle>dh_perl</refentrytitle> <manvolnum>1</manvolnum>
+</citerefentry> calculates Perl dependencies.  It generates a list of a
+dependencies on <literal>perl</literal> or <literal>perlapi</literal> for each binary package.  This list is used for
+substituting <literal>${perl:Depends}</literal>.
+</para>
+<para>
+Some <systemitem role="package">debhelper</systemitem> commands may cause the
+generated package to depend on some additional packages.  All such commands
+generate a list of required packages for each binary package.
+This list is used for substituting <literal>${misc:Depends}</literal>.
+</para>
+<para>
+<citerefentry> <refentrytitle>dh_gencontrol</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry> generates
+<filename>DEBIAN/control</filename> for each binary package while
+substituting <literal>${shlibs:Depends}</literal>,
+<literal>${perl:Depends}</literal>, <literal>${misc:Depends}</literal>, etc.
+</para>
+<para>
+Having said all that, we can leave the <literal>Depends</literal> field exactly
+as it is now, and insert another line after it saying <literal>Suggests:
+file</literal>, because <systemitem role="package">gentoo</systemitem> can use
+some features provided by the <systemitem role="package">file</systemitem>
+package.
+</para>
+<para> Line 9 is the Homepage URL.  Let's assume this to be at 
+<ulink url="&gentoo;"/>.
+</para>
+<para>
+Line 12 is the short description.  Terminals are conventionally 80 columns wide so
+this shouldn't be longer than about 60 characters.  I'll change it to
+<literal>fully GUI-configurable, two-pane X file manager</literal>.
+</para>
+<para>
+Line 13 is where the long description goes.  This should be a paragraph which
+gives more details about the package.  Column 1 of each line should be empty.
+There must be no blank lines, but you can put a single <literal>.</literal>
+(dot) in a column to simulate that.  Also, there must be no more than one blank
+line after the long description. <footnote><para>These descriptions are in
+English.  Translations of these descriptions are provided by 
+<ulink url="&ddtp;">The Debian Description Translation Project - DDTP</ulink>.</para></footnote>
+</para>
+<para>
+We can insert <literal>Vcs-*</literal> fields to document the Version Control
+System (VCS) location between lines 6 and 7.
+<footnote><para>See 
+<ulink url="&devref-bpp-vcs;">Debian Developer's Reference, 6.2.5. "Version Control System location"</ulink>.
+</para></footnote>
+Let's assume that the <systemitem role="package">gentoo</systemitem>
+package has its VCS located in the Debian Alioth Git Service at
+<literal>git://git.debian.org/git/collab-maint/gentoo.git</literal>.
+</para>
+<para>
+Finally, here is the updated <filename>control</filename> file:
+</para>
+<screen>
+ 1 Source: gentoo
+ 2 Section: x11
+ 3 Priority: optional
+ 4 Maintainer: Josip Rodin &lt;joy-mg@debian.org&gt;
+ 5 Build-Depends: debhelper (&gt;=9), xlibs-dev, libgtk1.2-dev, libglib1.2-dev
+ 6 Standards-Version: 3.9.4
+ 7 Vcs-Git: git://git.debian.org/git/collab-maint/gentoo.git
+ 8 Vcs-browser: http://git.debian.org/?p=collab-maint/gentoo.git
+ 9 Homepage: &gentoo;
+10
+11 Package: gentoo
+12 Architecture: any
+13 Depends: ${shlibs:Depends}, ${misc:Depends}
+14 Suggests: file
+15 Description: fully GUI-configurable, two-pane X file manager
+16  gentoo is a two-pane file manager for the X Window System. gentoo lets the
+17  user do (almost) all of the configuration and customizing from within the
+18  program itself. If you still prefer to hand-edit configuration files,
+19  they're fairly easy to work with since they are written in an XML format.
+20  .
+21  gentoo features a fairly complex and powerful file identification system,
+22  coupled to an object-oriented style system, which together give you a lot
+23  of control over how files of different types are displayed and acted upon.
+24  Additionally, over a hundred pixmap images are available for use in file
+25  type descriptions.
+26  .
+29  gentoo was written from scratch in ANSI C, and it utilizes the GTK+ toolkit
+30  for its interface.
+</screen>
+<para>
+(I've added the line numbers.)
+</para>
+</section>
+<section id="copyright"><title><filename>copyright</filename></title>
+<para>
+This file contains information about the copyright and license of the upstream sources.
+<ulink url="&policy-copyright;">Debian Policy Manual, 12.5 "Copyright information"</ulink>
+dictates its content and
+<ulink url="&dep5;">DEP-5: Machine-parseable <filename>debian/copyright</filename></ulink>
+provides guidelines for its format.
+</para>
+<para>
+<command>dh_make</command> can give you a template
+<filename>copyright</filename> file.  Let's use the <literal>--copyright
+gpl2</literal> option here to get a template file for the <systemitem role="package">gentoo</systemitem> package released under GPL-2.
+</para>
+<para>
+You must fill in missing information to complete this file, such as the place you got the package
+from, the actual copyright notice, and the license.  For certain
+common free software licenses (GNU GPL-1, GNU GPL-2, GNU GPL-3,
+LGPL-2, LGPL-2.1, LGPL-3, GNU FDL-1.2, GNU FDL-1.3, Apache-2.0, or the Artistic
+license), you can just refer to the appropriate file in the
+<filename>/usr/share/common-licenses/</filename> directory that exists on every
+Debian system.  Otherwise, you must include the complete license.
+</para>
+<para>
+In short, here's what <systemitem role="package">gentoo</systemitem>'s
+<filename>copyright</filename> file should look like:
+</para>
+<screen>
+ 1 Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&amp;rev=135
+ 2 Name: gentoo
+ 3 Maintainer: Josip Rodin &lt;joy-mg@debian.org&gt;
+ 4 Source: http://sourceforge.net/projects/gentoo/files/
+ 5
+ 6 Copyright: 1998-2010 Emil Brink &lt;emil@obsession.se&gt;
+ 7 License: GPL-2+
+ 8
+ 9 Files: icons/*
+10 Copyright: 1998 Johan Hanson &lt;johan@tiq.com&gt;
+11 License: GPL-2+
+12
+13 Files: debian/*
+14 Copyright: 1998-2010 Josip Rodin &lt;joy-mg@debian.org&gt;
+15 License: GPL-2+
+16
+17 License: GPL-2+
+18  This program is free software; you can redistribute it and/or modify
+19  it under the terms of the GNU General Public License as published by
+20  the Free Software Foundation; either version 2 of the License, or
+21  (at your option) any later version. 
+22  .
+23  This program is distributed in the hope that it will be useful,
+24  but WITHOUT ANY WARRANTY; without even the implied warranty of
+25  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+26  GNU General Public License for more details.
+27  .
+28  You should have received a copy of the GNU General Public License along
+29  with this program; if not, write to the Free Software Foundation, Inc.,
+30  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+31  .
+32  On Debian systems, the full text of the GNU General Public
+33  License version 2 can be found in the file
+34  `/usr/share/common-licenses/GPL-2'.
+</screen>
+<para>
+(I've added the line numbers.)
+</para>
+<para>
+Please follow the HOWTO provided by the ftpmasters and sent to
+debian-devel-announce: <ulink url="&howto-copyright;"/>.
+</para>
+</section>
+<section id="changelog"><title><filename>changelog</filename></title>
+<para>
+This is a required file, which has a special format described in
+<ulink url="&policy-dpkgchangelog;">Debian Policy Manual, 4.4 "debian/changelog"</ulink>.
+This format is used by <command>dpkg</command> and other programs to obtain the
+version number, revision, distribution, and urgency of your package.
+</para>
+<para>
+For you, it is also important, since it is good to have documented all changes
+you have done.  It will help people downloading your package to see whether
+there are issues with the package that they should know about.  It will be
+saved as <filename>/usr/share/doc/gentoo/changelog.Debian.gz</filename> in the
+binary package.
+</para>
+<para>
+<command>dh_make</command> created a default one, and this is what it looks
+like:
+</para>
+<screen>
+1  gentoo (0.9.12-1) unstable; urgency=low
+2
+3   * Initial release (Closes: #<replaceable>nnnn</replaceable>)  &lt;<replaceable>nnnn</replaceable> is the bug number of your ITP&gt;
+4
+5  -- Josip Rodin &lt;joy-mg@debian.org&gt;  Mon, 22 Mar 2010 00:37:31 +0100
+6
+</screen>
+<para>
+(I've added the line numbers.)
+</para>
+<para>
+Line 1 is the package name, version, distribution, and urgency.  The name must
+match the source package name; distribution should be
+<literal>unstable</literal>, and urgency
+shouldn't be changed to anything higher than <literal>low</literal>.  :-)
+</para>
+<para>
+Lines 3-5 are a log entry, where you document changes made in this package
+revision (not the upstream changes - there is a special file for that purpose,
+created by the upstream authors, which you will later install as
+<filename>/usr/share/doc/gentoo/changelog.gz</filename>).  Let's assume your
+ITP (Intent To Package) bug report number was <literal>12345</literal>.  New
+lines must be inserted just below the uppermost line that begins with
+<literal>*</literal> (asterisk).  You can do it with <citerefentry>
+<refentrytitle>dch</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>, or
+manually with a text editor.
+</para>
+<para>
+In order to prevent a package being accidentally uploaded before completing the
+package, it is good idea to change the distribution value to an invalid
+distribution value <literal>UNRELEASED</literal>.
+</para>
+<para>
+You will end up with something like this:
+</para>
+<screen>
+1  gentoo (0.9.12-1) UNRELEASED; urgency=low
+2
+3   * Initial Release. Closes: #12345
+4   * This is my first Debian package.
+5   * Adjusted the Makefile to fix $(DESTDIR) problems.
+6
+7  -- Josip Rodin &lt;joy-mg@debian.org&gt;  Mon, 22 Mar 2010 00:37:31 +0100
+8
+</screen>
+<para>
+(I've added the line numbers.)
+</para>
+<para>
+Once you are satisfied with all the changes and documented them in
+<filename>changelog</filename>, you should change the distribution value from
+<literal>UNRELEASED</literal> to the target distribution value
+<literal>unstable</literal> (or even <literal>experimental</literal>).  <footnote><para>If you
+use the <literal>dch -r</literal> command to make this last change,  please
+make sure to save the <filename>changelog</filename> file explicitly by the
+editor.</para></footnote>
+</para>
+<para>
+You can read more about updating the <filename>changelog</filename> file later
+in <xref linkend="update"/>.
+</para>
+</section>
+<section id="rules"><title><filename>rules</filename></title>
+<para>
+Now we need to take a look at the exact rules which <citerefentry>
+<refentrytitle>dpkg-buildpackage</refentrytitle> <manvolnum>1</manvolnum>
+</citerefentry> will use to actually create the package.  This file is in fact
+another <filename>Makefile</filename>, but different from the one(s) in the
+upstream source.  Unlike other files in <filename>debian</filename>, this one
+is marked as executable.
+</para>
+<section id="targets"><title>Targets of the <filename>rules</filename> file</title>
+<para>
+Every <filename>rules</filename> file, like any other
+<filename>Makefile</filename>, consists of several rules, each of
+which defines a target and how it is carried out.
+<footnote><para>You can start learning how to write <filename>Makefile</filename> from 
+<ulink url="&debref-make;">Debian Reference, 12.2. "Make"</ulink>.  
+The full documentation is available as 
+<ulink url="&gnu-make;"></ulink> or as the
+<systemitem role="package">make-doc</systemitem> package in the <literal>non-free</literal> archive area.
+</para></footnote>
+A new rule begins with its target declaration in the first column.  The
+following lines beginning with the TAB code (ASCII 9) specify the recipe for
+carrying out that target.
+Empty lines and lines beginning with <literal>#</literal> (hash) are treated as
+comments and ignored.
+<footnote><para><ulink url="&policy-debianrules;">Debian
+Policy Manual, 4.9 "Main building script: debian/rules"</ulink> explains the
+details.</para></footnote>
+</para>
+<para>
+A rule that you want to execute is invoked by its target name as a command line argument.  For
+example, <literal>debian/rules <replaceable>build</replaceable></literal> and
+<literal>fakeroot make -f debian/rules <replaceable>binary</replaceable></literal>
+execute rules for <literal><replaceable>build</replaceable></literal> and
+<literal><replaceable>binary</replaceable></literal> targets respectively.
+</para>
+<para>
+Here is a simplified explanation of the targets:
+</para>
+<itemizedlist>
+<listitem>
+<para>
+<literal>clean</literal> target: to clean all compiled, generated, and useless
+files in the build-tree.  (Required)
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>build</literal> target: to build the source into compiled programs and
+formatted documents in the build-tree.  (Required)
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>build-arch</literal> target: to build the source into arch-dependent
+compiled programs in the build-tree.  (Required)
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>build-indep</literal> target: to build the source into
+arch-independent formatted documents in the build-tree.  (Required)
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>install</literal> target: to install files into a file tree for each
+binary package under the <filename>debian</filename> directory.  If defined,
+<literal>binary*</literal> targets effectively depend on this target.
+(Optional)
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>binary</literal> target: to create all binary packages (effectively
+a combination of <literal>binary-arch</literal> and
+<literal>binary-indep</literal> targets).  (Required)<footnote><para> This
+target is used by <literal>dpkg-buildpackage</literal> as in <xref linkend="completebuild"/>.  </para> </footnote>
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>binary-arch</literal> target: to create arch-dependent
+(<literal>Architecture: any</literal>) binary packages in the parent directory.
+(Required)<footnote><para> This target is used by <literal>dpkg-buildpackage
+-B</literal> as in <xref linkend="autobuilder"/>.  </para> </footnote>
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>binary-indep</literal> target: to create arch-independent
+(<literal>Architecture: all</literal>) binary packages in the parent directory.
+(Required)<footnote><para> This target is used by <literal>dpkg-buildpackage
+-A</literal>.  </para> </footnote>
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>get-orig-source</literal> target: to obtain the most recent version of
+the original source package from an upstream archive.  (Optional)
+</para>
+</listitem>
+</itemizedlist>
+<para>
+You are probably overwhelmed by now, but things are much simpler upon examination of the
+<filename>rules</filename> file that <command>dh_make</command> gives us as a
+default.
+</para>
+</section>
+<section id="defaultrules"><title>Default <filename>rules</filename> file</title>
+<para>
+Newer <command>dh_make</command> generates a very simple but powerful default
+<filename>rules</filename> file using the <command>dh</command> command:
+</para>
+<screen>
+ 1 #!/usr/bin/make -f
+ 2 # -*- makefile -*-
+ 3 # Sample debian/rules that uses debhelper.
+ 4 # This file was originally written by Joey Hess and Craig Small.
+ 5 # As a special exception, when this file is copied by dh-make into a
+ 6 # dh-make output file, you may use that output file without restriction.
+ 7 # This special exception was added by Craig Small in version 0.37 of dh-make.
+ 8
+ 9 # Uncomment this to turn on verbose mode.
+10 #export DH_VERBOSE=1
+11
+12 %:
+13        dh $@
+</screen>
+<para>
+(I've added the line numbers.  In the actual <filename>rules</filename> file,
+the leading spaces are a TAB code.)
+</para>
+<para>
+You are probably familiar with lines like line 1 from shell and Perl scripts.
+It tells the operating system that this file is to be processed with
+<filename>/usr/bin/make</filename>.
+</para>
+<para>
+Line 10 can be uncommented to set the <literal>DH_VERBOSE</literal> variable to 1,
+so that the <command>dh</command> command outputs which
+<command>dh_*</command> commands it is executing.
+You can also add a line <literal>export DH_OPTIONS=-v</literal> here,
+so that each <command>dh_*</command> command outputs which commands it
+is executing.  This helps you to understand
+exactly what is going on behind this simple <filename>rules</filename> file and
+to debug its problems.  This new <command>dh</command> is designed to form a core part of the
+<systemitem role="package">debhelper</systemitem> tools, and not to hide
+anything from you.
+</para>
+<para>
+Lines 12 and 13 are where all the work is done with an implicit rule using the pattern rule.  The percent sign means "any
+targets", which then call a single program, <command>dh</command>, with the target
+name.  <footnote><para> This uses the new <systemitem role="package">debhelper</systemitem> v7+ features.  Its design concepts are
+explained in <ulink url="&debhelper-slides;">Not Your
+Grandpa's Debhelper</ulink> presented at DebConf9 by the <systemitem role="package">debhelper</systemitem> upstream.  Under
+<literal>lenny</literal>, <command>dh_make</command> created a much more
+complicated <filename>rules</filename> file with explicit rules
+and many <command>dh_*</command> scripts listed for each one, most of
+which are now unnecessary (and show the package's age). The new <command>dh</command> command is
+simpler and frees us from doing the routine work "manually". You still have full power to
+customize the process with <literal>override_dh_*</literal> targets. See <xref linkend="customrules"/>.  It is based only on the <systemitem role="package">debhelper</systemitem> package and does not obfuscate the
+package building process as the <systemitem role="package">cdbs</systemitem>
+package tends to.  </para> </footnote> The <command>dh</command> command is a wrapper
+script which runs appropriate sequences of <command>dh_*</command> programs
+depending on its argument.  <footnote><para> You can verify the actual sequences of
+<command>dh_*</command> programs invoked for a given
+<literal><replaceable>target</replaceable></literal> without really running them by invoking <literal>dh --no-act
+<replaceable>target</replaceable></literal> or <literal>debian/rules --
+'--no-act <replaceable>target</replaceable>'</literal>.  </para> </footnote>
+</para>
+<itemizedlist>
+<listitem>
+<para>
+<literal>debian/rules clean</literal> runs <literal>dh clean</literal>, which
+in turn runs the following:
+</para>
+<screen>
+dh_testdir
+dh_auto_clean
+dh_clean
+</screen>
+</listitem>
+<listitem>
+<para>
+<literal>debian/rules build</literal> runs <literal>dh build</literal>; which
+in turn runs the following:
+</para>
+<screen>
+dh_testdir
+dh_auto_configure
+dh_auto_build
+dh_auto_test
+</screen>
+</listitem>
+<listitem>
+<para>
+<literal>fakeroot debian/rules binary</literal> runs <literal>fakeroot dh
+binary</literal>; which in turn runs the following<footnote><para>The following
+example assumes your <filename>debian/compat</filename> has a value equal or
+more than 9 to avoid invoking any python support commands automatically.
+</para>
+</footnote>:
+</para>
+<screen>
+dh_testroot
+dh_prep
+dh_installdirs
+dh_auto_install
+dh_install
+dh_installdocs
+dh_installchangelogs
+dh_installexamples
+dh_installman
+dh_installcatalogs
+dh_installcron
+dh_installdebconf
+dh_installemacsen
+dh_installifupdown
+dh_installinfo
+dh_installinit
+dh_installmenu
+dh_installmime
+dh_installmodules
+dh_installlogcheck
+dh_installlogrotate
+dh_installpam
+dh_installppp
+dh_installudev
+dh_installwm
+dh_installxfonts
+dh_bugfiles
+dh_lintian
+dh_gconf
+dh_icons
+dh_perl
+dh_usrlocal
+dh_link
+dh_compress
+dh_fixperms
+dh_strip
+dh_makeshlibs
+dh_shlibdeps
+dh_installdeb
+dh_gencontrol
+dh_md5sums
+dh_builddeb
+</screen>
+</listitem>
+<listitem>
+<para>
+<literal>fakeroot debian/rules binary-arch</literal> runs <literal>fakeroot dh
+binary-arch</literal>; which in turn runs the same sequence as
+<literal>fakeroot dh binary</literal> but with the <literal>-a</literal> option
+appended for each command.
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>fakeroot debian/rules binary-indep</literal> runs <literal>fakeroot dh
+binary-indep</literal>; which in turn runs almost the same sequence as
+<literal>fakeroot dh binary</literal> but excluding
+<command>dh_strip</command>, <command>dh_makeshlibs</command>, and
+<command>dh_shlibdeps</command> with the <literal>-i</literal> option appended
+for each remaining command.
+</para>
+</listitem>
+</itemizedlist>
+<para>
+The functions of <command>dh_*</command> commands are largely self-evident from
+their names.  <footnote><para> For complete information on what all these
+<command>dh_*</command> scripts do exactly, and what their other options are,
+please read their respective manual pages and the <systemitem role="package">debhelper</systemitem> documentation.  </para> </footnote> There
+are a few notable ones that are worth giving (over)simplified explanations here assuming
+a typical build environment based on a <filename>Makefile</filename>.
+<footnote><para> These commands support other build environments such as
+<filename>setup.py</filename> which can be listed by executing
+<literal>dh_auto_build --list</literal> in a package source directory.  </para>
+</footnote>
+</para>
+<itemizedlist>
+<listitem>
+<para>
+<command>dh_auto_clean</command> usually executes the following if a
+<filename>Makefile</filename> exists with the <literal>distclean</literal>
+target.  <footnote><para> It actually looks for the first available target
+in the <filename>Makefile</filename> out of
+<literal>distclean</literal>, <literal>realclean</literal>, or
+<literal>clean</literal>, and executes that.
+</para> </footnote>
+</para>
+<screen>
+make distclean
+</screen>
+</listitem>
+<listitem>
+<para>
+<command>dh_auto_configure</command> usually executes the following if
+<filename>./configure</filename> exists (arguments abbreviated for
+readability).
+</para>
+<screen>
+./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var ...
+</screen>
+</listitem>
+<listitem>
+<para>
+<command>dh_auto_build</command> usually executes the following to execute the
+first target of <filename>Makefile</filename> if it exists.
+</para>
+<screen>
+make
+</screen>
+</listitem>
+<listitem>
+<para>
+<command>dh_auto_test</command> usually executes the following if a
+<filename>Makefile</filename> exists with the <literal>test</literal> target.
+<footnote><para> It actually looks for the first available target in
+the <filename>Makefile</filename> out of <literal>test</literal> or
+<literal>check</literal>, and executes that.</para> </footnote>
+</para>
+<screen>
+make test
+</screen>
+</listitem>
+<listitem>
+<para>
+<command>dh_auto_install</command> usually executes the following if a
+<filename>Makefile</filename> exists with the <literal>install</literal> target
+(line folded for readability).
+</para>
+<screen>
+make install \
+  DESTDIR=<replaceable>/path/to</replaceable>/<replaceable>package</replaceable>_<replaceable>version</replaceable>-<replaceable>revision</replaceable>/debian/<replaceable>package</replaceable>
+</screen>
+</listitem>
+</itemizedlist>
+<para>
+All targets which require the <command>fakeroot</command> command will contain
+<command>dh_testroot</command>, which exits with an error if you are not
+using this command to pretend to be root.
+</para>
+<para>
+The important part to know about the <filename>rules</filename> file created by
+<command>dh_make</command> is that it is just a suggestion.  It will work for
+most packages but for more complicated ones, don't be afraid to customize it to
+fit your needs.
+</para>
+<para>
+Although <literal>install</literal> is not a required target, it is supported.
+<literal>fakeroot dh install</literal> behaves like <literal>fakeroot dh
+binary</literal> but stops after <command>dh_fixperms</command>.
+</para>
+</section>
+<section id="customrules"><title>Customization of <filename>rules</filename> file</title>
+<para>
+There are many ways to customize the <filename>rules</filename> file created
+with the new <command>dh</command> command.
+</para>
+<para>
+The <literal>dh $@</literal> command can be customized as follows.
+<footnote><para> If a package installs the
+<filename>/usr/share/perl5/Debian/Debhelper/Sequence/<replaceable>custom_name</replaceable>.pm</filename>
+file, you should activate its customization function by <literal>dh $@ --with
+<replaceable>custom-name</replaceable></literal>.  </para> </footnote>
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Add support for the <command>dh_python2</command> command.  (The best choice
+for Python.) <footnote><para> Use of the <command>dh_python2</command> command
+is preferred over use of <command>dh_pysupport</command> or
+<command>dh_pycentral</command> commands.  Do not use the
+<command>dh_python</command> command.  </para> </footnote>
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Include the <systemitem role="package">python</systemitem> package in
+<literal>Build-Depends</literal>.
+</para>
+</listitem>
+<listitem>
+<para>
+Use <literal>dh $@ --with python2</literal>.
+</para>
+</listitem>
+<listitem>
+<para>
+This handles Python modules using the <systemitem role="package">python</systemitem> framework.
+</para>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<para>
+Add support for the <command>dh_pysupport</command> command. (deprecated)
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Include the <systemitem role="package">python-support</systemitem> package in
+<literal>Build-Depends</literal>.
+</para>
+</listitem>
+<listitem>
+<para>
+Use <literal>dh $@ --with pysupport</literal>.
+</para>
+</listitem>
+<listitem>
+<para>
+This handles Python modules using the <systemitem role="package">python-support</systemitem> framework.
+</para>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<para>
+Add support for the <command>dh_pycentral</command> command. (deprecated)
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Include the <systemitem role="package">python-central</systemitem> package in
+<literal>Build-Depends</literal>.
+</para>
+</listitem>
+<listitem>
+<para>
+Use <literal>dh $@ --with python-central</literal> instead.
+</para>
+</listitem>
+<listitem>
+<para>
+This also deactivates the <command>dh_pysupport</command> command.
+</para>
+</listitem>
+<listitem>
+<para>
+This handles Python modules using the <systemitem role="package">python-central</systemitem> framework.
+</para>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<para>
+Add support for the <command>dh_installtex</command> command.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Include the <systemitem role="package">tex-common</systemitem> package in
+<literal>Build-Depends</literal>.
+</para>
+</listitem>
+<listitem>
+<para>
+Use <literal>dh $@ --with tex</literal> instead.
+</para>
+</listitem>
+<listitem>
+<para>
+This registers Type 1 fonts, hyphenation patterns, and formats with TeX.
+</para>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<para>
+Add support for the <command>dh_quilt_patch</command> and
+<command>dh_quilt_unpatch</command> commands.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Include the <systemitem role="package">quilt</systemitem> package in
+<literal>Build-Depends</literal>.
+</para>
+</listitem>
+<listitem>
+<para>
+Use <literal>dh $@ --with quilt</literal> instead.
+</para>
+</listitem>
+<listitem>
+<para>
+This applies and un-applies patches to the upstream source from files in the
+<filename>debian/patches</filename> directory for a source package in the <literal>1.0</literal> format.
+</para>
+</listitem>
+<listitem>
+<para>
+This is not needed if you use the new <literal>3.0 (quilt)</literal> source
+package format.
+</para>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<para>
+Add support for the <command>dh_dkms</command> command.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Include the <systemitem role="package">dkms</systemitem> package in
+<literal>Build-Depends</literal>.
+</para>
+</listitem>
+<listitem>
+<para>
+Use <literal>dh $@ --with dkms</literal> instead.
+</para>
+</listitem>
+<listitem>
+<para>
+This correctly handles DKMS usage by kernel module packages.
+</para>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<para>
+Add support for the <command>dh_autotools-dev_updateconfig</command> and
+<command>dh_autotools-dev_restoreconfig</command> commands.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Include the <systemitem role="package">autotools-dev</systemitem> package in
+<literal>Build-Depends</literal>.
+</para>
+</listitem>
+<listitem>
+<para>
+Use <literal>dh $@ --with autotools-dev</literal> instead.
+</para>
+</listitem>
+<listitem>
+<para>
+This updates and restores <filename>config.sub</filename> and
+<filename>config.guess</filename>.
+</para>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<para>
+Add support for the <command>dh_autoreconf</command> and
+<command>dh_autoreconf_clean</command> commands.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Include the <systemitem role="package">dh-autoreconf</systemitem> package in
+<literal>Build-Depends</literal>.
+</para>
+</listitem>
+<listitem>
+<para>
+Use <literal>dh $@ --with autoreconf</literal> instead.
+</para>
+</listitem>
+<listitem>
+<para>
+This updates the GNU Build System files and restores them after the build.
+</para>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<para>
+Add support for the <command>dh_girepository</command> command.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Includes the <systemitem role="package">gobject-introspection</systemitem> package in
+<literal>Build-Depends</literal>.
+</para>
+</listitem>
+<listitem>
+<para>
+Use <literal>dh $@ --with gir</literal> instead.
+</para>
+</listitem>
+<listitem>
+<para>
+This computes dependencies for packages shipping GObject introspection data and 
+generates the <literal>${gir:Depends}</literal> substitution variable for the package dependency.
+</para>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<para>
+Add support for the <command>bash</command> completion feature.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Includes the <systemitem role="package">bash-completion</systemitem> package in
+<literal>Build-Depends</literal>.
+</para>
+</listitem>
+<listitem>
+<para>
+Use <literal>dh $@ --with bash-completion</literal> instead.
+</para>
+</listitem>
+<listitem>
+<para>
+This installs <command>bash</command> completions using a configuration file at
+<filename>debian/<replaceable>package</replaceable>.bash-completion</filename>.
+</para>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+<para>
+Many <command>dh_*</command> commands invoked by the new <command>dh</command>
+command can be customized by the corresponding configuration files in the
+<filename>debian</filename> directory.  See <xref linkend="dother"/> and the
+manpage of each command for the customization of such features.
+</para>
+<para>
+You may need to run <command>dh_*</command> commands invoked via the new <command>dh</command>
+with added arguments, or to run additional commands with them, or to skip them.
+For such cases, you create an
+<literal>override_dh_<replaceable>foo</replaceable></literal> target with its
+rule in the <filename>rules</filename> file defining an
+<literal>override_dh_<replaceable>foo</replaceable></literal> target for the
+<command>dh_<replaceable>foo</replaceable></command> command you want to
+change.  It basically says <emphasis>run me instead</emphasis>.
+<footnote><para> Under <literal>lenny</literal>, if you wanted to change the
+behavior of a <command>dh_*</command> script you found the relevant line in the
+<filename>rules</filename> file and adjusted it.  </para> </footnote>
+</para>
+<para>
+Please note that the <command>dh_auto_*</command> commands tend to do more than
+what has been discussed in this (over)simplified explanation to take care of all the
+corner cases.  It is a bad idea to use <literal>override_dh_*</literal> targets
+to substitute simplified equivalent commands (except for the
+<literal>override_dh_auto_clean</literal> target) since it may
+bypass such smart <systemitem role="package">debhelper</systemitem> features.
+</para>
+<para>
+So, for instance, if you want to store system configuration data in the
+<filename>/etc/gentoo</filename> directory instead of the usual
+<filename>/etc</filename> directory for the recent 
+<systemitem role="package">gentoo</systemitem> package using Autotools, you can override the default
+<literal>--sysconfig=/etc</literal> argument given by the
+<command>dh_auto_configure</command> command to the
+<command>./configure</command> command by the following.
+</para>
+<screen>
+override_dh_auto_configure:
+        dh_auto_configure -- --sysconfig=/etc/gentoo
+</screen>
+<para>
+The arguments given after <literal>--</literal> are appended to the default
+arguments of the auto-executed program to override them.  Using the
+<command>dh_auto_configure</command> command is better than directly invoking the
+<command>./configure</command> command here since it will only override the
+<literal>--sysconfig</literal> argument and retains any other, benign arguments
+to the <command>./configure</command> command.
+</para>
+<para>
+If the <filename>Makefile</filename> in the source for <systemitem role="package">gentoo</systemitem> requires you to specify
+<literal>build</literal> as its target to build it <footnote><para>
+<command>dh_auto_build</command> without any arguments will execute the first
+target in the <filename>Makefile</filename>.  </para> </footnote>, you
+create an <literal>override_dh_auto_build</literal> target to enable this.
+</para>
+<screen>
+override_dh_auto_build:
+        dh_auto_build -- build
+</screen>
+<para>
+This ensures <literal>$(MAKE)</literal> is run with all the default arguments given by the
+<command>dh_auto_build</command> command plus the <literal>build</literal> argument.
+</para>
+<para>
+If the <filename>Makefile</filename> in the source for <systemitem role="package">gentoo</systemitem> requires you to specify the
+<literal>packageclean</literal> target to clean it for the Debian package instead
+of using <literal>distclean</literal> or <literal>clean</literal> targets,
+you can create an
+<literal>override_dh_auto_clean</literal> target to enable thit.
+</para>
+<screen>
+override_dh_auto_clean:
+        $(MAKE) packageclean
+</screen>
+<para>
+If the <filename>Makefile</filename> in the source for <systemitem role="package">gentoo</systemitem> contains a <literal>test</literal> target
+which you do not want to run for the Debian package building process, you can
+use an empty <literal>override_dh_auto_test</literal> target to skip it.
+</para>
+<screen>
+override_dh_auto_test:
+</screen>
+<para>
+If <systemitem role="package">gentoo</systemitem> has an unusual upstream
+changelog file called <filename>FIXES</filename>,
+<command>dh_installchangelogs</command> will not install that file by default.
+The <command>dh_installchangelogs</command> command requires
+<filename>FIXES</filename> as its argument to install it.  <footnote><para> The
+<filename>debian/changelog</filename> and <filename>debian/NEWS</filename>
+files are always automatically installed.  The upstream changelog is found
+by converting filenames to lower case and matching them against
+<filename>changelog</filename>, <filename>changes</filename>,
+<filename>changelog.txt</filename>, and <filename>changes.txt</filename>.
+</para> </footnote>
+</para>
+<screen>
+override_dh_installchangelogs:
+        dh_installchangelogs FIXES
+</screen>
+<para>
+When you use the new <command>dh</command> command, use of explicit targets
+such as the ones listed in <xref linkend="targets"/>, other than the
+<literal>get-orig-source</literal> target, may make it difficult to understand
+their exact effects.  Please limit explicit targets to
+<literal>override_dh_*</literal> targets and completely independent ones, if
+possible.
+</para>
+</section>
+</section>
+</chapter>

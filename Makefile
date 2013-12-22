@@ -7,14 +7,16 @@
 # base file name excluding file extension
 MANUAL	:=	maint-guide
 # languages translated with PO files
-LANGPO	:=	ca de es fr it ja ru de zh-cn zh-tw
+LANGPO	:=	ca de es fr it ja ru zh-cn zh-tw
 # languages to skip generation of PDF files
 NOPDF	:=	zh-cn zh-tw
 # languages to build document
 LANGALL	=	en $(LANGPO)
 
-ifndef PUBLISHDIR
-PUBLISHDIR	:= $(CURDIR)/html
+VERSION := "GIT: $(shell LC_ALL=C date -u +'%F %T %Z')"
+
+ifndef TMPDIR
+TMPDIR	:= $(CURDIR)/tmp
 endif
 
 # Change $(DRAFTMODE) from "yes" to "maybe" when this document 
@@ -28,6 +30,7 @@ export DRAFTMODE
 # Directories (no trailing slash)
 DXSL	:=	xslt
 DBIN	:=	bin
+DDOC	:=	doc
 DPO	:=	po
 DIMG	:=	/usr/share/xml/docbook/stylesheet/nwalsh/images
 
@@ -44,13 +47,15 @@ MSGATTR	:=	msgattrib
 MSGCAT	:=	msgcat
 DBLATEX	:=	dblatex
 
+# English source files
+DOCS	:=	$(shell ls $(DDOC)/*)
 # source XML inclusion files (excluding version.ent)
 ENT_STAT:=	common.ent $(addsuffix .ent, $(addprefix  $(DPO)/, $(LANGPO)))
 ENT_ALL	:=	$(ENT_STAT) version.ent
 # source PO files for all languages (build prcess requires these)
 SRC_PO	:=	$(addsuffix .po, $(addprefix  $(DPO)/, $(LANGPO)))
 # source XML files for all languages (build prcess requires these)
-SRC_XML	:=	$(addsuffix .dbk, $(addprefix  $(MANUAL)., $(LANGALL)))
+SRC_XML	:=	$(addsuffix .xml, $(addprefix  $(MANUAL)., $(LANGALL)))
 
 #######################################################################
 # Used as $(call check-command, <command>, <package>)
@@ -75,30 +80,32 @@ all: css html txt pdf epub
 test: html css
 
 #######################################################################
-# $ make publish   # build html text from RAWXML/PO for DDP
+# $ make publish   # build html text from EN.XML/PO for DDP
 #######################################################################
 .PHONY: package
 # $(PUBLISHDIR) is set to be: /org/www.debian.org/www/doc/manuals for master-www
 publish:
 	-mkdir -p $(PUBLISHDIR)/$(MANUAL)
-	$(MAKE) css html txt "PUBLISHDIR=$(PUBLISHDIR)/$(MANUAL)"
+	$(MAKE) css html txt "TMPDIR=$(PUBLISHDIR)/$(MANUAL)"
 
 #######################################################################
 # $ make clean     # clean files ready for tar 
 #######################################################################
 .PHONY: clean
 clean:
+	-rm -f $(MANUAL).en.xml
 	-rm -f *.swp *~ *.tmp
 	-rm -f $(DPO)/*~ $(DPO)/*.mo $(DPO)/*.po.*
-	-rm -rf $(CURDIR)/html $(CURDIR)/tmp
-	-rm -f $(addsuffix .dbk, $(addprefix $(MANUAL)., $(LANGPO)))
+	-rm -rf $(TMPDIR)
+	-rm -f $(addsuffix .xml, $(addprefix $(MANUAL)., $(LANGPO) en))
+	-rm -f version.ent
 
 #######################################################################
-# $ make distclean # clean files to reset RAWXML/ENT/POT
+# $ make distclean # clean files to reset EN.XML/ENT/POT
 #######################################################################
 .PHONY: distclean
 distclean: clean
-	-rm -f version.ent
+	-rm -f $(DDOC)/*~
 	-rm -f $(DPO)/*.pot
 	-rm -f fuzzy.log
 
@@ -107,14 +114,12 @@ distclean: clean
 ##############################################################################
 # version from debian/changelog
 # if for www-master directly building from subversion source 
-version.ent: $(MANUAL).en.dbk
+version.ent: $(DOCS)
 	echo "<!ENTITY docisodate \"$(shell LC_ALL=C date -u +'%F %T %Z')\">" > version.ent
-	[ -r debian/changelog ] && \
-	echo "<!ENTITY docversion \"$(shell LC_ALL=C dpkg-parsechangelog | grep '^Version: ' | sed 's/^Version: *//')-svn\">" >> version.ent ||\
-	echo "<!ENTITY docversion \"unknown version\">" >> version.ent
+	echo "<!ENTITY docversion \"$(VERSION)\">" >> version.ent
 
 #######################################################################
-# $ make po        # update all PO from RAWXML
+# $ make po        # update all PO from EN.XML
 #######################################################################
 .PHONY: po pot
 pot: $(DPO)/templates.pot
@@ -122,10 +127,10 @@ po: $(SRC_PO)
 
 # Do not record line number to avoid useless diff in po/*.po files: --no-location
 # Do not update templates.pot if contents are the same as before; -I '^"POT-Creation-Date:'
-$(DPO)/templates.pot: $(MANUAL).en.dbk FORCE
+$(DPO)/templates.pot: $(MANUAL).en.xml FORCE
 	@$(call check-command, po4a-gettextize, po4a)
 	@$(call check-command, msgcat, gettext)
-	$(GETTEXT) -m $(MANUAL).en.dbk | $(MSGCAT) --no-location -o $(DPO)/templates.pot.new -
+	$(GETTEXT) -m $(MANUAL).en.xml | $(MSGCAT) --no-location -o $(DPO)/templates.pot.new -
 	if diff -I '^"POT-Creation-Date:' -q $(DPO)/templates.pot $(DPO)/templates.pot.new ; then \
 	  echo "Don't update templates.pot" ;\
 	  touch $(DPO)/templates.pot ;\
@@ -173,84 +178,83 @@ wip:
 	done
 
 #######################################################################
-# $ make dbk       # update all *.dbk from EN.DBK/ENT/PO/ADD
+# $ make xml      # update all *.xml (EN.XML ...) from DOCS /ENT/PO/ADD
 #######################################################################
 .PHONY: xml
 xml: $(SRC_XML)
 
-$(MANUAL).en.dbk:
-	: # This should exist in the source.
+$(MANUAL).en.xml: $(DOCS)
+	: > $@
+	for i in $(DOCS) ; do cat $$i >> $@ ; done
 
-$(MANUAL).%.dbk: $(DPO)/%.po $(MANUAL).en.dbk
+$(MANUAL).%.xml: $(DPO)/%.po $(MANUAL).en.xml
 	@$(call check-command, po4a-translate, po4a)
 	@$(call check-command, msgcat, gettext)
 	if [ -f $(DPO)/$*.add ]; then \
-	$(TRANSLATE) -m $(MANUAL).en.dbk -a $(DPO)/$*.add -p $(DPO)/$*.po -l $(MANUAL).$*.dbk ;\
+	$(TRANSLATE) -m $(MANUAL).en.xml -a $(DPO)/$*.add -p $(DPO)/$*.po -l $(MANUAL).$*.xml ;\
 	else \
-	$(TRANSLATE) -m $(MANUAL).en.dbk -p $(DPO)/$*.po -l $(MANUAL).$*.dbk ;\
+	$(TRANSLATE) -m $(MANUAL).en.xml -p $(DPO)/$*.po -l $(MANUAL).$*.xml ;\
 	fi
 	sed -i -e 's/$(DPO)\/en\.ent/$(DPO)\/$*.ent/' $@
 
 #######################################################################
-# $ make css       # update CSS and DIMG in $(PUBLISHDIR)
+# $ make css       # update CSS and DIMG in $(TMPDIR)
 #######################################################################
 .PHONY: css
 css:
-	-rm -rf $(PUBLISHDIR)/images
-	mkdir -p $(PUBLISHDIR)/images
-	cp -f $(DXSL)/$(MANUAL).css $(PUBLISHDIR)/$(MANUAL).css
-	echo "AddCharset UTF-8 .txt" > $(PUBLISHDIR)/.htaccess
-	cd $(DIMG) ; cp caution.png home.gif important.png next.gif note.png prev.gif tip.png up.gif warning.png $(PUBLISHDIR)/images
+	-rm -rf $(TMPDIR)/images
+	mkdir -p $(TMPDIR)/images
+	cp -f $(DXSL)/$(MANUAL).css $(TMPDIR)/$(MANUAL).css
+	echo "AddCharset UTF-8 .txt" > $(TMPDIR)/.htaccess
+	cd $(DIMG) ; cp caution.png home.gif important.png next.gif note.png prev.gif tip.png up.gif warning.png $(TMPDIR)/images
 
 #######################################################################
-# $ make html      # update all HTML in $(PUBLISHDIR)
+# $ make html      # update all HTML in $(TMPDIR)
 #######################################################################
 .PHONY: html
-html:	$(foreach LX, $(LANGALL), $(PUBLISHDIR)/index.$(LX).html)
+html:	$(foreach LX, $(LANGALL), $(TMPDIR)/index.$(LX).html)
 
-$(PUBLISHDIR)/index.%.html: $(MANUAL).%.dbk $(ENT_ALL)
+$(TMPDIR)/index.%.html: $(MANUAL).%.xml $(ENT_ALL)
 	@$(call check-command, xsltproc, xsltproc)
-	-mkdir -p $(PUBLISHDIR)
-	$(XPINC)   --stringparam root.filename index \
-		--stringparam base.dir $(PUBLISHDIR)/ \
+	-mkdir -p $(TMPDIR)
+	$(XPINC)   --stringparam base.dir $(TMPDIR)/ \
                 --stringparam html.ext .$*.html \
-                --stringparam html.stylesheet $(MANUAL).css \
-                xslt/style-html.xsl $<
+                $(DXSL)/style-html.xsl $<
 
 #######################################################################
-# $ make txt       # update all Plain TEXT in $(PUBLISHDIR)
+# $ make txt       # update all Plain TEXT in $(TMPDIR)
 #######################################################################
 .PHONY: txt
-txt:	$(foreach LX, $(LANGALL), $(PUBLISHDIR)/$(MANUAL).$(LX).txt)
+txt:	$(foreach LX, $(LANGALL), $(TMPDIR)/$(MANUAL).$(LX).txt)
 
 # txt.xsl provides work around for hidden URL links by appending them explicitly.
-$(PUBLISHDIR)/$(MANUAL).%.txt: $(MANUAL).%.dbk $(ENT_ALL)
+$(TMPDIR)/$(MANUAL).%.txt: $(MANUAL).%.xml $(ENT_ALL)
 	@$(call check-command, w3m, w3m)
 	@$(call check-command, xsltproc, xsltproc)
-	-mkdir -p $(PUBLISHDIR)
+	-mkdir -p $(TMPDIR)
 	@test -n "`which w3m`"  || { echo "ERROR: w3m not found. Please install the w3m package." ; false ;  }
-	$(XPINC) $(DXSL)/txt.xsl $< | LC_ALL=en_US.UTF-8 w3m -o display_charset=UTF-8 -cols 70 -dump -no-graph -T text/html > $@
+	$(XPINC) $(DXSL)/style-txt.xsl $< | \
+	  LC_ALL=en_US.UTF-8 w3m -o display_charset=UTF-8 -cols 70 -dump -no-graph -T text/html > $@
 
 
 #######################################################################
-# $ make pdf       # update all PDF in $(PUBLISHDIR)
+# $ make pdf       # update all PDF in $(TMPDIR)
 #######################################################################
 .PHONY: pdf
-pdf:	$(foreach LX, $(LANGALL), $(PUBLISHDIR)/$(MANUAL).$(LX).pdf)
+pdf:	$(foreach LX, $(LANGALL), $(TMPDIR)/$(MANUAL).$(LX).pdf)
 
-$(foreach LX, $(NOPDF), $(PUBLISHDIR)/$(MANUAL).$(LX).pdf):
-	-mkdir -p $(PUBLISHDIR)
+$(foreach LX, $(NOPDF), $(TMPDIR)/$(MANUAL).$(LX).pdf):
+	-mkdir -p $(TMPDIR)
 	echo "PDF generation skipped." >$@
 
 # dblatex.xsl provide work around for hidden URL links by appending them explicitly.
-$(PUBLISHDIR)/$(MANUAL).%.pdf: $(MANUAL).%.dbk $(ENT_ALL)
+$(TMPDIR)/$(MANUAL).%.pdf: $(MANUAL).%.xml $(ENT_ALL)
 	@$(call check-command, dblatex, dblatex)
 	@$(call check-command, xsltproc, xsltproc)
-	-mkdir -p $(PUBLISHDIR)
-	-mkdir -p $(CURDIR)/tmp/$*
+	-mkdir -p $(TMPDIR)/pdf-$*
 	@test -n "`which $(DBLATEX)`"  || { echo "ERROR: dblatex not found. Please install the dblatex package." ; false ;  }
 	export TEXINPUTS=".:"; \
-	export TMPDIR="$(CURDIR)/tmp/$*"; \
+	export TMPDIR="$(TMPDIR)/pdf-$*"; \
 	$(XPINC) $(DXSL)/dblatex.xsl $<  | \
 	$(DBLATEX) --style=native \
 		--debug \
@@ -262,18 +266,17 @@ $(PUBLISHDIR)/$(MANUAL).%.pdf: $(MANUAL).%.dbk $(ENT_ALL)
 		--output=$@ - || { echo "OMG!!!!!! XXX_CHECK_XXX ... Do not worry ..."; true ; }
 
 #######################################################################
-# $ make tex       # update all TeX source in $(PUBLISHDIR)
+# $ make tex       # update all TeX source in $(TMPDIR)
 #######################################################################
 .PHONY: tex
-tex:	$(foreach LX, $(LANGALL), $(PUBLISHDIR)/$(MANUAL).$(LX).tex)
+tex:	$(foreach LX, $(LANGALL), $(TMPDIR)/$(MANUAL).$(LX).tex)
 
 # dblatex.xsl provide work around for hidden URL links by appending them explicitly.
-$(PUBLISHDIR)/$(MANUAL).%.tex: $(MANUAL).%.dbk $(ENT_ALL)
-	-mkdir -p $(PUBLISHDIR)
-	-mkdir -p $(CURDIR)/tmp/$*
+$(TMPDIR)/$(MANUAL).%.tex: $(MANUAL).%.xml $(ENT_ALL)
+	-mkdir -p $(TMPDIR)/tex-$*
 	@test -n "`which $(DBLATEX)`"  || { echo "ERROR: dblatex not found. Please install the dblatex package." ; false ;  }
 	export TEXINPUTS=".:"; \
-	export TMPDIR="$(CURDIR)/tmp/$*"; \
+	export TMPDIR="$(TMPDIR)/tex-$*"; \
 	$(XPINC) $(DXSL)/dblatex.xsl $<  | \
 	$(DBLATEX) --style=native \
 		--debug \
@@ -286,25 +289,40 @@ $(PUBLISHDIR)/$(MANUAL).%.tex: $(MANUAL).%.dbk $(ENT_ALL)
 		--output=$@ - || { echo "OMG!!!!!! XXX_CHECK_XXX ... Do not worry ..."; true ; }
 
 #######################################################################
-# $ make epub      # update all epub in $(PUBLISHDIR)
+# $ make epub      # update all epub in $(TMPDIR)
 #######################################################################
 .PHONY: epub
-epub:	$(foreach LX, $(LANGALL), $(PUBLISHDIR)/$(MANUAL).$(LX).epub)
+epub:	$(foreach LX, $(LANGALL), $(TMPDIR)/$(MANUAL).$(LX).epub)
 
-$(PUBLISHDIR)/$(MANUAL).%.epub: $(MANUAL).%.dbk $(ENT_ALL)
-	@$(call check-command, dbtoepub, dbtoepub)
-	-mkdir -p $(PUBLISHDIR)
-	#xmlto epub -m $(DXSL)/$(MANUAL).css -o $(PUBLISHDIR) $<
-	dbtoepub -o $(PUBLISHDIR)/$(MANUAL).$*.epub -c $(DXSL)/$(MANUAL).css  $<
+$(TMPDIR)/$(MANUAL).%.epub: $(MANUAL).%.xml $(ENT_ALL)
+	@$(call check-command, xsltproc, xsltproc)
+	-mkdir -p $(TMPDIR)/epub-$*/
+	cd $(TMPDIR)/epub-$*/ ; $(XPINC) $(CURDIR)/$(DXSL)/style-epub.xsl $(CURDIR)/$<
+	cp -f $(DXSL)/mimetype $(TMPDIR)/epub-$*/mimetype
+	cp -f $(DXSL)/$(MANUAL).css $(TMPDIR)/epub-$*/OEBPS/$(MANUAL).css
+	cp -f $(DXSL)/debian-openlogo.png $(TMPDIR)/epub-$*/OEBPS/debian-openlogo.png
+	cd $(TMPDIR)/epub-$*/ ; zip -r $@ ./
 
 #######################################################################
 ### Utility targets
 #######################################################################
 #######################################################################
+# $ make rsync     
+# export build result to http://people.debian.org/~osamu/$(MANUAL)/
+#######################################################################
+.PHONY: rsync
+rsync: all
+	-rm -rf $(TMPDIR)/pdf-*
+	-rm -rf $(TMPDIR)/tex-*
+	-rm -rf $(TMPDIR)/epub-*
+	cp -f fuzzy.log $(TMPDIR)/
+	rsync -avz $(TMPDIR)/ osamu@people.debian.org:public_html/$(MANUAL)/
+
+#######################################################################
 # $ make url       # check duplicate URL references
 #######################################################################
 .PHONY: url
-url: $(MANUAL).en.dbk
+url: $(MANUAL).en.xml
 	@echo "----- Duplicate URL references (start) -----"
 	-sed -ne "/^<\!ENTITY/s/<\!ENTITY \([^ ]*\) .*$$/\" \1 \"/p"  < $< | uniq -d | xargs -n 1 grep $< -e  | grep -e "^<\!ENTITY"
 	@echo "----- Duplicate URL references (end) -----"

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- -*- DocBook -*- -->
+<!-- vim:set tw=0 ts=8 et: -->
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" 
+"http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % trans    SYSTEM "po/en.ent">   %trans;
+<!ENTITY % common   SYSTEM "common.ent">   %common;
+<!ENTITY % version  SYSTEM "version.ent">  %version;
+]>
+<book lang="en">
+<!-- This is UTF-8 encoded. -->
+<!--
+This file has been reorganized to make this document robust for translation 
+when some externally referenced information changes.
+
+If you want to add extra contents to this document, please do so by
+ * adding tag like &othercredit; in English and provide it for each language.
+ * add extra content within msgstr but within <footnote>...</footnote>
+
+Please note there will be content checker to match tags of msgid and msgstr.
+The second rule is a way to get exception to this rule.
+
+Please try to correct something in translation.  If you think contents needs fix,
+Let's fix it in the root cause.
+
+Please do not use TAB in this file.
+
+Please understand to keep this document focused.  Not everything you think important 
+for the new maintainer should be written down.  Something social needs to be elsewhere.
+Some thing should be left to the practice.  Something needs to be left for exercise 
+for people to check official documentations.
+-->
+
+<title>Debian New Maintainers' Guide</title>
+
+<bookinfo>
+<authorgroup>
+<!-- Do not use firstname and surname tags it breaks Japanese.  -->
+<!-- The same with othercredit -->
+<author> <personname>Josip Rodin</personname> <email>joy-mg@debian.org</email> <contrib>original contents</contrib> </author>
+<author> <personname>Osamu Aoki</personname> <email>osamu@debian.org</email> <contrib>updated contents</contrib> </author>
+<!-- translator credits in po/translator.*.ent -->
+&othercredit;
+</authorgroup>
+<releaseinfo>version &docversion;</releaseinfo>
+<pubdate>&docisodate;</pubdate>
+<copyright><year>1998-2002</year> <holder>Josip Rodin</holder></copyright>
+<copyright><year>2005-2013</year> <holder>Osamu Aoki</holder></copyright>
+<copyright><year>2010</year>      <holder>Craig Small</holder></copyright>
+<copyright><year>2010</year>      <holder>Raphaël Hertzog</holder></copyright>
+<legalnotice>
+<para>
+This document may be used under the terms the GNU General Public License
+version 2 or higher.
+</para>
+<para>
+This document was made using these two documents as examples:
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Making a Debian Package (AKA the Debmake Manual), copyright © 1997 Jaldhar
+Vyas.
+</para>
+</listitem>
+<listitem>
+<para>
+The New-Maintainer's Debian Packaging Howto, copyright © 1997 Will Lowe.
+</para>
+</listitem>
+</itemizedlist>
+</legalnotice>
+</bookinfo>
+
+<!-- toc -->
+

@@ -1,4 +1,6 @@
-*.@@@LNG@@@.html          usr/share/doc/maint-guide@@@XLNG@@@/html/
-maint-guide.css           usr/share/doc/maint-guide@@@XLNG@@@/html/
-maint-guide.@@@LNG@@@.txt usr/share/doc/maint-guide@@@XLNG@@@/
-maint-guide.@@@LNG@@@.pdf usr/share/doc/maint-guide@@@XLNG@@@/
+tmp/*.@@@LNG@@@.html           usr/share/doc/maint-guide@@@XLNG@@@/html/
+tmp/maint-guide.css            usr/share/doc/maint-guide@@@XLNG@@@/html/
+tmp/images/*                   usr/share/doc/maint-guide@@@XLNG@@@/html/images/
+tmp/maint-guide.@@@LNG@@@.txt  usr/share/doc/maint-guide@@@XLNG@@@/
+tmp/maint-guide.@@@LNG@@@.pdf  usr/share/doc/maint-guide@@@XLNG@@@/
+tmp/maint-guide.@@@LNG@@@.epub usr/share/doc/maint-guide@@@XLNG@@@/

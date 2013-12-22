@@ -1,0 +1,522 @@
+<chapter id="start"><title>Getting started The Right Way</title>
+<para>
+This document tries to describe the building of a Debian package to ordinary
+Debian users and prospective developers.  It uses fairly non-technical language, and
+it's well covered with working examples.  There is an old Latin saying:
+<emphasis>Longum iter est per praecepta, breve et efficax per
+exempla</emphasis> (It's a long way by the rules, but short and efficient with
+examples).
+</para>
+<para>
+This document has been updated for the Debian <literal>&base-release;</literal>
+release.
+<footnote><para> The document assumes you are using a
+<literal>&base-release;</literal> or newer system.  If you need to follow this
+text in an older system (including an older Ubuntu system etc.), you must
+install backported <systemitem role="package">dpkg</systemitem> and 
+<systemitem role="package">debhelper</systemitem> packages, at least.
+</para> </footnote>
+</para>
+<para>
+One of the things that makes Debian such a top-notch distribution is its
+package system.  While there is a vast quantity of software already in the
+Debian format, sometimes you need to install software that isn't.  You may be
+wondering how you can make your own packages; and perhaps you think it is a very
+difficult task.  Well, if you are a real novice on Linux, it is hard, but if
+you were a rookie, you wouldn't be reading this document now&nbsp;:-)
+You do need to know a little about Unix programming but you certainly
+don't need to be a wizard.
+<footnote><para>
+You can learn about the basic handling of a Debian system from the
+<ulink url="&debref;">Debian Reference</ulink>.  It contains some pointers to
+learn about Unix programming, too.
+</para></footnote>
+</para>
+<para>
+One thing is certain, though: to properly create and maintain Debian packages
+takes many hours.  Make no mistake, for our system to work the maintainers
+need to be both technically competent and diligent.
+</para>
+<para>
+If you need some help on packaging, please read <xref linkend="helpme"/>.
+</para>
+<para>
+Newer versions of this document should always be available online at 
+<ulink url="&maint-guide;"/> and in the 
+<systemitem role="package">maint-guide</systemitem> package.
+The translations may be available in packages such as
+<systemitem role="package">maint-guide-es</systemitem>.
+Please note that this documentation may be slightly outdated.
+</para>
+<para>
+Since this is a tutorial, I choose to explain each detailed step for some
+important topics.  Some of them may look irrelevant to you.  Please be patient.
+I have also intentionally skipped some corner cases and provided only pointers
+to keep this document simple.
+</para>
+<section id="socialdynamics"><title>Social dynamics of Debian</title>
+<para>
+Here are some observations of Debian's social dynamics, presented in the hope
+that it will prepare you for interactions with Debian.
+</para>
+<itemizedlist>
+<listitem><para>We all are volunteers.</para>
+<itemizedlist>
+<listitem><para>You cannot impose on others what to do.</para></listitem>
+<listitem><para>You should be motivated to do things by yourself.</para></listitem>
+</itemizedlist></listitem>
+<listitem><para>Friendly cooperation is the driving force.</para>
+<itemizedlist>
+<listitem><para>Your contribution should not overstrain others.</para></listitem>
+<listitem><para>Your contribution is valuable only when others appreciate it.</para></listitem>
+</itemizedlist></listitem>
+<listitem><para>Debian is not your school where you get automatic attention of teachers.</para>
+<itemizedlist>
+<listitem><para>You should be able to learn many things by yourself.</para></listitem>
+<listitem><para>Attention from other volunteers is a very scarce resource.</para></listitem>
+</itemizedlist></listitem>
+<listitem><para>Debian is constantly improving.</para>
+<itemizedlist>
+<listitem><para>You are expected to make high quality packages.</para></listitem>
+<listitem><para>You should adapt yourself to change.</para></listitem>
+</itemizedlist></listitem>
+</itemizedlist>
+<para>
+There are several types of people interacting around Debian with different
+roles.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+<emphasis role="strong">upstream author</emphasis>: the person who made the
+original program.
+</para>
+</listitem>
+<listitem>
+<para>
+<emphasis role="strong">upstream maintainer</emphasis>: the person who
+currently maintains the program.
+</para>
+</listitem>
+<listitem>
+<para>
+<emphasis role="strong">maintainer</emphasis>: the person making the Debian
+package of the program.
+</para>
+</listitem>
+<listitem>
+<para>
+<emphasis role="strong">sponsor</emphasis>: a person who helps maintainers to
+upload packages to the official Debian package archive (after checking their
+contents).
+</para>
+</listitem>
+<listitem>
+<para>
+<emphasis role="strong">mentor</emphasis>: a person who helps novice
+maintainers with packaging etc.
+</para>
+</listitem>
+<listitem>
+<para>
+<emphasis role="strong">Debian Developer</emphasis> (DD): a member of
+the Debian project with full upload rights to the official Debian package
+archive.
+</para>
+</listitem>
+<listitem>
+<para>
+<emphasis role="strong">Debian Maintainer</emphasis> (DM): a person with
+limited upload rights to the official Debian package archive.
+</para>
+</listitem>
+</itemizedlist>
+<para>
+Please note that you cannot become an official
+<emphasis role="strong">Debian Developer</emphasis> (DD) overnight, because it
+takes more than technical skill.  Please do not be discouraged by this.  If it
+is useful to others, you can still upload your package either as a 
+<emphasis role="strong">maintainer</emphasis> through a 
+<emphasis role="strong">sponsor</emphasis> or as a 
+<emphasis role="strong">Debian Maintainer</emphasis>.
+</para>
+<para>
+Please note that you do not need to create any new package to become an
+official Debian Developer.  Contributing to the existing packages can provide a
+path to becoming an official Debian Developer too.  There are many packages
+waiting for good maintainers (see <xref linkend="choose"/>).
+</para>
+<para>
+Since we focus only on technical aspects of packaging in this document,
+please refer to the following to learn how Debian functions and how you can get involved.
+</para>
+<itemizedlist>
+<listitem><para><ulink url="&logiciellibre;">Debian: 17 years of Free Software, "do-ocracy", and democracy</ulink> (Introductory slides) </para> </listitem>
+<listitem><para><ulink url="&debianorghelp;">How can you help Debian?</ulink> (official) </para> </listitem>
+<listitem><para><ulink url="&debianfaqhelp;">The Debian GNU/Linux FAQ, Chapter 13 - "Contributing to the Debian Project"</ulink> (semi-official) </para> </listitem>
+<listitem><para><ulink url="&debianwikihelp;">Debian Wiki, HelpDebian</ulink> (supplemental) </para> </listitem>
+<listitem><para><ulink url="&nm-do;">Debian New Member site</ulink> (official) </para> </listitem>
+<listitem><para><ulink url="&debianmentorfaq;">Debian Mentors FAQ</ulink> (supplemental) </para> </listitem>
+</itemizedlist>
+</section>
+<section id="needprogs"><title>Programs needed for development</title>
+<para>
+Before you start anything, you should make sure that you have properly
+installed some additional packages needed for development.  Note that the list
+doesn't contain any packages marked <literal>essential</literal> or
+<literal>required</literal> - we expect that you have those installed already.
+</para>
+<para>
+The following packages come with the standard Debian installation, so you
+probably have them already (along with any additional packages they depend on).
+Still, you should check it with <literal>aptitude show
+<replaceable>package</replaceable></literal>
+or with <literal>dpkg -s <replaceable>package</replaceable></literal>.
+</para>
+<para>
+The most important package to install on your development system is the
+<systemitem role="package">build-essential</systemitem> package.  Once you try
+to install that, it will <emphasis>pull in</emphasis> other packages required to
+have a basic build environment.
+</para>
+<para>
+For some types of packages, that is all you will require; however, there is
+another set of packages that while not essential for all package builds are
+useful to have installed or may be required by your package:
+</para>
+<itemizedlist>
+<listitem>
+<para>
+<systemitem role="package">autoconf</systemitem>, <systemitem
+role="package">automake</systemitem>, and <systemitem
+role="package">autotools-dev</systemitem> - many newer programs use configure
+scripts and <filename>Makefile</filename> files preprocessed with the help of
+programs like these (see <literal>info autoconf</literal>, <literal>info
+automake</literal>).  <systemitem role="package">autotools-dev</systemitem>
+keeps up-to-date versions of certain auto files and has documentation about the
+best way to use those files.
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">debhelper</systemitem> and
+<systemitem role="package">dh-make</systemitem> -
+<systemitem role="package">dh-make</systemitem> is necessary to create
+the skeleton of our example package, and it will use some of the
+<systemitem role="package">debhelper</systemitem> tools for creating
+packages.  They are not essential for this purpose, but are
+<emphasis>highly</emphasis> recommended for new maintainers.  It makes
+the whole process very much easier to start, and to control afterwards.
+(See <citerefentry> <refentrytitle>dh_make</refentrytitle>
+<manvolnum>8</manvolnum> </citerefentry>, <citerefentry>
+<refentrytitle>debhelper</refentrytitle> <manvolnum>1</manvolnum>
+</citerefentry>.) <footnote><para> There are also some more specialized
+but similar packages such as
+<systemitem role="package">dh-make-perl</systemitem>,
+<systemitem role="package">dh-make-php</systemitem>, etc.  </para>
+</footnote>
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">devscripts</systemitem> - this package contains some
+useful scripts that can be helpful for maintainers, but they are also
+not necessary for building packages.  Packages recommended and suggested
+by this package are worth looking into.  (See <filename>&devscripts-readme;</filename>.)
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">fakeroot</systemitem> - this utility lets you
+emulate being root which is necessary for some parts of the build process.
+(See <citerefentry> <refentrytitle>fakeroot</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry>.)
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">file</systemitem> - this handy program can determine
+what type a file is.  (See <citerefentry> <refentrytitle>file</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry>.)
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">gfortran</systemitem> - the GNU Fortran 95 compiler,
+necessary if your program is written in Fortran.  (See <citerefentry>
+<refentrytitle>gfortran</refentrytitle> <manvolnum>1</manvolnum>
+</citerefentry>.)
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">git</systemitem> - this package provides a popular
+version control system designed to handle very large projects with speed and
+efficiency; it is used for many high profile open source projects, most notably
+the Linux kernel.  (See <citerefentry> <refentrytitle>git</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry>,
+git Manual (<filename>&git-doc;</filename>).)
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">gnupg</systemitem> - a tool that enables you to
+digitally <emphasis>sign</emphasis> packages.  This is especially important if
+you want to distribute it to other people, and you will certainly be doing that
+when your work gets included in the Debian distribution.  (See <citerefentry>
+<refentrytitle>gpg</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>.)
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">gpc</systemitem> - the GNU Pascal compiler,
+necessary if your program is written in Pascal.  Worthy of note here is
+<systemitem role="package">fp-compiler</systemitem>, the Free Pascal Compiler,
+which is also good at this task.  (See <citerefentry>
+<refentrytitle>gpc</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>,
+<citerefentry> <refentrytitle>ppc386</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry>.)
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">lintian</systemitem> - this is the Debian package
+checker, which can let you know of any common mistakes after you build the
+package, and explains the errors found.  (See <citerefentry>
+<refentrytitle>lintian</refentrytitle> <manvolnum>1</manvolnum>
+</citerefentry>,
+<ulink url="&lintian-doc;">Lintian User's Manual</ulink>.)
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">patch</systemitem> - this very useful utility will
+take a file containing a difference listing (produced by the
+<command>diff</command> program) and apply it to the original file, producing a
+patched version.  (See <citerefentry> <refentrytitle>patch</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry>.)
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">patchutils</systemitem> - this package contains some
+utilities to work with patches such as the <command>lsdiff</command>,
+<command>interdiff</command> and <command>filterdiff</command> commands.
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">pbuilder</systemitem> - this package contains
+programs which are used for creating and maintaining <command>chroot</command>
+environment.  Building Debian package in this <command>chroot</command>
+environment verifies the proper build dependency and avoid FTBFS (Fails To
+Build From Source) bugs.  (see <citerefentry>
+<refentrytitle>pbuilder</refentrytitle> <manvolnum>8</manvolnum>
+</citerefentry> and <citerefentry> <refentrytitle>pdebuild</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry>)
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">perl</systemitem> - Perl is one of the most used
+interpreted scripting languages on today's Unix-like systems, often referred to
+as Unix's Swiss Army Chainsaw. (See <citerefentry>
+<refentrytitle>perl</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>.)
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">python</systemitem> - Python is another of the most
+used interpreted scripting languages on the Debian system, combining
+remarkable power with very clear syntax. (See <citerefentry>
+<refentrytitle>python</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>.)
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">quilt</systemitem> - this package helps you to
+manage large numbers of patches by keeping track of the changes each patch
+makes. Patches can be applied, un-applied, refreshed, and more.  (See
+<citerefentry> <refentrytitle>quilt</refentrytitle> <manvolnum>1</manvolnum></citerefentry>, 
+and <filename>&quilt-pdf;</filename>.)
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">xutils-dev</systemitem> - some programs, usually
+those made for X11, also use these programs to generate
+<filename>Makefile</filename> files from sets of macro functions.  (See
+<citerefentry> <refentrytitle>imake</refentrytitle> <manvolnum>1</manvolnum>
+</citerefentry>, <citerefentry> <refentrytitle>xmkmf</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry>.)
+</para>
+</listitem>
+</itemizedlist>
+<para>
+The short descriptions that are given above only serve to introduce you to what
+each package does.  Before continuing please read the documentation
+of each relevant program including ones installed through the package dependency such as 
+<command>make</command>, at least, for the standard usage.  It may seem like heavy
+going now, but later on you'll be <emphasis>very</emphasis> glad you read it.
+If you have specific questions later, I would suggest re-reading the documents
+mentioned above.
+</para>
+</section>
+<section id="needdocs"><title>Documentation needed for development</title>
+<para>
+The following is the <emphasis>very important</emphasis> documentation which
+you should read along with this document:
+</para>
+<itemizedlist>
+<listitem>
+<para>
+<systemitem role="package">debian-policy</systemitem> - the <ulink url="&debian-policy;">Debian Policy
+Manual</ulink> includes explanations of the structure and contents of the
+Debian archive, several OS design issues, the <ulink url="&fhs;">Filesystem Hierarchy Standard</ulink>
+(FHS, which says where each file and directory should be), etc.  For you, the most
+important thing is that it describes requirements that each package must
+satisfy to be included in the distribution. (See the local copies of
+<filename>&policy-pdf;</filename> and <filename>&fhs-pdf;</filename>.)
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">developers-reference</systemitem> 
+- the <ulink url="&developers-reference;">Debian Developer's Reference</ulink> 
+describes all matters not specifically about the technical
+details of packaging, like the structure of the archive, how to rename, orphan,
+or adopt packages, how to do NMUs, how to manage bugs, best packaging practices,
+when and where to upload etc.  (See the local copy of
+<filename>&developers-refpdf;</filename>.)
+</para>
+</listitem>
+</itemizedlist>
+<para>
+The following is the <emphasis>important</emphasis> documentation which
+you should read along with this document:
+</para>
+<itemizedlist>
+<listitem>
+<para>
+<ulink url="&autotools-tutorial;">Autotools
+Tutorial</ulink> provides a very good tutorial for <ulink url="&gnu-build-system;">the GNU Build System known
+as the GNU Autotools</ulink> whose most important components are Autoconf,
+Automake, Libtool, and gettext.
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">gnu-standards</systemitem> - this package contains
+two pieces of documentation from the GNU project: 
+<ulink url="&gnu-standard;">GNU Coding Standards</ulink>, and 
+<ulink url="&gnu-maintainer;">Information for Maintainers of GNU Software</ulink>.
+Although Debian does not require these to
+be followed, these are still helpful as guidelines and common sense.
+(See the local copies of
+<filename>&gnu-standard-pdf;</filename> and
+<filename>&gnu-maintainer-pdf;</filename>.)
+</para>
+</listitem>
+</itemizedlist>
+<para>
+If this document contradicts any of the documents mentioned above, they
+are correct.  Please file a bug report on the
+<systemitem role="package">maint-guide</systemitem> package using
+<command>reportbug</command>.
+</para>
+<para>
+The following is an alternative tutorial documentation which you may
+read along with this document:
+</para>
+<itemizedlist>
+<listitem><para><ulink url="&debpkg-tutorial0;">Debian Packaging Tutorial</ulink></para></listitem>
+</itemizedlist>
+</section>
+<section id="helpme"><title>Where to ask for help</title>
+<para>
+Before you decide to ask your question in some public place, please read the fine documentation.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+files in <filename>/usr/share/doc/<replaceable>package</replaceable></filename> for all pertinent packages
+</para>
+</listitem>
+<listitem>
+<para>
+contents of <literal><command>man</command> <replaceable>command</replaceable></literal> for all pertinent commands
+</para>
+</listitem>
+<listitem>
+<para>
+contents of <literal><command>info</command> <replaceable>command</replaceable></literal> for all pertinent commands
+</para>
+</listitem>
+<listitem>
+<para>
+contents of <ulink url="&debian-mentors-ldo;">debian-mentors@lists.debian.org mailing list archive</ulink>
+</para>
+</listitem>
+<listitem>
+<para>
+contents of <ulink url="&debian-devel-ldo;">debian-devel@lists.debian.org mailing list archive</ulink>
+</para>
+</listitem>
+</itemizedlist>
+<para>
+You can use web search engines more effectively by including search strings
+such as <literal>site:lists.debian.org</literal> to limit the domain.
+</para>
+<para>
+Making a small test package is a good way to learn details of packaging.
+Inspecting existing well maintained packages is the best way to learn how other
+people make packages.
+</para>
+<para>
+If you still have questions about packaging that you couldn't find answers to
+in the available documentation and web resources, you can ask them interactively.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+<ulink url="&debian-mentors-ldo;">debian-mentors@lists.debian.org mailing list</ulink>. (This mailing list is for the novice.)
+</para>
+</listitem>
+<listitem>
+<para>
+<ulink url="&debian-devel-ldo;">debian-devel@lists.debian.org mailing list</ulink>. (This mailing list is for the expert.)
+</para>
+</listitem>
+<listitem>
+<para>
+<ulink url="&irc-debian;">IRC</ulink> such as <literal>#debian-mentors</literal>.
+</para>
+</listitem>
+</itemizedlist>
+<para>
+The more experienced Debian developers will gladly help you, if you ask
+properly after making your required efforts.
+</para>
+<para>
+When you receive a bug report (yes, actual bug reports!), you will know that it
+is time for you to dig into the 
+<ulink url="&bts;">Debian Bug Tracking System</ulink> 
+and read the documentation there, to be able to
+deal with the reports efficiently.  I highly recommend reading the 
+<ulink url="&devref-bug-handling;">Debian Developer's Reference, 5.8.
+"Handling bugs"</ulink>.
+</para>
+<para>
+Even if it all worked well, it's time to start praying.  Why?  Because in just
+a few hours (or days) users from all around the world will start to use your
+package, and if you made some critical error you'll get mailbombed by numerous
+angry Debian users...  Just kidding.  :-)
+</para>
+<para>
+Relax and be ready for bug reports, because there is a lot more work to be done
+before your package will be fully in line with Debian policies and its best
+practice guidelines (once again, read the <emphasis>real
+documentation</emphasis> for details).  Good luck!
+</para>
+</section>
+</chapter>

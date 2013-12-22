@@ -1,0 +1,484 @@
+<chapter id="update"><title>Updating the package</title>
+<para>
+After you release a package, you will soon need to update it.
+</para>
+<section id="newrevision"><title>New Debian revision</title>
+<para>
+Let's say that a bug report was filed against your package as
+<literal>#654321</literal>, and it describes a problem that you can solve.
+Here's what you need to do to create a new Debian revision of the package.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+If this is to be recorded as a new patch, do the following.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+<literal>dquilt new <replaceable>bugname.patch</replaceable></literal> to set
+the patch name;
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>dquilt add <replaceable>buggy-file</replaceable></literal> to declare
+the file to be modified;
+</para>
+</listitem>
+<listitem>
+<para>
+Correct the problem in the package source for the upstream bug;
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>dquilt refresh</literal> to record it to
+<filename><replaceable>bugname.patch</replaceable></filename>;
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>dquilt header -e</literal> to add its description;
+</para>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<para>
+If this is to update an existing patch, do the following.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+<literal>dquilt pop <replaceable>foo.patch</replaceable></literal> to recall
+the existing <filename><replaceable>foo.patch</replaceable></filename>;
+</para>
+</listitem>
+<listitem>
+<para>
+Correct the problem in the old
+<filename><replaceable>foo.patch</replaceable></filename>;
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>dquilt refresh</literal> to update
+<filename><replaceable>foo.patch</replaceable></filename>;
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>dquilt header -e</literal> to update its description;
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>while dquilt push; do dquilt refresh; done</literal> to apply all
+patches while removing <emphasis>fuzz</emphasis>;
+</para>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<para>
+Add a new revision at the top of the Debian <filename>changelog</filename>
+file, for example with <literal>dch -i</literal>, or explicitly with
+<literal>dch -v
+<replaceable>version</replaceable>-<replaceable>revision</replaceable></literal>
+and then insert the comments using your preferred editor.  <footnote><para>To
+get the date in the required format, use <literal>LANG=C date -R</literal>.
+</para> </footnote>
+</para>
+</listitem>
+<listitem>
+<para>
+Include a short description of the bug and the solution in the changelog entry,
+followed by <literal>Closes: #654321</literal>.  That way, the bug report will
+be <emphasis>automagically</emphasis> closed by the archive maintenance
+software the moment your package gets accepted into the Debian archive.
+</para>
+</listitem>
+<listitem>
+<para>
+Repeat what you did in the above to fix more bugs while updating the Debian
+<filename>changelog</filename> file with <literal>dch</literal> as needed.
+</para>
+</listitem>
+<listitem>
+<para>
+Repeat what you did in <xref linkend="completebuild"/> and <xref linkend="checkit"/>.
+</para>
+</listitem>
+<listitem>
+<para>
+Once you are satisfied, you should change the distribution value in <filename>changelog</filename> from
+<literal>UNRELEASED</literal> to the target distribution value
+<literal>unstable</literal> (or even <literal>experimental</literal>).<footnote><para>If you
+use the <literal>dch -r</literal> command to make this last change,  please
+make sure to save the <filename>changelog</filename> file explicitly by the
+editor.</para></footnote>
+</para>
+</listitem>
+<listitem>
+<para>
+Upload the package as <xref linkend="upload"/>.  The difference is that
+this time, the original source archive won't be included, as it hasn't been
+changed and it already exists in the Debian archive.
+</para>
+</listitem>
+</itemizedlist>
+<para>
+One tricky case can occur when you make a local package to experiment with
+the packaging before uploading  the normal version to the official archive,
+e.g.,
+<literal><replaceable>1.0.1</replaceable>-<replaceable>1</replaceable></literal>.
+For smoother upgrades, it is a good idea to create a
+<filename>changelog</filename> entry with a version string as
+<literal><replaceable>1.0.1</replaceable>-<replaceable>1~rc1</replaceable></literal>.
+You may unclutter <filename>changelog</filename>
+by consolidating such local change entries into a single entry for the official package.
+See <xref linkend="namever"/> for the order of version strings.
+</para>
+<para>
+</para>
+</section>
+<section id="inspectnewupstream"><title>Inspection of the new upstream release</title>
+<para>
+When preparing packages of a new upstream release for the Debian archive, you
+must check the new upstream release, first.
+</para>
+<para>
+Start by reading the upstream <filename>changelog</filename>,
+<filename>NEWS</filename>, and whatever other documentation they may have
+released with the new version.
+</para>
+<para>
+You can then inspect changes between the old and new upstream sources as follows,
+watching out for anything suspicious.
+</para>
+<screen>
+$ diff -urN <replaceable>foo</replaceable>-<replaceable>oldversion</replaceable> <replaceable>foo</replaceable>-<replaceable>newversion</replaceable>
+</screen>
+<para>
+Changes to some auto-generated files by Autotools such as
+<filename>missing</filename>, <filename>aclocal.m4</filename>,
+<filename>config.guess</filename>, <filename>config.h.in</filename>,
+<filename>config.sub</filename>, <filename>configure</filename>,
+<filename>depcomp</filename>, <filename>install-sh</filename>,
+<filename>ltmain.sh</filename>, and <filename>Makefile.in</filename> may be
+ignored.  You may delete them before running <command>diff</command> on the
+source for inspection.
+</para>
+</section>
+<section id="newupstream"><title>New upstream release</title>
+<para>
+If a package <systemitem role="package"><replaceable>foo</replaceable></systemitem> is properly packaged
+in the newer <literal>3.0 (native)</literal> or <literal>3.0 (quilt)</literal>
+formats, packaging a new upstream version is essentially moving the old
+<filename>debian</filename> directory to the new source.  This can be done by
+running <literal>tar xvzf
+/<replaceable>path</replaceable>/<replaceable>to</replaceable>/<replaceable>foo</replaceable>_<replaceable>oldversion</replaceable>.debian.tar.gz</literal>
+in the new extracted source.  <footnote><para> If a package <systemitem role="package"><replaceable>foo</replaceable></systemitem> is packaged in the
+old <literal>1.0</literal> format, this can be done by running <literal>zcat
+/<replaceable>path</replaceable>/<replaceable>to</replaceable>/<replaceable>foo</replaceable>_<replaceable>oldversion</replaceable>.diff.gz|patch
+-p1</literal> in the new extracted source, instead.  </para> </footnote> Of
+course, you need to do some obvious chores.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Create a copy of the upstream source as the
+<filename>foo_<replaceable>newversion</replaceable>.orig.tar.gz</filename> file.
+</para>
+</listitem>
+<listitem>
+<para>
+Update the Debian <filename>changelog</filename> file with <literal>dch -v
+<replaceable>newversion</replaceable>-<replaceable>1</replaceable></literal>.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Add an entry with <literal>New upstream release</literal>.
+</para>
+</listitem>
+<listitem>
+<para>
+Describe concisely the changes <emphasis>in the new upstream release</emphasis>
+that fix reported bugs and close those bugs by adding <literal>Closes: #<replaceable>bug_number</replaceable></literal>.
+</para>
+</listitem>
+<listitem>
+<para>
+Describe concisely the changes <emphasis>to the new upstream release</emphasis>
+by the maintainer that fix reported bugs and close those bugs by adding <literal>Closes: #<replaceable>bug_number</replaceable></literal>.
+</para>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<para>
+<literal>while dquilt push; do dquilt refresh; done</literal> to apply all
+patches while removing <emphasis>fuzz</emphasis>.
+</para>
+</listitem>
+</itemizedlist>
+<para>
+If the patch/merge did not apply cleanly, inspect the situation (clues are left
+in <filename>.rej</filename> files).
+</para>
+<itemizedlist>
+<listitem>
+<para>
+If a patch you applied to the source was integrated into the upstream source,
+</para>
+<itemizedlist>
+<listitem>
+<para>
+<literal>dquilt delete</literal> to remove it.
+</para>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<para>
+If a patch you applied to the source conflicted with new changes in the
+upstream source,
+</para>
+<itemizedlist>
+<listitem>
+<para>
+<literal>dquilt push -f</literal> to apply old patches while forcing rejects as
+<filename><replaceable>baz</replaceable>.rej</filename>.
+</para>
+</listitem>
+<listitem>
+<para>
+Edit the <filename><replaceable>baz</replaceable></filename> file manually to
+bring about the intended effect of
+<filename><replaceable>baz</replaceable>.rej</filename>.
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>dquilt refresh</literal> to update the patch.
+</para>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<para>
+Continue as usual with <literal>while dquilt push; do dquilt refresh; done</literal>.
+</para>
+</listitem>
+</itemizedlist>
+<para>
+This process can be automated using the <citerefentry>
+<refentrytitle>uupdate</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>
+command as follows:
+</para>
+<screen>
+$ apt-get source <replaceable>foo</replaceable>
+...
+dpkg-source: info: extracting <replaceable>foo</replaceable> in <replaceable>foo</replaceable>-<replaceable>oldversion</replaceable>
+dpkg-source: info: unpacking <replaceable>foo</replaceable>_<replaceable>oldversion</replaceable>.orig.tar.gz
+dpkg-source: info: applying <replaceable>foo</replaceable>_<replaceable>oldversion</replaceable>-1.debian.tar.gz
+$ ls -F
+<replaceable>foo</replaceable>-<replaceable>oldversion</replaceable>/
+<replaceable>foo</replaceable>_<replaceable>oldversion</replaceable>-1.debian.tar.gz
+<replaceable>foo</replaceable>_<replaceable>oldversion</replaceable>-1.dsc
+<replaceable>foo</replaceable>_<replaceable>oldversion</replaceable>.orig.tar.gz
+$ wget http://example.org/<replaceable>foo</replaceable>/<replaceable>foo</replaceable>-<replaceable>newversion</replaceable>.tar.gz
+$ cd <replaceable>foo</replaceable>-<replaceable>oldversion</replaceable>
+$ uupdate -v <replaceable>newversion</replaceable> ../<replaceable>foo</replaceable>-<replaceable>newversion</replaceable>.tar.gz
+$ cd ../<replaceable>foo</replaceable>-<replaceable>newversion</replaceable>
+$ while dquilt push; do dquilt refresh; done
+$ dch
+... document changes made
+</screen>
+<para>
+If you set up a <filename>debian/watch</filename> file as described in <xref linkend="watch"/>, you can skip the <command>wget</command> command.  You
+simply run <citerefentry> <refentrytitle>uscan</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry> in the
+<filename><replaceable>foo</replaceable>-<replaceable>oldversion</replaceable></filename>
+directory instead of the <command>uupdate</command> command.  This will
+<emphasis>automagically</emphasis> look for the updated source, download it,
+and run the <command>uupdate</command> command.  <footnote><para> If the
+<command>uscan</command> command downloads the updated source but it does not
+run the <command>uupdate</command> command, you should correct the
+<filename>debian/watch</filename> file to have <literal>debian
+uupdate</literal> at the end of the URL.  </para> </footnote>
+</para>
+<para>
+You can release this updated source by repeating what you did in <xref linkend="completebuild"/>, <xref linkend="checkit"/>, and <xref linkend="upload"/>.
+</para>
+</section>
+
+<section id="packagestyle"><title>Updating the packaging style</title>
+<para>
+Updating the package style is not a required activity for the update of a
+package.  However, doing so lets you use the full capabilities of the modern
+<systemitem role="package">debhelper</systemitem> system and the <literal>3.0</literal>
+source format.  <footnote><para> If your sponsor or other
+maintainers object to updating the existing packaging style, don't bother
+arguing.  There are more important things to do.  </para>
+</footnote>
+</para>
+<itemizedlist>
+<listitem>
+<para>
+If you need to recreate deleted template files for any reason, you can run
+<command>dh_make</command> again in the same Debian package source tree with
+the <literal>--addmissing</literal> option.  Then edit them appropriately.
+</para>
+</listitem>
+<listitem>
+<para>
+If the package has not been updated to use the <systemitem role="package">debhelper</systemitem> v7+ <command>dh</command> syntax for the
+<filename>debian/rules</filename> file, update it to use <command>dh</command>.
+Update the <filename>debian/control</filename> file accordingly.
+</para>
+</listitem>
+<listitem>
+<para>
+If you want to update the <filename>rules</filename> file created with the
+<filename>Makefile</filename> inclusion mechanism of the Common Debian Build
+System (<systemitem role="package">cdbs</systemitem>) to the
+<command>dh</command> syntax, see the following to understand its
+<literal>DEB_*</literal> configuration variables.
+</para>
+<itemizedlist>
+<listitem><para>local copy of <filename>&cdbs-doc;</filename></para></listitem>
+<listitem><para><ulink url="&cdbs-tutorial;">The Common Debian Build System (CDBS), FOSDEM 2009</ulink></para></listitem>
+</itemizedlist>
+<!-- 
+<footnote><para> In the
+<systemitem role="package">cdbs</systemitem> (0.4.74) package, there are some
+negative descriptions of the <filename>rules</filename> file created by the
+<command>dh_make</command> command for the non-<systemitem role="package">cdbs</systemitem> choices.  Do not worry about it.  It applies
+only for <literal>lenny</literal> which created explicit targets with long lists
+of <command>dh_*</command> commands.  </para> </footnote>
+-->
+</listitem>
+<listitem>
+<para>
+If you have a <literal>1.0</literal> source package without the
+<filename><replaceable>foo</replaceable>.diff.gz</filename> file, you can
+update it to the newer <literal>3.0 (native)</literal> source format by
+creating <filename>debian/source/format</filename> with <literal>3.0
+(native)</literal>.  The rest of the <filename>debian/*</filename> files can just be
+copied.
+</para>
+</listitem>
+<listitem>
+<para>
+If you have a <literal>1.0</literal> source package with the
+<filename><replaceable>foo</replaceable>.diff.gz</filename> file, you can
+update it to the newer <literal>3.0 (quilt)</literal> source format by creating
+<filename>debian/source/format</filename> with <literal>3.0 (quilt)</literal>.
+The rest of the <filename>debian/*</filename> files can just be copied.  Import the
+<filename>big.diff</filename> file generated by the command <literal>filterdiff -z -x
+'*/debian/*' <replaceable>foo</replaceable>.diff.gz &gt; big.diff</literal>
+to your <command>quilt</command> system, if needed.  <footnote><para>
+You can split <filename>big.diff</filename> into many small incremental patches
+using the <command>splitdiff</command> command.  </para> </footnote>
+</para>
+</listitem>
+<listitem>
+<para>
+If it was packaged using another patch system such as <systemitem role="package">dpatch</systemitem>, <systemitem role="package">dbs</systemitem>, or <systemitem role="package">cdbs</systemitem> with <literal>-p0</literal>,
+<literal>-p1</literal>, or <literal>-p2</literal>, convert it to the
+<systemitem role="package">quilt</systemitem> command using
+<filename>deb3</filename> at <ulink url="&deb3;"/>.
+</para>
+</listitem>
+<listitem>
+<para>
+If it was packaged with the <command>dh</command> command with the
+<literal>--with quilt</literal> option or with the
+<command>dh_quilt_patch</command> and <command>dh_quilt_unpatch</command>
+commands, remove these and make it use the newer <literal>3.0
+(native)</literal> source format.
+</para>
+</listitem>
+</itemizedlist>
+<para>
+You should check <ulink url="&dep;">DEP - Debian Enhancement Proposals</ulink> and adopt ACCEPTED proposals.
+</para>
+<para>
+You need to do the other tasks described in <xref linkend="newupstream"/>, too.
+</para>
+</section>
+
+<section id="utf8"><title>UTF-8 conversion</title>
+<para>
+If upstream documents are encoded in old encoding schemes, converting them to <ulink url="&utf8;">UTF-8</ulink> is a good idea.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Use <citerefentry> <refentrytitle>iconv</refentrytitle> <manvolnum>1</manvolnum> </citerefentry> to convert encodings of plain text files.
+</para>
+<screen>
+iconv -f latin1 -t utf8 <replaceable>foo_in.txt</replaceable> &gt; <replaceable>foo_out.txt</replaceable>
+</screen>
+</listitem>
+<listitem>
+<para>
+Use <citerefentry> <refentrytitle>w3m</refentrytitle> <manvolnum>1</manvolnum> </citerefentry> to convert from HTML files to UTF-8 plain text files.  When you do this, make sure to execute it under UTF-8 locale.
+</para>
+<screen>
+LC_ALL=C.UTF-8 w3m -o display_charset=UTF-8 \
+        -cols 70 -dump -no-graph -T text/html \
+        &lt; <replaceable>foo_in.html</replaceable> &gt; <replaceable>foo_out.txt</replaceable>
+</screen>
+</listitem>
+</itemizedlist>
+</section>
+
+<section id="reminders"><title>Reminders for updating packages</title>
+<para>
+Here are few reminders for updating packages.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Preserve old <filename>changelog</filename> entries (sounds obvious, but there
+have been cases of people typing <literal>dch</literal> when they should have typed
+<literal>dch -i</literal>.)
+</para>
+</listitem>
+<listitem>
+<para>
+Existing Debian changes need to be reevaluated; throw away stuff that upstream
+has incorporated (in one form or another) and remember to keep stuff that
+hasn't been incorporated by upstream, unless there is a compelling reason not
+to.
+</para>
+</listitem>
+<listitem>
+<para>
+If any changes were made to the build system (hopefully you'd know from
+inspecting upstream changes) then update the <filename>debian/rules</filename>
+and <filename>debian/control</filename> build dependencies if necessary.
+</para>
+</listitem>
+<listitem>
+<para>
+Check the <ulink url="&bts;">Debian Bug Tracking
+System (BTS)</ulink> to see if someone has provided patches to bugs that are
+currently open.
+</para>
+</listitem>
+<listitem>
+<para>
+Check the contents of the <filename>.changes</filename> file to make sure you
+are uploading to the correct distribution, the proper bug closures are listed
+in the <literal>Closes</literal> field, the <literal>Maintainer</literal> and
+<literal>Changed-By</literal> fields match, the file is GPG-signed, etc.
+</para>
+</listitem>
+</itemizedlist>
+</section>
+</chapter>

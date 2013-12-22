@@ -1,0 +1,372 @@
+<chapter id="modify"><title>Modifying the source</title>
+<para>
+Please note that there isn't space here to go into <emphasis>all</emphasis> the
+details of fixing upstream sources, but here are some basic steps and problems
+people often run across.
+</para>
+<section id="quiltrc"><title>Setting up <command>quilt</command></title>
+<para>
+The program <command>quilt</command> offers a basic method for recording
+modifications to the upstream source for Debian packaging.  It's
+useful to have a slightly customized default, so let's create an alias
+<command>dquilt</command> for Debian packaging by adding the following
+line to <filename>~/.bashrc</filename>.  The second line ensures that
+this alias benefits of the same shell completion features than
+<command>quilt</command> itself. 
+</para>
+<screen>
+alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
+complete -F _quilt_completion $_quilt_complete_opt dquilt
+</screen>
+<para>
+Then let's create <filename>~/.quiltrc-dpkg</filename> as follows.
+</para>
+<screen>
+d=. ; while [ ! -d $d/debian -a `readlink -e $d` != / ]; do d=$d/..; done
+if [ -d $d/debian ] &amp;&amp; [ -z $QUILT_PATCHES ]; then
+    # if in Debian packaging tree with unset $QUILT_PATCHES
+    QUILT_PATCHES="debian/patches"
+    QUILT_PATCH_OPTS="--reject-format=unified"
+    QUILT_DIFF_ARGS="-p ab --no-timestamps --no-index --color=auto"
+    QUILT_REFRESH_ARGS="-p ab --no-timestamps --no-index"
+    QUILT_COLORS="diff_hdr=1;32:diff_add=1;34:diff_rem=1;31:diff_hunk=1;33:diff_ctx=35:diff_cctx=33"
+    if ! [ -d $d/debian/patches ]; then mkdir $d/debian/patches; fi
+fi
+</screen>
+<para>
+See <citerefentry> <refentrytitle>quilt</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry> and
+<filename>&quilt-pdf;</filename> on how to use
+<command>quilt</command>.
+</para>
+</section>
+<section id="fixupstream"><title>Fixing upstream bugs</title>
+<para>
+Let's assume you find an error in the upstream <filename>Makefile</filename>
+as follows where <literal>install: gentoo</literal> should have been
+<literal>install: gentoo-target</literal>.
+</para>
+<screen>
+install: gentoo
+        install ./gentoo $(BIN)
+        install icons/* $(ICONS)
+        install gentoorc-example $(HOME)/.gentoorc
+</screen>
+<para>
+Let's fix this and record it with the <command>dquilt</command> command as
+<filename>fix-gentoo-target.patch</filename>.  <footnote><para> The
+<filename>debian/patches</filename> directory should exist now if you ran
+<command>dh_make</command> as described before.  This example operation creates
+it just in case you are updating an existing package.  </para> </footnote>
+</para>
+<screen>
+$ mkdir debian/patches
+$ dquilt new fix-gentoo-target.patch
+$ dquilt add Makefile
+</screen>
+<para>
+You change the <filename>Makefile</filename> file as follows.
+</para>
+<screen>
+install: gentoo-target
+        install ./gentoo $(BIN)
+        install icons/* $(ICONS)
+        install gentoorc-example $(HOME)/.gentoorc
+</screen>
+<para>
+Ask <command>dquilt</command> to generate the patch to create
+<filename>debian/patches/fix-gentoo-target.patch</filename> and add its
+description following <ulink url="&dep3;">DEP-3: Patch Tagging Guidelines</ulink>.
+</para>
+<screen>
+$ dquilt refresh
+$ dquilt header -e
+... describe patch
+</screen>
+</section>
+<section id="destdir"><title>Installation of files to their destination</title>
+<para>
+Most third-party software installs itself in the <filename>/usr/local</filename>
+directory hierarchy.  On Debian this is reserved for private use
+by the system administrator, so packages must not use directories such
+as <filename>/usr/local/bin</filename> but should instead use system
+directories such as <filename>/usr/bin</filename>, obeying the
+<ulink url="&fhs;">Filesystem Hierarchy Standard</ulink> (FHS).
+</para>
+<para>
+Normally, <citerefentry> <refentrytitle>make</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry> is used to automate building the
+program, and executing <literal>make install</literal> installs programs
+directly to the desired destination (following the
+<literal>install</literal> target in the
+<filename>Makefile</filename>).  In order for Debian to provide
+pre-built installable packages, it modifies the build system to install
+programs into a file tree image created under a temporary directory
+instead of the actual destination.
+</para>
+<para>
+These two differences between normal program installation on one hand and the
+Debian packaging system on the other can be transparently addressed by the
+<systemitem role="package">debhelper</systemitem> package through the
+<command>dh_auto_configure</command> and <command>dh_auto_install</command>
+commands if the following conditions are met.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+The <filename>Makefile</filename> must follow GNU conventions and
+support the <literal>$(DESTDIR)</literal> variable.
+<footnote><para> See <ulink url="&gnu-destdir;">GNU Coding Standards: 7.2.4 DESTDIR: Support for Staged Installs</ulink>.</para></footnote>
+</para>
+</listitem>
+<listitem>
+<para>
+The source must follow the Filesystem Hierarchy Standard (FHS).
+</para>
+</listitem>
+</itemizedlist>
+<para>
+Programs that use GNU <command>autoconf</command> follow the GNU conventions
+automatically, so they can be trivial to package.  On the basis of
+this and other heuristics, it is estimated that the
+<systemitem role="package">debhelper</systemitem> package will work for
+about 90% of packages without making any intrusive changes to their
+build system.  So packaging is not as complicated as it may seem.
+</para>
+<para>
+If you need to make changes in the <filename>Makefile</filename>, you
+should be careful to support the <literal>$(DESTDIR)</literal>
+variable.  Although it is unset by default, the <literal>$(DESTDIR)</literal> 
+variable is prepended to each file path used for the program
+installation.  The packaging script will set
+<literal>$(DESTDIR)</literal> to the temporary directory. 
+</para>
+<para>
+For a source package generating a single binary package, the temporary directory used
+by the <command>dh_auto_install</command> command will be set to
+<filename>debian/<replaceable>package</replaceable></filename>.
+<footnote><para> For a source package generating multiple binary packages, the
+<command>dh_auto_install</command> command uses <filename>debian/tmp</filename>
+as the temporary directory while the <command>dh_install</command> command with
+the help of
+<filename>debian/<replaceable>package-1</replaceable>.install</filename> and
+<filename>debian/<replaceable>package-2</replaceable>.install</filename> files
+will split the contents of <filename>debian/tmp</filename> into
+<filename>debian/<replaceable>package-1</replaceable></filename> and
+<filename>debian/<replaceable>package-2</replaceable></filename> temporary
+directories, to create 
+<filename><replaceable>package-1</replaceable>_*.deb</filename> and
+<filename><replaceable>package-2</replaceable>_*.deb</filename> binary
+packages.
+</para> </footnote> Everything that is contained in the temporary directory
+will be installed on users' systems when they install your package; the only
+difference is that <command>dpkg</command> will be installing the
+files to paths relative to the root directory rather than your working
+directory.
+</para>
+<para>
+Bear in mind that even though your program installs in
+<filename>debian/<replaceable>package</replaceable></filename>, it still needs
+to behave correctly when installed from the <filename>.deb</filename>
+package under the root directory.  So you must not allow the build
+system to hardcode strings like
+<literal>/home/me/deb/<replaceable>package</replaceable>-<replaceable>version</replaceable>/usr/share/<replaceable>package</replaceable></literal>
+into files in the package.
+</para>
+<para>
+Here's the relevant part of <systemitem role="package">gentoo</systemitem>'s
+<filename>Makefile</filename><footnote><para> This is just an example to
+show what a <filename>Makefile</filename> should look like.  If the
+<filename>Makefile</filename> is created by the
+<command>./configure</command> command, the correct way to fix this kind of
+<filename>Makefile</filename> is to execute <command>./configure</command>
+from the <command>dh_auto_configure</command> command with default
+options including <literal>--prefix=/usr</literal>.  </para> </footnote>:
+</para>
+<screen>
+# Where to put executable commands on 'make install'?
+BIN     = /usr/local/bin
+# Where to put icons on 'make install'?
+ICONS   = /usr/local/share/gentoo
+</screen>
+<para>
+We see that the files are set to install under <filename>/usr/local</filename>.
+As explained above, that directory hierarchy is reserved for local use on
+Debian, so change those paths to:
+</para>
+<screen>
+# Where to put executable commands on 'make install'?
+BIN     = $(DESTDIR)/usr/bin
+# Where to put icons on 'make install'?
+ICONS   = $(DESTDIR)/usr/share/gentoo
+</screen>
+<para>
+The exact locations that should be used for binaries, icons,
+documentation, etc. are specified in the Filesystem Hierarchy Standard
+(FHS).  You should browse through it and read the sections relevant to
+your package.
+</para>
+<para>
+So, we should install executable commands in <filename>/usr/bin</filename> instead of
+<filename>/usr/local/bin</filename>, the manual page in
+<filename>/usr/share/man/man1</filename> instead of
+<filename>/usr/local/man/man1</filename>, and so on.  Notice how there's no manual
+page mentioned in <systemitem role="package">gentoo</systemitem>'s
+<filename>Makefile</filename>, but since Debian Policy requires that every
+program has one, we'll make one later and install it in
+<filename>/usr/share/man/man1</filename>.
+</para>
+<para>
+Some programs don't use <filename>Makefile</filename> variables to define paths
+such as these.  This means you might have to edit some real C sources in order
+to fix them to use the right locations.  But where to search, and exactly what
+for?  You can find this out by issuing:
+</para>
+<screen>
+$ grep -nr --include='*.[c|h]' -e 'usr/local/lib' .
+</screen>
+<para>
+<command>grep</command> will run recursively through the source tree and tell
+you the filename and the line number for all matches.
+</para>
+<para>
+Edit those files and in those lines replace <literal>usr/local/lib</literal>
+with <literal>usr/lib</literal>.  This can be done automatically as follows:
+</para>
+<screen>
+$ sed -i -e 's#usr/local/lib#usr/lib#g' \
+        $(find . -type f -name '*.[c|h]')
+</screen>
+<para>
+If you want to confirm each substitution instead, this can be done interactively as follows:
+</para>
+<screen>
+$ vim '+argdo %s#usr/local/lib#usr/lib#gce|update' +q \
+        $(find . -type f -name '*.[c|h]')
+</screen>
+
+<para>
+Next you should find the <literal>install</literal> target (searching
+for the line that starts with <literal>install:</literal> will usually
+work) and rename all references to directories other than ones defined
+at the top of the <filename>Makefile</filename>.
+</para>
+<para>
+Originally, <systemitem role="package">gentoo</systemitem>'s
+<literal>install</literal> target said:
+</para>
+<screen>
+install: gentoo-target
+        install ./gentoo $(BIN)
+        install icons/* $(ICONS)
+        install gentoorc-example $(HOME)/.gentoorc
+</screen>
+<para>
+Let's fix this upstream bug and record it with the <command>dquilt</command> command as
+<filename>debian/patches/install.patch</filename>.
+</para>
+<screen>
+$ dquilt new install.patch
+$ dquilt add Makefile
+</screen>
+<para>
+In your editor, change this for the Debian package as follows:
+</para>
+<screen>
+install: gentoo-target
+        install -d $(BIN) $(ICONS) $(DESTDIR)/etc
+        install ./gentoo $(BIN)
+        install -m644 icons/* $(ICONS)
+        install -m644 gentoorc-example $(DESTDIR)/etc/gentoorc
+</screen>
+<para>
+You'll have noticed that there's now an <literal>install -d</literal> command
+before the other commands in the rule.  The original
+<filename>Makefile</filename> didn't have it because usually
+<literal>/usr/local/bin</literal> and other directories already exist on the
+system where you are running <literal>make install</literal>.  However, since we will
+be installing into a newly created private directory tree, we will have to
+create each and every one of those directories.
+</para>
+<para>
+We can also add in other things at the end of the rule, like the installation
+of additional documentation that the upstream authors sometimes omit:
+</para>
+<screen>
+        install -d $(DESTDIR)/usr/share/doc/gentoo/html
+        cp -a docs/* $(DESTDIR)/usr/share/doc/gentoo/html
+</screen>
+<para>
+Check carefully, and if everything is okay, ask <command>dquilt</command> to
+generate the patch to create <filename>debian/patches/install.patch</filename>
+and add its description.
+</para>
+<screen>
+$ dquilt refresh
+$ dquilt header -e
+... describe patch
+</screen>
+<para>
+Now you have a series of patches.
+</para>
+<orderedlist numeration="arabic">
+<listitem>
+<para>
+Upstream bug fix: <filename>debian/patches/fix-gentoo-target.patch</filename>
+</para>
+</listitem>
+<listitem>
+<para>
+Debian specific packaging modification:
+<filename>debian/patches/install.patch</filename>
+</para>
+</listitem>
+</orderedlist>
+<para>
+Whenever you make changes that are not specific to the Debian package
+such as <filename>debian/patches/fix-gentoo-target.patch</filename>, be sure to
+send them to the upstream maintainer so they can be included in the next
+version of the program and be useful to everyone else.  Also remember
+to avoid making your fixes specific to Debian or Linux - or even Unix!
+Make them portable.  This will make your fixes much easier to apply.
+</para>
+<para>
+Note that you don't have to send the <filename>debian/*</filename> files
+upstream.
+</para>
+</section>
+<section id="difflibs"><title>Differing libraries</title>
+<para>
+There is one other common problem: libraries are often different from platform
+to platform.  For example, a <filename>Makefile</filename> can contain a
+reference to a library which doesn't exist on the Debian system.  In that case, we
+need to change it to a library which does exist in Debian, and serves the same
+purpose.
+</para>
+<para>
+Let's assume a line in your program's <filename>Makefile</filename> (or
+<filename>Makefile.in</filename>) as the following.
+</para>
+<screen>
+LIBS = -lfoo -lbar
+</screen>
+<para>
+If your program doesn't compile since the <literal>foo</literal> library
+doesn't exist and its equivalent is provided by the <literal>foo2</literal>
+library on the Debian system, you can fix this build problem as
+<filename>debian/patches/foo2.patch</filename> by changing
+<literal>foo</literal> into <literal>foo2</literal>.<footnote><para>If there
+are API changes from the <literal>foo</literal> library to the
+<literal>foo2</literal> library, required changes to the source code need to be
+made to match the new API.</para> </footnote>
+</para>
+<screen>
+$ dquilt new foo2.patch
+$ dquilt add Makefile
+$ sed -i -e 's/-lfoo/-lfoo2/g' Makefile
+$ dquilt refresh
+$ dquilt header -e
+... describe patch
+</screen>
+</section>
+</chapter>

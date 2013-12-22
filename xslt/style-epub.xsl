@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
 <!-- Import our base stylesheet -->
-<xsl:import href="file:///usr/share/xml/docbook/stylesheet/docbook-xsl/xhtml-1_1/chunk.xsl"/>
+<xsl:import href="file:///usr/share/xml/docbook/stylesheet/docbook-xsl/epub/docbook.xsl"/>
 
 <!-- Since I use xsltproc (not saxon), this is workaround to ensure UTF-8 -->
 <xsl:template xmlns="http://www.w3.org/1999/xhtml" name="head.content.generator">
@@ -15,18 +15,12 @@
 
 <!-- We don't want title in HTML -->
 <xsl:param name="generate.meta.abstract" select="0"/>
-<xsl:param name="html.stylesheet">maint-guide.css</xsl:param>
-<xsl:param name="root.filename">index</xsl:param>
+<xsl:param name="html.stylesheet">debian-reference.css</xsl:param>
 
 <!-- I hate when the first subsection is on the same page as content -->
 <xsl:param name="chunk.first.sections" select="0"/>
 <xsl:param name="chunk.section.depth" select="0"/>
 <xsl:param name="chunker.output.indent" select="'yes'"/>
-
-<!-- Do we want fancy icons around note, warning, etc.? -->
-<xsl:param name="admon.graphics" select="1"/>
-<!-- Do we want fancy icons instead of Next, Prev, Up, Home? -->
-<xsl:param name="navig.graphics" select="1"/>
 
 <xsl:param name="toc.section.depth">4</xsl:param>
 <xsl:param name="section.label.includes.component.label" select="1"/>

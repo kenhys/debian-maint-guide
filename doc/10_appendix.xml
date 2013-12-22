@@ -1,0 +1,452 @@
+<appendix id="advanced"><title>Advanced packaging</title>
+<!-- This is tough topic for me to get into details and track them in good shape. -->
+<para>
+Here are some hints and pointers for advanced packaging topics which you are most likely to deal with.
+You are strongly advised to read all the references suggested here.
+</para>
+<section id="library"><title>Shared libraries</title>
+<para>
+Before packaging shared <ulink url="&library;">libraries</ulink>, you should read the following primary references in detail.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+<ulink url="&policy-sharedlibraries;">Debian Policy Manual, 8 "Shared libraries"</ulink>
+</para>
+</listitem>
+<listitem>
+<para>
+<ulink url="&policy-fhs;">Debian Policy Manual, 9.1.1 "File System Structure"</ulink>
+</para>
+</listitem>
+<listitem>
+<para>
+<ulink url="&policy-libraries;">Debian Policy Manual, 10.2 "Libraries"</ulink>
+</para>
+</listitem>
+</itemizedlist>
+<para>
+Here are some oversimplified hints for you to get started.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Shared libraries are <ulink url="&elf;">ELF</ulink> object files containing compiled code.
+</para>
+</listitem>
+<listitem>
+<para>
+Shared libraries are distributed as <filename>*.so</filename> files. (Neither <filename>*.a</filename> files nor <filename>*.la</filename> files)
+</para>
+</listitem>
+<listitem>
+<para>
+Shared libraries are mainly used to share common codes among multiple executables with the <command>ld</command> mechanism.
+</para>
+</listitem>
+<listitem>
+<para>
+Shared libraries are sometimes used to provide multiple plugins to an executable with the <command>dlopen</command> mechanism.
+</para>
+</listitem>
+<listitem>
+<para>
+Shared libraries export <ulink url="&symbol;">symbols</ulink> which represent compiled objects such as variables, functions, and classes; and enables access to them from the linked executables. 
+</para>
+</listitem>
+<listitem>
+<para>
+The <ulink url="&soname;">SONAME</ulink> of a shared library <filename>lib<replaceable>foo</replaceable>.so</filename>.<replaceable>1</replaceable>: <literal>objdump -p lib<replaceable>foo</replaceable>.so.<replaceable>1</replaceable> | grep SONAME</literal>
+<footnote>
+<para>
+Alternatively: <literal>readelf -d lib<replaceable>foo</replaceable>.so.<replaceable>1</replaceable> | grep SONAME</literal>
+</para>
+</footnote>
+</para>
+</listitem>
+<listitem>
+<para>
+The SONAME of a shared library usually matches the library file name (but not always).
+</para>
+</listitem>
+<listitem>
+<para>
+The SONAME of shared libraries linked to <filename><replaceable>/usr/bin/foo</replaceable></filename>: <literal>objdump -p <replaceable>/usr/bin/foo</replaceable> | grep NEEDED</literal>
+<footnote>
+<para>
+Alternatively: <literal>readelf -d lib<replaceable>foo</replaceable>.so.<replaceable>1</replaceable> | grep NEEDED</literal>
+</para>
+</footnote>
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">lib<replaceable>foo</replaceable><replaceable>1</replaceable></systemitem>: the library package for the shared library <filename>lib<replaceable>foo</replaceable>.so.<replaceable>1</replaceable></filename> with the SONAME ABI version <replaceable>1</replaceable>.<footnote><para>See <ulink url="&policy-runtime;">Debian Policy Manual, 8.1 "Run-time shared libraries"</ulink>.</para></footnote>
+</para>
+</listitem>
+<listitem>
+<para>
+The package maintainer scripts of the library package must call <command>ldconfig</command> under the specific circumstances to create the necessary symbolic links for the SONAME.<footnote><para>See <ulink url="&policy-ldconfig;">Debian Policy Manual, 8.1.1 "ldconfig"</ulink>.</para></footnote>
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">lib<replaceable>foo</replaceable><replaceable>1</replaceable>-dbg</systemitem>: the debugging symbols package which contains the debugging symbols for the shared library package <systemitem role="package">lib<replaceable>foo</replaceable><replaceable>1</replaceable></systemitem>.
+</para>
+</listitem>
+<listitem>
+<para>
+<systemitem role="package">lib<replaceable>foo</replaceable>-dev</systemitem>: the development package which contains the header files etc. for the shared library <filename>lib<replaceable>foo</replaceable>.so.<replaceable>1</replaceable></filename>.<footnote><para>See <ulink url="&policy-static;">Debian Policy Manual, 8.3 "Static libraries"</ulink> and <ulink url="&policy-dev;">Debian Policy Manual, 8.4 "Development files"</ulink>.</para></footnote>
+</para>
+</listitem>
+<listitem>
+<para>
+Debian package should not contain <filename>*.la</filename> Libtool archive files in general.<footnote><para>See <ulink url="&removela;">Debian wiki ReleaseGoals/LAFileRemoval</ulink>.</para></footnote>
+</para>
+</listitem>
+<listitem>
+<para>
+Debian package should not use RPATH in general.<footnote><para>See <ulink url="&rpathissues;">Debian wiki RpathIssue</ulink>.</para></footnote>
+</para>
+</listitem>
+<listitem>
+<para>
+Although it is somewhat outdated and is only a secondary reference, <ulink url="&debianlibrarypackagingguide;">Debian Library Packaging Guide</ulink> may still be useful.
+</para>
+</listitem>
+</itemizedlist>
+</section>
+
+<section id="librarysymbols"><title>Managing <filename>debian/<replaceable>package</replaceable>.symbols</filename></title>
+<para>
+When you package a shared library, you should create <filename>debian/<replaceable>package</replaceable>.symbols</filename> file to manage the minimal version associated to each symbol for backward-compatible ABI changes under the same SONAME of the library for the same shared library package name.<footnote><para>Backward-incompatible ABI changes normally require you to update the SONAME of the library and the shared library package name to new ones.</para></footnote>  You should read the following primary references in detail.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+<ulink url="&policy-library-symbols;">Debian Policy Manual, 8.6.3 "The symbols system"</ulink><footnote><para>For C++ libraries and other cases where tracking individual symbols is too difficult, follow <ulink url="&policy-library-shlibs;">Debian Policy Manual, 8.6.4 "The shlibs system"</ulink>, instead.</para></footnote>
+</para>
+</listitem>
+<listitem>
+<para>
+<citerefentry> <refentrytitle>dh_makeshlibs</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>
+</para>
+</listitem>
+<listitem>
+<para>
+<citerefentry> <refentrytitle>dpkg-gensymbols</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>
+</para>
+</listitem>
+<listitem>
+<para>
+<citerefentry> <refentrytitle>dpkg-shlibdeps</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>
+</para>
+</listitem>
+<listitem>
+<para>
+<citerefentry> <refentrytitle>deb-symbols</refentrytitle> <manvolnum>5</manvolnum> </citerefentry>
+</para>
+</listitem>
+</itemizedlist>
+<para>
+Here is a rough example to create the <systemitem role="package">libfoo1</systemitem> package to the upstream version <literal>1.3</literal> with the proper <filename>debian/libfoo1.symbols</filename> file.
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+Prepare the skeleton debianized source tree using the upstream <filename>libfoo-1.3.tar.gz</filename> file.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+If this is the first packaging of the <systemitem role="package">libfoo1</systemitem> package, create the <filename>debian/libfoo1.symbols</filename> file with empty content.
+</para>
+</listitem>
+<listitem>
+<para>
+If the previous upstream version <literal>1.2</literal> was packaged as the <systemitem role="package">libfoo1</systemitem> package with the proper <filename>debian/libfoo1.symbols</filename> in its source package, use it again.
+</para>
+</listitem>
+<listitem>
+<para>
+If the previous upstream version <literal>1.2</literal> was not packaged with the <filename>debian/libfoo1.symbols</filename>, create it as the <filename>symbols</filename> file from all available binary packages of the same shared library package name containing the same SONAME of the library, for example, versions <literal>1.1-1</literal> and <literal>1.2-1</literal>.
+<footnote>
+<para>
+All previous versions of Debian packages are available at <ulink url="&snapshot;">http://snapshot.debian.org/</ulink>.  The Debian revision is dropped from the version to make it easier to backport the package: <literal>1.1</literal> &lt;&lt; <literal>1.1-1~bpo70+1</literal> &lt;&lt; <literal>1.1-1</literal> and  <literal>1.2</literal> &lt;&lt; <literal>1.2-1~bpo70+1</literal> &lt;&lt; <literal>1.2-1</literal>
+</para>
+</footnote>
+</para>
+<screen>
+$ dpkg-deb -x libfoo1_1.1-1.deb libfoo1_1.1-1
+$ dpkg-deb -x libfoo1_1.2-1.deb libfoo1_1.2-1
+$ : > symbols
+$ dpkg-gensymbols -v1.1 -plibfoo1 -Plibfoo1_1.1-1 -Osymbols
+$ dpkg-gensymbols -v1.2 -plibfoo1 -Plibfoo1_1.2-1 -Osymbols
+</screen>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<para>
+Make trial builds of the source tree with tools such as <command>debuild</command> and <command>pdebuild</command>.  (If this fails due to missing symbols etc., there were some backward-incompatible ABI changes which require you to bump the shared library package name to something like <systemitem role="package">libfoo1a</systemitem> and you should start over again.)
+</para>
+<screen>
+$ cd libfoo-1.3
+$ debuild
+...
+dpkg-gensymbols: warning: some new symbols appeared in the symbols file: ...
+ see diff output below
+--- debian/libfoo1.symbols (libfoo1_1.3-1_amd64)
++++ dpkg-gensymbolsFE5gzx        2012-11-11 02:24:53.609667389 +0900
+@@ -127,6 +127,7 @@
+  foo_get_name@Base 1.1
+  foo_get_longname@Base 1.2
+  foo_get_type@Base 1.1
++ foo_get_longtype@Base 1.3-1
+  foo_get_symbol@Base 1.1
+  foo_get_rank@Base 1.1
+  foo_new@Base 1.1
+...
+</screen>
+</listitem>
+<listitem>
+<para>
+If you see the diff printed by the <command>dpkg-gensymbols</command> as above, extract the updated proper <filename>symbols</filename> file from the generated binary package of the shared library.
+<footnote>
+<para>
+The Debian revision is dropped from the version to make it easier to backport the package: <literal>1.3</literal> &lt;&lt; <literal>1.3-1~bpo70+1</literal> &lt;&lt; <literal>1.3-1</literal>
+</para>
+</footnote>
+</para>
+<screen>
+$ cd ..
+$ dpkg-deb -R  libfoo1_1.3_amd64.deb libfoo1-tmp
+$ sed -e 's/1\.3-1/1\.3/' libfoo1-tmp/DEBIAN/symbols \
+        >libfoo-1.3/debian/libfoo1.symbols
+</screen>
+</listitem>
+<listitem>
+<para>
+Build release packages with tools such as <command>debuild</command> and <command>pdebuild</command>.
+</para>
+<screen>
+$ cd libfoo-1.3
+$ debuild clean
+$ debuild
+...
+</screen>
+</listitem>
+</itemizedlist>
+
+<para>
+In addition to the above examples, we need to check the ABI compatibility further and bump versions for some symbols manually as needed.
+<footnote>
+<para>
+See <ulink url="&policy-library-abi;">Debian Policy Manual, 8.6.2 "Shared library ABI changes"</ulink>.
+</para>
+</footnote>
+</para>
+
+<para>
+Although it is only a secondary reference, <ulink url="&usingsymbolsfiles;">Debian wiki UsingSymbolsFiles</ulink> and its linked web pages may be useful.
+</para>
+</section>
+
+<section id="multiarch"><title>Multiarch</title>
+<para>
+The multiarch feature introduced to Debian wheezy integrates support for cross-architecture installation of binary packages (particularly <literal>i386</literal>&lt;-&gt;<literal>amd64</literal>, but also other combinations) in <systemitem role="package">dpkg</systemitem> and <systemitem role="package">apt</systemitem>.  You should read the following references in detail.</para>
+<itemizedlist>
+<listitem>
+<para>
+<ulink url="&multiarchspec;">Ubuntu wiki MultiarchSpec</ulink> (upstream)
+</para>
+</listitem>
+<listitem>
+<para>
+<ulink url="&multiarchimplementation;">Debian wiki Multiarch/Implementation</ulink> (Debian situation)
+</para>
+</listitem>
+</itemizedlist>
+
+<para>
+It uses the triplet such as <literal>i386-linux-gnu</literal> and <literal>x86_64-linux-gnu</literal> for the install path of shared libraries. The actual triplet path is dynamically set into <literal>$(DEB_HOST_MULTIARCH)</literal> value by <citerefentry> <refentrytitle>dpkg-architecture</refentrytitle> <manvolnum>1</manvolnum> </citerefentry> for each build.  For example, the path to install multiarch libraries are changed as follows.<footnote><para>Old special purpose library paths such as <filename>/lib32/</filename> and <filename>/lib64/</filename> are not used any more.</para></footnote>
+</para>
+
+<informaltable id="tripletpaths" pgwide="0" frame="topbot" rowsep="1" colsep="1">
+<tgroup cols="3">
+  <colspec colwidth="15*" align="left"/> <colspec colwidth="30*" align="left"/> <colspec colwidth="30*" align="left"/>
+  <thead>
+    <row> <entry>Old path</entry>                        <entry>i386 multiarch path</entry>                           <entry>amd64 multiarch path</entry>                             </row>
+  </thead>                                                                                                                                                                          
+  <tbody>                                                                                                                                                                           
+    <row> <entry><filename>/lib/</filename></entry>      <entry><filename>/lib/i386-linux-gnu/</filename></entry>     <entry><filename>/lib/x86_64-linux-gnu/</filename></entry>      </row>
+    <row> <entry><filename>/usr/lib/</filename></entry>  <entry><filename>/usr/lib/i386-linux-gnu/</filename></entry> <entry><filename>/usr/lib/x86_64-linux-gnu/</filename></entry>  </row>
+  </tbody>
+</tgroup>
+</informaltable>
+
+<para>
+Here are some typical multiarch package split scenario examples for the followings:
+</para>
+<itemizedlist>
+<listitem>
+<para>
+a library source <filename>lib<replaceable>foo</replaceable>-1.tar.gz</filename>
+</para>
+</listitem>
+<listitem>
+<para>
+a tool source <filename><replaceable>bar</replaceable>-1.tar.gz</filename> written in a compiled language
+</para>
+</listitem>
+<listitem>
+<para>
+a tool source <filename><replaceable>baz</replaceable>-1.tar.gz</filename> written in an interpreted language
+</para>
+</listitem>
+</itemizedlist>
+
+<informaltable id="multiarchtable" pgwide="0" frame="topbot" rowsep="1" colsep="1">
+<tgroup cols="4">
+  <colspec colwidth="16*" align="left"/> <colspec colwidth="11*" align="left"/> <colspec colwidth="11*" align="left"/> <colspec colwidth="42*" align="left"/>
+  <thead>
+    <row>  <entry>Package</entry> <entry>Architecture:</entry>                        <entry>Multi-Arch:</entry> 
+        <entry>Package content</entry>
+    </row>
+  </thead>                                                                                                              
+  <tbody>                                                                                                               
+<row> <entry><systemitem role="package">lib<replaceable>foo</replaceable><replaceable>1</replaceable></systemitem></entry> <entry>any</entry>      <entry>same</entry> 
+<entry>
+the shared library, co-installable
+</entry>
+</row>
+<row> <entry><systemitem role="package">lib<replaceable>foo</replaceable><replaceable>1</replaceable>-dbg</systemitem></entry> <entry>any</entry>      <entry>same</entry> 
+<entry>
+the shared library debug symbols, co-installable
+</entry>
+</row>
+<row> <entry><systemitem role="package">lib<replaceable>foo</replaceable>-dev</systemitem></entry> <entry>any</entry>      <entry>same</entry> 
+<entry>
+the shared library header files etc., co-installable
+</entry>
+</row>
+<row> <entry><systemitem role="package">lib<replaceable>foo</replaceable>-tools</systemitem></entry> <entry>any</entry>      <entry>foreign</entry> 
+<entry>
+the run-time support programs, not co-installable
+</entry>
+</row>
+<row> <entry><systemitem role="package">lib<replaceable>foo</replaceable>-doc</systemitem></entry> <entry>all</entry>      <entry>foreign</entry> 
+<entry>
+the shared library documentation files
+</entry>
+</row>
+<row> <entry><systemitem role="package"><replaceable>bar</replaceable></systemitem></entry> <entry>any</entry>      <entry>foreign</entry> 
+<entry>
+the compiled program files, not co-installable
+</entry>
+</row>
+<row> <entry><systemitem role="package"><replaceable>bar</replaceable>-doc</systemitem></entry> <entry>all</entry>      <entry>foreign</entry> 
+<entry>
+the documentation files for the program
+</entry>
+</row>
+<row> <entry><systemitem role="package"><replaceable>baz</replaceable></systemitem></entry> <entry>all</entry>           <entry>foreign</entry> 
+<entry>
+the interpreted program files
+</entry>
+</row>
+  </tbody>
+</tgroup>
+</informaltable>
+<para>
+Please note that the development package should contain a symlink for the associated shared library <emphasis role="strong">without a version number</emphasis>.  E.g.: <filename>/usr/lib/x86_64-linux-gnu/libfoo.so</filename> -&gt; <filename>libfoo.so.1</filename>
+</para>
+</section>
+
+<section id="librarypackage"><title>Building a shared library package</title>
+<para>
+You can build a Debian library package enabling the multiarch support using <citerefentry> <refentrytitle>dh</refentrytitle> <manvolnum>1</manvolnum> </citerefentry> as follows. 
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Update <filename>debian/control</filename>.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Add <literal>Build-Depends: debhelper (>=9)</literal> for the source package section.
+</para>
+</listitem>
+<listitem>
+<para>
+Add <literal>Pre-Depends: ${misc:Pre-Depends}</literal> for each shared library binary package.
+</para>
+</listitem>
+<listitem>
+<para>
+Add <literal>Multi-Arch:</literal> stanza for each binary package section.
+</para>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<para>
+Set <filename>debian/compat</filename> to "9".
+</para>
+</listitem>
+<listitem>
+<para>
+Adjust the path from the normal <literal>/usr/lib/</literal> to the multiarch <literal>/usr/lib/$(DEB_HOST_MULTIARCH)/</literal> for all packaging scripts.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Call <literal>DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)</literal> in <filename>debian/rules</filename> to set <literal>DEB_HOST_MULTIARCH</literal> variable, first.
+</para>
+</listitem>
+<listitem>
+<para>
+Replace <literal>/usr/lib/</literal> with <literal>/usr/lib/$(DEB_HOST_MULTIARCH)/</literal> in <filename>debian/rules</filename>.
+</para>
+</listitem>
+<listitem>
+<para>
+If <literal>./configure</literal> is used in the part of <literal>override_dh_auto_configure</literal> target in <filename>debian/rules</filename>, make sure to replace it with <literal>dh_auto_configure -- </literal>.
+<footnote>
+<para>
+Alternatively, you can add <literal>--libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH)</literal> and <literal>--libexecdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH)</literal> arguments to <literal>./configure</literal>.  Please note that <literal>--libexecdir</literal> specifies the default path to install executable programs run by other programs rather than by users.  Its Autotools default is <filename>/usr/libexec/</filename> but its Debian default is <filename>/usr/lib/</filename>.
+</para>
+</footnote>
+</para>
+</listitem>
+<listitem>
+<para>
+Replace all occurrences of <literal>/usr/lib/</literal> with <literal>/usr/lib/*/</literal> in <filename>debian/<replaceable>foo</replaceable>.install</filename> files.
+</para>
+</listitem>
+<listitem>
+<para>
+Generate files like <filename>debian/<replaceable>foo</replaceable>.links</filename> from <filename>debian/<replaceable>foo</replaceable>.links.in</filename> dynamically by adding a script to <literal>override_dh_auto_configure</literal> target in <filename>debian/rules</filename>.
+</para>
+<screen>
+override_dh_auto_configure:
+        dh_auto_configure
+        sed 's/@DEB_HOST_MULTIARCH@/$(DEB_HOST_MULTIARCH)/g' \
+                debian/<replaceable>foo</replaceable>.links.in > debian/<replaceable>foo</replaceable>.links
+</screen>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+<para>
+Please make sure to verify that the shared library package contains only the expected files, and that your -dev package still works.
+</para>
+<para>
+All files installed simultaneously as the multiarch package to the same file path should have exactly the same file content.  You must be careful on differences generated by the data byte order and by the compression algorithm.
+</para>
+</section>
+
+</appendix>
+

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide 1.2.30\n"
-"POT-Creation-Date: 2013-11-24 00:32+0900\n"
+"POT-Creation-Date: 2013-12-21 23:26+0900\n"
 "PO-Revision-Date: 2013-01-28 20:14+0400\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
@@ -58,13 +58,13 @@ msgstr "версия &docversion;"
 #. type: Content of: <book><bookinfo>
 msgid ""
 "<pubdate>&docisodate;</pubdate> <copyright><year>1998-2002</year> "
-"<holder>Josip Rodin</holder></copyright> <copyright><year>2005-2011</year> "
+"<holder>Josip Rodin</holder></copyright> <copyright><year>2005-2013</year> "
 "<holder>Osamu Aoki</holder></copyright> <copyright><year>2010</year> "
 "<holder>Craig Small</holder></copyright> <copyright><year>2010</year> "
 "<holder>Raphaël Hertzog</holder></copyright>"
 msgstr ""
 "<pubdate>&docisodate;</pubdate> <copyright><year>1998-2002</year> "
-"<holder>Josip Rodin</holder></copyright> <copyright><year>2005-2011</year> "
+"<holder>Josip Rodin</holder></copyright> <copyright><year>2005-2013</year> "
 "<holder>Osamu Aoki</holder></copyright> <copyright><year>2010</year> "
 "<holder>Craig Small</holder></copyright> <copyright><year>2010</year> "
 "<holder>Raphaël Hertzog</holder></copyright>"
@@ -8303,7 +8303,7 @@ msgstr ""
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "configuring <filename>~/.pbuilderrc</filename> or <filename>/etc/pbuilderrc</"
-"filename> to include the followsing."
+"filename> to include the following."
 msgstr ""
 "добавим в файл <filename>~/.pbuilderrc</filename> или в <filename>/etc/"
 "pbuilderrc</filename> следующие строки:"
@@ -9233,282 +9233,6 @@ msgstr ""
 "чтобы исправить это."
 
 #. type: Content of: <book><chapter><title>
-msgid "Uploading the package"
-msgstr "Отправка пакета"
-
-#. type: Content of: <book><chapter><para>
-msgid ""
-"Now that you have tested your new package thoroughly, you want to release it "
-"to a public archive to share it."
-msgstr ""
-"Теперь, после тщательного тестирования вашего нового пакета, вы хотите "
-"отправить его в публичный архив для использования."
-
-#. type: Content of: <book><chapter><section><title>
-msgid "Uploading to the Debian archive"
-msgstr "Отправка в архив Debian"
-
-#. type: Content of: <book><chapter><section><para><footnote><para>
-msgid "See <xref linkend=\"socialdynamics\"/>."
-msgstr "Смотрите <xref linkend=\"socialdynamics\"/>."
-
-#. type: Content of: <book><chapter><section><para><footnote><para>
-msgid ""
-"There are publicly accessible archives such as <ulink url=\"&mentors-dn;\"/> "
-"which work almost the same way as the Debian archive and provide an upload "
-"area for non-DDs.  You can set up an equivalent archive by yourself using "
-"the tools listed at <ulink url=\"&deb-archive;\"/>.  So this section is "
-"useful for non-DDs, too."
-msgstr ""
-"Существуют публично доступные архивы, например <ulink url=\"&mentors-dn;\"/"
-">, которые работают почти также как архив Debian и предоставляют зону для "
-"отправки людям, не имеющим статуса разработчика Debian. Вы можете создать "
-"свой архив с помощью инструментов, перечисленных в <ulink url=\"&deb-archive;"
-"\"/>. Поэтому данный раздел также будет полезен не только разработчикам "
-"Debian."
-
-#. type: Content of: <book><chapter><section><para><footnote><para>
-msgid ""
-"The <systemitem role=\"package\">dput</systemitem> package seems to come "
-"with more features and to be becoming more popular than the <systemitem role="
-"\"package\">dupload</systemitem> package.  It uses the file <filename>/etc/"
-"dput</filename> for its global configuration and the file <filename>~/.dput."
-"cf</filename> for per-user configuration.  It supports Ubuntu-related "
-"services out-of-the-box, too."
-msgstr ""
-"Сейчас, вероятно, пакет <systemitem role=\"package\">dput</systemitem> имеет "
-"больше возможностей и становится более популярным, чем <systemitem role="
-"\"package\">dupload</systemitem>. Для его настройки используется системный "
-"файл <filename>/etc/dput</filename> и пользовательский <filename>~/.dput.cf</"
-"filename>. Также он поддерживается службами Ubuntu без дополнительной "
-"настройки."
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"Once you become an official developer, <placeholder type=\"footnote\" id="
-"\"0\"/> you can upload the package to the Debian archive.  <placeholder type="
-"\"footnote\" id=\"1\"/> You can do this manually, but it's easier to use the "
-"existing automated tools, like <citerefentry> <refentrytitle>dupload</"
-"refentrytitle> <manvolnum>1</manvolnum> </citerefentry> or <citerefentry> "
-"<refentrytitle>dput</refentrytitle> <manvolnum>1</manvolnum> </"
-"citerefentry>.  We'll describe how it's done with <command>dupload</"
-"command>.  <placeholder type=\"footnote\" id=\"2\"/>"
-msgstr ""
-"После того, как вы станете официальным разработчиком <placeholder type="
-"\"footnote\" id=\"0\"/>, то сможете отправлять пакеты в архив Debian "
-"<placeholder type=\"footnote\" id=\"1\"/>. Вы можете делать это вручную, но "
-"легче воспользоваться существующими инструментами автоматизации, такими как "
-"<citerefentry> <refentrytitle>dupload</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry> или <citerefentry> <refentrytitle>dput</"
-"refentrytitle> <manvolnum>1</manvolnum> </citerefentry>. Здесь будет "
-"рассказано как это сделать с помощью <command>dupload</command> <placeholder "
-"type=\"footnote\" id=\"2\"/>."
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"First you have to set up <command>dupload</command>'s config file.  You can "
-"either edit the system-wide <filename>/etc/dupload.conf</filename> file, or "
-"have your own <filename>~/.dupload.conf</filename> file override the few "
-"things you want to change."
-msgstr ""
-"Сначала, вам нужно настроить конфигурационный файл для <command>dupload</"
-"command>. Вы можете отредактировать системный файл <filename>/etc/dupload."
-"conf</filename>, либо создать свой собственный файл <filename>~/.dupload."
-"conf</filename>, указав те настройки, которые нужно изменить."
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"You can read the <citerefentry> <refentrytitle>dupload.conf</refentrytitle> "
-"<manvolnum>5</manvolnum> </citerefentry> manual page to understand what each "
-"of these options means."
-msgstr ""
-"Описание каждого параметра приведено в справочной странице <citerefentry> "
-"<refentrytitle>dupload.conf</refentrytitle> <manvolnum>5</manvolnum> </"
-"citerefentry>."
-
-#. type: Content of: <book><chapter><section><para><footnote><para>
-msgid ""
-"See <ulink url=\"&devref-upload;\">Debian Developer's Reference 5.6. "
-"\"Uploading a package\"</ulink>."
-msgstr ""
-"Смотрите <ulink url=\"&devref-upload;\">Справочник разработчика Debian, 5.6. "
-"«Отправка пакета»</ulink>."
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"The <literal>$default_host</literal> option determines which of the upload "
-"queues will be used by default.  <literal>anonymous-ftp-master</literal> is "
-"the primary one, but it's possible that you will want to use another one.  "
-"<placeholder type=\"footnote\" id=\"0\"/>"
-msgstr ""
-"Параметр <literal>$default_host</literal> определяет, какая из очередей "
-"отправки будет использована по умолчанию. Первичной является "
-"<literal>anonymous-ftp-master</literal>, но возможно, что вы захотите "
-"использовать другую <placeholder type=\"footnote\" id=\"0\"/>."
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"While connected to the Internet, you can upload your package as follows:"
-msgstr ""
-"Соединившись с Интернетом, вы можете отправить свой пакет следующим образом:"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ dupload gentoo_0.9.12-1_i386.changes\n"
-msgstr "$ dupload gentoo_0.9.12-1_i386.changes\n"
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"<command>dupload</command> checks that the SHA1/SHA256 file checksums match "
-"those listed in the <filename>.changes</filename> file.  If they do not "
-"match, it will warn you to rebuild it as described in <xref linkend="
-"\"completebuild\"/> so it can be properly uploaded."
-msgstr ""
-"Команда <command>dupload</command> проверяет, что контрольные суммы SHA1/"
-"SHA256 ваших файлов совпадают с указанным в файле <filename>.changes</"
-"filename>. Если они не совпадают, она предложит пересобрать пакет (о том, "
-"как это правильно делать, смотрите раздел <xref linkend=\"completebuild\"/>)."
-
-#. type: Content of: <book><chapter><section><para><footnote><para>
-msgid ""
-"See <ulink url=\"&uploadqueue-readme;\"/>.  Alternatively, you can use the "
-"<command>dcut</command> command from the <systemitem role=\"package\">dput</"
-"systemitem> package."
-msgstr ""
-"Смотрите <ulink url=\"&uploadqueue-readme;\"/>. Или же вы можете "
-"использовать команду <command>dcut</command> из пакета <systemitem role="
-"\"package\">dput</systemitem>."
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"If you encounter an upload problem at <ulink url=\"&uploadqueue;\"/>, you "
-"can fix this by manually uploading a GPG-signed <filename>*.commands</"
-"filename> file to there with <command>ftp</command>.  <placeholder type="
-"\"footnote\" id=\"0\"/> For example, using <filename>hello.commands</"
-"filename>:"
-msgstr ""
-"Если при отправке в <ulink url=\"&uploadqueue;\"/> возникли проблемы, то вы "
-"можете исправить их вручную загрузив туда файл <filename>*.commands</"
-"filename>, подписанный GPG, с помощью <command>ftp</command> <placeholder "
-"type=\"footnote\" id=\"0\"/>. Например, используя <filename>hello.commands</"
-"filename>:"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid ""
-"-----BEGIN PGP SIGNED MESSAGE-----\n"
-"Hash: SHA1\n"
-"Uploader: Foo Bar &lt;Foo.Bar@example.org&gt;\n"
-"Commands: \n"
-" rm hello_1.0-1_i386.deb\n"
-" mv hello_1.0-1.dsx hello_1.0-1.dsc\n"
-"-----BEGIN PGP SIGNATURE-----\n"
-"Version: GnuPG v1.4.10 (GNU/Linux)\n"
-"\n"
-"[...]\n"
-"-----END PGP SIGNATURE-----\n"
-msgstr ""
-"-----BEGIN PGP SIGNED MESSAGE-----\n"
-"Hash: SHA1\n"
-"Uploader: Foo Bar &lt;Foo.Bar@example.org&gt;\n"
-"Commands: \n"
-" rm hello_1.0-1_i386.deb\n"
-" mv hello_1.0-1.dsx hello_1.0-1.dsc\n"
-"-----BEGIN PGP SIGNATURE-----\n"
-"Version: GnuPG v1.4.10 (GNU/Linux)\n"
-"\n"
-"[...]\n"
-"-----END PGP SIGNATURE-----\n"
-
-#. type: Content of: <book><chapter><section><title>
-msgid "Including <filename>orig.tar.gz</filename> for upload"
-msgstr "Включение файла <filename>orig.tar.gz</filename> для отправки"
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"When you first upload the package to the archive, you need to include the "
-"original <filename>orig.tar.gz</filename> source, too.  If the Debian "
-"revision number of this package is neither <literal>1</literal> nor "
-"<literal>0</literal>, you must provide the <command>dpkg-buildpackage</"
-"command> option <literal>-sa</literal>."
-msgstr ""
-"При самой первой отправке пакета в архив, вам также потребуется добавить к "
-"нему файл с исходным кодом <filename>orig.tar.gz</filename>. Если номер "
-"редакции Debian для данной версии программы не равен <literal>1</literal> "
-"или <literal>0</literal>, то вам следует указать команде <command>dpkg-"
-"buildpackage</command> параметр <literal>-sa</literal>."
-
-#. type: Content of: <book><chapter><section><para>
-msgid "For the <command>dpkg-buildpackage</command> command:"
-msgstr "Для команды <command>dpkg-buildpackage</command>:"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ dpkg-buildpackage -sa\n"
-msgstr "$ dpkg-buildpackage -sa\n"
-
-#. type: Content of: <book><chapter><section><para>
-msgid "For the <command>debuild</command> command:"
-msgstr "Для команды <command>debuild</command>:"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ debuild -sa\n"
-msgstr "$ debuild -sa\n"
-
-#. type: Content of: <book><chapter><section><para>
-msgid "For the <command>pdebuild</command> command:"
-msgstr "Для команды <command>pdebuild</command>:"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ pdebuild --debbuildopts -sa\n"
-msgstr "$ pdebuild --debbuildopts -sa\n"
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"On the other hand, the <literal>-sd</literal> option will force the "
-"exclusion of the original <filename>orig.tar.gz</filename> source."
-msgstr ""
-"Противоположный по действию параметр <literal>-sd</literal> позволит "
-"исключить файл с исходным кодом <filename>orig.tar.gz</filename>."
-
-#. type: Content of: <book><chapter><section><title>
-msgid "Skipped uploads"
-msgstr "Пропущенные отправки"
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"If you created multiple entries in <filename>debian/changelog</filename> by "
-"skipping uploads, you must create a proper <filename>*_.changes</filename> "
-"file which includes all changes from the last upload.  This can be done by "
-"specifying the <command>dpkg-buildpackage</command> option <literal>-v</"
-"literal> with the version, e.g., <literal><replaceable>1.2</replaceable></"
-"literal>."
-msgstr ""
-"Если вы сделали много изменений в <filename>debian/changelog</filename>, но "
-"не выполняли отправку соответствующих версий, то должны создать "
-"соответствующий файл <filename>*_.changes</filename>, в который войдут все "
-"изменения с последней отправки. Это можно сделать указанием команде "
-"<command>dpkg-buildpackage</command> параметра <literal>-v</literal> с "
-"номером версии, например, <literal><replaceable>1.2</replaceable></literal>."
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ dpkg-buildpackage -v<replaceable>1.2</replaceable>\n"
-msgstr "$ dpkg-buildpackage -v<replaceable>1.2</replaceable>\n"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ debuild -v<replaceable>1.2</replaceable>\n"
-msgstr "$ debuild -v<replaceable>1.2</replaceable>\n"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ pdebuild --debbuildopts \"-v<replaceable>1.2</replaceable>\"\n"
-msgstr "$ pdebuild --debbuildopts \"-v<replaceable>1.2</replaceable>\"\n"
-
-#. type: Content of: <book><chapter><title>
 msgid "Updating the package"
 msgstr "Обновление пакета"
 
@@ -10287,6 +10011,282 @@ msgstr ""
 "выполняете отправку в правильный дистрибутив, закрываемые ошибки перечислены "
 "в поле <literal>Closes</literal>, поля <literal>Maintainer</literal> и "
 "<literal>Changed-By</literal> совпадают, файл подписан GPG и т. д."
+
+#. type: Content of: <book><chapter><title>
+msgid "Uploading the package"
+msgstr "Отправка пакета"
+
+#. type: Content of: <book><chapter><para>
+msgid ""
+"Now that you have tested your new package thoroughly, you want to release it "
+"to a public archive to share it."
+msgstr ""
+"Теперь, после тщательного тестирования вашего нового пакета, вы хотите "
+"отправить его в публичный архив для использования."
+
+#. type: Content of: <book><chapter><section><title>
+msgid "Uploading to the Debian archive"
+msgstr "Отправка в архив Debian"
+
+#. type: Content of: <book><chapter><section><para><footnote><para>
+msgid "See <xref linkend=\"socialdynamics\"/>."
+msgstr "Смотрите <xref linkend=\"socialdynamics\"/>."
+
+#. type: Content of: <book><chapter><section><para><footnote><para>
+msgid ""
+"There are publicly accessible archives such as <ulink url=\"&mentors-dn;\"/> "
+"which work almost the same way as the Debian archive and provide an upload "
+"area for non-DDs.  You can set up an equivalent archive by yourself using "
+"the tools listed at <ulink url=\"&deb-archive;\"/>.  So this section is "
+"useful for non-DDs, too."
+msgstr ""
+"Существуют публично доступные архивы, например <ulink url=\"&mentors-dn;\"/"
+">, которые работают почти также как архив Debian и предоставляют зону для "
+"отправки людям, не имеющим статуса разработчика Debian. Вы можете создать "
+"свой архив с помощью инструментов, перечисленных в <ulink url=\"&deb-archive;"
+"\"/>. Поэтому данный раздел также будет полезен не только разработчикам "
+"Debian."
+
+#. type: Content of: <book><chapter><section><para><footnote><para>
+msgid ""
+"The <systemitem role=\"package\">dput</systemitem> package seems to come "
+"with more features and to be becoming more popular than the <systemitem role="
+"\"package\">dupload</systemitem> package.  It uses the file <filename>/etc/"
+"dput</filename> for its global configuration and the file <filename>~/.dput."
+"cf</filename> for per-user configuration.  It supports Ubuntu-related "
+"services out-of-the-box, too."
+msgstr ""
+"Сейчас, вероятно, пакет <systemitem role=\"package\">dput</systemitem> имеет "
+"больше возможностей и становится более популярным, чем <systemitem role="
+"\"package\">dupload</systemitem>. Для его настройки используется системный "
+"файл <filename>/etc/dput</filename> и пользовательский <filename>~/.dput.cf</"
+"filename>. Также он поддерживается службами Ubuntu без дополнительной "
+"настройки."
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"Once you become an official developer, <placeholder type=\"footnote\" id="
+"\"0\"/> you can upload the package to the Debian archive.  <placeholder type="
+"\"footnote\" id=\"1\"/> You can do this manually, but it's easier to use the "
+"existing automated tools, like <citerefentry> <refentrytitle>dupload</"
+"refentrytitle> <manvolnum>1</manvolnum> </citerefentry> or <citerefentry> "
+"<refentrytitle>dput</refentrytitle> <manvolnum>1</manvolnum> </"
+"citerefentry>.  We'll describe how it's done with <command>dupload</"
+"command>.  <placeholder type=\"footnote\" id=\"2\"/>"
+msgstr ""
+"После того, как вы станете официальным разработчиком <placeholder type="
+"\"footnote\" id=\"0\"/>, то сможете отправлять пакеты в архив Debian "
+"<placeholder type=\"footnote\" id=\"1\"/>. Вы можете делать это вручную, но "
+"легче воспользоваться существующими инструментами автоматизации, такими как "
+"<citerefentry> <refentrytitle>dupload</refentrytitle> <manvolnum>1</"
+"manvolnum> </citerefentry> или <citerefentry> <refentrytitle>dput</"
+"refentrytitle> <manvolnum>1</manvolnum> </citerefentry>. Здесь будет "
+"рассказано как это сделать с помощью <command>dupload</command> <placeholder "
+"type=\"footnote\" id=\"2\"/>."
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"First you have to set up <command>dupload</command>'s config file.  You can "
+"either edit the system-wide <filename>/etc/dupload.conf</filename> file, or "
+"have your own <filename>~/.dupload.conf</filename> file override the few "
+"things you want to change."
+msgstr ""
+"Сначала, вам нужно настроить конфигурационный файл для <command>dupload</"
+"command>. Вы можете отредактировать системный файл <filename>/etc/dupload."
+"conf</filename>, либо создать свой собственный файл <filename>~/.dupload."
+"conf</filename>, указав те настройки, которые нужно изменить."
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"You can read the <citerefentry> <refentrytitle>dupload.conf</refentrytitle> "
+"<manvolnum>5</manvolnum> </citerefentry> manual page to understand what each "
+"of these options means."
+msgstr ""
+"Описание каждого параметра приведено в справочной странице <citerefentry> "
+"<refentrytitle>dupload.conf</refentrytitle> <manvolnum>5</manvolnum> </"
+"citerefentry>."
+
+#. type: Content of: <book><chapter><section><para><footnote><para>
+msgid ""
+"See <ulink url=\"&devref-upload;\">Debian Developer's Reference 5.6. "
+"\"Uploading a package\"</ulink>."
+msgstr ""
+"Смотрите <ulink url=\"&devref-upload;\">Справочник разработчика Debian, 5.6. "
+"«Отправка пакета»</ulink>."
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"The <literal>$default_host</literal> option determines which of the upload "
+"queues will be used by default.  <literal>anonymous-ftp-master</literal> is "
+"the primary one, but it's possible that you will want to use another one.  "
+"<placeholder type=\"footnote\" id=\"0\"/>"
+msgstr ""
+"Параметр <literal>$default_host</literal> определяет, какая из очередей "
+"отправки будет использована по умолчанию. Первичной является "
+"<literal>anonymous-ftp-master</literal>, но возможно, что вы захотите "
+"использовать другую <placeholder type=\"footnote\" id=\"0\"/>."
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"While connected to the Internet, you can upload your package as follows:"
+msgstr ""
+"Соединившись с Интернетом, вы можете отправить свой пакет следующим образом:"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ dupload gentoo_0.9.12-1_i386.changes\n"
+msgstr "$ dupload gentoo_0.9.12-1_i386.changes\n"
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"<command>dupload</command> checks that the SHA1/SHA256 file checksums match "
+"those listed in the <filename>.changes</filename> file.  If they do not "
+"match, it will warn you to rebuild it as described in <xref linkend="
+"\"completebuild\"/> so it can be properly uploaded."
+msgstr ""
+"Команда <command>dupload</command> проверяет, что контрольные суммы SHA1/"
+"SHA256 ваших файлов совпадают с указанным в файле <filename>.changes</"
+"filename>. Если они не совпадают, она предложит пересобрать пакет (о том, "
+"как это правильно делать, смотрите раздел <xref linkend=\"completebuild\"/>)."
+
+#. type: Content of: <book><chapter><section><para><footnote><para>
+msgid ""
+"See <ulink url=\"&uploadqueue-readme;\"/>.  Alternatively, you can use the "
+"<command>dcut</command> command from the <systemitem role=\"package\">dput</"
+"systemitem> package."
+msgstr ""
+"Смотрите <ulink url=\"&uploadqueue-readme;\"/>. Или же вы можете "
+"использовать команду <command>dcut</command> из пакета <systemitem role="
+"\"package\">dput</systemitem>."
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"If you encounter an upload problem at <ulink url=\"&uploadqueue;\"/>, you "
+"can fix this by manually uploading a GPG-signed <filename>*.commands</"
+"filename> file to there with <command>ftp</command>.  <placeholder type="
+"\"footnote\" id=\"0\"/> For example, using <filename>hello.commands</"
+"filename>:"
+msgstr ""
+"Если при отправке в <ulink url=\"&uploadqueue;\"/> возникли проблемы, то вы "
+"можете исправить их вручную загрузив туда файл <filename>*.commands</"
+"filename>, подписанный GPG, с помощью <command>ftp</command> <placeholder "
+"type=\"footnote\" id=\"0\"/>. Например, используя <filename>hello.commands</"
+"filename>:"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid ""
+"-----BEGIN PGP SIGNED MESSAGE-----\n"
+"Hash: SHA1\n"
+"Uploader: Foo Bar &lt;Foo.Bar@example.org&gt;\n"
+"Commands: \n"
+" rm hello_1.0-1_i386.deb\n"
+" mv hello_1.0-1.dsx hello_1.0-1.dsc\n"
+"-----BEGIN PGP SIGNATURE-----\n"
+"Version: GnuPG v1.4.10 (GNU/Linux)\n"
+"\n"
+"[...]\n"
+"-----END PGP SIGNATURE-----\n"
+msgstr ""
+"-----BEGIN PGP SIGNED MESSAGE-----\n"
+"Hash: SHA1\n"
+"Uploader: Foo Bar &lt;Foo.Bar@example.org&gt;\n"
+"Commands: \n"
+" rm hello_1.0-1_i386.deb\n"
+" mv hello_1.0-1.dsx hello_1.0-1.dsc\n"
+"-----BEGIN PGP SIGNATURE-----\n"
+"Version: GnuPG v1.4.10 (GNU/Linux)\n"
+"\n"
+"[...]\n"
+"-----END PGP SIGNATURE-----\n"
+
+#. type: Content of: <book><chapter><section><title>
+msgid "Including <filename>orig.tar.gz</filename> for upload"
+msgstr "Включение файла <filename>orig.tar.gz</filename> для отправки"
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"When you first upload the package to the archive, you need to include the "
+"original <filename>orig.tar.gz</filename> source, too.  If the Debian "
+"revision number of this package is neither <literal>1</literal> nor "
+"<literal>0</literal>, you must provide the <command>dpkg-buildpackage</"
+"command> option <literal>-sa</literal>."
+msgstr ""
+"При самой первой отправке пакета в архив, вам также потребуется добавить к "
+"нему файл с исходным кодом <filename>orig.tar.gz</filename>. Если номер "
+"редакции Debian для данной версии программы не равен <literal>1</literal> "
+"или <literal>0</literal>, то вам следует указать команде <command>dpkg-"
+"buildpackage</command> параметр <literal>-sa</literal>."
+
+#. type: Content of: <book><chapter><section><para>
+msgid "For the <command>dpkg-buildpackage</command> command:"
+msgstr "Для команды <command>dpkg-buildpackage</command>:"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ dpkg-buildpackage -sa\n"
+msgstr "$ dpkg-buildpackage -sa\n"
+
+#. type: Content of: <book><chapter><section><para>
+msgid "For the <command>debuild</command> command:"
+msgstr "Для команды <command>debuild</command>:"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ debuild -sa\n"
+msgstr "$ debuild -sa\n"
+
+#. type: Content of: <book><chapter><section><para>
+msgid "For the <command>pdebuild</command> command:"
+msgstr "Для команды <command>pdebuild</command>:"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ pdebuild --debbuildopts -sa\n"
+msgstr "$ pdebuild --debbuildopts -sa\n"
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"On the other hand, the <literal>-sd</literal> option will force the "
+"exclusion of the original <filename>orig.tar.gz</filename> source."
+msgstr ""
+"Противоположный по действию параметр <literal>-sd</literal> позволит "
+"исключить файл с исходным кодом <filename>orig.tar.gz</filename>."
+
+#. type: Content of: <book><chapter><section><title>
+msgid "Skipped uploads"
+msgstr "Пропущенные отправки"
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"If you created multiple entries in <filename>debian/changelog</filename> by "
+"skipping uploads, you must create a proper <filename>*_.changes</filename> "
+"file which includes all changes from the last upload.  This can be done by "
+"specifying the <command>dpkg-buildpackage</command> option <literal>-v</"
+"literal> with the version, e.g., <literal><replaceable>1.2</replaceable></"
+"literal>."
+msgstr ""
+"Если вы сделали много изменений в <filename>debian/changelog</filename>, но "
+"не выполняли отправку соответствующих версий, то должны создать "
+"соответствующий файл <filename>*_.changes</filename>, в который войдут все "
+"изменения с последней отправки. Это можно сделать указанием команде "
+"<command>dpkg-buildpackage</command> параметра <literal>-v</literal> с "
+"номером версии, например, <literal><replaceable>1.2</replaceable></literal>."
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ dpkg-buildpackage -v<replaceable>1.2</replaceable>\n"
+msgstr "$ dpkg-buildpackage -v<replaceable>1.2</replaceable>\n"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ debuild -v<replaceable>1.2</replaceable>\n"
+msgstr "$ debuild -v<replaceable>1.2</replaceable>\n"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ pdebuild --debbuildopts \"-v<replaceable>1.2</replaceable>\"\n"
+msgstr "$ pdebuild --debbuildopts \"-v<replaceable>1.2</replaceable>\"\n"
 
 #. type: Content of: <book><appendix><title>
 msgid "Advanced packaging"

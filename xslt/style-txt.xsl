@@ -1,14 +1,15 @@
-<?xml version="1.0"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                version="1.0">
-  <xsl:import
-    href="http://docbook.sourceforge.net/release/xsl/current/xhtml/docbook.xsl"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+
+<!-- Import our base stylesheet -->
+<xsl:import href="file:///usr/share/xml/docbook/stylesheet/docbook-xsl/xhtml-1_1/docbook.xsl"/>
 
   <!-- parameters for optimal text output -->
   <xsl:param name="callout.graphics" select="0"/>
   <xsl:param name="callout.unicode" select="0"/>
   <xsl:param name="section.autolabel" select="1"/>
   <xsl:param name="section.label.includes.component.label" select="1"/>
+  <!-- just title and no toc for appendix chapter -->
   <xsl:param name="generate.toc">
   appendix  title
   article/appendix  nop
@@ -33,7 +34,6 @@
     <br/>
     <hr/> <!-- no underline, but at least something -->
   </xsl:template>
-
   <xsl:template match="author|editor" mode="titlepage.mode">
     <center>
       <xsl:apply-imports/>
@@ -58,12 +58,13 @@
     </td></tr></table></xsl:copy>
   </xsl:template>
 
-  <!-- put URLs behind the ulink in the text version -->
-  <xsl:template match="ulink">
-    <xsl:apply-imports/>
-    <xsl:if test="not(contains(@url,'wikipedia'))">
-    (<xsl:value-of select="@url"/>)
-    </xsl:if>
+  <!-- skip URLs if it has something to print -->
+  <xsl:template match="ulink[.!='']">
+    <xsl:copy-of select="."/>
+  </xsl:template>
+  <!-- print URLs if nothing to print  -->
+  <xsl:template match="ulink[.='']">
+    <xsl:value-of select="@url"/>
   </xsl:template>
 
   <!-- make clear where notes etc. begin and end -->

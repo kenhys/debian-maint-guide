@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide 1.116\n"
-"POT-Creation-Date: 2013-11-24 00:32+0900\n"
+"POT-Creation-Date: 2013-12-21 23:26+0900\n"
 "PO-Revision-Date: 2013-01-28 18:39+0100\n"
 "Last-Translator: Innocent De Marchi <tangram.peces@gmail.com>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
@@ -62,13 +62,13 @@ msgstr "Version &docversion;"
 #. type: Content of: <book><bookinfo>
 msgid ""
 "<pubdate>&docisodate;</pubdate> <copyright><year>1998-2002</year> "
-"<holder>Josip Rodin</holder></copyright> <copyright><year>2005-2011</year> "
+"<holder>Josip Rodin</holder></copyright> <copyright><year>2005-2013</year> "
 "<holder>Osamu Aoki</holder></copyright> <copyright><year>2010</year> "
 "<holder>Craig Small</holder></copyright> <copyright><year>2010</year> "
 "<holder>Raphaël Hertzog</holder></copyright>"
 msgstr ""
 "<pubdate>&docisodate;</pubdate> <copyright><year>1998-2002</year> "
-"<holder>Josip Rodin</holder></copyright> <copyright><year>2005-2011</year> "
+"<holder>Josip Rodin</holder></copyright> <copyright><year>2005-2013</year> "
 "<holder>Osamu Aoki</holder></copyright> <copyright><year>2010</year> "
 "<holder>Craig Small</holder></copyright> <copyright><year>2010</year> "
 "<holder>Raphaël Hertzog</holder></copyright>"
@@ -8409,7 +8409,7 @@ msgstr ""
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "configuring <filename>~/.pbuilderrc</filename> or <filename>/etc/pbuilderrc</"
-"filename> to include the followsing."
+"filename> to include the following."
 msgstr ""
 "Estableix els fitxers <filename>~/.pbuilderrc</filename> o <filename>/etc/"
 "pbuilderrc</filename> amb el següent contingut:"
@@ -9358,288 +9358,6 @@ msgstr ""
 "per arreglar això."
 
 #. type: Content of: <book><chapter><title>
-msgid "Uploading the package"
-msgstr "Enviar el paquet."
-
-#. type: Content of: <book><chapter><para>
-msgid ""
-"Now that you have tested your new package thoroughly, you want to release it "
-"to a public archive to share it."
-msgstr ""
-"Ara que has comprovat el teu paquet en profunditat, pots publicar-ho a un "
-"arxiu públic per compartir-ho."
-
-#. type: Content of: <book><chapter><section><title>
-msgid "Uploading to the Debian archive"
-msgstr "Enviar el paquet al repositori de Debian."
-
-#. type: Content of: <book><chapter><section><para><footnote><para>
-msgid "See <xref linkend=\"socialdynamics\"/>."
-msgstr "Consulta <xref linkend=\"socialdynamics\"/>."
-
-#. type: Content of: <book><chapter><section><para><footnote><para>
-msgid ""
-"There are publicly accessible archives such as <ulink url=\"&mentors-dn;\"/> "
-"which work almost the same way as the Debian archive and provide an upload "
-"area for non-DDs.  You can set up an equivalent archive by yourself using "
-"the tools listed at <ulink url=\"&deb-archive;\"/>.  So this section is "
-"useful for non-DDs, too."
-msgstr ""
-"Hi ha arxius d'accés públic, com ara <ulink url=\"&mentors-dn;\"/> que "
-"funcionen gairebé de la mateixa manera com arxiu de Debian i proporcionen un "
-"àrea de càrrega a les persones que no són DD. Pots construir un arxiu "
-"equivalent tu mateix fent servir les eines que figuren a <ulink url=\"&deb-"
-"archive;\"/>. Així, aquesta secció també és útil per a les persones que no "
-"són DD.."
-
-#. type: Content of: <book><chapter><section><para><footnote><para>
-msgid ""
-"The <systemitem role=\"package\">dput</systemitem> package seems to come "
-"with more features and to be becoming more popular than the <systemitem role="
-"\"package\">dupload</systemitem> package.  It uses the file <filename>/etc/"
-"dput</filename> for its global configuration and the file <filename>~/.dput."
-"cf</filename> for per-user configuration.  It supports Ubuntu-related "
-"services out-of-the-box, too."
-msgstr ""
-"És possible que el paquet <systemitem role=\"package\">dput</systemitem> "
-"ofereixi més funcionalitats i sigui més popular que <systemitem role="
-"\"package\">dupload</systemitem>.  Fes servir l'arxiu <filename>/etc/dput</"
-"filename> per a la configuració global i el fitxer <filename>~/.dput.cf</"
-"filename> per a la configuració pròpia de l'usuari.  També incorpora "
-"l'assistència per a Ubuntu."
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"Once you become an official developer, <placeholder type=\"footnote\" id="
-"\"0\"/> you can upload the package to the Debian archive.  <placeholder type="
-"\"footnote\" id=\"1\"/> You can do this manually, but it's easier to use the "
-"existing automated tools, like <citerefentry> <refentrytitle>dupload</"
-"refentrytitle> <manvolnum>1</manvolnum> </citerefentry> or <citerefentry> "
-"<refentrytitle>dput</refentrytitle> <manvolnum>1</manvolnum> </"
-"citerefentry>.  We'll describe how it's done with <command>dupload</"
-"command>.  <placeholder type=\"footnote\" id=\"2\"/>"
-msgstr ""
-"Quan siguis desenvolupador oficial Debian <placeholder type=\"footnote\" id="
-"\"0\"/>, podràs carregar el paquet al repositori de Debian <placeholder type="
-"\"footnote\" id=\"1\"/>.  Pots fer això manualment, però és més fàcil fer-ho "
-"amb les eines automàtiques ja disponibles com <citerefentry> "
-"<refentrytitle>dupload</refentrytitle> <manvolnum>1</manvolnum> </"
-"citerefentry> o <citerefentry> <refentrytitle>dput</refentrytitle> "
-"<manvolnum>1</manvolnum> </citerefentry>.  A continuació descriurem com fer-"
-"ho amb <command>dupload</command> <placeholder type=\"footnote\" id=\"0\"/>."
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"First you have to set up <command>dupload</command>'s config file.  You can "
-"either edit the system-wide <filename>/etc/dupload.conf</filename> file, or "
-"have your own <filename>~/.dupload.conf</filename> file override the few "
-"things you want to change."
-msgstr ""
-"Per començar, caldrà ajustar la configuració de <command>dupload</command>. "
-"Pots fer-ho editant el fitxer general <filename>/etc/dupload.conf</"
-"filename>, o construint el teu arxiu personalitzat <filename>~/.dupload."
-"conf</filename> amb els paràmetres que vulguis canviar."
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"You can read the <citerefentry> <refentrytitle>dupload.conf</refentrytitle> "
-"<manvolnum>5</manvolnum> </citerefentry> manual page to understand what each "
-"of these options means."
-msgstr ""
-"Consulta el manual de <citerefentry> <refentrytitle>dupload.conf</"
-"refentrytitle> <manvolnum>5</manvolnum> </citerefentry> per conèixer el "
-"significat de cada opció."
-
-#. type: Content of: <book><chapter><section><para><footnote><para>
-msgid ""
-"See <ulink url=\"&devref-upload;\">Debian Developer's Reference 5.6. "
-"\"Uploading a package\"</ulink>."
-msgstr ""
-"Consulta <ulink url=\"&devref-upload;\">Debian Developer's Reference 5.6. "
-"\"Uploading a package\"</ulink>."
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"The <literal>$default_host</literal> option determines which of the upload "
-"queues will be used by default.  <literal>anonymous-ftp-master</literal> is "
-"the primary one, but it's possible that you will want to use another one.  "
-"<placeholder type=\"footnote\" id=\"0\"/>"
-msgstr ""
-"L'opció <literal>$default_host</literal> determina quina de les cues de "
-"càrrega es farà servir per defecte. <literal>anonymous-ftp-master</literal> "
-"és la primera però és possible que vulguis fer servir una altra més ràpida "
-"<placeholder type=\"footnote\" id=\"0\"/>."
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"While connected to the Internet, you can upload your package as follows:"
-msgstr "Si tens connexió a Internet, pots pujar el paquet executant:"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ dupload gentoo_0.9.12-1_i386.changes\n"
-msgstr "  dupload gentoo_0.9.12-1_i386.changes\n"
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"<command>dupload</command> checks that the SHA1/SHA256 file checksums match "
-"those listed in the <filename>.changes</filename> file.  If they do not "
-"match, it will warn you to rebuild it as described in <xref linkend="
-"\"completebuild\"/> so it can be properly uploaded."
-msgstr ""
-"<command>dupload</command> comprova que les sumes MD5/SHA1/SHA256 dels "
-"fitxers transferits coincideixen amb els llistats en el fitxer <filename>."
-"changes</filename>, en cas contrari t'avisarà i hauràs de reconstruir el "
-"paquet com s'explica a <xref linkend=\"completebuild\"/> per poder enviar-ho "
-"correctament."
-
-#. type: Content of: <book><chapter><section><para><footnote><para>
-msgid ""
-"See <ulink url=\"&uploadqueue-readme;\"/>.  Alternatively, you can use the "
-"<command>dcut</command> command from the <systemitem role=\"package\">dput</"
-"systemitem> package."
-msgstr ""
-"Consulta <ulink url=\"&uploadqueue-readme;\"/>. També pots fer servir "
-"l'ordre <command>dcut</command> del paquet <systemitem role=\"package"
-"\">dput</systemitem>."
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"If you encounter an upload problem at <ulink url=\"&uploadqueue;\"/>, you "
-"can fix this by manually uploading a GPG-signed <filename>*.commands</"
-"filename> file to there with <command>ftp</command>.  <placeholder type="
-"\"footnote\" id=\"0\"/> For example, using <filename>hello.commands</"
-"filename>:"
-msgstr ""
-"Si trobes algun problema amb la pujada del paquet a <ulink url="
-"\"&uploadqueue;\"/>, pots solucionar-ho pujant «manualment» (fent servir "
-"<command>ftp</command>) un arxiu <filename>*.commands</filename> signat amb "
-"GPG <placeholder type=\"footnote\" id=\"0\"/>. Per exemple, aquest "
-"<filename>hello.commands</filename>:"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid ""
-"-----BEGIN PGP SIGNED MESSAGE-----\n"
-"Hash: SHA1\n"
-"Uploader: Foo Bar &lt;Foo.Bar@example.org&gt;\n"
-"Commands: \n"
-" rm hello_1.0-1_i386.deb\n"
-" mv hello_1.0-1.dsx hello_1.0-1.dsc\n"
-"-----BEGIN PGP SIGNATURE-----\n"
-"Version: GnuPG v1.4.10 (GNU/Linux)\n"
-"\n"
-"[...]\n"
-"-----END PGP SIGNATURE-----\n"
-msgstr ""
-"-----BEGIN PGP SIGNED MESSAGE-----\n"
-"Hash: SHA1\n"
-"Uploader: Foo Bar &lt;Foo.Bar@example.org&gt;\n"
-"Commands: \n"
-" rm hello_1.0-1_i386.deb\n"
-" mv hello_1.0-1.dsx hello_1.0-1.dsc\n"
-"-----BEGIN PGP SIGNATURE-----\n"
-"Version: GnuPG v1.4.10 (GNU/Linux)\n"
-"\n"
-"[...]\n"
-"-----END PGP SIGNATURE-----\n"
-
-#. type: Content of: <book><chapter><section><title>
-msgid "Including <filename>orig.tar.gz</filename> for upload"
-msgstr ""
-"Incloure el fitxer <filename>orig.tar.gz</filename> per a la transferència "
-"del paquet al repositori."
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"When you first upload the package to the archive, you need to include the "
-"original <filename>orig.tar.gz</filename> source, too.  If the Debian "
-"revision number of this package is neither <literal>1</literal> nor "
-"<literal>0</literal>, you must provide the <command>dpkg-buildpackage</"
-"command> option <literal>-sa</literal>."
-msgstr ""
-"A l'hora d'enviar per primera vegada el paquet al repositori, cal incloure "
-"l'arxiu <filename>orig.tar.gz</filename> amb les fonts originals. Si el "
-"número de revisió Debian del paquet no és <literal>1</literal> ni "
-"<literal>0</literal>, hauràs d'executar l'ordre <command>dpkg-buildpackage</"
-"command> amb l'opció <literal>-sa</literal> per forçar la inclusió de "
-"l'arxiu <filename>orig.tar.gz</filename>. Contrariament, amb l'opció "
-"<literal>-sd</literal> s'exclou l'arxiu <filename>orig.tar.gz</filename> de "
-"les fonts."
-
-#. type: Content of: <book><chapter><section><para>
-msgid "For the <command>dpkg-buildpackage</command> command:"
-msgstr "Per a l'ordre <command>dpkg-buildpackage</command>:"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ dpkg-buildpackage -sa\n"
-msgstr "$ dpkg-buildpackage -sa\n"
-
-#. type: Content of: <book><chapter><section><para>
-msgid "For the <command>debuild</command> command:"
-msgstr "Per a l'ordre <command>debuild</command>:"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ debuild -sa\n"
-msgstr "$ debuild -sa\n"
-
-#. type: Content of: <book><chapter><section><para>
-msgid "For the <command>pdebuild</command> command:"
-msgstr "Per a l'ordre <command>pdebuild</command>:"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ pdebuild --debbuildopts -sa\n"
-msgstr "$ pdebuild --debbuildopts -sa\n"
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"On the other hand, the <literal>-sd</literal> option will force the "
-"exclusion of the original <filename>orig.tar.gz</filename> source."
-msgstr ""
-"Per altra banda, amb l'opció <literal>-sd</literal> s'evita l'inclusió de "
-"l'arxiu <filename>orig.tar.gz</filename> de les fonts originals."
-
-#. type: Content of: <book><chapter><section><title>
-msgid "Skipped uploads"
-msgstr "Enviaments discontinuats."
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"If you created multiple entries in <filename>debian/changelog</filename> by "
-"skipping uploads, you must create a proper <filename>*_.changes</filename> "
-"file which includes all changes from the last upload.  This can be done by "
-"specifying the <command>dpkg-buildpackage</command> option <literal>-v</"
-"literal> with the version, e.g., <literal><replaceable>1.2</replaceable></"
-"literal>."
-msgstr ""
-"Si en el fitxer <filename>debian/changelog</filename> hi ha diverses "
-"entrades corresponents a diferents versions del paquet, però alguna d'elles "
-"no s'ha enviat al repositori, hauràs de generar correctament un arxiu "
-"<filename>*_.changes</filename> que inclogui totes les modificacions des de "
-"la darrera versió present en el repositori. Pots fer-ho executant l'ordre  "
-"<command>dpkg-buildpackage</command> amb l'opció <literal>-v</literal> "
-"seguida del codi de versió p.ex. <literal><replaceable>1.2</replaceable></"
-"literal>."
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ dpkg-buildpackage -v<replaceable>1.2</replaceable>\n"
-msgstr "$ dpkg-buildpackage -v<replaceable>1.2</replaceable>\n"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ debuild -v<replaceable>1.2</replaceable>\n"
-msgstr "$ debuild -v<replaceable>1.2</replaceable>\n"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ pdebuild --debbuildopts \"-v<replaceable>1.2</replaceable>\"\n"
-msgstr "$ pdebuild --debbuildopts \"-v<replaceable>1.2</replaceable>\"\n"
-
-#. type: Content of: <book><chapter><title>
 msgid "Updating the package"
 msgstr "Actualitzar el paquet."
 
@@ -10432,6 +10150,288 @@ msgstr ""
 "literal>, que el contingut dels camps <literal>Maintainer</literal> i "
 "<literal>Changed-By</literal> són correctes, que has signat el fitxer amb la "
 "teva clau GPG, etc."
+
+#. type: Content of: <book><chapter><title>
+msgid "Uploading the package"
+msgstr "Enviar el paquet."
+
+#. type: Content of: <book><chapter><para>
+msgid ""
+"Now that you have tested your new package thoroughly, you want to release it "
+"to a public archive to share it."
+msgstr ""
+"Ara que has comprovat el teu paquet en profunditat, pots publicar-ho a un "
+"arxiu públic per compartir-ho."
+
+#. type: Content of: <book><chapter><section><title>
+msgid "Uploading to the Debian archive"
+msgstr "Enviar el paquet al repositori de Debian."
+
+#. type: Content of: <book><chapter><section><para><footnote><para>
+msgid "See <xref linkend=\"socialdynamics\"/>."
+msgstr "Consulta <xref linkend=\"socialdynamics\"/>."
+
+#. type: Content of: <book><chapter><section><para><footnote><para>
+msgid ""
+"There are publicly accessible archives such as <ulink url=\"&mentors-dn;\"/> "
+"which work almost the same way as the Debian archive and provide an upload "
+"area for non-DDs.  You can set up an equivalent archive by yourself using "
+"the tools listed at <ulink url=\"&deb-archive;\"/>.  So this section is "
+"useful for non-DDs, too."
+msgstr ""
+"Hi ha arxius d'accés públic, com ara <ulink url=\"&mentors-dn;\"/> que "
+"funcionen gairebé de la mateixa manera com arxiu de Debian i proporcionen un "
+"àrea de càrrega a les persones que no són DD. Pots construir un arxiu "
+"equivalent tu mateix fent servir les eines que figuren a <ulink url=\"&deb-"
+"archive;\"/>. Així, aquesta secció també és útil per a les persones que no "
+"són DD.."
+
+#. type: Content of: <book><chapter><section><para><footnote><para>
+msgid ""
+"The <systemitem role=\"package\">dput</systemitem> package seems to come "
+"with more features and to be becoming more popular than the <systemitem role="
+"\"package\">dupload</systemitem> package.  It uses the file <filename>/etc/"
+"dput</filename> for its global configuration and the file <filename>~/.dput."
+"cf</filename> for per-user configuration.  It supports Ubuntu-related "
+"services out-of-the-box, too."
+msgstr ""
+"És possible que el paquet <systemitem role=\"package\">dput</systemitem> "
+"ofereixi més funcionalitats i sigui més popular que <systemitem role="
+"\"package\">dupload</systemitem>.  Fes servir l'arxiu <filename>/etc/dput</"
+"filename> per a la configuració global i el fitxer <filename>~/.dput.cf</"
+"filename> per a la configuració pròpia de l'usuari.  També incorpora "
+"l'assistència per a Ubuntu."
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"Once you become an official developer, <placeholder type=\"footnote\" id="
+"\"0\"/> you can upload the package to the Debian archive.  <placeholder type="
+"\"footnote\" id=\"1\"/> You can do this manually, but it's easier to use the "
+"existing automated tools, like <citerefentry> <refentrytitle>dupload</"
+"refentrytitle> <manvolnum>1</manvolnum> </citerefentry> or <citerefentry> "
+"<refentrytitle>dput</refentrytitle> <manvolnum>1</manvolnum> </"
+"citerefentry>.  We'll describe how it's done with <command>dupload</"
+"command>.  <placeholder type=\"footnote\" id=\"2\"/>"
+msgstr ""
+"Quan siguis desenvolupador oficial Debian <placeholder type=\"footnote\" id="
+"\"0\"/>, podràs carregar el paquet al repositori de Debian <placeholder type="
+"\"footnote\" id=\"1\"/>.  Pots fer això manualment, però és més fàcil fer-ho "
+"amb les eines automàtiques ja disponibles com <citerefentry> "
+"<refentrytitle>dupload</refentrytitle> <manvolnum>1</manvolnum> </"
+"citerefentry> o <citerefentry> <refentrytitle>dput</refentrytitle> "
+"<manvolnum>1</manvolnum> </citerefentry>.  A continuació descriurem com fer-"
+"ho amb <command>dupload</command> <placeholder type=\"footnote\" id=\"0\"/>."
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"First you have to set up <command>dupload</command>'s config file.  You can "
+"either edit the system-wide <filename>/etc/dupload.conf</filename> file, or "
+"have your own <filename>~/.dupload.conf</filename> file override the few "
+"things you want to change."
+msgstr ""
+"Per començar, caldrà ajustar la configuració de <command>dupload</command>. "
+"Pots fer-ho editant el fitxer general <filename>/etc/dupload.conf</"
+"filename>, o construint el teu arxiu personalitzat <filename>~/.dupload."
+"conf</filename> amb els paràmetres que vulguis canviar."
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"You can read the <citerefentry> <refentrytitle>dupload.conf</refentrytitle> "
+"<manvolnum>5</manvolnum> </citerefentry> manual page to understand what each "
+"of these options means."
+msgstr ""
+"Consulta el manual de <citerefentry> <refentrytitle>dupload.conf</"
+"refentrytitle> <manvolnum>5</manvolnum> </citerefentry> per conèixer el "
+"significat de cada opció."
+
+#. type: Content of: <book><chapter><section><para><footnote><para>
+msgid ""
+"See <ulink url=\"&devref-upload;\">Debian Developer's Reference 5.6. "
+"\"Uploading a package\"</ulink>."
+msgstr ""
+"Consulta <ulink url=\"&devref-upload;\">Debian Developer's Reference 5.6. "
+"\"Uploading a package\"</ulink>."
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"The <literal>$default_host</literal> option determines which of the upload "
+"queues will be used by default.  <literal>anonymous-ftp-master</literal> is "
+"the primary one, but it's possible that you will want to use another one.  "
+"<placeholder type=\"footnote\" id=\"0\"/>"
+msgstr ""
+"L'opció <literal>$default_host</literal> determina quina de les cues de "
+"càrrega es farà servir per defecte. <literal>anonymous-ftp-master</literal> "
+"és la primera però és possible que vulguis fer servir una altra més ràpida "
+"<placeholder type=\"footnote\" id=\"0\"/>."
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"While connected to the Internet, you can upload your package as follows:"
+msgstr "Si tens connexió a Internet, pots pujar el paquet executant:"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ dupload gentoo_0.9.12-1_i386.changes\n"
+msgstr "  dupload gentoo_0.9.12-1_i386.changes\n"
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"<command>dupload</command> checks that the SHA1/SHA256 file checksums match "
+"those listed in the <filename>.changes</filename> file.  If they do not "
+"match, it will warn you to rebuild it as described in <xref linkend="
+"\"completebuild\"/> so it can be properly uploaded."
+msgstr ""
+"<command>dupload</command> comprova que les sumes MD5/SHA1/SHA256 dels "
+"fitxers transferits coincideixen amb els llistats en el fitxer <filename>."
+"changes</filename>, en cas contrari t'avisarà i hauràs de reconstruir el "
+"paquet com s'explica a <xref linkend=\"completebuild\"/> per poder enviar-ho "
+"correctament."
+
+#. type: Content of: <book><chapter><section><para><footnote><para>
+msgid ""
+"See <ulink url=\"&uploadqueue-readme;\"/>.  Alternatively, you can use the "
+"<command>dcut</command> command from the <systemitem role=\"package\">dput</"
+"systemitem> package."
+msgstr ""
+"Consulta <ulink url=\"&uploadqueue-readme;\"/>. També pots fer servir "
+"l'ordre <command>dcut</command> del paquet <systemitem role=\"package"
+"\">dput</systemitem>."
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"If you encounter an upload problem at <ulink url=\"&uploadqueue;\"/>, you "
+"can fix this by manually uploading a GPG-signed <filename>*.commands</"
+"filename> file to there with <command>ftp</command>.  <placeholder type="
+"\"footnote\" id=\"0\"/> For example, using <filename>hello.commands</"
+"filename>:"
+msgstr ""
+"Si trobes algun problema amb la pujada del paquet a <ulink url="
+"\"&uploadqueue;\"/>, pots solucionar-ho pujant «manualment» (fent servir "
+"<command>ftp</command>) un arxiu <filename>*.commands</filename> signat amb "
+"GPG <placeholder type=\"footnote\" id=\"0\"/>. Per exemple, aquest "
+"<filename>hello.commands</filename>:"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid ""
+"-----BEGIN PGP SIGNED MESSAGE-----\n"
+"Hash: SHA1\n"
+"Uploader: Foo Bar &lt;Foo.Bar@example.org&gt;\n"
+"Commands: \n"
+" rm hello_1.0-1_i386.deb\n"
+" mv hello_1.0-1.dsx hello_1.0-1.dsc\n"
+"-----BEGIN PGP SIGNATURE-----\n"
+"Version: GnuPG v1.4.10 (GNU/Linux)\n"
+"\n"
+"[...]\n"
+"-----END PGP SIGNATURE-----\n"
+msgstr ""
+"-----BEGIN PGP SIGNED MESSAGE-----\n"
+"Hash: SHA1\n"
+"Uploader: Foo Bar &lt;Foo.Bar@example.org&gt;\n"
+"Commands: \n"
+" rm hello_1.0-1_i386.deb\n"
+" mv hello_1.0-1.dsx hello_1.0-1.dsc\n"
+"-----BEGIN PGP SIGNATURE-----\n"
+"Version: GnuPG v1.4.10 (GNU/Linux)\n"
+"\n"
+"[...]\n"
+"-----END PGP SIGNATURE-----\n"
+
+#. type: Content of: <book><chapter><section><title>
+msgid "Including <filename>orig.tar.gz</filename> for upload"
+msgstr ""
+"Incloure el fitxer <filename>orig.tar.gz</filename> per a la transferència "
+"del paquet al repositori."
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"When you first upload the package to the archive, you need to include the "
+"original <filename>orig.tar.gz</filename> source, too.  If the Debian "
+"revision number of this package is neither <literal>1</literal> nor "
+"<literal>0</literal>, you must provide the <command>dpkg-buildpackage</"
+"command> option <literal>-sa</literal>."
+msgstr ""
+"A l'hora d'enviar per primera vegada el paquet al repositori, cal incloure "
+"l'arxiu <filename>orig.tar.gz</filename> amb les fonts originals. Si el "
+"número de revisió Debian del paquet no és <literal>1</literal> ni "
+"<literal>0</literal>, hauràs d'executar l'ordre <command>dpkg-buildpackage</"
+"command> amb l'opció <literal>-sa</literal> per forçar la inclusió de "
+"l'arxiu <filename>orig.tar.gz</filename>. Contrariament, amb l'opció "
+"<literal>-sd</literal> s'exclou l'arxiu <filename>orig.tar.gz</filename> de "
+"les fonts."
+
+#. type: Content of: <book><chapter><section><para>
+msgid "For the <command>dpkg-buildpackage</command> command:"
+msgstr "Per a l'ordre <command>dpkg-buildpackage</command>:"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ dpkg-buildpackage -sa\n"
+msgstr "$ dpkg-buildpackage -sa\n"
+
+#. type: Content of: <book><chapter><section><para>
+msgid "For the <command>debuild</command> command:"
+msgstr "Per a l'ordre <command>debuild</command>:"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ debuild -sa\n"
+msgstr "$ debuild -sa\n"
+
+#. type: Content of: <book><chapter><section><para>
+msgid "For the <command>pdebuild</command> command:"
+msgstr "Per a l'ordre <command>pdebuild</command>:"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ pdebuild --debbuildopts -sa\n"
+msgstr "$ pdebuild --debbuildopts -sa\n"
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"On the other hand, the <literal>-sd</literal> option will force the "
+"exclusion of the original <filename>orig.tar.gz</filename> source."
+msgstr ""
+"Per altra banda, amb l'opció <literal>-sd</literal> s'evita l'inclusió de "
+"l'arxiu <filename>orig.tar.gz</filename> de les fonts originals."
+
+#. type: Content of: <book><chapter><section><title>
+msgid "Skipped uploads"
+msgstr "Enviaments discontinuats."
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"If you created multiple entries in <filename>debian/changelog</filename> by "
+"skipping uploads, you must create a proper <filename>*_.changes</filename> "
+"file which includes all changes from the last upload.  This can be done by "
+"specifying the <command>dpkg-buildpackage</command> option <literal>-v</"
+"literal> with the version, e.g., <literal><replaceable>1.2</replaceable></"
+"literal>."
+msgstr ""
+"Si en el fitxer <filename>debian/changelog</filename> hi ha diverses "
+"entrades corresponents a diferents versions del paquet, però alguna d'elles "
+"no s'ha enviat al repositori, hauràs de generar correctament un arxiu "
+"<filename>*_.changes</filename> que inclogui totes les modificacions des de "
+"la darrera versió present en el repositori. Pots fer-ho executant l'ordre  "
+"<command>dpkg-buildpackage</command> amb l'opció <literal>-v</literal> "
+"seguida del codi de versió p.ex. <literal><replaceable>1.2</replaceable></"
+"literal>."
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ dpkg-buildpackage -v<replaceable>1.2</replaceable>\n"
+msgstr "$ dpkg-buildpackage -v<replaceable>1.2</replaceable>\n"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ debuild -v<replaceable>1.2</replaceable>\n"
+msgstr "$ debuild -v<replaceable>1.2</replaceable>\n"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ pdebuild --debbuildopts \"-v<replaceable>1.2</replaceable>\"\n"
+msgstr "$ pdebuild --debbuildopts \"-v<replaceable>1.2</replaceable>\"\n"
 
 #. type: Content of: <book><appendix><title>
 msgid "Advanced packaging"

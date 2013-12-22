@@ -1,0 +1,926 @@
+<chapter id="dother"><title>Other files under the <filename>debian</filename> directory</title>
+<para>
+To control most of what <systemitem role="package">debhelper</systemitem> does
+while building the package, you put optional configuration files under the
+<filename>debian</filename> directory.  This chapter will provide an overview of
+what each of these does and its format.  Please read the <ulink url="&debian-policy;">Debian Policy
+Manual</ulink> and <ulink url="&developers-reference;">Debian Developer's
+Reference</ulink> for guidelines for packaging.
+</para>
+<para>
+The <command>dh_make</command> command will create some template configuration
+files under the <filename>debian</filename> directory.  Most of them come with
+filenames suffixed by <literal>.ex</literal>.  Some of them come with filenames
+prefixed by the binary package name such as
+<literal><replaceable>package</replaceable></literal>.  Take a look at all of
+them.
+<footnote><para>
+In this chapter, files in the <filename>debian</filename> directory are
+referred to without the leading <filename>debian/</filename> for simplicity whenever
+the meaning is obvious.
+</para></footnote>
+</para>
+<para>
+Some template configuration files for <systemitem role="package">debhelper</systemitem>
+may not be created by the <command>dh_make</command> command.  In
+such cases, you need to create them with an editor.
+</para>
+<para>
+If you wish or need to activate any of these, please do the following:
+</para>
+<itemizedlist>
+<listitem>
+<para>
+rename template files by removing the <literal>.ex</literal> or
+<literal>.EX</literal> suffix if they have one;
+</para>
+</listitem>
+<listitem>
+<para>
+rename the configuration files to use the actual binary package
+name in place of <literal><replaceable>package</replaceable></literal>;
+</para>
+</listitem>
+<listitem>
+<para>
+modify template file contents to suit your needs;
+</para>
+</listitem>
+<listitem>
+<para>
+remove template files which you do not need;
+</para>
+</listitem>
+<listitem>
+<para>
+modify the <filename>control</filename> file (see <xref linkend="control"/>),
+if necessary;
+</para>
+</listitem>
+<listitem>
+<para>
+modify the <filename>rules</filename> file (see <xref linkend="rules"/>), if
+necessary.
+</para>
+</listitem>
+</itemizedlist>
+<para>
+Any <systemitem role="package">debhelper</systemitem> configuration files
+without a <filename><replaceable>package</replaceable></filename> prefix, such as
+<filename>install</filename>, apply to the first binary package.  When there are
+many binary packages, their configurations can be specified by prefixing their
+name to their configuration filenames such as
+<filename><replaceable>package-1</replaceable>.install</filename>,
+<filename><replaceable>package-2</replaceable>.install</filename>, etc.
+</para>
+<section id="readme"><title><filename>README.Debian</filename></title>
+<para>
+Any extra details or discrepancies between the original package and your Debian
+version should be documented here.
+</para>
+<para>
+<command>dh_make</command> created a default one; this is what it looks like:
+</para>
+<screen>
+gentoo for Debian
+-----------------
+&lt;possible notes regarding this package - if none, delete this file&gt;
+ -- Josip Rodin &lt;joy-mg@debian.org&gt;, Wed, 11 Nov 1998 21:02:14 +0100
+</screen>
+<para>
+If you have nothing to be documented, remove this file.  See <citerefentry>
+<refentrytitle>dh_installdocs</refentrytitle> <manvolnum>1</manvolnum>
+</citerefentry>.
+</para>
+</section>
+<section id="compat"><title><filename>compat</filename></title>
+<para>
+The <filename>compat</filename> file defines the <systemitem role="package">debhelper</systemitem> compatibility level.  Currently, you
+should set it to the <systemitem role="package">debhelper</systemitem> v9 as
+follows:
+</para>
+<screen>
+$ echo 9 &gt; debian/compat
+</screen>
+</section>
+<section id="conffiles"><title><filename>conffiles</filename></title>
+<para>
+One of the most annoying things about software is when you spend a great deal
+of time and effort customizing a program, only to have an upgrade stomp all
+over your changes.  Debian solves this problem by marking such configuration files as conffiles.
+<footnote><para>See <citerefentry> <refentrytitle>dpkg</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry> and
+<ulink url="&policy-conffiles;">Debian Policy Manual, "D.2.5 Conffiles"</ulink>.
+</para></footnote>
+When you upgrade a package, you'll be asked whether you want to keep
+your old configuration files or not.
+</para>
+<para>
+<citerefentry><refentrytitle>dh_installdeb</refentrytitle> <manvolnum>1</manvolnum>
+</citerefentry> <emphasis>automatically</emphasis> flags any files under
+the <filename>/etc</filename> directory as conffiles, so if your program only
+has conffiles there you do not need to specify them in this file.  For most
+package types, the only place conffiles should ever be is under
+<filename>/etc</filename>, and so this file doesn't need to exist.
+</para>
+<para>
+If your program uses configuration files but also rewrites them on its own,
+it's best not to make them conffiles because <command>dpkg</command> will
+then prompt users to verify the changes all the time.
+</para>
+<para>
+If the program you're packaging requires every user to modify the configuration
+files in the <filename>/etc</filename> directory, there are two popular ways to
+arrange for them to not be conffiles, keeping <command>dpkg</command> quiet.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Create a symlink under the <filename>/etc</filename> directory pointing to a
+file under the <filename>/var</filename> directory generated by the
+maintainer scripts.
+</para>
+</listitem>
+<listitem>
+<para>
+Create a file generated by the maintainer scripts under the <filename>/etc</filename> directory.
+</para>
+</listitem>
+</itemizedlist>
+<para>
+For information on maintainer scripts, see <xref linkend="maintscripts"/>.
+</para>
+</section>
+<section id="crond"><title><filename><replaceable>package</replaceable>.cron.*</filename></title>
+<para>
+If your package requires regularly scheduled tasks to operate properly, you can
+use these files to set that up.  You can set up regular tasks that either happen
+hourly, daily, weekly, or monthly, or alternatively happen at any other time that
+you wish.  The filenames are:
+</para>
+<itemizedlist>
+<listitem>
+<para>
+<filename><replaceable>package</replaceable>.cron.hourly</filename> - Installed as
+<filename>/etc/cron.hourly/<replaceable>package</replaceable></filename>; run
+once an hour.
+</para>
+</listitem>
+<listitem>
+<para>
+<filename><replaceable>package</replaceable>.cron.daily</filename> - Installed as
+<filename>/etc/cron.daily/<replaceable>package</replaceable></filename>; run
+once a day.
+</para>
+</listitem>
+<listitem>
+<para>
+<filename><replaceable>package</replaceable>.cron.weekly</filename> - Installed as
+<filename>/etc/cron.weekly/<replaceable>package</replaceable></filename>; run
+once a week.
+</para>
+</listitem>
+<listitem>
+<para>
+<filename><replaceable>package</replaceable>.cron.monthly</filename> - Installed as
+<filename>/etc/cron.monthly/<replaceable>package</replaceable></filename>: run
+once a month.
+</para>
+</listitem>
+<listitem>
+<para>
+<filename><replaceable>package</replaceable>.cron.d</filename> - Installed as
+<filename>/etc/cron.d/<replaceable>package</replaceable></filename>: for any
+other time.
+</para>
+</listitem>
+</itemizedlist>
+<para>
+Most of these files are shell scripts, with the exception of
+<filename><replaceable>package</replaceable>.cron.d</filename> which follows
+the format of <citerefentry> <refentrytitle>crontab</refentrytitle>
+<manvolnum>5</manvolnum> </citerefentry>.
+</para>
+<para>
+No explicit <filename>cron.*</filename> file is needed to set up log rotation;
+for that, see
+<citerefentry><refentrytitle>dh_installlogrotate</refentrytitle>
+<manvolnum>1</manvolnum></citerefentry> and
+<citerefentry><refentrytitle>logrotate</refentrytitle><manvolnum>8</manvolnum></citerefentry>.
+</para>
+</section>
+<section id="dirs"><title><filename>dirs</filename></title>
+<para>
+This file specifies any directories which we need but which are not created by the normal installation
+procedure (<literal>make install DESTDIR=...</literal> invoked by
+<literal>dh_auto_install</literal>).  This generally
+means there is a problem with the <filename>Makefile</filename>.
+</para>
+<para>
+Files listed in an <filename>install</filename> file don't need their
+directories created first.  See <xref linkend="install"/>.
+</para>
+<para>
+It is best to try to run the installation first and only use this if you
+run into trouble.  There is no preceding slash on the directory names listed in
+the <filename>dirs</filename> file.
+</para>
+</section>
+<section id="doc-base"><title><filename><replaceable>package</replaceable>.doc-base</filename></title>
+<para>
+If your package has documentation other than manual and info pages, you
+should use the <systemitem role="package">doc-base</systemitem> file to
+register it, so the user can find it with e.g.  <citerefentry>
+<refentrytitle>dhelp</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>,
+<citerefentry> <refentrytitle>dwww</refentrytitle> <manvolnum>1</manvolnum>
+</citerefentry>, or <citerefentry> <refentrytitle>doccentral</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry>.
+</para>
+<para>
+This usually includes HTML, PS and PDF files, shipped in
+<filename>/usr/share/doc/<replaceable>packagename</replaceable>/</filename>.
+</para>
+<para>
+This is what <systemitem role="package">gentoo</systemitem>'s doc-base file
+<filename>gentoo.doc-base</filename> looks like:
+</para>
+<screen>
+Document: gentoo
+Title: Gentoo Manual
+Author: Emil Brink
+Abstract: This manual describes what Gentoo is, and how it can be used.
+Section: File Management
+Format: HTML
+Index: /usr/share/doc/gentoo/html/index.html
+Files: /usr/share/doc/gentoo/html/*.html
+</screen>
+<para>
+For information on the file format, see <citerefentry>
+<refentrytitle>install-docs</refentrytitle> <manvolnum>8</manvolnum>
+</citerefentry> and the Debian <systemitem role="package">doc-base</systemitem>
+Manual at the local copy <filename>&doc-base;</filename> provided by the
+<systemitem role="package">doc-base</systemitem> package.
+</para>
+<para>
+For more details on installing additional documentation, look in <xref linkend="destdir"/>.
+</para>
+</section>
+<section id="docs"><title><filename>docs</filename></title>
+<para>
+This file specifies the file names of documentation files we can have
+<citerefentry> <refentrytitle>dh_installdocs</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry> install into the temporary directory
+for us.
+</para>
+<para>
+By default, it will include all existing files in the top-level source
+directory that are called <filename>BUGS</filename>,
+<filename>README*</filename>, <filename>TODO</filename> etc.
+</para>
+<para>
+For <systemitem role="package">gentoo</systemitem>, some other files
+are also included:
+</para>
+<screen>
+BUGS
+CONFIG-CHANGES
+CREDITS
+NEWS
+README
+README.gtkrc
+TODO
+</screen>
+</section>
+<section id="emacsen"><title><filename>emacsen-*</filename></title>
+<para>
+If your package supplies Emacs files that can be bytecompiled at package
+installation time, you can use these files to set it up.
+</para>
+<para>
+They are installed into the temporary directory by <citerefentry>
+<refentrytitle>dh_installemacsen</refentrytitle> <manvolnum>1</manvolnum>
+</citerefentry>.
+</para>
+<para>
+If you don't need these, remove them.
+</para>
+</section>
+<section id="examples"><title><filename><replaceable>package</replaceable>.examples</filename></title>
+<para>
+The <citerefentry> <refentrytitle>dh_installexamples</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry> command installs files and directories
+listed in this file as example files.
+</para>
+</section>
+<section id="initd"><title><filename><replaceable>package</replaceable>.init</filename> and <filename><replaceable>package</replaceable>.default</filename></title>
+<para>
+If your package is a daemon that needs to be run at system start-up, you've
+obviously disregarded my initial recommendation, haven't you?  :-)
+</para>
+<para>
+The <filename><replaceable>package</replaceable>.init</filename> file is
+installed as the
+<filename>/etc/init.d/<replaceable>package</replaceable></filename> script
+which starts and stops the daemon.
+Its fairly generic skeleton template is provided by the
+<command>dh_make</command> command as <filename>init.d.ex</filename>.  You'll
+likely have to rename and edit it, a lot, while making sure to provide
+<ulink url="&lsb;">Linux Standard Base</ulink> (LSB) compliant headers.  It
+gets installed into the temporary directory by <citerefentry>
+<refentrytitle>dh_installinit</refentrytitle> <manvolnum>1</manvolnum>
+</citerefentry>.
+</para>
+<para>
+The <filename><replaceable>package</replaceable>.default</filename> file will
+be installed as
+<filename>/etc/default/<replaceable>package</replaceable></filename>.  This
+file sets defaults that are sourced by the init script.  This
+<filename><replaceable>package</replaceable>.default</filename> file
+is most often used to disable running a daemon, or to set some default flags or
+timeouts.  If your init script has certain configurable
+features, you can set them in the <filename><replaceable>package</replaceable>.default</filename> file,
+instead of in the init script itself.
+</para>
+<para>
+If your upstream program provides a file for the init script, you can either use it or not.  If you
+don't use their init script then create a new one in
+<filename><replaceable>package</replaceable>.init</filename>.  However
+if the upstream init script looks fine and installs in the right place you
+still need to set up the <filename>rc*</filename> symlinks.  To do this you will
+need to override <command>dh_installinit</command> in the
+<filename>rules</filename> file with the following lines:
+</para>
+<screen>
+override_dh_installinit:
+        dh_installinit --onlyscripts
+</screen>
+<para>
+If you don't need this, remove the files.
+</para>
+</section>
+<section id="install"><title><filename>install</filename></title>
+<para>
+If there are files that need to be installed into your package but your
+standard <literal>make install</literal> won't do it, put the filenames and
+destinations into this <filename>install</filename> file.  They are installed
+by <citerefentry> <refentrytitle>dh_install</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry>.<footnote><para> This replaces the
+deprecated <citerefentry> <refentrytitle>dh_movefiles</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry> command which is configured by the
+<filename>files</filename> file.  </para> </footnote> You should first check
+there is not a more specific tool to use.  For example, documents should be in
+the <filename>docs</filename> file and not in this one.
+</para>
+<para>
+This <filename>install</filename> file has one line per file installed, with
+the name of the file (relative to the top build directory) then a space then
+the installation directory (relative to the install directory).  One example of where this is used is if a binary <filename>src/<replaceable>bar</replaceable></filename> is left uninstalled; the
+<filename>install</filename> file might look like:
+</para>
+<screen>
+src/<replaceable>bar</replaceable> usr/bin
+</screen>
+<para>
+This means when this package is installed, there will be an executable command
+<filename>/usr/bin/<replaceable>bar</replaceable></filename>.
+</para>
+<para>
+Alternatively, this <filename>install</filename> can have the name of the file
+only without the installation directory when the relative directory path does
+not change.  This format is usually used for a large package that splits the 
+output of its build into multiple binary packages using
+<filename><replaceable>package-1</replaceable>.install</filename>,
+<filename><replaceable>package-2</replaceable>.install</filename>, etc.
+</para>
+<para>
+The <command>dh_install</command> command will fall back to looking in
+<filename>debian/tmp</filename> for files, if it doesn't find them in the
+current directory (or wherever you've told it to look using
+<literal>--sourcedir</literal>).
+</para>
+</section>
+<section id="info"><title><filename><replaceable>package</replaceable>.info</filename></title>
+<para>
+If your package has info pages, you should install them using <citerefentry>
+<refentrytitle>dh_installinfo</refentrytitle> <manvolnum>1</manvolnum>
+</citerefentry> by listing them in a
+<filename><replaceable>package</replaceable>.info</filename> file.
+</para>
+</section>
+<section id="links"><title><filename><replaceable>package</replaceable>.links</filename></title>
+<para>
+If you need to create additional symlinks in package build directories as package maintainer, you should install them using <citerefentry>
+<refentrytitle>dh_link</refentrytitle> <manvolnum>1</manvolnum>
+</citerefentry> by listing their full paths of source and destination files in a
+<filename><replaceable>package</replaceable>.links</filename> file.
+</para>
+</section>
+<section id="lintian"><title><filename>{<replaceable>package</replaceable>.,source/}lintian-overrides</filename></title>
+<para>
+If <systemitem role="package">lintian</systemitem> reports an erroneous
+diagnostic for a case where Debian policy allows exceptions to some rule, you can
+use <filename><replaceable>package</replaceable>.lintian-overrides</filename>
+or <filename>source/lintian-overrides</filename> to quieten it.  Please read
+Lintian User's Manual (<filename>&lintian-doc;</filename>) and refrain
+from abusing this.
+</para>
+<para>
+<filename><replaceable>package</replaceable>.lintian-overrides</filename> is
+for the binary package named <systemitem role="package"><replaceable>package</replaceable></systemitem> and is installed
+into
+<filename>usr/share/lintian/overrides/<replaceable>package</replaceable></filename>
+by the <command>dh_lintian</command> command.
+</para>
+<para>
+<filename>source/lintian-overrides</filename> is for the source package.  This
+is not installed.
+</para>
+</section>
+<section id="manpage"><title><filename>manpage.*</filename></title>
+<para>
+Your program(s) should have a manual page.  If they don't, you should create
+them.  The <command>dh_make</command> command creates some template files for
+manual pages.  These need to be copied and edited for each command missing its
+manual page.  Please make sure to remove unused templates.
+</para>
+<section id="manpage1"><title><filename>manpage.1.ex</filename></title>
+<para>
+Manual pages are normally written in <citerefentry>
+<refentrytitle>nroff</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>.
+The <filename>manpage.1.ex</filename> template is written in
+<command>nroff</command>, too.  See the <citerefentry>
+<refentrytitle>man</refentrytitle> <manvolnum>7</manvolnum> </citerefentry>
+manual page for a brief description of how to edit such a file.
+</para>
+<para>
+The final manual page file name should give the name of the program it is
+documenting, so we will rename it from <literal>manpage</literal> to
+<literal>gentoo</literal>.  The file name also includes <literal>.1</literal>
+as the first suffix, which means it's a manual page for a user command.  Be
+sure to verify that this section is indeed the correct one.  Here's a short
+list of manual page sections:
+</para>
+<informaltable id="manpage-sections" pgwide="0" frame="topbot" rowsep="1" colsep="1">
+<tgroup cols="3">
+<colspec colwidth="8*" align="left"/> <colspec colwidth="24*" align="left"/> <colspec colwidth="40*" align="left"/>
+<thead>
+<row> <entry>Section</entry> <entry>Description</entry> <entry>Notes</entry> </row>
+</thead>
+<tbody>
+<row> <entry>1</entry> <entry>User command</entry> <entry>Executable commands or scripts</entry> </row>
+<row> <entry>2</entry> <entry>System calls</entry> <entry>Functions provided by the kernel</entry> </row>
+<row> <entry>3</entry> <entry>Library calls</entry> <entry>Functions within system libraries</entry> </row>
+<row> <entry>4</entry> <entry>Special files</entry> <entry>Usually found in <filename>/dev</filename></entry> </row>
+<row> <entry>5</entry> <entry>File formats</entry> <entry>E.g. <filename>/etc/passwd</filename>'s format</entry> </row>
+<row> <entry>6</entry> <entry>Games</entry> <entry>Games or other frivolous programs</entry> </row>
+<row> <entry>7</entry> <entry>Macro packages</entry> <entry>Such as <command>man</command> macros</entry> </row>
+<row> <entry>8</entry> <entry>System administration</entry> <entry>Programs typically only run by root</entry> </row>
+<row> <entry>9</entry> <entry>Kernel routines</entry> <entry>Non-standard calls and internals</entry> </row>
+</tbody>
+</tgroup>
+</informaltable>
+<para>
+So <systemitem role="package">gentoo</systemitem>'s man page should be called
+<filename>gentoo.1</filename>.  If there was no <filename>gentoo.1</filename>
+man page in the original source, you should create it by renaming the
+<filename>manpage.1.ex</filename> template to <filename>gentoo.1</filename> and
+editing it using information from the example and from the upstream docs.
+</para>
+<para>
+You can use the <command>help2man</command> command to generate a man page out
+of the <literal>--help</literal> and <literal>--version</literal> output of each
+program, too.  <footnote><para> Note that <command>help2man</command>'s
+placeholder man page will claim that more detailed documentation is
+available in the info system. If the command is missing an
+<command>info</command> page, you
+should manually edit the man page created by the
+<command>help2man</command> command.  </para> </footnote>
+</para>
+</section>
+<section id="manpagesgml"><title><filename>manpage.sgml.ex</filename></title>
+<para>
+If on the other hand you prefer writing SGML instead of
+<command>nroff</command>, you can use the <filename>manpage.sgml.ex</filename>
+template.  If you do this, you have to:
+</para>
+<itemizedlist>
+<listitem>
+<para>
+rename the file to something like <filename>gentoo.sgml</filename>.
+</para>
+</listitem>
+<listitem>
+<para>
+install the <systemitem role="package">docbook-to-man</systemitem> package
+</para>
+</listitem>
+<listitem>
+<para>
+add <literal>docbook-to-man</literal> to the <literal>Build-Depends</literal>
+line in the <filename>control</filename> file
+</para>
+</listitem>
+<listitem>
+<para>
+add an <literal>override_dh_auto_build</literal> target to your
+<filename>rules</filename> file:
+</para>
+<screen>
+override_dh_auto_build:
+        docbook-to-man debian/gentoo.sgml &gt; debian/gentoo.1
+        dh_auto_build
+</screen>
+</listitem>
+</itemizedlist>
+</section>
+<section id="manpagexml"><title><filename>manpage.xml.ex</filename></title>
+<para>
+If you prefer XML over SGML, you can use the <literal>manpage.xml.ex</literal>
+template.  If you do this, you have to:
+</para>
+<itemizedlist>
+<listitem>
+<para>
+rename the source file to something like <literal>gentoo.1.xml</literal>
+</para>
+</listitem>
+<listitem>
+<para>
+install the <systemitem role="package">docbook-xsl</systemitem> package and an
+XSLT processor like <systemitem role="package">xsltproc</systemitem>
+(recommended)
+</para>
+</listitem>
+<listitem>
+<para>
+add the <literal>docbook-xsl</literal>, <literal>docbook-xml</literal>, and
+<literal>xsltproc</literal> packages to the <literal>Build-Depends</literal>
+line in the <literal>control</literal> file
+</para>
+</listitem>
+<listitem>
+<para>
+add an <literal>override_dh_auto_build</literal> target to your
+<filename>rules</filename> file:
+</para>
+<screen>
+override_dh_auto_build:
+        xsltproc --nonet \
+         --param make.year.ranges 1 \
+         --param make.single.year.ranges 1 \
+         --param man.charmap.use.subset 0 \
+         -o debian/ \
+http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl\
+        debian/gentoo.1.xml
+        dh_auto_build
+</screen>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section id="manpages"><title><filename><replaceable>package</replaceable>.manpages</filename></title>
+<para>
+If your package has manual pages, you should install them using <citerefentry>
+<refentrytitle>dh_installman</refentrytitle> <manvolnum>1</manvolnum>
+</citerefentry> by listing them in a
+<filename><replaceable>package</replaceable>.manpages</filename> file.
+</para>
+<para>
+To install <filename>docs/gentoo.1</filename> as a manpage for the <systemitem role="package">gentoo</systemitem> package, create a
+<filename>gentoo.manpages</filename> file as follows.
+</para>
+<screen>
+docs/gentoo.1
+</screen>
+</section>
+<section id="menu"><title><filename>menu</filename></title>
+<para>
+X Window System users usually have a window manager with a menu that can be
+customized to launch programs.  If they have installed the Debian <systemitem role="package">menu</systemitem> package, a set of menus for every program on
+the system will be created for them.
+</para>
+<para>
+Here's the default <filename>menu.ex</filename> file that
+<command>dh_make</command> created.
+</para>
+<screen>
+?package(gentoo):needs=X11|text|vc|wm \
+        section=Applications/see-menu-manual\
+        title=gentoo command=/usr/bin/gentoo
+</screen>
+<para>
+The first field after the colon character is <literal>needs</literal>, and it
+specifies what kind of interface the program needs.  Change this to one of the
+listed alternatives, e.g.  <literal>text</literal> or <literal>X11</literal>.
+</para>
+<para>
+The next is the <literal>section</literal> that the menu and submenu entry
+should appear in.
+<footnote><para> The current list of sections is in
+<ulink url="&menu-structure;">The Debian Menu sub-policy 2.1 "Preferred menu structure"</ulink>.
+There was a major reorganization of menu structure for <literal>squeeze</literal>.
+</para> </footnote>
+</para>
+<para>
+The <literal>title</literal> field is the name of the program.  You can start
+this one in uppercase if you like.  Just keep it short.
+</para>
+<para>
+Finally, the <literal>command</literal> field is the command that runs the
+program.
+</para>
+<para>
+Let's change the file name to <filename>menu</filename> and change the menu
+entry to this:
+</para>
+<screen>
+?package(gentoo): needs=X11 \
+        section=Applications/Tools \
+        title=Gentoo command=gentoo
+</screen>
+<para>
+You can also add other fields like <literal>longtitle</literal>,
+<literal>icon</literal>, <literal>hints</literal> etc.  See <citerefentry>
+<refentrytitle>dh_installmenu</refentrytitle> <manvolnum>1</manvolnum>
+</citerefentry>, <citerefentry> <refentrytitle>menufile</refentrytitle>
+<manvolnum>5</manvolnum> </citerefentry>, <citerefentry>
+<refentrytitle>update-menus</refentrytitle> <manvolnum>1</manvolnum>
+</citerefentry>, and
+<ulink url="&policy-menu;">The Debian Menu sub-policy</ulink> for more
+information.
+</para>
+</section>
+<section id="news"><title><filename>NEWS</filename></title>
+<para>
+The <citerefentry> <refentrytitle>dh_installchangelogs</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry> command installs this.
+</para>
+</section>
+<section id="maintscripts"><title><filename>{pre,post}{inst,rm}</filename></title>
+<para>
+These <filename>postinst</filename>, <filename>preinst</filename>,
+<filename>postrm</filename>, and <filename>prerm</filename> files
+<footnote><para> Despite this use of the <command>bash</command>
+shorthand expression <filename>{pre,post}{inst,rm}</filename> to indicate these
+filenames, you should use pure POSIX syntax for these maintainer scripts for
+compatibility with <command>dash</command> as the system shell.  </para> </footnote> are
+called <emphasis>maintainer scripts</emphasis>.  They are scripts which are put
+in the control area of the package and run by <command>dpkg</command> when your
+package is installed, upgraded, or removed.
+</para>
+<para>
+As a novice maintainer, you should avoid any manual editing of
+maintainer scripts because they are problematic.  For more
+information refer to the <ulink url="&policy-mantainerscripts;">Debian
+Policy Manual, 6 "Package maintainer scripts and installation
+procedure"</ulink>, and take a look at the example files provided by
+<command>dh_make</command>.
+</para>
+<para>
+If you did not listen to me and have created custom maintainer
+scripts for a package, you should make sure to test them not only
+for <emphasis role="strong">install</emphasis> and
+<emphasis role="strong">upgrade</emphasis> but also for
+<emphasis role="strong">remove</emphasis> and
+<emphasis role="strong">purge</emphasis>.
+</para>
+<para>
+Upgrades to the new version should be silent and non-intrusive (existing users
+should not notice the upgrade except by discovering that old bugs have been
+fixed and perhaps that there are new features).
+</para>
+<para>
+When the upgrade is necessarily intrusive (eg., config files scattered through
+various home directories with totally different structure), you may
+consider as the last resort switching the package to a safe fallback state
+(e.g., disabling a service) and providing the proper documentation
+required by policy (<filename>README.Debian</filename> and
+<filename>NEWS.Debian</filename>).  Don't bother the user with
+<command>debconf</command> notes invoked from these maintainer scripts
+for upgrades.
+</para>
+<para>
+The <systemitem role="package">ucf</systemitem> package provides a
+<emphasis>conffile-like</emphasis> handling infrastructure to preserve user
+changes for files that may not be labeled as <emphasis>conffiles</emphasis> such
+as those managed by the maintainer scripts.  This should
+minimize issues associated with them.
+</para>
+<para>
+These maintainer scripts are among the Debian enhancements that
+explain <emphasis role="strong">why people choose Debian</emphasis>.  You must
+be very careful not to turn them into a source of annoyance.
+</para>
+</section>
+<section id="symbols"><title><filename><replaceable>package</replaceable>.symbols</filename></title>
+<para>
+Packaging of library is not easy for a novice maintainer and should be avoided.  Having said it, if your package has libraries, you should have <filename>debian/<replaceable>package</replaceable>.symbols</filename> files. See <xref linkend="librarysymbols"/>.
+</para>
+</section>
+<section id="todo"><title><filename>TODO</filename></title>
+<para>
+The <citerefentry> <refentrytitle>dh_installdocs</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry> command installs this.
+</para>
+</section>
+<section id="watch"><title><filename>watch</filename></title>
+<para>
+The <filename>watch</filename> file format is documented in the <citerefentry>
+<refentrytitle>uscan</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>
+manpage.  The <filename>watch</filename> file configures the
+<command>uscan</command> program (in the <systemitem role="package">devscripts</systemitem> package) to watch the site where you
+originally got the source from.  This is also used by the
+<ulink url="&dehs;">Debian External Health Status (DEHS)</ulink> service.
+</para>
+<para>
+Here are its contents:
+</para>
+<screen>
+# watch control file for uscan
+version=3
+&sf-net;/gentoo/gentoo-(.+)\.tar\.gz debian uupdate
+</screen>
+<para>
+Normally with a <filename>watch</filename> file, the URL at
+<literal>&sf-net;/gentoo</literal> is downloaded and searched for links of
+the form <literal>&lt;a href=...&gt;</literal>.  The basename (just the part
+after the final <literal>/</literal>) of each linked URL is compared against
+the Perl regular expression pattern (see <citerefentry> <refentrytitle>perlre</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry>)
+<literal>gentoo-(.+)\.tar\.gz</literal>.  Out of the files that match, the one with
+the greatest version number is downloaded and the <command>uupdate</command>
+program is run to create an updated source tree.
+</para>
+<para>
+Although this is true for other sites, the SourceForge download service at
+<ulink url="&sf-net;"/> is an exception.  When the
+<filename>watch</filename> file has an URL matching the Perl regexp
+<literal>^http://sf\.net/</literal>, the <command>uscan</command> program
+replaces it with <literal>&qa-do;watch/sf.php/</literal> and
+then applies this rule.  The URL redirector service at <ulink url="&qa-do;"/> is designed to offer
+a stable redirect service to the desired file for any
+<filename>watch</filename> pattern of the form
+<literal>&sf-net;/<replaceable>project</replaceable>/<replaceable>tar-name</replaceable>-(.+)\.tar\.gz</literal>.
+This solves issues related to periodically changing SourceForge URLs.
+</para>
+</section>
+<section id="sourcef"><title><filename>source/format</filename></title>
+<para>
+In the <filename>debian/source/format</filename> file, there should be a single
+line indicating the desired format for the source package (check <citerefentry>
+<refentrytitle>dpkg-source</refentrytitle> <manvolnum>1</manvolnum>
+</citerefentry> for an exhaustive list).  After <literal>squeeze</literal>, it
+should say either:
+</para>
+<itemizedlist>
+<listitem>
+<para>
+<literal>3.0 (native)</literal> for Debian native packages or
+</para>
+</listitem>
+<listitem>
+<para>
+<literal>3.0 (quilt)</literal> for everything else.
+</para>
+</listitem>
+</itemizedlist>
+<para>
+The newer <literal>3.0 (quilt)</literal> source format records modifications in
+a <command>quilt</command> patch series within
+<filename>debian/patches</filename>.  Those changes are then automatically
+applied during extraction of the source package.  <footnote><para> See
+<ulink url="&debsrc3;">DebSrc3.0</ulink> for a summary on the switch to the new <literal>3.0
+(quilt)</literal> and <literal>3.0 (native)</literal> source formats.  </para>
+</footnote> The Debian modifications are simply stored in a
+<filename>debian.tar.gz</filename> archive containing all files under the
+<filename>debian</filename> directory.  This new format supports inclusion of
+binary files such as PNG icons by the package maintainer without requiring
+tricks.  <footnote><para>Actually, this new format also supports multiple
+upstream tarballs and more compression methods.  These are beyond the scope of
+this document.</para> </footnote>
+</para>
+<para>
+When <command>dpkg-source</command> extracts a source package in <literal>3.0
+(quilt)</literal> source format, it automatically applies all patches listed in
+<filename>debian/patches/series</filename>.  You can avoid applying patches at
+the end of the extraction with the <literal>--skip-patches</literal> option.
+</para>
+</section>
+<section id="sourcel"><title><filename>source/local-options</filename></title>
+<para>
+When you want to manage Debian packaging activities under a VCS, you typically
+create one branch (e.g.  <literal>upstream</literal>) tracking the upstream
+source and another branch (e.g.  typically <literal>master</literal> for Git)
+tracking the Debian package.  For the latter, you usually want to have
+unpatched upstream source with your <filename>debian/*</filename> files for the
+Debian packaging to ease merging of the new upstream source.
+</para>
+<para>
+After you build a package, the source is normally left patched.  You need to
+unpatch it manually by running <literal>dquilt pop -a</literal> before
+committing to the <literal>master</literal> branch.  You can automate this by
+adding the optional <filename>debian/source/local-options</filename> file
+containing <literal>unapply-patches</literal>.  This file is not included in
+the generated source package and changes the local build behavior only.  This
+file may contain <literal>abort-on-upstream-changes</literal>, too (see
+<citerefentry> <refentrytitle>dpkg-source</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry>).
+</para>
+<screen>
+unapply-patches
+abort-on-upstream-changes
+</screen>
+</section>
+<section id="sourceopt"><title><filename>source/options</filename></title>
+<para>
+The autogenerated files in the source tree can be quite annoying for packaging
+since they generate meaningless large patch files.  There are custom modules
+such as <command>dh_autoreconf</command> to ease this problem as described in 
+<xref linkend="customrules"/>.
+</para>
+<para>
+You can provide a Perl regular expression to the
+<literal>--extend-diff-ignore</literal> option argument of <citerefentry>
+<refentrytitle>dpkg-source</refentrytitle><manvolnum>1</manvolnum>
+</citerefentry> to ignore changes made to the autogenerated files while
+creating the source package.
+</para>
+<para>
+As a general solution to address this problem of the autogenerated files,
+you can store such a <command>dpkg-source</command> option argument in the
+<filename>source/options</filename> file of the source package.  The following
+will skip creating patch files for <filename>config.sub</filename>,
+<filename>config.guess</filename>, and <filename>Makefile</filename>.
+</para>
+<screen>
+extend-diff-ignore = "(^|/)(config\.sub|config\.guess|Makefile)$"
+</screen>
+</section>
+<section id="patches"><title><filename>patches/*</filename></title>
+<para>
+The old <literal>1.0</literal> source format created a single large
+<filename>diff.gz</filename> file containing package maintenance files in
+<filename>debian</filename> and patch files for the source.  Such a package is a
+bit cumbersome to inspect and understand for each source tree modification
+later.  This is not so nice.
+</para>
+<para>
+The newer <literal>3.0 (quilt)</literal> source format stores patches in
+<filename>debian/patches/*</filename> files using the <command>quilt</command>
+command.  These patches and other package data which are all contained under
+the <filename>debian</filename> directory are packaged as the
+<filename>debian.tar.gz</filename> file.  Since the
+<command>dpkg-source</command> command can handle <command>quilt</command>
+formatted patch data in the <literal>3.0 (quilt)</literal> source without the
+<systemitem role="package">quilt</systemitem> package, it does not need a
+<literal>Build-Depends</literal> on <systemitem role="package">quilt</systemitem>.
+<footnote><para> Several methods of patch set maintenance have been proposed and are in use for Debian
+packages.  The <command>quilt</command> system is the preferred maintenance
+system in use.  Others include <command>dpatch</command>,
+<command>dbs</command>, and <command>cdbs</command>.  Many of these keep such
+patches as <filename>debian/patches/*</filename> files.  </para> </footnote>
+</para>
+<para>
+The <command>quilt</command> command is explained in <citerefentry>
+<refentrytitle>quilt</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>.
+It records modifications to the source as a stack of <literal>-p1</literal>
+patch files in the <filename>debian/patches</filename> directory and the source
+tree is untouched outside of the <filename>debian</filename> directory.  The
+order of these patches is recorded in the
+<filename>debian/patches/series</filename> file.  You can apply (=push),
+un-apply (=pop), and refresh patches easily.  <footnote><para> If you are
+asking a sponsor to upload your package, this kind of clear separation and
+documentation of your changes is very important to expedite the package review
+by your sponsor.  </para> </footnote>
+</para>
+<para>
+For <xref linkend="modify"/>, we created three patches in
+<filename>debian/patches</filename>.
+</para>
+<para>
+Since Debian patches are located in <filename>debian/patches</filename>, please
+make sure to set up the <command>dquilt</command> command properly as described
+in <xref linkend="quiltrc"/>.
+</para>
+<para>
+When anyone (including yourself) provides a patch
+<filename><replaceable>foo</replaceable>.patch</filename> to the source later,
+modifying a <literal>3.0 (quilt)</literal> source package is
+quite simple:
+</para>
+<screen>
+$ dpkg-source -x gentoo_0.9.12.dsc
+$ cd gentoo-0.9.12
+$ dquilt import ../<replaceable>foo</replaceable>.patch
+$ dquilt push
+$ dquilt refresh
+$ dquilt header -e
+... describe patch
+</screen>
+<para>
+The patches stored in the newer <literal>3.0 (quilt)</literal> source format
+must be <emphasis>fuzz</emphasis> free.  You can ensure this with <literal>dquilt
+pop -a; while dquilt push; do dquilt refresh; done</literal>.
+</para>
+</section>
+</chapter>

@@ -1,0 +1,145 @@
+<chapter id="upload"><title>Uploading the package</title>
+<para>
+Now that you have tested your new package thoroughly, you want to release it to
+a public archive to share it.
+</para>
+<section id="upload-debian"><title>Uploading to the Debian archive</title>
+<para>
+Once you become an official developer,
+<footnote><para>
+See <xref linkend="socialdynamics"/>.
+</para></footnote>
+you can upload the package to the Debian archive.
+<footnote><para>
+There are publicly accessible archives such as <ulink url="&mentors-dn;"/>
+which work almost the same way as the Debian archive and provide an upload area for
+non-DDs.  You can set up an equivalent archive by yourself using the tools
+listed at <ulink url="&deb-archive;"/>.  So this section is useful for
+non-DDs, too.
+</para></footnote>
+You can do this manually, but it's easier to use the existing
+automated tools, like <citerefentry> <refentrytitle>dupload</refentrytitle>
+<manvolnum>1</manvolnum> </citerefentry> or <citerefentry>
+<refentrytitle>dput</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>.
+We'll describe how it's done with <command>dupload</command>.  <footnote><para>
+The <systemitem role="package">dput</systemitem> package seems to come with
+more features and to be becoming more popular than the <systemitem role="package">dupload</systemitem> package.  It uses the
+file <filename>/etc/dput</filename> for its global configuration and the
+file <filename>~/.dput.cf</filename> for per-user configuration.  It supports
+Ubuntu-related services out-of-the-box, too.  </para> </footnote>
+</para>
+<para>
+First you have to set up <command>dupload</command>'s config file.  You can
+either edit the system-wide <filename>/etc/dupload.conf</filename> file, or
+have your own <filename>~/.dupload.conf</filename> file override the few things
+you want to change.
+</para>
+<para>
+You can read the <citerefentry> <refentrytitle>dupload.conf</refentrytitle>
+<manvolnum>5</manvolnum> </citerefentry> manual page to understand what each of
+these options means.
+</para>
+<para>
+The <literal>$default_host</literal> option determines which of the upload
+queues will be used by default.  <literal>anonymous-ftp-master</literal> is the
+primary one, but it's possible that you will want to use another one.
+<footnote><para>See <ulink url="&devref-upload;">Debian Developer's Reference 5.6. "Uploading a package"</ulink>.</para></footnote>
+</para>
+<para>
+While connected to the Internet, you can upload your package as follows:
+</para>
+<screen>
+$ dupload gentoo_0.9.12-1_i386.changes
+</screen>
+<para>
+<command>dupload</command> checks that the SHA1/SHA256 file checksums
+match those listed in the <filename>.changes</filename> file.  If they do not
+match, it will warn you to rebuild it as described in <xref linkend="completebuild"/> so it can be properly uploaded.
+</para>
+<!--
+No more use of ftp-master nor faster queue.  It is not so
+useful these days.  If you upload to ftp-master, <command>dupload</command>
+will ask for your password on Debian machines, and then upload the packages.
+-->
+<para>
+If you encounter an upload problem at <ulink url="&uploadqueue;"/>, you can fix this
+by manually uploading a GPG-signed <filename>*.commands</filename> file to there
+with <command>ftp</command>.  <footnote><para> See <ulink url="&uploadqueue-readme;"/>.  Alternatively, you can
+use the <command>dcut</command> command from the <systemitem
+role="package">dput</systemitem> package.  </para> </footnote> For example, using
+<filename>hello.commands</filename>:
+</para>
+<screen>
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+Uploader: Foo Bar &lt;Foo.Bar@example.org&gt;
+Commands: 
+ rm hello_1.0-1_i386.deb
+ mv hello_1.0-1.dsx hello_1.0-1.dsc
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.10 (GNU/Linux)
+
+[...]
+-----END PGP SIGNATURE-----
+</screen>
+</section>
+<section id="option-sa"><title>Including <filename>orig.tar.gz</filename> for upload</title>
+<para>
+When you first upload the package to the archive, you need to include the
+original <filename>orig.tar.gz</filename> source, too.  If the Debian revision
+number of this package is neither <literal>1</literal> nor
+<literal>0</literal>, you must provide the <command>dpkg-buildpackage</command>
+option <literal>-sa</literal>.
+</para>
+<para>
+For the <command>dpkg-buildpackage</command> command:
+</para>
+<screen>
+$ dpkg-buildpackage -sa
+</screen>
+<para>
+For the <command>debuild</command> command:
+</para>
+<screen>
+$ debuild -sa
+</screen>
+<para>
+For the <command>pdebuild</command> command:
+</para>
+<screen>
+$ pdebuild --debbuildopts -sa
+</screen>
+<para>
+On the other hand, the <literal>-sd</literal> option will force the exclusion
+of the original <filename>orig.tar.gz</filename> source.
+</para>
+</section>
+<section id="skipped-uploads"><title>Skipped uploads</title>
+<para>
+If you created multiple entries in <filename>debian/changelog</filename> by
+skipping uploads, you must create a proper <filename>*_.changes</filename> file
+which includes all changes from the last upload.
+This can be done by specifying the <command>dpkg-buildpackage</command> option
+<literal>-v</literal> with the version, e.g.,
+<literal><replaceable>1.2</replaceable></literal>.
+</para>
+<para>
+For the <command>dpkg-buildpackage</command> command:
+</para>
+<screen>
+$ dpkg-buildpackage -v<replaceable>1.2</replaceable>
+</screen>
+<para>
+For the <command>debuild</command> command:
+</para>
+<screen>
+$ debuild -v<replaceable>1.2</replaceable>
+</screen>
+<para>
+For the <command>pdebuild</command> command:
+</para>
+<screen>
+$ pdebuild --debbuildopts "-v<replaceable>1.2</replaceable>"
+</screen>
+</section>
+</chapter>

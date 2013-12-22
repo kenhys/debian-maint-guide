@@ -1,47 +1,10 @@
-BODY { 
-  margin-top: 5%;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 5%;
+/* Cascading stylesheet for the Debian Installer Installation Guide */
+
+/* Use grey background for examples */
+pre.screen {
+  background-color : #E0E0E0;
 }
 
-DIV.revhistory {
-  background-color: lightgrey;
-  font-size: small;
-}
-
-.revhistory P {
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
-.mediaobject {
-  text-align: center;
-}
-
-.programlisting {
-  background-color: lightgrey;
-  border: solid;
-  border-width: thin;
-}
-
-.literal {
-  background-color: lightgrey;
-}
-.screen {
-  background-color: lightgrey;
-}
-
-.subtitle {
-  text-align: center;
-}
-
-.caution, .note, .informaltable table {
-  border: 2px solid;
-  border-collapse: collapse;
-}
-
-.systemitem {
-  color: navy;
-  font-weight: bold;
+code.literal {
+  background-color : #E0E0E0;
 }

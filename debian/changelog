@@ -9,7 +9,9 @@ maint-guide (1.2.32) UNRELEASED; urgency=low
   * Removed zero width spaces from it, BOMs from ca.
   * Updated URL for wnpp-by-tags.  Closes: #701617
   * Add bash completion for dquilt. Closes: #706515
-  * Typo fix. Closes: #720759, #731990 
+  * Typo fix. Closes: #720759, #731990, #731659
+  * Split the English source in chapters. 
+  * Add epub build support following the debian-reference method.
 
  -- Osamu Aoki <osamu@debian.org>  Thu, 24 Jan 2013 21:26:31 +0900
 

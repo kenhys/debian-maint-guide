@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide\n"
-"POT-Creation-Date: 2013-12-13 23:02+0900\n"
+"POT-Creation-Date: 2013-12-22 23:55+0900\n"
 "PO-Revision-Date: 2013-12-15 21:04+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
@@ -58,13 +58,13 @@ msgstr "Version &docversion;"
 #. type: Content of: <book><bookinfo>
 msgid ""
 "<pubdate>&docisodate;</pubdate> <copyright><year>1998-2002</year> "
-"<holder>Josip Rodin</holder></copyright> <copyright><year>2005-2011</year> "
+"<holder>Josip Rodin</holder></copyright> <copyright><year>2005-2013</year> "
 "<holder>Osamu Aoki</holder></copyright> <copyright><year>2010</year> "
 "<holder>Craig Small</holder></copyright> <copyright><year>2010</year> "
 "<holder>Raphaël Hertzog</holder></copyright>"
 msgstr ""
 "<pubdate>&docisodate;</pubdate> <copyright><year>1998-2002</year> "
-"<holder>Josip Rodin</holder></copyright> <copyright><year>2005-2011</year> "
+"<holder>Josip Rodin</holder></copyright> <copyright><year>2005-2013</year> "
 "<holder>Osamu Aoki</holder></copyright> <copyright><year>2010</year> "
 "<holder>Craig Small</holder></copyright> <copyright><year>2010</year> "
 "<holder>Raphaël Hertzog</holder></copyright>"
@@ -8493,11 +8493,10 @@ msgstr ""
 "pbuilder/hooks</replaceable></filename>, das ebenfalls für den Benutzer "
 "schreibbar ist, so dass Hook-Skripts dort abgelegt werden können."
 
-# FIXME: s/followsing./following./
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "configuring <filename>~/.pbuilderrc</filename> or <filename>/etc/pbuilderrc</"
-"filename> to include the followsing."
+"filename> to include the following."
 msgstr ""
 "Konfigurieren Sie die Datei <filename>~/.pbuilderrc</filename> oder "
 "<filename>/etc/pbuilderrc</filename>, so dass sie folgendes enthält:"
@@ -9455,285 +9454,6 @@ msgstr ""
 "<filename>rules</filename> an, um dies zu ermöglichen."
 
 #. type: Content of: <book><chapter><title>
-msgid "Uploading the package"
-msgstr "Das Paket hochladen"
-
-#. type: Content of: <book><chapter><para>
-msgid ""
-"Now that you have tested your new package thoroughly, you want to release it "
-"to a public archive to share it."
-msgstr ""
-"Nachdem Sie jetzt das neue Paket intensiv getestet haben, möchten Sie es zur "
-"gemeinsamen Benutzung in ein öffentliches Archiv hochladen."
-
-#. type: Content of: <book><chapter><section><title>
-msgid "Uploading to the Debian archive"
-msgstr "In das Debian-Archiv hochladen"
-
-#. type: Content of: <book><chapter><section><para><footnote><para>
-msgid "See <xref linkend=\"socialdynamics\"/>."
-msgstr "Siehe <xref linkend=\"socialdynamics\"/>"
-
-#. type: Content of: <book><chapter><section><para><footnote><para>
-msgid ""
-"There are publicly accessible archives such as <ulink url=\"&mentors-dn;\"/> "
-"which work almost the same way as the Debian archive and provide an upload "
-"area for non-DDs.  You can set up an equivalent archive by yourself using "
-"the tools listed at <ulink url=\"&deb-archive;\"/>.  So this section is "
-"useful for non-DDs, too."
-msgstr ""
-"Es gibt öffentlich erreichbare Archive wie <ulink url=\"&mentors-dn;\"/>, "
-"die genauso wie das Debian-Archiv funktionieren und einen Upload-Bereich für "
-"nicht DDs bereitstellen. Sie können ein äquivalentes Archiv selbst "
-"erstellen, indem Sie die unter <ulink url=\"&deb-archive;\"/> aufgeführten "
-"Werkzeuge verwenden. Daher ist dieser Abschnitt auch für nicht DDs nützlich."
-
-#. type: Content of: <book><chapter><section><para><footnote><para>
-msgid ""
-"The <systemitem role=\"package\">dput</systemitem> package seems to come "
-"with more features and to be becoming more popular than the <systemitem role="
-"\"package\">dupload</systemitem> package.  It uses the file <filename>/etc/"
-"dput</filename> for its global configuration and the file <filename>~/.dput."
-"cf</filename> for per-user configuration.  It supports Ubuntu-related "
-"services out-of-the-box, too."
-msgstr ""
-"Das Paket <systemitem role=\"package\">dput</systemitem> scheint mehr "
-"Funktionalitäten zu enthalten und beliebter als das Paket <systemitem role="
-"\"package\">dupload</systemitem> zu werden. Es verwendet die Datei "
-"<filename>/etc/dput</filename> für seine globale Konfiguration und die Datei "
-"<filename>~/.dput.cf</filename> für die benutzerspezifische Konfiguration. "
-"Es unterstützt auch standardmäßig Ubuntu-bezogene Dienste."
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"Once you become an official developer, <placeholder type=\"footnote\" id="
-"\"0\"/> you can upload the package to the Debian archive.  <placeholder type="
-"\"footnote\" id=\"1\"/> You can do this manually, but it's easier to use the "
-"existing automated tools, like <citerefentry> <refentrytitle>dupload</"
-"refentrytitle> <manvolnum>1</manvolnum> </citerefentry> or <citerefentry> "
-"<refentrytitle>dput</refentrytitle> <manvolnum>1</manvolnum> </"
-"citerefentry>.  We'll describe how it's done with <command>dupload</"
-"command>.  <placeholder type=\"footnote\" id=\"2\"/>"
-msgstr ""
-"Sobald Sie ein offizieller Entwickler werden, <placeholder type=\"footnote\" "
-"id=\"0\"/> können Sie das Paket in das Debian-Archiv hochladen. <placeholder "
-"type=\"footnote\" id=\"1\"/>. Sie können dies manuell erledigen, aber es ist "
-"leichter, eines der bestehenden automatischen Werkzeuge zu verwenden, wie "
-"<citerefentry> <refentrytitle>dupload</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry> oder <citerefentry> <refentrytitle>dput</"
-"refentrytitle> <manvolnum>1</manvolnum> </citerefentry>. Wir beschreiben, "
-"wie es mit dem Befehl <command>dupload</command> gemacht wird. <placeholder "
-"type=\"footnote\" id=\"2\"/>"
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"First you have to set up <command>dupload</command>'s config file.  You can "
-"either edit the system-wide <filename>/etc/dupload.conf</filename> file, or "
-"have your own <filename>~/.dupload.conf</filename> file override the few "
-"things you want to change."
-msgstr ""
-"Zuerst müssen Sie die Konfigurationsdatei von <command>dupload</command> "
-"einrichten. Sie können entweder die systemweite Datei <filename>/etc/dupload."
-"conf</filename> bearbeiten oder durch Ihre persönliche Datei <filename>~/."
-"dupload.conf</filename> die wenigen Dinge, die Sie ändern möchten, "
-"überschreiben."
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"You can read the <citerefentry> <refentrytitle>dupload.conf</refentrytitle> "
-"<manvolnum>5</manvolnum> </citerefentry> manual page to understand what each "
-"of these options means."
-msgstr ""
-"Sie können die Handbuchseite <citerefentry> <refentrytitle>dupload.conf</"
-"refentrytitle> <manvolnum>5</manvolnum> </citerefentry> lesen, um zu "
-"verstehen, was jede dieser Optionen bedeutet."
-
-#. type: Content of: <book><chapter><section><para><footnote><para>
-msgid ""
-"See <ulink url=\"&devref-upload;\">Debian Developer's Reference 5.6. "
-"\"Uploading a package\"</ulink>."
-msgstr ""
-"Siehe <ulink url=\"&devref-upload;\">Debian-Entwicklerreferenz 5.6. »Ein "
-"Paket hochladen«</ulink>."
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"The <literal>$default_host</literal> option determines which of the upload "
-"queues will be used by default.  <literal>anonymous-ftp-master</literal> is "
-"the primary one, but it's possible that you will want to use another one.  "
-"<placeholder type=\"footnote\" id=\"0\"/>"
-msgstr ""
-"Die Option <literal>$default_host</literal> bestimmt, welche der Upload-"
-"Warteschlangen standardmäßig benutzt wird. <literal>anonymous-ftp-master</"
-"literal> ist die primäre, aber es ist möglich, dass Sie eine andere benutzen "
-"möchten. <placeholder type=\"footnote\" id=\"0\"/>"
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"While connected to the Internet, you can upload your package as follows:"
-msgstr ""
-"Während Sie mit dem Internet verbunden Sie, können Sie Ihr Paket wie folgt "
-"hochladen:"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ dupload gentoo_0.9.12-1_i386.changes\n"
-msgstr "$ dupload gentoo_0.9.12-1_i386.changes\n"
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"<command>dupload</command> checks that the SHA1/SHA256 file checksums match "
-"those listed in the <filename>.changes</filename> file.  If they do not "
-"match, it will warn you to rebuild it as described in <xref linkend="
-"\"completebuild\"/> so it can be properly uploaded."
-msgstr ""
-"<command>dupload</command> prüft, ob die SHA1/SHA256-Dateiprüfsummen zu "
-"denen in der Datei <filename>.changes</filename> aufgeführten passen. Falls "
-"Sie nicht passen, wird es Sie warnen, dass sie wie in <xref linkend="
-"\"completebuild\"/> beschrieben erneut bauen müssen, so dass es korrekt "
-"hochgeladen werden kann."
-
-#. type: Content of: <book><chapter><section><para><footnote><para>
-msgid ""
-"See <ulink url=\"&uploadqueue-readme;\"/>.  Alternatively, you can use the "
-"<command>dcut</command> command from the <systemitem role=\"package\">dput</"
-"systemitem> package."
-msgstr ""
-"Lesen Sie <ulink url=\"&uploadqueue-readme;\"/>. Alternativ können Sie den "
-"Befehl <command>dcut</command> aus dem Paket <systemitem role=\"package"
-"\">dput</systemitem> verwenden."
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"If you encounter an upload problem at <ulink url=\"&uploadqueue;\"/>, you "
-"can fix this by manually uploading a GPG-signed <filename>*.commands</"
-"filename> file to there with <command>ftp</command>.  <placeholder type="
-"\"footnote\" id=\"0\"/> For example, using <filename>hello.commands</"
-"filename>:"
-msgstr ""
-"Falls Sie auf ein Problem beim Hochladen in <ulink url=\"&uploadqueue;\"/> "
-"stoßen, können Sie dies durch manuelles Hochladen einer GPG-unterschriebenen "
-"Datei <filename>*.commands</filename> mit <command>ftp</command> "
-"korrigieren. <placeholder type=\"footnote\" id=\"0\"/> Beispielsweise mit "
-"der <filename>hello.commands</filename>:"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid ""
-"-----BEGIN PGP SIGNED MESSAGE-----\n"
-"Hash: SHA1\n"
-"Uploader: Foo Bar &lt;Foo.Bar@example.org&gt;\n"
-"Commands: \n"
-" rm hello_1.0-1_i386.deb\n"
-" mv hello_1.0-1.dsx hello_1.0-1.dsc\n"
-"-----BEGIN PGP SIGNATURE-----\n"
-"Version: GnuPG v1.4.10 (GNU/Linux)\n"
-"\n"
-"[...]\n"
-"-----END PGP SIGNATURE-----\n"
-msgstr ""
-"-----BEGIN PGP SIGNED MESSAGE-----\n"
-"Hash: SHA1\n"
-"Uploader: Foo Bar &lt;Foo.Bar@example.org&gt;\n"
-"Commands: \n"
-" rm hello_1.0-1_i386.deb\n"
-" mv hello_1.0-1.dsx hello_1.0-1.dsc\n"
-"-----BEGIN PGP SIGNATURE-----\n"
-"Version: GnuPG v1.4.10 (GNU/Linux)\n"
-"\n"
-"[...]\n"
-"-----END PGP SIGNATURE-----\n"
-
-#. type: Content of: <book><chapter><section><title>
-msgid "Including <filename>orig.tar.gz</filename> for upload"
-msgstr "Die Datei <filename>orig.tar.gz</filename> hochladen"
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"When you first upload the package to the archive, you need to include the "
-"original <filename>orig.tar.gz</filename> source, too.  If the Debian "
-"revision number of this package is neither <literal>1</literal> nor "
-"<literal>0</literal>, you must provide the <command>dpkg-buildpackage</"
-"command> option <literal>-sa</literal>."
-msgstr ""
-"Wenn Sie das Paket zum ersten Mal ins Archiv hochladen, müssen Sie auch die "
-"ursprüngliche Quelldatei <filename>orig.tar.gz</filename> einschließen. "
-"Falls die Debian-Revisionsnummer dieses Pakets weder <literal>1</literal> "
-"noch <literal>0</literal> ist, müssen Sie die Option <literal>-sa</literal> "
-"von <command>dpkg-buildpackage</command> verwenden."
-
-#. type: Content of: <book><chapter><section><para>
-msgid "For the <command>dpkg-buildpackage</command> command:"
-msgstr "Für den Befehl <command>dpkg-buildpackage</command>:"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ dpkg-buildpackage -sa\n"
-msgstr "$ dpkg-buildpackage -sa\n"
-
-#. type: Content of: <book><chapter><section><para>
-msgid "For the <command>debuild</command> command:"
-msgstr "Für den Befehl <command>debuild</command>:"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ debuild -sa\n"
-msgstr "$ debuild -sa\n"
-
-#. type: Content of: <book><chapter><section><para>
-msgid "For the <command>pdebuild</command> command:"
-msgstr "Für den Befehl <command>pdebuild</command>:"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ pdebuild --debbuildopts -sa\n"
-msgstr "$ pdebuild --debbuildopts -sa\n"
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"On the other hand, the <literal>-sd</literal> option will force the "
-"exclusion of the original <filename>orig.tar.gz</filename> source."
-msgstr ""
-"Andererseits wird die Option <literal>-sd</literal> den Ausschluss der "
-"ursprünglichen Quelle <filename>orig.tar.gz</filename> erzwingen."
-
-#. type: Content of: <book><chapter><section><title>
-msgid "Skipped uploads"
-msgstr "Übersprungene Uploads"
-
-# FIXME: s/from the last upload/since the last upload/?
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"If you created multiple entries in <filename>debian/changelog</filename> by "
-"skipping uploads, you must create a proper <filename>*_.changes</filename> "
-"file which includes all changes from the last upload.  This can be done by "
-"specifying the <command>dpkg-buildpackage</command> option <literal>-v</"
-"literal> with the version, e.g., <literal><replaceable>1.2</replaceable></"
-"literal>."
-msgstr ""
-"Falls Sie mehrere Einträgen in <filename>debian/changelog</filename> erzeugt "
-"haben, indem Sie Uploads übersprangen, müssen Sie eine korrekte Datei "
-"<filename>*_.changes</filename> erzeugen, die sämtliche Änderungen vom "
-"letzten Upload enthält. Dies kann durch Angabe der Option <literal>-v</"
-"literal> von <command>dpkg-buildpackage</command> mit der Version, z.B. "
-"<literal><replaceable>1.2</replaceable></literal>, erfolgen."
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ dpkg-buildpackage -v<replaceable>1.2</replaceable>\n"
-msgstr "$ dpkg-buildpackage -v<replaceable>1.2</replaceable>\n"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ debuild -v<replaceable>1.2</replaceable>\n"
-msgstr "$ debuild -v<replaceable>1.2</replaceable>\n"
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ pdebuild --debbuildopts \"-v<replaceable>1.2</replaceable>\"\n"
-msgstr "$ pdebuild --debbuildopts \"-v<replaceable>1.2</replaceable>\"\n"
-
-#. type: Content of: <book><chapter><title>
 msgid "Updating the package"
 msgstr "Aktualisieren des Pakets"
 
@@ -10538,6 +10258,285 @@ msgstr ""
 "richtigen Fehlerschließanweisungen im Feld <literal>Closes</literal> "
 "enthalten sind, die Felder <literal>Maintainer</literal> and "
 "<literal>Changed-By</literal> passen, die Datei GPG-unterschrieben ist usw."
+
+#. type: Content of: <book><chapter><title>
+msgid "Uploading the package"
+msgstr "Das Paket hochladen"
+
+#. type: Content of: <book><chapter><para>
+msgid ""
+"Now that you have tested your new package thoroughly, you want to release it "
+"to a public archive to share it."
+msgstr ""
+"Nachdem Sie jetzt das neue Paket intensiv getestet haben, möchten Sie es zur "
+"gemeinsamen Benutzung in ein öffentliches Archiv hochladen."
+
+#. type: Content of: <book><chapter><section><title>
+msgid "Uploading to the Debian archive"
+msgstr "In das Debian-Archiv hochladen"
+
+#. type: Content of: <book><chapter><section><para><footnote><para>
+msgid "See <xref linkend=\"socialdynamics\"/>."
+msgstr "Siehe <xref linkend=\"socialdynamics\"/>"
+
+#. type: Content of: <book><chapter><section><para><footnote><para>
+msgid ""
+"There are publicly accessible archives such as <ulink url=\"&mentors-dn;\"/> "
+"which work almost the same way as the Debian archive and provide an upload "
+"area for non-DDs.  You can set up an equivalent archive by yourself using "
+"the tools listed at <ulink url=\"&deb-archive;\"/>.  So this section is "
+"useful for non-DDs, too."
+msgstr ""
+"Es gibt öffentlich erreichbare Archive wie <ulink url=\"&mentors-dn;\"/>, "
+"die genauso wie das Debian-Archiv funktionieren und einen Upload-Bereich für "
+"nicht DDs bereitstellen. Sie können ein äquivalentes Archiv selbst "
+"erstellen, indem Sie die unter <ulink url=\"&deb-archive;\"/> aufgeführten "
+"Werkzeuge verwenden. Daher ist dieser Abschnitt auch für nicht DDs nützlich."
+
+#. type: Content of: <book><chapter><section><para><footnote><para>
+msgid ""
+"The <systemitem role=\"package\">dput</systemitem> package seems to come "
+"with more features and to be becoming more popular than the <systemitem role="
+"\"package\">dupload</systemitem> package.  It uses the file <filename>/etc/"
+"dput</filename> for its global configuration and the file <filename>~/.dput."
+"cf</filename> for per-user configuration.  It supports Ubuntu-related "
+"services out-of-the-box, too."
+msgstr ""
+"Das Paket <systemitem role=\"package\">dput</systemitem> scheint mehr "
+"Funktionalitäten zu enthalten und beliebter als das Paket <systemitem role="
+"\"package\">dupload</systemitem> zu werden. Es verwendet die Datei "
+"<filename>/etc/dput</filename> für seine globale Konfiguration und die Datei "
+"<filename>~/.dput.cf</filename> für die benutzerspezifische Konfiguration. "
+"Es unterstützt auch standardmäßig Ubuntu-bezogene Dienste."
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"Once you become an official developer, <placeholder type=\"footnote\" id="
+"\"0\"/> you can upload the package to the Debian archive.  <placeholder type="
+"\"footnote\" id=\"1\"/> You can do this manually, but it's easier to use the "
+"existing automated tools, like <citerefentry> <refentrytitle>dupload</"
+"refentrytitle> <manvolnum>1</manvolnum> </citerefentry> or <citerefentry> "
+"<refentrytitle>dput</refentrytitle> <manvolnum>1</manvolnum> </"
+"citerefentry>.  We'll describe how it's done with <command>dupload</"
+"command>.  <placeholder type=\"footnote\" id=\"2\"/>"
+msgstr ""
+"Sobald Sie ein offizieller Entwickler werden, <placeholder type=\"footnote\" "
+"id=\"0\"/> können Sie das Paket in das Debian-Archiv hochladen. <placeholder "
+"type=\"footnote\" id=\"1\"/>. Sie können dies manuell erledigen, aber es ist "
+"leichter, eines der bestehenden automatischen Werkzeuge zu verwenden, wie "
+"<citerefentry> <refentrytitle>dupload</refentrytitle> <manvolnum>1</"
+"manvolnum> </citerefentry> oder <citerefentry> <refentrytitle>dput</"
+"refentrytitle> <manvolnum>1</manvolnum> </citerefentry>. Wir beschreiben, "
+"wie es mit dem Befehl <command>dupload</command> gemacht wird. <placeholder "
+"type=\"footnote\" id=\"2\"/>"
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"First you have to set up <command>dupload</command>'s config file.  You can "
+"either edit the system-wide <filename>/etc/dupload.conf</filename> file, or "
+"have your own <filename>~/.dupload.conf</filename> file override the few "
+"things you want to change."
+msgstr ""
+"Zuerst müssen Sie die Konfigurationsdatei von <command>dupload</command> "
+"einrichten. Sie können entweder die systemweite Datei <filename>/etc/dupload."
+"conf</filename> bearbeiten oder durch Ihre persönliche Datei <filename>~/."
+"dupload.conf</filename> die wenigen Dinge, die Sie ändern möchten, "
+"überschreiben."
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"You can read the <citerefentry> <refentrytitle>dupload.conf</refentrytitle> "
+"<manvolnum>5</manvolnum> </citerefentry> manual page to understand what each "
+"of these options means."
+msgstr ""
+"Sie können die Handbuchseite <citerefentry> <refentrytitle>dupload.conf</"
+"refentrytitle> <manvolnum>5</manvolnum> </citerefentry> lesen, um zu "
+"verstehen, was jede dieser Optionen bedeutet."
+
+#. type: Content of: <book><chapter><section><para><footnote><para>
+msgid ""
+"See <ulink url=\"&devref-upload;\">Debian Developer's Reference 5.6. "
+"\"Uploading a package\"</ulink>."
+msgstr ""
+"Siehe <ulink url=\"&devref-upload;\">Debian-Entwicklerreferenz 5.6. »Ein "
+"Paket hochladen«</ulink>."
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"The <literal>$default_host</literal> option determines which of the upload "
+"queues will be used by default.  <literal>anonymous-ftp-master</literal> is "
+"the primary one, but it's possible that you will want to use another one.  "
+"<placeholder type=\"footnote\" id=\"0\"/>"
+msgstr ""
+"Die Option <literal>$default_host</literal> bestimmt, welche der Upload-"
+"Warteschlangen standardmäßig benutzt wird. <literal>anonymous-ftp-master</"
+"literal> ist die primäre, aber es ist möglich, dass Sie eine andere benutzen "
+"möchten. <placeholder type=\"footnote\" id=\"0\"/>"
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"While connected to the Internet, you can upload your package as follows:"
+msgstr ""
+"Während Sie mit dem Internet verbunden Sie, können Sie Ihr Paket wie folgt "
+"hochladen:"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ dupload gentoo_0.9.12-1_i386.changes\n"
+msgstr "$ dupload gentoo_0.9.12-1_i386.changes\n"
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"<command>dupload</command> checks that the SHA1/SHA256 file checksums match "
+"those listed in the <filename>.changes</filename> file.  If they do not "
+"match, it will warn you to rebuild it as described in <xref linkend="
+"\"completebuild\"/> so it can be properly uploaded."
+msgstr ""
+"<command>dupload</command> prüft, ob die SHA1/SHA256-Dateiprüfsummen zu "
+"denen in der Datei <filename>.changes</filename> aufgeführten passen. Falls "
+"Sie nicht passen, wird es Sie warnen, dass sie wie in <xref linkend="
+"\"completebuild\"/> beschrieben erneut bauen müssen, so dass es korrekt "
+"hochgeladen werden kann."
+
+#. type: Content of: <book><chapter><section><para><footnote><para>
+msgid ""
+"See <ulink url=\"&uploadqueue-readme;\"/>.  Alternatively, you can use the "
+"<command>dcut</command> command from the <systemitem role=\"package\">dput</"
+"systemitem> package."
+msgstr ""
+"Lesen Sie <ulink url=\"&uploadqueue-readme;\"/>. Alternativ können Sie den "
+"Befehl <command>dcut</command> aus dem Paket <systemitem role=\"package"
+"\">dput</systemitem> verwenden."
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"If you encounter an upload problem at <ulink url=\"&uploadqueue;\"/>, you "
+"can fix this by manually uploading a GPG-signed <filename>*.commands</"
+"filename> file to there with <command>ftp</command>.  <placeholder type="
+"\"footnote\" id=\"0\"/> For example, using <filename>hello.commands</"
+"filename>:"
+msgstr ""
+"Falls Sie auf ein Problem beim Hochladen in <ulink url=\"&uploadqueue;\"/> "
+"stoßen, können Sie dies durch manuelles Hochladen einer GPG-unterschriebenen "
+"Datei <filename>*.commands</filename> mit <command>ftp</command> "
+"korrigieren. <placeholder type=\"footnote\" id=\"0\"/> Beispielsweise mit "
+"der <filename>hello.commands</filename>:"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid ""
+"-----BEGIN PGP SIGNED MESSAGE-----\n"
+"Hash: SHA1\n"
+"Uploader: Foo Bar &lt;Foo.Bar@example.org&gt;\n"
+"Commands: \n"
+" rm hello_1.0-1_i386.deb\n"
+" mv hello_1.0-1.dsx hello_1.0-1.dsc\n"
+"-----BEGIN PGP SIGNATURE-----\n"
+"Version: GnuPG v1.4.10 (GNU/Linux)\n"
+"\n"
+"[...]\n"
+"-----END PGP SIGNATURE-----\n"
+msgstr ""
+"-----BEGIN PGP SIGNED MESSAGE-----\n"
+"Hash: SHA1\n"
+"Uploader: Foo Bar &lt;Foo.Bar@example.org&gt;\n"
+"Commands: \n"
+" rm hello_1.0-1_i386.deb\n"
+" mv hello_1.0-1.dsx hello_1.0-1.dsc\n"
+"-----BEGIN PGP SIGNATURE-----\n"
+"Version: GnuPG v1.4.10 (GNU/Linux)\n"
+"\n"
+"[...]\n"
+"-----END PGP SIGNATURE-----\n"
+
+#. type: Content of: <book><chapter><section><title>
+msgid "Including <filename>orig.tar.gz</filename> for upload"
+msgstr "Die Datei <filename>orig.tar.gz</filename> hochladen"
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"When you first upload the package to the archive, you need to include the "
+"original <filename>orig.tar.gz</filename> source, too.  If the Debian "
+"revision number of this package is neither <literal>1</literal> nor "
+"<literal>0</literal>, you must provide the <command>dpkg-buildpackage</"
+"command> option <literal>-sa</literal>."
+msgstr ""
+"Wenn Sie das Paket zum ersten Mal ins Archiv hochladen, müssen Sie auch die "
+"ursprüngliche Quelldatei <filename>orig.tar.gz</filename> einschließen. "
+"Falls die Debian-Revisionsnummer dieses Pakets weder <literal>1</literal> "
+"noch <literal>0</literal> ist, müssen Sie die Option <literal>-sa</literal> "
+"von <command>dpkg-buildpackage</command> verwenden."
+
+#. type: Content of: <book><chapter><section><para>
+msgid "For the <command>dpkg-buildpackage</command> command:"
+msgstr "Für den Befehl <command>dpkg-buildpackage</command>:"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ dpkg-buildpackage -sa\n"
+msgstr "$ dpkg-buildpackage -sa\n"
+
+#. type: Content of: <book><chapter><section><para>
+msgid "For the <command>debuild</command> command:"
+msgstr "Für den Befehl <command>debuild</command>:"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ debuild -sa\n"
+msgstr "$ debuild -sa\n"
+
+#. type: Content of: <book><chapter><section><para>
+msgid "For the <command>pdebuild</command> command:"
+msgstr "Für den Befehl <command>pdebuild</command>:"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ pdebuild --debbuildopts -sa\n"
+msgstr "$ pdebuild --debbuildopts -sa\n"
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"On the other hand, the <literal>-sd</literal> option will force the "
+"exclusion of the original <filename>orig.tar.gz</filename> source."
+msgstr ""
+"Andererseits wird die Option <literal>-sd</literal> den Ausschluss der "
+"ursprünglichen Quelle <filename>orig.tar.gz</filename> erzwingen."
+
+#. type: Content of: <book><chapter><section><title>
+msgid "Skipped uploads"
+msgstr "Übersprungene Uploads"
+
+# FIXME: s/from the last upload/since the last upload/?
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"If you created multiple entries in <filename>debian/changelog</filename> by "
+"skipping uploads, you must create a proper <filename>*_.changes</filename> "
+"file which includes all changes from the last upload.  This can be done by "
+"specifying the <command>dpkg-buildpackage</command> option <literal>-v</"
+"literal> with the version, e.g., <literal><replaceable>1.2</replaceable></"
+"literal>."
+msgstr ""
+"Falls Sie mehrere Einträgen in <filename>debian/changelog</filename> erzeugt "
+"haben, indem Sie Uploads übersprangen, müssen Sie eine korrekte Datei "
+"<filename>*_.changes</filename> erzeugen, die sämtliche Änderungen vom "
+"letzten Upload enthält. Dies kann durch Angabe der Option <literal>-v</"
+"literal> von <command>dpkg-buildpackage</command> mit der Version, z.B. "
+"<literal><replaceable>1.2</replaceable></literal>, erfolgen."
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ dpkg-buildpackage -v<replaceable>1.2</replaceable>\n"
+msgstr "$ dpkg-buildpackage -v<replaceable>1.2</replaceable>\n"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ debuild -v<replaceable>1.2</replaceable>\n"
+msgstr "$ debuild -v<replaceable>1.2</replaceable>\n"
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "$ pdebuild --debbuildopts \"-v<replaceable>1.2</replaceable>\"\n"
+msgstr "$ pdebuild --debbuildopts \"-v<replaceable>1.2</replaceable>\"\n"
 
 #. type: Content of: <book><appendix><title>
 msgid "Advanced packaging"
