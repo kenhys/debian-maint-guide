@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide\n"
 "POT-Creation-Date: 2013-12-22 23:55+0900\n"
-"PO-Revision-Date: 2013-12-15 21:04+0100\n"
+"PO-Revision-Date: 2013-12-23 19:36+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
@@ -10985,6 +10985,12 @@ msgid ""
 "<systemitem role=\"package\">libfoo1a</systemitem> and you should start over "
 "again.)"
 msgstr ""
+"Bauen Sie mit Werkzeugen wie <command>debuild</command> und "
+"<command>pdebuild</command> versuchsweise den Quellbaum. (Falls das aufgrund "
+"fehlender Symbole usw. fehlschlägt, gibt es einige rückwärtsinkompatible ABI-"
+"Änderungen, die es notwendig machen, den Paketnamen der Laufzeitbibliothek "
+"auf etwas wie <systemitem role=\"package\">libfoo1a</systemitem> zu erhöhen. "
+"Sie sollten dann wieder von vorne anfangen.)"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><screen>
 #, no-wrap
@@ -11063,6 +11069,8 @@ msgid ""
 "Build release packages with tools such as <command>debuild</command> and "
 "<command>pdebuild</command>."
 msgstr ""
+"Bauen Sie mit Werkzeugen wie <command>debuild</command> und "
+"<command>pdebuild</command> Veröffentlichungspakete."
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><screen>
 #, no-wrap
@@ -11091,6 +11099,9 @@ msgid ""
 "further and bump versions for some symbols manually as needed.  <placeholder "
 "type=\"footnote\" id=\"0\"/>"
 msgstr ""
+"Zusätzlich zu den obigen Beispielen müssen wir die ABI-Kompatibilität weiter "
+"prüfen und die Versionen für einige Symbole wo notwendig erhöhen. "
+"<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -11188,18 +11199,24 @@ msgid ""
 "a library source <filename>lib<replaceable>foo</replaceable>-1.tar.gz</"
 "filename>"
 msgstr ""
+"eine Bibliotheksquelle <filename>lib<replaceable>foo</replaceable>-1.tar.gz</"
+"filename>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
 "a tool source <filename><replaceable>bar</replaceable>-1.tar.gz</filename> "
 "written in a compiled language"
 msgstr ""
+"eine in einer übersetzten Sprache geschriebene Werkzeugquelle "
+"<filename><replaceable>bar</replaceable>-1.tar.gz</filename> "
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
 "a tool source <filename><replaceable>baz</replaceable>-1.tar.gz</filename> "
 "written in an interpreted language"
 msgstr ""
+"eine in einer interpretierten Sprache geschriebene Werkzeugquelle "
+"<filename><replaceable>baz</replaceable>-1.tar.gz</filename> "
 
 # FIXME: Somtimes colons?
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
@@ -11223,6 +11240,8 @@ msgid ""
 "<systemitem role=\"package\">lib<replaceable>foo</"
 "replaceable><replaceable>1</replaceable></systemitem>"
 msgstr ""
+"<systemitem role=\"package\">lib<replaceable>foo</"
+"replaceable><replaceable>1</replaceable></systemitem>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "any"
@@ -11234,13 +11253,15 @@ msgstr "same"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the shared library, co-installable"
-msgstr ""
+msgstr "die Laufzeitbibliothek, koinstallierbar"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid ""
 "<systemitem role=\"package\">lib<replaceable>foo</"
 "replaceable><replaceable>1</replaceable>-dbg</systemitem>"
 msgstr ""
+"<systemitem role=\"package\">lib<replaceable>foo</"
+"replaceable><replaceable>1</replaceable>-dbg</systemitem>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the shared library debug symbols, co-installable"
@@ -11251,65 +11272,74 @@ msgid ""
 "<systemitem role=\"package\">lib<replaceable>foo</replaceable>-dev</"
 "systemitem>"
 msgstr ""
+"<systemitem role=\"package\">lib<replaceable>foo</replaceable>-dev</"
+"systemitem>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the shared library header files etc., co-installable"
-msgstr ""
+msgstr "die Laufzeitbibliothek-Header-Dateien usw., koinstallierbar"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid ""
 "<systemitem role=\"package\">lib<replaceable>foo</replaceable>-tools</"
 "systemitem>"
 msgstr ""
+"<systemitem role=\"package\">lib<replaceable>foo</replaceable>-tools</"
+"systemitem>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "foreign"
-msgstr ""
+msgstr "foreign"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the run-time support programs, not co-installable"
-msgstr ""
+msgstr "die Laufzeitunterstützungsprogramme, nicht koinstallierbar"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid ""
 "<systemitem role=\"package\">lib<replaceable>foo</replaceable>-doc</"
 "systemitem>"
 msgstr ""
+"<systemitem role=\"package\">lib<replaceable>foo</replaceable>-doc</"
+"systemitem>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "all"
-msgstr ""
+msgstr "all"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the shared library documentation files"
-msgstr ""
+msgstr "die Dokumentationsdateien der Laufzeitbibliothek"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid ""
 "<systemitem role=\"package\"><replaceable>bar</replaceable></systemitem>"
 msgstr ""
+"<systemitem role=\"package\"><replaceable>bar</replaceable></systemitem>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the compiled program files, not co-installable"
-msgstr ""
+msgstr "die übersetzten Programmdateien, nicht koinstallierbar"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid ""
 "<systemitem role=\"package\"><replaceable>bar</replaceable>-doc</systemitem>"
 msgstr ""
+"<systemitem role=\"package\"><replaceable>bar</replaceable>-doc</systemitem>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the documentation files for the program"
-msgstr ""
+msgstr "die Dokumentationsdateien für das Programm"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid ""
 "<systemitem role=\"package\"><replaceable>baz</replaceable></systemitem>"
 msgstr ""
+"<systemitem role=\"package\"><replaceable>baz</replaceable></systemitem>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the interpreted program files"
-msgstr ""
+msgstr "die interpretierten Programmdateien"
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -11318,11 +11348,17 @@ msgid ""
 "number</emphasis>.  E.g.: <filename>/usr/lib/x86_64-linux-gnu/libfoo.so</"
 "filename> -&gt; <filename>libfoo.so.1</filename>"
 msgstr ""
+"Beachten Sie, dass die Entwicklungspakete einen Symlink für die zugehörige "
+"Laufzeitbibliothek <emphasis role=\"strong\">ohne eine Versionsnummer "
+"</emphasis> enthalten sollten. Z.B. "
+"<filename>/usr/lib/x86_64-linux-gnu/libfoo.so</"
+"filename> -&gt; <filename>libfoo.so.1</filename>"
 
 #. type: Content of: <book><appendix><section><title>
 msgid "Building a shared library package"
-msgstr ""
+msgstr "Erstellen eines Laufzeitbibliothekspakets"
 
+# FIXME: Doppelpunkt?
 #. type: Content of: <book><appendix><section><para>
 msgid ""
 "You can build a Debian library package enabling the multiarch support using "
@@ -11332,19 +11368,23 @@ msgstr ""
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid "Update <filename>debian/control</filename>."
-msgstr ""
+msgstr "<filename>debian/control</filename> aktualisieren"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
 "Add <literal>Build-Depends: debhelper (>=9)</literal> for the source package "
 "section."
 msgstr ""
+"<literal>Build-Depends: debhelper (>=9)</literal> für den Quellpaketabschnitt "
+"hinzufügen"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
 "Add <literal>Pre-Depends: ${misc:Pre-Depends}</literal> for each shared "
 "library binary package."
 msgstr ""
+"<literal>Pre-Depends: ${misc:Pre-Depends}</literal> für jedes "
+"Laufzeitbibliothekspaket hinzufügen"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -11353,7 +11393,7 @@ msgstr ""
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid "Set <filename>debian/compat</filename> to \"9\"."
-msgstr ""
+msgstr "<filename>debian/compat</filename> auf »9« setzen"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -11368,14 +11408,18 @@ msgid ""
 "qDEB_HOST_MULTIARCH)</literal> in <filename>debian/rules</filename> to set "
 "<literal>DEB_HOST_MULTIARCH</literal> variable, first."
 msgstr ""
+"Zuerst <literal>DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -"
+"qDEB_HOST_MULTIARCH)</literal> in <filename>debian/rules</filename> aufrufen, um die Variable "
+"<literal>DEB_HOST_MULTIARCH</literal> zu setzen."
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
 "Replace <literal>/usr/lib/</literal> with <literal>/usr/lib/"
 "$(DEB_HOST_MULTIARCH)/</literal> in <filename>debian/rules</filename>."
 msgstr ""
-"Fügen Sie <literal>docbook-to-man</literal> der Zeile <literal>Build-"
-"Depends</literal> in der Datei <filename>control</filename> hinzu"
+"Ersetzen Sie in <filename>debian/rules</filename> "
+"<literal>/usr/lib/</literal> durch <literal>/usr/lib/"
+"$(DEB_HOST_MULTIARCH)/</literal>."
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para><footnote><para>
 msgid ""
