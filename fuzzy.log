@@ -3,8 +3,8 @@ untranslated ca  0
 fuzzy        ca  1
 
 no-obsolete  de  1162
-untranslated de  52
-fuzzy        de  0
+untranslated de  22
+fuzzy        de  1
 
 no-obsolete  es  1162
 untranslated es  0
@@ -12,7 +12,7 @@ fuzzy        es  1
 
 no-obsolete  fr  1162
 untranslated fr  0
-fuzzy        fr  0
+fuzzy        fr  1
 
 no-obsolete  it  1162
 untranslated it  0

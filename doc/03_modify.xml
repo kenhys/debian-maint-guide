@@ -10,9 +10,9 @@ The program <command>quilt</command> offers a basic method for recording
 modifications to the upstream source for Debian packaging.  It's
 useful to have a slightly customized default, so let's create an alias
 <command>dquilt</command> for Debian packaging by adding the following
-line to <filename>~/.bashrc</filename>.  The second line ensures that
-this alias benefits of the same shell completion features than
-<command>quilt</command> itself. 
+line to <filename>~/.bashrc</filename>.  The second line provides the same
+shell completion feature of the <command>quilt</command> command to the
+<command>dquilt</command> command.
 </para>
 <screen>
 alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
