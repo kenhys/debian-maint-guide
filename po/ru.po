@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide 1.2.30\n"
 "POT-Creation-Date: 2013-12-24 08:25+0900\n"
-"PO-Revision-Date: 2013-12-21 21:44+0400\n"
+"PO-Revision-Date: 2013-12-24 19:14+0400\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "Language: ru\n"
@@ -2611,7 +2611,6 @@ msgid "Setting up <command>quilt</command>"
 msgstr "Настройка <command>quilt</command>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 #| msgid ""
 #| "The program <command>quilt</command> offers a basic method for recording "
 #| "modifications to the upstream source for Debian packaging.  It's useful "
@@ -2630,11 +2629,11 @@ msgid ""
 "<command>dquilt</command> command."
 msgstr ""
 "Программа <command>quilt</command> предлагает простой способ записи "
-"изменений, произведённых в исходном коде для пакетирования. Для удобства "
+"изменений, произведённых в исходном коде для пакетирования Debian. Для удобства "
 "использования слегка изменим настройки по умолчанию, создав для "
 "пакетирования псевдоним <command>dquilt</command> в файле <filename>~/."
-"bashrc</filename>. Второй строкой проверяем, что этот псевдоним имеет "
-"приоритет дополнения оболочки над самой командой <command>quilt</command>."
+"bashrc</filename>. Вторая строка служит для включения автодополнения "
+"к <command>dquilt</command>, такого же как у команды <command>quilt</command>."
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
