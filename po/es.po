@@ -11,7 +11,7 @@
 #       Ana Beatriz Guerrero López <ana@debian.org>, 2005, 2007
 #       Javier Fernández-Sanguino Peña <jfs@debian.org> 1999-2010
 #       Francisco Javier Cuadrado <fcocuadrado@gmail.com>, 2010
-#       Innocent De Marchi <tangram.peces@gmail.com>, 2010-2012
+#       Innocent De Marchi <tangram.peces@gmail.com>, 2010-2013
 #
 #   - Reviewers
 #       Alexis Roda, 2001
@@ -44,7 +44,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide 1.116\n"
 "POT-Creation-Date: 2013-12-24 08:25+0900\n"
-"PO-Revision-Date: 2013-01-28 18:38+0100\n"
+"PO-Revision-Date: 2013-12-23 20:12+0100\n"
 "Last-Translator: Innocent De Marchi <tangram.peces@gmail.com>\n"
 "Language-Team: Debian l10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
 "Language: es\n"
@@ -186,8 +186,7 @@ msgstr ""
 "X-POFile-SpellExtra: Personalización nombremodificación versiónanterior\n"
 "X-POFile-SpellExtra: intrusivo realclean personalización Veáse Nótese\n"
 "X-POFile-SpellExtra: Debianización nombredelaorden toolkit\n"
-"X-Poedit-Language: Spanish\n"
-"X-Poedit-Country: SPAIN\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #. type: Attribute 'lang' of: <book>
 msgid "en"
@@ -2853,13 +2852,6 @@ msgid "Setting up <command>quilt</command>"
 msgstr "Configurar <command>quilt</command>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
-#| msgid ""
-#| "The program <command>quilt</command> offers a basic method for recording "
-#| "modifications to the upstream source for Debian packaging.  It's useful "
-#| "to have a slightly customized default, so let's create an alias "
-#| "<command>dquilt</command> for Debian packaging by adding the following "
-#| "line to <filename>~/.bashrc</filename>."
 msgid ""
 "The program <command>quilt</command> offers a basic method for recording "
 "modifications to the upstream source for Debian packaging.  It's useful to "
@@ -2870,11 +2862,13 @@ msgid ""
 "<command>dquilt</command> command."
 msgstr ""
 "El programa <command>quilt</command> ofrece un método básico para realizar y "
-"a guardar las modificaciones del código fuente para construir paquetes "
-"Debian. Para empaquetar, es preferible realizar algunos cambios en la "
-"configuración predeterminada del programa, vamos a generar un alias "
-"<command>dquilt</command> para la generación de paquetes Debian añadiendo la "
-"siguiente linea en el archivo <filename>~/.bashrc</filename>."
+"guardar las modificaciones del código fuente para construir paquetes Debian. "
+"Para empaquetar, es preferible realizar algunos cambios en la configuración "
+"predeterminada del programa, vamos a generar un alias <command>dquilt</"
+"command> para la generación de paquetes Debian añadiendo la siguiente linea "
+"en el archivo <filename>~/.bashrc</filename>. La segunda línea garantiza que "
+"el alias tendrá los mismos beneficios que el programa «quilt» con la función "
+"de autocompletar del «shell»."
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap

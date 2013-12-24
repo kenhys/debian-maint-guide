@@ -7,21 +7,20 @@
 #       Innocent De Marchi <tangram.peces@gmail.com> 2010
 #
 #   - Updates
-#       Innocent De Marchi <tangram.peces@gmail.com> 2010-2012
+#       Innocent De Marchi <tangram.peces@gmail.com> 2010-2013
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide 1.116\n"
 "POT-Creation-Date: 2013-12-24 08:25+0900\n"
-"PO-Revision-Date: 2013-01-28 18:39+0100\n"
+"PO-Revision-Date: 2013-12-23 20:10+0100\n"
 "Last-Translator: Innocent De Marchi <tangram.peces@gmail.com>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Catalan\n"
-"X-Poedit-Country: SPAIN\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #. type: Attribute 'lang' of: <book>
 msgid "en"
@@ -2656,13 +2655,6 @@ msgid "Setting up <command>quilt</command>"
 msgstr "Configuració de <command>quilt</command>."
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
-#| msgid ""
-#| "The program <command>quilt</command> offers a basic method for recording "
-#| "modifications to the upstream source for Debian packaging.  It's useful "
-#| "to have a slightly customized default, so let's create an alias "
-#| "<command>dquilt</command> for Debian packaging by adding the following "
-#| "line to <filename>~/.bashrc</filename>."
 msgid ""
 "The program <command>quilt</command> offers a basic method for recording "
 "modifications to the upstream source for Debian packaging.  It's useful to "
@@ -2676,8 +2668,10 @@ msgstr ""
 "i conservar les modificacions del codi font en la construcció de paquets "
 "Debian. Atès que és desitjable fer alguna modificació a la configuració "
 "predeterminada, anem a crear un àlies <command>dquilt</command> per a la "
-"construcció de paquets Debian afegint la següent linia a l'arxiu "
-"<filename>~/.bashrc</filename>."
+"construcció de paquets Debian afegint la següent línia a l'arxiu "
+"<filename>~/.bashrc</filename>. La segona línia garanteix que l'àlies es "
+"beneficiarà dels mateixos beneficis amb la funció d'autocompletar del shell "
+"que el programa «quilt»."
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
