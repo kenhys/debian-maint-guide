@@ -22,6 +22,7 @@
 <xsl:param name="chunk.first.sections" select="0"/>
 <xsl:param name="chunk.section.depth" select="0"/>
 <xsl:param name="chunker.output.indent" select="'yes'"/>
+<xsl:param name="use.id.as.filename" select="1"/>
 
 <!-- Do we want fancy icons around note, warning, etc.? -->
 <xsl:param name="admon.graphics" select="1"/>
