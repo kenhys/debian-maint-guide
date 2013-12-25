@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: maint-guide 1.2.32\n"
 "Report-Msgid-Bugs-To: Osamu Aoki <osamu@debian.org>\n"
 "POT-Creation-Date: 2013-12-24 08:25+0900\n"
-"PO-Revision-Date: 2013-12-23 19:48+0100\n"
+"PO-Revision-Date: 2013-12-25 20:35+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
@@ -2684,15 +2684,6 @@ msgstr "Einrichten von <command>quilt</command>"
 
 # FIXME: Doppelpunkt
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
-#| msgid ""
-#| "The program <command>quilt</command> offers a basic method for recording "
-#| "modifications to the upstream source for Debian packaging.  It's useful "
-#| "to have a slightly customized default, so let's create an alias "
-#| "<command>dquilt</command> for Debian packaging by adding the following "
-#| "line to <filename>~/.bashrc</filename>.  The second line ensures that "
-#| "this alias benefits of the same shell completion features than "
-#| "<command>quilt</command> itself."
 msgid ""
 "The program <command>quilt</command> offers a basic method for recording "
 "modifications to the upstream source for Debian packaging.  It's useful to "
@@ -2707,9 +2698,9 @@ msgstr ""
 "Es ist sinnvoll, eine leicht geänderte Voreinstellungen zu verwenden, daher "
 "sollte ein Alias <command>dquilt</command> für die Debian-Paketierung "
 "erstellt werden, indem folgendes zur <filename>~/.bashrc</filename> "
-"hinzugefügt wird; dabei stellt die zweite Zeile sicher, dass dieser Alias "
-"von den gleichen Shell-Vervollständigkeitsfunktionalitäten wie auch "
-"<command>quilt</command> selbst profitiert:"
+"hinzugefügt wird; dabei stellt die zweite Zeile die gleichen Shell-"
+"Vervollständigungsfunktionalität wie der Befehl <command>quilt</command> für "
+"den Befehl <command>dquilt</command> bereit:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
