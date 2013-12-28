@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2013-12-24 08:25+0900\n"
-"PO-Revision-Date: 2013-01-28 15:29+0200\n"
+"PO-Revision-Date: 2013-12-28 17:16+0200\n"
 "Last-Translator: Calogero Lo Leggio <kalos@nerdrug.org>\n"
 "Language-Team: <debian-l10n-italian@lists.debian.org>\n"
 "Language: it\n"
@@ -2671,7 +2671,6 @@ msgid "Setting up <command>quilt</command>"
 msgstr "Configurare <command>quilt</command>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 #| msgid ""
 #| "The program <command>quilt</command> offers a basic method for recording "
 #| "modifications to the upstream source for Debian packaging.  It's useful "
@@ -2691,7 +2690,9 @@ msgstr ""
 "registrare le modifiche dei sorgenti originali per la pacchettizzazione "
 "Debian.  E' comodo averlo leggermente personalizzato per la "
 "pacchettizzazione Debian, utilizzando l'alias <command>dquilt</command>, "
-"aggiungendo la seguente linea al file <filename>~/.bashrc</filename>."
+"aggiungendo la seguente linea al file <filename>~/.bashrc</filename>. La "
+"seconda riga fornisce la stessa funzionalità di shell completion del comando "
+"<command>quilt</command> al comando <command>dquilt</command>."
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
