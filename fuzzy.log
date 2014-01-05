@@ -4,7 +4,7 @@ fuzzy        ca  0
 
 no-obsolete  de  1162
 untranslated de  22
-fuzzy        de  1
+fuzzy        de  0
 
 no-obsolete  es  1162
 untranslated es  0
@@ -16,7 +16,7 @@ fuzzy        fr  0
 
 no-obsolete  it  1162
 untranslated it  0
-fuzzy        it  1
+fuzzy        it  0
 
 no-obsolete  ja  1162
 untranslated ja  0
@@ -24,7 +24,7 @@ fuzzy        ja  0
 
 no-obsolete  ru  1162
 untranslated ru  0
-fuzzy        ru  1
+fuzzy        ru  0
 
 no-obsolete  zh-cn  1162
 untranslated zh-cn  241
