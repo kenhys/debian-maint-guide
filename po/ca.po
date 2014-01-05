@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide 1.116\n"
 "POT-Creation-Date: 2014-01-06 00:00+0900\n"
-"PO-Revision-Date: 2013-12-23 20:10+0100\n"
+"PO-Revision-Date: 2014-01-05 22:00+0100\n"
 "Last-Translator: Innocent De Marchi <tangram.peces@gmail.com>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "Language: ca\n"
@@ -2655,7 +2655,6 @@ msgid "Setting up <command>quilt</command>"
 msgstr "Configuració de <command>quilt</command>."
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 #| msgid ""
 #| "The program <command>quilt</command> offers a basic method for recording "
 #| "modifications to the upstream source for Debian packaging.  It's useful "
@@ -2678,9 +2677,9 @@ msgstr ""
 "Debian. Atès que és desitjable fer alguna modificació a la configuració "
 "predeterminada, anem a crear un àlies <command>dquilt</command> per a la "
 "construcció de paquets Debian afegint la següent línia a l'arxiu "
-"<filename>~/.bashrc</filename>. La segona línia garanteix que l'àlies es "
-"beneficiarà dels mateixos beneficis amb la funció d'autocompletar del shell "
-"que el programa «quilt»."
+"<filename>~/.bashrc</filename>. La segona línia garanteix que l'àlies tendrà "
+"la mateixa funció d'auto-completar del intèrpret d'ordres per l'ordre "
+"<command>dquilt</command> que l'ordre <command>quilt</command>."
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
