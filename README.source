@@ -212,20 +212,19 @@ bin/interwiki script can be used to check translated URLs.
 
  $ make all       # build all
  $ make test      # build html for testing (for Translator)
- $ make package   # build html and text from RAWXML/PO for DDP
- $ make publish   # build html text pdf from RAWXML/PO for DDP
+ $ make distclean # clean files to reset *.xml
  $ make clean     # clean files ready for tar 
- $ make distclean # clean files to reset RAWXML/ENT/POT
- $ make rawxml    # update RAWXML from ASCIIDOC
- $ make entity    # update ENT and local cache data from RAWXML/REMOTE
- $ make po        # update all PO from RAWXML
+ $ make po        # update all PO from en.xml
+ $ make pot       # update the POT from en.xml
  $ make wrap      # wrap all PO
- $ make xml       # update all *.XML from RAWXML/ENT/PO/ADD
- $ make css       # update CSS and IMAGES in $(PUBLISHDIR)
- $ make html      # update all HTML in $(PUBLISHDIR)
- $ make txt       # update all Plain TEXT in $(PUBLISHDIR)
- $ make pdf       # update all PDF in $(PUBLISHDIR)
- $ make tex       # update all TeX source in $(PUBLISHDIR)
+ $ make xml       # update all *.XML for all languages
+ $ make css       # update CSS and IMAGES
+ $ make html      # update all HTML
+ $ make txt       # update all Plain TEXT
+ $ make pdf       # update all PDF
+ $ make tex       # update all TeX source
+ $ make epub      # update all EPUB
+ $ make rsync     # copy build results to remote URL
  $ make url       # check duplicate URL references
 
 Osamu

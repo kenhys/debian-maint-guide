@@ -15,7 +15,7 @@
 
 <!-- We don't want title in HTML -->
 <xsl:param name="generate.meta.abstract" select="0"/>
-<xsl:param name="html.stylesheet">debian-reference.css</xsl:param>
+<xsl:param name="html.stylesheet">maint-guide.css</xsl:param>
 
 <!-- I hate when the first subsection is on the same page as content -->
 <xsl:param name="chunk.first.sections" select="0"/>
