@@ -2684,7 +2684,7 @@ msgstr ""
 "registrare le modifiche dei sorgenti originali per la pacchettizzazione "
 "Debian.  E' comodo averlo leggermente personalizzato per la "
 "pacchettizzazione Debian, utilizzando l'alias <command>dquilt</command>, "
-"aggiungendo la seguente linea al file <filename>~/.bashrc</filename>. La "
+"aggiungendo le seguenti linee al file <filename>~/.bashrc</filename>. La "
 "seconda riga fornisce la stessa funzionalità di shell completion del comando "
 "<command>quilt</command> al comando <command>dquilt</command>."
 
