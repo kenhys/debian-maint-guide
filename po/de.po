@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: maint-guide 1.2.32\n"
 "Report-Msgid-Bugs-To: Osamu Aoki <osamu@debian.org>\n"
 "POT-Creation-Date: 2014-01-06 00:00+0900\n"
-"PO-Revision-Date: 2014-01-10 15:53+0100\n"
+"PO-Revision-Date: 2014-01-10 16:14+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
@@ -11172,7 +11172,7 @@ msgstr "Alter Pfad"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
 msgid "i386 multiarch path"
-msgstr "I386 Multiarch-Pfad"
+msgstr "I386-Multiarch-Pfad"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
 msgid "amd64 multiarch path"
@@ -11281,7 +11281,7 @@ msgstr ""
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the shared library debug symbols, co-installable"
-msgstr "Debug-Symbole der Laufzeitbibliothek, koinstallierbar"
+msgstr "die Debug-Symbole der Laufzeitbibliothek, koinstallierbar"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid ""
