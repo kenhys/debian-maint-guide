@@ -5,13 +5,13 @@
 # Eduard Bloch <blade@debian.org>, 2000, 2003, 2004.
 # Erik Schanze <mail@erikschanze.de>, 2005.
 # Tobias Quathamer <toddy@debian.org>, 2010, 2012.
-# Helge Kreutzmann <debian@helgefjell.de>, 2012, 2013.
+# Helge Kreutzmann <debian@helgefjell.de>, 2012-2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide 1.2.32\n"
 "Report-Msgid-Bugs-To: Osamu Aoki <osamu@debian.org>\n"
 "POT-Creation-Date: 2014-01-06 00:00+0900\n"
-"PO-Revision-Date: 2013-12-25 20:35+0100\n"
+"PO-Revision-Date: 2014-01-10 15:53+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
@@ -11113,9 +11113,10 @@ msgstr ""
 
 #. type: Content of: <book><appendix><section><title>
 msgid "Multiarch"
-msgstr ""
+msgstr "Multiarch"
 
 #. type: Content of: <book><appendix><section><para>
+# FIXME: Doppelpunkt
 msgid ""
 "The multiarch feature introduced to Debian wheezy integrates support for "
 "cross-architecture installation of binary packages (particularly "
@@ -11124,23 +11125,35 @@ msgid ""
 "<systemitem role=\"package\">apt</systemitem>.  You should read the "
 "following references in detail."
 msgstr ""
+"Die Multiarch-Funktionalität, die mit Debian Wheezy eingeführt wurde, "
+"unterstützt die architekturübergreifende Installation von Binärpaketen "
+"(insbesondere <literal>i386</literal>&lt;-&gt;<literal>amd64</literal>, aber "
+"auch andere Kombinationen) in <systemitem role=\"package\">dpkg</systemitem> "
+"und <systemitem role=\"package\">apt</systemitem>. Sie sollten die folgenden "
+"Referenzen im Detail lesen:"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
 "<ulink url=\"&multiarchspec;\">Ubuntu wiki MultiarchSpec</ulink> (upstream)"
 msgstr ""
+"<ulink url=\"&multiarchspec;\">Ubuntu wiki MultiarchSpec</ulink> "
+"(Originalautoren)"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
 "<ulink url=\"&multiarchimplementation;\">Debian wiki Multiarch/"
 "Implementation</ulink> (Debian situation)"
 msgstr ""
+"<ulink url=\"&multiarchimplementation;\">Debian wiki Multiarch/"
+"Implementation</ulink> (Debian-Situation)"
 
 #. type: Content of: <book><appendix><section><para><footnote><para>
 msgid ""
 "Old special purpose library paths such as <filename>/lib32/</filename> and "
 "<filename>/lib64/</filename> are not used any more."
 msgstr ""
+"Alte Spezialbibliothekspfade wie <filename>/lib32/</filename> und "
+"<filename>/lib64/</filename> werden nicht mehr benutzt."
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -11159,11 +11172,11 @@ msgstr "Alter Pfad"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
 msgid "i386 multiarch path"
-msgstr ""
+msgstr "I386 Multiarch-Pfad"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
 msgid "amd64 multiarch path"
-msgstr ""
+msgstr "Amd64-Multiarch-Pfad"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "<filename>/lib/</filename>"
@@ -11194,6 +11207,7 @@ msgid ""
 "Here are some typical multiarch package split scenario examples for the "
 "followings:"
 msgstr ""
+"Es gibt einige typische Beispiele für Multiarch-Paketaufteilungsszenarien:"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -11228,9 +11242,10 @@ msgstr "Paket"
 msgid "Architecture:"
 msgstr "Architektur:"
 
+# FIXME: Multi-Arch → Multiarch
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
 msgid "Multi-Arch:"
-msgstr ""
+msgstr "Multiarch:"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
 msgid "Package content"
@@ -11266,7 +11281,7 @@ msgstr ""
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the shared library debug symbols, co-installable"
-msgstr ""
+msgstr "Debug-Symbole der Laufzeitbibliothek, koinstallierbar"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid ""
@@ -11365,6 +11380,9 @@ msgid ""
 "<citerefentry> <refentrytitle>dh</refentrytitle> <manvolnum>1</manvolnum> </"
 "citerefentry> as follows."
 msgstr ""
+"Sie können ein Debian-Laufzeitbibliothekspaket mit Unterstützung von Multiarch mit "
+"<citerefentry> <refentrytitle>dh</refentrytitle> <manvolnum>1</manvolnum> </"
+"citerefentry> wie folgt bauen:"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid "Update <filename>debian/control</filename>."
