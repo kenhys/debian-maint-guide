@@ -11115,8 +11115,8 @@ msgstr ""
 msgid "Multiarch"
 msgstr "Multiarch"
 
-#. type: Content of: <book><appendix><section><para>
 # FIXME: Doppelpunkt
+#. type: Content of: <book><appendix><section><para>
 msgid ""
 "The multiarch feature introduced to Debian wheezy integrates support for "
 "cross-architecture installation of binary packages (particularly "
@@ -11152,8 +11152,8 @@ msgid ""
 "Old special purpose library paths such as <filename>/lib32/</filename> and "
 "<filename>/lib64/</filename> are not used any more."
 msgstr ""
-"Alte Spezialbibliothekspfade wie <filename>/lib32/</filename> und "
-"<filename>/lib64/</filename> werden nicht mehr benutzt."
+"Alte Spezialbibliothekspfade wie <filename>/lib32/</filename> und <filename>/"
+"lib64/</filename> werden nicht mehr benutzt."
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -11380,9 +11380,9 @@ msgid ""
 "<citerefentry> <refentrytitle>dh</refentrytitle> <manvolnum>1</manvolnum> </"
 "citerefentry> as follows."
 msgstr ""
-"Sie können ein Debian-Laufzeitbibliothekspaket mit Unterstützung von Multiarch mit "
-"<citerefentry> <refentrytitle>dh</refentrytitle> <manvolnum>1</manvolnum> </"
-"citerefentry> wie folgt bauen:"
+"Sie können ein Debian-Laufzeitbibliothekspaket mit Unterstützung von "
+"Multiarch mit <citerefentry> <refentrytitle>dh</refentrytitle> <manvolnum>1</"
+"manvolnum> </citerefentry> wie folgt bauen:"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid "Update <filename>debian/control</filename>."
