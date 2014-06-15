@@ -57,19 +57,21 @@ build binary packages (<literal>fakeroot debian/rules binary</literal>)
 </listitem>
 <listitem>
 <para>
-sign the source <filename>.dsc</filename> file, using <command>gpg</command>
+make the <filename>.dsc</filename> file
 </para>
 </listitem>
 <listitem>
 <para>
-create and sign the upload <filename>.changes</filename> file, using
-<command>dpkg-genchanges</command> and <command>gpg</command>
+make the <filename>.changes</filename> file, using
+<command>dpkg-genchanges</command>
 </para>
 </listitem>
 </itemizedlist>
 <para>
-The only input that will be required of you is your GPG secret pass phrase,
-twice.
+If the build result is satisfactory one, sign the <filename>.dsc</filename> and
+<filename>.changes</filename> files with your private GPG key using the
+<command>debsign</command>  command.  You need to enter your secret pass
+phrase, twice.
 <footnote><para>
 This GPG key must be signed by a Debian developer to get connected to the web
 of trust and must be registered to <ulink url="&keyring;">the Debian
@@ -78,13 +80,7 @@ Debian archives.  See
 <ulink url="&keycreate;">Creating a new GPG key</ulink> and
 <ulink url="&keysigning; ">Debian Wiki on Keysigning</ulink>.
 </para></footnote>
-If you are building Debian packages only for your own local use, you can skip
-promptings for the GPG signatures on the <filename>.dsc</filename> file and the
-<filename>.changes</filename> file like this:
 </para>
-<screen>
-$ dpkg-buildpackage -us -uc
-</screen>
 <para>
 For a non-native Debian package, e.g.,
 <systemitem role="package">gentoo</systemitem>, you will see the following
@@ -110,8 +106,7 @@ it adheres to the Debian standard.  Note that this was created initially by the
 This is a summary of the contents of the source code.  The file is generated
 from your <filename>control</filename> file, and is used when unpacking the
 source with <citerefentry> <refentrytitle>dpkg-source</refentrytitle>
-<manvolnum>1</manvolnum> </citerefentry>.  This file is GPG signed, so that
-people can be sure that it's really yours.
+<manvolnum>1</manvolnum> </citerefentry>.
 </para>
 </listitem>
 <listitem>
@@ -153,7 +148,6 @@ This file describes all the changes made in the current package revision;
 it is used by the Debian FTP archive maintenance programs to install the binary
 and source packages.  It is partly generated from the
 <filename>changelog</filename> file and the <filename>.dsc</filename> file.
-This file is GPG signed, so that people can be sure that it's really yours.
 </para>
 <para>
 As you keep working on the package, its behavior will change and new features will
@@ -164,6 +158,21 @@ mailing list.
 </para>
 </listitem>
 </itemizedlist>
+<para>
+The <filename>gentoo_0.9.12-1.dsc</filename> and
+<filename>gentoo_0.9.12-1_i386.changes</filename> files must be signed using
+the <command>debsign</command> command with your private GPG key in the
+<filename>~/.gnupg/</filename> directory, before uploading them to the Debian
+FTP archive. The GPG signature provides the proof that these files are really
+yours using your public GPG key.
+</para>
+<para>
+The <command>debsign</command> command can be made to sign with your specified secret GPG key ID (good for
+sponsoring packages) with the following in the <filename>~/.devscripts</filename>:
+</para>
+<screen>
+DEBSIGN_KEYID=Your_GPG_keyID
+</screen>
 <para>
 The long strings of numbers in the <filename>.dsc</filename> and
 <filename>.changes</filename> files are SHA1/SHA256 checksums for the files
@@ -263,38 +272,23 @@ packages in the <literal>Build-Depends</literal> or
 </section>
 <section id="debuild"><title><command>debuild</command> command</title>
 <para>
-You can automate the <command>dpkg-buildpackage</command> command's
-package build process further with the
-<command>debuild</command> command.  See <citerefentry>
+You can automate the build activity around executing the <command>dpkg-buildpackage</command> command
+package further with the <command>debuild</command> command.  See <citerefentry>
 <refentrytitle>debuild</refentrytitle> <manvolnum>1</manvolnum>
 </citerefentry>.
 </para>
 <para>
-Customization of the <command>debuild</command> command can be done through
-<filename>/etc/devscripts.conf</filename> or
-<filename>~/.devscripts</filename>.  I would suggest at least the following items:
+The <command>dbuild</command> command executes the <command>lintian</command> command to make the static check after building the Debian package.
+The <command>lintian</command> command can be customized with the following in the <filename>~/.devscripts</filename>:
 </para>
 <screen>
-DEBSIGN_KEYID=Your_GPG_keyID
 DEBUILD_LINTIAN_OPTS="-i -I --show-overrides"
 </screen>
-<para>
-With these, packages are signed by your specified GPG key ID (good for
-sponsoring packages) and checked in detail by the <command>lintian</command> command.
-</para>
 <para>
 Cleaning the source and rebuilding the package from your user account is as simple as:
 </para>
 <screen>
 $ debuild
-</screen>
-<para>
-Here, if you are building Debian packages only for your own local use, you can skip
-promptings for the GPG signatures on the <filename>.dsc</filename> file and the
-<filename>.changes</filename> file like this:
-</para>
-<screen>
-$ debuild -us -uc
 </screen>
 <para>
 You can clean the source tree as simply as:
@@ -340,15 +334,11 @@ configuring <filename>~/.pbuilderrc</filename> or
 <filename>/etc/pbuilderrc</filename> to include the following.
 </para>
 <screen>
-AUTO_DEBSIGN=${AUTO_DEBSIGN:-yes}
+AUTO_DEBSIGN=${AUTO_DEBSIGN:-no}
 HOOKDIR=<replaceable>/var/cache/pbuilder/hooks</replaceable>
 </screen>
 </listitem>
 </itemizedlist>
-<para>
-This will allow you to sign generated packages with your secret GPG key in the
-<filename>~/.gnupg/</filename> directory.
-</para>
 <para>
 First let's initialize the local <systemitem role="package">pbuilder</systemitem> <command>chroot</command> system as
 follows.
@@ -379,7 +369,6 @@ The GPG signatures on the <filename>.dsc</filename> file and the
 </para>
 <screen>
 $ cd /var/cache/pbuilder/result/
-$ debsign <replaceable>foo_version</replaceable>.dsc
 $ debsign <replaceable>foo_version_arch</replaceable>.changes
 </screen>
 <para>
@@ -390,14 +379,6 @@ source package, issue the following commands in the source directory where the
 <screen>
 $ sudo pbuilder --update
 $ pdebuild
-</screen>
-<para>
-Here, if you are building Debian packages only for your local use, you can skip
-promptings for the GPG signatures on the <filename>.dsc</filename> file and the
-<filename>.changes</filename> file as:
-</para>
-<screen>
-$ AUTO_DEBSIGN=no pdebuild
 </screen>
 <para>
 You can log into its <command>chroot</command> environment with the
@@ -537,6 +518,25 @@ $ fakeroot debian/rules build
 Once you are finished with your tuning, remember to rebuild following the
 proper procedure.  You may not be able to upload correctly if you try to upload
 <filename>.deb</filename> files built this way.
+</para>
+</section>
+<section id="hierarchy"><title>Command hierarchy</title>
+<para>
+Here is a quick summary of how many commands to build packages fit together in the command hierarchy. There are many ways to do the same thing.
+</para>
+<itemizedlist>
+<listitem><para><filename>debian/rules</filename> = maintainer script for the package building</para> </listitem>
+<listitem><para><command>dpkg-buildpackage</command> = core of the package building tool</para> </listitem>
+<listitem><para><command>debuild</command> = <command>dpkg-buildpackage</command> + <command>lintian</command> (build under the sanitized environment variables)</para> </listitem>
+<listitem><para><command>pbuilder</command> = core of the Debian chroot environment tool</para> </listitem>
+<listitem><para><command>pdebuild</command> = <command>pbuilder</command> + <command>dpkg-buildpackage</command> (build in the chroot)</para> </listitem>
+<listitem><para><command>cowbuilder</command> = speed up the <command>pbuilder</command> execution</para> </listitem>
+<listitem><para><command>git-pbuilder</command> = the easy-to-use commandline syntax for <command>pdebuild</command> (used by <command>gbp buildpackge</command>)</para> </listitem>
+<listitem><para><command>gbp</command> = manage the Debian source under the git repo</para> </listitem>
+<listitem><para><command>gbp buildpackge</command> = <command>pbuilder</command> + <command>dpkg-buildpackage</command> + <command>gbp</command></para> </listitem>
+</itemizedlist>
+<para>
+Although use of higher level commands such as <command>gbp buildpackge</command> and <command>pbuilder</command> ensures the perfect package building environment, it is essential to understand how lower level commands such as <filename>debian/rules</filename>  and <command>dpkg-buildpackage</command> are executed under them.
 </para>
 </section>
 </chapter>

@@ -763,6 +763,12 @@ a stable redirect service to the desired file for any
 <literal>&sf-net;/<replaceable>project</replaceable>/<replaceable>tar-name</replaceable>-(.+)\.tar\.gz</literal>.
 This solves issues related to periodically changing SourceForge URLs.
 </para>
+<para>
+If the upstream offers the cryptographic signature of the tarball, it is
+recommended to verify its authenticity using the
+<literal>pgpsigurlmangle</literal> option as described in uscan<citerefentry>
+<refentrytitle>uscan</refentrytitle><manvolnum>1</manvolnum> </citerefentry>.
+</para>
 </section>
 <section id="sourcef"><title><filename>source/format</filename></title>
 <para>
