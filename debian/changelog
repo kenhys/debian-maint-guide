@@ -1,3 +1,15 @@
+maint-guide (1.2.33) UNRELEASED; urgency=medium
+
+  * De-emphasize native package. Closes: #696078
+  * Recommend use of cryptographic signature. Closes: #732446 
+  * dpkg-buildpackage default is no signature. Closes: #734270, #695577
+  * Fixed typos. Closes: #740609, #744984 
+  * Add support channel info. Closes: #719926 
+  * Mention hierarchy of build commands. Closes: #703811 
+  * Mention debmake and its packaging examples. Closes: #623477 
+
+ -- Osamu Aoki <osamu@debian.org>  Sun, 15 Jun 2014 10:52:30 +0900
+
 maint-guide (1.2.32) unstable; urgency=low
 
   * Synch with Debian Policy 3.9.4 to introduce build-arch and 
