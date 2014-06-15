@@ -492,6 +492,16 @@ in the available documentation and web resources, you can ask them interactively
 <ulink url="&irc-debian;">IRC</ulink> such as <literal>#debian-mentors</literal>.
 </para>
 </listitem>
+<listitem>
+<para>
+Teams focusing on a specific set of packages. (Full list at <ulink url="&wikiteams;">https://wiki.debian.org/Teams</ulink>)
+</para>
+</listitem>
+<listitem>
+<para>
+Language-specific mailing lists such as debian-devel-{french,italian,portuguese,spanish}@lists.debian.org or debian-devel@debian.or.jp. (Full listing at <ulink url="&listdevel;">https://lists.debian.org/devel.html</ulink> and <ulink url="&listusers;">https://lists.debian.org/users.html</ulink>)
+</para>
+</listitem>
 </itemizedlist>
 <para>
 The more experienced Debian developers will gladly help you, if you ask
