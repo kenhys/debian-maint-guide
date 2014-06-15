@@ -448,5 +448,93 @@ All files installed simultaneously as the multiarch package to the same file pat
 </para>
 </section>
 
+<section id="native-dh-make"><title>Native Debian package</title>
+<para>
+If a package is maintained only for Debian or possibly only for local use, and contains source files with all the <filename>debian/*</filename> files in it, there are 2 ways to package it.
+</para>
+<para>
+You can make the upstream tarball by excluding the <filename>debian/*</filename> files and package it as the non-native Debian package as in <xref linkend="workflow"/>.  This is the normal way which some people encourage to use.
+</para>
+<para>
+The alternative is the workflow of the native Debian package.
+</para>
+<itemizedlist>
+<listitem>
+<para>
+Create a native Debian source package in the <literal>3.0 (native)</literal>
+format using a single compressed tar file in which all files are included.
+</para>
+<itemizedlist>
+<listitem><literal><replaceable>package</replaceable>_<replaceable>version</replaceable>.tar.gz</literal></listitem>
+<listitem><literal><replaceable>package</replaceable>_<replaceable>version</replaceable>.dsc</literal></listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<para>
+Build Debian binary packages from the native Debian source package.
+</para>
+<itemizedlist>
+<listitem><literal><replaceable>package</replaceable>_<replaceable>version</replaceable>_<replaceable>arch</replaceable>.deb</literal></listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+<para>
+For example, if you have source files in <filename>~/mypackage-1.0</filename>
+without the <filename>debian/*</filename> files, you can create a native Debian
+package for it by issuing the <command>dh_make</command> command as follows.
+</para>
+<screen>
+$ cd ~/mypackage-1.0
+$ dh_make --native
+</screen>
+<para>
+Then the <filename>debian</filename> directory and its contents are created
+just like <xref linkend="non-native-dh-make"/>.  This does not create a tarball
+since this is a native Debian package.  But that is the only difference.
+The rest of the packaging activities are practically the same.
+</para>
+<para>
+After execution of the <command>dpkg-buildpackage</command> command, you will see the following files in the parent directory:
+</para>
+<itemizedlist>
+<listitem>
+<para>
+<filename>mypackage_1.0.tar.gz</filename>
+</para>
+<para>
+This is the source code tarball created from the
+<filename>mypackage-1.0</filename> directory by the
+<command>dpkg-source</command> command.  (Its suffix is not <filename>orig.tar.gz</filename>.)
+</para>
+</listitem>
+<listitem>
+<para>
+<filename>mypackage_1.0.dsc</filename>
+</para>
+<para>
+This is a summary of the contents of the source code as in the non-native
+Debian package. (There is no Debian revision.)
+</para>
+</listitem>
+<listitem>
+<para>
+<filename>mypackage_1.0_i386.deb</filename>
+</para>
+<para>
+This is your completed binary package as in the non-native Debian package.
+(There is no Debian revision.)
+</para>
+</listitem>
+<listitem>
+<para>
+<filename>mypackage_1.0_i386.changes</filename>
+</para>
+<para>
+This file describes all the changes made in the current package version as in
+the non-native Debian package. (There is no Debian revision.)
+</para>
+</listitem>
+</itemizedlist>
+</section>
 </appendix>
 

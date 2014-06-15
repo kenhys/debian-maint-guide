@@ -173,50 +173,7 @@ mentioned.  Anyone downloading your files can test them with <citerefentry>
 <manvolnum>1</manvolnum> </citerefentry> and if the numbers don't match,
 they'll know the file is corrupt or has been tampered with.
 </para>
-<para>
-For a native Debian package, e.g.,
-<systemitem role="package">mypackage</systemitem>, you will see the following
-files in the parent directory after building packages:
-</para>
-<itemizedlist>
-<listitem>
-<para>
-<filename>mypackage_1.0.tar.gz</filename>
-</para>
-<para>
-This is the source code tarball created from the
-<filename>mypackage-1.0</filename> directory by the
-<command>dpkg-source</command> command.  (Its suffix is not <filename>orig.tar.gz</filename>.)
-</para>
-</listitem>
-<listitem>
-<para>
-<filename>mypackage_1.0.dsc</filename>
-</para>
-<para>
-This is a summary of the contents of the source code as in the non-native
-Debian package. (There is no Debian revision.)
-</para>
-</listitem>
-<listitem>
-<para>
-<filename>mypackage_1.0_i386.deb</filename>
-</para>
-<para>
-This is your completed binary package as in the non-native Debian package.
-(There is no Debian revision.)
-</para>
-</listitem>
-<listitem>
-<para>
-<filename>mypackage_1.0_i386.changes</filename>
-</para>
-<para>
-This file describes all the changes made in the current package version as in
-the non-native Debian package. (There is no Debian revision.)
-</para>
-</listitem>
-</itemizedlist>
+
 </section>
 <section id="autobuilder"><title>Autobuilder</title>
 <para>

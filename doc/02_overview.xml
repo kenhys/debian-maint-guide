@@ -64,30 +64,6 @@ The <emphasis role="strong">package architecture</emphasis> follows the
 and is automatically assigned by the package build process.</para></footnote>
 </para>
 <para>
-If instead you are making a Debian-specific package with no upstream, the
-typical workflow of Debian package building is simpler.
-</para>
-<itemizedlist>
-<listitem>
-<para>
-Create a native Debian source package in the <literal>3.0 (native)</literal>
-format using a single compressed tar file in which all files are included.
-</para>
-<itemizedlist>
-<listitem><literal><replaceable>package</replaceable>_<replaceable>version</replaceable>.tar.gz</literal></listitem>
-<listitem><literal><replaceable>package</replaceable>_<replaceable>version</replaceable>.dsc</literal></listitem>
-</itemizedlist>
-</listitem>
-<listitem>
-<para>
-Build Debian binary packages from the native Debian source package.
-</para>
-<itemizedlist>
-<listitem><literal><replaceable>package</replaceable>_<replaceable>version</replaceable>_<replaceable>arch</replaceable>.deb</literal></listitem>
-</itemizedlist>
-</listitem>
-</itemizedlist>
-<para>
 Each step of this outline is explained with detailed examples in later sections.
 </para>
 </section>
@@ -776,26 +752,6 @@ could be just a collection of graphical data etc.  Installation of files may be
 carried out using only <systemitem role="package">debhelper</systemitem> configuration
 files such as <filename>debian/install</filename> (see
 <xref linkend="install"/>).
-</para>
-</section>
-<section id="native-dh-make"><title>Initial native Debian package</title>
-<para>
-If a package contains source files you are only maintaining for Debian,
-possibly only for local use, it may be simpler to create it as a Debian
-native package. If you have source
-files in <filename>~/mypackage-1.0</filename>, you can create an initial native
-Debian package for it by issuing the <command>dh_make</command> command as
-follows.
-</para>
-<screen>
-$ cd ~/mypackage-1.0
-$ dh_make --native
-</screen>
-<para>
-Then the <filename>debian</filename> directory and its contents are created
-just like <xref linkend="non-native-dh-make"/>.  This does not create a tarball
-since this is a native Debian package.  But that is the only difference.
-The rest of the packaging activities are practically the same.
 </para>
 </section>
 </chapter>
