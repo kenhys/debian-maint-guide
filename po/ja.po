@@ -1229,7 +1229,7 @@ msgid ""
 msgstr ""
 "おそらく、作成したいパッケージを選んだことと思います。まず最初にしなければな"
 "らないことは、ディストリビューションのアーカイブにそのパッケージがすでにある"
-"かどうかを以下をを使って確認することです。"
+"かどうかを以下を使って確認することです。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "the <command>aptitude</command> command"
