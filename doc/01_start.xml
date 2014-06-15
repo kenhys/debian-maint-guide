@@ -216,6 +216,10 @@ but similar packages such as
 <systemitem role="package">dh-make-php</systemitem>, etc.  </para>
 </footnote>
 </para>
+<para>
+The new <systemitem role="package">debmake</systemitem> may be used as the alternative to the standard <systemitem role="package">dh-make</systemitem>.
+It does more and comes with HTML documentation with extensive packaging examples.
+</para>
 </listitem>
 <listitem>
 <para>
