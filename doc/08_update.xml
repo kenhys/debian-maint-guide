@@ -399,7 +399,7 @@ If it was packaged with the <command>dh</command> command with the
 <literal>--with quilt</literal> option or with the
 <command>dh_quilt_patch</command> and <command>dh_quilt_unpatch</command>
 commands, remove these and make it use the newer <literal>3.0
-(native)</literal> source format.
+(quilt)</literal> source format.
 </para>
 </listitem>
 </itemizedlist>
@@ -429,7 +429,7 @@ iconv -f latin1 -t utf8 <replaceable>foo_in.txt</replaceable> &gt; <replaceable>
 Use <citerefentry> <refentrytitle>w3m</refentrytitle> <manvolnum>1</manvolnum> </citerefentry> to convert from HTML files to UTF-8 plain text files.  When you do this, make sure to execute it under UTF-8 locale.
 </para>
 <screen>
-LC_ALL=C.UTF-8 w3m -o display_charset=UTF-8 \
+LC_ALL=en_US.UTF-8 w3m -o display_charset=UTF-8 \
         -cols 70 -dump -no-graph -T text/html \
         &lt; <replaceable>foo_in.html</replaceable> &gt; <replaceable>foo_out.txt</replaceable>
 </screen>
