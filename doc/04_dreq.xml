@@ -755,21 +755,29 @@ Newer <command>dh_make</command> generates a very simple but powerful default
 </para>
 <screen>
  1 #!/usr/bin/make -f
- 2 # -*- makefile -*-
- 3 # Sample debian/rules that uses debhelper.
- 4 # This file was originally written by Joey Hess and Craig Small.
- 5 # As a special exception, when this file is copied by dh-make into a
- 6 # dh-make output file, you may use that output file without restriction.
- 7 # This special exception was added by Craig Small in version 0.37 of dh-make.
- 8
- 9 # Uncomment this to turn on verbose mode.
-10 #export DH_VERBOSE=1
-11
-12 %:
-13        dh $@
+ 2 # See debhelper(7) (uncomment to enable)
+ 3 # output every command that modifies files on the build system.
+ 4 #DH_VERBOSE = 1
+ 5 
+ 6 # see EXAMPLES in dpkg-buildflags(1) and read /usr/share/dpkg/*
+ 7 DPKG_EXPORT_BUILDFLAGS = 1
+ 8 include /usr/share/dpkg/default.mk
+ 9 
+10 # see FEATURE AREAS in dpkg-buildflags(1)
+11 #export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+12
+13 # see ENVIRONMENT in dpkg-buildflags(1)
+14 # package maintainers to append CFLAGS
+15 #export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+16 # package maintainers to append LDFLAGS
+17 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+18 
+19 # main packaging script based on dh7 syntax
+20 %:
+21         dh $@ 
 </screen>
 <para>
-(I've added the line numbers.  In the actual <filename>rules</filename> file,
+(I've added the line numbers and trimmed some comments.  In the actual <filename>rules</filename> file,
 the leading spaces are a TAB code.)
 </para>
 <para>
@@ -778,7 +786,7 @@ It tells the operating system that this file is to be processed with
 <filename>/usr/bin/make</filename>.
 </para>
 <para>
-Line 10 can be uncommented to set the <literal>DH_VERBOSE</literal> variable to 1,
+Line 4 can be uncommented to set the <literal>DH_VERBOSE</literal> variable to 1,
 so that the <command>dh</command> command outputs which
 <command>dh_*</command> commands it is executing.
 You can also add a line <literal>export DH_OPTIONS=-v</literal> here,
@@ -790,7 +798,7 @@ to debug its problems.  This new <command>dh</command> is designed to form a cor
 anything from you.
 </para>
 <para>
-Lines 12 and 13 are where all the work is done with an implicit rule using the pattern rule.  The percent sign means "any
+Lines 20 and 21 are where all the work is done with an implicit rule using the pattern rule.  The percent sign means "any
 targets", which then call a single program, <command>dh</command>, with the target
 name.  <footnote><para> This uses the new <systemitem role="package">debhelper</systemitem> v7+ features.  Its design concepts are
 explained in <ulink url="&debhelper-slides;">Not Your
