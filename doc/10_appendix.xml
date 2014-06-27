@@ -450,7 +450,7 @@ All files installed simultaneously as the multiarch package to the same file pat
 
 <section id="native-dh-make"><title>Native Debian package</title>
 <para>
-If a package is maintained only for Debian or possibly only for local use, and contains source files with all the <filename>debian/*</filename> files in it, there are 2 ways to package it.
+If a package is maintained only for Debian or possibly only for local use, its source may contain all the <filename>debian/*</filename> files in it.  There are 2 ways to package it.
 </para>
 <para>
 You can make the upstream tarball by excluding the <filename>debian/*</filename> files and package it as the non-native Debian package as in <xref linkend="workflow"/>.  This is the normal way which some people encourage to use.

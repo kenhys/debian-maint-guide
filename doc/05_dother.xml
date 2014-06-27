@@ -766,7 +766,7 @@ This solves issues related to periodically changing SourceForge URLs.
 <para>
 If the upstream offers the cryptographic signature of the tarball, it is
 recommended to verify its authenticity using the
-<literal>pgpsigurlmangle</literal> option as described in uscan<citerefentry>
+<literal>pgpsigurlmangle</literal> option as described in <citerefentry>
 <refentrytitle>uscan</refentrytitle><manvolnum>1</manvolnum> </citerefentry>.
 </para>
 </section>
@@ -781,7 +781,7 @@ should say either:
 <itemizedlist>
 <listitem>
 <para>
-<literal>3.0 (native)</literal> for Debian native packages or
+<literal>3.0 (native)</literal> for native Debian packages or
 </para>
 </listitem>
 <listitem>
