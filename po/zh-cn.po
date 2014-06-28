@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide HEAD\n"
-"POT-Creation-Date: 2014-01-06 00:00+0900\n"
+"POT-Creation-Date: 2014-06-28 15:39+0900\n"
 "PO-Revision-Date: 2011-08-03 23:03+0800\n"
 "Last-Translator: Aron Xu <happyaron.xu@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
@@ -521,6 +521,14 @@ msgstr ""
 "citerefentry>、<citerefentry> <refentrytitle>debhelper</refentrytitle> "
 "<manvolnum>1</manvolnum> </citerefentry>、<filename>/usr/share/doc/debhelper/"
 "README</filename>)  <placeholder type=\"footnote\" id=\"0\"/>"
+
+#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+msgid ""
+"The new <systemitem role=\"package\">debmake</systemitem> may be used as the "
+"alternative to the standard <systemitem role=\"package\">dh-make</"
+"systemitem>.  It does more and comes with HTML documentation with extensive "
+"packaging examples."
+msgstr ""
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
@@ -1097,6 +1105,21 @@ msgid ""
 "literal>."
 msgstr ""
 
+#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+msgid ""
+"Teams focusing on a specific set of packages. (Full list at <ulink url="
+"\"&wikiteams;\">https://wiki.debian.org/Teams</ulink>)"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+msgid ""
+"Language-specific mailing lists such as debian-devel-{french,italian,"
+"portuguese,spanish}@lists.debian.org or debian-devel@debian.or.jp. (Full "
+"listing at <ulink url=\"&listdevel;\">https://lists.debian.org/devel.html</"
+"ulink> and <ulink url=\"&listusers;\">https://lists.debian.org/users.html</"
+"ulink>)"
+msgstr ""
+
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "The more experienced Debian developers will gladly help you, if you ask "
@@ -1308,60 +1331,6 @@ msgid ""
 "role=\"strong\">package architecture</emphasis>, as defined in the Debian "
 "Policy Manual.  <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"If instead you are making a Debian-specific package with no upstream, the "
-"typical workflow of Debian package building is simpler."
-msgstr ""
-
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-msgid ""
-"Create a native Debian source package in the <literal>3.0 (native)</literal> "
-"format using a single compressed tar file in which all files are included."
-msgstr ""
-
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><literal>
-#, fuzzy
-#| msgid ""
-#| "$ debdiff <replaceable>old-package</replaceable>.dsc <replaceable>new-"
-#| "package</replaceable>.dsc\n"
-msgid ""
-"<replaceable>package</replaceable>_<replaceable>version</replaceable>.tar.gz"
-msgstr ""
-"$ debdiff <replaceable>old-package</replaceable>.dsc <replaceable>new-"
-"package</replaceable>.dsc\n"
-
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><literal>
-#, fuzzy
-#| msgid ""
-#| "$ debdiff <replaceable>old-package</replaceable>.dsc <replaceable>new-"
-#| "package</replaceable>.dsc\n"
-msgid ""
-"<replaceable>package</replaceable>_<replaceable>version</replaceable>.dsc"
-msgstr ""
-"$ debdiff <replaceable>old-package</replaceable>.dsc <replaceable>new-"
-"package</replaceable>.dsc\n"
-
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid "multiple binary packages,"
-msgid "Build Debian binary packages from the native Debian source package."
-msgstr "多个二进制包的软件包；"
-
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><literal>
-#, fuzzy
-#| msgid ""
-#| "$ diff -urN <replaceable>foo</replaceable>-<replaceable>oldversion</"
-#| "replaceable> <replaceable>foo</replaceable>-<replaceable>newversion</"
-#| "replaceable>\n"
-msgid ""
-"<replaceable>package</replaceable>_<replaceable>version</"
-"replaceable>_<replaceable>arch</replaceable>.deb"
-msgstr ""
-"$ diff -urN <replaceable>foo</replaceable>-<replaceable>oldversion</"
-"replaceable> <replaceable>foo</replaceable>-<replaceable>newversion</"
-"replaceable>\n"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -2791,36 +2760,6 @@ msgid ""
 "files may be carried out using only <systemitem role=\"package\">debhelper</"
 "systemitem> configuration files such as <filename>debian/install</filename> "
 "(see <xref linkend=\"install\"/>)."
-msgstr ""
-
-#. type: Content of: <book><chapter><section><title>
-#, fuzzy
-#| msgid "Initial Debian package"
-msgid "Initial native Debian package"
-msgstr "初始化 Debian 软件包"
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"If a package contains source files you are only maintaining for Debian, "
-"possibly only for local use, it may be simpler to create it as a Debian "
-"native package. If you have source files in <filename>~/mypackage-1.0</"
-"filename>, you can create an initial native Debian package for it by issuing "
-"the <command>dh_make</command> command as follows."
-msgstr ""
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid ""
-"$ cd ~/mypackage-1.0\n"
-"$ dh_make --native\n"
-msgstr ""
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"Then the <filename>debian</filename> directory and its contents are created "
-"just like <xref linkend=\"non-native-dh-make\"/>.  This does not create a "
-"tarball since this is a native Debian package.  But that is the only "
-"difference.  The rest of the packaging activities are practically the same."
 msgstr ""
 
 #. type: Content of: <book><chapter><title>
@@ -5491,32 +5430,27 @@ msgstr ""
 #, no-wrap
 msgid ""
 " 1 #!/usr/bin/make -f\n"
-" 2 # -*- makefile -*-\n"
-" 3 # Sample debian/rules that uses debhelper.\n"
-" 4 # This file was originally written by Joey Hess and Craig Small.\n"
-" 5 # As a special exception, when this file is copied by dh-make into a\n"
-" 6 # dh-make output file, you may use that output file without restriction.\n"
-" 7 # This special exception was added by Craig Small in version 0.37 of dh-make.\n"
-" 8\n"
-" 9 # Uncomment this to turn on verbose mode.\n"
-"10 #export DH_VERBOSE=1\n"
-"11\n"
-"12 %:\n"
-"13        dh $@\n"
+" 2 # See debhelper(7) (uncomment to enable)\n"
+" 3 # output every command that modifies files on the build system.\n"
+" 4 #DH_VERBOSE = 1\n"
+" 5 \n"
+" 6 # see EXAMPLES in dpkg-buildflags(1) and read /usr/share/dpkg/*\n"
+" 7 DPKG_EXPORT_BUILDFLAGS = 1\n"
+" 8 include /usr/share/dpkg/default.mk\n"
+" 9 \n"
+"10 # see FEATURE AREAS in dpkg-buildflags(1)\n"
+"11 #export DEB_BUILD_MAINT_OPTIONS = hardening=+all\n"
+"12\n"
+"13 # see ENVIRONMENT in dpkg-buildflags(1)\n"
+"14 # package maintainers to append CFLAGS\n"
+"15 #export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic\n"
+"16 # package maintainers to append LDFLAGS\n"
+"17 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed\n"
+"18 \n"
+"19 # main packaging script based on dh7 syntax\n"
+"20 %:\n"
+"21         dh $@ \n"
 msgstr ""
-" 1 #!/usr/bin/make -f\n"
-" 2 # -*- makefile -*-\n"
-" 3 # Sample debian/rules that uses debhelper.\n"
-" 4 # This file was originally written by Joey Hess and Craig Small.\n"
-" 5 # As a special exception, when this file is copied by dh-make into a\n"
-" 6 # dh-make output file, you may use that output file without restriction.\n"
-" 7 # This special exception was added by Craig Small in version 0.37 of dh-make.\n"
-" 8\n"
-" 9 # Uncomment this to turn on verbose mode.\n"
-"10 #export DH_VERBOSE=1\n"
-"11\n"
-"12 %:\n"
-"13        dh $@\n"
 
 #. type: Content of: <book><chapter><section><section><para>
 #, fuzzy
@@ -5524,8 +5458,8 @@ msgstr ""
 #| "(I've added the line numbers.  In the actual <filename>rules</filename> "
 #| "file, the leading white spaces are TAB codes.)"
 msgid ""
-"(I've added the line numbers.  In the actual <filename>rules</filename> "
-"file, the leading spaces are a TAB code.)"
+"(I've added the line numbers and trimmed some comments.  In the actual "
+"<filename>rules</filename> file, the leading spaces are a TAB code.)"
 msgstr ""
 "(注：我添加了行号。实际的 <filename>rules</filename> 文件里开头的空格是 TAB "
 "填充的。)"
@@ -5541,7 +5475,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><section><para>
 msgid ""
-"Line 10 can be uncommented to set the <literal>DH_VERBOSE</literal> variable "
+"Line 4 can be uncommented to set the <literal>DH_VERBOSE</literal> variable "
 "to 1, so that the <command>dh</command> command outputs which <command>dh_*</"
 "command> commands it is executing.  You can also add a line <literal>export "
 "DH_OPTIONS=-v</literal> here, so that each <command>dh_*</command> command "
@@ -5581,7 +5515,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><section><para>
 msgid ""
-"Lines 12 and 13 are where all the work is done with an implicit rule using "
+"Lines 20 and 21 are where all the work is done with an implicit rule using "
 "the pattern rule.  The percent sign means \"any targets\", which then call a "
 "single program, <command>dh</command>, with the target name.  <placeholder "
 "type=\"footnote\" id=\"0\"/> The <command>dh</command> command is a wrapper "
@@ -8618,6 +8552,14 @@ msgstr ""
 "name</replaceable>-(.+)\\.tar\\.gz</literal> 形式，这样解决了关于经常性 URL "
 "变更导致的问题。"
 
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"If the upstream offers the cryptographic signature of the tarball, it is "
+"recommended to verify its authenticity using the <literal>pgpsigurlmangle</"
+"literal> option as described in <citerefentry> <refentrytitle>uscan</"
+"refentrytitle><manvolnum>1</manvolnum> </citerefentry>."
+msgstr ""
+
 #. type: Content of: <book><chapter><section><title>
 #, fuzzy
 #| msgid "<filename>source/format</filename> file"
@@ -8638,7 +8580,9 @@ msgstr ""
 "literal> 后，它应该是以下二者之一："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-msgid "<literal>3.0 (native)</literal> for Debian native packages or"
+#, fuzzy
+#| msgid "<literal>3.0 (native)</literal> for Debian native packages or"
+msgid "<literal>3.0 (native)</literal> for native Debian packages or"
 msgstr "<literal>3.0 (native)</literal> - Debian native 软件"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
@@ -9054,14 +8998,19 @@ msgid "build binary packages (<literal>fakeroot debian/rules binary</literal>)"
 msgstr "构建二进制包(<literal>fakeroot debian/rules binary</literal>)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-msgid ""
-"sign the source <filename>.dsc</filename> file, using <command>gpg</command>"
-msgstr "使用 <command>gpg</command> 签署 <filename>.dsc</filename> 文件"
+#, fuzzy
+#| msgid "Targets of <filename>rules</filename> file"
+msgid "make the <filename>.dsc</filename> file"
+msgstr "<filename>rules</filename> 文件中的 target"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#, fuzzy
+#| msgid ""
+#| "create and sign the upload <filename>.changes</filename> file, using "
+#| "<command>dpkg-genchanges</command> and <command>gpg</command>"
 msgid ""
-"create and sign the upload <filename>.changes</filename> file, using "
-"<command>dpkg-genchanges</command> and <command>gpg</command>"
+"make the <filename>.changes</filename> file, using <command>dpkg-genchanges</"
+"command>"
 msgstr ""
 "使用 <command>dpkg-genchanges</command> 和 <command>gpg</command> 创建并签署"
 "上传用的 <filename>.changes</filename> 文件"
@@ -9077,18 +9026,11 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
-"The only input that will be required of you is your GPG secret pass phrase, "
-"twice.  <placeholder type=\"footnote\" id=\"0\"/> If you are building Debian "
-"packages only for your own local use, you can skip promptings for the GPG "
-"signatures on the <filename>.dsc</filename> file and the <filename>.changes</"
-"filename> file like this:"
+"If the build result is satisfactory one, sign the <filename>.dsc</filename> "
+"and <filename>.changes</filename> files with your private GPG key using the "
+"<command>debsign</command> command.  You need to enter your secret pass "
+"phrase, twice.  <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-
-#. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
-#| msgid "$ dpkg-buildpackage -B\n"
-msgid "$ dpkg-buildpackage -us -uc\n"
-msgstr "$ dpkg-buildpackage -B\n"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -9124,12 +9066,18 @@ msgid "<filename>gentoo_0.9.12-1.dsc</filename>"
 msgstr "<filename>gentoo_0.9.12-1.dsc</filename>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#, fuzzy
+#| msgid ""
+#| "This is a summary of the contents of the source code.  The file is "
+#| "generated from your <filename>control</filename> file, and is used when "
+#| "unpacking the source with <citerefentry> <refentrytitle>dpkg-source</"
+#| "refentrytitle> <manvolnum>1</manvolnum> </citerefentry>.  This file is "
+#| "GPG signed, so that people can be sure that it's really yours."
 msgid ""
 "This is a summary of the contents of the source code.  The file is generated "
 "from your <filename>control</filename> file, and is used when unpacking the "
 "source with <citerefentry> <refentrytitle>dpkg-source</refentrytitle> "
-"<manvolnum>1</manvolnum> </citerefentry>.  This file is GPG signed, so that "
-"people can be sure that it's really yours."
+"<manvolnum>1</manvolnum> </citerefentry>."
 msgstr ""
 "这是一个从 <filename>control</filename> 文件生成的源代码概要，可用于 "
 "<citerefentry> <refentrytitle>dpkg-source</refentrytitle> <manvolnum>1</"
@@ -9216,8 +9164,7 @@ msgid ""
 "This file describes all the changes made in the current package revision; it "
 "is used by the Debian FTP archive maintenance programs to install the binary "
 "and source packages.  It is partly generated from the <filename>changelog</"
-"filename> file and the <filename>.dsc</filename> file.  This file is GPG "
-"signed, so that people can be sure that it's really yours."
+"filename> file and the <filename>.dsc</filename> file."
 msgstr ""
 "这个文件描述了当前版本的软件包中的全部变更，它被 Debian FTP 仓库维护程序用于"
 "安装二进制和源代码包。它的是部分从 <filename>changelog</filename> 和 "
@@ -9244,6 +9191,28 @@ msgstr ""
 "载你软件包的人可以查看这个文件来快速找到有那些变化，Debian 仓库维护程序还会把"
 "它的内容发表至 <ulink url=\"&debian-devel-announce-ldo;\">debian-devel-"
 "announce@lists.debian.org</ulink> 邮件列表。"
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"The <filename>gentoo_0.9.12-1.dsc</filename> and "
+"<filename>gentoo_0.9.12-1_i386.changes</filename> files must be signed using "
+"the <command>debsign</command> command with your private GPG key in the "
+"<filename>~/.gnupg/</filename> directory, before uploading them to the "
+"Debian FTP archive. The GPG signature provides the proof that these files "
+"are really yours using your public GPG key."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"The <command>debsign</command> command can be made to sign with your "
+"specified secret GPG key ID (good for sponsoring packages) with the "
+"following in the <filename>~/.devscripts</filename>:"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><screen>
+#, no-wrap
+msgid "DEBSIGN_KEYID=Your_GPG_keyID\n"
+msgstr ""
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -9273,66 +9242,6 @@ msgstr ""
 "refentrytitle> <manvolnum>1</manvolnum> </citerefentry> 或 <citerefentry> "
 "<refentrytitle>sha256sum</refentrytitle> <manvolnum>1</manvolnum> </"
 "citerefentry> 来进行核对。如果校验和不符，则说明文件已被损坏或偷换。"
-
-#. type: Content of: <book><chapter><section><para>
-#, fuzzy
-#| msgid ""
-#| "After all this is done, you will see the following files in the directory "
-#| "above (<filename>~/gentoo</filename>):"
-msgid ""
-"For a native Debian package, e.g., <systemitem role=\"package\">mypackage</"
-"systemitem>, you will see the following files in the parent directory after "
-"building packages:"
-msgstr "之后查看上级目录(<filename>~/gentoo</filename>)："
-
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid "<filename>gentoo_0.9.12.orig.tar.gz</filename>"
-msgid "<filename>mypackage_1.0.tar.gz</filename>"
-msgstr "<filename>gentoo_0.9.12.orig.tar.gz</filename>"
-
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-msgid ""
-"This is the source code tarball created from the <filename>mypackage-1.0</"
-"filename> directory by the <command>dpkg-source</command> command.  (Its "
-"suffix is not <filename>orig.tar.gz</filename>.)"
-msgstr ""
-
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid "<filename>gentoo_0.9.12-1.dsc</filename>"
-msgid "<filename>mypackage_1.0.dsc</filename>"
-msgstr "<filename>gentoo_0.9.12-1.dsc</filename>"
-
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-msgid ""
-"This is a summary of the contents of the source code as in the non-native "
-"Debian package. (There is no Debian revision.)"
-msgstr ""
-
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid "<filename>gentoo_0.9.12-1_i386.deb</filename>"
-msgid "<filename>mypackage_1.0_i386.deb</filename>"
-msgstr "<filename>gentoo_0.9.12-1_i386.deb</filename>"
-
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-msgid ""
-"This is your completed binary package as in the non-native Debian package.  "
-"(There is no Debian revision.)"
-msgstr ""
-
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid "<filename>gentoo_0.9.12-1_i386.changes</filename>"
-msgid "<filename>mypackage_1.0_i386.changes</filename>"
-msgstr "<filename>gentoo_0.9.12-1_i386.changes</filename>"
-
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-msgid ""
-"This file describes all the changes made in the current package version as "
-"in the non-native Debian package. (There is no Debian revision.)"
-msgstr ""
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Autobuilder"
@@ -9400,6 +9309,19 @@ msgid ""
 "binary-arch</literal>)"
 msgstr ""
 "构建平台依赖二进制包(<literal>fakeroot debian/rules binary-arch</literal>)"
+
+#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+msgid ""
+"sign the source <filename>.dsc</filename> file, using <command>gpg</command>"
+msgstr "使用 <command>gpg</command> 签署 <filename>.dsc</filename> 文件"
+
+#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+msgid ""
+"create and sign the upload <filename>.changes</filename> file, using "
+"<command>dpkg-genchanges</command> and <command>gpg</command>"
+msgstr ""
+"使用 <command>dpkg-genchanges</command> 和 <command>gpg</command> 创建并签署"
+"上传用的 <filename>.changes</filename> 文件"
 
 #. type: Content of: <book><chapter><section><para>
 msgid "This is why you see your package for other architectures."
@@ -9469,10 +9391,10 @@ msgstr "<command>debuild</command> 命令"
 #| "See <citerefentry> <refentrytitle>debuild</refentrytitle> <manvolnum>1</"
 #| "manvolnum> </citerefentry>."
 msgid ""
-"You can automate the <command>dpkg-buildpackage</command> command's package "
-"build process further with the <command>debuild</command> command.  See "
-"<citerefentry> <refentrytitle>debuild</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry>."
+"You can automate the build activity around executing the <command>dpkg-"
+"buildpackage</command> command package further with the <command>debuild</"
+"command> command.  See <citerefentry> <refentrytitle>debuild</refentrytitle> "
+"<manvolnum>1</manvolnum> </citerefentry>."
 msgstr ""
 "你可以使用 <command>debuild</command> 命令来进一步自动化 <command>dpkg-"
 "buildpackage</command> 的构建过程。参看 <citerefentry> "
@@ -9480,42 +9402,22 @@ msgstr ""
 "citerefentry>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
-#| msgid ""
-#| "Customization of the <command>debuild</command> command can be done "
-#| "through <filename>/etc/devscripts.conf</filename> or <filename>~/."
-#| "devscripts</filename>.  I would suggest at least following items:"
 msgid ""
-"Customization of the <command>debuild</command> command can be done through "
-"<filename>/etc/devscripts.conf</filename> or <filename>~/.devscripts</"
-"filename>.  I would suggest at least the following items:"
+"The <command>dbuild</command> command executes the <command>lintian</"
+"command> command to make the static check after building the Debian "
+"package.  The <command>lintian</command> command can be customized with the "
+"following in the <filename>~/.devscripts</filename>:"
 msgstr ""
-"对 <command>debuild</command> 命令的自定义可以通过 <filename>/etc/devscripts."
-"conf</filename> 或 <filename>~/.devscripts</filename> 实现。我建议至少添加以"
-"下几项："
 
 #. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid ""
-"DEBSIGN_KEYID=Your_GPG_keyID\n"
-"DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
-msgstr ""
-"DEBSIGN_KEYID=Your_GPG_keyID\n"
-"DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
-
-#. type: Content of: <book><chapter><section><para>
-#, fuzzy
+#, fuzzy, no-wrap
 #| msgid ""
-#| "With these, packages are signed by your specified GPG key ID (good for "
-#| "sponsoring packages) and checked by the <command>lintian</command> "
-#| "command in details."
-msgid ""
-"With these, packages are signed by your specified GPG key ID (good for "
-"sponsoring packages) and checked in detail by the <command>lintian</command> "
-"command."
+#| "DEBSIGN_KEYID=Your_GPG_keyID\n"
+#| "DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
+msgid "DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
 msgstr ""
-"这样软件包会使用指定的 ID 的 GPG 私钥签署(对于 sponsor 软件包有好处)，并使用 "
-"<command>lintian</command> 命令对软件包做最大程度的检查。"
+"DEBSIGN_KEYID=Your_GPG_keyID\n"
+"DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -9531,23 +9433,6 @@ msgstr "在普通用户帐号中可以使用以下这样简单的命令清理源
 #, no-wrap
 msgid "$ debuild\n"
 msgstr "$ debuild\n"
-
-#. type: Content of: <book><chapter><section><para>
-#, fuzzy
-#| msgid ""
-#| "There is the <filename>.orig</filename> before the <filename>.tar.gz</"
-#| "filename>."
-msgid ""
-"Here, if you are building Debian packages only for your own local use, you "
-"can skip promptings for the GPG signatures on the <filename>.dsc</filename> "
-"file and the <filename>.changes</filename> file like this:"
-msgstr "<filename>.tar.gz</filename> 扩展名前有 <filename>.orig</filename>。"
-
-#. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
-#| msgid "$ debuild -sa\n"
-msgid "$ debuild -us -uc\n"
-msgstr "$ debuild -sa\n"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -9670,19 +9555,11 @@ msgstr ""
 #| "AUTO_DEBSIGN=yes\n"
 #| "HOOKDIR=<replaceable>/var/cache/pbuilder/hooks</replaceable>\n"
 msgid ""
-"AUTO_DEBSIGN=${AUTO_DEBSIGN:-yes}\n"
+"AUTO_DEBSIGN=${AUTO_DEBSIGN:-no}\n"
 "HOOKDIR=<replaceable>/var/cache/pbuilder/hooks</replaceable>\n"
 msgstr ""
 "AUTO_DEBSIGN=yes\n"
 "HOOKDIR=<replaceable>/var/cache/pbuilder/hooks</replaceable>\n"
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"This will allow you to sign generated packages with your secret GPG key in "
-"the <filename>~/.gnupg/</filename> directory."
-msgstr ""
-"这使你可以使用 <filename>~/.gnupg/</filename> 目录中的 GPG 私钥签署生成的软件"
-"包。"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -9764,7 +9641,6 @@ msgstr "<filename>.tar.gz</filename> 扩展名前有 <filename>.orig</filename>�
 #| msgid "$ debdiff <replaceable>old-package</replaceable>.changes <replaceable>new-package</replaceable>.changes\n"
 msgid ""
 "$ cd /var/cache/pbuilder/result/\n"
-"$ debsign <replaceable>foo_version</replaceable>.dsc\n"
 "$ debsign <replaceable>foo_version_arch</replaceable>.changes\n"
 msgstr "$ debdiff <replaceable>old-package</replaceable>.changes <replaceable>new-package</replaceable>.changes\n"
 
@@ -9790,18 +9666,6 @@ msgid ""
 msgstr ""
 "$ sudo pbuilder --update\n"
 "$ pdebuild\n"
-
-#. type: Content of: <book><chapter><section><para>
-msgid ""
-"Here, if you are building Debian packages only for your local use, you can "
-"skip promptings for the GPG signatures on the <filename>.dsc</filename> file "
-"and the <filename>.changes</filename> file as:"
-msgstr ""
-
-#. type: Content of: <book><chapter><section><screen>
-#, no-wrap
-msgid "$ AUTO_DEBSIGN=no pdebuild\n"
-msgstr ""
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -10256,6 +10120,77 @@ msgid ""
 msgstr ""
 "一旦完成了调试，记住要按照前面所的正常过程重构建你的软件包。你可能无法正常上"
 "传用此种方法构建的 <filename>.deb</filename> 文件。"
+
+#. type: Content of: <book><chapter><section><title>
+msgid "Command hierarchy"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"Here is a quick summary of how many commands to build packages fit together "
+"in the command hierarchy. There are many ways to do the same thing."
+msgstr ""
+
+#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+msgid ""
+"<filename>debian/rules</filename> = maintainer script for the package "
+"building"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#, fuzzy
+#| msgid "<command>git-buildpackage</command> command and similars"
+msgid ""
+"<command>dpkg-buildpackage</command> = core of the package building tool"
+msgstr "<command>git-buildpackage</command> 和相似命令"
+
+#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+msgid ""
+"<command>debuild</command> = <command>dpkg-buildpackage</command> + "
+"<command>lintian</command> (build under the sanitized environment variables)"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+msgid ""
+"<command>pbuilder</command> = core of the Debian chroot environment tool"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+msgid ""
+"<command>pdebuild</command> = <command>pbuilder</command> + <command>dpkg-"
+"buildpackage</command> (build in the chroot)"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+msgid ""
+"<command>cowbuilder</command> = speed up the <command>pbuilder</command> "
+"execution"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+msgid ""
+"<command>git-pbuilder</command> = the easy-to-use commandline syntax for "
+"<command>pdebuild</command> (used by <command>gbp buildpackge</command>)"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+msgid "<command>gbp</command> = manage the Debian source under the git repo"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+msgid ""
+"<command>gbp buildpackge</command> = <command>pbuilder</command> + "
+"<command>dpkg-buildpackage</command> + <command>gbp</command>"
+msgstr ""
+
+#. type: Content of: <book><chapter><section><para>
+msgid ""
+"Although use of higher level commands such as <command>gbp buildpackge</"
+"command> and <command>pbuilder</command> ensures the perfect package "
+"building environment, it is essential to understand how lower level commands "
+"such as <filename>debian/rules</filename> and <command>dpkg-buildpackage</"
+"command> are executed under them."
+msgstr ""
 
 #. type: Content of: <book><chapter><title>
 msgid "Checking the package for errors"
@@ -11556,7 +11491,7 @@ msgid ""
 "If it was packaged with the <command>dh</command> command with the "
 "<literal>--with quilt</literal> option or with the <command>dh_quilt_patch</"
 "command> and <command>dh_quilt_unpatch</command> commands, remove these and "
-"make it use the newer <literal>3.0 (native)</literal> source format."
+"make it use the newer <literal>3.0 (quilt)</literal> source format."
 msgstr ""
 "如果它使用 <command>dh</command> 命令的 <literal>--with quilt</literal> 选"
 "项，或 <command>dh_quilt_patch</command> 和 <command>dh_quilt_unpatch</"
@@ -11623,12 +11558,13 @@ msgstr ""
 "装。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><screen>
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid "$ debdiff <replaceable>old-package</replaceable>.dsc <replaceable>new-package</replaceable>.dsc\n"
 msgid ""
-"LC_ALL=C.UTF-8 w3m -o display_charset=UTF-8 \\\n"
+"LC_ALL=en_US.UTF-8 w3m -o display_charset=UTF-8 \\\n"
 "        -cols 70 -dump -no-graph -T text/html \\\n"
 "        &lt; <replaceable>foo_in.html</replaceable> &gt; <replaceable>foo_out.txt</replaceable>\n"
-msgstr ""
+msgstr "$ debdiff <replaceable>old-package</replaceable>.dsc <replaceable>new-package</replaceable>.dsc\n"
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Reminders for updating packages"
@@ -12994,6 +12930,251 @@ msgid ""
 "differences generated by the data byte order and by the compression "
 "algorithm."
 msgstr ""
+
+#. type: Content of: <book><appendix><section><title>
+#, fuzzy
+#| msgid "Initial Debian package"
+msgid "Native Debian package"
+msgstr "初始化 Debian 软件包"
+
+#. type: Content of: <book><appendix><section><para>
+msgid ""
+"If a package is maintained only for Debian or possibly only for local use, "
+"its source may contain all the <filename>debian/*</filename> files in it.  "
+"There are 2 ways to package it."
+msgstr ""
+
+#. type: Content of: <book><appendix><section><para>
+msgid ""
+"You can make the upstream tarball by excluding the <filename>debian/*</"
+"filename> files and package it as the non-native Debian package as in <xref "
+"linkend=\"workflow\"/>.  This is the normal way which some people encourage "
+"to use."
+msgstr ""
+
+#. type: Content of: <book><appendix><section><para>
+msgid "The alternative is the workflow of the native Debian package."
+msgstr ""
+
+#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+msgid ""
+"Create a native Debian source package in the <literal>3.0 (native)</literal> "
+"format using a single compressed tar file in which all files are included."
+msgstr ""
+
+#. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><literal>
+#, fuzzy
+#| msgid ""
+#| "$ debdiff <replaceable>old-package</replaceable>.dsc <replaceable>new-"
+#| "package</replaceable>.dsc\n"
+msgid ""
+"<replaceable>package</replaceable>_<replaceable>version</replaceable>.tar.gz"
+msgstr ""
+"$ debdiff <replaceable>old-package</replaceable>.dsc <replaceable>new-"
+"package</replaceable>.dsc\n"
+
+#. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><literal>
+#, fuzzy
+#| msgid ""
+#| "$ debdiff <replaceable>old-package</replaceable>.dsc <replaceable>new-"
+#| "package</replaceable>.dsc\n"
+msgid ""
+"<replaceable>package</replaceable>_<replaceable>version</replaceable>.dsc"
+msgstr ""
+"$ debdiff <replaceable>old-package</replaceable>.dsc <replaceable>new-"
+"package</replaceable>.dsc\n"
+
+#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+#, fuzzy
+#| msgid "multiple binary packages,"
+msgid "Build Debian binary packages from the native Debian source package."
+msgstr "多个二进制包的软件包；"
+
+#. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><literal>
+#, fuzzy
+#| msgid ""
+#| "$ diff -urN <replaceable>foo</replaceable>-<replaceable>oldversion</"
+#| "replaceable> <replaceable>foo</replaceable>-<replaceable>newversion</"
+#| "replaceable>\n"
+msgid ""
+"<replaceable>package</replaceable>_<replaceable>version</"
+"replaceable>_<replaceable>arch</replaceable>.deb"
+msgstr ""
+"$ diff -urN <replaceable>foo</replaceable>-<replaceable>oldversion</"
+"replaceable> <replaceable>foo</replaceable>-<replaceable>newversion</"
+"replaceable>\n"
+
+#. type: Content of: <book><appendix><section><para>
+msgid ""
+"For example, if you have source files in <filename>~/mypackage-1.0</"
+"filename> without the <filename>debian/*</filename> files, you can create a "
+"native Debian package for it by issuing the <command>dh_make</command> "
+"command as follows."
+msgstr ""
+
+#. type: Content of: <book><appendix><section><screen>
+#, no-wrap
+msgid ""
+"$ cd ~/mypackage-1.0\n"
+"$ dh_make --native\n"
+msgstr ""
+
+#. type: Content of: <book><appendix><section><para>
+msgid ""
+"Then the <filename>debian</filename> directory and its contents are created "
+"just like <xref linkend=\"non-native-dh-make\"/>.  This does not create a "
+"tarball since this is a native Debian package.  But that is the only "
+"difference.  The rest of the packaging activities are practically the same."
+msgstr ""
+
+#. type: Content of: <book><appendix><section><para>
+msgid ""
+"After execution of the <command>dpkg-buildpackage</command> command, you "
+"will see the following files in the parent directory:"
+msgstr ""
+
+#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+#, fuzzy
+#| msgid "<filename>gentoo_0.9.12.orig.tar.gz</filename>"
+msgid "<filename>mypackage_1.0.tar.gz</filename>"
+msgstr "<filename>gentoo_0.9.12.orig.tar.gz</filename>"
+
+#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+msgid ""
+"This is the source code tarball created from the <filename>mypackage-1.0</"
+"filename> directory by the <command>dpkg-source</command> command.  (Its "
+"suffix is not <filename>orig.tar.gz</filename>.)"
+msgstr ""
+
+#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+#, fuzzy
+#| msgid "<filename>gentoo_0.9.12-1.dsc</filename>"
+msgid "<filename>mypackage_1.0.dsc</filename>"
+msgstr "<filename>gentoo_0.9.12-1.dsc</filename>"
+
+#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+msgid ""
+"This is a summary of the contents of the source code as in the non-native "
+"Debian package. (There is no Debian revision.)"
+msgstr ""
+
+#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+#, fuzzy
+#| msgid "<filename>gentoo_0.9.12-1_i386.deb</filename>"
+msgid "<filename>mypackage_1.0_i386.deb</filename>"
+msgstr "<filename>gentoo_0.9.12-1_i386.deb</filename>"
+
+#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+msgid ""
+"This is your completed binary package as in the non-native Debian package.  "
+"(There is no Debian revision.)"
+msgstr ""
+
+#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+#, fuzzy
+#| msgid "<filename>gentoo_0.9.12-1_i386.changes</filename>"
+msgid "<filename>mypackage_1.0_i386.changes</filename>"
+msgstr "<filename>gentoo_0.9.12-1_i386.changes</filename>"
+
+#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+msgid ""
+"This file describes all the changes made in the current package version as "
+"in the non-native Debian package. (There is no Debian revision.)"
+msgstr ""
+
+#~ msgid ""
+#~ " 1 #!/usr/bin/make -f\n"
+#~ " 2 # -*- makefile -*-\n"
+#~ " 3 # Sample debian/rules that uses debhelper.\n"
+#~ " 4 # This file was originally written by Joey Hess and Craig Small.\n"
+#~ " 5 # As a special exception, when this file is copied by dh-make into a\n"
+#~ " 6 # dh-make output file, you may use that output file without restriction.\n"
+#~ " 7 # This special exception was added by Craig Small in version 0.37 of dh-make.\n"
+#~ " 8\n"
+#~ " 9 # Uncomment this to turn on verbose mode.\n"
+#~ "10 #export DH_VERBOSE=1\n"
+#~ "11\n"
+#~ "12 %:\n"
+#~ "13        dh $@\n"
+#~ msgstr ""
+#~ " 1 #!/usr/bin/make -f\n"
+#~ " 2 # -*- makefile -*-\n"
+#~ " 3 # Sample debian/rules that uses debhelper.\n"
+#~ " 4 # This file was originally written by Joey Hess and Craig Small.\n"
+#~ " 5 # As a special exception, when this file is copied by dh-make into a\n"
+#~ " 6 # dh-make output file, you may use that output file without restriction.\n"
+#~ " 7 # This special exception was added by Craig Small in version 0.37 of dh-make.\n"
+#~ " 8\n"
+#~ " 9 # Uncomment this to turn on verbose mode.\n"
+#~ "10 #export DH_VERBOSE=1\n"
+#~ "11\n"
+#~ "12 %:\n"
+#~ "13        dh $@\n"
+
+#, fuzzy
+#~| msgid "$ dpkg-buildpackage -B\n"
+#~ msgid "$ dpkg-buildpackage -us -uc\n"
+#~ msgstr "$ dpkg-buildpackage -B\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "After all this is done, you will see the following files in the "
+#~| "directory above (<filename>~/gentoo</filename>):"
+#~ msgid ""
+#~ "For a native Debian package, e.g., <systemitem role=\"package"
+#~ "\">mypackage</systemitem>, you will see the following files in the parent "
+#~ "directory after building packages:"
+#~ msgstr "之后查看上级目录(<filename>~/gentoo</filename>)："
+
+#, fuzzy
+#~| msgid ""
+#~| "Customization of the <command>debuild</command> command can be done "
+#~| "through <filename>/etc/devscripts.conf</filename> or <filename>~/."
+#~| "devscripts</filename>.  I would suggest at least following items:"
+#~ msgid ""
+#~ "Customization of the <command>debuild</command> command can be done "
+#~ "through <filename>/etc/devscripts.conf</filename> or <filename>~/."
+#~ "devscripts</filename>.  I would suggest at least the following items:"
+#~ msgstr ""
+#~ "对 <command>debuild</command> 命令的自定义可以通过 <filename>/etc/"
+#~ "devscripts.conf</filename> 或 <filename>~/.devscripts</filename> 实现。我"
+#~ "建议至少添加以下几项："
+
+#, fuzzy
+#~| msgid ""
+#~| "With these, packages are signed by your specified GPG key ID (good for "
+#~| "sponsoring packages) and checked by the <command>lintian</command> "
+#~| "command in details."
+#~ msgid ""
+#~ "With these, packages are signed by your specified GPG key ID (good for "
+#~ "sponsoring packages) and checked in detail by the <command>lintian</"
+#~ "command> command."
+#~ msgstr ""
+#~ "这样软件包会使用指定的 ID 的 GPG 私钥签署(对于 sponsor 软件包有好处)，并使"
+#~ "用 <command>lintian</command> 命令对软件包做最大程度的检查。"
+
+#, fuzzy
+#~| msgid ""
+#~| "There is the <filename>.orig</filename> before the <filename>.tar.gz</"
+#~| "filename>."
+#~ msgid ""
+#~ "Here, if you are building Debian packages only for your own local use, "
+#~ "you can skip promptings for the GPG signatures on the <filename>.dsc</"
+#~ "filename> file and the <filename>.changes</filename> file like this:"
+#~ msgstr ""
+#~ "<filename>.tar.gz</filename> 扩展名前有 <filename>.orig</filename>。"
+
+#, fuzzy
+#~| msgid "$ debuild -sa\n"
+#~ msgid "$ debuild -us -uc\n"
+#~ msgstr "$ debuild -sa\n"
+
+#~ msgid ""
+#~ "This will allow you to sign generated packages with your secret GPG key "
+#~ "in the <filename>~/.gnupg/</filename> directory."
+#~ msgstr ""
+#~ "这使你可以使用 <filename>~/.gnupg/</filename> 目录中的 GPG 私钥签署生成的"
+#~ "软件包。"
 
 #, fuzzy
 #~| msgid "Building the package"
