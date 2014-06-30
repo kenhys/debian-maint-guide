@@ -28,7 +28,7 @@ packages listed in the <literal>Build-Depends-indep</literal> field (see <xref l
 Then you issue the following command in the source directory:
 </para>
 <screen>
-$ dpkg-buildpackage
+$ dpkg-buildpackage -us -uc
 </screen>
 <para>
 This will do everything to make full binary and source packages for you.  It
@@ -282,6 +282,7 @@ The <command>dbuild</command> command executes the <command>lintian</command> co
 The <command>lintian</command> command can be customized with the following in the <filename>~/.devscripts</filename>:
 </para>
 <screen>
+DEBUILD_DPKG_BUILDPACKAGE_OPTS="-us -uc -I -i"
 DEBUILD_LINTIAN_OPTS="-i -I --show-overrides"
 </screen>
 <para>
