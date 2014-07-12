@@ -7,7 +7,7 @@ adopting an existing one).
 <para>
 If you are making a Debian package with an upstream program, the
 typical workflow of Debian package building involves generating several
-specifically named files for each step as follows.
+specifically named files for each step as follows:
 </para>
 <itemizedlist>
 <listitem>
@@ -71,7 +71,7 @@ Each step of this outline is explained with detailed examples in later sections.
 <para>
 You have probably chosen the package you want to create.  The first thing you
 need to do is check if the package is in the distribution archive already by
-using the following.
+using the following:
 </para>
 <itemizedlist>
 <listitem>
@@ -95,7 +95,7 @@ adopt a package whose maintainer has filed a Request for Adoption
 "Adopting a package"</ulink>.</para> </footnote>
 </para>
 <para>
-There are several package ownership status resources.
+There are several package ownership status resources:
 </para>
 <itemizedlist>
 <listitem>
@@ -118,7 +118,7 @@ archive is much larger than that of contributors with upload rights.  Thus,
 contributions to packages already in the archive are far more appreciated (and
 more likely to receive sponsorship) by other developers <footnote><para> Having
 said that, there will of course always be new programs that are worth
-packaging.  </para> </footnote>.  You can contribute in various ways.
+packaging.  </para> </footnote>.  You can contribute in various ways:
 </para>
 <itemizedlist>
 <listitem>
@@ -297,7 +297,7 @@ There is another old Latin saying: <emphasis>fabricando fit faber</emphasis>
 practice and experiment with all the steps of Debian packaging with simple packages
 while reading this tutorial.  A trivial upstream tarball
 <filename>hello-sh-1.0.tar.gz</filename> created as followings may offer
-a good starting point.<footnote><para>Do not worry about the missing
+a good starting point:<footnote><para>Do not worry about the missing
 <filename>Makefile</filename>.  You can install the <command>hello</command>
 command by simply using <command>debhelper</command> as in
 <xref linkend="install"/>, or by modifying the upstream source to add a new
@@ -593,7 +593,7 @@ See <xref linkend="newrevision"/> for how the
 <emphasis role="strong">Debian revision</emphasis> is incremented.
 </para></footnote>
 can be compared using <citerefentry>
-<refentrytitle>dpkg</refentrytitle> <manvolnum>1</manvolnum> </citerefentry> as follows.
+<refentrytitle>dpkg</refentrytitle> <manvolnum>1</manvolnum> </citerefentry> as follows:
 </para>
 <screen>
 $ dpkg --compare-versions <replaceable>ver1</replaceable> <replaceable>op</replaceable> <replaceable>ver2</replaceable>
@@ -608,7 +608,7 @@ The version comparison rule can be summarized as:
 <listitem><para>Letters are compared in ASCII code order.</para></listitem>
 <listitem><para>There are special rules for period
 (<literal>.</literal>), plus (<literal>+</literal>), and tilde
-(<literal>~</literal>) characters, as follows.</para>
+(<literal>~</literal>) characters, as follows:</para>
 <para>
 <literal>0.0</literal> &lt; 
 <literal>0.5</literal> &lt; 
@@ -656,7 +656,7 @@ Normal Debian packages are non-native Debian packages made from upstream
 programs.  If you wish to create a non-native Debian package of an upstream
 source <filename>gentoo-0.9.12.tar.gz</filename>, you can create an initial
 non-native Debian package for it by issuing the <command>dh_make</command>
-command as follows.
+command as follows:
 </para>
 <screen>
 $ cd ~/gentoo
@@ -699,7 +699,7 @@ this document.  </para> </footnote>
 This execution of <command>dh_make</command> creates a copy of the upstream
 tarball as <filename>gentoo_0.9.12.orig.tar.gz</filename> in the
 parent directory to accommodate the creation of the non-native Debian source
-package with the name <filename>debian.tar.gz</filename> later.
+package with the name <filename>debian.tar.gz</filename> later:
 </para>
 <screen>
 $ cd ~/gentoo ; ls -F

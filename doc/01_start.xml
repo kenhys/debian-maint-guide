@@ -57,7 +57,7 @@ to keep this document simple.
 <section id="socialdynamics"><title>Social dynamics of Debian</title>
 <para>
 Here are some observations of Debian's social dynamics, presented in the hope
-that it will prepare you for interactions with Debian.
+that it will prepare you for interactions with Debian:
 </para>
 <itemizedlist>
 <listitem><para>We all are volunteers.</para>
@@ -83,7 +83,7 @@ that it will prepare you for interactions with Debian.
 </itemizedlist>
 <para>
 There are several types of people interacting around Debian with different
-roles.
+roles:
 </para>
 <itemizedlist>
 <listitem>
@@ -148,7 +148,7 @@ waiting for good maintainers (see <xref linkend="choose"/>).
 </para>
 <para>
 Since we focus only on technical aspects of packaging in this document,
-please refer to the following to learn how Debian functions and how you can get involved.
+please refer to the following to learn how Debian functions and how you can get involved:
 </para>
 <itemizedlist>
 <listitem><para><ulink url="&logiciellibre;">Debian: 17 years of Free Software, "do-ocracy", and democracy</ulink> (Introductory slides) </para> </listitem>
@@ -438,7 +438,7 @@ read along with this document:
 </section>
 <section id="helpme"><title>Where to ask for help</title>
 <para>
-Before you decide to ask your question in some public place, please read the fine documentation.
+Before you decide to ask your question in some public place, please read the fine documentation:
 </para>
 <itemizedlist>
 <listitem>
@@ -478,7 +478,7 @@ people make packages.
 </para>
 <para>
 If you still have questions about packaging that you couldn't find answers to
-in the available documentation and web resources, you can ask them interactively.
+in the available documentation and web resources, you can ask them interactively:
 </para>
 <itemizedlist>
 <listitem>

@@ -6,7 +6,7 @@ You are strongly advised to read all the references suggested here.
 </para>
 <section id="library"><title>Shared libraries</title>
 <para>
-Before packaging shared <ulink url="&library;">libraries</ulink>, you should read the following primary references in detail.
+Before packaging shared <ulink url="&library;">libraries</ulink>, you should read the following primary references in detail:
 </para>
 <itemizedlist>
 <listitem>
@@ -26,7 +26,7 @@ Before packaging shared <ulink url="&library;">libraries</ulink>, you should rea
 </listitem>
 </itemizedlist>
 <para>
-Here are some oversimplified hints for you to get started.
+Here are some oversimplified hints for you to get started:
 </para>
 <itemizedlist>
 <listitem>
@@ -119,7 +119,7 @@ Although it is somewhat outdated and is only a secondary reference, <ulink url="
 
 <section id="librarysymbols"><title>Managing <filename>debian/<replaceable>package</replaceable>.symbols</filename></title>
 <para>
-When you package a shared library, you should create <filename>debian/<replaceable>package</replaceable>.symbols</filename> file to manage the minimal version associated to each symbol for backward-compatible ABI changes under the same SONAME of the library for the same shared library package name.<footnote><para>Backward-incompatible ABI changes normally require you to update the SONAME of the library and the shared library package name to new ones.</para></footnote>  You should read the following primary references in detail.
+When you package a shared library, you should create <filename>debian/<replaceable>package</replaceable>.symbols</filename> file to manage the minimal version associated to each symbol for backward-compatible ABI changes under the same SONAME of the library for the same shared library package name.<footnote><para>Backward-incompatible ABI changes normally require you to update the SONAME of the library and the shared library package name to new ones.</para></footnote>  You should read the following primary references in detail:
 </para>
 <itemizedlist>
 <listitem>
@@ -149,7 +149,7 @@ When you package a shared library, you should create <filename>debian/<replaceab
 </listitem>
 </itemizedlist>
 <para>
-Here is a rough example to create the <systemitem role="package">libfoo1</systemitem> package to the upstream version <literal>1.3</literal> with the proper <filename>debian/libfoo1.symbols</filename> file.
+Here is a rough example to create the <systemitem role="package">libfoo1</systemitem> package to the upstream version <literal>1.3</literal> with the proper <filename>debian/libfoo1.symbols</filename> file:
 </para>
 
 <itemizedlist>
@@ -255,7 +255,7 @@ Although it is only a secondary reference, <ulink url="&usingsymbolsfiles;">Debi
 
 <section id="multiarch"><title>Multiarch</title>
 <para>
-The multiarch feature introduced to Debian wheezy integrates support for cross-architecture installation of binary packages (particularly <literal>i386</literal>&lt;-&gt;<literal>amd64</literal>, but also other combinations) in <systemitem role="package">dpkg</systemitem> and <systemitem role="package">apt</systemitem>.  You should read the following references in detail.</para>
+The multiarch feature introduced to Debian wheezy integrates support for cross-architecture installation of binary packages (particularly <literal>i386</literal>&lt;-&gt;<literal>amd64</literal>, but also other combinations) in <systemitem role="package">dpkg</systemitem> and <systemitem role="package">apt</systemitem>. You should read the following references in detail:</para>
 <itemizedlist>
 <listitem>
 <para>
@@ -270,7 +270,7 @@ The multiarch feature introduced to Debian wheezy integrates support for cross-a
 </itemizedlist>
 
 <para>
-It uses the triplet such as <literal>i386-linux-gnu</literal> and <literal>x86_64-linux-gnu</literal> for the install path of shared libraries. The actual triplet path is dynamically set into <literal>$(DEB_HOST_MULTIARCH)</literal> value by <citerefentry> <refentrytitle>dpkg-architecture</refentrytitle> <manvolnum>1</manvolnum> </citerefentry> for each build.  For example, the path to install multiarch libraries are changed as follows.<footnote><para>Old special purpose library paths such as <filename>/lib32/</filename> and <filename>/lib64/</filename> are not used any more.</para></footnote>
+It uses the triplet such as <literal>i386-linux-gnu</literal> and <literal>x86_64-linux-gnu</literal> for the install path of shared libraries. The actual triplet path is dynamically set into the <literal>$(DEB_HOST_MULTIARCH)</literal> variable using the <citerefentry> <refentrytitle>dpkg-architecture</refentrytitle><manvolnum>1</manvolnum></citerefentry> command for each binary package build. For example, the path to install multiarch libraries are changed as follows:<footnote><para>Old special purpose library paths such as <filename>/lib32/</filename> and <filename>/lib64/</filename> are not used any more.</para></footnote>
 </para>
 
 <informaltable id="tripletpaths" pgwide="0" frame="topbot" rowsep="1" colsep="1">
@@ -366,7 +366,7 @@ Please note that the development package should contain a symlink for the associ
 
 <section id="librarypackage"><title>Building a shared library package</title>
 <para>
-You can build a Debian library package enabling the multiarch support using <citerefentry> <refentrytitle>dh</refentrytitle> <manvolnum>1</manvolnum> </citerefentry> as follows. 
+You can build a Debian library package enabling the multiarch support using <citerefentry> <refentrytitle>dh</refentrytitle> <manvolnum>1</manvolnum> </citerefentry> as follows: 
 </para>
 <itemizedlist>
 <listitem>
@@ -481,7 +481,7 @@ Build Debian binary packages from the native Debian source package.
 <para>
 For example, if you have source files in <filename>~/mypackage-1.0</filename>
 without the <filename>debian/*</filename> files, you can create a native Debian
-package for it by issuing the <command>dh_make</command> command as follows.
+package for it by issuing the <command>dh_make</command> command as follows:
 </para>
 <screen>
 $ cd ~/mypackage-1.0

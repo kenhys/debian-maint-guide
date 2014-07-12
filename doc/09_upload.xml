@@ -118,7 +118,7 @@ of the original <filename>orig.tar.gz</filename> source.
 <para>
 If you created multiple entries in <filename>debian/changelog</filename> by
 skipping uploads, you must create a proper <filename>*_.changes</filename> file
-which includes all changes from the last upload.
+which includes all changes since the last upload.
 This can be done by specifying the <command>dpkg-buildpackage</command> option
 <literal>-v</literal> with the version, e.g.,
 <literal><replaceable>1.2</replaceable></literal>.

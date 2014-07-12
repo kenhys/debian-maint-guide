@@ -342,7 +342,7 @@ HOOKDIR=<replaceable>/var/cache/pbuilder/hooks</replaceable>
 </itemizedlist>
 <para>
 First let's initialize the local <systemitem role="package">pbuilder</systemitem> <command>chroot</command> system as
-follows.
+follows:
 </para>
 <screen>
 $ sudo pbuilder create
@@ -354,7 +354,7 @@ in the directory where the
 <filename><replaceable>foo</replaceable>.debian.tar.gz</filename>, and
 <filename><replaceable>foo</replaceable>.dsc</filename> files exist to update
 the local <systemitem role="package">pbuilder</systemitem>
-<command>chroot</command> system and to build binary packages in it.
+<command>chroot</command> system and to build binary packages in it:
 </para>
 <screen>
 $ sudo pbuilder --update
@@ -375,7 +375,7 @@ $ debsign <replaceable>foo_version_arch</replaceable>.changes
 <para>
 If you have an updated source tree but have not generated the matching
 source package, issue the following commands in the source directory where the
-<filename>debian</filename> directory exists, instead.
+<filename>debian</filename> directory exists, instead:
 </para>
 <screen>
 $ sudo pbuilder --update
@@ -391,7 +391,7 @@ as you wish.  This environment can be saved by leaving its shell prompt with
 The latest version of the <command>lintian</command> command can be executed in
 the <literal>chroot</literal> environment using the hook script
 <filename><replaceable>/var/cache/pbuilder/hooks</replaceable>/B90lintian</filename>
-configured as follows.  <footnote><para> This assumes
+configured as follows:  <footnote><para> This assumes
 <literal>HOOKDIR=/var/cache/pbuilder/hooks</literal>.  You can find many
 examples of hook scripts in the
 <filename>/usr/share/doc/pbuilder/examples</filename> directory.  </para>
@@ -465,17 +465,17 @@ package scripts for CVS source trees.
 </listitem>
 </itemizedlist>
 <para>
-Use of <systemitem role="package">git-buildpackage</systemitem> is becoming quite popular for Debian Developers to manage Debian packages with the Git server on <ulink url="&debian-alioth;">alioth.debian.org</ulink>. <footnote><para><ulink url="&debian-alioth-wiki;">Debian wiki Alioth</ulink> documents how to use the <ulink url="&debian-alioth;">alioth.debian.org</ulink>  service.</para></footnote> This package offers many commands to <emphasis>automate</emphasis> packaging activities.
+Use of <systemitem role="package">git-buildpackage</systemitem> is becoming quite popular for Debian Developers to manage Debian packages with the Git server on <ulink url="&debian-alioth;">alioth.debian.org</ulink>. <footnote><para><ulink url="&debian-alioth-wiki;">Debian wiki Alioth</ulink> documents how to use the <ulink url="&debian-alioth;">alioth.debian.org</ulink>  service.</para></footnote> This package offers many commands to <emphasis>automate</emphasis> packaging activities:
 </para>
 <itemizedlist>
-<listitem> <para> <citerefentry> <refentrytitle>git-import-dsc</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>: import previous Debian package to a Git repository.</para> </listitem>
-<listitem> <para> <citerefentry> <refentrytitle>git-import-orig</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>: import new upstream tar to a Git repository.</para> </listitem>
+<listitem> <para> <citerefentry> <refentrytitle>git-import-dsc</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>: import a previous Debian package to a Git repository.</para> </listitem>
+<listitem> <para> <citerefentry> <refentrytitle>git-import-orig</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>: import a new upstream tar to a Git repository.</para> </listitem>
 <listitem> <para> <citerefentry> <refentrytitle>git-dch</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>: generate the Debian changelog from Git commit messages.</para> </listitem>
 <listitem> <para> <citerefentry> <refentrytitle>git-buildpackage</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>: build Debian packages from a Git repository.</para> </listitem>
 <listitem> <para> <citerefentry> <refentrytitle>git-pbuilder</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>: build Debian packages from a Git repository using <command>pbuilder</command>/<command>cowbuilder</command>.</para> </listitem>
 </itemizedlist>
 <para>
-These commands use 3 branches to track packaging activity.
+These commands use 3 branches to track packaging activity:
 </para>
 <itemizedlist>
 <listitem> <para> <literal>main</literal> for Debian package source tree.</para> </listitem>
@@ -532,12 +532,12 @@ Here is a quick summary of how many commands to build packages fit together in t
 <listitem><para><command>pbuilder</command> = core of the Debian chroot environment tool</para> </listitem>
 <listitem><para><command>pdebuild</command> = <command>pbuilder</command> + <command>dpkg-buildpackage</command> (build in the chroot)</para> </listitem>
 <listitem><para><command>cowbuilder</command> = speed up the <command>pbuilder</command> execution</para> </listitem>
-<listitem><para><command>git-pbuilder</command> = the easy-to-use commandline syntax for <command>pdebuild</command> (used by <command>gbp buildpackge</command>)</para> </listitem>
+<listitem><para><command>git-pbuilder</command> = the easy-to-use commandline syntax for <command>pdebuild</command> (used by <command>gbp buildpackage</command>)</para> </listitem>
 <listitem><para><command>gbp</command> = manage the Debian source under the git repo</para> </listitem>
-<listitem><para><command>gbp buildpackge</command> = <command>pbuilder</command> + <command>dpkg-buildpackage</command> + <command>gbp</command></para> </listitem>
+<listitem><para><command>gbp buildpackage</command> = <command>pbuilder</command> + <command>dpkg-buildpackage</command> + <command>gbp</command></para> </listitem>
 </itemizedlist>
 <para>
-Although use of higher level commands such as <command>gbp buildpackge</command> and <command>pbuilder</command> ensures the perfect package building environment, it is essential to understand how lower level commands such as <filename>debian/rules</filename>  and <command>dpkg-buildpackage</command> are executed under them.
+Although use of higher level commands such as <command>gbp buildpackage</command> and <command>pbuilder</command> ensures the perfect package building environment, it is essential to understand how lower level commands such as <filename>debian/rules</filename>  and <command>dpkg-buildpackage</command> are executed under them.
 </para>
 </section>
 </chapter>

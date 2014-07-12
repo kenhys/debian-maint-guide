@@ -212,7 +212,7 @@ of the source package, but it doesn't necessarily have to be that way.
 <para>
 Line 10 describes the architectures the binary package can be compiled for.
 This value is usually one of the following depending
-on the type of the binary package.
+on the type of the binary package:
 <footnote><para>See 
 <ulink url="&policy-architecture;">Debian Policy Manual, 5.6.8 "Architecture"</ulink>
 for exact details.
@@ -265,7 +265,7 @@ these relations; if not, it will be explained.  (See <citerefentry>
 </citerefentry>, etc.)
 </para>
 <para>
-Here is a simplified description of package relationships.
+Here is a simplified description of package relationships:
 <footnote><para>See 
 <ulink url="&policy-relationships;">Debian Policy Manual, 7 "Declaring relationships between packages"</ulink>.
 </para></footnote>
@@ -921,7 +921,7 @@ their names.  <footnote><para> For complete information on what all these
 <command>dh_*</command> scripts do exactly, and what their other options are,
 please read their respective manual pages and the <systemitem role="package">debhelper</systemitem> documentation.  </para> </footnote> There
 are a few notable ones that are worth giving (over)simplified explanations here assuming
-a typical build environment based on a <filename>Makefile</filename>.
+a typical build environment based on a <filename>Makefile</filename>:
 <footnote><para> These commands support other build environments such as
 <filename>setup.py</filename> which can be listed by executing
 <literal>dh_auto_build --list</literal> in a package source directory.  </para>
@@ -1008,7 +1008,7 @@ There are many ways to customize the <filename>rules</filename> file created
 with the new <command>dh</command> command.
 </para>
 <para>
-The <literal>dh $@</literal> command can be customized as follows.
+The <literal>dh $@</literal> command can be customized as follows:
 <footnote><para> If a package installs the
 <filename>/usr/share/perl5/Debian/Debhelper/Sequence/<replaceable>custom_name</replaceable>.pm</filename>
 file, you should activate its customization function by <literal>dh $@ --with
@@ -1302,7 +1302,7 @@ So, for instance, if you want to store system configuration data in the
 <systemitem role="package">gentoo</systemitem> package using Autotools, you can override the default
 <literal>--sysconfig=/etc</literal> argument given by the
 <command>dh_auto_configure</command> command to the
-<command>./configure</command> command by the following.
+<command>./configure</command> command by the following:
 </para>
 <screen>
 override_dh_auto_configure:
@@ -1336,7 +1336,7 @@ If the <filename>Makefile</filename> in the source for <systemitem role="package
 <literal>packageclean</literal> target to clean it for the Debian package instead
 of using <literal>distclean</literal> or <literal>clean</literal> targets,
 you can create an
-<literal>override_dh_auto_clean</literal> target to enable thit.
+<literal>override_dh_auto_clean</literal> target to enable it.
 </para>
 <screen>
 override_dh_auto_clean:

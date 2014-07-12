@@ -59,7 +59,7 @@ a novice maintainer (see <xref linkend="maintscripts"/>).
 If the package makes use of these non-trivial maintainer scripts, be sure to test not only for install but also for remove,
 purge, and upgrade processes.  Many maintainer script bugs show up
 when packages are removed or purged.  Use the <command>dpkg</command> command
-as follows to test them.
+as follows to test them:
 </para>
 <screen>
 $ sudo dpkg -r gentoo
@@ -67,7 +67,7 @@ $ sudo dpkg -P gentoo
 $ sudo dpkg -i gentoo_<replaceable>version</replaceable>-<replaceable>revision</replaceable>_<replaceable>i386</replaceable>.deb
 </screen>
 <para>
-This should be done with sequences such as the following.
+This should be done with sequences such as the following:
 </para>
 <itemizedlist>
 <listitem>
@@ -142,7 +142,7 @@ $ lintian -i -I --show-overrides gentoo_0.9.12-1_i386.changes
 <para>
 Of course, replace the filename with the name of the
 <filename>.changes</filename> file generated for your package.  The output of
-the <command>lintian</command> command uses the following flags.
+the <command>lintian</command> command uses the following flags:
 </para>
 <itemizedlist>
 <listitem>

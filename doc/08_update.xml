@@ -6,12 +6,12 @@ After you release a package, you will soon need to update it.
 <para>
 Let's say that a bug report was filed against your package as
 <literal>#654321</literal>, and it describes a problem that you can solve.
-Here's what you need to do to create a new Debian revision of the package.
+Here's what you need to do to create a new Debian revision of the package:
 </para>
 <itemizedlist>
 <listitem>
 <para>
-If this is to be recorded as a new patch, do the following.
+If this is to be recorded as a new patch, do the following:
 </para>
 <itemizedlist>
 <listitem>
@@ -46,7 +46,7 @@ Correct the problem in the package source for the upstream bug;
 </listitem>
 <listitem>
 <para>
-If this is to update an existing patch, do the following.
+If this is to update an existing patch, do the following:
 </para>
 <itemizedlist>
 <listitem>
@@ -155,7 +155,7 @@ released with the new version.
 </para>
 <para>
 You can then inspect changes between the old and new upstream sources as follows,
-watching out for anything suspicious.
+watching out for anything suspicious:
 </para>
 <screen>
 $ diff -urN <replaceable>foo</replaceable>-<replaceable>oldversion</replaceable> <replaceable>foo</replaceable>-<replaceable>newversion</replaceable>
@@ -183,7 +183,7 @@ in the new extracted source.  <footnote><para> If a package <systemitem role="pa
 old <literal>1.0</literal> format, this can be done by running <literal>zcat
 /<replaceable>path</replaceable>/<replaceable>to</replaceable>/<replaceable>foo</replaceable>_<replaceable>oldversion</replaceable>.diff.gz|patch
 -p1</literal> in the new extracted source, instead.  </para> </footnote> Of
-course, you need to do some obvious chores.
+course, you need to do some obvious chores:
 </para>
 <itemizedlist>
 <listitem>
@@ -388,8 +388,8 @@ using the <command>splitdiff</command> command.  </para> </footnote>
 <listitem>
 <para>
 If it was packaged using another patch system such as <systemitem role="package">dpatch</systemitem>, <systemitem role="package">dbs</systemitem>, or <systemitem role="package">cdbs</systemitem> with <literal>-p0</literal>,
-<literal>-p1</literal>, or <literal>-p2</literal>, convert it to the
-<systemitem role="package">quilt</systemitem> command using
+<literal>-p1</literal>, or <literal>-p2</literal>, convert it to 
+<systemitem role="package">quilt</systemitem> using
 <filename>deb3</filename> at <ulink url="&deb3;"/>.
 </para>
 </listitem>
@@ -439,7 +439,7 @@ LC_ALL=en_US.UTF-8 w3m -o display_charset=UTF-8 \
 
 <section id="reminders"><title>Reminders for updating packages</title>
 <para>
-Here are few reminders for updating packages.
+Here are few reminders for updating packages:
 </para>
 <itemizedlist>
 <listitem>

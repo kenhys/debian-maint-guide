@@ -131,7 +131,7 @@ then prompt users to verify the changes all the time.
 <para>
 If the program you're packaging requires every user to modify the configuration
 files in the <filename>/etc</filename> directory, there are two popular ways to
-arrange for them to not be conffiles, keeping <command>dpkg</command> quiet.
+arrange for them to not be conffiles, keeping <command>dpkg</command> quiet:
 </para>
 <itemizedlist>
 <listitem>
@@ -258,7 +258,7 @@ Files: /usr/share/doc/gentoo/html/*.html
 For information on the file format, see <citerefentry>
 <refentrytitle>install-docs</refentrytitle> <manvolnum>8</manvolnum>
 </citerefentry> and the Debian <systemitem role="package">doc-base</systemitem>
-Manual at the local copy <filename>&doc-base;</filename> provided by the
+manual at the local copy <filename>&doc-base;</filename> provided by the
 <systemitem role="package">doc-base</systemitem> package.
 </para>
 <para>
@@ -467,7 +467,7 @@ list of manual page sections:
 <row> <entry>Section</entry> <entry>Description</entry> <entry>Notes</entry> </row>
 </thead>
 <tbody>
-<row> <entry>1</entry> <entry>User command</entry> <entry>Executable commands or scripts</entry> </row>
+<row> <entry>1</entry> <entry>User commands</entry> <entry>Executable commands or scripts</entry> </row>
 <row> <entry>2</entry> <entry>System calls</entry> <entry>Functions provided by the kernel</entry> </row>
 <row> <entry>3</entry> <entry>Library calls</entry> <entry>Functions within system libraries</entry> </row>
 <row> <entry>4</entry> <entry>Special files</entry> <entry>Usually found in <filename>/dev</filename></entry> </row>
@@ -587,7 +587,7 @@ If your package has manual pages, you should install them using <citerefentry>
 </para>
 <para>
 To install <filename>docs/gentoo.1</filename> as a manpage for the <systemitem role="package">gentoo</systemitem> package, create a
-<filename>gentoo.manpages</filename> file as follows.
+<filename>gentoo.manpages</filename> file as follows:
 </para>
 <screen>
 docs/gentoo.1
@@ -601,7 +601,7 @@ the system will be created for them.
 </para>
 <para>
 Here's the default <filename>menu.ex</filename> file that
-<command>dh_make</command> created.
+<command>dh_make</command> created:
 </para>
 <screen>
 ?package(gentoo):needs=X11|text|vc|wm \
@@ -617,7 +617,7 @@ listed alternatives, e.g.  <literal>text</literal> or <literal>X11</literal>.
 The next is the <literal>section</literal> that the menu and submenu entry
 should appear in.
 <footnote><para> The current list of sections is in
-<ulink url="&menu-structure;">The Debian Menu sub-policy 2.1 "Preferred menu structure"</ulink>.
+<ulink url="&menu-structure;">The Debian Menu sub-policy, 2.1 "Preferred menu structure"</ulink>.
 There was a major reorganization of menu structure for <literal>squeeze</literal>.
 </para> </footnote>
 </para>

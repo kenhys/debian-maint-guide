@@ -12,14 +12,14 @@ useful to have a slightly customized default, so let's create an alias
 <command>dquilt</command> for Debian packaging by adding the following
 lines to <filename>~/.bashrc</filename>.  The second line provides the same
 shell completion feature of the <command>quilt</command> command to the
-<command>dquilt</command> command.
+<command>dquilt</command> command:
 </para>
 <screen>
 alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
 complete -F _quilt_completion $_quilt_complete_opt dquilt
 </screen>
 <para>
-Then let's create <filename>~/.quiltrc-dpkg</filename> as follows.
+Then let's create <filename>~/.quiltrc-dpkg</filename> as follows:
 </para>
 <screen>
 d=. ; while [ ! -d $d/debian -a `readlink -e $d` != / ]; do d=$d/..; done
@@ -54,7 +54,7 @@ install: gentoo
 </screen>
 <para>
 Let's fix this and record it with the <command>dquilt</command> command as
-<filename>fix-gentoo-target.patch</filename>.  <footnote><para> The
+<filename>fix-gentoo-target.patch</filename>:  <footnote><para> The
 <filename>debian/patches</filename> directory should exist now if you ran
 <command>dh_make</command> as described before.  This example operation creates
 it just in case you are updating an existing package.  </para> </footnote>
@@ -65,7 +65,7 @@ $ dquilt new fix-gentoo-target.patch
 $ dquilt add Makefile
 </screen>
 <para>
-You change the <filename>Makefile</filename> file as follows.
+You change the <filename>Makefile</filename> file as follows:
 </para>
 <screen>
 install: gentoo-target
@@ -76,7 +76,7 @@ install: gentoo-target
 <para>
 Ask <command>dquilt</command> to generate the patch to create
 <filename>debian/patches/fix-gentoo-target.patch</filename> and add its
-description following <ulink url="&dep3;">DEP-3: Patch Tagging Guidelines</ulink>.
+description following <ulink url="&dep3;">DEP-3: Patch Tagging Guidelines</ulink>:
 </para>
 <screen>
 $ dquilt refresh
@@ -109,7 +109,7 @@ These two differences between normal program installation on one hand and the
 Debian packaging system on the other can be transparently addressed by the
 <systemitem role="package">debhelper</systemitem> package through the
 <command>dh_auto_configure</command> and <command>dh_auto_install</command>
-commands if the following conditions are met.
+commands if the following conditions are met:
 </para>
 <itemizedlist>
 <listitem>
@@ -299,7 +299,7 @@ of additional documentation that the upstream authors sometimes omit:
 <para>
 Check carefully, and if everything is okay, ask <command>dquilt</command> to
 generate the patch to create <filename>debian/patches/install.patch</filename>
-and add its description.
+and add its description:
 </para>
 <screen>
 $ dquilt refresh
@@ -355,7 +355,7 @@ If your program doesn't compile since the <literal>foo</literal> library
 doesn't exist and its equivalent is provided by the <literal>foo2</literal>
 library on the Debian system, you can fix this build problem as
 <filename>debian/patches/foo2.patch</filename> by changing
-<literal>foo</literal> into <literal>foo2</literal>.<footnote><para>If there
+<literal>foo</literal> into <literal>foo2</literal>:<footnote><para>If there
 are API changes from the <literal>foo</literal> library to the
 <literal>foo2</literal> library, required changes to the source code need to be
 made to match the new API.</para> </footnote>
