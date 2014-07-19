@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-06-28 15:39+0900\n"
+"POT-Creation-Date: 2014-07-19 16:05+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -5371,7 +5371,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
-msgid "$ dpkg-buildpackage\n"
+msgid "$ dpkg-buildpackage -us -uc\n"
 msgstr ""
 
 #. type: Content of: <book><chapter><section><para>
@@ -5663,7 +5663,9 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
-msgid "DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
+msgid ""
+"DEBUILD_DPKG_BUILDPACKAGE_OPTS=\"-us -uc -I -i\"\n"
+"DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
 msgstr ""
 
 #. type: Content of: <book><chapter><section><para>

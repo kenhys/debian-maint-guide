@@ -1,4 +1,4 @@
-maint-guide (1.2.33) UNRELEASED; urgency=medium
+maint-guide (1.2.33) unstable; urgency=medium
 
   * De-emphasize native package. Closes: #696078
   * Recommend use of cryptographic signature. Closes: #732446 
@@ -7,8 +7,10 @@ maint-guide (1.2.33) UNRELEASED; urgency=medium
   * Add support channel info. Closes: #719926 
   * Mention hierarchy of build commands. Closes: #703811 
   * Mention debmake and its packaging examples. Closes: #623477 
+  * Translation updated for de, it, ja, and ru. Closes: #753086
+  * Mention the debmake package and bump version to jessie.
 
- -- Osamu Aoki <osamu@debian.org>  Sun, 15 Jun 2014 10:52:30 +0900
+ -- Osamu Aoki <osamu@debian.org>  Sat, 19 Jul 2014 16:14:04 +0900
 
 maint-guide (1.2.32) unstable; urgency=low
 

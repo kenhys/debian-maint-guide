@@ -15,8 +15,8 @@ Remember, the *first* definition of an entity wins.
      uppercase after a period, and offer a way to languages that always use
      uppercase to use a global entity.
 -->
-<!ENTITY base-release "squeeze">
-<!ENTITY Base-release "Squeeze">
+<!ENTITY base-release "jessie">
+<!ENTITY Base-release "Jessie">
 
 <!-- Non breakable space entity is not available in DocBook XML -->
 <!ENTITY nbsp "&#160;">

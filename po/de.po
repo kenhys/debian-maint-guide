@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide 1.2.32\n"
 "Report-Msgid-Bugs-To: Osamu Aoki <osamu@debian.org>\n"
-"POT-Creation-Date: 2014-06-28 15:39+0900\n"
+"POT-Creation-Date: 2014-07-19 16:05+0900\n"
 "PO-Revision-Date: 2014-06-29 18:43+0200\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
@@ -7913,8 +7913,8 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
-msgid "$ dpkg-buildpackage\n"
-msgstr "$ dpkg-buildpackage\n"
+msgid "$ dpkg-buildpackage -us -uc\n"
+msgstr "$ dpkg-buildpackage -us -uc\n"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -8327,8 +8327,12 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
-msgid "DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
-msgstr "DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
+msgid ""
+"DEBUILD_DPKG_BUILDPACKAGE_OPTS=\"-us -uc -I -i\"\n"
+"DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
+msgstr ""
+"DEBUILD_DPKG_BUILDPACKAGE_OPTS=\"-us -uc -I -i\"\n"
+"DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -11695,6 +11699,9 @@ msgstr ""
 "Änderungen, die in der aktuellen Paketversion erfolgten. (Es gibt keine "
 "Debian-Revision.)"
 
+#~ msgid "$ dpkg-buildpackage\n"
+#~ msgstr "$ dpkg-buildpackage\n"
+
 #~ msgid ""
 #~ "If instead you are making a Debian-specific package with no upstream, the "
 #~ "typical workflow of Debian package building is simpler."
@@ -11762,9 +11769,6 @@ msgstr ""
 #~ "Pakete nur für die lokale Verwendung bauen, können Sie wie folgt die "
 #~ "Abfrage der GPG-Unterschriften für die Dateien <filename>.dsc</filename> "
 #~ "und <filename>.changes</filename> überspringen:"
-
-#~ msgid "$ dpkg-buildpackage -us -uc\n"
-#~ msgstr "$ dpkg-buildpackage -us -uc\n"
 
 #~ msgid ""
 #~ "For a native Debian package, e.g., <systemitem role=\"package"

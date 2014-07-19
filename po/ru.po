@@ -3,12 +3,12 @@
 #
 # Все данные о переводчиках и корректорах занесены в файл maint-guide.ru.ent
 #
-# Yuri Kozlov <yuray@komyakino.ru>, 2011, 2012, 2013.
+# Yuri Kozlov <yuray@komyakino.ru>, 2011, 2012, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide 1.2.30\n"
-"POT-Creation-Date: 2014-06-28 15:39+0900\n"
-"PO-Revision-Date: 2014-01-05 20:14+0400\n"
+"POT-Creation-Date: 2014-07-19 16:05+0900\n"
+"PO-Revision-Date: 2014-06-29 10:32+0400\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "Language: ru\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.5\n"
 
 #. type: Attribute 'lang' of: <book>
 msgid "en"
@@ -542,6 +542,10 @@ msgid ""
 "systemitem>.  It does more and comes with HTML documentation with extensive "
 "packaging examples."
 msgstr ""
+"Новый <systemitem role=\"package\">debmake</systemitem> можно использовать "
+"как альтернатива стандартному <systemitem role=\"package\">dh-make</"
+"systemitem>. В нём больше возможностей и есть документация в HTML с "
+"подробными примерами создания пакетов."
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -999,6 +1003,8 @@ msgid ""
 "Teams focusing on a specific set of packages. (Full list at <ulink url="
 "\"&wikiteams;\">https://wiki.debian.org/Teams</ulink>)"
 msgstr ""
+"Команды, работающие над определённым набором пакетов (полный список <ulink "
+"url=\"&wikiteams;\">https://wiki.debian.org/Teams</ulink>)."
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -1008,6 +1014,11 @@ msgid ""
 "ulink> and <ulink url=\"&listusers;\">https://lists.debian.org/users.html</"
 "ulink>)"
 msgstr ""
+"Списки рассылки на родном языке, например debian-devel-{french,italian,"
+"portuguese,spanish}@lists.debian.org или debian-devel@debian.or.jp (полный "
+"список <ulink url=\"&listdevel;\">https://lists.debian.org/devel.html</"
+"ulink> и <ulink url=\"&listusers;\">https://lists.debian.org/users.html</"
+"ulink>)."
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -4740,18 +4751,36 @@ msgid ""
 "20 %:\n"
 "21         dh $@ \n"
 msgstr ""
+" 1 #!/usr/bin/make -f\n"
+" 2 # смотрите debhelper(7) (раскомментируйте для включения)\n"
+" 3 # вывод каждой команды, которая изменяет файлы в системе сборки\n"
+" 4 #DH_VERBOSE = 1\n"
+" 5 \n"
+" 6 # смотрите ПРИМЕРЫ в dpkg-buildflags(1) и прочтите /usr/share/dpkg/*\n"
+" 7 DPKG_EXPORT_BUILDFLAGS = 1\n"
+" 8 include /usr/share/dpkg/default.mk\n"
+" 9 \n"
+"10 # смотрите FEATURE AREAS в dpkg-buildflags(1)\n"
+"11 #export DEB_BUILD_MAINT_OPTIONS = hardening=+all\n"
+"12\n"
+"13 # смотрите ENVIRONMENT в dpkg-buildflags(1)\n"
+"14 # как сопровождающему добавить CFLAGS\n"
+"15 #export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic\n"
+"16 # как сопровождающему добавить LDFLAGS\n"
+"17 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed\n"
+"18 \n"
+"19 # главный сценарий упаковки на основе синтаксиса dh7\n"
+"20 %:\n"
+"21         dh $@ \n"
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
-#| msgid ""
-#| "(I've added the line numbers.  In the actual <filename>rules</filename> "
-#| "file, the leading spaces are a TAB code.)"
 msgid ""
 "(I've added the line numbers and trimmed some comments.  In the actual "
 "<filename>rules</filename> file, the leading spaces are a TAB code.)"
 msgstr ""
-"(Номера строк добавлены для наглядности. В реальном файле <filename>rules</"
-"filename> начальные пробельные символы имеют код TAB.)"
+"(Для наглядности добавлены номера строк и удалены некоторые комментарии. В "
+"реальном файле <filename>rules</filename> начальные пробельные символы имеют "
+"код TAB.)"
 
 #. type: Content of: <book><chapter><section><section><para>
 msgid ""
@@ -4764,18 +4793,6 @@ msgstr ""
 "<filename>/usr/bin/make</filename>."
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
-#| msgid ""
-#| "Line 10 can be uncommented to set the <literal>DH_VERBOSE</literal> "
-#| "variable to 1, so that the <command>dh</command> command outputs which "
-#| "<command>dh_*</command> commands it is executing.  You can also add a "
-#| "line <literal>export DH_OPTIONS=-v</literal> here, so that each "
-#| "<command>dh_*</command> command outputs which commands it is executing.  "
-#| "This helps you to understand exactly what is going on behind this simple "
-#| "<filename>rules</filename> file and to debug its problems.  This new "
-#| "<command>dh</command> is designed to form a core part of the <systemitem "
-#| "role=\"package\">debhelper</systemitem> tools, and not to hide anything "
-#| "from you."
 msgid ""
 "Line 4 can be uncommented to set the <literal>DH_VERBOSE</literal> variable "
 "to 1, so that the <command>dh</command> command outputs which <command>dh_*</"
@@ -4787,7 +4804,7 @@ msgid ""
 "form a core part of the <systemitem role=\"package\">debhelper</systemitem> "
 "tools, and not to hide anything from you."
 msgstr ""
-"Строку 10 можно раскомментировать, установив значение переменной "
+"Строку 4 можно раскомментировать, установив значение переменной "
 "<literal>DH_VERBOSE</literal> равным 1. При этом команда <command>dh</"
 "command> будет выводить команды <command>dh_*</command>, которые она "
 "выполняет. Также, здесь вы можете добавить строку <literal>export "
@@ -4846,15 +4863,6 @@ msgstr ""
 "<replaceable>цель</replaceable>'</literal>."
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
-#| msgid ""
-#| "Lines 12 and 13 are where all the work is done with an implicit rule "
-#| "using the pattern rule.  The percent sign means \"any targets\", which "
-#| "then call a single program, <command>dh</command>, with the target name.  "
-#| "<placeholder type=\"footnote\" id=\"0\"/> The <command>dh</command> "
-#| "command is a wrapper script which runs appropriate sequences of "
-#| "<command>dh_*</command> programs depending on its argument.  <placeholder "
-#| "type=\"footnote\" id=\"1\"/>"
 msgid ""
 "Lines 20 and 21 are where all the work is done with an implicit rule using "
 "the pattern rule.  The percent sign means \"any targets\", which then call a "
@@ -4863,7 +4871,7 @@ msgid ""
 "script which runs appropriate sequences of <command>dh_*</command> programs "
 "depending on its argument.  <placeholder type=\"footnote\" id=\"1\"/>"
 msgstr ""
-"Вся работа выполняется строками 12 и 13 с помощью неявного правила, в "
+"Вся работа выполняется строками 20 и 21 с помощью неявного правила, в "
 "котором используется шаблонное правило. Знак процента означает «любую цель», "
 "что приводит к вызову программы <command>dh</command> с именем цели в "
 "качестве аргумента <placeholder type=\"footnote\" id=\"0\"/>. Команда "
@@ -6022,7 +6030,7 @@ msgid ""
 "two popular ways to arrange for them to not be conffiles, keeping "
 "<command>dpkg</command> quiet."
 msgstr ""
-"Если программа, которую вы упаковываете, требует от пользователя изменить "
+"Если программа, которую вы пакетируете, требует от пользователя изменить "
 "файлы настройки в каталоге <filename>/etc</filename>, существует два "
 "популярных способа не отмечать их как conffiles, чтобы подавить вопросы со "
 "стороны <command>dpkg</command>:"
@@ -7235,7 +7243,7 @@ msgid ""
 "<filename>debian/<replaceable>package</replaceable>.symbols</filename> "
 "files. See <xref linkend=\"librarysymbols\"/>."
 msgstr ""
-"Новичкам лучше не браться за упаковывание библиотек, так как это не просто. "
+"Новичкам лучше не браться за пакетирование библиотек, так как это не просто. "
 "Но всё же, если вы упаковываете библиотеки, у вас должны быть файлы "
 "<filename>debian/<replaceable>пакет</replaceable>.symbols</filename>. "
 "Смотрите <xref linkend=\"librarysymbols\"/>."
@@ -7344,6 +7352,10 @@ msgid ""
 "literal> option as described in <citerefentry> <refentrytitle>uscan</"
 "refentrytitle><manvolnum>1</manvolnum> </citerefentry>."
 msgstr ""
+"Если автор программы подписывает tarball ключом, то рекомендуется проверять "
+"его подпись с помощью параметра <literal>pgpsigurlmangle</literal> как "
+"описано в <citerefentry> <refentrytitle>uscan</refentrytitle><manvolnum>1</"
+"manvolnum> </citerefentry>."
 
 #. type: Content of: <book><chapter><section><title>
 msgid "<filename>source/format</filename>"
@@ -7364,8 +7376,6 @@ msgstr ""
 "<literal>squeeze</literal> он должен содержать либо:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid "<literal>3.0 (native)</literal> for Debian native packages or"
 msgid "<literal>3.0 (native)</literal> for native Debian packages or"
 msgstr "<literal>3.0 (native)</literal> — для родных пакетов Debian;"
 
@@ -7723,8 +7733,8 @@ msgstr "Затем выполните следующую команду в ка�
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
-msgid "$ dpkg-buildpackage\n"
-msgstr "$ dpkg-buildpackage\n"
+msgid "$ dpkg-buildpackage -us -uc\n"
+msgstr "$ dpkg-buildpackage -us -uc\n"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -7752,22 +7762,16 @@ msgstr ""
 "сборку двоичных пакетов (<literal>fakeroot debian/rules binary</literal>)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid "Targets of the <filename>rules</filename> file"
 msgid "make the <filename>.dsc</filename> file"
-msgstr "Цели из файла <filename>rules</filename>"
+msgstr "создаёт файл <filename>.dsc</filename>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid ""
-#| "create and sign the upload <filename>.changes</filename> file, using "
-#| "<command>dpkg-genchanges</command> and <command>gpg</command>"
 msgid ""
 "make the <filename>.changes</filename> file, using <command>dpkg-genchanges</"
 "command>"
 msgstr ""
-"создание и подпись загружаемого файла <filename>.changes</filename> с "
-"помощью <command>dpkg-genchanges</command> и <command>gpg</command>"
+"создаёт файл <filename>.changes</filename> с помощью <command>dpkg-"
+"genchanges</command>"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -7791,6 +7795,10 @@ msgid ""
 "<command>debsign</command> command.  You need to enter your secret pass "
 "phrase, twice.  <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
+"Если результат сборки устраивает, подпишите файл <filename>.dsc</filename> и "
+"<filename>.changes</filename> вашим закрытым ключом GPG с помощью команды "
+"<command>debsign</command>. Вам потребуется ввести секретную фразу дважды. "
+"<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -7821,13 +7829,6 @@ msgid "<filename>gentoo_0.9.12-1.dsc</filename>"
 msgstr "<filename>gentoo_0.9.12-1.dsc</filename>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid ""
-#| "This is a summary of the contents of the source code.  The file is "
-#| "generated from your <filename>control</filename> file, and is used when "
-#| "unpacking the source with <citerefentry> <refentrytitle>dpkg-source</"
-#| "refentrytitle> <manvolnum>1</manvolnum> </citerefentry>.  This file is "
-#| "GPG signed, so that people can be sure that it's really yours."
 msgid ""
 "This is a summary of the contents of the source code.  The file is generated "
 "from your <filename>control</filename> file, and is used when unpacking the "
@@ -7838,8 +7839,7 @@ msgstr ""
 "генерируется из вашего файла <filename>control</filename> и используется при "
 "распаковке пакета с исходным кодом с помощью <citerefentry> "
 "<refentrytitle>dpkg-source</refentrytitle> <manvolnum>1</manvolnum> </"
-"citerefentry>. Этот файл подписан с помощью GPG, что позволяет другим людям "
-"удостовериться, что именно вы создали его."
+"citerefentry>."
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<filename>gentoo_0.9.12-1.debian.tar.gz</filename>"
@@ -7900,14 +7900,6 @@ msgid "<filename>gentoo_0.9.12-1_i386.changes</filename>"
 msgstr "<filename>gentoo_0.9.12-1_i386.changes</filename>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid ""
-#| "This file describes all the changes made in the current package revision; "
-#| "it is used by the Debian FTP archive maintenance programs to install the "
-#| "binary and source packages.  It is partly generated from the "
-#| "<filename>changelog</filename> file and the <filename>.dsc</filename> "
-#| "file.  This file is GPG signed, so that people can be sure that it's "
-#| "really yours."
 msgid ""
 "This file describes all the changes made in the current package revision; it "
 "is used by the Debian FTP archive maintenance programs to install the binary "
@@ -7918,8 +7910,7 @@ msgstr ""
 "и он используется программами поддержки FTP-архива Debian для внесения "
 "пакетов (как двоичных, так и с исходным кодом) в архив. Он частично "
 "генерируется из файлов <filename>changelog</filename> и <filename>.dsc</"
-"filename>. Этот файл подписан с помощью GPG, что позволяет другим людям "
-"удостовериться, что именно вы создали его."
+"filename>."
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -7945,6 +7936,12 @@ msgid ""
 "Debian FTP archive. The GPG signature provides the proof that these files "
 "are really yours using your public GPG key."
 msgstr ""
+"Файлы <filename>gentoo_0.9.12-1.dsc</filename> и "
+"<filename>gentoo_0.9.12-1_i386.changes</filename> должны быть подписаны с "
+"помощью команды <command>debsign</command> вашим закрытым ключом GPG из "
+"каталога <filename>~/.gnupg/</filename> до отправки их в архив Debian FTP. С "
+"помощью вашего открытого ключа GPG можно проверить, что эти файлы подписали "
+"действительно вы."
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -7952,11 +7949,14 @@ msgid ""
 "specified secret GPG key ID (good for sponsoring packages) with the "
 "following in the <filename>~/.devscripts</filename>:"
 msgstr ""
+"Команде <command>debsign</command> можно указать ID секретного ключа GPG, "
+"которым нужно подписывать (удобно для спонсирования) в <filename>~/."
+"devscripts</filename>:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
 msgid "DEBSIGN_KEYID=Your_GPG_keyID\n"
-msgstr ""
+msgstr "DEBSIGN_KEYID=ID_ключа_GPG\n"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -8110,22 +8110,16 @@ msgid "<command>debuild</command> command"
 msgstr "Команда <command>debuild</command>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
-#| msgid ""
-#| "You can automate the <command>dpkg-buildpackage</command> command's "
-#| "package build process further with the <command>debuild</command> "
-#| "command.  See <citerefentry> <refentrytitle>debuild</refentrytitle> "
-#| "<manvolnum>1</manvolnum> </citerefentry>."
 msgid ""
 "You can automate the build activity around executing the <command>dpkg-"
 "buildpackage</command> command package further with the <command>debuild</"
 "command> command.  See <citerefentry> <refentrytitle>debuild</refentrytitle> "
 "<manvolnum>1</manvolnum> </citerefentry>."
 msgstr ""
-"Для дальнейшей автоматизации процесса сборки с помощью <command>dpkg-"
-"buildpackage</command> можно использовать команду <command>debuild</"
-"command>. Смотрите <citerefentry> <refentrytitle>debuild</refentrytitle> "
-"<manvolnum>1</manvolnum> </citerefentry>."
+"Для автоматизации действий по сборки с помощью <command>dpkg-buildpackage</"
+"command> можно использовать команду <command>debuild</command>. Смотрите "
+"<citerefentry> <refentrytitle>debuild</refentrytitle> <manvolnum>1</"
+"manvolnum> </citerefentry>."
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -8134,15 +8128,18 @@ msgid ""
 "package.  The <command>lintian</command> command can be customized with the "
 "following in the <filename>~/.devscripts</filename>:"
 msgstr ""
+"Команда <command>dbuild</command> запускает команду <command>lintian</"
+"command> для выполнения статической проверки после сборки пакета Debian. "
+"Команда <command>lintian</command> можно настроить через файл <filename>~/."
+"devscripts</filename>:"
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
-#| msgid ""
-#| "DEBSIGN_KEYID=Your_GPG_keyID\n"
-#| "DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
-msgid "DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
+#, no-wrap
+msgid ""
+"DEBUILD_DPKG_BUILDPACKAGE_OPTS=\"-us -uc -I -i\"\n"
+"DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
 msgstr ""
-"DEBSIGN_KEYID=Your_GPG_keyID\n"
+"DEBUILD_DPKG_BUILDPACKAGE_OPTS=\"-us -uc -I -i\"\n"
 "DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
 
 #. type: Content of: <book><chapter><section><para>
@@ -8239,15 +8236,12 @@ msgstr ""
 "pbuilderrc</filename> следующие строки:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><screen>
-#, fuzzy, no-wrap
-#| msgid ""
-#| "AUTO_DEBSIGN=${AUTO_DEBSIGN:-yes}\n"
-#| "HOOKDIR=<replaceable>/var/cache/pbuilder/hooks</replaceable>\n"
+#, no-wrap
 msgid ""
 "AUTO_DEBSIGN=${AUTO_DEBSIGN:-no}\n"
 "HOOKDIR=<replaceable>/var/cache/pbuilder/hooks</replaceable>\n"
 msgstr ""
-"AUTO_DEBSIGN=${AUTO_DEBSIGN:-yes}\n"
+"AUTO_DEBSIGN=${AUTO_DEBSIGN:-no}\n"
 "HOOKDIR=<replaceable>/var/cache/pbuilder/hooks</replaceable>\n"
 
 #. type: Content of: <book><chapter><section><para>
@@ -8294,9 +8288,9 @@ msgid ""
 "The newly built packages without the GPG signatures will be located in "
 "<filename>/var/cache/pbuilder/result/</filename> with non-root ownership."
 msgstr ""
-"Свежесобранные пакеты без подписи GPG будут помещены в каталог <filename>/"
-"var/cache/pbuilder/result/</filename>, их владельцем будет обычный "
-"пользователь (не суперпользователь)."
+"Только что собранные пакеты без подписи GPG будут помещены в каталог "
+"<filename>/var/cache/pbuilder/result/</filename>, их владельцем будет "
+"обычный пользователь (не суперпользователь)."
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -8307,17 +8301,12 @@ msgstr ""
 "filename> можно сгенерировать следующим образом:"
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
-#| msgid ""
-#| "$ cd /var/cache/pbuilder/result/\n"
-#| "$ debsign <replaceable>foo_version</replaceable>.dsc\n"
-#| "$ debsign <replaceable>foo_version_arch</replaceable>.changes\n"
+#, no-wrap
 msgid ""
 "$ cd /var/cache/pbuilder/result/\n"
 "$ debsign <replaceable>foo_version_arch</replaceable>.changes\n"
 msgstr ""
 "$ cd /var/cache/pbuilder/result/\n"
-"$ debsign <replaceable>foo_версия</replaceable>.dsc\n"
 "$ debsign <replaceable>foo_версия_архитектура</replaceable>.changes\n"
 
 #. type: Content of: <book><chapter><section><para>
@@ -8526,7 +8515,7 @@ msgstr ""
 "role=\"package\">git-buildpackage</systemitem> для управления пакетами "
 "Debian на сервере Git <ulink url=\"&debian-alioth;\">alioth.debian.org</"
 "ulink>. <placeholder type=\"footnote\" id=\"0\"/> В этот пакет включено "
-"много команд для <emphasis>автоматизации</emphasis> процесса упаковки."
+"много команд для <emphasis>автоматизации</emphasis> процесса пакетирования."
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -8713,65 +8702,81 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Command hierarchy"
-msgstr ""
+msgstr "Иерархия команд"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "Here is a quick summary of how many commands to build packages fit together "
 "in the command hierarchy. There are many ways to do the same thing."
 msgstr ""
+"Вот краткая сводка команд, которые объединяются в единую систему для сборки "
+"пакетов. Есть много способов сделать одно и тоже."
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<filename>debian/rules</filename> = maintainer script for the package "
 "building"
 msgstr ""
+"<filename>debian/rules</filename> = сценарий сопровождающего для сборки "
+"пакета"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid "<command>git-buildpackage</command> command and similars"
 msgid ""
 "<command>dpkg-buildpackage</command> = core of the package building tool"
-msgstr "Команда <command>git-buildpackage</command> и подобные ей"
+msgstr ""
+"<command>dpkg-buildpackage</command> = ключевой инструмент сборки пакета"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<command>debuild</command> = <command>dpkg-buildpackage</command> + "
 "<command>lintian</command> (build under the sanitized environment variables)"
 msgstr ""
+"<command>debuild</command> = <command>dpkg-buildpackage</command> + "
+"<command>lintian</command> (сборка при проверенных переменных окружение)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<command>pbuilder</command> = core of the Debian chroot environment tool"
 msgstr ""
+"<command>pbuilder</command> = ключевой инструмент chroot-окружения Debian"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<command>pdebuild</command> = <command>pbuilder</command> + <command>dpkg-"
 "buildpackage</command> (build in the chroot)"
 msgstr ""
+"<command>pdebuild</command> = <command>pbuilder</command> + <command>dpkg-"
+"buildpackage</command> (сборка в chroot)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<command>cowbuilder</command> = speed up the <command>pbuilder</command> "
 "execution"
 msgstr ""
+"<command>cowbuilder</command> = ускорение выполнения <command>pbuilder</"
+"command>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<command>git-pbuilder</command> = the easy-to-use commandline syntax for "
 "<command>pdebuild</command> (used by <command>gbp buildpackge</command>)"
 msgstr ""
+"<command>git-pbuilder</command> = простой синтаксис командной строки для "
+"<command>pdebuild</command> (используется в <command>gbp buildpackge</"
+"command>)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<command>gbp</command> = manage the Debian source under the git repo"
 msgstr ""
+"<command>gbp</command> = управление исходным кодом Debian в репозитории git"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<command>gbp buildpackge</command> = <command>pbuilder</command> + "
 "<command>dpkg-buildpackage</command> + <command>gbp</command>"
 msgstr ""
+"<command>gbp buildpackge</command> = <command>pbuilder</command> + "
+"<command>dpkg-buildpackage</command> + <command>gbp</command>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -8781,6 +8786,11 @@ msgid ""
 "such as <filename>debian/rules</filename> and <command>dpkg-buildpackage</"
 "command> are executed under them."
 msgstr ""
+"Хотя высокоуровневые команды, такие как <command>gbp buildpackge</command> и "
+"<command>pbuilder</command>, предоставляют замечательную среду сборки "
+"пакета, необходимо понимать какие нижележащие команды, такие как "
+"<filename>debian/rules</filename> и <command>dpkg-buildpackage</command>, в "
+"них используются."
 
 #. type: Content of: <book><chapter><title>
 msgid "Checking the package for errors"
@@ -9857,13 +9867,6 @@ msgstr ""
 "<filename>deb3</filename>, как описано в <ulink url=\"&deb3;\"/>."
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid ""
-#| "If it was packaged with the <command>dh</command> command with the "
-#| "<literal>--with quilt</literal> option or with the "
-#| "<command>dh_quilt_patch</command> and <command>dh_quilt_unpatch</command> "
-#| "commands, remove these and make it use the newer <literal>3.0 (native)</"
-#| "literal> source format."
 msgid ""
 "If it was packaged with the <command>dh</command> command with the "
 "<literal>--with quilt</literal> option or with the <command>dh_quilt_patch</"
@@ -9873,7 +9876,7 @@ msgstr ""
 "Если пакет был собран командой <command>dh</command> с параметром <literal>--"
 "with quilt</literal> или командами <command>dh_quilt_patch</command> и "
 "<command>dh_quilt_unpatch</command>, уберите их и перейдите на использование "
-"нового формата пакетов исходного кода <literal>3.0 (native)</literal>."
+"нового формата пакетов исходного кода <literal>3.0 (quilt)</literal>."
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -9929,17 +9932,13 @@ msgstr ""
 "при включённой локали UTF-8."
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><screen>
-#, fuzzy, no-wrap
-#| msgid ""
-#| "LC_ALL=C.UTF-8 w3m -o display_charset=UTF-8 \\\n"
-#| "        -cols 70 -dump -no-graph -T text/html \\\n"
-#| "        &lt; <replaceable>foo_in.html</replaceable> &gt; <replaceable>foo_out.txt</replaceable>\n"
+#, no-wrap
 msgid ""
 "LC_ALL=en_US.UTF-8 w3m -o display_charset=UTF-8 \\\n"
 "        -cols 70 -dump -no-graph -T text/html \\\n"
 "        &lt; <replaceable>foo_in.html</replaceable> &gt; <replaceable>foo_out.txt</replaceable>\n"
 msgstr ""
-"LC_ALL=C.UTF-8 w3m -o display_charset=UTF-8 \\\n"
+"LC_ALL=en_US.UTF-8 w3m -o display_charset=UTF-8 \\\n"
 "        -cols 70 -dump -no-graph -T text/html \\\n"
 "        &lt; <replaceable>foo_in.html</replaceable> &gt; <replaceable>foo_out.txt</replaceable>\n"
 
@@ -10293,7 +10292,7 @@ msgid ""
 "most likely to deal with.  You are strongly advised to read all the "
 "references suggested here."
 msgstr ""
-"Далее приводится подсказки и ссылки при сложных случаяхпакетирования. "
+"Далее приводятся подсказки и ссылки при сложных случаях пакетирования. "
 "Настоятельно рекомендуется прочитать все предлагаемые материалы."
 
 #. type: Content of: <book><appendix><section><title>
@@ -10652,8 +10651,9 @@ msgid ""
 "systemitem> package, create the <filename>debian/libfoo1.symbols</filename> "
 "file with empty content."
 msgstr ""
-"Если упаковка <systemitem role=\"package\">libfoo1</systemitem> производится "
-"впервые, создайте пустой файл <filename>debian/libfoo1.symbols</filename>."
+"Если пакетирование <systemitem role=\"package\">libfoo1</systemitem> "
+"производится впервые, создайте пустой файл <filename>debian/libfoo1.symbols</"
+"filename>."
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -11272,10 +11272,8 @@ msgstr ""
 "различиями при генерации данных с другим порядком байт и алгоритмом сжатия."
 
 #. type: Content of: <book><appendix><section><title>
-#, fuzzy
-#| msgid "Initial native Debian package"
 msgid "Native Debian package"
-msgstr "Начальный родной пакет Debian"
+msgstr "Родной пакет Debian"
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -11283,6 +11281,9 @@ msgid ""
 "its source may contain all the <filename>debian/*</filename> files in it.  "
 "There are 2 ways to package it."
 msgstr ""
+"Если пакет сопровождается только для Debian или, возможно, предназначен "
+"только для локального использования, то файлы <filename>debian/*</filename> "
+"можно хранить прямо его в исходном коде. Есть два способа его пакетирования."
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -11291,10 +11292,14 @@ msgid ""
 "linkend=\"workflow\"/>.  This is the normal way which some people encourage "
 "to use."
 msgstr ""
+"Вы можете использовать авторский tarball, исключив из него файлы "
+"<filename>debian/*</filename> и упаковав его как неродной пакет Debian "
+"(<xref linkend=\"workflow\"/>. Это — обычный способ, которые предпочитают "
+"использовать некоторые люди."
 
 #. type: Content of: <book><appendix><section><para>
 msgid "The alternative is the workflow of the native Debian package."
-msgstr ""
+msgstr "Альтернативный способ сборки родного пакета Debian:"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -11330,24 +11335,16 @@ msgstr ""
 "replaceable>_<replaceable>архитектура</replaceable>.deb"
 
 #. type: Content of: <book><appendix><section><para>
-#, fuzzy
-#| msgid ""
-#| "Normal Debian packages are non-native Debian packages made from upstream "
-#| "programs.  If you wish to create a non-native Debian package of an "
-#| "upstream source <filename>gentoo-0.9.12.tar.gz</filename>, you can create "
-#| "an initial non-native Debian package for it by issuing the "
-#| "<command>dh_make</command> command as follows."
 msgid ""
 "For example, if you have source files in <filename>~/mypackage-1.0</"
 "filename> without the <filename>debian/*</filename> files, you can create a "
 "native Debian package for it by issuing the <command>dh_make</command> "
 "command as follows."
 msgstr ""
-"Обычно, пакеты Debian являются неродными (non-native) пакетами Debian, "
-"создаваемыми из внешнего исходного кода. Если вы хотите создать неродной "
-"пакет Debian из исходного кода <filename>gentoo-0.9.12.tar.gz</filename>, то "
-"можете сгенерировать начальный неродной пакет Debian с помощью команды "
-"<command>dh_make</command> следующим образом:"
+"Например, если у вас есть файлы исходного кода в <filename>~/mypackage-1.0</"
+"filename> и нет файлов <filename>debian/*</filename>,то можете создать "
+"родной пакет Debian с помощью команды <command>dh_make</command> следующим "
+"образом:"
 
 #. type: Content of: <book><appendix><section><screen>
 #, no-wrap
@@ -11375,6 +11372,8 @@ msgid ""
 "After execution of the <command>dpkg-buildpackage</command> command, you "
 "will see the following files in the parent directory:"
 msgstr ""
+"После выполнения команды <command>dpkg-buildpackage</command>, вы увидите "
+"следующие файлы в родительском каталоге:"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid "<filename>mypackage_1.0.tar.gz</filename>"
@@ -11426,6 +11425,9 @@ msgstr ""
 "Содержит описание всех изменений, сделанных в текущей версии пакета, такой "
 "же как для неродного пакета Debian (в имени нет редакции Debian)."
 
+#~ msgid "$ dpkg-buildpackage\n"
+#~ msgstr "$ dpkg-buildpackage\n"
+
 #~ msgid ""
 #~ "If instead you are making a Debian-specific package with no upstream, the "
 #~ "typical workflow of Debian package building is simpler."
@@ -11453,8 +11455,10 @@ msgstr ""
 #~ " 3 # Sample debian/rules that uses debhelper.\n"
 #~ " 4 # This file was originally written by Joey Hess and Craig Small.\n"
 #~ " 5 # As a special exception, when this file is copied by dh-make into a\n"
-#~ " 6 # dh-make output file, you may use that output file without restriction.\n"
-#~ " 7 # This special exception was added by Craig Small in version 0.37 of dh-make.\n"
+#~ " 6 # dh-make output file, you may use that output file without "
+#~ "restriction.\n"
+#~ " 7 # This special exception was added by Craig Small in version 0.37 of "
+#~ "dh-make.\n"
 #~ " 8\n"
 #~ " 9 # Uncomment this to turn on verbose mode.\n"
 #~ "10 #export DH_VERBOSE=1\n"
@@ -11467,8 +11471,10 @@ msgstr ""
 #~ " 3 # Sample debian/rules that uses debhelper.\n"
 #~ " 4 # This file was originally written by Joey Hess and Craig Small.\n"
 #~ " 5 # As a special exception, when this file is copied by dh-make into a\n"
-#~ " 6 # dh-make output file, you may use that output file without restriction.\n"
-#~ " 7 # This special exception was added by Craig Small in version 0.37 of dh-make.\n"
+#~ " 6 # dh-make output file, you may use that output file without "
+#~ "restriction.\n"
+#~ " 7 # This special exception was added by Craig Small in version 0.37 of "
+#~ "dh-make.\n"
 #~ " 8\n"
 #~ " 9 # Uncomment this to turn on verbose mode.\n"
 #~ "10 #export DH_VERBOSE=1\n"
@@ -11487,9 +11493,6 @@ msgstr ""
 #~ "вашу секретную фразу GPG. Если вы собираете пакеты Debian только для "
 #~ "себя, то можете пропустить ввод подписи GPG для файла <filename>.dsc</"
 #~ "filename> и <filename>.changes</filename> с помощью:"
-
-#~ msgid "$ dpkg-buildpackage -us -uc\n"
-#~ msgstr "$ dpkg-buildpackage -us -uc\n"
 
 #~ msgid ""
 #~ "For a native Debian package, e.g., <systemitem role=\"package"
