@@ -40,10 +40,11 @@
 #
 #     Mantener este estilo en los nuevos textos traducidos.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide 1.116\n"
-"POT-Creation-Date: 2014-07-19 16:05+0900\n"
+"POT-Creation-Date: 2014-07-23 23:45+0900\n"
 "PO-Revision-Date: 2014-01-05 22:05+0100\n"
 "Last-Translator: Innocent De Marchi <tangram.peces@gmail.com>\n"
 "Language-Team: Debian l10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
@@ -391,10 +392,10 @@ msgstr "Dinamismo social en Debian"
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "Here are some observations of Debian's social dynamics, presented in the "
-"hope that it will prepare you for interactions with Debian."
+"hope that it will prepare you for interactions with Debian:"
 msgstr ""
 "Aquí explico mis observaciones sobre la dinámica social en Debian. Espero "
-"que esto te preparará para la interacción con Debian."
+"que esto te preparará para la interacción con Debian:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "We all are volunteers."
@@ -449,9 +450,9 @@ msgstr "Debes adaptarte al cambio."
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "There are several types of people interacting around Debian with different "
-"roles."
+"roles:"
 msgstr ""
-"Se utilizan distintos nombres para referirse a los roles dentro de Debian."
+"Se utilizan distintos nombres para referirse a los roles dentro de Debian:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -558,11 +559,11 @@ msgstr ""
 msgid ""
 "Since we focus only on technical aspects of packaging in this document, "
 "please refer to the following to learn how Debian functions and how you can "
-"get involved."
+"get involved:"
 msgstr ""
 "Dado que nos concentramos sólo en los aspectos técnicos del mantenimiento de "
 "paquetes en este documento, consulta las siguientes referencias para "
-"aprender cómo funciona Debian y cómo puedes participar."
+"aprender cómo funciona Debian y cómo puedes participar:"
 
 # Se ha optado por dejar los títulos en el idioma original sin traducir
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
@@ -1090,10 +1091,10 @@ msgstr "Dónde pedir ayuda"
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "Before you decide to ask your question in some public place, please read the "
-"fine documentation."
+"fine documentation:"
 msgstr ""
 "Antes de decidirte a plantear alguna cuestión en algún lugar público, lee la "
-"documentación."
+"documentación:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -1158,11 +1159,11 @@ msgstr ""
 msgid ""
 "If you still have questions about packaging that you couldn't find answers "
 "to in the available documentation and web resources, you can ask them "
-"interactively."
+"interactively:"
 msgstr ""
 "Si todavía tienes preguntas acerca de la construcción de paquetes a las que "
 "no puedes encontrar respuesta en la documentación disponible y los recursos "
-"web, puedes formularlas interactivamente."
+"web, puedes formularlas interactivamente:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -1272,11 +1273,11 @@ msgstr "Plan de trabajo para la construcción de paquetes Debian"
 msgid ""
 "If you are making a Debian package with an upstream program, the typical "
 "workflow of Debian package building involves generating several specifically "
-"named files for each step as follows."
+"named files for each step as follows:"
 msgstr ""
 "Si estas construyendo un paquete Debian con las fuentes originales, el plan "
 "de trabajo típico implica varias etapas (en las cuales se generan archivos "
-"con nombres específicos) y que se explican a continuación."
+"con nombres específicos) y que se explican a continuación:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -1426,7 +1427,7 @@ msgstr "Elige el programa"
 msgid ""
 "You have probably chosen the package you want to create.  The first thing "
 "you need to do is check if the package is in the distribution archive "
-"already by using the following."
+"already by using the following:"
 msgstr ""
 "Probablemente hayas escogido ya el paquete que deseas construir.  Lo primero "
 "que debes hacer es comprobar si el paquete está ya en el archivo de la "
@@ -1475,8 +1476,8 @@ msgstr ""
 "por su desarrollador o por un DD <placeholder type=\"footnote\" id=\"0\"/>."
 
 #. type: Content of: <book><chapter><section><para>
-msgid "There are several package ownership status resources."
-msgstr "Hay varios recursos para conocer el estado de los paquetes."
+msgid "There are several package ownership status resources:"
+msgstr "Hay varios recursos para conocer el estado de los paquetes:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<ulink url=\"&wnpp-do;\">Work-Needing and Prospective Packages</ulink>"
@@ -1521,7 +1522,7 @@ msgid ""
 "archive is much larger than that of contributors with upload rights.  Thus, "
 "contributions to packages already in the archive are far more appreciated "
 "(and more likely to receive sponsorship) by other developers <placeholder "
-"type=\"footnote\" id=\"0\"/>.  You can contribute in various ways."
+"type=\"footnote\" id=\"0\"/>.  You can contribute in various ways:"
 msgstr ""
 "A modo de nota al margen, es importante tener presente que Debian incorpora "
 "paquetes de un gran número de programas de todo tipo, y que la cantidad de "
@@ -1530,7 +1531,7 @@ msgstr ""
 "consecuencia, la colaboración en el mantenimiento de paquetes que ya están "
 "en el repositorio se valora muy positivamente (y es más fácil conseguir "
 "patrocinador) por el resto de desarrolladores <placeholder type=\"footnote\" "
-"id=\"0\"/>.  Puedes hacer esto de distintas formas."
+"id=\"0\"/>.  Puedes hacer esto de distintas formas:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "taking over orphaned, yet actively used, packages"
@@ -1857,14 +1858,14 @@ msgid ""
 "practice and experiment with all the steps of Debian packaging with simple "
 "packages while reading this tutorial.  A trivial upstream tarball "
 "<filename>hello-sh-1.0.tar.gz</filename> created as followings may offer a "
-"good starting point.<placeholder type=\"footnote\" id=\"0\"/>"
+"good starting point:<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
 "Hay otro dicho en latín: <emphasis>Fabricando fit fabe</emphasis>  (la "
 "práctica conduce a la perfección). Es <emphasis>muy</emphasis> recomendable "
 "practicar y experimentar todos los pasos de la construcción de paquetes "
 "Debian con paquetes simples mientras se lee este tutorial. Un simple archivo "
 "<filename>hello-sh-1.0.tar.gz</filename>  generado como en el ejemplo será "
-"un buen punto de partida <placeholder type=\"footnote\" id=\"0\"/>. "
+"un buen punto de partida <placeholder type=\"footnote\" id=\"0\"/>:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2438,11 +2439,11 @@ msgstr ""
 msgid ""
 "Version strings <placeholder type=\"footnote\" id=\"0\"/> can be compared "
 "using <citerefentry> <refentrytitle>dpkg</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry> as follows."
+"manvolnum> </citerefentry> as follows:"
 msgstr ""
 "El código de la versión <placeholder type=\"footnote\" id=\"0\"/> será "
 "comparado por <citerefentry> <refentrytitle>dpkg</refentrytitle> "
-"<manvolnum>1</manvolnum> </citerefentry> como sigue."
+"<manvolnum>1</manvolnum> </citerefentry> como sigue:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2475,11 +2476,11 @@ msgstr ""
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "There are special rules for period (<literal>.</literal>), plus (<literal>+</"
-"literal>), and tilde (<literal>~</literal>) characters, as follows."
+"literal>), and tilde (<literal>~</literal>) characters, as follows:"
 msgstr ""
 "Hay algunas reglas especiales para los puntos (<literal>.</literal> ), "
 "símbolo de suma (<literal>+</literal>) y tildes (<literal>~</literal>) como "
-"se explica a continuación."
+"se explica a continuación:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -2564,14 +2565,14 @@ msgid ""
 "programs.  If you wish to create a non-native Debian package of an upstream "
 "source <filename>gentoo-0.9.12.tar.gz</filename>, you can create an initial "
 "non-native Debian package for it by issuing the <command>dh_make</command> "
-"command as follows."
+"command as follows:"
 msgstr ""
 "Los paquetes Debian normales son paquetes no nativos construidos a partir de "
 "los programas originales de los autores. Si deseas construir un paquete "
 "Debian no nativo a partir del código fuente original  "
 "<filename>gentoo-0.9.12.tar.gz</filename>, puedes construir un primer "
 "paquete de Debian no nativo ejecutando la orden <command>dh_make</command> "
-"como sigue"
+"como sigue:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2667,12 +2668,12 @@ msgid ""
 "This execution of <command>dh_make</command> creates a copy of the upstream "
 "tarball as <filename>gentoo_0.9.12.orig.tar.gz</filename> in the parent "
 "directory to accommodate the creation of the non-native Debian source "
-"package with the name <filename>debian.tar.gz</filename> later."
+"package with the name <filename>debian.tar.gz</filename> later:"
 msgstr ""
 "Tras ejecutar <command>dh_make</command>, se genera una copia del código "
 "original con el nombre <filename>gentoo_0.9.12.orig.tar.gz</filename> en el "
 "directorio raíz para facilitar la construcción del paquete de fuentes no "
-"nativo de Debian con el archivo <filename>debian.tar.gz</filename>."
+"nativo de Debian con el archivo <filename>debian.tar.gz</filename>:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2798,7 +2799,7 @@ msgid ""
 "<command>dquilt</command> for Debian packaging by adding the following lines "
 "to <filename>~/.bashrc</filename>.  The second line provides the same shell "
 "completion feature of the <command>quilt</command> command to the "
-"<command>dquilt</command> command."
+"<command>dquilt</command> command:"
 msgstr ""
 "El programa <command>quilt</command> ofrece un método básico para realizar y "
 "guardar las modificaciones del código fuente para construir paquetes Debian. "
@@ -2807,7 +2808,7 @@ msgstr ""
 "command> para la generación de paquetes Debian añadiendo la siguiente linea "
 "en el archivo <filename>~/.bashrc</filename>. La segunda línea garantiza que "
 "el alias tendrá los mismos beneficios que el programa «quilt» con la función "
-"de auto-completar del «shell»."
+"de auto-completar del «shell»:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2819,10 +2820,10 @@ msgstr ""
 "complete -F _quilt_completion $_quilt_complete_opt dquilt\n"
 
 #. type: Content of: <book><chapter><section><para>
-msgid "Then let's create <filename>~/.quiltrc-dpkg</filename> as follows."
+msgid "Then let's create <filename>~/.quiltrc-dpkg</filename> as follows:"
 msgstr ""
 "A continuación, vamos a generar el archivo <filename>~/.quiltrc-dpkg</"
-"filename> de la siguiente manera."
+"filename> de la siguiente manera:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2899,12 +2900,12 @@ msgstr ""
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "Let's fix this and record it with the <command>dquilt</command> command as "
-"<filename>fix-gentoo-target.patch</filename>.  <placeholder type=\"footnote"
-"\" id=\"0\"/>"
+"<filename>fix-gentoo-target.patch</filename>: <placeholder type=\"footnote\" "
+"id=\"0\"/>"
 msgstr ""
 "Vamos a arreglar este error con la orden <command>dquilt</command> y "
 "conservar las modificaciones a realizar en el archivo <filename>fix-gentoo-"
-"target.patch</filename> <placeholder type=\"footnote\" id=\"0\"/>."
+"target.patch</filename> <placeholder type=\"footnote\" id=\"0\"/>:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2918,10 +2919,10 @@ msgstr ""
 "$ dquilt add Makefile\n"
 
 #. type: Content of: <book><chapter><section><para>
-msgid "You change the <filename>Makefile</filename> file as follows."
+msgid "You change the <filename>Makefile</filename> file as follows:"
 msgstr ""
 "Ahora cambia el archivo <filename>Makefile</filename> (con un editor) "
-"original como se muestra a continuación."
+"original como se muestra a continuación:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2941,12 +2942,12 @@ msgid ""
 "Ask <command>dquilt</command> to generate the patch to create "
 "<filename>debian/patches/fix-gentoo-target.patch</filename> and add its "
 "description following <ulink url=\"&dep3;\">DEP-3: Patch Tagging Guidelines</"
-"ulink>."
+"ulink>:"
 msgstr ""
 "A continuación ejecuta <command>dquilt</command> para que actualice el "
 "parche generando el archivo <filename>debian/patches/fix-gentoo-target."
 "patch</filename> y añade la descripción del parche como se describe en "
-"<ulink url=\"&dep3;\">DEP-3: Patch Tagging Guidelines</ulink>."
+"<ulink url=\"&dep3;\">DEP-3: Patch Tagging Guidelines</ulink>:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -3007,13 +3008,13 @@ msgid ""
 "the Debian packaging system on the other can be transparently addressed by "
 "the <systemitem role=\"package\">debhelper</systemitem> package through the "
 "<command>dh_auto_configure</command> and <command>dh_auto_install</command> "
-"commands if the following conditions are met."
+"commands if the following conditions are met:"
 msgstr ""
 "Estas dos diferencias entre la instalación del programa y el proceso de "
 "construcción del paquete es manejado en Debian de forma transparente por "
 "<systemitem role=\"package\">debhelper</systemitem> con las órdenes "
 "<command>dh_auto_configure</command> y <command>dh_auto_install</command> "
-"siempre que se cumplan los requisitos indicados a continuación."
+"siempre que se cumplan los requisitos indicados a continuación:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para><footnote><para>
 msgid ""
@@ -3391,12 +3392,12 @@ msgstr ""
 msgid ""
 "Check carefully, and if everything is okay, ask <command>dquilt</command> to "
 "generate the patch to create <filename>debian/patches/install.patch</"
-"filename> and add its description."
+"filename> and add its description:"
 msgstr ""
 "Después de comprobar que sea todo correcto, ejecuta <command>dquilt</"
 "command> para actualizar la modificación en el archivo <filename>debian/"
 "patches/install.patch</filename> y añade la descripción en la cabecera del "
-"archivo."
+"archivo:"
 
 #. type: Content of: <book><chapter><section><para>
 msgid "Now you have a series of patches."
@@ -3491,7 +3492,7 @@ msgid ""
 "doesn't exist and its equivalent is provided by the <literal>foo2</literal> "
 "library on the Debian system, you can fix this build problem as "
 "<filename>debian/patches/foo2.patch</filename> by changing <literal>foo</"
-"literal> into <literal>foo2</literal>.<placeholder type=\"footnote\" id="
+"literal> into <literal>foo2</literal>:<placeholder type=\"footnote\" id="
 "\"0\"/>"
 msgstr ""
 "Si el programa no se compila debido a que ya no existe la biblioteca "
@@ -3500,7 +3501,7 @@ msgstr ""
 "puedes solucionar este problema de compilación, cambiando (en el archivo "
 "<filename>debian/patches/parche2.patch</filename>) "
 "<literal>nombre_biblioteca</literal> por <literal>nombre_biblioteca2</"
-"literal> <placeholder type=\"footnote\" id=\"0\"/>."
+"literal> <placeholder type=\"footnote\" id=\"0\"/>:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -3959,11 +3960,11 @@ msgstr ""
 msgid ""
 "Line 10 describes the architectures the binary package can be compiled for.  "
 "This value is usually one of the following depending on the type of the "
-"binary package.  <placeholder type=\"footnote\" id=\"0\"/>"
+"binary package: <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
 "La linea 10 describe las arquitecturas en las que puede compilarse el "
 "paquete binario. Este valor suele ser uno de los listados a continuación "
-"dependiendo del tipo de paquete <placeholder type=\"footnote\" id=\"0\"/>."
+"dependiendo del tipo de paquete <placeholder type=\"footnote\" id=\"0\"/>:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<literal>Architecture: any</literal>"
@@ -4065,10 +4066,10 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
-"Here is a simplified description of package relationships.  <placeholder "
-"type=\"footnote\" id=\"0\"/>"
+"Here is a simplified description of package relationships: <placeholder type="
+"\"footnote\" id=\"0\"/>"
 msgstr ""
-"He aquí una descripción simplificada de relaciones entre paquetes.  "
+"He aquí una descripción simplificada de relaciones entre paquetes:  "
 "<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
@@ -5015,9 +5016,6 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><section><para>
 #, fuzzy
-#| msgid ""
-#| "(I've added the line numbers.  In the actual <filename>rules</filename> "
-#| "file, the leading spaces are a TAB code.)"
 msgid ""
 "(I've added the line numbers and trimmed some comments.  In the actual "
 "<filename>rules</filename> file, the leading spaces are a TAB code.)"
@@ -5326,13 +5324,13 @@ msgid ""
 "from their names.  <placeholder type=\"footnote\" id=\"0\"/> There are a few "
 "notable ones that are worth giving (over)simplified explanations here "
 "assuming a typical build environment based on a <filename>Makefile</"
-"filename>.  <placeholder type=\"footnote\" id=\"1\"/>"
+"filename>: <placeholder type=\"footnote\" id=\"1\"/>"
 msgstr ""
 "La función de las órdenes <command>dh_*</command> puede deducirse de su "
 "nombre <placeholder type=\"footnote\" id=\"0\"/>.  A continuación se resume "
 "las funciones de las órdenes más importantes asumiendo que se utiliza un "
 "sistema de compilación basado en un archivo <filename>Makefile</filename> "
-"<placeholder type=\"footnote\" id=\"1\"/>."
+"<placeholder type=\"footnote\" id=\"1\"/>:"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para><footnote><para>
 msgid ""
@@ -5493,7 +5491,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><section><para>
 msgid ""
-"The <literal>dh $@</literal> command can be customized as follows.  "
+"The <literal>dh $@</literal> command can be customized as follows: "
 "<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
 "La orden <literal>dh $@</literal> permite las siguientes adaptaciones "
@@ -5850,14 +5848,14 @@ msgid ""
 "systemitem> package using Autotools, you can override the default <literal>--"
 "sysconfig=/etc</literal> argument given by the <command>dh_auto_configure</"
 "command> command to the <command>./configure</command> command by the "
-"following."
+"following:"
 msgstr ""
 "Si vas a guardar los datos de configuración del paquete <systemitem role="
 "\"package\">gentoo</systemitem> en el directorio <filename>/etc/gentoo</"
 "filename> en lugar del directorio habitual <filename>/etc</filename>, debes "
 "anular la ejecución del argumento predeterminado <literal>--sysconfig=/etc</"
 "literal> de la orden <command>dh_auto_configure</command> por <command>./"
-"configure</command> con lo siguiente"
+"configure</command> con lo siguiente:"
 
 #. type: Content of: <book><chapter><section><section><screen>
 #, no-wrap
@@ -5932,7 +5930,7 @@ msgid ""
 "<literal>packageclean</literal> target to clean it for the Debian package "
 "instead of using <literal>distclean</literal> or <literal>clean</literal> "
 "targets, you can create an <literal>override_dh_auto_clean</literal> target "
-"to enable thit."
+"to enable it."
 msgstr ""
 "Si el <filename>Makefile</filename> de las fuentes de <systemitem role="
 "\"package\">gentoo</systemitem> requiere la especificación del objetivo "
@@ -6268,12 +6266,12 @@ msgid ""
 "If the program you're packaging requires every user to modify the "
 "configuration files in the <filename>/etc</filename> directory, there are "
 "two popular ways to arrange for them to not be conffiles, keeping "
-"<command>dpkg</command> quiet."
+"<command>dpkg</command> quiet:"
 msgstr ""
 "Si el programa que estás empaquetando requiere que cada usuario modifique "
 "los archivos de configuración del directorio <filename>/etc</filename>, hay "
 "dos formas para no marcarlos como archivos «conffiles» y que no sean "
-"manipulados por <command>dpkg</command>"
+"manipulados por <command>dpkg</command>:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -6505,7 +6503,7 @@ msgid ""
 "For information on the file format, see <citerefentry> "
 "<refentrytitle>install-docs</refentrytitle> <manvolnum>8</manvolnum> </"
 "citerefentry> and the Debian <systemitem role=\"package\">doc-base</"
-"systemitem> Manual at the local copy <filename>&doc-base;</filename> "
+"systemitem> manual at the local copy <filename>&doc-base;</filename> "
 "provided by the <systemitem role=\"package\">doc-base</systemitem> package."
 msgstr ""
 "Para más información sobre el formato del archivo véase <citerefentry> "
@@ -6963,7 +6961,8 @@ msgid "1"
 msgstr "1"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
-msgid "User command"
+#, fuzzy
+msgid "User commands"
 msgstr "Órdenes de usuario"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
@@ -7240,7 +7239,7 @@ msgstr ""
 msgid ""
 "To install <filename>docs/gentoo.1</filename> as a manpage for the "
 "<systemitem role=\"package\">gentoo</systemitem> package, create a "
-"<filename>gentoo.manpages</filename> file as follows."
+"<filename>gentoo.manpages</filename> file as follows:"
 msgstr ""
 "Para instalar el archivo <filename>docs/gentoo.1</filename> del paquete "
 "<systemitem role=\"package\">gentoo</systemitem> como su manual, construirás "
@@ -7270,7 +7269,7 @@ msgstr ""
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "Here's the default <filename>menu.ex</filename> file that <command>dh_make</"
-"command> created."
+"command> created:"
 msgstr ""
 "Éste es el fichero <filename>menu.ex</filename> que <command>dh_make</"
 "command> construye por omisión:"
@@ -7301,7 +7300,7 @@ msgstr ""
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
 "The current list of sections is in <ulink url=\"&menu-structure;\">The "
-"Debian Menu sub-policy 2.1 \"Preferred menu structure\"</ulink>.  There was "
+"Debian Menu sub-policy, 2.1 \"Preferred menu structure\"</ulink>.  There was "
 "a major reorganization of menu structure for <literal>squeeze</literal>."
 msgstr ""
 "La lista actual de secciones está en <ulink url=\"&menu-structure;\">The "
@@ -7650,7 +7649,6 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
-#| msgid "<literal>3.0 (native)</literal> for Debian native packages or"
 msgid "<literal>3.0 (native)</literal> for native Debian packages or"
 msgstr "<literal>3.0 (native)</literal> para paquetes nativos de Debian"
 
@@ -8050,15 +8048,11 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
-#| msgid "Targets of the <filename>rules</filename> file"
 msgid "make the <filename>.dsc</filename> file"
 msgstr "Objetivos del archivo <filename>rules</filename>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
-#| msgid ""
-#| "create and sign the upload <filename>.changes</filename> file, using "
-#| "<command>dpkg-genchanges</command> and <command>gpg</command>"
 msgid ""
 "make the <filename>.changes</filename> file, using <command>dpkg-genchanges</"
 "command>"
@@ -8120,12 +8114,6 @@ msgstr "<filename>gentoo_0.9.12-1.dsc</filename>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
-#| msgid ""
-#| "This is a summary of the contents of the source code.  The file is "
-#| "generated from your <filename>control</filename> file, and is used when "
-#| "unpacking the source with <citerefentry> <refentrytitle>dpkg-source</"
-#| "refentrytitle> <manvolnum>1</manvolnum> </citerefentry>.  This file is "
-#| "GPG signed, so that people can be sure that it's really yours."
 msgid ""
 "This is a summary of the contents of the source code.  The file is generated "
 "from your <filename>control</filename> file, and is used when unpacking the "
@@ -8200,13 +8188,6 @@ msgstr "<filename>gentoo_0.9.12-1_i386.changes</filename>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
-#| msgid ""
-#| "This file describes all the changes made in the current package revision; "
-#| "it is used by the Debian FTP archive maintenance programs to install the "
-#| "binary and source packages.  It is partly generated from the "
-#| "<filename>changelog</filename> file and the <filename>.dsc</filename> "
-#| "file.  This file is GPG signed, so that people can be sure that it's "
-#| "really yours."
 msgid ""
 "This file describes all the changes made in the current package revision; it "
 "is used by the Debian FTP archive maintenance programs to install the binary "
@@ -8421,11 +8402,6 @@ msgstr "La orden <command>debuild</command>"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
-#| msgid ""
-#| "You can automate the <command>dpkg-buildpackage</command> command's "
-#| "package build process further with the <command>debuild</command> "
-#| "command.  See <citerefentry> <refentrytitle>debuild</refentrytitle> "
-#| "<manvolnum>1</manvolnum> </citerefentry>."
 msgid ""
 "You can automate the build activity around executing the <command>dpkg-"
 "buildpackage</command> command package further with the <command>debuild</"
@@ -8447,9 +8423,6 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><screen>
 #, fuzzy, no-wrap
-#| msgid ""
-#| "DEBSIGN_KEYID=Your_GPG_keyID\n"
-#| "DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
 msgid ""
 "DEBUILD_DPKG_BUILDPACKAGE_OPTS=\"-us -uc -I -i\"\n"
 "DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
@@ -8556,9 +8529,6 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><screen>
 #, fuzzy, no-wrap
-#| msgid ""
-#| "AUTO_DEBSIGN=${AUTO_DEBSIGN:-yes}\n"
-#| "HOOKDIR=<replaceable>/var/cache/pbuilder/hooks</replaceable>\n"
 msgid ""
 "AUTO_DEBSIGN=${AUTO_DEBSIGN:-no}\n"
 "HOOKDIR=<replaceable>/var/cache/pbuilder/hooks</replaceable>\n"
@@ -8569,7 +8539,7 @@ msgstr ""
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "First let's initialize the local <systemitem role=\"package\">pbuilder</"
-"systemitem> <command>chroot</command> system as follows."
+"systemitem> <command>chroot</command> system as follows:"
 msgstr ""
 "Ahora puedes inicializar el sistema local <systemitem role=\"package"
 "\">pbuilder</systemitem> <command>chroot</command> por primera vez "
@@ -8587,7 +8557,7 @@ msgid ""
 "gz</filename>, <filename><replaceable>foo</replaceable>.debian.tar.gz</"
 "filename>, and <filename><replaceable>foo</replaceable>.dsc</filename> files "
 "exist to update the local <systemitem role=\"package\">pbuilder</systemitem> "
-"<command>chroot</command> system and to build binary packages in it."
+"<command>chroot</command> system and to build binary packages in it:"
 msgstr ""
 "Si ya dispones de un paquete fuente completo, ejecuta las siguientes órdenes "
 "en el directorio donde tengas los archivos "
@@ -8626,10 +8596,6 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><screen>
 #, fuzzy, no-wrap
-#| msgid ""
-#| "$ cd /var/cache/pbuilder/result/\n"
-#| "$ debsign <replaceable>foo_version</replaceable>.dsc\n"
-#| "$ debsign <replaceable>foo_version_arch</replaceable>.changes\n"
 msgid ""
 "$ cd /var/cache/pbuilder/result/\n"
 "$ debsign <replaceable>foo_version_arch</replaceable>.changes\n"
@@ -8642,7 +8608,7 @@ msgstr ""
 msgid ""
 "If you have an updated source tree but have not generated the matching "
 "source package, issue the following commands in the source directory where "
-"the <filename>debian</filename> directory exists, instead."
+"the <filename>debian</filename> directory exists, instead:"
 msgstr ""
 "Si en lugar de iniciar la construcción del paquete a partir de un paquete ya "
 "construido, dispones de un directorio con las fuentes originales "
@@ -8686,7 +8652,7 @@ msgid ""
 "The latest version of the <command>lintian</command> command can be executed "
 "in the <literal>chroot</literal> environment using the hook script "
 "<filename><replaceable>/var/cache/pbuilder/hooks</replaceable>/B90lintian</"
-"filename> configured as follows.  <placeholder type=\"footnote\" id=\"0\"/>"
+"filename> configured as follows: <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
 "La última versión de la orden <command>lintian</command> puede ejecutarse "
 "automáticamente en el entorno <literal>chroot</literal> utilizando el guión "
@@ -8843,19 +8809,19 @@ msgid ""
 "becoming quite popular for Debian Developers to manage Debian packages with "
 "the Git server on <ulink url=\"&debian-alioth;\">alioth.debian.org</ulink>. "
 "<placeholder type=\"footnote\" id=\"0\"/> This package offers many commands "
-"to <emphasis>automate</emphasis> packaging activities."
+"to <emphasis>automate</emphasis> packaging activities:"
 msgstr ""
 "El uso de <systemitem role=\"package\">git-buildpackage</systemitem> se está "
 "convirtiendo en muy popular para los desarrolladores de Debian para el "
 "mantenimiento de los paquetes Debian con el servidor Git en <ulink url="
 "\"&debian-alioth;\">alioth.debian.org</ulink>. <placeholder type=\"footnote"
 "\" id=\"0\"/> Este paquete ofrece muchas órdenes para <emphasis>automatizar</"
-"emphasis> el mantenimiento de paquetes. "
+"emphasis> el mantenimiento de paquetes:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<citerefentry> <refentrytitle>git-import-dsc</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry>: import previous Debian package to a Git "
+"manvolnum> </citerefentry>: import a previous Debian package to a Git "
 "repository."
 msgstr ""
 "<citerefentry> <refentrytitle>git-import-dsc</refentrytitle> <manvolnum>1</"
@@ -8865,7 +8831,7 @@ msgstr ""
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<citerefentry> <refentrytitle>git-import-orig</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry>: import new upstream tar to a Git repository."
+"manvolnum> </citerefentry>: import a new upstream tar to a Git repository."
 msgstr ""
 "<citerefentry> <refentrytitle>git-import-orig</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry>: importa el nuevo fichero «tar» del autor al "
@@ -8901,9 +8867,9 @@ msgstr ""
 "«Git» utilizando <command>pbuilder</command>/<command>cowbuilder</command>."
 
 #. type: Content of: <book><chapter><section><para>
-msgid "These commands use 3 branches to track packaging activity."
+msgid "These commands use 3 branches to track packaging activity:"
 msgstr ""
-"Estas órdenes utilizan 3 ramas en la gestión del proceso de empaquetado."
+"Estas órdenes utilizan 3 ramas en la gestión del proceso de empaquetado:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<literal>main</literal> for Debian package source tree."
@@ -9062,7 +9028,6 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
-#| msgid "<command>git-buildpackage</command> command and similars"
 msgid ""
 "<command>dpkg-buildpackage</command> = core of the package building tool"
 msgstr "La orden <command>git-buildpackage</command> y similares"
@@ -9093,7 +9058,7 @@ msgstr ""
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<command>git-pbuilder</command> = the easy-to-use commandline syntax for "
-"<command>pdebuild</command> (used by <command>gbp buildpackge</command>)"
+"<command>pdebuild</command> (used by <command>gbp buildpackage</command>)"
 msgstr ""
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
@@ -9102,13 +9067,13 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
-"<command>gbp buildpackge</command> = <command>pbuilder</command> + "
+"<command>gbp buildpackage</command> = <command>pbuilder</command> + "
 "<command>dpkg-buildpackage</command> + <command>gbp</command>"
 msgstr ""
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
-"Although use of higher level commands such as <command>gbp buildpackge</"
+"Although use of higher level commands such as <command>gbp buildpackage</"
 "command> and <command>pbuilder</command> ensures the perfect package "
 "building environment, it is essential to understand how lower level commands "
 "such as <filename>debian/rules</filename> and <command>dpkg-buildpackage</"
@@ -9239,7 +9204,7 @@ msgid ""
 "If the package makes use of these non-trivial maintainer scripts, be sure to "
 "test not only for install but also for remove, purge, and upgrade "
 "processes.  Many maintainer script bugs show up when packages are removed or "
-"purged.  Use the <command>dpkg</command> command as follows to test them."
+"purged.  Use the <command>dpkg</command> command as follows to test them:"
 msgstr ""
 "Si el paquete utiliza estos <emphasis>guiones del desarrollador</emphasis> "
 "modificados o no triviales, debes comprobar su funcionamiento en la "
@@ -9260,7 +9225,7 @@ msgstr ""
 "$ sudo dpkg -i gentoo_<replaceable>versión</replaceable>-<replaceable>revisión</replaceable>_<replaceable>i386</replaceable>.deb\n"
 
 #. type: Content of: <book><chapter><section><para>
-msgid "This should be done with sequences such as the following."
+msgid "This should be done with sequences such as the following:"
 msgstr "Sigue esta secuencia para la comprobación:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
@@ -9358,7 +9323,7 @@ msgstr "$ lintian -i -I --show-overrides gentoo_0.9.12-1_i386.changes\n"
 msgid ""
 "Of course, replace the filename with the name of the <filename>.changes</"
 "filename> file generated for your package.  The output of the "
-"<command>lintian</command> command uses the following flags."
+"<command>lintian</command> command uses the following flags:"
 msgstr ""
 "Por supuesto, cambia el nombre del fichero por el nombre del fichero "
 "<filename>.changes</filename> generado por tu paquete.  Los mensajes de "
@@ -9579,14 +9544,14 @@ msgstr "Nueva revisión Debian del paquete"
 msgid ""
 "Let's say that a bug report was filed against your package as "
 "<literal>#654321</literal>, and it describes a problem that you can solve.  "
-"Here's what you need to do to create a new Debian revision of the package."
+"Here's what you need to do to create a new Debian revision of the package:"
 msgstr ""
 "Supongamos que se ha creado un informe de fallo en tu paquete con el número "
 "<literal>#654321</literal>, y que describe un problema que puedes "
 "solucionar.  Para construir una nueva revisión del paquete, necesitas:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-msgid "If this is to be recorded as a new patch, do the following."
+msgid "If this is to be recorded as a new patch, do the following:"
 msgstr "Si debes aplicar una modificación nueva, ejecuta:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
@@ -9625,7 +9590,7 @@ msgstr ""
 "cambio realizado;"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-msgid "If this is to update an existing patch, do the following."
+msgid "If this is to update an existing patch, do the following:"
 msgstr "Si debes actualizar una modificación ya existente, ejecuta:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
@@ -9797,7 +9762,7 @@ msgstr ""
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "You can then inspect changes between the old and new upstream sources as "
-"follows, watching out for anything suspicious."
+"follows, watching out for anything suspicious:"
 msgstr ""
 "Puedes comprobar los cambios entre las fuentes originales de la nueva "
 "versión y de la anterior para detectar cualquier cambio sospechoso de "
@@ -9858,7 +9823,7 @@ msgid ""
 "<replaceable>path</replaceable>/<replaceable>to</replaceable>/"
 "<replaceable>foo</replaceable>_<replaceable>oldversion</replaceable>.debian."
 "tar.gz</literal> in the new extracted source.  <placeholder type=\"footnote"
-"\" id=\"0\"/> Of course, you need to do some obvious chores."
+"\" id=\"0\"/> Of course, you need to do some obvious chores:"
 msgstr ""
 "Si el paquete <systemitem role=\"package\"><replaceable>nombre_del_paquete</"
 "replaceable></systemitem> que examinas está correctamente empaquetado "
@@ -9872,7 +9837,7 @@ msgstr ""
 "<replaceable>nombre_del_paquete</replaceable>_<replaceable>versión_anterior</"
 "replaceable>.debian.tar.gz</literal> desde el directorio de las fuentes de "
 "la nueva versión <placeholder type=\"footnote\" id=\"0\"/>. A continuación "
-"deberás realizar algunos tareas obvias."
+"deberás realizar algunos tareas obvias:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -10208,13 +10173,14 @@ msgstr ""
 "<command>quilt</command> <placeholder type=\"footnote\" id=\"0\"/>."
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#, fuzzy
 msgid ""
 "If it was packaged using another patch system such as <systemitem role="
 "\"package\">dpatch</systemitem>, <systemitem role=\"package\">dbs</"
 "systemitem>, or <systemitem role=\"package\">cdbs</systemitem> with "
 "<literal>-p0</literal>, <literal>-p1</literal>, or <literal>-p2</literal>, "
-"convert it to the <systemitem role=\"package\">quilt</systemitem> command "
-"using <filename>deb3</filename> at <ulink url=\"&deb3;\"/>."
+"convert it to <systemitem role=\"package\">quilt</systemitem> using "
+"<filename>deb3</filename> at <ulink url=\"&deb3;\"/>."
 msgstr ""
 "Si el paquete se ha construido utilizando un sistema de parches distinto "
 "como <systemitem role=\"package\">dpatch</systemitem>, <systemitem role="
@@ -10226,12 +10192,6 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
-#| msgid ""
-#| "If it was packaged with the <command>dh</command> command with the "
-#| "<literal>--with quilt</literal> option or with the "
-#| "<command>dh_quilt_patch</command> and <command>dh_quilt_unpatch</command> "
-#| "commands, remove these and make it use the newer <literal>3.0 (native)</"
-#| "literal> source format."
 msgid ""
 "If it was packaged with the <command>dh</command> command with the "
 "<literal>--with quilt</literal> option or with the <command>dh_quilt_patch</"
@@ -10298,10 +10258,6 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><screen>
 #, fuzzy, no-wrap
-#| msgid ""
-#| "LC_ALL=C.UTF-8 w3m -o display_charset=UTF-8 \\\n"
-#| "        -cols 70 -dump -no-graph -T text/html \\\n"
-#| "        &lt; <replaceable>foo_in.html</replaceable> &gt; <replaceable>foo_out.txt</replaceable>\n"
 msgid ""
 "LC_ALL=en_US.UTF-8 w3m -o display_charset=UTF-8 \\\n"
 "        -cols 70 -dump -no-graph -T text/html \\\n"
@@ -10316,10 +10272,10 @@ msgid "Reminders for updating packages"
 msgstr "Recordatorio para actualizar paquetes"
 
 #. type: Content of: <book><chapter><section><para>
-msgid "Here are few reminders for updating packages."
+msgid "Here are few reminders for updating packages:"
 msgstr ""
 "A continuación se listan algunas cosas a tener en cuenta al actualizar "
-"paquetes."
+"paquetes:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -10630,10 +10586,11 @@ msgid "Skipped uploads"
 msgstr "Envíos discontinuados"
 
 #. type: Content of: <book><chapter><section><para>
+#, fuzzy
 msgid ""
 "If you created multiple entries in <filename>debian/changelog</filename> by "
 "skipping uploads, you must create a proper <filename>*_.changes</filename> "
-"file which includes all changes from the last upload.  This can be done by "
+"file which includes all changes since the last upload.  This can be done by "
 "specifying the <command>dpkg-buildpackage</command> option <literal>-v</"
 "literal> with the version, e.g., <literal><replaceable>1.2</replaceable></"
 "literal>."
@@ -10683,10 +10640,10 @@ msgstr "Bibliotecas compartidas"
 #. type: Content of: <book><appendix><section><para>
 msgid ""
 "Before packaging shared <ulink url=\"&library;\">libraries</ulink>, you "
-"should read the following primary references in detail."
+"should read the following primary references in detail:"
 msgstr ""
 "Antes de empaquetar <ulink url=\"&library;\">bibliotecas</ulink> "
-"compartidas, debes leer atentamente la siguientes referencias básicas."
+"compartidas, debes leer atentamente la siguientes referencias básicas:"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -10713,8 +10670,8 @@ msgstr ""
 "ulink>"
 
 #. type: Content of: <book><appendix><section><para>
-msgid "Here are some oversimplified hints for you to get started."
-msgstr "Éstos son algunos consejos básicos para empezar."
+msgid "Here are some oversimplified hints for you to get started:"
+msgstr "Éstos son algunos consejos básicos para empezar:"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -10954,7 +10911,7 @@ msgid ""
 "minimal version associated to each symbol for backward-compatible ABI "
 "changes under the same SONAME of the library for the same shared library "
 "package name.<placeholder type=\"footnote\" id=\"0\"/> You should read the "
-"following primary references in detail."
+"following primary references in detail:"
 msgstr ""
 "Cuando empaquetes bibliotecas compartidas, debes generar el fichero "
 "<filename>debian/<replaceable>nombre_del_paquete</replaceable>.symbols</"
@@ -10962,7 +10919,7 @@ msgstr ""
 "cambios ABI compatibles con versiones anteriores con el mismo "
 "«SONAME» (nombre lógico) de la biblioteca para el mismo nombre de paquete de "
 "biblioteca compartida.<placeholder type=\"footnote\" id=\"0\"/> Se aconseja "
-"la lectura de las siguientes referencias básicas. "
+"la lectura de las siguientes referencias básicas:"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
 msgid ""
@@ -11018,11 +10975,11 @@ msgstr ""
 msgid ""
 "Here is a rough example to create the <systemitem role=\"package\">libfoo1</"
 "systemitem> package to the upstream version <literal>1.3</literal> with the "
-"proper <filename>debian/libfoo1.symbols</filename> file."
+"proper <filename>debian/libfoo1.symbols</filename> file:"
 msgstr ""
 "Aquí hay un ejemplo para generar el paquete <systemitem role=\"package"
 "\">libfoo1</systemitem> de la versión <literal>1.3</literal> del autor "
-"original con el fichero <filename>debian/libfoo1.symbols</filename> adecuado."
+"original con el fichero <filename>debian/libfoo1.symbols</filename> adecuado:"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -11251,15 +11208,15 @@ msgid ""
 "cross-architecture installation of binary packages (particularly "
 "<literal>i386</literal>&lt;-&gt;<literal>amd64</literal>, but also other "
 "combinations) in <systemitem role=\"package\">dpkg</systemitem> and "
-"<systemitem role=\"package\">apt</systemitem>.  You should read the "
-"following references in detail."
+"<systemitem role=\"package\">apt</systemitem>. You should read the following "
+"references in detail:"
 msgstr ""
 "La función de varias arquitecturas introducida en Debian «wheezy» integra la "
 "instalación en más de una arquitectura de los paquetes binarios (en "
 "particular <literal>i386</literal>&lt;-&gt;<literal>amd64</literal>, pero "
 "también con otras combinaciones) en <systemitem role=\"package\">dpkg</"
 "systemitem> y <systemitem role=\"package\">apt</systemitem>. Se recomienda "
-"leer atentamente las siguientes referencias."
+"leer atentamente las siguientes referencias:"
 
 # Se ha optado por dejar los títulos en el idioma original sin traducir
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
@@ -11285,14 +11242,16 @@ msgstr ""
 "filename> y <filename>/lib64/</filename> ya no se utilizaran más."
 
 #. type: Content of: <book><appendix><section><para>
+#, fuzzy
 msgid ""
 "It uses the triplet such as <literal>i386-linux-gnu</literal> and "
 "<literal>x86_64-linux-gnu</literal> for the install path of shared "
-"libraries. The actual triplet path is dynamically set into <literal>"
-"$(DEB_HOST_MULTIARCH)</literal> value by <citerefentry> <refentrytitle>dpkg-"
-"architecture</refentrytitle> <manvolnum>1</manvolnum> </citerefentry> for "
-"each build.  For example, the path to install multiarch libraries are "
-"changed as follows.<placeholder type=\"footnote\" id=\"0\"/>"
+"libraries. The actual triplet path is dynamically set into the <literal>"
+"$(DEB_HOST_MULTIARCH)</literal> variable using the <citerefentry> "
+"<refentrytitle>dpkg-architecture</refentrytitle><manvolnum>1</manvolnum></"
+"citerefentry> command for each binary package build. For example, the path "
+"to install multiarch libraries are changed as follows:<placeholder type="
+"\"footnote\" id=\"0\"/>"
 msgstr ""
 "Se utilizan tripletes del tipo <literal>i386-linux-gnu</literal> y "
 "<literal>x86_64-linux-gnu</literal> para el directorio de instalación de "
@@ -11519,11 +11478,11 @@ msgstr "Construcción de un paquete de biblioteca compartida"
 msgid ""
 "You can build a Debian library package enabling the multiarch support using "
 "<citerefentry> <refentrytitle>dh</refentrytitle> <manvolnum>1</manvolnum> </"
-"citerefentry> as follows."
+"citerefentry> as follows:"
 msgstr ""
 "Puedes construir un paquete de biblioteca Debian con la opción multi-"
 "arquitectura activada utilizando <citerefentry> <refentrytitle>dh</"
-"refentrytitle> <manvolnum>1</manvolnum> </citerefentry> como sigue."
+"refentrytitle> <manvolnum>1</manvolnum> </citerefentry> como sigue:"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid "Update <filename>debian/control</filename>."
@@ -11675,7 +11634,6 @@ msgstr ""
 
 #. type: Content of: <book><appendix><section><title>
 #, fuzzy
-#| msgid "Initial native Debian package"
 msgid "Native Debian package"
 msgstr "Paquete nativo Debian inicial"
 
@@ -11736,18 +11694,20 @@ msgstr ""
 
 #. type: Content of: <book><appendix><section><para>
 #, fuzzy
-#| msgid ""
-#| "Normal Debian packages are non-native Debian packages made from upstream "
-#| "programs.  If you wish to create a non-native Debian package of an "
-#| "upstream source <filename>gentoo-0.9.12.tar.gz</filename>, you can create "
-#| "an initial non-native Debian package for it by issuing the "
-#| "<command>dh_make</command> command as follows."
 msgid ""
 "For example, if you have source files in <filename>~/mypackage-1.0</"
 "filename> without the <filename>debian/*</filename> files, you can create a "
 "native Debian package for it by issuing the <command>dh_make</command> "
-"command as follows."
+"command as follows:"
 msgstr ""
+"#-#-#-#-#  es.po (maint-guide 1.116)  #-#-#-#-#\n"
+"Los paquetes Debian normales son paquetes no nativos construidos a partir de "
+"los programas originales de los autores. Si deseas construir un paquete "
+"Debian no nativo a partir del código fuente original  "
+"<filename>gentoo-0.9.12.tar.gz</filename>, puedes construir un primer "
+"paquete de Debian no nativo ejecutando la orden <command>dh_make</command> "
+"como sigue:\n"
+"#-#-#-#-#  es.po (maint-guide 1.116)  #-#-#-#-#\n"
 "Los paquetes Debian normales son paquetes no nativos construidos a partir de "
 "los programas originales de los autores. Si deseas construir un paquete "
 "Debian no nativo a partir del código fuente original  "

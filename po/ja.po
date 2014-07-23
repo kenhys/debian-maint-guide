@@ -6,14 +6,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide r7640\n"
-"POT-Creation-Date: 2014-07-19 16:05+0900\n"
-"PO-Revision-Date: 2014-06-28 00:50+0900\n"
+"POT-Creation-Date: 2014-07-23 23:45+0900\n"
+"PO-Revision-Date: 2014-07-24 00:28+0900\n"
 "Last-Translator: Osamu Aoki <osamu@debian.org>\n"
 "Language-Team: Debian Japanese team <debian-doc@debian.or.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Generator: Poedit 1.5.4\n"
 
 #. type: Attribute 'lang' of: <book>
@@ -76,7 +77,7 @@ msgstr ""
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 msgid "This document was made using these two documents as examples:"
-msgstr "この文書は以下の二つの文書を参考にして書かれました。"
+msgstr "この文書は以下の二つの文書を参考にして書かれました:"
 
 #. type: Content of: <book><bookinfo><legalnotice><itemizedlist><listitem><para>
 msgid ""
@@ -215,10 +216,10 @@ msgstr "Debianにおける社会ダイナミクス"
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "Here are some observations of Debian's social dynamics, presented in the "
-"hope that it will prepare you for interactions with Debian."
+"hope that it will prepare you for interactions with Debian:"
 msgstr ""
 "あなたがDebian と関わる際の準備となることを望み、Debianの社会ダイナミクスの観"
-"察結果を記します。"
+"察結果を記します:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "We all are volunteers."
@@ -273,8 +274,8 @@ msgstr "あなたは変化に自らを適合させる必要があります。"
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "There are several types of people interacting around Debian with different "
-"roles."
-msgstr "Debian 界隈では異なる役割で色々なタイプの人が交流しています。"
+"roles:"
+msgstr "Debian 界隈では異なる役割で色々なタイプの人が交流しています:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -369,10 +370,10 @@ msgstr ""
 msgid ""
 "Since we focus only on technical aspects of packaging in this document, "
 "please refer to the following to learn how Debian functions and how you can "
-"get involved."
+"get involved:"
 msgstr ""
 "本書ではパッケージングの技術面にのみフォーカスするので、Debian が如何にして機"
-"能し、あなたが如何にすれば関与できるのかは以下を参照下さい。"
+"能し、あなたが如何にすれば関与できるのかは以下を参照下さい:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -462,7 +463,7 @@ msgid ""
 msgstr ""
 "パッケージの種類によっては、必要になるのはこれが全てかもしれません。ただ、す"
 "べてのパッケージのビルドに必須ではないにせよ、インストールしておくと便利だっ"
-"たり、パッケージによっては必要になったりするパッケージ群があります："
+"たり、パッケージによっては必要になったりするパッケージ群があります:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -778,7 +779,7 @@ msgid ""
 "The following is the <emphasis>very important</emphasis> documentation which "
 "you should read along with this document:"
 msgstr ""
-"以下は、この文書と合わせて読むべき<emphasis>とても重要な</emphasis>文書です。"
+"以下は、この文書と合わせて読むべき<emphasis>とても重要な</emphasis>文書です:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -824,7 +825,7 @@ msgid ""
 "The following is the <emphasis>important</emphasis> documentation which you "
 "should read along with this document:"
 msgstr ""
-"以下は、この文書と合わせて読むべき<emphasis>とても重要な</emphasis>文書です。"
+"以下は、この文書と合わせて読むべき<emphasis>とても重要な</emphasis>文書です:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -870,7 +871,7 @@ msgstr ""
 msgid ""
 "The following is an alternative tutorial documentation which you may read "
 "along with this document:"
-msgstr "以下は、この文書と合わせて読める同様の入門書です。"
+msgstr "以下は、この文書と合わせて読める同様の入門書です:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<ulink url=\"&debpkg-tutorial0;\">Debian Packaging Tutorial</ulink>"
@@ -883,8 +884,8 @@ msgstr "相談するには"
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "Before you decide to ask your question in some public place, please read the "
-"fine documentation."
-msgstr "公開の場で質問をすると決心する前に、良好な文書を読みましょう。"
+"fine documentation:"
+msgstr "公開の場で質問をすると決心する前に、良好な文書を読みましょう:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -949,10 +950,10 @@ msgstr ""
 msgid ""
 "If you still have questions about packaging that you couldn't find answers "
 "to in the available documentation and web resources, you can ask them "
-"interactively."
+"interactively:"
 msgstr ""
 "入手可能な文書やウェブのリソースからは答えを見つけられない疑問が残った場合に"
-"は、インタラクティブに疑問を聞く事が出来ます。"
+"は、インタラクティブに疑問を聞く事が出来ます:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -1064,11 +1065,11 @@ msgstr "Debian パッケージビルドのワークフロー"
 msgid ""
 "If you are making a Debian package with an upstream program, the typical "
 "workflow of Debian package building involves generating several specifically "
-"named files for each step as follows."
+"named files for each step as follows:"
 msgstr ""
 "アップストリームのプログラムを使って Debian パッケージを作成する場合、Debian "
 "パッケージビルドは以下の各ステップでいくつかの特定の命名をされたファイルを生"
-"成することからなります。"
+"成することからなります:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -1214,11 +1215,11 @@ msgstr "プログラムの選定"
 msgid ""
 "You have probably chosen the package you want to create.  The first thing "
 "you need to do is check if the package is in the distribution archive "
-"already by using the following."
+"already by using the following:"
 msgstr ""
 "おそらく、作成したいパッケージを選んだことと思います。まず最初にしなければな"
 "らないことは、ディストリビューションのアーカイブにそのパッケージがすでにある"
-"かどうかを以下を使って確認することです。"
+"かどうかを以下を使って確認することです:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "the <command>aptitude</command> command"
@@ -1262,8 +1263,8 @@ msgstr ""
 "\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para>
-msgid "There are several package ownership status resources."
-msgstr "パッケージの所有状態の情報源がいくつかあります。"
+msgid "There are several package ownership status resources:"
+msgstr "パッケージの所有状態の情報源がいくつかあります:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<ulink url=\"&wnpp-do;\">Work-Needing and Prospective Packages</ulink>"
@@ -1306,14 +1307,14 @@ msgid ""
 "archive is much larger than that of contributors with upload rights.  Thus, "
 "contributions to packages already in the archive are far more appreciated "
 "(and more likely to receive sponsorship) by other developers <placeholder "
-"type=\"footnote\" id=\"0\"/>.  You can contribute in various ways."
+"type=\"footnote\" id=\"0\"/>.  You can contribute in various ways:"
 msgstr ""
 "注釈ですが、Debian にはすでにほとんどの種類のプログラムが含まれていることと、"
 "Debian アーカイブにすでに含まれているパッケージの数はアップロード権限をもつ"
 "ユーザーの数よりもはるかに多いことに注意しておくのは重要です。従って、すでに"
 "アーカイブに含まれているパッケージへの作業は、他のデベロッパーからはるかに喜"
 "ばれ (よりスポンサーしてもらえる見込みがあり)ます<placeholder type=\"footnote"
-"\" id=\"0\"/>。貢献の仕方はいろいろあります。"
+"\" id=\"0\"/>。貢献の仕方はいろいろあります:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "taking over orphaned, yet actively used, packages"
@@ -1357,7 +1358,7 @@ msgid ""
 "proceed as follows:"
 msgstr ""
 "もしあなたの選んだプログラムがまだパッケージ化されていないもので、それを "
-"Debian に入れたいと決めたなら、以下のチェック項目について確認してください。"
+"Debian に入れたいと決めたなら、以下のチェック項目について確認してください:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -1591,7 +1592,7 @@ msgid ""
 msgstr ""
 "高度に複雑なパッケージをパッケージすることはそれほど難しいことではありません"
 "が、少々知識が必要です。それぞれの複雑な特徴には固有のガイダンスを探すべきで"
-"す。例えば、いくつかの言語にはそれぞれのサブポリシー文書があります。"
+"す。例えば、いくつかの言語にはそれぞれのサブポリシー文書があります:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<ulink url=\"&policy-perl;\">Perl policy</ulink>"
@@ -1627,7 +1628,7 @@ msgid ""
 "practice and experiment with all the steps of Debian packaging with simple "
 "packages while reading this tutorial.  A trivial upstream tarball "
 "<filename>hello-sh-1.0.tar.gz</filename> created as followings may offer a "
-"good starting point.<placeholder type=\"footnote\" id=\"0\"/>"
+"good starting point:<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
 "もう一つの古いラテンの諺にもあるように、<emphasis>Fabricando fit faber</"
 "emphasis> (習うより慣れろ)です。本入門書を読みながら単純なパッケージを用いて "
@@ -1768,7 +1769,7 @@ msgstr ""
 "してください。アンパックする際に問題に出会わないように、他の人々のシステム上"
 "で展開する際に、彼らが使っているツールがこの様な異常を無視したりしなかったり"
 "するので、警告メッセージがなくなるように確実にしましょう。あなたのシェルのコ"
-"マンドラインは、以下のように見えているでしょうか。"
+"マンドラインは、以下のように見えているでしょうか:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2193,11 +2194,11 @@ msgstr ""
 msgid ""
 "Version strings <placeholder type=\"footnote\" id=\"0\"/> can be compared "
 "using <citerefentry> <refentrytitle>dpkg</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry> as follows."
+"manvolnum> </citerefentry> as follows:"
 msgstr ""
 "バージョン文字列<placeholder type=\"footnote\" id=\"0\"/>は <citerefentry> "
 "<refentrytitle>dpkg</refentrytitle> <manvolnum>1</manvolnum> </citerefentry> "
-"コマンドを以下のように使うことで比較できます。"
+"コマンドを以下のように使うことで比較できます:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2227,10 +2228,10 @@ msgstr "英文字は ASCII コード順で比較されます。"
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "There are special rules for period (<literal>.</literal>), plus (<literal>+</"
-"literal>), and tilde (<literal>~</literal>) characters, as follows."
+"literal>), and tilde (<literal>~</literal>) characters, as follows:"
 msgstr ""
 "ピリオド (<literal>.</literal>) と、プラス (<literal>+</literal>) と 波線 "
-"(<literal>~</literal>) には以下のような特殊なルールがあります。"
+"(<literal>~</literal>) には以下のような特殊なルールがあります:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -2313,12 +2314,12 @@ msgid ""
 "programs.  If you wish to create a non-native Debian package of an upstream "
 "source <filename>gentoo-0.9.12.tar.gz</filename>, you can create an initial "
 "non-native Debian package for it by issuing the <command>dh_make</command> "
-"command as follows."
+"command as follows:"
 msgstr ""
 "標準的な Debian パッケージはアップストリームプログラムから作成されたノンネイ"
 "ティブ Debian パッケージです。アップストリームソース <filename>gentoo-0.9.12."
 "tar.gz</filename> からノンネイティブ Debian パッケージを作りたい場合、"
-"<command>dh_make</command> コマンドを以下のように実行すると作成できます。"
+"<command>dh_make</command> コマンドを以下のように実行すると作成できます:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2414,12 +2415,12 @@ msgid ""
 "This execution of <command>dh_make</command> creates a copy of the upstream "
 "tarball as <filename>gentoo_0.9.12.orig.tar.gz</filename> in the parent "
 "directory to accommodate the creation of the non-native Debian source "
-"package with the name <filename>debian.tar.gz</filename> later."
+"package with the name <filename>debian.tar.gz</filename> later:"
 msgstr ""
 "<command>dh_make</command> を実行した後、アップストリームの tarball のコピー"
 "を、親ディレクトリーに <filename>gentoo_0.9.12.orig.tar.gz</filename> として"
 "作成します。次に、それに伴ってノンネイティブ Debian ソースパッケージを "
-"<filename>debian.tar.gz</filename> として作成します。"
+"<filename>debian.tar.gz</filename> として作成します:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2440,7 +2441,7 @@ msgid ""
 "tar.gz</filename>:"
 msgstr ""
 "この <filename>gentoo_0.9.12.orig.tar.gz</filename> ファイル名がもっている 2 "
-"つの特徴に注意してください："
+"つの特徴に注意してください:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -2542,7 +2543,7 @@ msgid ""
 "<command>dquilt</command> for Debian packaging by adding the following lines "
 "to <filename>~/.bashrc</filename>.  The second line provides the same shell "
 "completion feature of the <command>quilt</command> command to the "
-"<command>dquilt</command> command."
+"<command>dquilt</command> command:"
 msgstr ""
 "<command>quilt</command> プログラムはアップストリームソースに対する Debian "
 "パッケージ向け修正を記録する、基本的な方法を提供します。Debian パッケージで使"
@@ -2550,7 +2551,7 @@ msgstr ""
 "<filename>~/.bashrc</filename> に追加し Debian パッケージ作成用のエリアス "
 "<command>dquilt</command> を作りましょう。第 2 行目は <command>quilt</"
 "command> コマンドのシェル入力完了機能と同様の機能を <command>dquilt</"
-"command> コマンドに与えます。"
+"command> コマンドに与えます:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2562,9 +2563,9 @@ msgstr ""
 "complete -F _quilt_completion $_quilt_complete_opt dquilt\n"
 
 #. type: Content of: <book><chapter><section><para>
-msgid "Then let's create <filename>~/.quiltrc-dpkg</filename> as follows."
+msgid "Then let's create <filename>~/.quiltrc-dpkg</filename> as follows:"
 msgstr ""
-"<filename>~/.quiltrc-dpkg</filename> ファイルを次のように作成しましょう。"
+"<filename>~/.quiltrc-dpkg</filename> ファイルを次のように作成しましょう:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2641,11 +2642,11 @@ msgstr ""
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "Let's fix this and record it with the <command>dquilt</command> command as "
-"<filename>fix-gentoo-target.patch</filename>.  <placeholder type=\"footnote"
-"\" id=\"0\"/>"
+"<filename>fix-gentoo-target.patch</filename>: <placeholder type=\"footnote\" "
+"id=\"0\"/>"
 msgstr ""
 "これを修正して、<command>dquilt</command> コマンドを使って <filename>fix-"
-"gentoo-target.patch</filename> として登録しましょう。<placeholder type="
+"gentoo-target.patch</filename> として登録しましょう: <placeholder type="
 "\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><screen>
@@ -2660,8 +2661,8 @@ msgstr ""
 "$ dquilt add Makefile\n"
 
 #. type: Content of: <book><chapter><section><para>
-msgid "You change the <filename>Makefile</filename> file as follows."
-msgstr "<filename>Makefile</filename> ファイルを次のように変更します。"
+msgid "You change the <filename>Makefile</filename> file as follows:"
+msgstr "<filename>Makefile</filename> ファイルを次のように変更します:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2681,11 +2682,11 @@ msgid ""
 "Ask <command>dquilt</command> to generate the patch to create "
 "<filename>debian/patches/fix-gentoo-target.patch</filename> and add its "
 "description following <ulink url=\"&dep3;\">DEP-3: Patch Tagging Guidelines</"
-"ulink>."
+"ulink>:"
 msgstr ""
 "パッチを更新して <filename>debian/patches/fix-gentoo-target.patch</filename> "
 "を作成するように <command>dquilt</command> に要求し、それから説明を <ulink "
-"url=\"&dep3;\">DEP-3: Patch Tagging Guidelines</ulink> に準拠して追記します。"
+"url=\"&dep3;\">DEP-3: Patch Tagging Guidelines</ulink> に準拠して追記します:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2745,12 +2746,12 @@ msgid ""
 "the Debian packaging system on the other can be transparently addressed by "
 "the <systemitem role=\"package\">debhelper</systemitem> package through the "
 "<command>dh_auto_configure</command> and <command>dh_auto_install</command> "
-"commands if the following conditions are met."
+"commands if the following conditions are met:"
 msgstr ""
 " 普通のプログラムインストールとDebian パッケージ作成というこれら二つの違いに"
 "は、<systemitem role=\"package\">debhelper</systemitem> パッケージの "
 "<command>dh_auto_configure</command> と <command>dh_auto_install</command> の"
-"コマンドを使うことで得に意識せずに対応できます。"
+"コマンドを使うことで得に意識せずに対応できます:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para><footnote><para>
 msgid ""
@@ -2919,7 +2920,7 @@ msgstr ""
 "ファイルが <filename>/usr/local</filename> 以下にインストールされるようになっ"
 "ていることがわかります。 上記説明ににあるように、そのディレクトリーヒエラル"
 "キーは Debian 上のローカルユーザー向けに予約されているので、これらのパスを以"
-"下のように変更してください："
+"下のように変更してください:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2976,7 +2977,7 @@ msgstr ""
 "filename> 変数を使っていないものもあります。このような場合、C のソースそのも"
 "のをいじって、指定された場所を使うように修正しなければなりません。でもどこを"
 "探し、何を確認すればよいのでしょうか? 以下のコマンドを実行すれば該当箇所を見"
-"つけることができます。"
+"つけることができます:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2998,7 +2999,7 @@ msgid ""
 msgstr ""
 "それらのファイルを編集し、該当行の <literal>usr/local/lib</literal> を "
 "<literal>usr/lib</literal> に置き換えてください。これは以下の様にすると自動可"
-"出来ます。"
+"出来ます:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -3015,7 +3016,7 @@ msgid ""
 "interactively as follows:"
 msgstr ""
 "こうする代わりに、各置換を確認したい場合は、これは以下のようにインタラクティ"
-"ブにできます。"
+"ブにできます:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -3044,7 +3045,7 @@ msgid ""
 "<literal>install</literal> target said:"
 msgstr ""
 "修正前は、<systemitem role=\"package\">gentoo</systemitem> の "
-"<literal>install</literal> ターゲットはこうなっています："
+"<literal>install</literal> ターゲットはこうなっています:"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -3108,7 +3109,7 @@ msgid ""
 "omit:"
 msgstr ""
 "ルールの最後には、アップストリームの作者が省略することの多い付加的な資料のイ"
-"ンストールなど、他の作業を追加することもできます。"
+"ンストールなど、他の作業を追加することもできます:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -3123,11 +3124,11 @@ msgstr ""
 msgid ""
 "Check carefully, and if everything is okay, ask <command>dquilt</command> to "
 "generate the patch to create <filename>debian/patches/install.patch</"
-"filename> and add its description."
+"filename> and add its description:"
 msgstr ""
 "しっかりチェックをして、何も問題がないようであれば、<command>dquilt</"
 "command> でパッチを更新して <filename>debian/patches/install.patch</"
-"filename> を作成し、パッチの説明を追記してください。"
+"filename> を作成し、パッチの説明を追記してください:"
 
 #. type: Content of: <book><chapter><section><para>
 msgid "Now you have a series of patches."
@@ -3220,14 +3221,14 @@ msgid ""
 "doesn't exist and its equivalent is provided by the <literal>foo2</literal> "
 "library on the Debian system, you can fix this build problem as "
 "<filename>debian/patches/foo2.patch</filename> by changing <literal>foo</"
-"literal> into <literal>foo2</literal>.<placeholder type=\"footnote\" id="
+"literal> into <literal>foo2</literal>:<placeholder type=\"footnote\" id="
 "\"0\"/>"
 msgstr ""
 " <literal>foo</literal> ライブラリーが存在しないためにあなたのプログラムがコ"
 "ンパイルしないで、<literal>foo2</literal> ライブラリーがその等価を Debian シ"
 "ステム上で提供する場合、<literal>foo</literal> を <literal>foo2</literal> に"
 "変更する <filename>debian/patches/foo2.patch</filename> としてこのビルド問題"
-"を解決できます。<placeholder type=\"footnote\" id=\"0\"/>"
+"を解決できます:<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -3303,7 +3304,7 @@ msgid ""
 "created for us:"
 msgstr ""
 "以下は、<command>dh_make</command> が生成した <filename>control</filename> "
-"ファイルの雛型です。"
+"ファイルの雛型です:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -3580,7 +3581,7 @@ msgid ""
 "To find out what packages your package needs to be built run the command:"
 msgstr ""
 "以下のコマンドを使えば、新規のパッケージをビルドするためにどのパッケージが必"
-"要かを調べることができます。"
+"要かを調べることができます:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -3673,11 +3674,11 @@ msgstr ""
 msgid ""
 "Line 10 describes the architectures the binary package can be compiled for.  "
 "This value is usually one of the following depending on the type of the "
-"binary package.  <placeholder type=\"footnote\" id=\"0\"/>"
+"binary package: <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
 "10 行目にはバイナリーパッケージがコンパイルされる対象のアーキテクチャーを記載"
 "します。この値はバイナリーパッケージのタイプによって通常以下の 2 つのどちらか"
-"です。<placeholder type=\"footnote\" id=\"0\"/>"
+"です: <placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<literal>Architecture: any</literal>"
@@ -3773,10 +3774,10 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
-"Here is a simplified description of package relationships.  <placeholder "
-"type=\"footnote\" id=\"0\"/>"
+"Here is a simplified description of package relationships: <placeholder type="
+"\"footnote\" id=\"0\"/>"
 msgstr ""
-"パッケージの依存関係を単純化し以下に説明します。 <placeholder type=\"footnote"
+"パッケージの依存関係を単純化し以下に説明します: <placeholder type=\"footnote"
 "\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
@@ -4107,7 +4108,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><para>
 msgid "Finally, here is the updated <filename>control</filename> file:"
-msgstr "以下が修正後の<filename>control</filename> ファイルです。"
+msgstr "以下が修正後の<filename>control</filename> ファイルです:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -4410,7 +4411,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><para>
 msgid "You will end up with something like this:"
-msgstr "最終的にこんなふうになります。"
+msgstr "最終的にこんなふうになります:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -4675,7 +4676,7 @@ msgid ""
 "command:"
 msgstr ""
 "最新の<command>dh_make</command>は<command>dh</command> コマンドでシンプルか"
-"つパワフルな<filename>rules</filename>ファイルを作ってくれます。"
+"つパワフルな<filename>rules</filename>ファイルを作ってくれます:"
 
 #. type: Content of: <book><chapter><section><section><screen>
 #, no-wrap
@@ -4831,7 +4832,7 @@ msgid ""
 "which in turn runs the following:"
 msgstr ""
 "<literal>debian/rules clean</literal> は <literal>dh clean</literal>を実行"
-"し、そしてそれは以下を実行します。"
+"し、そしてそれは以下を実行します:"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><screen>
 #, no-wrap
@@ -4850,7 +4851,7 @@ msgid ""
 "which in turn runs the following:"
 msgstr ""
 "<literal>debian/rules build</literal> は <literal>dh build</literal> を実行し"
-"ます。実行する順番は以下の通りです。"
+"ます。実行する順番は以下の通りです:"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><screen>
 #, no-wrap
@@ -5027,12 +5028,12 @@ msgid ""
 "from their names.  <placeholder type=\"footnote\" id=\"0\"/> There are a few "
 "notable ones that are worth giving (over)simplified explanations here "
 "assuming a typical build environment based on a <filename>Makefile</"
-"filename>.  <placeholder type=\"footnote\" id=\"1\"/>"
+"filename>: <placeholder type=\"footnote\" id=\"1\"/>"
 msgstr ""
 "<command>dh_*</command>は、名前からその機能がわかるようなものばかりです。"
 "<placeholder type=\"footnote\" id=\"0\"/>　ここでは、<filename>Makefile</"
 "filename>をもとに作られたビルド環境を前提にして、(超)簡単な説明を行う価値があ"
-"る特筆すべき項目いくつかについて述べます。<placeholder type=\"footnote\" id="
+"る特筆すべき項目いくつかについて述べます: <placeholder type=\"footnote\" id="
 "\"1\"/>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para><footnote><para>
@@ -5190,10 +5191,10 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><section><para>
 msgid ""
-"The <literal>dh $@</literal> command can be customized as follows.  "
+"The <literal>dh $@</literal> command can be customized as follows: "
 "<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-"<literal>dh $@</literal> コマンドは以下の方法でカスタマイズできます。"
+"<literal>dh $@</literal> コマンドは以下の方法でカスタマイズできます: "
 "<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para><footnote><para>
@@ -5547,14 +5548,14 @@ msgid ""
 "systemitem> package using Autotools, you can override the default <literal>--"
 "sysconfig=/etc</literal> argument given by the <command>dh_auto_configure</"
 "command> command to the <command>./configure</command> command by the "
-"following."
+"following:"
 msgstr ""
 "例えば、最近の Autotools を用いた <systemitem role=\"package\">gentoo</"
 "systemitem>パッケージに関して、その設定情報を通常の <filename>/etc</"
 "filename> ディレクトリーではなく、<filename>/etc/gentoo</filename> ディレクト"
 "リーに置きたい場合には、<command>dh_auto_configure</command> コマンドが "
 "<command>./configure</command> コマンドに与えるデフォルトの引数 <literal>--"
-"sysconfig=/etc</literal> を以下のようにしてオーバーライドできます。"
+"sysconfig=/etc</literal> を以下のようにしてオーバーライドできます:"
 
 #. type: Content of: <book><chapter><section><section><screen>
 #, no-wrap
@@ -5628,7 +5629,7 @@ msgid ""
 "<literal>packageclean</literal> target to clean it for the Debian package "
 "instead of using <literal>distclean</literal> or <literal>clean</literal> "
 "targets, you can create an <literal>override_dh_auto_clean</literal> target "
-"to enable thit."
+"to enable it."
 msgstr ""
 "もし、Debianパッケージのためにソースをクリーンするのに <systemitem role="
 "\"package\">gentoo</systemitem> のソースの <filename>Makefile</filename> が、"
@@ -5768,7 +5769,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><para>
 msgid "If you wish or need to activate any of these, please do the following:"
-msgstr "設定ファイルを有効にしたい際は、以下を実行して下さい。"
+msgstr "設定ファイルを有効にしたい際は、以下を実行して下さい:"
 
 #. type: Content of: <book><chapter><itemizedlist><listitem><para>
 msgid ""
@@ -5844,7 +5845,7 @@ msgstr ""
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "<command>dh_make</command> created a default one; this is what it looks like:"
-msgstr "以下は<command>dh_make</command>がデフォルトとして生成するものです。"
+msgstr "以下は<command>dh_make</command>がデフォルトとして生成するものです:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -5881,7 +5882,7 @@ msgid ""
 msgstr ""
 "<filename>compat</filename> ファイルは、<systemitem role=\"package"
 "\">debhelper</systemitem> の互換性レベルを規定します。現段階では、以下のよう"
-"に <systemitem role=\"package\">debhelper</systemitem> v9 に設定しましょう。"
+"に <systemitem role=\"package\">debhelper</systemitem> v9 に設定しましょう:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -5950,12 +5951,12 @@ msgid ""
 "If the program you're packaging requires every user to modify the "
 "configuration files in the <filename>/etc</filename> directory, there are "
 "two popular ways to arrange for them to not be conffiles, keeping "
-"<command>dpkg</command> quiet."
+"<command>dpkg</command> quiet:"
 msgstr ""
 "あなたのパッケージングするプログラムが、ユーザーに <filename>/etc</filename> "
 "ディレクトリーの中にある設定ファイルを編集することを要求する場合、"
 "<command>dpkg</command> を黙らせるために conffiles として登録しない良く使われ"
-"る方法が 2 つあります。"
+"る方法が 2 つあります:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -5995,7 +5996,7 @@ msgid ""
 msgstr ""
 "パッケージが正しく動作するために、定期的にあるタスクを実行する必要がある場合"
 "は、これらのファイルで設定します。毎時間、毎日、毎週、または指定した時間に定"
-"期的タスクを実行するように指定することができます。ファイル名は以下です。"
+"期的タスクを実行するように指定することができます。ファイル名は以下です:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -6174,7 +6175,7 @@ msgid ""
 "For information on the file format, see <citerefentry> "
 "<refentrytitle>install-docs</refentrytitle> <manvolnum>8</manvolnum> </"
 "citerefentry> and the Debian <systemitem role=\"package\">doc-base</"
-"systemitem> Manual at the local copy <filename>&doc-base;</filename> "
+"systemitem> manual at the local copy <filename>&doc-base;</filename> "
 "provided by the <systemitem role=\"package\">doc-base</systemitem> package."
 msgstr ""
 "このファイルの書式については<citerefentry> <refentrytitle>install-docs</"
@@ -6222,7 +6223,7 @@ msgid ""
 "also included:"
 msgstr ""
 "<systemitem role=\"package\">gentoo</systemitem> に関していくつか他のファイル"
-"が含まれます。"
+"が含まれます:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -6364,7 +6365,7 @@ msgstr ""
 "なく正しい場所にインストールされるとしても、<filename>rc*</filename> シンボ"
 "リックリンクの設定は必要です。そのためには、<filename>rules</filename> ファイ"
 "ルに以下を追加して、<command>dh_installinit</command> をオーバーライドしま"
-"しょう。"
+"しょう:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -6427,7 +6428,7 @@ msgstr ""
 "ス）、スペース、インストールするディレクトリー名（インストールディレクトリー"
 "を基点とした相対パス）という書式です。例えば、バイナリー <filename>src/"
 "<replaceable>bar</replaceable></filename> のインストールを忘れた場合などに、 "
-"<filename>install</filename> ファイルの項目は以下のように記述します。"
+"<filename>install</filename> ファイルの項目は以下のように記述します:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -6621,7 +6622,7 @@ msgid "1"
 msgstr "1"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
-msgid "User command"
+msgid "User commands"
 msgstr "ユーザーコマンド"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
@@ -6774,7 +6775,7 @@ msgid ""
 msgstr ""
 "もし、<command>nroff</command>よりSGMLのほうが好みであれば、"
 "<filename>manpage.sgml.ex</filename> のほうをひな型として使うこともできます。"
-"こちらの場合には、以下の手順が必要です。"
+"こちらの場合には、以下の手順が必要です:"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
 msgid "rename the file to something like <filename>gentoo.sgml</filename>."
@@ -6801,7 +6802,7 @@ msgid ""
 "<filename>rules</filename> file:"
 msgstr ""
 "<filename>rules</filename> ファイルに <literal>override_dh_auto_build</"
-"literal> ターゲットを追加します。"
+"literal> ターゲットを追加します:"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><screen>
 #, no-wrap
@@ -6824,7 +6825,7 @@ msgid ""
 "literal> template.  If you do this, you have to:"
 msgstr ""
 "SGMLよりもXMLが好みであれば、<literal>manpage.xml.ex</literal>をひな形として"
-"使うこともできます。こちらの場合には、以下の手順が必要です。"
+"使うこともできます。こちらの場合には、以下の手順が必要です:"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
 msgid ""
@@ -6896,11 +6897,11 @@ msgstr ""
 msgid ""
 "To install <filename>docs/gentoo.1</filename> as a manpage for the "
 "<systemitem role=\"package\">gentoo</systemitem> package, create a "
-"<filename>gentoo.manpages</filename> file as follows."
+"<filename>gentoo.manpages</filename> file as follows:"
 msgstr ""
 "<systemitem role=\"package\">gentoo</systemitem> パッケージのマニュアルページ"
 "として <filename>docs/gentoo.1</filename> をインストールするには、以下のよう"
-"に <filename>gentoo.manpages</filename> ファイルを作成します。"
+"に <filename>gentoo.manpages</filename> ファイルを作成します:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -6927,10 +6928,10 @@ msgstr ""
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "Here's the default <filename>menu.ex</filename> file that <command>dh_make</"
-"command> created."
+"command> created:"
 msgstr ""
 "以下が <command>dh_make</command> が生成したデフォルトの <filename>menu.ex</"
-"filename> ファイルです。"
+"filename> ファイルです:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -6958,7 +6959,7 @@ msgstr ""
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
 "The current list of sections is in <ulink url=\"&menu-structure;\">The "
-"Debian Menu sub-policy 2.1 \"Preferred menu structure\"</ulink>.  There was "
+"Debian Menu sub-policy, 2.1 \"Preferred menu structure\"</ulink>.  There was "
 "a major reorganization of menu structure for <literal>squeeze</literal>."
 msgstr ""
 "セクションに関する最新リストは <ulink url=\"&menu-structure;\">The Debian "
@@ -6995,7 +6996,7 @@ msgid ""
 "entry to this:"
 msgstr ""
 "それでは、ファイル名を<filename>menu</filename>に変更し、メニューの項目を以下"
-"のように変更しましょう。"
+"のように変更しましょう:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -7206,7 +7207,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><para>
 msgid "Here are its contents:"
-msgstr "いかが素の内容です:"
+msgstr "以下がその内容です:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -7293,7 +7294,7 @@ msgstr ""
 "の理想の書式を示すための行があります。 (完全なリストは、<citerefentry> "
 "<refentrytitle>dpkg-source</refentrytitle> <manvolnum>1</manvolnum> </"
 "citerefentry>を参照してください。)<literal>squeeze</literal>以降は、以下のど"
-"ちらかになっているべきです。"
+"ちらかになっているべきです:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<literal>3.0 (native)</literal> for native Debian packages or"
@@ -7570,7 +7571,7 @@ msgid ""
 msgstr ""
 "誰かが(あなた自身も含みます) <filename><replaceable>foo</replaceable>.patch</"
 "filename> というパッチを後から提供した際の、<literal>3.0 (quilt)</literal> "
-"ソースパッケージの変更はとてもシンプルです。"
+"ソースパッケージの変更はとてもシンプルです:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -7643,7 +7644,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><para>
 msgid "Then you issue the following command in the source directory:"
-msgstr "ソースディレクトリーで以下のコマンドを実行してください。"
+msgstr "ソースディレクトリーで以下のコマンドを実行してください:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -7656,7 +7657,7 @@ msgid ""
 "will:"
 msgstr ""
 "このコマンドはバイナリーパッケージとソースパッケージをビルドする作業をすべて"
-"行ってくれます。これには以下の作業が含まれます。"
+"行ってくれます。これには以下の作業が含まれます:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "clean the source tree (<literal>debian/rules clean</literal>)"
@@ -7722,7 +7723,7 @@ msgid ""
 "(<filename>~/gentoo</filename>) after building packages:"
 msgstr ""
 "ノンネイティブパッケージの場合、パッケージビルド後の親ディレクトリー "
-"(<filename>~/gentoo</filename>) に以下のファイルが生成されているはずです。"
+"(<filename>~/gentoo</filename>) に以下のファイルが生成されているはずです:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<filename>gentoo_0.9.12.orig.tar.gz</filename>"
@@ -7953,7 +7954,7 @@ msgid ""
 "another architecture.  It will:"
 msgstr ""
 "これは、別のアーキテクチャー上で、アーキテクチャー依存のバイナリーパッケージ"
-"を生成する作業をすべて行ってくれます。これには以下の作業が含まれます。"
+"を生成する作業をすべて行ってくれます。これには以下の作業が含まれます:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -8061,7 +8062,7 @@ msgid ""
 "simple as:"
 msgstr ""
 "以下のようにすれば一般ユーザーアカウントから、簡単にソースをクリーンしパッ"
-"ケージを再ビルドできます。"
+"ケージを再ビルドできます:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -8070,7 +8071,7 @@ msgstr "$ debuild\n"
 
 #. type: Content of: <book><chapter><section><para>
 msgid "You can clean the source tree as simply as:"
-msgstr "ソースツリーのクリーンも簡単です"
+msgstr "ソースツリーのクリーンも簡単です:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -8121,7 +8122,7 @@ msgid ""
 "package as follows:"
 msgstr ""
 "それでは、<systemitem role=\"package\">pbuilder</systemitem> をカスタマイズし"
-"てみましょう。"
+"てみましょう:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -8161,10 +8162,10 @@ msgstr ""
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "First let's initialize the local <systemitem role=\"package\">pbuilder</"
-"systemitem> <command>chroot</command> system as follows."
+"systemitem> <command>chroot</command> system as follows:"
 msgstr ""
-"それでは、初めてのローカル<systemitem role=\"package\">pbuilder</systemitem> "
-"<command>chroot</command> システムを初期化しましょう。"
+"それでは、ローカル<systemitem role=\"package\">pbuilder</systemitem> の "
+"<command>chroot</command> システムを以下のようにして初期化しましょう:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -8178,14 +8179,14 @@ msgid ""
 "gz</filename>, <filename><replaceable>foo</replaceable>.debian.tar.gz</"
 "filename>, and <filename><replaceable>foo</replaceable>.dsc</filename> files "
 "exist to update the local <systemitem role=\"package\">pbuilder</systemitem> "
-"<command>chroot</command> system and to build binary packages in it."
+"<command>chroot</command> system and to build binary packages in it:"
 msgstr ""
 "既に完全なソースパッケージがあれば、<filename><replaceable>foo</replaceable>."
 "orig.tar.gz</filename>ファイル、<filename><replaceable>foo</replaceable>."
 "debian.tar.gz</filename>ファイル、<filename><replaceable>foo</replaceable>."
 "dsc</filename>ファイルが存在するディレクトリーで、ローカルの <systemitem "
 "role=\"package\">pbuilder</systemitem> の <command>chroot</command>システムを"
-"アップデートし、バイナリーパッケージをその中でビルドしましょう。"
+"アップデートし、バイナリーパッケージをその中でビルドしましょう:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -8210,7 +8211,7 @@ msgid ""
 "changes</filename> file can be generated as:"
 msgstr ""
 "<filename>.dsc</filename> ファイルや <filename>.changes</filename> ファイルへ"
-"のGPG 署名は次のようにするとできます。"
+"のGPG 署名は次のようにするとできます:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -8225,11 +8226,11 @@ msgstr ""
 msgid ""
 "If you have an updated source tree but have not generated the matching "
 "source package, issue the following commands in the source directory where "
-"the <filename>debian</filename> directory exists, instead."
+"the <filename>debian</filename> directory exists, instead:"
 msgstr ""
 "更新されたソースツリーが既にあるが一致するソースパッケージを生成していない場"
 "合は、この代わりに、<filename>debian</filename> ディレクトリーが存在するディ"
-"レクトリーで、以下のコマンドを発行します。"
+"レクトリーで、以下のコマンドを発行します:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -8267,11 +8268,11 @@ msgid ""
 "The latest version of the <command>lintian</command> command can be executed "
 "in the <literal>chroot</literal> environment using the hook script "
 "<filename><replaceable>/var/cache/pbuilder/hooks</replaceable>/B90lintian</"
-"filename> configured as follows.  <placeholder type=\"footnote\" id=\"0\"/>"
+"filename> configured as follows: <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
 "最新の<command>lintian</command>コマンドは<literal>chroot</literal>環境から次"
 "のように設定されたフックスクリプト<filename><replaceable>/var/cache/pbuilder/"
-"hooks</replaceable>/B90lintian</filename>を使用して実行することができます。"
+"hooks</replaceable>/B90lintian</filename>を使用して実行することができます: "
 "<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><screen>
@@ -8395,7 +8396,7 @@ msgid ""
 "<systemitem role=\"package\">svn-buildpackage</systemitem>: helper programs "
 "to maintain Debian packages with Subversion."
 msgstr ""
-"<systemitem role=\"package\">svn-buildpackage</systemitem>:Debian パッケージ"
+"<systemitem role=\"package\">svn-buildpackage</systemitem>: Debian パッケージ"
 "を Subversion で管理するための支援プログラム群です。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
@@ -8421,7 +8422,7 @@ msgid ""
 "becoming quite popular for Debian Developers to manage Debian packages with "
 "the Git server on <ulink url=\"&debian-alioth;\">alioth.debian.org</ulink>. "
 "<placeholder type=\"footnote\" id=\"0\"/> This package offers many commands "
-"to <emphasis>automate</emphasis> packaging activities."
+"to <emphasis>automate</emphasis> packaging activities:"
 msgstr ""
 "Debian デベロッパーが <ulink url=\"&debian-alioth;\">alioth.debian.org</"
 "ulink> 上の Git サーバーを用い Debian パッケージを管理するのに <systemitem "
@@ -8432,7 +8433,7 @@ msgstr ""
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<citerefentry> <refentrytitle>git-import-dsc</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry>: import previous Debian package to a Git "
+"manvolnum> </citerefentry>: import a previous Debian package to a Git "
 "repository."
 msgstr ""
 "<citerefentry> <refentrytitle>git-import-dsc</refentrytitle> <manvolnum>1</"
@@ -8442,7 +8443,7 @@ msgstr ""
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<citerefentry> <refentrytitle>git-import-orig</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry>: import new upstream tar to a Git repository."
+"manvolnum> </citerefentry>: import a new upstream tar to a Git repository."
 msgstr ""
 "<citerefentry> <refentrytitle>git-import-orig</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry>: 新アップストリーム tar を Git レポジトリーにイン"
@@ -8479,9 +8480,9 @@ msgstr ""
 "ます。"
 
 #. type: Content of: <book><chapter><section><para>
-msgid "These commands use 3 branches to track packaging activity."
+msgid "These commands use 3 branches to track packaging activity:"
 msgstr ""
-"これらのコマンドはパッケージング活動を追跡する 3 つのブランチを使用します。"
+"これらのコマンドはパッケージング活動を追跡する 3 つのブランチを使用します:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<literal>main</literal> for Debian package source tree."
@@ -8597,7 +8598,7 @@ msgstr "$ fakeroot debian/rules binary\n"
 
 #. type: Content of: <book><chapter><section><para>
 msgid "Or simply do the following to see if it builds or not:"
-msgstr "また、以下の方法を使えば生成可能かどうかをチェックすることができます。"
+msgstr "また、以下の方法を使えば生成可能かどうかをチェックすることができます:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -8670,7 +8671,7 @@ msgstr "<command>cowbuilder</command> = <command>pbuilder</command> 実行の加
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<command>git-pbuilder</command> = the easy-to-use commandline syntax for "
-"<command>pdebuild</command> (used by <command>gbp buildpackge</command>)"
+"<command>pdebuild</command> (used by <command>gbp buildpackage</command>)"
 msgstr ""
 "<command>git-pbuilder</command> = the easy-to-use commandline syntax for "
 "<command>pdebuild</command> の使いやすいコマンドラインシンタックス "
@@ -8682,7 +8683,7 @@ msgstr "<command>gbp</command> = Debian ソースを git レポ下で管理"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
-"<command>gbp buildpackge</command> = <command>pbuilder</command> + "
+"<command>gbp buildpackage</command> = <command>pbuilder</command> + "
 "<command>dpkg-buildpackage</command> + <command>gbp</command>"
 msgstr ""
 "<command>gbp buildpackge</command> = <command>pbuilder</command> + "
@@ -8690,7 +8691,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
-"Although use of higher level commands such as <command>gbp buildpackge</"
+"Although use of higher level commands such as <command>gbp buildpackage</"
 "command> and <command>pbuilder</command> ensures the perfect package "
 "building environment, it is essential to understand how lower level commands "
 "such as <filename>debian/rules</filename> and <command>dpkg-buildpackage</"
@@ -8823,13 +8824,13 @@ msgid ""
 "If the package makes use of these non-trivial maintainer scripts, be sure to "
 "test not only for install but also for remove, purge, and upgrade "
 "processes.  Many maintainer script bugs show up when packages are removed or "
-"purged.  Use the <command>dpkg</command> command as follows to test them."
+"purged.  Use the <command>dpkg</command> command as follows to test them:"
 msgstr ""
 "パッケージがこれらの重要なメンテナースクリプトを使用するならば、インストール"
 "だけではなく、削除、完全削除 (purge)、そしてアップグレードについても確実にテ"
 "ストしましょう。多くのメンテナースクリプトのバグは削除もしくは完全削除の場合"
 "に発生します。これらのテストのためには、以下の様に <command>dpkg</command> コ"
-"マンドを実行します。"
+"マンドを実行します:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -8843,8 +8844,8 @@ msgstr ""
 "$ sudo dpkg -i gentoo_<replaceable>version</replaceable>-<replaceable>revision</replaceable>_<replaceable>i386</replaceable>.deb\n"
 
 #. type: Content of: <book><chapter><section><para>
-msgid "This should be done with sequences such as the following."
-msgstr "以下のような順番で実行すべきでしょう。"
+msgid "This should be done with sequences such as the following:"
+msgstr "以下のような順番で実行すべきでしょう:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "install the previous version (if needed)."
@@ -8940,11 +8941,11 @@ msgstr "$ lintian -i -I --show-overrides gentoo_0.9.12-1_i386.changes\n"
 msgid ""
 "Of course, replace the filename with the name of the <filename>.changes</"
 "filename> file generated for your package.  The output of the "
-"<command>lintian</command> command uses the following flags."
+"<command>lintian</command> command uses the following flags:"
 msgstr ""
 "もちろん、<filename>.changes</filename> のファイル名はあなたが作成したパッ"
 "ケージに置き換えて下さい。<command>lintian</command> コマンドの出力は以下のよ"
-"うにマークされています。"
+"うにマークされています:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -9154,16 +9155,16 @@ msgstr "Debian リビジョンの更新"
 msgid ""
 "Let's say that a bug report was filed against your package as "
 "<literal>#654321</literal>, and it describes a problem that you can solve.  "
-"Here's what you need to do to create a new Debian revision of the package."
+"Here's what you need to do to create a new Debian revision of the package:"
 msgstr ""
 "例えば仮に、<literal>#654321</literal> という番号のバグレポートがあなたのパッ"
 "ケージ に対してファイルされ、解決可能な問題が記述されていたとしましょう。 "
 "パッケージの新しい Debian リビジョンを作成するには、以下を実行する 必要があり"
-"ます。"
+"ます:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-msgid "If this is to be recorded as a new patch, do the following."
-msgstr "もしこれが新規のパッチとして記録される場合には、以下のようにします。"
+msgid "If this is to be recorded as a new patch, do the following:"
+msgstr "もしこれが新規のパッチとして記録される場合には、以下のようにします:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -9198,8 +9199,8 @@ msgid "<literal>dquilt header -e</literal> to add its description;"
 msgstr "<literal>dquilt header -e</literal> としてその内容記述を追加します。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-msgid "If this is to update an existing patch, do the following."
-msgstr "もし既存のパッチをアップデートする場合には、以下のようにします。"
+msgid "If this is to update an existing patch, do the following:"
+msgstr "もし既存のパッチをアップデートする場合には、以下のようにします:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -9360,10 +9361,10 @@ msgstr ""
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "You can then inspect changes between the old and new upstream sources as "
-"follows, watching out for anything suspicious."
+"follows, watching out for anything suspicious:"
 msgstr ""
 "以下のようにすれば何かおかしな事が無いかに注意を払いつつ新旧のアップストリー"
-"ムソース間の変更検査ができます。"
+"ムソース間の変更検査ができます:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -9419,7 +9420,7 @@ msgid ""
 "<replaceable>path</replaceable>/<replaceable>to</replaceable>/"
 "<replaceable>foo</replaceable>_<replaceable>oldversion</replaceable>.debian."
 "tar.gz</literal> in the new extracted source.  <placeholder type=\"footnote"
-"\" id=\"0\"/> Of course, you need to do some obvious chores."
+"\" id=\"0\"/> Of course, you need to do some obvious chores:"
 msgstr ""
 "もし <systemitem role=\"package\"><replaceable>foo</replaceable></"
 "systemitem> パッケージが新規の <literal>3.0 (native)</literal> や "
@@ -9430,7 +9431,7 @@ msgstr ""
 "replaceable>/<replaceable>to</replaceable>/<replaceable>foo</"
 "replaceable>_<replaceable>oldversion</replaceable>.debian.tar.gz</literal> を"
 "実行すれば出来ます。<placeholder type=\"footnote\" id=\"0\"/> もちろん当然す"
-"るべき細々としたことをする必要はあります。"
+"るべき細々としたことをする必要はあります:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -9760,8 +9761,8 @@ msgid ""
 "\"package\">dpatch</systemitem>, <systemitem role=\"package\">dbs</"
 "systemitem>, or <systemitem role=\"package\">cdbs</systemitem> with "
 "<literal>-p0</literal>, <literal>-p1</literal>, or <literal>-p2</literal>, "
-"convert it to the <systemitem role=\"package\">quilt</systemitem> command "
-"using <filename>deb3</filename> at <ulink url=\"&deb3;\"/>."
+"convert it to <systemitem role=\"package\">quilt</systemitem> using "
+"<filename>deb3</filename> at <ulink url=\"&deb3;\"/>."
 msgstr ""
 "<literal>-p0</literal> や <literal>-p1</literal> や <literal>-p2</literal> を"
 "使う <systemitem role=\"package\">dpatch</systemitem> や <systemitem role="
@@ -9850,8 +9851,8 @@ msgid "Reminders for updating packages"
 msgstr "パッケージをアップグレードする際の注意点"
 
 #. type: Content of: <book><chapter><section><para>
-msgid "Here are few reminders for updating packages."
-msgstr "パッケージをアップグレードする際の注意点は以下です。"
+msgid "Here are few reminders for updating packages:"
+msgstr "パッケージをアップグレードする際の注意点は以下です:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -10022,7 +10023,7 @@ msgid ""
 "While connected to the Internet, you can upload your package as follows:"
 msgstr ""
 "インターネットにつながった状態で、以下のようにすればあなたのパッケージをアッ"
-"プロード出来ます。"
+"プロード出来ます:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -10154,7 +10155,7 @@ msgstr "スキップされたアップロード"
 msgid ""
 "If you created multiple entries in <filename>debian/changelog</filename> by "
 "skipping uploads, you must create a proper <filename>*_.changes</filename> "
-"file which includes all changes from the last upload.  This can be done by "
+"file which includes all changes since the last upload.  This can be done by "
 "specifying the <command>dpkg-buildpackage</command> option <literal>-v</"
 "literal> with the version, e.g., <literal><replaceable>1.2</replaceable></"
 "literal>."
@@ -10201,10 +10202,10 @@ msgstr "共有ライブラリー"
 #. type: Content of: <book><appendix><section><para>
 msgid ""
 "Before packaging shared <ulink url=\"&library;\">libraries</ulink>, you "
-"should read the following primary references in detail."
+"should read the following primary references in detail:"
 msgstr ""
 "共有 <ulink url=\"&library;\">ライブラリー</ulink> をパッケージングする前に、"
-"以下の 一次レファレンスを詳細に読むべきです。"
+"以下の 一次レファレンスを詳細に読むべきです:"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -10231,8 +10232,8 @@ msgstr ""
 "ulink>"
 
 #. type: Content of: <book><appendix><section><para>
-msgid "Here are some oversimplified hints for you to get started."
-msgstr "以下はあなたが手を付け始めるための少々簡略化しすぎたヒントです。"
+msgid "Here are some oversimplified hints for you to get started:"
+msgstr "以下はあなたが手を付け始めるための少々簡略化しすぎたヒントです:"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -10465,14 +10466,14 @@ msgid ""
 "minimal version associated to each symbol for backward-compatible ABI "
 "changes under the same SONAME of the library for the same shared library "
 "package name.<placeholder type=\"footnote\" id=\"0\"/> You should read the "
-"following primary references in detail."
+"following primary references in detail:"
 msgstr ""
 "共有ライブラリーをパッケージする際には、同一共有ライブラリーパッケージ名のラ"
 "イブラリーの同一 SONAME の下での後方互換性のある変更に関して、各シンボルと関"
 "連付けられる最小のバージョンが記された <filename>debian/"
 "<replaceable>package</replaceable>.symbols</filename> ファイルを作成すべきで"
 "す。<placeholder type=\"footnote\" id=\"0\"/> 以下の一次的レファレンスを詳細"
-"に読むべきです。"
+"に読むべきです:"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
 msgid ""
@@ -10528,11 +10529,11 @@ msgstr ""
 msgid ""
 "Here is a rough example to create the <systemitem role=\"package\">libfoo1</"
 "systemitem> package to the upstream version <literal>1.3</literal> with the "
-"proper <filename>debian/libfoo1.symbols</filename> file."
+"proper <filename>debian/libfoo1.symbols</filename> file:"
 msgstr ""
 "過去バージョン <literal>1.3</literal> のアップストリームバージョンから適切な "
 "<filename>debian/libfoo1.symbols</filename> ファイルを用いて <systemitem "
-"role=\"package\">libfoo1</systemitem> パッケージを作成する概略例は以下です。"
+"role=\"package\">libfoo1</systemitem> パッケージを作成する概略例は以下です:"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -10757,14 +10758,14 @@ msgid ""
 "cross-architecture installation of binary packages (particularly "
 "<literal>i386</literal>&lt;-&gt;<literal>amd64</literal>, but also other "
 "combinations) in <systemitem role=\"package\">dpkg</systemitem> and "
-"<systemitem role=\"package\">apt</systemitem>.  You should read the "
-"following references in detail."
+"<systemitem role=\"package\">apt</systemitem>. You should read the following "
+"references in detail:"
 msgstr ""
 "Debian wheezy で導入されたマルチアーチ機能は <systemitem role=\"package"
 "\">dpkg</systemitem> と <systemitem role=\"package\">apt</systemitem> の中で"
 "のバイナリーパッケージのアーキテクチャー間サポート (他の組み合わせもあります"
 "が、特に<literal>i386</literal>&lt;-&gt;<literal>amd64</literal>) を統合しま"
-"す。 以下のレファレンスを詳細に読んで下さい。"
+"す。 以下のレファレンスを詳細に読んで下さい:"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -10793,11 +10794,12 @@ msgstr ""
 msgid ""
 "It uses the triplet such as <literal>i386-linux-gnu</literal> and "
 "<literal>x86_64-linux-gnu</literal> for the install path of shared "
-"libraries. The actual triplet path is dynamically set into <literal>"
-"$(DEB_HOST_MULTIARCH)</literal> value by <citerefentry> <refentrytitle>dpkg-"
-"architecture</refentrytitle> <manvolnum>1</manvolnum> </citerefentry> for "
-"each build.  For example, the path to install multiarch libraries are "
-"changed as follows.<placeholder type=\"footnote\" id=\"0\"/>"
+"libraries. The actual triplet path is dynamically set into the <literal>"
+"$(DEB_HOST_MULTIARCH)</literal> variable using the <citerefentry> "
+"<refentrytitle>dpkg-architecture</refentrytitle><manvolnum>1</manvolnum></"
+"citerefentry> command for each binary package build. For example, the path "
+"to install multiarch libraries are changed as follows:<placeholder type="
+"\"footnote\" id=\"0\"/>"
 msgstr ""
 "マルチアーチは共有ライブラリーのインストールパスに <literal>i386-linux-gnu</"
 "literal> や <literal>x86_64-linux-gnu</literal> 等のトリプレットを使います。"
@@ -10805,7 +10807,7 @@ msgstr ""
 "architecture</refentrytitle> <manvolnum>1</manvolnum> </citerefentry> によっ"
 "て動的に <literal>$(DEB_HOST_MULTIARCH)</literal> 値として設定されます。例え"
 "ば、マルチアーチライブラリーをインストールするパスは以下のように変更されま"
-"す。<placeholder type=\"footnote\" id=\"0\"/>"
+"す: <placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
 msgid "Old path"
@@ -11015,11 +11017,11 @@ msgstr "共有ライブラリーパッケージのビルド"
 msgid ""
 "You can build a Debian library package enabling the multiarch support using "
 "<citerefentry> <refentrytitle>dh</refentrytitle> <manvolnum>1</manvolnum> </"
-"citerefentry> as follows."
+"citerefentry> as follows:"
 msgstr ""
 "<citerefentry> <refentrytitle>dh</refentrytitle> <manvolnum>1</manvolnum> </"
 "citerefentry> を以下のように使えばマルチアーチをサポートするようにして "
-"Debian のライブラリーパッケージをビルドできます。"
+"Debian のライブラリーパッケージをビルドできます:"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid "Update <filename>debian/control</filename>."
@@ -11235,12 +11237,12 @@ msgid ""
 "For example, if you have source files in <filename>~/mypackage-1.0</"
 "filename> without the <filename>debian/*</filename> files, you can create a "
 "native Debian package for it by issuing the <command>dh_make</command> "
-"command as follows."
+"command as follows:"
 msgstr ""
 "例えば <filename>debian/*</filename> ファイルを含まない <filename>~/"
 "mypackage-1.0</filename> ソースファイルがあれば、以下のように  "
 "<command>dh_make</command> コマンドを用いてネイティブ Debian パッケージが作れ"
-"ます。"
+"ます:"
 
 #. type: Content of: <book><appendix><section><screen>
 #, no-wrap

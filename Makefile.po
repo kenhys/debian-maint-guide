@@ -13,5 +13,6 @@ LANGPO	:=	ca de es fr it ja ru zh-cn zh-tw
 merge: $(addprefix po/, $(addsuffix .po, $(LANGPO)))
 
 po/%.po: po1/%.po po2/%.po
-	msgcat -u --use-first po1/$*.po po2/$*.po >po/$*.po
+	msgcat po1/$*.po po2/$*.po |\
+	msguniq --use-first >po/$*.po
 
