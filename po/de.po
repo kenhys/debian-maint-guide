@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: maint-guide 1.2.32\n"
 "Report-Msgid-Bugs-To: Osamu Aoki <osamu@debian.org>\n"
 "POT-Creation-Date: 2014-07-24 21:12+0900\n"
-"PO-Revision-Date: 2014-06-29 18:43+0200\n"
+"PO-Revision-Date: 2014-07-24 20:19+0200\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
@@ -184,10 +184,7 @@ msgstr ""
 "System funktioniert, muss der Betreuer sowohl technisch kompetent sein als "
 "auch fleißig und sorgfältig arbeiten."
 
-# #-#-#-#-#  de.po (maint-guide 1.2.32)  #-#-#-#-#
 # FIXME: Falsche Anführungszeichen im helpme-Link
-# #-#-#-#-#  de.po (maint-guide 1.2.32)  #-#-#-#-#
-# FIMXE: Falsche Anführungszeichen im helpme-Link
 #. type: Content of: <book><chapter><para>
 msgid ""
 "If you need some help on packaging, please read <xref linkend=\"helpme\"/>."
@@ -1315,19 +1312,18 @@ msgstr ""
 "Adoption« (<emphasis role=\"strong\">RFA</emphasis>) geschrieben hat. "
 "<placeholder type=\"footnote\" id=\"0\"/>"
 
+# FIXME: Check Doppelpunkt
 #. type: Content of: <book><chapter><section><para>
 msgid "There are several package ownership status resources:"
 msgstr "Es gibt mehrere Ressourcen zur Paketeigentümerschaft"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "The <command>wnpp-alert</command> command from the <systemitem role=\"package"
 "\">devscripts</systemitem> package"
 msgstr ""
-"Lesen Sie <ulink url=\"&uploadqueue-readme;\"/>. Alternativ können Sie den "
-"Befehl <command>dcut</command> aus dem Paket <systemitem role=\"package"
-"\">dput</systemitem> verwenden."
+"Der Befehl <command>wnpp-alert</command> aus dem Paket <systemitem "
+"role=\"package \">devscripts</systemitem>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<ulink url=\"&wnpp-do;\">Work-Needing and Prospective Packages</ulink>"
@@ -3494,7 +3490,6 @@ msgstr ""
 "Kapitel 2.4 »Sections«</ulink> und <ulink url=\"&sections-unstable;\">Liste "
 "der Abschnitte in <literal>sid</literal></ulink>."
 
-# FIXME email → e-mail
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "As you may have noticed, the Debian archive is divided into multiple areas: "
@@ -5381,7 +5376,7 @@ msgid ""
 "The <literal>dh $@</literal> command can be customized as follows: "
 "<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-"Der Befehl »<literal>dh $@</literal>« kann wie folgt angepasst werden_ "
+"Der Befehl »<literal>dh $@</literal>« kann wie folgt angepasst werden: "
 "<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para><footnote><para>
@@ -8990,7 +8985,7 @@ msgid ""
 "<command>gbp buildpackage</command> = <command>pbuilder</command> + "
 "<command>dpkg-buildpackage</command> + <command>gbp</command>"
 msgstr ""
-"<command>gbp buildpackge</command> = <command>pbuilder</command> + "
+"<command>gbp buildpackage</command> = <command>pbuilder</command> + "
 "<command>dpkg-buildpackage</command> + <command>gbp</command>"
 
 #. type: Content of: <book><chapter><section><para>
@@ -10555,6 +10550,10 @@ msgid ""
 "chapter.  The newer <command>debmake</command> command should address these "
 "topics better."
 msgstr ""
+"Es könnte sein, dass Sie die durch den Befehl <command>dh_make</command> "
+"erstellten Paketierungsvorlagendateien manuell bearbeiten müssen, um Punkte "
+"aus diesem Kapitel zu berücksichtigen. Der neuere Befehl "
+"<command>debmake</command> sollte diese Punkte besser berücksichtigen."
 
 #. type: Content of: <book><appendix><section><title>
 msgid "Shared libraries"
@@ -11249,9 +11248,6 @@ msgstr ""
 "eine in einer interpretierten Sprache geschriebene Werkzeugquelle "
 "<filename><replaceable>baz</replaceable>-1.tar.gz</filename> "
 
-# #-#-#-#-#  de.po (maint-guide 1.2.32)  #-#-#-#-#
-# FIXME: Sometimes colons?
-# #-#-#-#-#  de.po (maint-guide 1.2.32)  #-#-#-#-#
 # FIXME: Somtimes colons?
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
 msgid "Package"
@@ -11259,12 +11255,11 @@ msgstr "Paket"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
 msgid "Architecture:"
-msgstr "Architektur:"
+msgstr "Architecture:"
 
-# FIXME: Multi-Arch → Multiarch
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
 msgid "Multi-Arch:"
-msgstr "Multiarch:"
+msgstr "Multi-Arch:"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
 msgid "Package content"
