@@ -99,6 +99,9 @@ There are several package ownership status resources:
 </para>
 <itemizedlist>
 <listitem>
+<para>The <command>wnpp-alert</command> command from the <systemitem role="package">devscripts</systemitem> package</para>
+</listitem>
+<listitem>
 <para> <ulink url="&wnpp-do;">Work-Needing and Prospective Packages</ulink> </para>
 </listitem>
 <listitem>
