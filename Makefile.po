@@ -12,6 +12,7 @@ LANGPO	:=	ca de es fr it ja ru zh-cn zh-tw
 #######################################################################
 merge: $(addprefix po/, $(addsuffix .po, $(LANGPO)))
 
+# po1 has priority over po2
 po/%.po: po1/%.po po2/%.po
 	msgcat po1/$*.po po2/$*.po |\
 	msguniq --use-first >po/$*.po

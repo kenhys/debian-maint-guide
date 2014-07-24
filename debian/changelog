@@ -2,6 +2,7 @@ maint-guide (1.2.34) UNRELEASED; urgency=medium
 
   * Mention wnpp-alert. Closes: #700310
   * Style fix by Helge Kreutzmann. Closes: #753319
+  * Update translation: fr, jp. Closes: #755872
 
  -- Osamu Aoki <osamu@debian.org>  Thu, 24 Jul 2014 20:38:50 +0900
 
