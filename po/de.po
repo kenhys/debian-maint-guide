@@ -1322,8 +1322,8 @@ msgid ""
 "The <command>wnpp-alert</command> command from the <systemitem role=\"package"
 "\">devscripts</systemitem> package"
 msgstr ""
-"Der Befehl <command>wnpp-alert</command> aus dem Paket <systemitem "
-"role=\"package \">devscripts</systemitem>"
+"Der Befehl <command>wnpp-alert</command> aus dem Paket <systemitem role="
+"\"package \">devscripts</systemitem>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<ulink url=\"&wnpp-do;\">Work-Needing and Prospective Packages</ulink>"
@@ -10552,8 +10552,8 @@ msgid ""
 msgstr ""
 "Es könnte sein, dass Sie die durch den Befehl <command>dh_make</command> "
 "erstellten Paketierungsvorlagendateien manuell bearbeiten müssen, um Punkte "
-"aus diesem Kapitel zu berücksichtigen. Der neuere Befehl "
-"<command>debmake</command> sollte diese Punkte besser berücksichtigen."
+"aus diesem Kapitel zu berücksichtigen. Der neuere Befehl <command>debmake</"
+"command> sollte diese Punkte besser berücksichtigen."
 
 #. type: Content of: <book><appendix><section><title>
 msgid "Shared libraries"
