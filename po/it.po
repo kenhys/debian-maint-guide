@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-07-24 21:12+0900\n"
-"PO-Revision-Date: 2014-06-30 11:39+0200\n"
+"PO-Revision-Date: 2014-08-01 19:42+0200\n"
 "Last-Translator: Calogero Lo Leggio <kalos@nerdrug.org>\n"
 "Language-Team: Italian <debian-l10n-italian@lists.debian.org>\n"
 "Language: it\n"
@@ -1311,14 +1311,12 @@ msgstr ""
 "pacchetti:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "The <command>wnpp-alert</command> command from the <systemitem role=\"package"
 "\">devscripts</systemitem> package"
 msgstr ""
-"Si veda <ulink url=\"&uploadqueue-readme;\"/>. Alternativamente, si può "
-"utilizzare il comando <command>dcut</command> del pacchetto <systemitem role="
-"\"package\">dput</systemitem>."
+"Il comando <command>wnpp-alert</command> dal pacchetto <systemitem role=\""
+"package\">devscripts</systemitem>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<ulink url=\"&wnpp-do;\">Work-Needing and Prospective Packages</ulink>"
@@ -6803,9 +6801,8 @@ msgid "1"
 msgstr "1"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid "User commands"
-msgstr "Comando utente"
+msgstr "Comandi utente"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "Executable commands or scripts"
@@ -10470,6 +10467,10 @@ msgid ""
 "chapter.  The newer <command>debmake</command> command should address these "
 "topics better."
 msgstr ""
+"Può essere necessario modificare manualmente il file del template del "
+"pacchetto generato dal comando <command>dh_make</command> per affrontare gli "
+"argomenti trattati in questo capitolo. Il nuovo comando "
+"<command>debmake</command> potrebbe trattare questi temi in modo migliore."
 
 #. type: Content of: <book><appendix><section><title>
 msgid "Shared libraries"
