@@ -5,12 +5,11 @@
 # Frédéric Dumont <frederic.dumont@easynet.be>, 1999-2005.
 # Mohammed Adnène Trojette <adn+deb@diwi.org>, 2005.
 # David Prévot <david@tilapin.org>, 2010-2013.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide\n"
 "POT-Creation-Date: 2014-07-24 21:12+0900\n"
-"PO-Revision-Date: 2014-07-24 08:22+0100\n"
+"PO-Revision-Date: 2014-10-13 09:39+0200\n"
 "Last-Translator: Jean-Paul Guillonneau <guillonneau.jeanpaul@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "Language: fr\n"
@@ -18,9 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.5.4\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.5.4\n"
 
 #. type: Attribute 'lang' of: <book>
 msgid "en"
@@ -1312,18 +1308,12 @@ msgid "There are several package ownership status resources:"
 msgstr "Plusieurs ressources d'état de propriété de paquet Debian existent :"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid ""
-#| "See <ulink url=\"&uploadqueue-readme;\"/>.  Alternatively, you can use "
-#| "the <command>dcut</command> command from the <systemitem role=\"package"
-#| "\">dput</systemitem> package."
 msgid ""
 "The <command>wnpp-alert</command> command from the <systemitem role=\"package"
 "\">devscripts</systemitem> package"
 msgstr ""
-"Consultez <ulink url=\"&uploadqueue-readme;\"/>. Vous pouvez aussi utiliser "
-"la commande <command>dcut</command> du paquet <systemitem role=\"package"
-"\">dput</systemitem>."
+"La commande <command>wnpp-alert</command> du paquet <systemitem role="
+"\"package\">devscripts</systemitem> ;"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<ulink url=\"&wnpp-do;\">Work-Needing and Prospective Packages</ulink>"
@@ -6807,7 +6797,6 @@ msgid "1"
 msgstr "1"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid "User commands"
 msgstr "Commandes utilisateur"
 
@@ -8270,12 +8259,12 @@ msgstr ""
 "<filename>~/.devscripts</filename> avec ce qui suit :"
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "DEBUILD_DPKG_BUILDPACKAGE_OPTS=\"-us -uc -I -i\"\n"
 "DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
 msgstr ""
-"DEBSIGN_KEYID=Votre_ID_cle_GPG\n"
+"DEBUILD_DPKG_BUILDPACKAGE_OPTS=\"-us -uc -I -i\"\n"
 "DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
 
 #. type: Content of: <book><chapter><section><para>
@@ -8920,6 +8909,9 @@ msgid ""
 "<command>git-pbuilder</command> = the easy-to-use commandline syntax for "
 "<command>pdebuild</command> (used by <command>gbp buildpackage</command>)"
 msgstr ""
+"<command>git-pbuilder</command> = syntaxe d’utilisation aisée de ligne de "
+"commande pour <command>pdebuild</command> (utilisée par <command>gbp "
+"buildpackage</command>) ;"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<command>gbp</command> = manage the Debian source under the git repo"
@@ -8931,6 +8923,8 @@ msgid ""
 "<command>gbp buildpackage</command> = <command>pbuilder</command> + "
 "<command>dpkg-buildpackage</command> + <command>gbp</command>"
 msgstr ""
+"<command>gbp buildpackage</command> = <command>pbuilder</command> + "
+"<command>dpkg-buildpackage</command> + <command>gbp</command>."
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -8940,6 +8934,11 @@ msgid ""
 "such as <filename>debian/rules</filename> and <command>dpkg-buildpackage</"
 "command> are executed under them."
 msgstr ""
+"Bien que les commandes de haut niveau telles que <command>gbp buildpackage</"
+"command> et <command>pbuilder</command> garantissent un environnement de "
+"construction de paquet  parfait, il est essentiel de comprendre comment les "
+"commandes de bas niveau, telles que <filename>debian/rules</filename> et "
+"<command>dpkg-buildpackage</command>, sont exécutées en dessous."
 
 #. type: Content of: <book><chapter><title>
 msgid "Checking the package for errors"
@@ -10018,7 +10017,6 @@ msgstr ""
 "id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "If it was packaged using another patch system such as <systemitem role="
 "\"package\">dpatch</systemitem>, <systemitem role=\"package\">dbs</"
@@ -10031,9 +10029,8 @@ msgstr ""
 "<systemitem role=\"package\">dpatch</systemitem>, <systemitem role=\"package"
 "\">dbs</systemitem> ou <systemitem role=\"package\">cdbs</systemitem> avec "
 "<literal>-p0</literal>, <literal>-p1</literal> ou <literal>-p2</literal>, "
-"convertissez-le à la commande <systemitem role=\"package\">quilt</"
-"systemitem> avec <filename>deb3</filename> disponible en <ulink url=\"&deb3;"
-"\"/> ;"
+"convertissez-le à <systemitem role=\"package\">quilt</systemitem> avec "
+"<filename>deb3</filename> disponible en <ulink url=\"&deb3;\"/> ;"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -10422,7 +10419,6 @@ msgid "Skipped uploads"
 msgstr "Versions non envoyées"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "If you created multiple entries in <filename>debian/changelog</filename> by "
 "skipping uploads, you must create a proper <filename>*_.changes</filename> "
@@ -10431,13 +10427,12 @@ msgid ""
 "literal> with the version, e.g., <literal><replaceable>1.2</replaceable></"
 "literal>."
 msgstr ""
-"Si plusieurs éléments (relatifs à plusieurs révisions) sont ajoutés à "
-"<filename>debian/changelog</filename>, mais que des envois sont sautés, il "
-"faut créer un fichier <filename>*_.changes</filename> correct incluant "
-"toutes les modifications depuis le dernier envoi. Ce peut être fait avec "
-"l'option <literal>-v</literal> de <command>dpkg-buildpackage</command> "
-"suivie de la version, par exemple <literal><replaceable>1.2</replaceable></"
-"literal>."
+"Si vous créez plusieurs enregistrements dans <filename>debian/changelog</"
+"filename> en omettant des téléversements, vous devez créer un fichier "
+"<filename>*_.changes</filename> approprié incluant toutes les modifications "
+"depuis le dernier envoi. Cela peut être fait avec l'option <literal>-v</"
+"literal> de <command>dpkg-buildpackage</command> suivie de la version, par "
+"exemple <literal><replaceable>1.2</replaceable></literal>."
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -10475,6 +10470,10 @@ msgid ""
 "chapter.  The newer <command>debmake</command> command should address these "
 "topics better."
 msgstr ""
+"Vous pouvez avoir besoin d’éditer vous-mêmes les fichiers de modèle "
+"d’empaquetage produits par la commande <command>dh_make</command> pour "
+"répondre à des préoccupations de ce chapitre. La nouvelle commande "
+"<command>debmake</command> devrait le faire de meilleure façon."
 
 #. type: Content of: <book><appendix><section><title>
 msgid "Shared libraries"
@@ -11088,7 +11087,6 @@ msgstr ""
 "lib32/</filename> et <filename>/lib64/</filename> ne sont plus utilisés."
 
 #. type: Content of: <book><appendix><section><para>
-#, fuzzy
 msgid ""
 "It uses the triplet such as <literal>i386-linux-gnu</literal> and "
 "<literal>x86_64-linux-gnu</literal> for the install path of shared "
@@ -11101,12 +11099,12 @@ msgid ""
 msgstr ""
 "Cela utilise le triplet du style <literal>i386-linux-gnu</literal> et "
 "<literal>x86_64-linux-gnu</literal> pour le chemin d'installation des "
-"bibliothèques partagées. Le chemin de triplet réel et défini dynamiquement "
-"dans la valeur <literal>$(DEB_HOST_MULTIARCH)</literal> par <citerefentry> "
-"<refentrytitle>dpkg-architecture</refentrytitle> <manvolnum>1</manvolnum> </"
-"citerefentry> pour chaque construction. Par exemple, le chemin "
-"d'installation de bibliothèques multiarchitectures est modifié comme ceci :"
-"<placeholder type=\"footnote\" id=\"0\"/>"
+"bibliothèques partagées. Le chemin de triplet réel est défini dynamiquement "
+"dans la variable <literal>$(DEB_HOST_MULTIARCH)</literal> par la commande "
+"<citerefentry> <refentrytitle>dpkg-architecture</refentrytitle><manvolnum>1</"
+"manvolnum></citerefentry> pour chaque construction de paquet binaire. Par "
+"exemple, le chemin d'installation de bibliothèques multiarchitectures est "
+"modifié comme suit :<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
 msgid "Old path"
@@ -11542,17 +11540,15 @@ msgstr ""
 "replaceable>_<replaceable>arch</replaceable>.deb"
 
 #. type: Content of: <book><appendix><section><para>
-#, fuzzy
 msgid ""
 "For example, if you have source files in <filename>~/mypackage-1.0</"
 "filename> without the <filename>debian/*</filename> files, you can create a "
 "native Debian package for it by issuing the <command>dh_make</command> "
 "command as follows:"
 msgstr ""
-"Les paquets Debian normaux sont des paquets Debian non natifs réalisés à "
-"partir de programmes amont. Pour créer un paquet Debian non natif à partir "
-"d'une source amont <filename>gentoo-0.9.12.tar.gz</filename>, vous pouvez "
-"lui créer un paquet Debian non natif initial en appelant la commande "
+"Par exemple, si vous avez des fichiers source dans <filename>~/"
+"mypackage-1.0</filename> sans les fichiers <filename>debian/*</filename>, "
+"vous pouvez créer un paquet natif Debian pour eux en utilisant la commande "
 "<command>dh_make</command> comme suit :"
 
 #. type: Content of: <book><appendix><section><screen>
