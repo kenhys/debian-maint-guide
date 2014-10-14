@@ -1,10 +1,12 @@
-maint-guide (1.2.34) UNRELEASED; urgency=medium
+maint-guide (1.2.34) unstable; urgency=medium
 
   * Mention wnpp-alert. Closes: #700310
   * Style fix by Helge Kreutzmann. Closes: #753319
   * Update translation: fr, jp. Closes: #755872
+  * Update CSS matching other Debian pages.  Thanks, Stéphane 
+    Blondon. Closes: #761611
 
- -- Osamu Aoki <osamu@debian.org>  Thu, 24 Jul 2014 20:38:50 +0900
+ -- Osamu Aoki <osamu@debian.org>  Tue, 14 Oct 2014 21:29:11 +0900
 
 maint-guide (1.2.33) unstable; urgency=medium
 

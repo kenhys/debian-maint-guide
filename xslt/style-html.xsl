@@ -28,6 +28,7 @@
 <xsl:param name="admon.graphics" select="1"/>
 <!-- Do we want fancy icons instead of Next, Prev, Up, Home? -->
 <xsl:param name="navig.graphics" select="1"/>
+<xsl:param name="navig.graphics.extension">.png</xsl:param>
 
 <xsl:param name="toc.section.depth">4</xsl:param>
 <xsl:param name="section.label.includes.component.label" select="1"/>

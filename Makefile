@@ -206,7 +206,9 @@ css:
 	mkdir -p $(TMPDIR)/images
 	cp -f $(DXSL)/$(MANUAL).css $(TMPDIR)/$(MANUAL).css
 	echo "AddCharset UTF-8 .txt" > $(TMPDIR)/.htaccess
-	cd $(DIMG) ; cp caution.png home.gif important.png next.gif note.png prev.gif tip.png up.gif warning.png $(TMPDIR)/images
+	#cd $(DIMG) ; cp caution.png home.png important.png next.png note.png prev.png tip.png up.gif warning.png $(TMPDIR)/images
+	cd $(DIMG) ; cp caution.png important.png note.png tip.png up.gif warning.png $(TMPDIR)/images
+	cd png ; cp home.png next.png prev.png $(TMPDIR)/images
 
 #######################################################################
 # $ make html      # update all HTML in $(TMPDIR)
