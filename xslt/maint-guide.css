@@ -10,11 +10,15 @@ body {
     line-height: 1.2em;
 }
 
+@media (max-width: 5in), (max-device-width: 5in){
+    body {
+        border: 0px;
+        padding: 0px;
+    }
+}
+
 body > div.book, body > div.article, body > div.set, body > div.preface, body > div.chapter, body > div.section, body > div.appendix, body > div.part {
     margin-top: 0;
-    padding: 2em 6em 6em;
-}
-body > div.book, body > div.article, body > div.set, body > div.preface, body > div.chapter, body > div.section, body > div.appendix, body > div.part {
     padding: 2em;
 }
 
@@ -32,6 +36,11 @@ body > div.book, body > div.article, body > div.set, body > div.preface, body > 
 @media (min-width: 1025px) {
     body > div.book, body > div.article, body > div.set, body > div.preface, body > div.chapter, body > div.section, body > div.appendix, body > div.part, body > div.index {
         max-width: 70em;
+    }
+}
+@media (max-width: 5in), (max-device-width: 5in){
+    body > div.book, body > div.article, body > div.set, body > div.preface, body > div.chapter, body > div.section, body > div.appendix, body > div.part, body > div.index {
+        max-width: 100%;
     }
 }
 
