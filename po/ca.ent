@@ -7,7 +7,7 @@ Remember, the *first* definition of an entity wins.
 <othercredit role="translator"><personname>Innocent De Marchi</personname><email>tangram.peces@gmail.com</email><contrib>Traducció al català</contrib></othercredit>
 '>
 
-<!-- overwrite Wikipiédia links available in Spanish -->
+<!-- overwrite Wikipiédia links available in Catalan or Spanish -->
 <!ENTITY autoconf "http://ca.wikipedia.org/wiki/Autoconf">
 <!ENTITY automake "http://es.wikipedia.org/wiki/Automake">
 <!ENTITY cmake "http://es.wikipedia.org/wiki/CMake">
