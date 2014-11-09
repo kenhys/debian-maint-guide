@@ -7,14 +7,13 @@
 #       Innocent De Marchi <tangram.peces@gmail.com> 2010
 #
 #   - Updates
-#       Innocent De Marchi <tangram.peces@gmail.com> 2010-2013
+#       Innocent De Marchi <tangram.peces@gmail.com> 2010-2014
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide 1.116\n"
 "POT-Creation-Date: 2014-07-24 21:12+0900\n"
-"PO-Revision-Date: 2014-01-05 22:00+0100\n"
+"PO-Revision-Date: 2014-11-09 18:08+0100\n"
 "Last-Translator: Innocent De Marchi <tangram.peces@gmail.com>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "Language: ca\n"
@@ -555,6 +554,10 @@ msgid ""
 "systemitem>.  It does more and comes with HTML documentation with extensive "
 "packaging examples."
 msgstr ""
+"La nova ordre <systemitem role=\"package\">debmake</systemitem> es pot fer "
+"servir com a alternativa a l'ordre <systemitem role=\"package\">dh-make</"
+"systemitem>.  Compte amb més funcionalitats i una documentació extensa amb "
+"exemples en format HTML."
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -1015,6 +1018,9 @@ msgid ""
 "Teams focusing on a specific set of packages. (Full list at <ulink url="
 "\"&wikiteams;\">https://wiki.debian.org/Teams</ulink>)"
 msgstr ""
+"Equips centrats en un conjunt de paquets específic. (La llista completa està "
+"disponible a <ulink url=\"&wikiteams;\">https://wiki.debian.org/Teams</"
+"ulink>)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -1024,6 +1030,11 @@ msgid ""
 "ulink> and <ulink url=\"&listusers;\">https://lists.debian.org/users.html</"
 "ulink>)"
 msgstr ""
+"Llistes de correu específiques per a un idioma com per exemple debian-devel-"
+"{french,italian,portuguese,spanish}@lists.debian.org o debian-devel@debian."
+"or.jp. (La llista completa està disponible a <ulink url=\"&listdevel;"
+"\">https://lists.debian.org/devel.html</ulink> i <ulink url=\"&listusers;"
+"\">https://lists.debian.org/users.html</ulink>)"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1298,14 +1309,12 @@ msgid "There are several package ownership status resources:"
 msgstr "Hi ha diversos recursos de seguiment dels paquets:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "The <command>wnpp-alert</command> command from the <systemitem role=\"package"
 "\">devscripts</systemitem> package"
 msgstr ""
-"Consulta <ulink url=\"&uploadqueue-readme;\"/>. També pots fer servir "
-"l'ordre <command>dcut</command> del paquet <systemitem role=\"package"
-"\">dput</systemitem>."
+"L'ordre <command>wnpp-alert</command> del paquet <systemitem role=\"package"
+"\">devscripts</systemitem>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<ulink url=\"&wnpp-do;\">Work-Needing and Prospective Packages</ulink>"
@@ -4817,15 +4826,36 @@ msgid ""
 "20 %:\n"
 "21         dh $@ \n"
 msgstr ""
+" 1 #!/usr/bin/make -f\n"
+" 2 # See debhelper(7) (uncomment to enable)\n"
+" 3 # output every command that modifies files on the build system.\n"
+" 4 #DH_VERBOSE = 1\n"
+" 5 \n"
+" 6 # see EXAMPLES in dpkg-buildflags(1) and read /usr/share/dpkg/*\n"
+" 7 DPKG_EXPORT_BUILDFLAGS = 1\n"
+" 8 include /usr/share/dpkg/default.mk\n"
+" 9 \n"
+"10 # see FEATURE AREAS in dpkg-buildflags(1)\n"
+"11 #export DEB_BUILD_MAINT_OPTIONS = hardening=+all\n"
+"12\n"
+"13 # see ENVIRONMENT in dpkg-buildflags(1)\n"
+"14 # package maintainers to append CFLAGS\n"
+"15 #export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic\n"
+"16 # package maintainers to append LDFLAGS\n"
+"17 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed\n"
+"18 \n"
+"19 # main packaging script based on dh7 syntax\n"
+"20 %:\n"
+"21         dh $@ \n"
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
 msgid ""
 "(I've added the line numbers and trimmed some comments.  In the actual "
 "<filename>rules</filename> file, the leading spaces are a TAB code.)"
 msgstr ""
-"(S'han afegit els números de les línies.  En el fitxer <filename>debian/"
-"rules</filename> els espais inicials de les línies són tabulacions)."
+"(He afegit els números de les línies i simplificat els comentaris.  En el "
+"fitxer <filename>debian/rules</filename> els espais inicials de les línies "
+"són tabulacions)."
 
 #. type: Content of: <book><chapter><section><section><para>
 msgid ""
@@ -4838,7 +4868,6 @@ msgstr ""
 "<filename>/usr/bin/make</filename>."
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
 msgid ""
 "Line 4 can be uncommented to set the <literal>DH_VERBOSE</literal> variable "
 "to 1, so that the <command>dh</command> command outputs which <command>dh_*</"
@@ -4850,16 +4879,15 @@ msgid ""
 "form a core part of the <systemitem role=\"package\">debhelper</systemitem> "
 "tools, and not to hide anything from you."
 msgstr ""
-"Cal eliminar la marca de comentari a la línia 10 per assignar el valor 1 a "
-"la variable <literal>DH_VERBOSE</literal>.  En aquest cas, l'ordre "
-"<command>dh</command> escriurà les ordres <command>dh_*</command> en el "
-"terminal així com siguin executades per <command>dh</command>.  Pots afegir "
-"la línia <literal>export DH_OPTIONS=-v</literal> aquí.  Aixó farà que cada "
-"ordre <command>dh_*</command> escrigui la sortida d'allò que fa.  Això "
-"t'ajudarà a entendre com funciona el fitxer <filename>rules</filename> i a "
-"solucionar errades.  La nova ordre <command>dh</command> és part fonamental "
-"de les eines <systemitem role=\"package\">debhelper</systemitem> i no "
-"t'amaguen res."
+"Cal eliminar la marca de comentari a la línia 4 per assignar el valor 1 a la "
+"variable <literal>DH_VERBOSE</literal>.  En aquest cas, l'ordre <command>dh</"
+"command> escriurà les ordres <command>dh_*</command> en el terminal així com "
+"siguin executades per <command>dh</command>.  Pots afegir la línia "
+"<literal>export DH_OPTIONS=-v</literal> aquí.  Això farà que cada ordre "
+"<command>dh_*</command> escrigui la sortida d'allò que fa.  Això t'ajudarà a "
+"entendre com funciona el fitxer <filename>rules</filename> i a solucionar "
+"errades.  La nova ordre <command>dh</command> és part fonamental de les "
+"eines <systemitem role=\"package\">debhelper</systemitem> i no t'amaguen res."
 
 #. type: Content of: <book><chapter><section><section><para><footnote><para>
 msgid ""
@@ -4908,7 +4936,6 @@ msgstr ""
 "literal> sense que s'executin realment."
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
 msgid ""
 "Lines 20 and 21 are where all the work is done with an implicit rule using "
 "the pattern rule.  The percent sign means \"any targets\", which then call a "
@@ -4917,7 +4944,7 @@ msgid ""
 "script which runs appropriate sequences of <command>dh_*</command> programs "
 "depending on its argument.  <placeholder type=\"footnote\" id=\"1\"/>"
 msgstr ""
-"Tota la feina del fitxer la fan les línies 12 i 13 executant una regla "
+"Tota la feina del fitxer la fan les línies 20 i 21 executant una regla "
 "implícita fent servir la regla patró.  El símbol de percentatge substitueix "
 "«qualsevol objectiu» per a continuació executar únicament <command>dh</"
 "command> amb el nom de l'objectiu (com a opció) <placeholder type=\"footnote"
@@ -6759,9 +6786,8 @@ msgid "1"
 msgstr "1"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid "User commands"
-msgstr "Ordre d'usuari"
+msgstr "Ordres d'usuari"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "Executable commands or scripts"
@@ -7416,6 +7442,10 @@ msgid ""
 "literal> option as described in <citerefentry> <refentrytitle>uscan</"
 "refentrytitle><manvolnum>1</manvolnum> </citerefentry>."
 msgstr ""
+"Si l'autor original publica la signatura criptogràfica del fitxer tarball, "
+"es recomana verificar la seva autenticitat fent servir l'opció "
+"<literal>pgpsigurlmangle</literal> descrita a  <citerefentry> "
+"<refentrytitle>uscan</refentrytitle><manvolnum>1</manvolnum> </citerefentry>."
 
 #. type: Content of: <book><chapter><section><title>
 msgid "<filename>source/format</filename>"
@@ -7436,7 +7466,6 @@ msgstr ""
 "literal> hauria de ser:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "<literal>3.0 (native)</literal> for native Debian packages or"
 msgstr "<literal>3.0 (native)</literal> per a paquets nadius de Debian o"
 
@@ -7829,18 +7858,16 @@ msgstr ""
 "construeix el paquet binari (<literal>fakeroot debian/rules binary</literal>)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "make the <filename>.dsc</filename> file"
-msgstr "Objectius del fitxer <filename>rules</filename>."
+msgstr "genera el fitxer <filename>.dsc</filename>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "make the <filename>.changes</filename> file, using <command>dpkg-genchanges</"
 "command>"
 msgstr ""
-"genera i signa l'arxiu <filename>.changes</filename>, fent servir les ordres "
-"<command>dpkg-genchanges</command> i <command>gpg</command>"
+"genera l'arxiu <filename>.changes</filename>, fent servir l'ordre "
+"<command>dpkg-genchanges</command>"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -7864,6 +7891,11 @@ msgid ""
 "<command>debsign</command> command.  You need to enter your secret pass "
 "phrase, twice.  <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
+"Si el resultat de la compilació és satisfactori, signa els fitxers "
+"<filename>.dsc</filename> i <filename>.changes</filename> amb la teva clau "
+"privada GPG fent servir l'ordre <command>debsign</command>. Caldrà que "
+"escriguis dues vegades la teva contrasenya. <placeholder type=\"footnote\" "
+"id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -7895,7 +7927,6 @@ msgid "<filename>gentoo_0.9.12-1.dsc</filename>"
 msgstr "<filename>gentoo_0.9.12-1.dsc</filename>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "This is a summary of the contents of the source code.  The file is generated "
 "from your <filename>control</filename> file, and is used when unpacking the "
@@ -7905,8 +7936,7 @@ msgstr ""
 "Aquest és un sumari dels continguts del codi font.  Aquest arxiu es genera "
 "amb la informació del fitxer <filename>control</filename> i es fa servir "
 "quan es descomprimeixen les fonts amb <citerefentry> <refentrytitle>dpkg-"
-"source</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>.  Aquest "
-"arxiu està signat amb GPG i així és possible comprovar qui és l'autor."
+"source</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>."
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<filename>gentoo_0.9.12-1.debian.tar.gz</filename>"
@@ -7968,7 +7998,6 @@ msgid "<filename>gentoo_0.9.12-1_i386.changes</filename>"
 msgstr "<filename>gentoo_0.9.12-1_i386.changes</filename>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "This file describes all the changes made in the current package revision; it "
 "is used by the Debian FTP archive maintenance programs to install the binary "
@@ -7978,8 +8007,7 @@ msgstr ""
 "Aquest arxiu conté la descripció dels canvis fets en la revisió actual del "
 "paquet, i el fan servir els programes de gestió FTP del repositori Debian "
 "per instal·lar-hi els paquets binaris i de fonts.  Se genera parcialment amb "
-"l'arxiu <filename>changelog</filename> i el fitxer <filename>.dsc</"
-"filename>.  Aquest arxiu està signat amb GPG, per assegurar-ne l'autoria."
+"l'arxiu <filename>changelog</filename> i el fitxer <filename>.dsc</filename>."
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -8004,6 +8032,12 @@ msgid ""
 "Debian FTP archive. The GPG signature provides the proof that these files "
 "are really yours using your public GPG key."
 msgstr ""
+"Caldrà signar els fitxers <filename>gentoo_0.9.12-1.dsc</filename> i "
+"<filename>gentoo_0.9.12-1_i386.changes</filename> fent servir l'ordre "
+"<command>debsign</command> amb la teva clau privada GPG emmagatzemada en el "
+"directori <filename>~/.gnupg/</filename>, abans de actualitzar-los a l'arxiu "
+"FTP de Debian. Les signatures GPG son la prova que els fitxers són realment "
+"teus fent servir la teva clau GPG pública."
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -8011,11 +8045,15 @@ msgid ""
 "specified secret GPG key ID (good for sponsoring packages) with the "
 "following in the <filename>~/.devscripts</filename>:"
 msgstr ""
+"L'ordre <command>debsign</command> pot executar-se per signar amb el "
+"identificador de la clau GPG (útil en el cas de patrocini de paquets) "
+"especificada a l'arxiu <filename>~/.devscripts</filename> de la següent "
+"manera:"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
 msgid "DEBSIGN_KEYID=Your_GPG_keyID\n"
-msgstr ""
+msgstr "DEBSIGN_KEYID=el_teu_identificador_de_la_clau_GPG\n"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -8175,7 +8213,6 @@ msgid "<command>debuild</command> command"
 msgstr "L'ordre <command>debuild</command>."
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "You can automate the build activity around executing the <command>dpkg-"
 "buildpackage</command> command package further with the <command>debuild</"
@@ -8183,7 +8220,7 @@ msgid ""
 "<manvolnum>1</manvolnum> </citerefentry>."
 msgstr ""
 "Pots automatitzar encara més el procés de construcció de paquets de "
-"<command>dpkg-buildpackage</command> amb l'ordre <command>debuild</"
+"<command>dpkg-buildpackage</command> seguit de l'ordre <command>debuild</"
 "command>.  Consulta <citerefentry> <refentrytitle>debuild</refentrytitle> "
 "<manvolnum>1</manvolnum> </citerefentry>."
 
@@ -8194,14 +8231,18 @@ msgid ""
 "package.  The <command>lintian</command> command can be customized with the "
 "following in the <filename>~/.devscripts</filename>:"
 msgstr ""
+"L'ordre <command>dbuild</command> executa l'ordre <command>lintian</command> "
+"per realitzar una comprovació estàtica posterior a la construcció del paquet "
+"Debian. És possible configurar el comportament de l'ordre <command>lintian</"
+"command>mitjançant el següent a  <filename>~/.devscripts</filename>:"
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "DEBUILD_DPKG_BUILDPACKAGE_OPTS=\"-us -uc -I -i\"\n"
 "DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
 msgstr ""
-"DEBSIGN_KEYID=La_teva_ID_de_la_clau_GPG\n"
+"DEBUILD_DPKG_BUILDPACKAGE_OPTS=\"-us -uc -I -i\"\n"
 "DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
 
 #. type: Content of: <book><chapter><section><para>
@@ -8303,12 +8344,12 @@ msgstr ""
 "pbuilderrc</filename> amb el següent contingut:"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "AUTO_DEBSIGN=${AUTO_DEBSIGN:-no}\n"
 "HOOKDIR=<replaceable>/var/cache/pbuilder/hooks</replaceable>\n"
 msgstr ""
-"AUTO_DEBSIGN=${AUTO_DEBSIGN:-yes}\n"
+"AUTO_DEBSIGN=${AUTO_DEBSIGN:-no}\n"
 "HOOKDIR=<replaceable>/var/cache/pbuilder/hooks</replaceable>\n"
 
 #. type: Content of: <book><chapter><section><para>
@@ -8369,14 +8410,13 @@ msgstr ""
 "filename> es poden generar de la següent manera:"
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "$ cd /var/cache/pbuilder/result/\n"
 "$ debsign <replaceable>foo_version_arch</replaceable>.changes\n"
 msgstr ""
 "$ cd /var/cache/pbuilder/result/\n"
-"$ debsign <replaceable>nom_del_paquet_versió</replaceable>.dsc\n"
-"$ debsign <replaceable>nom_del_paquet_versió_arqutectura</replaceable>.changes\n"
+"$ debsign <replaceable>nom_del_paquet_versió_arquitectura</replaceable>.changes\n"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -8779,64 +8819,81 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Command hierarchy"
-msgstr ""
+msgstr "Jerarquia d'ordres"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "Here is a quick summary of how many commands to build packages fit together "
 "in the command hierarchy. There are many ways to do the same thing."
 msgstr ""
+"A continuació teniu un resum ràpid de la jerarquia de les ordres de "
+"construcció de paquets. Hi ha diversos procediments per fer el mateix. "
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<filename>debian/rules</filename> = maintainer script for the package "
 "building"
 msgstr ""
+"<filename>debian/rules</filename> = guió del responsable del paquet per a la "
+"compilació"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<command>dpkg-buildpackage</command> = core of the package building tool"
-msgstr "L'ordre <command>git-buildpackage</command> i semblants."
+msgstr ""
+"<command>dpkg-buildpackage</command> = nucli de l'eina de compilació de "
+"paquets"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<command>debuild</command> = <command>dpkg-buildpackage</command> + "
 "<command>lintian</command> (build under the sanitized environment variables)"
 msgstr ""
+"<command>debuild</command> = <command>dpkg-buildpackage</command> + "
+"<command>lintian</command> (compilació en un entorn amb les variables "
+"controlades)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<command>pbuilder</command> = core of the Debian chroot environment tool"
-msgstr ""
+msgstr "<command>pbuilder</command> = nucli de l'entorn «chroot» de Debian"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<command>pdebuild</command> = <command>pbuilder</command> + <command>dpkg-"
 "buildpackage</command> (build in the chroot)"
 msgstr ""
+"<command>pdebuild</command> = <command>pbuilder</command> + <command>dpkg-"
+"buildpackage</command> (compilació en l'entorn «chroot»)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<command>cowbuilder</command> = speed up the <command>pbuilder</command> "
 "execution"
 msgstr ""
+"<command>cowbuilder</command> = execució accelerada de <command>pbuilder</"
+"command>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<command>git-pbuilder</command> = the easy-to-use commandline syntax for "
 "<command>pdebuild</command> (used by <command>gbp buildpackage</command>)"
 msgstr ""
+"<command>git-pbuilder</command> = sintaxis fàcil de fer servir de l'ordre "
+"<command>pdebuild</command> (la fa servir <command>gbp buildpackge</command>)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<command>gbp</command> = manage the Debian source under the git repo"
 msgstr ""
+"<command>gbp</command> = gestiona els fitxers Debian en un repositori «git»"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<command>gbp buildpackage</command> = <command>pbuilder</command> + "
 "<command>dpkg-buildpackage</command> + <command>gbp</command>"
 msgstr ""
+"<command>gbp buildpackge</command> = <command>pbuilder</command> + "
+"<command>dpkg-buildpackage</command> + <command>gbp</command>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -8846,6 +8903,11 @@ msgid ""
 "such as <filename>debian/rules</filename> and <command>dpkg-buildpackage</"
 "command> are executed under them."
 msgstr ""
+"Tot i que fer servir ordres d'alt nivell com a <command>gbp buildpackge</"
+"command> i <command>pbuilder</command> assegura un entorn de compilació de "
+"paquets perfecte, és important entendre com funcionen les ordres de baix "
+"nivell com les executades per <filename>debian/rules</filename> i "
+"<command>dpkg-buildpackage</command> en aquest entorn."
 
 #. type: Content of: <book><chapter><title>
 msgid "Checking the package for errors"
@@ -9926,7 +9988,6 @@ msgstr ""
 "id=\"0\"/>."
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "If it was packaged using another patch system such as <systemitem role="
 "\"package\">dpatch</systemitem>, <systemitem role=\"package\">dbs</"
@@ -9944,7 +10005,6 @@ msgstr ""
 "\"&deb3;\"/>."
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "If it was packaged with the <command>dh</command> command with the "
 "<literal>--with quilt</literal> option or with the <command>dh_quilt_patch</"
@@ -9954,7 +10014,7 @@ msgstr ""
 "Si el paquet s'ha construït executant l'ordre <command>dh</command> amb "
 "l'opció <literal>--with quilt</literal> o amb <command>dh_quilt_patch</"
 "command> i <command>dh_quilt_unpatch</command>, elimina tot això i fes "
-"servir el format <literal>3.0 (native)</literal>."
+"servir el nou format font <literal>3.0 (quilt)</literal>."
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -10010,13 +10070,13 @@ msgstr ""
 "servir UTF-8."
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "LC_ALL=en_US.UTF-8 w3m -o display_charset=UTF-8 \\\n"
 "        -cols 70 -dump -no-graph -T text/html \\\n"
 "        &lt; <replaceable>foo_in.html</replaceable> &gt; <replaceable>foo_out.txt</replaceable>\n"
 msgstr ""
-"LC_ALL=C.UTF-8 w3m -o display_charset=UTF-8 \\\n"
+"LC_ALL=en_US.UTF-8 w3m -o display_charset=UTF-8 \\\n"
 "        -cols 70 -dump -no-graph -T text/html \\\n"
 "        &lt; <replaceable>fitxer_original.html</replaceable> &gt; <replaceable>fitxer_convertit.txt</replaceable>\n"
 
@@ -10337,7 +10397,6 @@ msgid "Skipped uploads"
 msgstr "Enviaments discontinuats."
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "If you created multiple entries in <filename>debian/changelog</filename> by "
 "skipping uploads, you must create a proper <filename>*_.changes</filename> "
@@ -10391,6 +10450,11 @@ msgid ""
 "chapter.  The newer <command>debmake</command> command should address these "
 "topics better."
 msgstr ""
+"Pot ésser necessari editar manualment els fitxers de plantilla per a la "
+"construcció del paquet generats per l'ordre <command>dh_make</command> per "
+"seguir els detalls tractats en aquest capítol. La nova ordre "
+"<command>debmake</command> gestiona millor aquestes etapes de la construcció "
+"de paquets."
 
 #. type: Content of: <book><appendix><section><title>
 msgid "Shared libraries"
@@ -10998,7 +11062,6 @@ msgstr ""
 "</filename> i <filename>/lib64/</filename> ja no es faran servir més."
 
 #. type: Content of: <book><appendix><section><para>
-#, fuzzy
 msgid ""
 "It uses the triplet such as <literal>i386-linux-gnu</literal> and "
 "<literal>x86_64-linux-gnu</literal> for the install path of shared "
@@ -11389,9 +11452,8 @@ msgstr ""
 "l'ordre dels bits de dades i per l'algoritme de compressió."
 
 #. type: Content of: <book><appendix><section><title>
-#, fuzzy
 msgid "Native Debian package"
-msgstr "Paquet nadiu Debian inicial."
+msgstr "Paquet nadiu Debian"
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -11399,6 +11461,9 @@ msgid ""
 "its source may contain all the <filename>debian/*</filename> files in it.  "
 "There are 2 ways to package it."
 msgstr ""
+"Si el paquet es construeix només per a Debian o fins i tot només per fer-ho "
+"servir en local, les seves fonts poden incloure tots els fitxers de "
+"<filename>debian/*</filename>. Hi ha dos mètodes per construir el paquet."
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -11407,10 +11472,15 @@ msgid ""
 "linkend=\"workflow\"/>.  This is the normal way which some people encourage "
 "to use."
 msgstr ""
+"Pots fer que el fitxer tarball de l'autor excloent els fitxers de "
+"<filename>debian/*</filename> i construir el paquet com un paquet no natiu "
+"Debian com s'explica a <xref linkend=\"workflow\"/>. Aquest és el mètode "
+"recomanat per moltes persones."
 
 #. type: Content of: <book><appendix><section><para>
 msgid "The alternative is the workflow of the native Debian package."
 msgstr ""
+"L'alternativa és seguir el model de treball pels paquets nadius Debian."
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -11449,17 +11519,15 @@ msgstr ""
 "replaceable>_<replaceable>arquitectura</replaceable>.deb"
 
 #. type: Content of: <book><appendix><section><para>
-#, fuzzy
 msgid ""
 "For example, if you have source files in <filename>~/mypackage-1.0</"
 "filename> without the <filename>debian/*</filename> files, you can create a "
 "native Debian package for it by issuing the <command>dh_make</command> "
 "command as follows:"
 msgstr ""
-"Els paquets normals Debian són paquets de Debian no nadius construïts a "
-"partir dels programes originals. Si vols construir un paquet no nadiu Debian "
-"del codi font <filename>gentoo-0.9.12.tar.gz</filename>, pots construir el "
-"paquet no nadiu inicial Debian fent servir l'ordre <command>dh_make</"
+"Per exemple, si els fitxers font estan a <filename>~/el_meu_paquet-1.0</"
+"filename> sense els fitxers <filename>debian/*</filename>, pots construir un "
+"paquet nadiu Debian per a ells fent servir l'ordre <command>dh_make</"
 "command> de la següent manera."
 
 #. type: Content of: <book><appendix><section><screen>
@@ -11489,6 +11557,8 @@ msgid ""
 "After execution of the <command>dpkg-buildpackage</command> command, you "
 "will see the following files in the parent directory:"
 msgstr ""
+"Després d'executar l'ordre <command>dpkg-buildpackage</command>, veuràs els "
+"següents fitxers en el directori superior:"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid "<filename>mypackage_1.0.tar.gz</filename>"
