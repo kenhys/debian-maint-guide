@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide HEAD\n"
 "POT-Creation-Date: 2014-07-24 21:12+0900\n"
-"PO-Revision-Date: 2011-08-03 23:03+0800\n"
-"Last-Translator: Aron Xu <happyaron.xu@gmail.com>\n"
+"PO-Revision-Date: 2014-11-14 23:03+0800\n"
+"Last-Translator: Zhou Mo <cdluminate@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr "Debian 新维护人员手册"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><personname>
 msgid "Josip Rodin"
-msgstr ""
+msgstr "Josip Rodin"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><email>
 msgid "joy-mg@debian.org"
@@ -74,7 +74,6 @@ msgid ""
 msgstr "本文档可在 GNU 通用公共许可证第二版或更高版本的条款规定下使用。"
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
-#, fuzzy
 msgid "This document was made using these two documents as examples:"
 msgstr "本文档在撰写过程中参考了以下两篇文档："
 
@@ -204,12 +203,11 @@ msgid "Social dynamics of Debian"
 msgstr "Debian 的社会驱动力"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Here are some observations of Debian's social dynamics, presented in the "
 "hope that it will prepare you for interactions with Debian:"
 msgstr ""
-"以下是一些有关 Debian 的社会动力学报告，希望它们有助于你掌握如何与 Debian 项"
+"以下是一些有关 Debian 的社会动力学报告，希望它们有助于你掌握与 Debian 项"
 "目进行互动的方法。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
@@ -262,11 +260,10 @@ msgid "You should adapt yourself to change."
 msgstr "你应该适时改变自己来适应变化。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "There are several types of people interacting around Debian with different "
 "roles:"
-msgstr "在 Debian 社区中有几个常见的角色。"
+msgstr "在 Debian 社区中有这几类常见的角色："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -417,7 +414,6 @@ msgstr ""
 "<literal>required</literal> —— 我们假设你已经安装了它们。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "The following packages come with the standard Debian installation, so you "
 "probably have them already (along with any additional packages they depend "
@@ -427,6 +423,7 @@ msgid ""
 msgstr ""
 "以下这些软件包已经随标准的 Debian 安装而在系统中，所以你可能不需要再动手安装"
 "它们(以及任何附加的依赖软件包)。然而，你还是应该用 <literal>aptitude show "
+"<replaceable>package</replaceable></literal> 或者 <literal>dpkg -s "
 "<replaceable>package</replaceable></literal> 来检查一下。"
 
 #. type: Content of: <book><chapter><section><para>
@@ -438,7 +435,6 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "For some types of packages, that is all you will require; however, there is "
 "another set of packages that while not essential for all package builds are "
@@ -745,9 +741,8 @@ msgstr ""
 "快。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "Documentation needed for development"
-msgstr "开发时需要的软件"
+msgstr "开发时需要的文档"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -843,17 +838,15 @@ msgstr ""
 "guide</systemitem> 软件包提交 Bug 报告。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "The following is an alternative tutorial documentation which you may read "
 "along with this document:"
 msgstr ""
-"以下是 <emphasis>非常重要</emphasis> 的文档，你应该在读本文档时同时参看它们："
+"以下是替代性的教程文档，你应该在读本文档时同时参看它们："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "<ulink url=\"&debpkg-tutorial0;\">Debian Packaging Tutorial</ulink>"
-msgstr "<ulink url=\"&debian-packages-git;\">debian packages in git</ulink>"
+msgstr "<ulink url=\"&debpkg-tutorial0;\">Debian Packaging Tutorial</ulink>"
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Where to ask for help"
