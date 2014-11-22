@@ -19,6 +19,9 @@ body {
 
 body > div.book, body > div.article, body > div.set, body > div.preface, body > div.chapter, body > div.section, body > div.appendix, body > div.part {
     margin-top: 0;
+    padding: 2em 6em 6em;
+}
+body > div.book, body > div.article, body > div.set, body > div.preface, body > div.chapter, body > div.section, body > div.appendix, body > div.part {
     padding: 2em;
 }
 
@@ -70,6 +73,7 @@ code {
 
 h1 {
     color: #C70036;
+    line-height: 1.1em;
 }
 
 h2, h3, h4, h5, h6 {
@@ -122,5 +126,15 @@ pre.screen {
     page-break-inside: avoid;
     white-space: pre-wrap;
     word-wrap: break-word;
+}
+
+
+/* Navigation elements */
+.navheader a, .navfooter a {
+    opacity: 0.50;
+    transition: opacity 0.15s ease-in-out;
+}
+.navheader a:hover, .navfooter a:hover {
+    opacity: 1;
 }
 
