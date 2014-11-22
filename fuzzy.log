@@ -1,14 +1,14 @@
 no-obsolete  ca  1180
-untranslated ca  26
-fuzzy        ca  22
+untranslated ca  0
+fuzzy        ca  0
 
 no-obsolete  de  1180
 untranslated de  0
 fuzzy        de  0
 
 no-obsolete  es  1180
-untranslated es  26
-fuzzy        es  20
+untranslated es  0
+fuzzy        es  0
 
 no-obsolete  fr  1180
 untranslated fr  0
@@ -27,8 +27,8 @@ untranslated ru  0
 fuzzy        ru  0
 
 no-obsolete  zh-cn  1180
-untranslated zh-cn  260
-fuzzy        zh-cn  604
+untranslated zh-cn  259
+fuzzy        zh-cn  596
 
 no-obsolete  zh-tw  1180
 untranslated zh-tw  287
