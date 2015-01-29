@@ -3,13 +3,14 @@
 # Copyright (C) 2010 Free Software Foundation, Inc.
 # This file is distributed under the same license as the maint-guide package.
 # Aron <happyaron.xu@gmail.com>, 2010.
+# Zhou Mo <cdluminate@gmail.com>, 2014.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide HEAD\n"
 "POT-Creation-Date: 2014-07-24 21:12+0900\n"
-"PO-Revision-Date: 2014-11-14 23:03+0800\n"
+"PO-Revision-Date: 2015-01-28 23:03+0000\n"
 "Last-Translator: Zhou Mo <cdluminate@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -93,7 +94,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><title>
 msgid "Getting started The Right Way"
-msgstr "从一条正确的路开始"
+msgstr "自正确的道路启程"
 
 #. type: Content of: <book><chapter><para>
 msgid ""
@@ -350,14 +351,13 @@ msgstr ""
 "<xref linkend=\"choose\"/>)。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Since we focus only on technical aspects of packaging in this document, "
 "please refer to the following to learn how Debian functions and how you can "
 "get involved:"
 msgstr ""
 "在这篇文档里，我们的重点在于打包的技术细节，所以请参考以下的文档来了解 "
-"Debian 是如何运转的。"
+"Debian 是如何运转的，以及如何才能参与到其中："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -433,6 +433,9 @@ msgid ""
 "try to install that, it will <emphasis>pull in</emphasis> other packages "
 "required to have a basic build environment."
 msgstr ""
+"在你的开发环境中，需要安装的最重要的软件包是 "
+"<systemitem role=\"package\">build-essential</systemitem>。一旦你 "
+"尝试安装该包，它将 <emphasis>拉来</emphasis> 其他基本构建环境所需的基本软件。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -444,7 +447,6 @@ msgstr ""
 "软件包都必须，却可能对你有用或被你的软件包所需要："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">autoconf</systemitem>, <systemitem role="
 "\"package\">automake</systemitem>, and <systemitem role=\"package"
@@ -464,7 +466,6 @@ msgstr ""
 "最佳方法的文档。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para><footnote><para>
-#, fuzzy
 msgid ""
 "There are also some more specialized but similar packages such as "
 "<systemitem role=\"package\">dh-make-perl</systemitem>, <systemitem role="
@@ -506,9 +507,11 @@ msgid ""
 "systemitem>.  It does more and comes with HTML documentation with extensive "
 "packaging examples."
 msgstr ""
+"新的 <systemitem role=\"package\">debmake</systemitem> 可以作为标准 "
+"<systemitem role=\"package\">dh-make</"
+"systemitem> 的代替品。 然而它能做的事情更多，并且拥有包含足量实例的HTML文档。 "
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">devscripts</systemitem> - this package contains "
 "some useful scripts that can be helpful for maintainers, but they are also "
@@ -518,11 +521,10 @@ msgid ""
 msgstr ""
 "<systemitem role=\"package\">devscripts</systemitem> - 此软件包提供了一些非常"
 "好非常有用的脚本帮助维护者，但他们并非构建软件包所必须。此软件包所推荐或建议"
-"的软件包都值得一看。(参看 <filename>/usr/share/doc/devscripts/README.gz</"
+"的软件包都值得一看。(参看 <filename>&devscripts-readme;</"
 "filename>)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">fakeroot</systemitem> - this utility lets you "
 "emulate being root which is necessary for some parts of the build process.  "
@@ -535,7 +537,6 @@ msgstr ""
 "citerefentry>)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">file</systemitem> - this handy program can "
 "determine what type a file is.  (See <citerefentry> <refentrytitle>file</"
@@ -546,7 +547,6 @@ msgstr ""
 "manvolnum> </citerefentry>)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">gfortran</systemitem> - the GNU Fortran 95 "
 "compiler, necessary if your program is written in Fortran.  (See "
@@ -559,7 +559,6 @@ msgstr ""
 "citerefentry>)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">git</systemitem> - this package provides a "
 "popular version control system designed to handle very large projects with "
@@ -570,12 +569,12 @@ msgid ""
 msgstr ""
 "<systemitem role=\"package\">git</systemitem> - 此软件包提供了用于快捷处理大"
 "型项目的著名版本控制系统 - git。它被广泛用于各种开源项目，最著名的是 Linux 内"
-"核项目。(参看 <citerefentry> <refentrytitle>git</refentrytitle> "
-"<manvolnum>1</manvolnum> </citerefentry>、<filename>/usr/share/doc/git-doc/"
-"index.html</filename>)"
+"核项目。"
+"(参见 <citerefentry> <refentrytitle>git</"
+"refentrytitle> <manvolnum>1</manvolnum> </citerefentry>, git Manual "
+"(<filename>&git-doc;</filename>).)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">gnupg</systemitem> - a tool that enables you to "
 "digitally <emphasis>sign</emphasis> packages.  This is especially important "
@@ -586,11 +585,11 @@ msgid ""
 msgstr ""
 "<systemitem role=\"package\">gnupg</systemitem> - 使你可以使用 <emphasis>数字"
 "签名</emphasis> 签署你的软件包。这在当你想把它分发给其他人时特别重要。如果你"
-"要把你的工作加入到 Debian 发行版中，这是必须的步骤。(参看 <citerefentry> "
-"<refentrytitle>gpg</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>)"
+"要把你的工作加入到 Debian 发行版中，这是必须的步骤。(参看 "
+"<citerefentry> <refentrytitle>gpg</refentrytitle> <manvolnum>1</manvolnum> </"
+"citerefentry>.)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">gpc</systemitem> - the GNU Pascal compiler, "
 "necessary if your program is written in Pascal.  Worthy of note here is "
@@ -602,13 +601,13 @@ msgid ""
 msgstr ""
 "<systemitem role=\"package\">gpc</systemitem> - GNU Pascal 编译器。如果你的程"
 "序是用 Pascal 写的则需要此软件包。值得一提的是 <systemitem role=\"package"
-"\">fp-compiler</systemitem>，Free Pascal 编译器(FPC)，也能够很好地胜任。(参"
-"看 <citerefentry> <refentrytitle>gpc</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry>、<citerefentry> <refentrytitle>ppc386</"
-"refentrytitle> <manvolnum>1</manvolnum> </citerefentry>)"
+"\">fp-compiler</systemitem>，Free Pascal 编译器(FPC)，也能够很好地胜任。"
+"(参见 <citerefentry> "
+"<refentrytitle>gpc</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>, "
+"<citerefentry> <refentrytitle>ppc386</refentrytitle> <manvolnum>1</"
+"manvolnum> </citerefentry>.)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">lintian</systemitem> - this is the Debian "
 "package checker, which can let you know of any common mistakes after you "
@@ -617,13 +616,12 @@ msgid ""
 "citerefentry>, <ulink url=\"&lintian-doc;\">Lintian User's Manual</ulink>.)"
 msgstr ""
 "<systemitem role=\"package\">lintian</systemitem> - Debian 软件包检查工具，使"
-"你可以在编译软件包后知道它是否有常见的错误，并对找到的错误进行解释。(参看 "
-"<citerefentry> <refentrytitle>lintian</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry>、<filename>/usr/share/doc/lintian/lintian.html/"
-"index.html</filename>)"
+"你可以在编译软件包后知道它是否有常见的错误，并对找到的错误进行解释。 "
+"(参见 <citerefentry> "
+"<refentrytitle>lintian</refentrytitle> <manvolnum>1</manvolnum> </"
+"citerefentry>, <ulink url=\"&lintian-doc;\">Lintian User's Manual</ulink>.)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">patch</systemitem> - this very useful utility "
 "will take a file containing a difference listing (produced by the "
@@ -666,7 +664,6 @@ msgstr ""
 "<manvolnum>1</manvolnum> </citerefentry>)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">perl</systemitem> - Perl is one of the most "
 "used interpreted scripting languages on today's Unix-like systems, often "
@@ -674,13 +671,12 @@ msgid ""
 "<refentrytitle>perl</refentrytitle> <manvolnum>1</manvolnum> </"
 "citerefentry>.)"
 msgstr ""
-"<systemitem role=\"package\">python</systemitem> - Python 是 Debian 系统中另"
-"一个最常用的解释型脚本语言，它拥有着可圈可点的强大功能和十分清晰的语法。(参"
-"看 <citerefentry> <refentrytitle>python</refentrytitle> <manvolnum>1</"
+"<systemitem role=\"package\">perl</systemitem> - Perl 是现今类Unix系统中"
+"使用最普遍的解释型脚本语言，它常被称作Unix的瑞士军刀。(参"
+"看 <citerefentry> <refentrytitle>perl</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry>)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">python</systemitem> - Python is another of the "
 "most used interpreted scripting languages on the Debian system, combining "
@@ -694,7 +690,6 @@ msgstr ""
 "manvolnum> </citerefentry>)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">quilt</systemitem> - this package helps you to "
 "manage large numbers of patches by keeping track of the changes each patch "
@@ -704,12 +699,11 @@ msgid ""
 msgstr ""
 "<systemitem role=\"package\">quilt</systemitem> - 此软件包帮助你管理一系列的"
 "补丁。它们被以逻辑栈的方式组织在一起。你可以 apply (=push)、un-apply (=pop)  "
-"或简单地刷新它们然后再放入栈内。(参看 <citerefentry> <refentrytitle>quilt</"
-"refentrytitle> <manvolnum>1</manvolnum> </citerefentry>、<filename>/usr/"
-"share/doc/quilt/README.Debian</filename>)"
+"或简单地刷新它们然后再放入栈内。(参看 "
+"<citerefentry> <refentrytitle>quilt</refentrytitle> <manvolnum>1</"
+"manvolnum></citerefentry>, and <filename>&quilt-pdf;</filename>.)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">xutils-dev</systemitem> - some programs, "
 "usually those made for X11, also use these programs to generate "
@@ -725,7 +719,6 @@ msgstr ""
 "<manvolnum>1</manvolnum> </citerefentry>)"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "The short descriptions that are given above only serve to introduce you to "
 "what each package does.  Before continuing please read the documentation of "
@@ -736,9 +729,10 @@ msgid ""
 "later, I would suggest re-reading the documents mentioned above."
 msgstr ""
 "以上给出的简短描述仅仅是为了使你对这些软件包有一个基本的印象。在继续前请详细"
-"阅读每个程序的文档，至少了解其一般的用途和用法。现在看来这是一项耗时巨大的任"
+"阅读每个程序（包括通过依赖关系安装的程序，比如<command>make</command>）的文档，"
+"至少了解其一般的用途和用法。现在看来这是一项耗时巨大的任"
 "务，但在接下来的工作中你将为你阅读了它们而感觉到 <emphasis>非常</emphasis> 愉"
-"快。"
+"快。如果一会你遇到一些特定的问题，我会建议你重新阅读上面提到的文档。"
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Documentation needed for development"
@@ -752,7 +746,6 @@ msgstr ""
 "以下是 <emphasis>非常重要</emphasis> 的文档，你应该在读本文档时同时参看它们："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">debian-policy</systemitem> - the <ulink url="
 "\"&debian-policy;\">Debian Policy Manual</ulink> includes explanations of "
@@ -763,15 +756,17 @@ msgid ""
 "satisfy to be included in the distribution. (See the local copies of "
 "<filename>&policy-pdf;</filename> and <filename>&fhs-pdf;</filename>.)"
 msgstr ""
-"<systemitem role=\"package\">debian-policy</systemitem> - <ulink url="
+"<systemitem role=\"package\">debian-policy</systemitem> - the <ulink url="
 "\"&debian-policy;\">Debian Policy Manual</ulink> 包含了对 Debian 软件仓库、操"
-"作系统设计事宜、文件系统层级标准(FHS，Filesystem Hierarchy Standard)(讲述每个"
+"作系统设计事宜、文件系统层级标准(FHS，"
+"<ulink url=\"&fhs;\">Filesystem Hierarchy Standard</ulink>，讲述每个"
 "文件和目录应该放在哪里)等的描述。对于你而言，最重要的是它描述了软件包要进入官"
-"方仓库前必须满足的条件。(参看 <filename>/usr/share/doc/debian-policy/policy."
-"html/index.html</filename>)"
+"方仓库前必须满足的条件。"
+"(请参见 "
+"<filename>&policy-pdf;</filename> 和 <filename>&fhs-pdf;</filename> 的本地副本)"
+
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">developers-reference</systemitem> - the <ulink "
 "url=\"&developers-reference;\">Debian Developer's Reference</ulink> "
@@ -781,22 +776,20 @@ msgid ""
 "practices, when and where to upload etc.  (See the local copy of "
 "<filename>&developers-refpdf;</filename>.)"
 msgstr ""
-"<systemitem role=\"package\">developers-reference</systemitem> - <ulink url="
-"\"&developers-reference;\">Debian Developer's Reference</ulink> 描述了打包所"
+"<systemitem role=\"package\">developers-reference</systemitem> - the <ulink "
+"url=\"&developers-reference;\">Debian Developer's Reference</ulink> 描述了打包所"
 "需的包含技术细节在内的全部详细信息，如仓库结构、如何重命名/丢弃/接手软件包、"
-"如何进行 NMU(非维护者上传)、如何管理 Bug 以及打包最佳经验、何时向何处上传等。"
-"(参看 <filename>/usr/share/doc/developers-reference/</filename>)"
+"如何进行 NMU(非维护者上传)、如何管理 Bug 以及打包最佳实践、何时向何处上传等。"
+"(参见 <filename>&developers-refpdf;</filename> 的本地副本)"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "The following is the <emphasis>important</emphasis> documentation which you "
 "should read along with this document:"
 msgstr ""
-"以下是 <emphasis>非常重要</emphasis> 的文档，你应该在读本文档时同时参看它们："
+"以下是 <emphasis>重要</emphasis> 的文档，你应该在读本文档时同时参看它们："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<ulink url=\"&autotools-tutorial;\">Autotools Tutorial</ulink> provides a "
 "very good tutorial for <ulink url=\"&gnu-build-system;\">the GNU Build "
@@ -809,7 +802,6 @@ msgstr ""
 "文档。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">gnu-standards</systemitem> - this package "
 "contains two pieces of documentation from the GNU project: <ulink url=\"&gnu-"
@@ -822,12 +814,12 @@ msgstr ""
 "<systemitem role=\"package\">gnu-standards</systemitem> - 此软件包包含了 GNU "
 "项目中的两篇文档： <ulink url=\"&gnu-standard;\">GNU Coding Standards</"
 "ulink> 和 <ulink url=\"&gnu-maintainer;\">Information for Maintainers of GNU "
-"Software</ulink>。尽管 Debian 不要求遵守这些规范，它们仍然很有帮助。(参看 "
-"<filename>/usr/share/doc/gnu-standards/standards.html</filename> 和 "
-"<filename>/usr/share/doc/gnu-standards/maintain.html</filename>)"
+"Software</ulink>。尽管 Debian 不要求遵守这些规范，它们作为纲领和共识仍然很有帮助。"
+"(参见 <filename>&gnu-standard-pdf;</"
+"filename> 和 <filename>&gnu-maintainer-pdf;</filename> 的本地副本)"
+
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "If this document contradicts any of the documents mentioned above, they are "
 "correct.  Please file a bug report on the <systemitem role=\"package\">maint-"
@@ -857,49 +849,63 @@ msgid ""
 "Before you decide to ask your question in some public place, please read the "
 "fine documentation:"
 msgstr ""
+"在你决定到公共场合提问之前，请先阅读这些（个）不错的文档："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "files in <filename>/usr/share/doc/<replaceable>package</replaceable></"
 "filename> for all pertinent packages"
-msgstr "<filename><replaceable>package</replaceable>.info</filename> 文件"
+msgstr ""
+"所有相关软件包的 <filename>/usr/share/doc/<replaceable>package</replaceable></"
+"filename> 目录之中的文件"
+
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "contents of <literal><command>man</command> <replaceable>command</"
 "replaceable></literal> for all pertinent commands"
 msgstr ""
+"所有相关命令的 <literal><command>man</command> <replaceable>command</"
+"replaceable></literal> 手册页"
+
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "contents of <literal><command>info</command> <replaceable>command</"
 "replaceable></literal> for all pertinent commands"
 msgstr ""
+"所有相关命令的 <literal><command>info</command> <replaceable>command</"
+"replaceable></literal> info页"
+
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "contents of <ulink url=\"&debian-mentors-ldo;\">debian-mentors@lists.debian."
 "org mailing list archive</ulink>"
 msgstr ""
-"关于此邮件列表，参看 <ulink url=\"&debian-mentors-ldo;\">&debian-mentors-ldo;"
-"</ulink>"
+"邮件列表归档 <ulink url=\"&debian-mentors-ldo;\">debian-mentors@lists.debian."
+"org</ulink>"
+
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "contents of <ulink url=\"&debian-devel-ldo;\">debian-devel@lists.debian.org "
 "mailing list archive</ulink>"
 msgstr ""
+"邮件列表归档 <ulink url=\"&debian-devel-ldo;\">debian-devel@lists.debian.org "
+"</ulink>"
+
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "You can use web search engines more effectively by including search strings "
 "such as <literal>site:lists.debian.org</literal> to limit the domain."
 msgstr ""
+"你可以在搜索引擎中搜索时使用类似这样的字符串 :"
+"<literal>site:lists.debian.org</literal> 来限制域名以提高效率。"
+
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Making a small test package is a good way to learn details of packaging.  "
 "Inspecting existing well maintained packages is the best way to learn how "
@@ -914,33 +920,47 @@ msgid ""
 "to in the available documentation and web resources, you can ask them "
 "interactively:"
 msgstr ""
+"如果你仍然对打包存有疑问，并且在文档和WEB资源中都不能找到答案，"
+"你可以交互式地向他们提问："
+
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<ulink url=\"&debian-mentors-ldo;\">debian-mentors@lists.debian.org mailing "
 "list</ulink>. (This mailing list is for the novice.)"
 msgstr ""
 "关于此邮件列表，参看 <ulink url=\"&debian-mentors-ldo;\">&debian-mentors-ldo;"
 "</ulink>"
+"邮件 <ulink url=\"&debian-mentors-ldo;\">debian-mentors@lists.debian.org "
+"</ulink>. (该邮件列表是新手专区。)"
+
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<ulink url=\"&debian-devel-ldo;\">debian-devel@lists.debian.org mailing "
 "list</ulink>. (This mailing list is for the expert.)"
 msgstr ""
+"<ulink url=\"&debian-devel-ldo;\">debian-devel@lists.debian.org "
+"</ulink>. (该邮件列表汇集各路神通。)"
+
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<ulink url=\"&irc-debian;\">IRC</ulink> such as <literal>#debian-mentors</"
 "literal>."
 msgstr ""
+"<ulink url=\"&irc-debian;\">IRC</ulink> 比如 <literal>#debian-mentors</"
+"literal>。"
+
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "Teams focusing on a specific set of packages. (Full list at <ulink url="
 "\"&wikiteams;\">https://wiki.debian.org/Teams</ulink>)"
 msgstr ""
+"专注于某个软件包集合的团队。 (完整列表参见 <ulink url="
+"\"&wikiteams;\">https://wiki.debian.org/Teams</ulink>)"
+
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -950,15 +970,22 @@ msgid ""
 "ulink> and <ulink url=\"&listusers;\">https://lists.debian.org/users.html</"
 "ulink>)"
 msgstr ""
+"特定语言的邮件列表，比如 debian-devel-{french,italian,"
+"portuguese,spanish}@lists.debian.org 或 debian-devel@debian.or.jp. (完整列表"
+"参见 <ulink url=\"&listdevel;\">https://lists.debian.org/devel.html</"
+"ulink> 和 <ulink url=\"&listusers;\">https://lists.debian.org/users.html</"
+"ulink>)"
+
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "The more experienced Debian developers will gladly help you, if you ask "
 "properly after making your required efforts."
 msgstr ""
+"如果你付出了一定的努力并且提问得当，那么"
+"有经验的 Debian 开发者会很乐意帮助你。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "When you receive a bug report (yes, actual bug reports!), you will know that "
 "it is time for you to dig into the <ulink url=\"&bts;\">Debian Bug Tracking "
@@ -970,7 +997,7 @@ msgstr ""
 "当你收到一个 Bug 报告后(没错，真正的 Bug 报告！)，你需要研究 <ulink url="
 "\"&bts;\">Debian Bug Tracking System</ulink> (Debian Bug 跟踪系统，BTS)并阅读"
 "相关的文档以便高效处理这些报告。我推荐阅读 <ulink url=\"&devref-bug-handling;"
-"\">Developer's Reference, 5.8.  'Handling bugs'</ulink>"
+"\">Developer's Reference, 5.8.  \"Handling bugs\"</ulink>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -999,15 +1026,14 @@ msgid "First steps"
 msgstr "第一步"
 
 #. type: Content of: <book><chapter><para>
-#, fuzzy
 msgid ""
 "Let's start by creating a package of your own (or, even better, adopting an "
 "existing one)."
-msgstr "让我们尝试创建一个自己的软件包(“收养”一个已存在的软件包则更好)。"
+msgstr "让我们尝试创建一个自己的软件包(或者，“收养”一个已存在的软件包则更好)。"
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Debian package building workflow"
-msgstr ""
+msgstr "Debian 软件包构建流程"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1015,19 +1041,21 @@ msgid ""
 "workflow of Debian package building involves generating several specifically "
 "named files for each step as follows:"
 msgstr ""
+"如果你要基于某个上游程序构建软件包，那么典型的Debian软件包构建流程"
+"就会包含生成几个特定的文件，如下："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "Get a copy of the upstream software, usually in a compressed tar format."
 msgstr ""
+"获取上游软件的拷贝，通常为压缩过的tar格式。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><literal>
-#, fuzzy
 msgid ""
 "<replaceable>package</replaceable>-<replaceable>version</replaceable>.tar.gz"
 msgstr ""
-"$ debdiff <replaceable>old-package</replaceable>.dsc <replaceable>new-"
-"package</replaceable>.dsc\n"
+"<replaceable>package</replaceable>-<replaceable>version</replaceable>.tar.gz"
+
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -1036,49 +1064,48 @@ msgid ""
 "package (that is, the set of input files used for Debian package building) "
 "in <literal>3.0 (quilt)</literal> format."
 msgstr ""
+"在上游程序的 <filename>debian</filename> 目录下添加 Debian 特定的打包修改"
+"，并以 <literal>3.0 (quilt)</literal> 格式创建一个非本地源码包。"
+"(也就是指用于构建 Debian 软家包的输入文件集合)"
+
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><literal>
-#, fuzzy
 msgid ""
 "<replaceable>package</replaceable>_<replaceable>version</replaceable>.orig."
 "tar.gz"
 msgstr ""
-"$ debdiff <replaceable>old-package</replaceable>.dsc <replaceable>new-"
-"package</replaceable>.dsc\n"
+"<replaceable>package</replaceable>_<replaceable>version</replaceable>.orig."
+"tar.gz"
+
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><literal>
-#, fuzzy
 msgid ""
 "<replaceable>package</replaceable>_<replaceable>version</replaceable>-"
 "<replaceable>revision</replaceable>.debian.tar.gz"
 msgstr ""
-"$ diff -urN <replaceable>foo</replaceable>-<replaceable>oldversion</"
-"replaceable> <replaceable>foo</replaceable>-<replaceable>newversion</"
-"replaceable>\n"
+"<replaceable>package</replaceable>_<replaceable>version</replaceable>-"
+"<replaceable>revision</replaceable>.debian.tar.gz"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><footnote><para>
-#, fuzzy
 msgid ""
 "For the older style of non-native Debian source packages in <literal>1.0</"
 "literal> format, <literal><replaceable>package</"
 "replaceable>_<replaceable>version</replaceable>-<replaceable>revision</"
 "replaceable>.diff.gz</literal> is used instead."
 msgstr ""
-"如果软件包 <systemitem role=\"package\"><replaceable>foo</replaceable></"
-"systemitem> 是使用旧的 <literal>1.0</literal> 格式的，可以在新解压的源代码目"
-"录里运行 <literal>zcat /<replaceable>path</replaceable>/<replaceable>to</"
-"replaceable>/<replaceable>foo</replaceable>_<replaceable>oldversion</"
-"replaceable>.diff.gz|patch -p1</literal> 来完成。"
+"对于旧式的 <literal>1.0</literal> 格式非本地 Debian 源码包，"
+"应当使用 <literal><replaceable>package</"
+"replaceable>_<replaceable>version</replaceable>-<replaceable>revision</"
+"replaceable>.diff.gz</literal> 。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><literal>
-#, fuzzy
 msgid ""
 "<replaceable>package</replaceable>_<replaceable>version</replaceable>-"
 "<replaceable>revision</replaceable>.dsc"
 msgstr ""
-"$ diff -urN <replaceable>foo</replaceable>-<replaceable>oldversion</"
-"replaceable> <replaceable>foo</replaceable>-<replaceable>newversion</"
-"replaceable>\n"
+"<replaceable>package</replaceable>_<replaceable>version</replaceable>-"
+"<replaceable>revision</replaceable>.dsc"
+
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
