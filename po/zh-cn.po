@@ -1113,16 +1113,17 @@ msgid ""
 "in <literal>.deb</literal> format (or <literal>.udeb</literal> format, used "
 "by the Debian Installer) from the Debian source package."
 msgstr ""
+"从 Debian 源码包构建 Debian 二进制包；二进制包的格式通常是"
+"<literal>.deb</literal> (或者 <literal>.udeb</literal>，Debian Installer 专用)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><literal>
-#, fuzzy
 msgid ""
 "<replaceable>package</replaceable>_<replaceable>version</replaceable>-"
 "<replaceable>revision</replaceable>_<replaceable>arch</replaceable>.deb"
 msgstr ""
-"$ diff -urN <replaceable>foo</replaceable>-<replaceable>oldversion</"
-"replaceable> <replaceable>foo</replaceable>-<replaceable>newversion</"
-"replaceable>\n"
+"<replaceable>package</replaceable>_<replaceable>version</replaceable>-"
+"<replaceable>revision</replaceable>_<replaceable>arch</replaceable>.deb"
+
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1131,6 +1132,11 @@ msgid ""
 "literal> was changed from <literal>-</literal> (hyphen) in the tarball name "
 "to <literal>_</literal> (underscore) in the Debian package filenames."
 msgstr ""
+"请注意，在 Debian 软件包文件名中，分隔 <literal><replaceable>package</"
+"replaceable></literal> 和 <literal><replaceable>version</replaceable></"
+"literal> 的字符从 tarball 名称的 <literal>-</literal> (连字符)"
+"换成了 <literal>_</literal> (下划线)。"
+
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -1141,6 +1147,13 @@ msgid ""
 "architecture;\">Debian Policy Manual, 5.6.8 \"Architecture\"</ulink> and is "
 "automatically assigned by the package build process."
 msgstr ""
+"参见 <ulink url=\"&policy-source;\">5.6.1 \"Source\"</ulink>, <ulink url="
+"\"&policy-package;\">5.6.7 \"Package\"</ulink>, 以及 <ulink url=\"&policy-"
+"version;\">5.6.12 \"Version\"</ulink>。 <emphasis role=\"strong"
+"\">package architecture</emphasis> 遵循 <ulink url=\"&policy-"
+"architecture;\">Debian Policy Manual, 5.6.8 \"Architecture\"</ulink> "
+"并且会在软件包构建的过程中被自动分配。"
+
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1154,55 +1167,63 @@ msgid ""
 "role=\"strong\">package architecture</emphasis>, as defined in the Debian "
 "Policy Manual.  <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
+"在上述的文件名中，将 <literal><replaceable>package</"
+"replaceable></literal> 部分替换为 <emphasis role=\"strong\">package name</"
+"emphasis>， 将 <literal><replaceable>version</replaceable></literal> "
+"部分替换为 <emphasis role=\"strong\">upstream version</emphasis>， 将"
+"<literal><replaceable>revision</replaceable></literal> 部分替换为 "
+"<emphasis role=\"strong\">Debian revision</emphasis>，以及将 "
+"<literal><replaceable>arch</replaceable></literal> 部分替换为 <emphasis "
+"role=\"strong\">package architecture</emphasis>，根据 Debian 方针手册。"
+" <placeholder type=\"footnote\" id=\"0\"/>"
+
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "Each step of this outline is explained with detailed examples in later "
 "sections."
 msgstr ""
+"本大纲中的每一步都会在后续的章节中辅以详细的例子进行解释。"
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Choose your program"
 msgstr "选择你的程序"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "You have probably chosen the package you want to create.  The first thing "
 "you need to do is check if the package is in the distribution archive "
 "already by using the following:"
 msgstr ""
-"可能你已经选好了要制作的软件包。第一件要做的事是使用 <command>aptitude</"
-"command> 检查它是否已经存在于发行版仓库中了。"
+"可能你已经选好了要制作的软件包。第一件要做的事是"
+"检查它是否已经存在于发行版仓库中了，参考方法如下："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "the <command>aptitude</command> command"
-msgstr "<command>debc</command> 命令"
+msgstr "<command>aptitude</command> 命令"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "the <ulink url=\"&packages-do;\">Debian packages</ulink> web page"
-msgstr "<ulink url=\"&debian-packages-git;\">debian packages in git</ulink>"
+msgstr "the <ulink url=\"&packages-do;\">Debian packages</ulink> 页面"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "the <ulink url=\"&packages-qa-do;\">Debian Package Tracking System</ulink> "
 "web page"
-msgstr "<ulink url=\"&debian-packages-git;\">debian packages in git</ulink>"
+msgstr ""
+"the <ulink url=\"&packages-qa-do;\">Debian Package Tracking System</ulink> "
+"页面"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "See <ulink url=\"&devref-adopt;\">Debian Developer's Reference 5.9.5.  "
 "\"Adopting a package\"</ulink>."
 msgstr ""
-"关于这些问题的更多帮助，查看 <ulink url=\"&developers-reference;\">Debian "
-"Developer's Reference</ulink>。"
+"参见 <ulink url=\"&devref-adopt;\">Debian Developer's Reference 5.9.5.  "
+"\"Adopting a package\"</ulink>."
+
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "If the package already exists, well, install it! :-) If it happens to be "
 "<emphasis role=\"strong\">orphaned</emphasis> (that is, if its maintainer is "
@@ -1213,10 +1234,9 @@ msgid ""
 msgstr ""
 "如果软件包已经存在，直接安装就好了！:-) 如果它是被 <emphasis role=\"strong\">"
 "抛弃(orphaned)</emphasis> 的——也就是说它的维护者被设置为 <ulink url=\"&qa-do;"
-"\">Debian QA Group</ulink>，那么你可以尝试接手维护它(在 <ulink url=\"&wnpp-"
-"bts;\">Debian Bug report logs: Bugs in package wnpp in unstable</ulink> 检查"
-"它的维护者信息)。你也可以“收养”维护者发出“Request for Adoption”(<emphasis "
-"role=\"strong\">RFA</emphasis>)请求的软件包。"
+"\">Debian QA Group</ulink>，那么你可以尝试接手维护它。"
+"你也可以“收养”维护者发出“Request for Adoption”(<emphasis "
+"role=\"strong\">RFA</emphasis>)请求的软件包。<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
