@@ -765,7 +765,6 @@ msgstr ""
 "(请参见 "
 "<filename>&policy-pdf;</filename> 和 <filename>&fhs-pdf;</filename> 的本地副本)"
 
-
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<systemitem role=\"package\">developers-reference</systemitem> - the <ulink "
@@ -818,7 +817,6 @@ msgstr ""
 "(参见 <filename>&gnu-standard-pdf;</"
 "filename> 和 <filename>&gnu-maintainer-pdf;</filename> 的本地副本)"
 
-
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "If this document contradicts any of the documents mentioned above, they are "
@@ -859,7 +857,6 @@ msgstr ""
 "所有相关软件包的 <filename>/usr/share/doc/<replaceable>package</replaceable></"
 "filename> 目录之中的文件"
 
-
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "contents of <literal><command>man</command> <replaceable>command</"
@@ -867,7 +864,6 @@ msgid ""
 msgstr ""
 "所有相关命令的 <literal><command>man</command> <replaceable>command</"
 "replaceable></literal> 手册页"
-
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -1503,54 +1499,48 @@ msgstr ""
 "复合二进制软件包，arch = any + all （包含ELF二进制可执行程序+文档的软件包）"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "upstream source in a format other than <filename>tar.gz</filename> or "
 "<filename>tar.bz2</filename>"
 msgstr ""
-"源代码不是 <filename>tar.gz</filename> 也不是 <filename>tar.bz2</filename> 格"
-"式，或"
+"既不是 <filename>tar.gz</filename> 也不是 <filename>tar.bz2</filename> 格"
+"式的上有源代码"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid "upstream source containing undistributable contents"
-msgstr "源代码 tarball 中包含不可分发的内容。"
+msgstr "源代码中包含不可分发的内容。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "High complexity packages"
-msgstr "多个二进制包的软件包；"
+msgstr "高复杂软件包"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "interpreter module package used by other packages"
-msgstr ""
+msgstr "被其他软件包使用的解释器模块包"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "generic ELF library package used by other packages"
-msgstr ""
+msgstr "被其他软件包使用的一般ELF库文件包"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid "multiple binary packages including an ELF library package"
-msgstr "多个二进制包的软件包；"
+msgstr "复合二进制的软件包，包含ELF库文件包"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "source package with multiple upstream sources"
-msgstr ""
+msgstr "多上游的源码包"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid "kernel module packages"
-msgstr "内核模块软件包；"
+msgstr "内核模块软件包"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid "kernel patch packages"
-msgstr "内核补丁软件包；"
+msgstr "内核补丁软件包"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "any package with non-trivial maintainer scripts"
-msgstr ""
+msgstr "包含冷门维护者脚本的软件包"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1558,21 +1548,21 @@ msgid ""
 "more knowledge. You should seek specific guidance for every complex feature. "
 "For example, some languages have their own sub-policy documents:"
 msgstr ""
+"打包高复杂软件包并非难如登天，但需要更多知识。"
+"你应该针对每一个复杂特性来搜寻针对性的指南。"
+"比如，一些语言有它们自己的子策略文档："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
-msgid "<ulink url=\"&policy-perl;\">Perl policy</ulink>"
-msgstr ""
-"第 3 行描述了用户安装此软件包的优先级。具体说明参看 <ulink url=\"&policy-"
-"priorities;\">Debian Policy Manual, 2.5 'Priorities'</ulink>"
+msgid "<ulink url=\"&policy-perl;\">perl policy</ulink>"
+msgstr "<ulink url=\"&policy-perl;\">perl policy</ulink>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<ulink url=\"&policy-python;\">Python policy</ulink>"
-msgstr ""
+msgstr "<ulink url=\"&policy-python;\">Python policy</ulink>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<ulink url=\"&policy-java;\">Java policy</ulink>"
-msgstr ""
+msgstr "<ulink url=\"&policy-java;\">Java policy</ulink>"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -1582,6 +1572,11 @@ msgid ""
 "modifying the upstream source to add a new <filename>Makefile</filename> "
 "with the <literal>install</literal> target as in <xref linkend=\"modify\"/>."
 msgstr ""
+"不用担心失踪的 <filename>Makefile</filename>。"
+"你可以参照 <xref linkend=\"install\"/> ，简单地通过"
+" <command>debhelper</command> 来安装 <command>hello</command> 程序，"
+"或者修改上游源代码来添加带有<literal>install</literal>目标的新"
+"<filename>Makefile</filename>，参照<xref linkend=\"modify\"/>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1592,6 +1587,12 @@ msgid ""
 "<filename>hello-sh-1.0.tar.gz</filename> created as followings may offer a "
 "good starting point:<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
+"还有一句拉丁谚语：<emphasis>fabricando fit faber</emphasis> "
+"（熟能生巧）。我们 <emphasis>强烈</emphasis> 建议"
+"你在阅读这篇教程的时候，用一个简单软件包来实践和实验所有的 Debian 打包步骤。"
+"下边的步骤创建了一个微不足道的软件包 "
+"<filename>hello-sh-1.0.tar.gz</filename> ，它可以提供一个良好的起点："
+"<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -1606,10 +1607,19 @@ msgid ""
 "$ cd ..\n"
 "$ tar -cvzf hello-sh-1.0.tar.gz hello-sh-1.0\n"
 msgstr ""
+"$ mkdir -p hello-sh/hello-sh-1.0; cd hello-sh/hello-sh-1.0\n"
+"$ cat &gt; hello &lt;&lt;EOF\n"
+"#!/bin/sh\n"
+"# (C) 2011 Foo Bar, GPL2+\n"
+"echo \"Hello!\"\n"
+"EOF\n"
+"$ chmod 755 hello\n"
+"$ cd ..\n"
+"$ tar -cvzf hello-sh-1.0.tar.gz hello-sh-1.0\n"
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Get the program, and try it out"
-msgstr "获得程序，并且试用它"
+msgstr "获取程序并试用"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
