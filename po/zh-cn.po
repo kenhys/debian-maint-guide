@@ -94,7 +94,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><title>
 msgid "Getting started The Right Way"
-msgstr "正确的启程方式"
+msgstr "正确启程"
 
 #. type: Content of: <book><chapter><para>
 msgid ""
@@ -208,8 +208,8 @@ msgid ""
 "Here are some observations of Debian's social dynamics, presented in the "
 "hope that it will prepare you for interactions with Debian:"
 msgstr ""
-"以下是一些有关 Debian 的社会动力学报告，希望它们有助于你掌握与 Debian 项"
-"目进行互动的方法。"
+"以下是一些有关 Debian 的社会动力学报告，希望它们有助于你掌握与 Debian 项目进"
+"行互动的方法。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "We all are volunteers."
@@ -433,9 +433,9 @@ msgid ""
 "try to install that, it will <emphasis>pull in</emphasis> other packages "
 "required to have a basic build environment."
 msgstr ""
-"在你的开发环境中，需要安装的最重要的软件包是 "
-"<systemitem role=\"package\">build-essential</systemitem>。一旦你 "
-"尝试安装该包，它将 <emphasis>拉来</emphasis> 其他基本构建环境所需的基本软件。"
+"在你的开发环境中，需要安装的最重要的软件包是 <systemitem role=\"package"
+"\">build-essential</systemitem>。一旦你 尝试安装该包，它将 <emphasis>拉来</"
+"emphasis> 其他基本构建环境所需的基本软件。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -508,8 +508,8 @@ msgid ""
 "packaging examples."
 msgstr ""
 "新的 <systemitem role=\"package\">debmake</systemitem> 可以作为标准 "
-"<systemitem role=\"package\">dh-make</"
-"systemitem> 的代替品。 然而它能做的事情更多，并且拥有包含足量实例的HTML文档。 "
+"<systemitem role=\"package\">dh-make</systemitem> 的代替品。 然而它能做的事情"
+"更多，并且拥有包含足量实例的HTML文档。 "
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -521,8 +521,7 @@ msgid ""
 msgstr ""
 "<systemitem role=\"package\">devscripts</systemitem> - 此软件包提供了一些非常"
 "好非常有用的脚本帮助维护者，但他们并非构建软件包所必须。此软件包所推荐或建议"
-"的软件包都值得一看。(参看 <filename>&devscripts-readme;</"
-"filename>)"
+"的软件包都值得一看。(参看 <filename>&devscripts-readme;</filename>)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -569,10 +568,9 @@ msgid ""
 msgstr ""
 "<systemitem role=\"package\">git</systemitem> - 此软件包提供了用于快捷处理大"
 "型项目的著名版本控制系统 - git。它被广泛用于各种开源项目，最著名的是 Linux 内"
-"核项目。"
-"(参见 <citerefentry> <refentrytitle>git</"
-"refentrytitle> <manvolnum>1</manvolnum> </citerefentry>, git Manual "
-"(<filename>&git-doc;</filename>).)"
+"核项目。(参见 <citerefentry> <refentrytitle>git</refentrytitle> "
+"<manvolnum>1</manvolnum> </citerefentry>, git Manual (<filename>&git-doc;</"
+"filename>).)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -585,9 +583,8 @@ msgid ""
 msgstr ""
 "<systemitem role=\"package\">gnupg</systemitem> - 使你可以使用 <emphasis>数字"
 "签名</emphasis> 签署你的软件包。这在当你想把它分发给其他人时特别重要。如果你"
-"要把你的工作加入到 Debian 发行版中，这是必须的步骤。(参看 "
-"<citerefentry> <refentrytitle>gpg</refentrytitle> <manvolnum>1</manvolnum> </"
-"citerefentry>.)"
+"要把你的工作加入到 Debian 发行版中，这是必须的步骤。(参看 <citerefentry> "
+"<refentrytitle>gpg</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>.)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -601,11 +598,10 @@ msgid ""
 msgstr ""
 "<systemitem role=\"package\">gpc</systemitem> - GNU Pascal 编译器。如果你的程"
 "序是用 Pascal 写的则需要此软件包。值得一提的是 <systemitem role=\"package"
-"\">fp-compiler</systemitem>，Free Pascal 编译器(FPC)，也能够很好地胜任。"
-"(参见 <citerefentry> "
-"<refentrytitle>gpc</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>, "
-"<citerefentry> <refentrytitle>ppc386</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry>.)"
+"\">fp-compiler</systemitem>，Free Pascal 编译器(FPC)，也能够很好地胜任。(参"
+"见 <citerefentry> <refentrytitle>gpc</refentrytitle> <manvolnum>1</"
+"manvolnum> </citerefentry>, <citerefentry> <refentrytitle>ppc386</"
+"refentrytitle> <manvolnum>1</manvolnum> </citerefentry>.)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -616,10 +612,10 @@ msgid ""
 "citerefentry>, <ulink url=\"&lintian-doc;\">Lintian User's Manual</ulink>.)"
 msgstr ""
 "<systemitem role=\"package\">lintian</systemitem> - Debian 软件包检查工具，使"
-"你可以在编译软件包后知道它是否有常见的错误，并对找到的错误进行解释。 "
-"(参见 <citerefentry> "
-"<refentrytitle>lintian</refentrytitle> <manvolnum>1</manvolnum> </"
-"citerefentry>, <ulink url=\"&lintian-doc;\">Lintian User's Manual</ulink>.)"
+"你可以在编译软件包后知道它是否有常见的错误，并对找到的错误进行解释。 (参见 "
+"<citerefentry> <refentrytitle>lintian</refentrytitle> <manvolnum>1</"
+"manvolnum> </citerefentry>, <ulink url=\"&lintian-doc;\">Lintian User's "
+"Manual</ulink>.)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -671,10 +667,9 @@ msgid ""
 "<refentrytitle>perl</refentrytitle> <manvolnum>1</manvolnum> </"
 "citerefentry>.)"
 msgstr ""
-"<systemitem role=\"package\">perl</systemitem> - Perl 是现今类Unix系统中"
-"使用最普遍的解释型脚本语言，它常被称作Unix的瑞士军刀。(参"
-"看 <citerefentry> <refentrytitle>perl</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry>)"
+"<systemitem role=\"package\">perl</systemitem> - Perl 是现今类Unix系统中使用"
+"最普遍的解释型脚本语言，它常被称作Unix的瑞士军刀。(参看 <citerefentry> "
+"<refentrytitle>perl</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -699,9 +694,9 @@ msgid ""
 msgstr ""
 "<systemitem role=\"package\">quilt</systemitem> - 此软件包帮助你管理一系列的"
 "补丁。它们被以逻辑栈的方式组织在一起。你可以 apply (=push)、un-apply (=pop)  "
-"或简单地刷新它们然后再放入栈内。(参看 "
-"<citerefentry> <refentrytitle>quilt</refentrytitle> <manvolnum>1</"
-"manvolnum></citerefentry>, and <filename>&quilt-pdf;</filename>.)"
+"或简单地刷新它们然后再放入栈内。(参看 <citerefentry> <refentrytitle>quilt</"
+"refentrytitle> <manvolnum>1</manvolnum></citerefentry>, and <filename>&quilt-"
+"pdf;</filename>.)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -729,10 +724,10 @@ msgid ""
 "later, I would suggest re-reading the documents mentioned above."
 msgstr ""
 "以上给出的简短描述仅仅是为了使你对这些软件包有一个基本的印象。在继续前请详细"
-"阅读每个程序（包括通过依赖关系安装的程序，比如<command>make</command>）的文档，"
-"至少了解其一般的用途和用法。现在看来这是一项耗时巨大的任"
-"务，但在接下来的工作中你将为你阅读了它们而感觉到 <emphasis>非常</emphasis> 愉"
-"快。如果一会你遇到一些特定的问题，我会建议你重新阅读上面提到的文档。"
+"阅读每个程序（包括通过依赖关系安装的程序，比如<command>make</command>）的文"
+"档，至少了解其一般的用途和用法。现在看来这是一项耗时巨大的任务，但在接下来的"
+"工作中你将为你阅读了它们而感觉到 <emphasis>非常</emphasis> 愉快。如果一会你遇"
+"到一些特定的问题，我会建议你重新阅读上面提到的文档。"
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Documentation needed for development"
@@ -758,12 +753,11 @@ msgid ""
 msgstr ""
 "<systemitem role=\"package\">debian-policy</systemitem> - the <ulink url="
 "\"&debian-policy;\">Debian Policy Manual</ulink> 包含了对 Debian 软件仓库、操"
-"作系统设计事宜、文件系统层级标准(FHS，"
-"<ulink url=\"&fhs;\">Filesystem Hierarchy Standard</ulink>，讲述每个"
-"文件和目录应该放在哪里)等的描述。对于你而言，最重要的是它描述了软件包要进入官"
-"方仓库前必须满足的条件。"
-"(请参见 "
-"<filename>&policy-pdf;</filename> 和 <filename>&fhs-pdf;</filename> 的本地副本)"
+"作系统设计事宜、文件系统层级标准(FHS，<ulink url=\"&fhs;\">Filesystem "
+"Hierarchy Standard</ulink>，讲述每个文件和目录应该放在哪里)等的描述。对于你而"
+"言，最重要的是它描述了软件包要进入官方仓库前必须满足的条件。(请参见 "
+"<filename>&policy-pdf;</filename> 和 <filename>&fhs-pdf;</filename> 的本地副"
+"本)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -776,10 +770,10 @@ msgid ""
 "<filename>&developers-refpdf;</filename>.)"
 msgstr ""
 "<systemitem role=\"package\">developers-reference</systemitem> - the <ulink "
-"url=\"&developers-reference;\">Debian Developer's Reference</ulink> 描述了打包所"
-"需的包含技术细节在内的全部详细信息，如仓库结构、如何重命名/丢弃/接手软件包、"
-"如何进行 NMU(非维护者上传)、如何管理 Bug 以及打包最佳实践、何时向何处上传等。"
-"(参见 <filename>&developers-refpdf;</filename> 的本地副本)"
+"url=\"&developers-reference;\">Debian Developer's Reference</ulink> 描述了打"
+"包所需的包含技术细节在内的全部详细信息，如仓库结构、如何重命名/丢弃/接手软件"
+"包、如何进行 NMU(非维护者上传)、如何管理 Bug 以及打包最佳实践、何时向何处上传"
+"等。(参见 <filename>&developers-refpdf;</filename> 的本地副本)"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -813,9 +807,9 @@ msgstr ""
 "<systemitem role=\"package\">gnu-standards</systemitem> - 此软件包包含了 GNU "
 "项目中的两篇文档： <ulink url=\"&gnu-standard;\">GNU Coding Standards</"
 "ulink> 和 <ulink url=\"&gnu-maintainer;\">Information for Maintainers of GNU "
-"Software</ulink>。尽管 Debian 不要求遵守这些规范，它们作为纲领和共识仍然很有帮助。"
-"(参见 <filename>&gnu-standard-pdf;</"
-"filename> 和 <filename>&gnu-maintainer-pdf;</filename> 的本地副本)"
+"Software</ulink>。尽管 Debian 不要求遵守这些规范，它们作为纲领和共识仍然很有"
+"帮助。(参见 <filename>&gnu-standard-pdf;</filename> 和 <filename>&gnu-"
+"maintainer-pdf;</filename> 的本地副本)"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -831,8 +825,7 @@ msgstr ""
 msgid ""
 "The following is an alternative tutorial documentation which you may read "
 "along with this document:"
-msgstr ""
-"以下是替代性的教程文档，你应该在读本文档时同时参看它们："
+msgstr "以下是替代性的教程文档，你应该在读本文档时同时参看它们："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<ulink url=\"&debpkg-tutorial0;\">Debian Packaging Tutorial</ulink>"
@@ -846,16 +839,15 @@ msgstr "到何处寻求帮助"
 msgid ""
 "Before you decide to ask your question in some public place, please read the "
 "fine documentation:"
-msgstr ""
-"在你决定到公共场合提问之前，请先阅读这些（个）不错的文档："
+msgstr "在你决定到公共场合提问之前，请先阅读这些（个）不错的文档："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "files in <filename>/usr/share/doc/<replaceable>package</replaceable></"
 "filename> for all pertinent packages"
 msgstr ""
-"所有相关软件包的 <filename>/usr/share/doc/<replaceable>package</replaceable></"
-"filename> 目录之中的文件"
+"所有相关软件包的 <filename>/usr/share/doc/<replaceable>package</"
+"replaceable></filename> 目录之中的文件"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -873,7 +865,6 @@ msgstr ""
 "所有相关命令的 <literal><command>info</command> <replaceable>command</"
 "replaceable></literal> info页"
 
-
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "contents of <ulink url=\"&debian-mentors-ldo;\">debian-mentors@lists.debian."
@@ -881,7 +872,6 @@ msgid ""
 msgstr ""
 "邮件列表归档 <ulink url=\"&debian-mentors-ldo;\">debian-mentors@lists.debian."
 "org</ulink>"
-
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -891,15 +881,13 @@ msgstr ""
 "邮件列表归档 <ulink url=\"&debian-devel-ldo;\">debian-devel@lists.debian.org "
 "</ulink>"
 
-
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "You can use web search engines more effectively by including search strings "
 "such as <literal>site:lists.debian.org</literal> to limit the domain."
 msgstr ""
-"你可以在搜索引擎中搜索时使用类似这样的字符串 :"
-"<literal>site:lists.debian.org</literal> 来限制域名以提高效率。"
-
+"你可以在搜索引擎中搜索时使用类似这样的字符串 :<literal>site:lists.debian."
+"org</literal> 来限制域名以提高效率。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -916,29 +904,25 @@ msgid ""
 "to in the available documentation and web resources, you can ask them "
 "interactively:"
 msgstr ""
-"如果你仍然对打包存有疑问，并且在文档和WEB资源中都不能找到答案，"
-"你可以交互式地向他们提问："
-
+"如果你仍然对打包存有疑问，并且在文档和WEB资源中都不能找到答案，你可以交互式地"
+"向他们提问："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<ulink url=\"&debian-mentors-ldo;\">debian-mentors@lists.debian.org mailing "
 "list</ulink>. (This mailing list is for the novice.)"
 msgstr ""
-"关于此邮件列表，参看 <ulink url=\"&debian-mentors-ldo;\">&debian-mentors-ldo;"
-"</ulink>"
-"邮件 <ulink url=\"&debian-mentors-ldo;\">debian-mentors@lists.debian.org "
-"</ulink>. (该邮件列表是新手专区。)"
-
+"<ulink url=\"&debian-mentors-ldo;\">&debian-mentors-ldo;"
+"</ulink>邮件 <ulink url=\"&debian-mentors-ldo;\">debian-mentors@lists.debian."
+"org </ulink>. (该邮件列表是新手专区。)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<ulink url=\"&debian-devel-ldo;\">debian-devel@lists.debian.org mailing "
 "list</ulink>. (This mailing list is for the expert.)"
 msgstr ""
-"<ulink url=\"&debian-devel-ldo;\">debian-devel@lists.debian.org "
-"</ulink>. (该邮件列表汇集各路神通。)"
-
+"<ulink url=\"&debian-devel-ldo;\">debian-devel@lists.debian.org </ulink>. (该"
+"邮件列表汇集各路神通。)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -948,15 +932,13 @@ msgstr ""
 "<ulink url=\"&irc-debian;\">IRC</ulink> 比如 <literal>#debian-mentors</"
 "literal>。"
 
-
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "Teams focusing on a specific set of packages. (Full list at <ulink url="
 "\"&wikiteams;\">https://wiki.debian.org/Teams</ulink>)"
 msgstr ""
-"专注于某个软件包集合的团队。 (完整列表参见 <ulink url="
-"\"&wikiteams;\">https://wiki.debian.org/Teams</ulink>)"
-
+"专注于某个软件包集合的团队。 (完整列表参见 <ulink url=\"&wikiteams;"
+"\">https://wiki.debian.org/Teams</ulink>)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -966,20 +948,18 @@ msgid ""
 "ulink> and <ulink url=\"&listusers;\">https://lists.debian.org/users.html</"
 "ulink>)"
 msgstr ""
-"特定语言的邮件列表，比如 debian-devel-{french,italian,"
-"portuguese,spanish}@lists.debian.org 或 debian-devel@debian.or.jp. (完整列表"
-"参见 <ulink url=\"&listdevel;\">https://lists.debian.org/devel.html</"
-"ulink> 和 <ulink url=\"&listusers;\">https://lists.debian.org/users.html</"
-"ulink>)"
-
+"特定语言的邮件列表，比如 debian-devel-{french,italian,portuguese,spanish}"
+"@lists.debian.org 或 debian-devel@debian.or.jp. (完整列表参见 <ulink url="
+"\"&listdevel;\">https://lists.debian.org/devel.html</ulink> 和 <ulink url="
+"\"&listusers;\">https://lists.debian.org/users.html</ulink>)"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "The more experienced Debian developers will gladly help you, if you ask "
 "properly after making your required efforts."
 msgstr ""
-"如果你付出了一定的努力并且提问得当，那么"
-"有经验的 Debian 开发者会很乐意帮助你。"
+"如果你付出了一定的努力并且提问得当，那么有经验的 Debian 开发者会很乐意帮助"
+"你。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1037,21 +1017,19 @@ msgid ""
 "workflow of Debian package building involves generating several specifically "
 "named files for each step as follows:"
 msgstr ""
-"如果你要基于某个上游程序构建软件包，那么典型的Debian软件包构建流程"
-"就会包含生成几个特定的文件，如下："
+"如果你要基于某个上游程序构建软件包，那么典型的Debian软件包构建流程就会包含生"
+"成几个特定的文件，如下："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "Get a copy of the upstream software, usually in a compressed tar format."
-msgstr ""
-"获取上游软件的拷贝，通常为压缩过的tar格式。"
+msgstr "获取上游软件的拷贝，通常为压缩过的tar格式。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><literal>
 msgid ""
 "<replaceable>package</replaceable>-<replaceable>version</replaceable>.tar.gz"
 msgstr ""
 "<replaceable>package</replaceable>-<replaceable>version</replaceable>.tar.gz"
-
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -1060,10 +1038,9 @@ msgid ""
 "package (that is, the set of input files used for Debian package building) "
 "in <literal>3.0 (quilt)</literal> format."
 msgstr ""
-"在上游程序的 <filename>debian</filename> 目录下添加 Debian 特定的打包修改"
-"，并以 <literal>3.0 (quilt)</literal> 格式创建一个非本地源码包。"
-"(也就是指用于构建 Debian 软家包的输入文件集合)"
-
+"在上游程序的 <filename>debian</filename> 目录下添加 Debian 特定的打包修改，并"
+"以 <literal>3.0 (quilt)</literal> 格式创建一个非本地源码包。(也就是指用于构"
+"建 Debian 软家包的输入文件集合)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><literal>
 msgid ""
@@ -1072,7 +1049,6 @@ msgid ""
 msgstr ""
 "<replaceable>package</replaceable>_<replaceable>version</replaceable>.orig."
 "tar.gz"
-
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><literal>
 msgid ""
@@ -1089,10 +1065,9 @@ msgid ""
 "replaceable>_<replaceable>version</replaceable>-<replaceable>revision</"
 "replaceable>.diff.gz</literal> is used instead."
 msgstr ""
-"对于旧式的 <literal>1.0</literal> 格式非本地 Debian 源码包，"
-"应当使用 <literal><replaceable>package</"
-"replaceable>_<replaceable>version</replaceable>-<replaceable>revision</"
-"replaceable>.diff.gz</literal> 。"
+"对于旧式的 <literal>1.0</literal> 格式非本地 Debian 源码包，应当使用 "
+"<literal><replaceable>package</replaceable>_<replaceable>version</"
+"replaceable>-<replaceable>revision</replaceable>.diff.gz</literal> 。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><literal>
 msgid ""
@@ -1101,7 +1076,6 @@ msgid ""
 msgstr ""
 "<replaceable>package</replaceable>_<replaceable>version</replaceable>-"
 "<replaceable>revision</replaceable>.dsc"
-
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -1109,8 +1083,8 @@ msgid ""
 "in <literal>.deb</literal> format (or <literal>.udeb</literal> format, used "
 "by the Debian Installer) from the Debian source package."
 msgstr ""
-"从 Debian 源码包构建 Debian 二进制包；二进制包的格式通常是"
-"<literal>.deb</literal> (或者 <literal>.udeb</literal>，Debian Installer 专用)"
+"从 Debian 源码包构建 Debian 二进制包；二进制包的格式通常是<literal>.deb</"
+"literal> (或者 <literal>.udeb</literal>，Debian Installer 专用)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><literal>
 msgid ""
@@ -1119,7 +1093,6 @@ msgid ""
 msgstr ""
 "<replaceable>package</replaceable>_<replaceable>version</replaceable>-"
 "<replaceable>revision</replaceable>_<replaceable>arch</replaceable>.deb"
-
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1130,9 +1103,8 @@ msgid ""
 msgstr ""
 "请注意，在 Debian 软件包文件名中，分隔 <literal><replaceable>package</"
 "replaceable></literal> 和 <literal><replaceable>version</replaceable></"
-"literal> 的字符从 tarball 名称的 <literal>-</literal> (连字符)"
-"换成了 <literal>_</literal> (下划线)。"
-
+"literal> 的字符从 tarball 名称的 <literal>-</literal> (连字符)换成了 "
+"<literal>_</literal> (下划线)。"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -1145,11 +1117,10 @@ msgid ""
 msgstr ""
 "参见 <ulink url=\"&policy-source;\">5.6.1 \"Source\"</ulink>, <ulink url="
 "\"&policy-package;\">5.6.7 \"Package\"</ulink>, 以及 <ulink url=\"&policy-"
-"version;\">5.6.12 \"Version\"</ulink>。 <emphasis role=\"strong"
-"\">package architecture</emphasis> 遵循 <ulink url=\"&policy-"
-"architecture;\">Debian Policy Manual, 5.6.8 \"Architecture\"</ulink> "
-"并且会在软件包构建的过程中被自动分配。"
-
+"version;\">5.6.12 \"Version\"</ulink>。 <emphasis role=\"strong\">package "
+"architecture</emphasis> 遵循 <ulink url=\"&policy-architecture;\">Debian "
+"Policy Manual, 5.6.8 \"Architecture\"</ulink> 并且会在软件包构建的过程中被自"
+"动分配。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1163,23 +1134,21 @@ msgid ""
 "role=\"strong\">package architecture</emphasis>, as defined in the Debian "
 "Policy Manual.  <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-"在上述的文件名中，将 <literal><replaceable>package</"
-"replaceable></literal> 部分替换为 <emphasis role=\"strong\">package name</"
-"emphasis>， 将 <literal><replaceable>version</replaceable></literal> "
-"部分替换为 <emphasis role=\"strong\">upstream version</emphasis>， 将"
-"<literal><replaceable>revision</replaceable></literal> 部分替换为 "
-"<emphasis role=\"strong\">Debian revision</emphasis>，以及将 "
-"<literal><replaceable>arch</replaceable></literal> 部分替换为 <emphasis "
-"role=\"strong\">package architecture</emphasis>，根据 Debian 方针手册。"
-" <placeholder type=\"footnote\" id=\"0\"/>"
-
+"在上述的文件名中，将 <literal><replaceable>package</replaceable></literal> 部"
+"分替换为 <emphasis role=\"strong\">package name</emphasis>， 将 "
+"<literal><replaceable>version</replaceable></literal> 部分替换为 <emphasis "
+"role=\"strong\">upstream version</emphasis>， 将"
+"<literal><replaceable>revision</replaceable></literal> 部分替换为 <emphasis "
+"role=\"strong\">Debian revision</emphasis>，以及将 "
+"<literal><replaceable>arch</replaceable></literal> 部分替换为 <emphasis role="
+"\"strong\">package architecture</emphasis>，根据 Debian 方针手册。 "
+"<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "Each step of this outline is explained with detailed examples in later "
 "sections."
-msgstr ""
-"本大纲中的每一步都会在后续的章节中辅以详细的例子进行解释。"
+msgstr "本大纲中的每一步都会在后续的章节中辅以详细的例子进行解释。"
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Choose your program"
@@ -1191,8 +1160,8 @@ msgid ""
 "you need to do is check if the package is in the distribution archive "
 "already by using the following:"
 msgstr ""
-"可能你已经选好了要制作的软件包。第一件要做的事是"
-"检查它是否已经存在于发行版仓库中了，参考方法如下："
+"可能你已经选好了要制作的软件包。第一件要做的事是检查它是否已经存在于发行版仓"
+"库中了，参考方法如下："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "the <command>aptitude</command> command"
@@ -1207,8 +1176,8 @@ msgid ""
 "the <ulink url=\"&packages-qa-do;\">Debian Package Tracking System</ulink> "
 "web page"
 msgstr ""
-"the <ulink url=\"&packages-qa-do;\">Debian Package Tracking System</ulink> "
-"页面"
+"the <ulink url=\"&packages-qa-do;\">Debian Package Tracking System</ulink> 页"
+"面"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -1217,7 +1186,6 @@ msgid ""
 msgstr ""
 "参见 <ulink url=\"&devref-adopt;\">Debian Developer's Reference 5.9.5.  "
 "\"Adopting a package\"</ulink>."
-
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1230,9 +1198,9 @@ msgid ""
 msgstr ""
 "如果软件包已经存在，直接安装就好了！:-) 如果它是被 <emphasis role=\"strong\">"
 "抛弃(orphaned)</emphasis> 的——也就是说它的维护者被设置为 <ulink url=\"&qa-do;"
-"\">Debian QA Group</ulink>，那么你可以尝试接手维护它。"
-"你也可以“收养”维护者发出“Request for Adoption”(<emphasis "
-"role=\"strong\">RFA</emphasis>)请求的软件包。<placeholder type=\"footnote\" id=\"0\"/>"
+"\">Debian QA Group</ulink>，那么你可以尝试接手维护它。你也可以“收养”维护者发"
+"出“Request for Adoption”(<emphasis role=\"strong\">RFA</emphasis>)请求的软件"
+"包。<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid "There are several package ownership status resources:"
@@ -1245,7 +1213,6 @@ msgid ""
 msgstr ""
 "<command>wnpp-alert</command> 命令，来自 <systemitem role=\"package"
 "\">devscripts</systemitem> 软件包"
-
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<ulink url=\"&wnpp-do;\">Work-Needing and Prospective Packages</ulink>"
@@ -1260,7 +1227,6 @@ msgstr ""
 "<ulink url=\"&wnpp-bts;\">Debian Bug report logs: Bugs in pseudo-package "
 "<systemitem role=\"package\">wnpp</systemitem> 于 <literal>unstable</"
 "literal></ulink>"
-
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<ulink url=\"&wnpp-dn;\">Debian Packages that Need Lovin'</ulink>"
@@ -1289,10 +1255,10 @@ msgid ""
 "(and more likely to receive sponsorship) by other developers <placeholder "
 "type=\"footnote\" id=\"0\"/>.  You can contribute in various ways:"
 msgstr ""
-"作为旁注必须指出，Debian 已经拥有了绝大多数类型软件的软件包，仓库中软件包的数量"
-"也远远超过了有上传权限的贡献者的数量。因此，为已经在仓库中的软件包贡献力量是"
-"非常受其他开发者欢迎的(且更容易获得 sponsorship)<placeholder type=\"footnote"
-"\" id=\"0\"/>。你可以通过非常多的方式来实现这一目的："
+"作为旁注必须指出，Debian 已经拥有了绝大多数类型软件的软件包，仓库中软件包的数"
+"量也远远超过了有上传权限的贡献者的数量。因此，为已经在仓库中的软件包贡献力量"
+"是非常受其他开发者欢迎的(且更容易获得 sponsorship)<placeholder type="
+"\"footnote\" id=\"0\"/>。你可以通过非常多的方式来实现这一目的："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "taking over orphaned, yet actively used, packages"
@@ -1322,9 +1288,9 @@ msgid ""
 msgstr ""
 "如果你有能力“收养”那个软件包，下载(使用 <literal>apt-get source "
 "<replaceable>packagename</replaceable></literal> 或其他类似的工具)并分析它的"
-"代码。这篇文档没有包含有关如何接手软件包的详细信息，但幸运的是由于接手软件包时起"
-"始的工作已经有人完成，接手的工作应比从头开始轻松得多。尽管如此，请继续阅读，"
-"下面给出的建议会对你很有帮助。"
+"代码。这篇文档没有包含有关如何接手软件包的详细信息，但幸运的是由于接手软件包"
+"时起始的工作已经有人完成，接手的工作应比从头开始轻松得多。尽管如此，请继续阅"
+"读，下面给出的建议会对你很有帮助。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1350,12 +1316,12 @@ msgid ""
 "them if you feel you need to.  If not - find another interesting program "
 "that nobody is maintaining."
 msgstr ""
-"你必须在 <ulink url=\"&wnpp-do;being_packaged\">Work-Needing and Prospective Packages</"
-"ulink> 上查看以确定没有其他人已经开始了工作。如果没有，则提交一份 ITP "
-"(Intent To Package) Bug 报告到 <systemitem role=\"package\">wnpp</"
-"systemitem> 伪软件包(可以使用 <command>reportbug</command>)。如果已经有"
-"人在处理，则在需要的情况下联系他或他们。如果不需要你的帮助，就寻找其他你感兴"
-"趣且没有人维护的软件包吧。"
+"你必须在 <ulink url=\"&wnpp-do;being_packaged\">Work-Needing and Prospective "
+"Packages</ulink> 上查看以确定没有其他人已经开始了工作。如果没有，则提交一份 "
+"ITP (Intent To Package) Bug 报告到 <systemitem role=\"package\">wnpp</"
+"systemitem> 伪软件包(可以使用 <command>reportbug</command>)。如果已经有人在处"
+"理，则在需要的情况下联系他或他们。如果不需要你的帮助，就寻找其他你感兴趣且没"
+"有人维护的软件包吧。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "The software <emphasis role=\"strong\">must have a license</emphasis>."
@@ -1369,12 +1335,11 @@ msgid ""
 "role=\"strong\">not to require a package outside of <literal>main</literal></"
 "emphasis> for compilation or execution.  This is the desired case."
 msgstr ""
-"对于 <literal>main</literal> 类的软件， Debian 方针要求它 <emphasis "
-"role=\"strong\"> 完全兼容 Debian Free Software "
-"Guidelines （Debian 自由软件准则）</emphasis> (<ulink url=\"&dfsg;\">DFSG</ulink>) 并且 <emphasis "
-"role=\"strong\"> 不要求用 <literal>main</literal></"
-"emphasis> 类以外的软件来编译或执行。这是最理想的状况。"
-
+"对于 <literal>main</literal> 类的软件， Debian 方针要求它 <emphasis role="
+"\"strong\"> 完全兼容 Debian Free Software Guidelines （Debian 自由软件准则）"
+"</emphasis> (<ulink url=\"&dfsg;\">DFSG</ulink>) 并且 <emphasis role=\"strong"
+"\"> 不要求用 <literal>main</literal></emphasis> 类以外的软件来编译或执行。这"
+"是最理想的状况。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -1407,9 +1372,8 @@ msgid ""
 "The program should <emphasis role=\"strong\">not</emphasis> introduce "
 "security and maintenance concerns to the Debian system."
 msgstr ""
-"程序 <emphasis role=\"strong\">不应该</emphasis> 给 Debian 系统"
-"带来安全和维护上的问题。"
-
+"程序 <emphasis role=\"strong\">不应该</emphasis> 给 Debian 系统带来安全和维护"
+"上的问题。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -1425,8 +1389,8 @@ msgid ""
 "don't try to package unmaintained software."
 msgstr ""
 "你应该与程序的作者取得联系问一下他是否认为程序应当被打包，以及他是否对 "
-"Debian 友好。能够询问作者关于程序的任何问题是非常重要的，所以不要尝试打包一个无人"
-"维护的软件。"
+"Debian 友好。能够询问作者关于程序的任何问题是非常重要的，所以不要尝试打包一个"
+"无人维护的软件。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -1434,16 +1398,16 @@ msgid ""
 "setuid root, or even better, it shouldn't need to be setuid or setgid to "
 "anything."
 msgstr ""
-"程序一定 <emphasis role=\"strong\">不应该</emphasis> setuid 到 root 。更好的情况是"
-"它不 setuid 或 setgid 到任何用户或组。"
+"程序一定 <emphasis role=\"strong\">不应该</emphasis> setuid 到 root 。更好的"
+"情况是它不 setuid 或 setgid 到任何用户或组。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
 "The program should not be a daemon, or go in an <filename>*/sbin</filename> "
 "directory, or open a port as root."
 msgstr ""
-"程序不应该是守护进程，也不应该进入 <filename>*/sbin</filename> 目录"
-"或者以 root 打开任何端口。"
+"程序不应该是守护进程，也不应该进入 <filename>*/sbin</filename> 目录或者以 "
+"root 打开任何端口。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1453,14 +1417,16 @@ msgid ""
 "software."
 msgstr ""
 "当然，这些问题都只是为了安全，并试图让你不至于在比如 setuid 守护进程等问题上"
-"犯错误而激怒了用户...  当你在打包方面有了更多经验时，就可以处理这样的软件包了。"
+"犯错误而激怒了用户...  当你在打包方面有了更多经验时，就可以处理这样的软件包"
+"了。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "As a new maintainer, you are encouraged to get some experience in packaging "
 "with easier packages and discouraged from creating complicated packages."
-msgstr "我们鼓励你，作为一个新维护人员，选择易于打包和维护的软件包，而不"
-"鼓励选择复杂的软件包。"
+msgstr ""
+"我们鼓励你，作为一个新维护人员，选择易于打包和维护的软件包，而不鼓励选择复杂"
+"的软件包。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "Simple packages"
@@ -1470,15 +1436,15 @@ msgstr "简单软件包"
 msgid ""
 "single binary package, arch = all (collection of data such as wallpaper "
 "graphics)"
-msgstr ""
-"单二进制软件包，arch = all （比如像壁纸那样的资料集）"
+msgstr "单二进制软件包，arch = all （比如像壁纸那样的资料集）"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
 "single binary package, arch = all (executables written in an interpreted "
 "language such as POSIX shell)"
 msgstr ""
-"单二进制软件包，arch = all （用解释型语言编写的可执行脚本文件，比如 POSIX shell）"
+"单二进制软件包，arch = all （用解释型语言编写的可执行脚本文件，比如 POSIX "
+"shell）"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "Intermediate complexity packages"
@@ -1503,8 +1469,8 @@ msgid ""
 "upstream source in a format other than <filename>tar.gz</filename> or "
 "<filename>tar.bz2</filename>"
 msgstr ""
-"既不是 <filename>tar.gz</filename> 也不是 <filename>tar.bz2</filename> 格"
-"式的上有源代码"
+"既不是 <filename>tar.gz</filename> 也不是 <filename>tar.bz2</filename> 格式的"
+"上有源代码"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "upstream source containing undistributable contents"
@@ -1548,12 +1514,13 @@ msgid ""
 "more knowledge. You should seek specific guidance for every complex feature. "
 "For example, some languages have their own sub-policy documents:"
 msgstr ""
-"打包高复杂软件包并非难如登天，但需要更多知识。"
-"你应该针对每一个复杂特性来搜寻针对性的指南。"
-"比如，一些语言有它们自己的子策略文档："
+"打包高复杂软件包并非难如登天，但需要更多知识。你应该针对每一个复杂特性来搜寻"
+"针对性的指南。比如，一些语言有它们自己的子策略文档："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-msgid "<ulink url=\"&policy-perl;\">perl policy</ulink>"
+#, fuzzy
+#| msgid "<ulink url=\"&policy-perl;\">perl policy</ulink>"
+msgid "<ulink url=\"&policy-perl;\">Perl policy</ulink>"
 msgstr "<ulink url=\"&policy-perl;\">perl policy</ulink>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
@@ -1572,11 +1539,10 @@ msgid ""
 "modifying the upstream source to add a new <filename>Makefile</filename> "
 "with the <literal>install</literal> target as in <xref linkend=\"modify\"/>."
 msgstr ""
-"不用担心失踪的 <filename>Makefile</filename>。"
-"你可以参照 <xref linkend=\"install\"/> ，简单地通过"
-" <command>debhelper</command> 来安装 <command>hello</command> 程序，"
-"或者修改上游源代码来添加带有<literal>install</literal>目标的新"
-"<filename>Makefile</filename>，参照<xref linkend=\"modify\"/>"
+"不用担心失踪的 <filename>Makefile</filename>。你可以参照 <xref linkend="
+"\"install\"/> ，简单地通过 <command>debhelper</command> 来安装 "
+"<command>hello</command> 程序，或者修改上游源代码来添加带有<literal>install</"
+"literal>目标的新<filename>Makefile</filename>，参照<xref linkend=\"modify\"/>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1587,10 +1553,9 @@ msgid ""
 "<filename>hello-sh-1.0.tar.gz</filename> created as followings may offer a "
 "good starting point:<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-"还有一句拉丁谚语：<emphasis>fabricando fit faber</emphasis> "
-"（熟能生巧）。我们 <emphasis>强烈</emphasis> 建议"
-"你在阅读这篇教程的时候，用一个简单软件包来实践和实验所有的 Debian 打包步骤。"
-"下边的步骤创建了一个微不足道的软件包 "
+"还有一句拉丁谚语：<emphasis>fabricando fit faber</emphasis> （熟能生巧）。我"
+"们 <emphasis>强烈</emphasis> 建议你在阅读这篇教程的时候，用一个简单软件包来实"
+"践和实验所有的 Debian 打包步骤。下边的步骤创建了一个微不足道的软件包 "
 "<filename>hello-sh-1.0.tar.gz</filename> ，它可以提供一个良好的起点："
 "<placeholder type=\"footnote\" id=\"0\"/>"
 
