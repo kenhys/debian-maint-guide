@@ -1587,7 +1587,6 @@ msgid "Get the program, and try it out"
 msgstr "获取程序并试用"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "So the first thing to do is to find and download the original source code.  "
 "Presumably you already have the source file that you picked up at the "
@@ -1600,12 +1599,13 @@ msgid ""
 "<filename><replaceable>package</replaceable>-<replaceable>version</"
 "replaceable></filename> with all the sources inside."
 msgstr ""
-"第一件要做的事就是找到并下载原始的源代码。我假定你已经从作者的主页上找到了它"
+"第一件要做的事就是找到并下载原始的源代码。我们假定你已经从作者的主页上找到了它"
 "的源代码。Unix 下的自由软件源代码通常是以 <command>tar</command>"
 "+<command>gzip</command> 格式(扩展名为 <filename>.tar.gz</filename>)或 "
 "<command>tar</command>+<command>bzip2</command> 格式(扩展名为 <filename>.tar."
-"bz2</filename>)的形式提供的。通常归档文件中包含了一个名为 "
-"<filename><replaceable>programname</replaceable>-<replaceable>version</"
+"bz2</filename>)或<command>tar</command>+<command>xz</command> "
+"(扩展名为<filename>.tar.xz</filename>)的形式提供的。通常归档文件中包含了一个名为 "
+"<filename><replaceable>package</replaceable>-<replaceable>version</"
 "replaceable></filename> 的子目录，里面包含了全部的源代码。"
 
 #. type: Content of: <book><chapter><section><para>
@@ -1731,7 +1731,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Simple build systems"
-msgstr ""
+msgstr "简易构建系统"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -1775,7 +1775,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Popular portable build systems"
-msgstr ""
+msgstr "普遍可移植的构建系统"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -1830,7 +1830,7 @@ msgstr ""
 "literal> 并把生成的文件同源代码一起分发。"
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "configure.ac-----+-&gt; autoreconf -+-&gt; configure\n"
 "Makefile.am -----+        |      +-&gt; Makefile.in\n"
@@ -1875,7 +1875,7 @@ msgstr ""
 "<command><replaceable>binary</replaceable></command> (二进制程序)。"
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "Makefile.in -----+                +-&gt; Makefile -----+-&gt; make -&gt; <replaceable>binary</replaceable>\n"
 "src/Makefile.in -+-&gt; ./configure -+-&gt; src/Makefile -+\n"
@@ -1887,9 +1887,10 @@ msgstr ""
 "Makefile.in -----+                +-&gt; Makefile -----+-&gt; make -&gt; <replaceable>binary</replaceable>\n"
 "src/Makefile.in -+-&gt; ./configure -+-&gt; src/Makefile -+\n"
 "config.h.in -----+                +-&gt; config.h -----+\n"
-"                          |\n"
-"           config.status -+\n"
-"           config.guess --+\n"
+"                 |\n"
+"  config.status -+\n"
+"  config.guess --+\n"
+
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -1984,7 +1985,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid "This stricter rule should help you avoid confusing file names."
-msgstr ""
+msgstr "这一条更严格的规则能帮助你避免混淆文件名。"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -2051,23 +2052,23 @@ msgstr "$ diff -urN <replaceable>foo</replaceable>-<replaceable>oldversion</repl
 
 #. type: Content of: <book><chapter><section><para>
 msgid "The version comparison rule can be summarized as:"
-msgstr ""
+msgstr "版本比较规则可以总结如下："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "Strings are compared from the head to the tail."
-msgstr ""
+msgstr "字符串会被从头到尾进行比较。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "Letters are larger than digits."
-msgstr ""
+msgstr "字母比数字大。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "Numbers are compared as integers."
-msgstr ""
+msgstr "数字作为整数进行比较。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "Letters are compared in ASCII code order."
-msgstr ""
+msgstr "字母按照 ASCII 编码顺序进行比较。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -2083,6 +2084,11 @@ msgid ""
 "literal> &lt; <literal>1.0+nmu1</literal> &lt; <literal>1.1</literal> &lt; "
 "<literal>2.0</literal>"
 msgstr ""
+"<literal>0.0</literal> &lt; <literal>0.5</literal> &lt; <literal>0.10</"
+"literal> &lt; <literal>0.99</literal> &lt; <literal>1</literal> &lt; "
+"<literal>1.0~rc1</literal> &lt; <literal>1.0</literal> &lt; <literal>1.0+b1</"
+"literal> &lt; <literal>1.0+nmu1</literal> &lt; <literal>1.1</literal> &lt; "
+"<literal>2.0</literal>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -2094,9 +2100,8 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "Setting up <command>dh_make</command>"
-msgstr "设置 <command>quilt</command>"
+msgstr "设置 <command>dh_make</command>"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 #, fuzzy
@@ -2121,7 +2126,7 @@ msgstr ""
 "姓名和电子邮件地址。<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "$ cat &gt;&gt;~/.bashrc &lt;&lt;EOF\n"
 "DEBEMAIL=\"your.email.address@example.org\"\n"
@@ -2131,10 +2136,12 @@ msgid ""
 "$ . ~/.bashrc\n"
 msgstr ""
 "$ cat &gt;&gt;~/.bashrc &lt;&lt;EOF\n"
-"DEBEMAIL=your.email.address@example.org\n"
-"DEBFULLNAME=Firstname Lastname\n"
+"DEBEMAIL=\"your.email.address@example.org\"\n"
+"DEBFULLNAME=\"Firstname Lastname\"\n"
 "export DEBEMAIL DEBFULLNAME\n"
 "EOF\n"
+"$ . ~/.bashrc\n"
+
 
 #. type: Content of: <book><chapter><section><title>
 #, fuzzy
@@ -2151,7 +2158,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "$ cd ~/gentoo\n"
 "$ wget http://example.org/gentoo-0.9.12.tar.gz\n"
@@ -2159,12 +2166,11 @@ msgid ""
 "$ cd gentoo-0.9.12\n"
 "$ dh_make -f ../gentoo-0.9.12.tar.gz\n"
 msgstr ""
-"$ mkdir ~/gentoo ; cd ~/gentoo\n"
-"$ wget http://<replaceable>www.example.org</replaceable>/gentoo-0.9.12.tar.gz\n"
-"$ tar xvzf gentoo-0.9.12.tar.gz\n"
-"$ ls -F\n"
-"gentoo-0.9.12/\n"
-"gentoo-0.9.12.tar.gz\n"
+"$ cd ~/gentoo\n"
+"$ wget http://example.org/gentoo-0.9.12.tar.gz\n"
+"$ tar -xvzf gentoo-0.9.12.tar.gz\n"
+"$ cd gentoo-0.9.12\n"
+"$ dh_make -f ../gentoo-0.9.12.tar.gz\n"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -2328,7 +2334,6 @@ msgstr ""
 "节，但是这里介绍了基本的步骤和常见的问题。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "Setting up <command>quilt</command>"
 msgstr "设置 <command>quilt</command>"
 
@@ -2353,6 +2358,8 @@ msgid ""
 "alias dquilt=\"quilt --quiltrc=${HOME}/.quiltrc-dpkg\"\n"
 "complete -F _quilt_completion $_quilt_complete_opt dquilt\n"
 msgstr ""
+"alias dquilt=\"quilt --quiltrc=${HOME}/.quiltrc-dpkg\"\n"
+"complete -F _quilt_completion $_quilt_complete_opt dquilt\n"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -2360,7 +2367,7 @@ msgid "Then let's create <filename>~/.quiltrc-dpkg</filename> as follows:"
 msgstr "现在将 <filename>Makefile</filename> 修改为如下的样子。"
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "d=. ; while [ ! -d $d/debian -a `readlink -e $d` != / ]; do d=$d/..; done\n"
 "if [ -d $d/debian ] &amp;&amp; [ -z $QUILT_PATCHES ]; then\n"
@@ -2375,12 +2382,12 @@ msgid ""
 msgstr ""
 "d=. ; while [ ! -d $d/debian -a `readlink -e $d` != / ]; do d=$d/..; done\n"
 "if [ -d $d/debian ] &amp;&amp; [ -z $QUILT_PATCHES ]; then\n"
-"    # Debian packaging case and unset $QUILT_PATCHES\n"
-"    QUILT_PATCHES=debian/patches\n"
-"    QUILT_PATCH_OPTS=--unified-reject-files\n"
-"    QUILT_DIFF_ARGS=-p ab --no-timestamps --no-index --color=auto\n"
-"    QUILT_REFRESH_ARGS=-p ab --no-timestamps --no-index\n"
-"    QUILT_COLORS=diff_hdr=1;32:diff_add=1;34:diff_rem=1;31:diff_hunk=1;33:diff_ctx=35:diff_cctx=33\n"
+"    # if in Debian packaging tree with unset $QUILT_PATCHES\n"
+"    QUILT_PATCHES=\"debian/patches\"\n"
+"    QUILT_PATCH_OPTS=\"--reject-format=unified\"\n"
+"    QUILT_DIFF_ARGS=\"-p ab --no-timestamps --no-index --color=auto\"\n"
+"    QUILT_REFRESH_ARGS=\"-p ab --no-timestamps --no-index\"\n"
+"    QUILT_COLORS=\"diff_hdr=1;32:diff_add=1;34:diff_rem=1;31:diff_hunk=1;33:diff_ctx=35:diff_cctx=33\"\n"
 "    if ! [ -d $d/debian/patches ]; then mkdir $d/debian/patches; fi\n"
 "fi\n"
 
@@ -2396,7 +2403,6 @@ msgstr ""
 "filename> 来了解如何使用 <command>quilt</command>。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "Fixing upstream bugs"
 msgstr "修复上游 Bug"
 
@@ -2446,15 +2452,15 @@ msgstr ""
 "gentoo-target.patch</filename>。<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "$ mkdir debian/patches\n"
 "$ dquilt new fix-gentoo-target.patch\n"
 "$ dquilt add Makefile\n"
 msgstr ""
 "$ mkdir debian/patches\n"
-"$ quilt new fix-gentoo-target.patch\n"
-"$ quilt add Makefile\n"
+"$ dquilt new fix-gentoo-target.patch\n"
+"$ dquilt add Makefile\n"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -2486,18 +2492,17 @@ msgstr ""
 "gentoo-targe.patch</filename> 并添加描述。"
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "$ dquilt refresh\n"
 "$ dquilt header -e\n"
 "... describe patch\n"
 msgstr ""
-"$ quilt refresh\n"
-"$ quilt header -e\n"
+"$ dquilt refresh\n"
+"$ dquilt header -e\n"
 "... 描述补丁\n"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "Installation of files to their destination"
 msgstr "把文件安装到目的位置"
 
@@ -2554,6 +2559,9 @@ msgid ""
 "See <ulink url=\"&gnu-destdir;\">GNU Coding Standards: 7.2.4 DESTDIR: "
 "Support for Staged Installs</ulink>."
 msgstr ""
+"参见 <ulink url=\"&gnu-destdir;\">GNU Coding Standards: 7.2.4 DESTDIR: "
+"Support for Staged Installs</ulink>。"
+
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
@@ -2691,14 +2699,14 @@ msgstr ""
 "id=\"0\"/>："
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "# Where to put executable commands on 'make install'?\n"
 "BIN     = /usr/local/bin\n"
 "# Where to put icons on 'make install'?\n"
 "ICONS   = /usr/local/share/gentoo\n"
 msgstr ""
-"# Where to put binary on 'make install'?\n"
+"# Where to put executable commands on 'make install'?\n"
 "BIN     = /usr/local/bin\n"
 "# Where to put icons on 'make install'?\n"
 "ICONS   = /usr/local/share/gentoo\n"
@@ -2713,14 +2721,14 @@ msgstr ""
 "可以看到文件被放到了 <filename>/usr/local</filename> 下。把他们改变为："
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "# Where to put executable commands on 'make install'?\n"
 "BIN     = $(DESTDIR)/usr/bin\n"
 "# Where to put icons on 'make install'?\n"
 "ICONS   = $(DESTDIR)/usr/share/gentoo\n"
 msgstr ""
-"# Where to put binary on 'make install'?\n"
+"# Where to put executable commands on 'make install'?\n"
 "BIN     = $(DESTDIR)/usr/bin\n"
 "# Where to put icons on 'make install'?\n"
 "ICONS   = $(DESTDIR)/usr/share/gentoo\n"
@@ -2767,9 +2775,9 @@ msgstr ""
 "以通过以下的方法找到它们："
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "$ grep -nr --include='*.[c|h]' -e 'usr/local/lib' .\n"
-msgstr "$ grep -nr -e 'usr/local/lib' --include='*.[c|h]' .\n"
+msgstr "$ grep -nr --include='*.[c|h]' -e 'usr/local/lib' .\n"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -2789,13 +2797,13 @@ msgstr ""
 "literal>。"
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "$ sed -i -e 's#usr/local/lib#usr/lib#g' \\\n"
 "        $(find . -type f -name '*.[c|h]')\n"
 msgstr ""
-"$ vim '+argdo %s/usr\\/local\\/lib/usr\\/lib/gce|update' +q \\\n"
-"      $(find . -type f -name '*.[c|h]')\n"
+"$ sed -i -e 's#usr/local/lib#usr/lib#g' \\\n"
+"        $(find . -type f -name '*.[c|h]')\n"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -2804,13 +2812,13 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "$ vim '+argdo %s#usr/local/lib#usr/lib#gce|update' +q \\\n"
 "        $(find . -type f -name '*.[c|h]')\n"
 msgstr ""
-"$ vim '+argdo %s/usr\\/local\\/lib/usr\\/lib/gce|update' +q \\\n"
-"      $(find . -type f -name '*.[c|h]')\n"
+"$ vim '+argdo %s#usr/local/lib#usr/lib#gce|update' +q \\\n"
+"        $(find . -type f -name '*.[c|h]')\n"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -2843,13 +2851,13 @@ msgstr ""
 "install.patch</filename>。"
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "$ dquilt new install.patch\n"
 "$ dquilt add Makefile\n"
 msgstr ""
-"$ quilt new install.patch\n"
-"$ quilt add Makefile\n"
+"$ dquilt new install.patch\n"
+"$ dquilt add Makefile\n"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -2954,7 +2962,7 @@ msgstr "注意你不一定要把 <filename>debian/*</filename> 都提交到上�
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Differing libraries"
-msgstr "不一样的库名称"
+msgstr "不同的库名称"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -2982,7 +2990,7 @@ msgstr ""
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
 msgid "LIBS = -lfoo -lbar\n"
-msgstr ""
+msgstr "LIBS = -lfoo -lbar\n"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -3002,7 +3010,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "$ dquilt new foo2.patch\n"
 "$ dquilt add Makefile\n"
@@ -3011,9 +3019,9 @@ msgid ""
 "$ dquilt header -e\n"
 "... describe patch\n"
 msgstr ""
-"$ quilt new ncurse.patch\n"
-"$ quilt add Makefile\n"
-"$ sed -i -e s/-lcurses/-lncurses/g Makefile\n"
+"$ dquilt new foo2.patch\n"
+"$ dquilt add Makefile\n"
+"$ sed -i -e 's/-lfoo/-lfoo2/g' Makefile\n"
 "$ quilt refresh\n"
 "$ quilt header -e\n"
 "... 描述补丁\n"
@@ -3041,9 +3049,8 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename>control</filename>"
-msgstr "<filename>control</filename> 文件"
+msgstr "<filename>control</filename>"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -3068,7 +3075,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 " 1 Source: gentoo\n"
 " 2 Section: unknown\n"
@@ -3088,8 +3095,8 @@ msgstr ""
 " 2 Section: unknown\n"
 " 3 Priority: extra\n"
 " 4 Maintainer: Josip Rodin &lt;joy-mg@debian.org&gt;\n"
-" 5 Build-Depends: debhelper (&gt;= 7.0.50~)\n"
-" 6 Standards-Version: 3.8.4\n"
+" 5 Build-Depends: debhelper (&gt;=9)\n"
+" 6 Standards-Version: 3.9.4\n"
 " 7 Homepage: &lt;insert the upstream URL, if relevant&gt;\n"
 " 8\n"
 " 9 Package: gentoo\n"
@@ -3428,9 +3435,8 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "<literal>Architecture: any</literal>"
-msgstr "<literal>Breaks</literal>"
+msgstr "<literal>Architecture: any</literal>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -3439,9 +3445,8 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "<literal>Architecture: all</literal>"
-msgstr "<literal>Breaks</literal>"
+msgstr "<literal>Architecture: all</literal>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -3844,7 +3849,7 @@ msgid "Finally, here is the updated <filename>control</filename> file:"
 msgstr "到此为止，我们做好了 <filename>control</filename> 文件："
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 " 1 Source: gentoo\n"
 " 2 Section: x11\n"
@@ -3879,8 +3884,8 @@ msgstr ""
 " 2 Section: x11\n"
 " 3 Priority: optional\n"
 " 4 Maintainer: Josip Rodin &lt;joy-mg@debian.org&gt;\n"
-" 5 Build-Depends: debhelper (&gt;= 7.0.5), xlibs-dev, libgtk1.2-dev, libglib1.2-dev\n"
-" 6 Standards-Version: 3.8.4\n"
+" 5 Build-Depends: debhelper (&gt;=9), xlibs-dev, libgtk1.2-dev, libglib1.2-dev\n"
+" 6 Standards-Version: 3.9.4\n"
 " 7 Vcs-Git: git://git.debian.org/git/collab-maint/gentoo.git\n"
 " 8 Vcs-browser: http://git.debian.org/?p=collab-maint/gentoo.git\n"
 " 9 Homepage: &gentoo;\n"
@@ -3896,18 +3901,17 @@ msgstr ""
 "19  they're fairly easy to work with since they are written in an XML format.\n"
 "20  .\n"
 "21  gentoo features a fairly complex and powerful file identification system,\n"
-"22  coupled to a object-oriented style system, which together give you a lot\n"
+"22  coupled to an object-oriented style system, which together give you a lot\n"
 "23  of control over how files of different types are displayed and acted upon.\n"
 "24  Additionally, over a hundred pixmap images are available for use in file\n"
 "25  type descriptions.\n"
 "26  .\n"
-"29  gentoo was written from scratch in ANSI C, and it utilises the GTK+ toolkit\n"
+"29  gentoo was written from scratch in ANSI C, and it utilizes the GTK+ toolkit\n"
 "30  for its interface.\n"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename>copyright</filename>"
-msgstr "<filename>copyright</filename> 文件"
+msgstr "<filename>copyright</filename>"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -4046,9 +4050,8 @@ msgstr ""
 "ldo;2006/03/msg00023.html</ulink>"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename>changelog</filename>"
-msgstr "<filename>changelog</filename> 文件"
+msgstr "<filename>changelog</filename>"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -4146,7 +4149,7 @@ msgid "You will end up with something like this:"
 msgstr "最后它会成为以下的样子："
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "1  gentoo (0.9.12-1) UNRELEASED; urgency=low\n"
 "2\n"
@@ -4157,7 +4160,7 @@ msgid ""
 "7  -- Josip Rodin &lt;joy-mg@debian.org&gt;  Mon, 22 Mar 2010 00:37:31 +0100\n"
 "8\n"
 msgstr ""
-"1  gentoo (0.9.12-1) unstable; urgency=low\n"
+"1  gentoo (0.9.12-1) UNRELEASED; urgency=low\n"
 "2\n"
 "3   * Initial Release. Closes: #12345\n"
 "4   * This is my first Debian package.\n"
@@ -4191,9 +4194,8 @@ msgstr ""
 "<filename>changelog</filename> 的内容。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename>rules</filename>"
-msgstr "<filename>rules</filename> 文件"
+msgstr "<filename>rules</filename>"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -4212,9 +4214,8 @@ msgstr ""
 "为可执行。"
 
 #. type: Content of: <book><chapter><section><section><title>
-#, fuzzy
 msgid "Targets of the <filename>rules</filename> file"
-msgstr "<filename>rules</filename> 文件中的 target"
+msgstr "<filename>rules</filename> 文件中的 Target"
 
 #. type: Content of: <book><chapter><section><section><para><footnote><para>
 msgid ""
@@ -4257,7 +4258,6 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
 msgid "Here is a simplified explanation of the targets:"
 msgstr "以下是对各 target 的简单解释："
 
@@ -4545,7 +4545,7 @@ msgstr ""
 "binary</literal>; 实际执行的命令为<placeholder type=\"footnote\" id=\"0\"/>："
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "dh_testroot\n"
 "dh_prep\n"
@@ -4605,7 +4605,6 @@ msgstr ""
 "dh_installemacsen\n"
 "dh_installifupdown\n"
 "dh_installinfo\n"
-"dh_pysupport\n"
 "dh_installinit\n"
 "dh_installmenu\n"
 "dh_installmime\n"
@@ -4989,9 +4988,8 @@ msgstr ""
 "\">quilt</systemitem> 软件包。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid "Use <literal>dh $@ --with quilt</literal> instead."
-msgstr "使用 <literal>dh --with quilt $@</literal>"
+msgstr "使用 <literal>dh $@ --with quilt </literal>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
 #, fuzzy
@@ -5012,9 +5010,8 @@ msgstr ""
 "如果你使用新的 <literal>3.0 (quilt)</literal> 源代码包格式时不需要这些。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "Add support for the <command>dh_dkms</command> command."
-msgstr "添加 <command>dh_dkms</command> 命令支持。"
+msgstr "为 <command>dh_dkms</command> 命令添加支持。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
 #, fuzzy
@@ -5026,14 +5023,12 @@ msgstr ""
 "\">dkms</systemitem> 软件包。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid "Use <literal>dh $@ --with dkms</literal> instead."
-msgstr "使用 <literal>dh --with dkms $@</literal>"
+msgstr "使用 <literal>dh $@ --with dkms </literal>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid "This correctly handles DKMS usage by kernel module packages."
-msgstr "这会使内核模块软件包正确使用 DKMS。"
+msgstr "这能使内核模块软件包正确使用 DKMS。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
 #, fuzzy
