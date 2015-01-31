@@ -1616,6 +1616,12 @@ msgid ""
 "<command>tar</command>+<command>gzip</command> format yourself by using the "
 "<literal>--exclude-vcs</literal> option."
 msgstr ""
+"如果最新你版本的源代码可通过像 Git，Subversion，CVS 这样的版本控制系统获得，"
+"你可以用 <literal>git clone</literal> ， "
+"<literal>svn co</literal>, 或 <literal>cvs co</literal> 来下载它，并自行"
+"将它重新打包为 <command>tar</command>+<command>gzip</command>， 别忘了 "
+"<literal>--exclude-vcs</literal> 选项。"
+
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -1626,7 +1632,6 @@ msgstr ""
 "断。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "If your program's source comes as some other sort of archive (for instance, "
 "the filename ends in <filename>.Z</filename> or <filename>.zip</"
@@ -1643,29 +1648,31 @@ msgid ""
 "DFSG, you should also unpack it to remove such contents and repack it with a "
 "modified upstream version containing <literal>dfsg</literal>."
 msgstr ""
+"如果你的程序源代码中包含一些不符合DFSG的内容，"
+"你应当解包后移除它们，再以添加了 "
+"<literal>dfsg</literal> 的上游版本号重新打包。"
+
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "This program is already packaged. The <ulink url=\"&gentoo-package;"
 "\">current version</ulink> uses Autotools as its build structure and is "
 "substantially different from the following examples, which were based on "
 "version 0.9.12."
 msgstr ""
-"需要注意的是，这个程序已经被打包好了，并且从写这篇文档之初到现在它已经发生了"
-"很大的变化。"
+"需要注意的是，这个程序已经被打包好了。<ulink url=\"&gentoo-package;"
+"\">当前的版本</ulink> 使用 Autotools 作为其构造(build structure)，"
+"并且已经和下边的例子大不相同，下边的例子基于版本 0.9.12 。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "As an example, I'll use a program called <command>gentoo</command>, a GTK+ "
 "file manager.  <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-"作为示例，我将使用一个名为 <command>gentoo</command> 的程序，它是一个 X GTK+ "
+"作为示例，我将使用一个名为 <command>gentoo</command> 的程序，它是一个 GTK+ "
 "文件管理器。<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Create a subdirectory under your home directory named <filename>debian</"
 "filename> or <filename>deb</filename> or anything you find appropriate (e."
@@ -1677,12 +1684,12 @@ msgid ""
 "unpacking them.  Your shell command line may look something like this:"
 msgstr ""
 "在你的用户主目录下创建一个子目录，命名为 <filename>debian</filename> 或 "
-"<filename>deb</filename> 或任意你觉得合适的其他名字(本例中使用 <filename>~/"
+"<filename>deb</filename> 或其他你喜欢且合适的名字(本例中使用 <filename>~/"
 "gentoo</filename>)。把下载好的归档文件放在其中并解包(使用 <literal>tar xzf "
 "gentoo-0.9.12.tar.gz</literal> 命令)。要确定解包过程中没有发生错误，即便是有"
-"一点 <emphasis>不恰当</emphasis> 也不行，因为在别人的系统上解包这些文件时，如"
-"果他们的工具并不忽略这些反常的现象就会出现问题。在你的终端屏幕上，应该看到如"
-"下的情形。"
+"一点 <emphasis>不恰当</emphasis> 也不行，因为在别人的系统上解包这些文件时，"
+"可能他们的工具并不忽略这些反常的现象，于是就会出现问题。"
+"在你的终端屏幕上，应该看到如下的情形。"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
