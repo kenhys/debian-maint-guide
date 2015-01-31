@@ -2207,9 +2207,8 @@ msgstr ""
 "$ . ~/.bashrc\n"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "Initial non-native Debian package"
-msgstr "初始化 Debian 软件包"
+msgstr "初始化外来 Debian 软件包"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -2219,6 +2218,11 @@ msgid ""
 "non-native Debian package for it by issuing the <command>dh_make</command> "
 "command as follows:"
 msgstr ""
+"一般的 Debian 软件包是由上游程序产生的 外来 Debian 软件包。 "
+"若你想要用上游源代码 <filename>gentoo-0.9.12.tar.gz</filename> "
+"创建一个外来 Debian 软件包，你可以为它创建一个初始的外来"
+" Debian 软件包，通过如下方法调用 <command>dh_make</command> "
+"命令："
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2244,17 +2248,23 @@ msgid ""
 "packages.  You may need to update the contents provided by the upstream for "
 "your Debian package."
 msgstr ""
+"如果上游源代码已经提供了 <filename>debian</filename> 目录 "
+"以及其内容，那么带上参数 <literal>--addmissing</literal> 来执行"
+"<command>dh_make</command> 命令。 新的源码包格式 <literal>3.0 "
+"(quilt)</literal> 的鲁棒性(Robust)已经足够优秀，以不至于损坏，即使对于这类"
+"软件包。 另外，你可能需要更新上游提供的内容，以满足你的 Debian 软件包之需。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Of course, replace the filename with the name of your original source "
 "archive.  <placeholder type=\"footnote\" id=\"0\"/> See <citerefentry> "
 "<refentrytitle>dh_make</refentrytitle> <manvolnum>8</manvolnum> </"
 "citerefentry> for details."
 msgstr ""
-"这个过程可以通过使用 <citerefentry> <refentrytitle>uupdate</refentrytitle> "
-"<manvolnum>1</manvolnum> </citerefentry> 来更自动化地完成："
+"当然，请用你原始源码归档的名字来替换 filename (文件名)。 "
+" <placeholder type=\"footnote\" id=\"0\"/> 详情请参见 <citerefentry> "
+"<refentrytitle>dh_make</refentrytitle> <manvolnum>8</manvolnum> </"
+"citerefentry> 。"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -2271,6 +2281,18 @@ msgid ""
 "an alternative packaging script infrastructure to the <command>dh</command> "
 "command and is outside the scope of this document."
 msgstr ""
+"此处有这几种选择： <literal>s</literal> 代表单一二进制包， "
+"<literal>i</literal> 代表独立于体系结构的软件包， <literal>m</"
+"literal> 代表复合二进制包， <literal>l</literal> 代表库文件包，"
+"<literal>k</literal> 代表内核模块包， <literal>n</"
+"literal> 代表内核补丁包， <literal>b</literal> 代表 <systemitem "
+"role=\"package\">cdbs</systemitem> 软件包。"
+"本教程专注于使用 <command>dh</command> 命令 (来自 <systemitem role="
+"\"package\">debhelper</systemitem> 软件包) 来创建单一二进制包，但 "
+"也会涉及到如何用它来创建 独立于体系结构 或 复合二进制软件包。"
+"软件包 <systemitem role=\"package\">cdbs</systemitem> 提供了 "
+"另一套可以代替 <command>dh</command> 命令的基础打包脚本，"
+"不过对它的描述已经超出了我们的讨论范围。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -2281,6 +2303,12 @@ msgid ""
 "the screen, and confirm by pressing <literal><replaceable>ENTER</"
 "replaceable></literal>.  <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
+"你应该会看到一些输出，它们询问你想要创建什么类型的软件包。"
+"这里的 Gentoo 是一个单一二进制包 -- 它仅仅创建一个二进制包， "
+"亦即， 一个 <filename>.deb</filename> 文件 -- 于是我们就选择第一项 "
+"(用 <literal>s</literal> 键)， 检查屏幕上的信息， "
+"并按 <literal><replaceable>ENTER</"
+"replaceable></literal> 键来确认。 <placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
