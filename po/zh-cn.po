@@ -1833,8 +1833,8 @@ msgid ""
 "<literal>autoreconf -i -f</literal> in the source directory and distributes "
 "the generated files along with the source."
 msgstr ""
-"使用 Autotools 的第一步是在上游作者在代码中运行 <literal>autoreconf -i -f</"
-"literal> ，然后把生成的文件同源代码一起分发。"
+"使用 Autotools 的第一步是在上游作者在代码中运行 <literal>autoreconf -i -f"
+"</literal> ，然后把生成的文件同源代码一起分发。"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -1904,7 +1904,7 @@ msgid ""
 "option <literal>./configure --prefix=/usr</literal>."
 msgstr ""
 "你可以改变 <filename>Makefile</filename> 文件中的许多设置，比如"
-"修改默认的文件安装位置(使用 <command>./configure --prefix=/usr</command>)。"
+"修改默认的文件安装位置(使用 <literal>./configure --prefix=/usr</literal>)。"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -1922,6 +1922,7 @@ msgid ""
 msgstr ""
 "尽管不是必须的：你还可以使用 <literal>autoreconf -i -f</literal> 来更新 "
 "<filename>configure</filename> 和其他相关文件，这样做有可能提高源代码的兼容性。"
+" <placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
