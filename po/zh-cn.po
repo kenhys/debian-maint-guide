@@ -2090,9 +2090,8 @@ msgstr ""
 "replaceable></literal>), 或者 <emphasis role=\"strong\">version</emphasis> "
 "(<literal><replaceable>version</replaceable>-<replaceable>revision</"
 "replaceable></literal>)。 关于 Debian 修订号如何增长的信息，请参见 "
-"<xref linkend=\"newrevision\"/>"
+" <xref linkend=\"newrevision\"/>"
 "<emphasis role=\"strong\">Debian revision</emphasis> 。"
-
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -2106,13 +2105,13 @@ msgstr ""
 
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "$ dpkg --compare-versions <replaceable>ver1</replaceable> <replaceable>op</replaceable> <replaceable>ver2</replaceable>\n"
-msgstr "$ diff -urN <replaceable>foo</replaceable>-<replaceable>oldversion</replaceable> <replaceable>foo</replaceable>-<replaceable>newversion</replaceable>\n"
+msgstr "$ dpkg --compare-versions <replaceable>ver1</replaceable> <replaceable>op</replaceable> <replaceable>ver2</replaceable>\n"
 
 #. type: Content of: <book><chapter><section><para>
 msgid "The version comparison rule can be summarized as:"
-msgstr "版本比较规则可以总结如下："
+msgstr "版本比较规则可以总结为以下几点："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "Strings are compared from the head to the tail."
@@ -2135,6 +2134,8 @@ msgid ""
 "There are special rules for period (<literal>.</literal>), plus (<literal>+</"
 "literal>), and tilde (<literal>~</literal>) characters, as follows:"
 msgstr ""
+"对于点号 (<literal>.</literal>)，加号 (<literal>+</"
+"literal>)，以及波浪号 (<literal>~</literal>) 则要应用特殊规则，具体如下："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -2158,23 +2159,26 @@ msgid ""
 "upgrade works properly by renaming the upstream source to "
 "<filename>gentoo-0.9.12~rc99.tar.gz</filename>."
 msgstr ""
+"有一种比较棘手的情况，当上游释出 <filename>gentoo-0.9.12-"
+"ReleaseCandidate-99.tar.gz</filename> 作为 "
+"<filename>gentoo-0.9.12.tar.gz</filename> 的预发布版本时，就需要确保"
+"升级工作妥当进行：重命名该上游源代码为 "
+"<filename>gentoo-0.9.12~rc99.tar.gz</filename>."
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Setting up <command>dh_make</command>"
 msgstr "设置 <command>dh_make</command>"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "The following text assumes you are using Bash as your login shell.  If you "
 "use some other login shell such as Z shell, use their corresponding "
 "configuration files instead of <filename>~/.bashrc</filename>."
 msgstr ""
-"以下默认以 Bash 作为登陆 shell。如果你使用其他的 shell，例如 Z shell，使用它"
+"以下默认你以 Bash 作为登陆 shell。如果你使用其他的 shell，例如 Z shell，那就使用它"
 "们的配置文件代替这里提到的 <filename>~/.bashrc</filename>。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Set up the shell environment variables <literal>$DEBEMAIL</literal> and "
 "<literal>$DEBFULLNAME</literal> so that various Debian maintenance tools "
@@ -2182,7 +2186,7 @@ msgid ""
 "\"footnote\" id=\"0\"/>"
 msgstr ""
 "首先我们设置两个 环境变量，<literal>$DEBEMAIL</literal> 和 <literal>"
-"$DEBFULLNAME</literal>，使多数 Debian 维护工具能够正确识别你用于维护软件包的"
+"$DEBFULLNAME</literal>，这样能使使大多数 Debian 维护工具能够正确识别你用于维护软件包的"
 "姓名和电子邮件地址。<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><screen>
