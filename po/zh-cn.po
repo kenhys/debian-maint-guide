@@ -1709,7 +1709,6 @@ msgstr ""
 "gentoo-0.9.12.tar.gz\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Now you have another subdirectory, called <filename>gentoo-0.9.12</"
 "filename>.  Change to that directory and <emphasis>thoroughly</emphasis> "
@@ -1725,7 +1724,7 @@ msgstr ""
 "<filename>README*</filename>、<filename>INSTALL*</filename>、<filename>*."
 "lsm</filename> 或 <filename>*.html</filename>。你必须找到关于如何正确编译和安"
 "装程序的指导(最可能的是他们会默认你希望把程序安装到 <filename>/usr/local/"
-"bin</filename> 目录，但事实上你不能那样做，详细的内容稍后将在 <xref linkend="
+"bin</filename> 目录；但事实上你不能那样做，详细的内容稍后将在 <xref linkend="
 "\"destdir\"/> 中说明)。"
 
 #. type: Content of: <book><chapter><section><para>
@@ -1746,9 +1745,10 @@ msgid ""
 "when executed creates a <filename>Makefile</filename> customized for your "
 "system."
 msgstr ""
+"许多现代程序都配有一个叫做 <filename>configure</filename> 的脚本，"
+"它被执行的时候会生成一个为你机器定制的 <filename>Makefile</filename> 。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Simple programs usually come with a <filename>Makefile</filename> and can be "
 "compiled just by invoking <literal>make</literal>.<placeholder type="
@@ -1757,9 +1757,9 @@ msgid ""
 "is usually done with <literal>make install</literal>."
 msgstr ""
 "带有 <filename>Makefile</filename> 文件的简单程序可以很容易地使用 "
-"<literal>make</literal> 来编译。其中的一些还支持 <literal>make check</"
-"literal>，可以完成一系列自检。编译好后可以使用 <literal>make install</"
-"literal> 来将程序安装到目标目录。"
+"<literal>make</literal> 来编译。<placeholder type=\"footnote\" id=\"0\"/>"
+" 其中的一些还支持 <literal>make check</literal>，这可以完成一系列自检。"
+"编译好后可以使用 <literal>make install</literal> 来将程序安装到目标目录。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1785,7 +1785,6 @@ msgid "Popular portable build systems"
 msgstr "普遍可移植的构建系统"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "A lot of free software programs are written in the <ulink url=\"&c-program;"
 "\">C</ulink> and <ulink url=\"&cxx;\">C++</ulink> languages.  Many of these "
@@ -1794,9 +1793,9 @@ msgid ""
 "filename> and other required source files first.  Then, such programs are "
 "built using the usual <literal>make; make install</literal>."
 msgstr ""
-"非常多的自由软件是使用 <ulink url=\"&cxx;_(programming_language)\">C</ulink> "
-"和 <ulink url=\"&cxx;++\">C++</ulink> 语言编写的。其中的有很多使用 Autotools "
-"或 CMake 来使其可以在不同平台上移植。这些工具被用于生成 <filename>Makefile</"
+"非常多的自由软件是使用 <ulink url=\"&c-program;\">C</ulink> "
+"和 <ulink url=\"&cxx;\">C++</ulink> 语言编写的。其中的有很多使用 Autotools "
+"或 CMake 来使其可以在不同平台上移植。这些工具首先用于生成 <filename>Makefile</"
 "filename> 和其他必须的源文件，然后这些程序可以使用正常的 <literal>make; make "
 "install</literal> 来编译和安装。"
 
@@ -1807,6 +1806,10 @@ msgid ""
 "<ulink url=\"&autotools-tutorial;\">Autotools Tutorial</ulink> and the local "
 "copy of <filename>&autotools-readme;</filename>, if you need to use it."
 msgstr ""
+"关于 Autotools 这个庞然大物的讨论已经超出本篇小教程的讨论范围。"
+"而本节旨在提供关键字和参考。如果你需要使用它，请认真研读 "
+"<ulink url=\"&autotools-tutorial;\">Autotools Tutorial</ulink> 以及 "
+"<filename>&autotools-readme;</filename> 的本地副本。"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
