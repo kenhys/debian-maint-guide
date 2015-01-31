@@ -1622,7 +1622,6 @@ msgstr ""
 "将它重新打包为 <command>tar</command>+<command>gzip</command>， 别忘了 "
 "<literal>--exclude-vcs</literal> 选项。"
 
-
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
 "You can identify the archive format using the <command>file</command> "
@@ -1651,7 +1650,6 @@ msgstr ""
 "如果你的程序源代码中包含一些不符合DFSG的内容，"
 "你应当解包后移除它们，再以添加了 "
 "<literal>dfsg</literal> 的上游版本号重新打包。"
-
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -1916,7 +1914,6 @@ msgstr ""
 "你可以用 <systemitem role=\"package\">dh-autoreconf</"
 "systemitem> 软件包来将这个过程自动化。参见 <xref linkend=\"customrules\"/>."
 
-
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "Although it is not required, updating the <filename>configure</filename> and "
@@ -1963,7 +1960,7 @@ msgid ""
 msgstr ""
 "虽然这个简单的方法在大部分情况下能够显灵，但你仍需要能根据 Debian 方针和惯例来"
 "调整 <emphasis role=\"strong\">软件包名</emphasis> 和 "
-"<emphasis role=\"strong\">上游版本</emphasis> 。"
+"<emphasis role=\"strong\">上游版本</emphasis>  。"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -1972,7 +1969,6 @@ msgid ""
 msgstr ""
 "在 <command>aptitude</command> 工具中，软件包名字段的默认最大长度为 30。  "
 "而对于 90% 以上的软件包来说，软件包名都少于 24 个字符。 "
-
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -2166,7 +2162,6 @@ msgstr ""
 "export DEBEMAIL DEBFULLNAME\n"
 "EOF\n"
 "$ . ~/.bashrc\n"
-
 
 #. type: Content of: <book><chapter><section><title>
 #, fuzzy
@@ -2586,7 +2581,6 @@ msgid ""
 msgstr ""
 "参见 <ulink url=\"&gnu-destdir;\">GNU Coding Standards: 7.2.4 DESTDIR: "
 "Support for Staged Installs</ulink>。"
-
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
@@ -10077,7 +10071,6 @@ msgstr ""
 "$ dpkg-gensymbols -v1.1 -plibfoo1 -Plibfoo1_1.1-1 -Osymbols\n"
 "$ dpkg-gensymbols -v1.2 -plibfoo1 -Plibfoo1_1.2-1 -Osymbols\n"
 
-
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
 "Make trial builds of the source tree with tools such as <command>debuild</"
@@ -10124,7 +10117,6 @@ msgstr ""
 "  foo_get_rank@Base 1.1\n"
 "  foo_new@Base 1.1\n"
 "...\n"
-
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
 msgid ""
@@ -10545,7 +10537,6 @@ msgstr ""
 "        sed 's/@DEB_HOST_MULTIARCH@/$(DEB_HOST_MULTIARCH)/g' \\\n"
 "                debian/<replaceable>foo</replaceable>.links.in > debian/<replaceable>foo</replaceable>.links\n"
 
-
 #. type: Content of: <book><appendix><section><para>
 msgid ""
 "Please make sure to verify that the shared library package contains only the "
@@ -10612,7 +10603,6 @@ msgid ""
 msgstr ""
 "<replaceable>package</replaceable>_<replaceable>version</"
 "replaceable>_<replaceable>arch</replaceable>.deb"
-
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
