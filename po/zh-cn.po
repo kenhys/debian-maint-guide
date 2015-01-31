@@ -2090,8 +2090,8 @@ msgstr ""
 "replaceable></literal>), 或者 <emphasis role=\"strong\">version</emphasis> "
 "(<literal><replaceable>version</replaceable>-<replaceable>revision</"
 "replaceable></literal>)。 关于 Debian 修订号如何增长的信息，请参见 "
-"<xref linkend=\"newrevision\"/>""
-<emphasis role=\"strong\">Debian revision</emphasis> 。"
+"<xref linkend=\"newrevision\"/>"
+"<emphasis role=\"strong\">Debian revision</emphasis> 。"
 
 
 #. type: Content of: <book><chapter><section><para>
