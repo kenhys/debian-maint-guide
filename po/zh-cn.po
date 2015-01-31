@@ -1830,14 +1830,13 @@ msgstr ""
 "识别这种类型的源代码。<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "The first step of the Autotools workflow is usually that upstream runs "
 "<literal>autoreconf -i -f</literal> in the source directory and distributes "
 "the generated files along with the source."
 msgstr ""
-"使用 Autotools 的第一步是上游作者在代码中运行 <literal>autoreconf -i -f</"
-"literal> 并把生成的文件同源代码一起分发。"
+"使用 Autotools 的第一步是在上游作者在代码中运行 <literal>autoreconf -i -f</"
+"literal> ，然后把生成的文件同源代码一起分发。"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -1873,16 +1872,15 @@ msgstr ""
 "literal>。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "The second step of the Autotools workflow is usually that the user obtains "
 "this distributed source and runs <literal>./configure &amp;&amp; make</"
 "literal> in the source directory to compile the program into an executable "
 "command <command><replaceable>binary</replaceable></command>."
 msgstr ""
-"使用 Autotools 的流程第二部是用户获得分发的源代码后在源代码中运行 <literal>./"
-"configure &amp;&amp; make</literal> 并将其编译成为 "
-"<command><replaceable>binary</replaceable></command> (二进制程序)。"
+"使用 Autotools 的第二步是用户获得分发的源代码后在源码目录下运行 <literal>./"
+"configure &amp;&amp; make</literal> 来将其编译成为 "
+"<command><replaceable>binary</replaceable></command> (二进制可执行程序)。"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -1901,44 +1899,40 @@ msgstr ""
 "  config.status -+\n"
 "  config.guess --+\n"
 
-
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "You can change many things in the <filename>Makefile</filename>; for "
 "instance you can change the default location for file installation using the "
 "option <literal>./configure --prefix=/usr</literal>."
 msgstr ""
-"你可以通过命令选项来改变 <filename>Makefile</filename> 文件中的很多设置，比如"
-"默认的文件安装位置(使用 <command>./configure --prefix=/usr</command>)。"
+"你可以改变 <filename>Makefile</filename> 文件中的许多设置，比如"
+"修改默认的文件安装位置(使用 <command>./configure --prefix=/usr</command>)。"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "You can automate this by using <systemitem role=\"package\">dh-autoreconf</"
 "systemitem> package.  See <xref linkend=\"customrules\"/>."
 msgstr ""
-"在 <literal>Build-Depends</literal> 中添加 <systemitem role=\"package\">dh-"
-"autoreconf</systemitem> 软件包。"
+"你可以用 <systemitem role=\"package\">dh-autoreconf</"
+"systemitem> 软件包来将这个过程自动化。参见 <xref linkend=\"customrules\"/>."
+
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Although it is not required, updating the <filename>configure</filename> and "
 "other files with <literal>autoreconf -i -f</literal> may improve the "
 "compatibility of the source.  <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-"尽管不是必须的，还可以使用 <literal>autoreconf -i -f</literal> 更新 "
-"<filename>configure</filename> 和其他相关文件，这样做可能提高源代码的兼容性。"
+"尽管不是必须的：你还可以使用 <literal>autoreconf -i -f</literal> 来更新 "
+"<filename>configure</filename> 和其他相关文件，这样做有可能提高源代码的兼容性。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "<ulink url=\"&cmake;\">CMake</ulink> is an alternative build system.  You "
 "can recognize such sources by the <filename>CMakeLists.txt</filename> file."
 msgstr ""
-"<ulink url=\"&cxx;Make\">CMake</ulink> 是另一个可选的编译系统，可以通过 "
-"<filename>CMakeLists.txt</filename> 文件来识别它。"
+"<ulink url=\"&cmake;\">CMake</ulink> 是另一个可选的构建系统，你可以通过 "
+"<filename>CMakeLists.txt</filename> 文件来识别使用它的源代码。"
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Package name and version"
@@ -1953,6 +1947,12 @@ msgid ""
 "the <filename>debian/changelog</filename> file described later in <xref "
 "linkend=\"changelog\"/>, too."
 msgstr ""
+"如果上游源代码以像 <filename>gentoo-0.9.12.tar.gz</filename> 的形式分发，"
+"你可以用 <literal>gentoo</literal> 作为(源代码) <emphasis role="
+"\"strong\">软件包名</emphasis> ，并用 <literal>0.9.12</literal> 作为 "
+"<emphasis role=\"strong\">上游版本</emphasis>。 它们会被 "
+"<filename>debian/changelog</filename> 这个文件用到；该文件一会会在 <xref "
+"linkend=\"changelog\"/> 部分详细描述。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1961,12 +1961,18 @@ msgid ""
 "\"strong\">upstream version</emphasis> by renaming the upstream source to "
 "follow Debian Policy and existing convention."
 msgstr ""
+"虽然这个简单的方法在大部分情况下能够显灵，但你仍需要能根据 Debian 方针和惯例来"
+"调整 <emphasis role=\"strong\">软件包名</emphasis> 和 "
+"<emphasis role=\"strong\">上游版本</emphasis> 。"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
 "The default package name field length of <command>aptitude</command> is 30.  "
 "For more than 90% of packages, the package name is less than 24 characters."
 msgstr ""
+"在 <command>aptitude</command> 工具中，软件包名字段的默认最大长度为 30。  "
+"而对于 90% 以上的软件包来说，软件包名都少于 24 个字符。 "
+
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1978,6 +1984,13 @@ msgid ""
 "the same as existing ones.  It is a good idea to keep its length within 30 "
 "characters.  <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
+"你必须让 <emphasis role=\"strong\">软件报名</emphasis> 里只留下 "
+"小写字母 (<literal>a-z</literal>), 数字 "
+"(<literal>0-9</literal>), 加号 (<literal>+</literal>) 和 减号 (<literal>-</"
+"literal>) ， 以及 点号 (<literal>.</literal>)。 "
+"软件包名最短长度两个字符；必须以字母开头；不能与库存软件包名冲突。"
+"相信我，把软件包名的长度控制在 30 字符以内是明智之举。 "
+"<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -1985,6 +1998,9 @@ msgid ""
 "Reference 5.1. \"New packages\"</ulink>, the ITP process will usually catch "
 "this kind of issues."
 msgstr ""
+"如果你遵循 <ulink url=\"&devref-newpackage;\">Debian Developer's "
+"Reference 5.1. \"New packages\"</ulink>， 那么在 ITP 过程中总是会遇到这样的问题。"
+
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
