@@ -2337,7 +2337,6 @@ msgstr ""
 "gentoo_0.9.12.orig.tar.gz\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Please note two key features of this filename <filename>gentoo_0.9.12.orig."
 "tar.gz</filename>:"
@@ -2346,21 +2345,18 @@ msgstr ""
 "点："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Package name and version are separated by the character <literal>_</literal> "
 "(underscore)."
-msgstr "软件包名称和版本是以下划线 <literal>_</literal> 分隔的。"
+msgstr "软件包名称和版本是以字符 <literal>_</literal> （下划线）分隔的。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "The string <filename>.orig</filename> is inserted before the <filename>.tar."
 "gz</filename>."
-msgstr "<filename>.tar.gz</filename> 扩展名前有 <filename>.orig</filename>。"
+msgstr "<filename>.tar.gz</filename> 扩展名前插有 <filename>.orig</filename>。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "You should also notice that many template files are created in the source "
 "under the <filename>debian</filename> directory.  These will be explained in "
@@ -2373,11 +2369,11 @@ msgid ""
 "be explained."
 msgstr ""
 "你应该可以注意到 <filename>debian</filename> 目录下有了许多模板文件。这些文件"
-"将在 <xref linkend=\"dreq\"/> 和 <xref linkend=\"dother\"/> 一一解释。你还应"
-"该明白，打包不是一个自动的过程，你还需要按照 <xref linkend=\"modify\"/> 中的"
-"方法来修改软件包。此后，你还要按照 <xref linkend=\"build\"/> 中叙述的合适的方"
-"法来编译 Debian 软件包、按照 <xref linkend=\"checkit\"/> 中的方法检查其中错"
-"误，最终依照 <xref linkend=\"upload\"/> 的介绍将其上传。我将对所有的这些步骤"
+"将在 <xref linkend=\"dreq\"/> 和 <xref linkend=\"dother\"/> 中一一解释。你还应"
+"该明白，打包没办法变成全自动的过程。你还需要按照 <xref linkend=\"modify\"/> 中的"
+"方法来为 Debian 修改软件包。此后，你还要按照 <xref linkend=\"build\"/> 中叙述的合适的方"
+"法来构建 Debian 软件包，并按照 <xref linkend=\"checkit\"/> 中的方法进行测试，"
+"最终依照 <xref linkend=\"upload\"/> 的介绍将其上传。本教程将对所有的这些步骤"
 "进行解释。"
 
 #. type: Content of: <book><chapter><section><para>
@@ -2391,15 +2387,14 @@ msgstr ""
 "原。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Updating an existing package may get complicated since it may be using older "
 "techniques.  While learning the basics, please stick to creating a fresh "
 "package; further explanations are given in <xref linkend=\"update\"/>."
 msgstr ""
-"更新一个已存在的软件包可能比较复杂，因为它可能使用旧的技术。请继续在这里学习"
-"最新的打包技术以便掌握必要的基本功。我们会在稍后的 <xref linkend=\"update\"/"
-"> 中回头讲解如何处理这种情况。"
+"更新一个已存在的软件包可能比较复杂，因为它可能使用了旧技术。"
+"在学习基本功的阶段，请只创建全新的软件包；稍后的 <xref linkend=\"update\"/>"
+"中会有更细致的讲解。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -2410,6 +2405,12 @@ msgid ""
 "systemitem> configuration files such as <filename>debian/install</filename> "
 "(see <xref linkend=\"install\"/>)."
 msgstr ""
+"请注意，源代码文件不必包含任何在"
+"<xref linkend=\"simplemake\"/> 和 <xref linkend=\"portable\"/"
+"> 中谈论到的构建系统。 就算仅仅是图像数据集合之类的也可以。"
+"文件的安装可以使用 <systemitem role=\"package\">debhelper</"
+"systemitem> 的配置文件来摆平，比如 <filename>debian/install</filename> "
+"(参见 <xref linkend=\"install\"/>)。"
 
 #. type: Content of: <book><chapter><title>
 msgid "Modifying the source"
