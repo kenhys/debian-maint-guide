@@ -2001,7 +2001,6 @@ msgstr ""
 "如果你遵循 <ulink url=\"&devref-newpackage;\">Debian Developer's "
 "Reference 5.1. \"New packages\"</ulink>， 那么在 ITP 过程中总是会遇到这样的问题。"
 
-
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "If upstream uses some generic term such as <literal>test-suite</literal> for "
@@ -10072,6 +10071,12 @@ msgid ""
 "$ dpkg-gensymbols -v1.1 -plibfoo1 -Plibfoo1_1.1-1 -Osymbols\n"
 "$ dpkg-gensymbols -v1.2 -plibfoo1 -Plibfoo1_1.2-1 -Osymbols\n"
 msgstr ""
+"$ dpkg-deb -x libfoo1_1.1-1.deb libfoo1_1.1-1\n"
+"$ dpkg-deb -x libfoo1_1.2-1.deb libfoo1_1.2-1\n"
+"$ : > symbols\n"
+"$ dpkg-gensymbols -v1.1 -plibfoo1 -Plibfoo1_1.1-1 -Osymbols\n"
+"$ dpkg-gensymbols -v1.2 -plibfoo1 -Plibfoo1_1.2-1 -Osymbols\n"
+
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -10103,6 +10108,23 @@ msgid ""
 "  foo_new@Base 1.1\n"
 "...\n"
 msgstr ""
+"$ cd libfoo-1.3\n"
+"$ debuild\n"
+"...\n"
+"dpkg-gensymbols: warning: some new symbols appeared in the symbols file: ...\n"
+" see diff output below\n"
+"--- debian/libfoo1.symbols (libfoo1_1.3-1_amd64)\n"
+"+++ dpkg-gensymbolsFE5gzx        2012-11-11 02:24:53.609667389 +0900\n"
+"@@ -127,6 +127,7 @@\n"
+"  foo_get_name@Base 1.1\n"
+"  foo_get_longname@Base 1.2\n"
+"  foo_get_type@Base 1.1\n"
+"+ foo_get_longtype@Base 1.3-1\n"
+"  foo_get_symbol@Base 1.1\n"
+"  foo_get_rank@Base 1.1\n"
+"  foo_new@Base 1.1\n"
+"...\n"
+
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
 msgid ""
@@ -10145,6 +10167,10 @@ msgid ""
 "$ debuild\n"
 "...\n"
 msgstr ""
+"$ cd libfoo-1.3\n"
+"$ debuild clean\n"
+"$ debuild\n"
+"...\n"
 
 #. type: Content of: <book><appendix><section><para><footnote><para>
 #, fuzzy
@@ -10171,7 +10197,7 @@ msgstr ""
 
 #. type: Content of: <book><appendix><section><title>
 msgid "Multiarch"
-msgstr ""
+msgstr "多体系结构"
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -10215,48 +10241,40 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
-#, fuzzy
 msgid "Old path"
-msgstr "库软件包；"
+msgstr "旧路径"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
 msgid "i386 multiarch path"
-msgstr ""
+msgstr "i386 多体系结构路径"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
-#, fuzzy
 msgid "amd64 multiarch path"
-msgstr "库软件包；"
+msgstr "amd64 多体系结构路径"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid "<filename>/lib/</filename>"
-msgstr "<filename>dirs</filename> 文件"
+msgstr "<filename>/lib/</filename>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid "<filename>/lib/i386-linux-gnu/</filename>"
-msgstr "<filename>menu</filename> 文件"
+msgstr "<filename>/lib/i386-linux-gnu/</filename>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid "<filename>/lib/x86_64-linux-gnu/</filename>"
-msgstr "<filename>menu</filename> 文件"
+msgstr "<filename>/lib/x86_64-linux-gnu/</filename>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid "<filename>/usr/lib/</filename>"
-msgstr "<filename>rules</filename> 文件"
+msgstr "<filename>/usr/lib/</filename>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid "<filename>/usr/lib/i386-linux-gnu/</filename>"
-msgstr "<filename>install</filename> 文件"
+msgstr "<filename>/usr/lib/i386-linux-gnu/</filename>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid "<filename>/usr/lib/x86_64-linux-gnu/</filename>"
-msgstr "<filename>install</filename> 文件"
+msgstr "<filename>/usr/lib/x86_64-linux-gnu/</filename>"
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -10289,61 +10307,59 @@ msgstr "<filename><replaceable>package</replaceable>.info</filename> 文件"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
 msgid "Package"
-msgstr ""
+msgstr "软件包"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
 msgid "Architecture:"
-msgstr ""
+msgstr "体系结构："
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
 msgid "Multi-Arch:"
-msgstr ""
+msgstr "多体系结构："
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
-#, fuzzy
 msgid "Package content"
-msgstr "软件包名称和版本"
+msgstr "软件包内容"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">lib<replaceable>foo</"
 "replaceable><replaceable>1</replaceable></systemitem>"
 msgstr ""
-"使用 <literal>dch -v <replaceable>newversion</replaceable>-<replaceable>1</"
-"replaceable></literal> 更新 Debian <filename>changelog</filename> 文件。"
+"<systemitem role=\"package\">lib<replaceable>foo</"
+"replaceable><replaceable>1</replaceable></systemitem>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "any"
-msgstr ""
+msgstr "任何"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "same"
-msgstr ""
+msgstr "相同"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the shared library, co-installable"
 msgstr ""
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">lib<replaceable>foo</"
 "replaceable><replaceable>1</replaceable>-dbg</systemitem>"
 msgstr ""
-"使用 <literal>dch -v <replaceable>newversion</replaceable>-<replaceable>1</"
-"replaceable></literal> 更新 Debian <filename>changelog</filename> 文件。"
+"<systemitem role=\"package\">lib<replaceable>foo</"
+"replaceable><replaceable>1</replaceable>-dbg</systemitem>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the shared library debug symbols, co-installable"
 msgstr ""
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">lib<replaceable>foo</replaceable>-dev</"
 "systemitem>"
-msgstr "<systemitem role=\"package\">pbuilder</systemitem> 软件包"
+msgstr ""
+"<systemitem role=\"package\">lib<replaceable>foo</replaceable>-dev</"
+"systemitem>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 #, fuzzy
@@ -10351,60 +10367,62 @@ msgid "the shared library header files etc., co-installable"
 msgstr "<filename>debian</filename> 目录中的必须内容"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">lib<replaceable>foo</replaceable>-tools</"
 "systemitem>"
-msgstr "<systemitem role=\"package\">pbuilder</systemitem> 软件包"
+msgstr ""
+"<systemitem role=\"package\">lib<replaceable>foo</replaceable>-tools</"
+"systemitem>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "foreign"
-msgstr ""
+msgstr "外来"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the run-time support programs, not co-installable"
 msgstr ""
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">lib<replaceable>foo</replaceable>-doc</"
 "systemitem>"
-msgstr "<systemitem role=\"package\">pbuilder</systemitem> 软件包"
+msgstr ""
+"<systemitem role=\"package\">lib<replaceable>foo</replaceable>-doc</"
+"systemitem>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "all"
-msgstr ""
+msgstr "全部"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the shared library documentation files"
 msgstr ""
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\"><replaceable>bar</replaceable></systemitem>"
-msgstr "<systemitem role=\"package\">pbuilder</systemitem> 软件包"
+msgstr ""
+"<systemitem role=\"package\"><replaceable>bar</replaceable></systemitem>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the compiled program files, not co-installable"
 msgstr ""
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\"><replaceable>bar</replaceable>-doc</systemitem>"
-msgstr "<systemitem role=\"package\">pbuilder</systemitem> 软件包"
+msgstr ""
+"<systemitem role=\"package\"><replaceable>bar</replaceable>-doc</systemitem>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the documentation files for the program"
-msgstr ""
+msgstr "程序的配套文档文件"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\"><replaceable>baz</replaceable></systemitem>"
-msgstr "<systemitem role=\"package\">pbuilder</systemitem> 软件包"
+msgstr ""
+"<systemitem role=\"package\"><replaceable>baz</replaceable></systemitem>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the interpreted program files"
@@ -10419,9 +10437,8 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><appendix><section><title>
-#, fuzzy
 msgid "Building a shared library package"
-msgstr "构建软件包"
+msgstr "构建共享库包"
 
 #. type: Content of: <book><appendix><section><para>
 #, fuzzy
@@ -10434,9 +10451,8 @@ msgstr ""
 "manvolnum> </citerefentry> 命令列出一个二进制 Debian 软件包中的文件。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "Update <filename>debian/control</filename>."
-msgstr "<filename>control</filename> 文件"
+msgstr "更新 <filename>debian/control</filename>。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para>
 #, fuzzy
@@ -10452,15 +10468,14 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Add <literal>Multi-Arch:</literal> stanza for each binary package section."
-msgstr "<literal>3.0 (native)</literal> - Debian native 软件"
+msgstr ""
+"在每个二进制包的段中添加 <literal>Multi-Arch:</literal> 小节。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "Set <filename>debian/compat</filename> to \"9\"."
-msgstr "<filename>compat</filename> 文件"
+msgstr "设置 <filename>debian/compat</filename> 为\"9\"。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -10525,6 +10540,11 @@ msgid ""
 "        sed 's/@DEB_HOST_MULTIARCH@/$(DEB_HOST_MULTIARCH)/g' \\\n"
 "                debian/<replaceable>foo</replaceable>.links.in > debian/<replaceable>foo</replaceable>.links\n"
 msgstr ""
+"override_dh_auto_configure:\n"
+"        dh_auto_configure\n"
+"        sed 's/@DEB_HOST_MULTIARCH@/$(DEB_HOST_MULTIARCH)/g' \\\n"
+"                debian/<replaceable>foo</replaceable>.links.in > debian/<replaceable>foo</replaceable>.links\n"
+
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -10541,9 +10561,8 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><appendix><section><title>
-#, fuzzy
 msgid "Native Debian package"
-msgstr "初始化 Debian 软件包"
+msgstr "Debian 本土软件包"
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -10571,35 +10590,29 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><literal>
-#, fuzzy
 msgid ""
 "<replaceable>package</replaceable>_<replaceable>version</replaceable>.tar.gz"
 msgstr ""
-"$ debdiff <replaceable>old-package</replaceable>.dsc <replaceable>new-"
-"package</replaceable>.dsc\n"
+"<replaceable>package</replaceable>_<replaceable>version</replaceable>.tar.gz"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><literal>
-#, fuzzy
 msgid ""
 "<replaceable>package</replaceable>_<replaceable>version</replaceable>.dsc"
 msgstr ""
-"$ debdiff <replaceable>old-package</replaceable>.dsc <replaceable>new-"
-"package</replaceable>.dsc\n"
+"<replaceable>package</replaceable>_<replaceable>version</replaceable>.dsc"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "Build Debian binary packages from the native Debian source package."
-msgstr "多个二进制包的软件包；"
+msgstr "用 Debian 本土源码包构建二进制包"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><literal>
-#, fuzzy
 msgid ""
 "<replaceable>package</replaceable>_<replaceable>version</"
 "replaceable>_<replaceable>arch</replaceable>.deb"
 msgstr ""
-"$ diff -urN <replaceable>foo</replaceable>-<replaceable>oldversion</"
-"replaceable> <replaceable>foo</replaceable>-<replaceable>newversion</"
-"replaceable>\n"
+"<replaceable>package</replaceable>_<replaceable>version</"
+"replaceable>_<replaceable>arch</replaceable>.deb"
+
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -10615,6 +10628,8 @@ msgid ""
 "$ cd ~/mypackage-1.0\n"
 "$ dh_make --native\n"
 msgstr ""
+"$ cd ~/mypackage-1.0\n"
+"$ dh_make --native\n"
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -10631,9 +10646,8 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "<filename>mypackage_1.0.tar.gz</filename>"
-msgstr "<filename>gentoo_0.9.12.orig.tar.gz</filename>"
+msgstr "<filename>mypackage_1.0.tar.gz</filename>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -10643,9 +10657,8 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "<filename>mypackage_1.0.dsc</filename>"
-msgstr "<filename>gentoo_0.9.12-1.dsc</filename>"
+msgstr "<filename>mypackage_1.0.dsc</filename>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -10654,9 +10667,8 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "<filename>mypackage_1.0_i386.deb</filename>"
-msgstr "<filename>gentoo_0.9.12-1_i386.deb</filename>"
+msgstr "<filename>mypackage_1.0_i386.deb</filename>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -10665,15 +10677,16 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "<filename>mypackage_1.0_i386.changes</filename>"
-msgstr "<filename>gentoo_0.9.12-1_i386.changes</filename>"
+msgstr "<filename>mypackage_1.0_i386.changes</filename>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
 "This file describes all the changes made in the current package version as "
 "in the non-native Debian package. (There is no Debian revision.)"
 msgstr ""
+"这个文件描述了这个软件作为外来 Debian 包，在当前版本所作出的所有更改。"
+"（没有 Debian 修订）"
 
 #~ msgid "$ dpkg-buildpackage\n"
 #~ msgstr "$ dpkg-buildpackage\n"
