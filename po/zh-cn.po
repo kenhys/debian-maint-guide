@@ -2498,7 +2498,6 @@ msgid "Fixing upstream bugs"
 msgstr "修复上游 Bug"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Let's assume you find an error in the upstream <filename>Makefile</filename> "
 "as follows where <literal>install: gentoo</literal> should have been "
@@ -2522,24 +2521,22 @@ msgstr ""
 "        install gentoorc-example $(HOME)/.gentoorc\n"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "The <filename>debian/patches</filename> directory should exist now if you "
 "ran <command>dh_make</command> as described before.  This example operation "
 "creates it just in case you are updating an existing package."
 msgstr ""
-"<filename>debian/patches</filename> 应当在你按照前面所述的步骤运行 "
-"<command>dh_make</command> 时生成的。这个例子中我们新创建它，因为假设的是在更"
+"<filename>debian/patches</filename> 目录应当是在你按照前面所述的步骤运行 "
+"<command>dh_make</command> 时生成的。而在这个例子中我们新创建它，因为假设的是在更"
 "新一个已存在的软件包。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Let's fix this and record it with the <command>dquilt</command> command as "
 "<filename>fix-gentoo-target.patch</filename>: <placeholder type=\"footnote\" "
 "id=\"0\"/>"
 msgstr ""
-"让我们使用 <command>quilt</command> 修复它，并把它命名为 <filename>fix-"
+"让我们使用 <command>dquilt</command> 修复这个问题，并把补丁命名为 <filename>fix-"
 "gentoo-target.patch</filename>。<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><screen>
@@ -2554,9 +2551,8 @@ msgstr ""
 "$ dquilt add Makefile\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid "You change the <filename>Makefile</filename> file as follows:"
-msgstr "现在将 <filename>Makefile</filename> 修改为如下的样子。"
+msgstr "现在将 <filename>Makefile</filename> 修改为如下的样子："
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2572,15 +2568,16 @@ msgstr ""
 "        install gentoorc-example $(HOME)/.gentoorc\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Ask <command>dquilt</command> to generate the patch to create "
 "<filename>debian/patches/fix-gentoo-target.patch</filename> and add its "
 "description following <ulink url=\"&dep3;\">DEP-3: Patch Tagging Guidelines</"
 "ulink>:"
 msgstr ""
-"使用 <command>quilt</command> 刷新补丁以创建 <filename>debian/patches/fix-"
-"gentoo-targe.patch</filename> 并添加描述。"
+"使用 <command>dquilt</command> 将补丁生成到 <filename>debian/patches/fix-"
+"gentoo-targe.patch</filename> 并根据 "
+"<ulink url=\"&dep3;\">DEP-3: Patch Tagging Guidelines</"
+"ulink> 添加描述："
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2598,7 +2595,6 @@ msgid "Installation of files to their destination"
 msgstr "把文件安装到目的位置"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Most third-party software installs itself in the <filename>/usr/local</"
 "filename> directory hierarchy.  On Debian this is reserved for private use "
@@ -2607,11 +2603,11 @@ msgid ""
 "directories such as <filename>/usr/bin</filename>, obeying the <ulink url="
 "\"&fhs;\">Filesystem Hierarchy Standard</ulink> (FHS)."
 msgstr ""
-"正常情况下，程序将其本身安装在 <filename>/usr/local</filename>。因为它是保留"
-"给系统管理员(或用户)的私有位置，Debian 软件包不可以使用该目录，而是按照文件系"
-"统层级标准(<ulink url=\"&fhs;\">FHS</ulink>，<filename>/usr/share/doc/debian-"
-"policy/fhs/fhs-2.3.html</filename>)使用如 <filename>/usr/bin</filename> 等目"
-"录。"
+"大多数第三方程序将其本身安装在 <filename>/usr/local</filename> 目录下。"
+"在 Debian 中，这是保留给系统管理员的私有位置，因此 Debian 软件包不可以使用比如"
+"<filename>/usr/local/bin</filename> 这样的目录，而应当使用系统目录比如 "
+"<filename>/usr/bin</filename>， 以遵循文件系统层级结构标准： <ulink url="
+"\"&fhs;\">Filesystem Hierarchy Standard</ulink> (FHS)。"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
