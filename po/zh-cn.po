@@ -3003,10 +3003,9 @@ msgid ""
 "Debian specific packaging modification: <filename>debian/patches/install."
 "patch</filename>"
 msgstr ""
-"Debian 特有的打包修改：<filename>debian/patches/install.patch</filename>"
+"Debian 特有的打包时修改：<filename>debian/patches/install.patch</filename>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Whenever you make changes that are not specific to the Debian package such "
 "as <filename>debian/patches/fix-gentoo-target.patch</filename>, be sure to "
@@ -3015,10 +3014,10 @@ msgid ""
 "avoid making your fixes specific to Debian or Linux - or even Unix! Make "
 "them portable.  This will make your fixes much easier to apply."
 msgstr ""
-"进行任何不是 Debian 特有的修改时，比如 <filename>debian/patches/fix-gentoo-"
+"当进行任何非 Debian 特有的修改时，比如 <filename>debian/patches/fix-gentoo-"
 "target.patch</filename>，一定要向上游作者进行反馈，以便上游作者方便在下一版本"
-"中以使更多人受益。同时请记住在做不特别针对 Debian 或 Linux (甚至是 Unix！)的"
-"修改时要使其可以移植，这会使你的修改更容易被接受。"
+"中以使更多人受益。同时请记住 不要 作特别针对 Debian 或 Linux (甚至是 Unix！)的"
+"修改，要使其可以移植，这会使你的修改更容易被接受。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -3031,7 +3030,6 @@ msgid "Differing libraries"
 msgstr "不同的库名称"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "There is one other common problem: libraries are often different from "
 "platform to platform.  For example, a <filename>Makefile</filename> can "
@@ -3039,19 +3037,17 @@ msgid ""
 "In that case, we need to change it to a library which does exist in Debian, "
 "and serves the same purpose."
 msgstr ""
-"还有另外一个常见的问题：不同平台之间的库常常是不同的。例如一个 "
-"<filename>Makefile</filename> 中可能引了用一个不在 Debian 上存在的库。这种情"
-"况下我们需要将其修改为 Debian 中存在的、提供完全相同功能的库。"
+"还有另外一个常见的问题：不同平台之间的库名称常常因平台而异。例如一个 "
+"<filename>Makefile</filename> 中可能引了用一个 Debian 系统中不存在的库。"
+"这种情况下我们需要将其修改为 Debian 中存在的、提供完全相同功能的库。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Let's assume a line in your program's <filename>Makefile</filename> (or "
 "<filename>Makefile.in</filename>) as the following."
 msgstr ""
 "如果你手中程序的 <filename>Makefile</filename>(或 <filename>Makefile.in</"
-"filename>)中有如下的行(且程序无法通过编译)<placeholder type=\"footnote\" id="
-"\"0\"/>："
+"filename>)中有如下的行。"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -3064,6 +3060,9 @@ msgid ""
 "<literal>foo2</literal> library, required changes to the source code need to "
 "be made to match the new API."
 msgstr ""
+"如果从 <literal>foo</literal> 库切换到 "
+"<literal>foo2</literal> 库时要更改应用程序接口（API），这就要求我们"
+"修改源代码来符合新的 API。 "
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -3074,6 +3073,11 @@ msgid ""
 "literal> into <literal>foo2</literal>:<placeholder type=\"footnote\" id="
 "\"0\"/>"
 msgstr ""
+"如果你的程序由于 <literal>foo</literal> 库不存在，而 Debian 系统中的 "
+"<literal>foo2</literal> 库提供了其等效，那么你可以修复这个构建问题并"
+"将修改记录到 <filename>debian/patches/foo2.patch</filename> 中，只需要将 "
+"<literal>foo</literal> 切换到 <literal>foo2</literal>:"
+"<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
