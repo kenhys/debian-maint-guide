@@ -2610,7 +2610,6 @@ msgstr ""
 "\"&fhs;\">Filesystem Hierarchy Standard</ulink> (FHS)。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Normally, <citerefentry> <refentrytitle>make</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry> is used to automate building the program, and "
@@ -2622,14 +2621,13 @@ msgid ""
 "destination."
 msgstr ""
 "通常在自动编译程序时使用 <citerefentry> <refentrytitle>make</refentrytitle> "
-"<manvolnum>1</manvolnum> </citerefentry> 程序，执行 <literal>make install</"
-"literal> 就把程序直接按照 <filename>Makefile</filename> 文件中的 "
-"<literal>install</literal> target 安装到指定的位置。为了使 Debian 能够提供二"
-"进制软件包，编译系统将文件安装到一个临时目录中创建的文件系统树的镜像中，而非"
-"直接安装到实际的目标位置。"
+"<manvolnum>1</manvolnum> </citerefentry> 程序，接着执行 <literal>make install</"
+"literal> 就可以把程序直接按照 <filename>Makefile</filename> 文件中的 "
+"<literal>install</literal> target 安装到指定的位置。为了使 Debian 能够提供"
+"编译好的二进制软件包，编译系统将文件安装到一个临时目录中创建的文件系统树的镜像中，"
+"而非直接安装到实际的目标位置。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "These two differences between normal program installation on one hand and "
 "the Debian packaging system on the other can be transparently addressed by "
@@ -2637,9 +2635,9 @@ msgid ""
 "<command>dh_auto_configure</command> and <command>dh_auto_install</command> "
 "commands if the following conditions are met:"
 msgstr ""
-"普通程序安装过程和 Debian 打包安装过程的区别可以由 <systemitem role=\"package"
+"普通程序安装过程和 Debian 打包安装过程二者的区别可以由 <systemitem role=\"package"
 "\">debhelper</systemitem> 软件包中的 <command>dh_auto_configure</command> 和 "
-"<command>dh_auto_install</command> 透明地处理。但程序必须满足以下条件："
+"<command>dh_auto_install</command> 透明地处理。但必须满足以下条件："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para><footnote><para>
 msgid ""
@@ -2650,23 +2648,19 @@ msgstr ""
 "Support for Staged Installs</ulink>。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "The <filename>Makefile</filename> must follow GNU conventions and support "
 "the <literal>$(DESTDIR)</literal> variable.  <placeholder type=\"footnote\" "
 "id=\"0\"/>"
 msgstr ""
-"<filename>Makefile</filename> 文件遵循 GNU 的规定支持 <literal>$(DESTDIR)</"
-"literal> 变量(<filename>/usr/share/doc/gnu-standards/standards.html#Makefile-"
-"Conventions</filename>)。"
+"<filename>Makefile</filename> 文件应当遵循 GNU 的规定支持 <literal>$(DESTDIR)</"
+"literal> 变量<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "The source must follow the Filesystem Hierarchy Standard (FHS)."
-msgstr "源代码遵循文件系统层级标准(FHS)。"
+msgstr "源代码必须遵循文件系统层级标准(FHS)。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Programs that use GNU <command>autoconf</command> follow the GNU conventions "
 "automatically, so they can be trivial to package.  On the basis of this and "
@@ -2675,14 +2669,13 @@ msgid ""
 "without making any intrusive changes to their build system.  So packaging is "
 "not as complicated as it may seem."
 msgstr ""
-"使用 GNU <command>autoconf</command> 的程序 <emphasis>自动</emphasis> 遵守了 "
-"GNU 的规定，这些程序的打包也就 <emphasis>几乎是自动的</emphasis>。通过这项特"
-"点和其他启发式处理，<systemitem role=\"package\">debhelper</systemitem> 软件"
-"包可以直接打包约 90% 的软件包而不需对编译系统做出大的改变。所以打包也不是它看"
+"使用 GNU <command>autoconf</command> 的程序自动遵守了GNU 的规定，"
+"这多少有利于打包过程的自动化。通过这项特点和其他启发式处理，"
+"估计 <systemitem role=\"package\">debhelper</systemitem> 软件"
+"可以直接打包约 90% 的软件包而不需对编译系统做出大的改变。所以打包也不是看"
 "起来那样复杂。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "If you need to make changes in the <filename>Makefile</filename>, you should "
 "be careful to support the <literal>$(DESTDIR)</literal> variable.  Although "
@@ -2691,13 +2684,12 @@ msgid ""
 "packaging script will set <literal>$(DESTDIR)</literal> to the temporary "
 "directory."
 msgstr ""
-"如果你需要修改 <filename>Makefile</filename> 文件，要确保其支持 <literal>"
-"$(DESTDIR)</literal> 变量。默认情况下 <literal>$(DESTDIR)</literal> 变量没有"
-"设置并且默认使用程序选择的安装位置。打包脚本会将 <literal>$(DESTDIR)</"
+"如果你需要修改 <filename>Makefile</filename> 文件，就要确保其支持 <literal>"
+"$(DESTDIR)</literal> 变量。虽然默认情况下 <literal>$(DESTDIR)</literal> 变量没有"
+"设置并且在程序安装时会前置到每个文件的路径中。打包脚本会将 <literal>$(DESTDIR)</"
 "literal> 设置为临时目录。"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "For a source package generating multiple binary packages, the "
 "<command>dh_auto_install</command> command uses <filename>debian/tmp</"
@@ -2712,14 +2704,15 @@ msgid ""
 "<filename><replaceable>package-2</replaceable>_*.deb</filename> binary "
 "packages."
 msgstr ""
-"对于多个二进制包，<command>dh_auto_install</command> 将临时目录设置为"
+"对于单个源码包生成多个二进制包，<command>dh_auto_install</command> 将临时目录设置为"
 "<filename>debian/tmp</filename>，而 <command>dh_install</command> 命令则将文"
 "件按照 <filename>debian/<replaceable>package-1</replaceable>.install</"
 "filename> 和 <filename>debian/<replaceable>package-2</replaceable>.install</"
 "filename> 等文件的描述将 <filename>debian/tmp</filename> 中的文件分别装入 "
 "<filename>debian/<replaceable>package-1</replaceable></filename> 和 "
-"<filename>debian/<replaceable>package-2</replaceable></filename> 等临时目录以"
-"创建 <filename>*.deb</filename> 软件包。"
+"<filename>debian/<replaceable>package-2</replaceable></filename> 等临时目录用以"
+"创建 <filename><replaceable>package-1</replaceable>_*.deb</filename> 和 "
+"<filename><replaceable>package-2</replaceable>_*.deb</filename> 等二进制软件包。"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
