@@ -3612,15 +3612,14 @@ msgid ""
 "installed.  Use this if your program absolutely will not run (or will cause "
 "severe breakage) unless a particular package is present."
 msgstr ""
-"此软件包仅当它依赖的软件包均已安装后才可以安装。此处写明你的程序所必须的软件"
-"包。"
+"此软件包仅当它依赖的软件包均已安装后才可以安装。此处请写明你的程序所必须的软件"
+"包，如果没有要求的软件包该软件便不能正常运行（或严重抛锚）的话。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<literal>Recommends</literal>"
 msgstr "<literal>Recommends</literal>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Use this for packages that are not strictly necessary but are typically used "
 "with your program.  When a user installs your program, all front-ends will "
@@ -3639,7 +3638,6 @@ msgid "<literal>Suggests</literal>"
 msgstr "<literal>Suggests</literal>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Use this for packages which will work nicely with your program but are not "
 "at all necessary.  When a user installs your program, they will probably not "
@@ -3648,9 +3646,9 @@ msgid ""
 "is not its default.  <command>dpkg</command> and <command>apt-get</command> "
 "will ignore this field."
 msgstr ""
-"此项中的软件包可以使你的程序更好地工作，但不是一定需要的。当用户安装程序时，"
-"所有的前端程序将询问是否安装建议的软件包。<command>aptitude</command> 可以被"
-"配置为安装软件时自动安装建议的软件包。<command>dpkg</command> 和 "
+"此项中的软件包可以和本程序更好地协同工作，但不是必须的。当用户安装程序时，"
+"所有的前端程序可能不会询问是否安装建议的软件包。<command>aptitude</command> 可以被"
+"配置为安装软件时自动安装建议的软件包，但这不是默认。<command>dpkg</command> 和 "
 "<command>apt-get</command> 将忽略此项。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
@@ -3667,7 +3665,7 @@ msgid ""
 "don't use it at all.  :-)"
 msgstr ""
 "此项中的依赖强于 <literal>Depends</literal> 项。软件包仅在预依赖的软件包已经"
-"安装后才可以正常安装并且 <emphasis>正确配置</emphasis> 后才可以正常安装。在使"
+"安装并且 <emphasis>正确配置</emphasis> 后才可以正常安装。在使"
 "用此项时应 <emphasis>非常慎重</emphasis>，仅当在 <ulink url=\"&debian-devel-"
 "ldo;\">debian-devel@lists.debian.org</ulink> 邮件列表讨论后才能使用。记住：根"
 "本就不要用这项。 :-)"
@@ -3683,14 +3681,13 @@ msgid ""
 "cause severe problems if a particular package is present."
 msgstr ""
 "仅当所有冲突的软件包都已经删除后此软件包才可以安装。当程序在某些特定软件包存"
-"在时根本无法运行或存在严重问题时使用此项。"
+"在的情况下根本无法运行或存在严重问题时使用此项。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<literal>Breaks</literal>"
 msgstr "<literal>Breaks</literal>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "When installed the package will break all the listed packages.  Normally a "
 "<literal>Breaks</literal> entry specifies that it applies to versions "
@@ -3699,7 +3696,7 @@ msgid ""
 msgstr ""
 "此软件包安装后列出的软件包将会受到损坏。通常 <literal>Breaks</literal> 要附带"
 "一个“版本号小于多少”的说明。这样，软件包管理工具将会选择升级被损坏的特定版本"
-"的软件包。"
+"的软件包作为解决方案。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<literal>Provides</literal>"
