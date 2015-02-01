@@ -4610,12 +4610,11 @@ msgstr ""
 "<command>dh_*</command> 程序序列。 <placeholder type=\"footnote\" id=\"1\"/>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<literal>debian/rules clean</literal> runs <literal>dh clean</literal>, "
 "which in turn runs the following:"
 msgstr ""
-"<literal>debian/rules clean</literal> 运行了 <literal>dh clean</literal>，实"
+"<literal>debian/rules clean</literal> 运行了 <literal>dh clean</literal>，接下来实"
 "际执行的命令为："
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><screen>
@@ -4634,7 +4633,7 @@ msgid ""
 "<literal>debian/rules build</literal> runs <literal>dh build</literal>; "
 "which in turn runs the following:"
 msgstr ""
-"<literal>debian/rules build</literal> 运行了 <literal>dh build</literal>，实"
+"<literal>debian/rules build</literal> 运行了 <literal>dh build</literal>; 实"
 "际执行的命令为："
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><screen>
@@ -4656,6 +4655,8 @@ msgid ""
 "value equal or more than 9 to avoid invoking any python support commands "
 "automatically."
 msgstr ""
+"下边的例子假定你的 <filename>debian/compat</filename> 有一个 "
+"值大于或等于 9 ，以此避免自动调用任何 python 支持命令。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
 msgid ""
@@ -4764,7 +4765,7 @@ msgid ""
 msgstr ""
 "<literal>fakeroot debian/rules binary-arch</literal> 执行了 "
 "<literal>fakeroot dh binary-arch</literal>，其效果等同于 <literal>fakeroot "
-"dh binary</literal> 并附加 <literal>-a</literal> 参数于每个命令。"
+"dh binary</literal> 并附加 <literal>-a</literal> 参数于每个命令后。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
 msgid ""
@@ -4788,6 +4789,10 @@ msgid ""
 "manual pages and the <systemitem role=\"package\">debhelper</systemitem> "
 "documentation."
 msgstr ""
+"关于所有 <command>dh_*</command> 脚本具体行为， "
+"以及 它们有什么选项 的完整信息，请阅读它们各自的 man 手册页 "
+"以及 <systemitem role=\"package\">debhelper</systemitem> "
+"的文档。"
 
 #. type: Content of: <book><chapter><section><section><para><footnote><para>
 msgid ""
@@ -4795,6 +4800,9 @@ msgid ""
 "filename> which can be listed by executing <literal>dh_auto_build --list</"
 "literal> in a package source directory."
 msgstr ""
+"这些构建系统同样支持其他的构建环境，比如 <filename>setup.py</"
+"filename> ，这可以通过在软件包源码目录中执行 <literal>dh_auto_build --list</"
+"literal> 来列出。"
 
 #. type: Content of: <book><chapter><section><section><para>
 msgid ""
@@ -4804,6 +4812,11 @@ msgid ""
 "assuming a typical build environment based on a <filename>Makefile</"
 "filename>: <placeholder type=\"footnote\" id=\"1\"/>"
 msgstr ""
+"<command>dh_*</command> 命令的功能依其名称不言而喻。"
+" <placeholder type=\"footnote\" id=\"0\"/> "
+"不过其中有一些值得在这里进行简要解释， "
+"假定有一个基于 <filename>Makefile</"
+"filename> 的典型构建环境： <placeholder type=\"footnote\" id=\"1\"/>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para><footnote><para>
 msgid ""
@@ -4811,16 +4824,19 @@ msgid ""
 "filename> out of <literal>distclean</literal>, <literal>realclean</literal>, "
 "or <literal>clean</literal>, and executes that."
 msgstr ""
+"它实际上在 <filename>Makefile</"
+"filename> 中搜寻第一个可用的 target ，除了 <literal>distclean</literal>, <literal>realclean</literal>, "
+"或 <literal>clean</literal>， 接下来再执行它。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<command>dh_auto_clean</command> usually executes the following if a "
 "<filename>Makefile</filename> exists with the <literal>distclean</literal> "
 "target.  <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
 "<command>dh_auto_install</command> 通常在 <filename>Makefile</filename> 存在"
-"且有 <literal>install</literal> target 时执行以下命令(进行了换行以便阅读)。"
+"且有 <literal>distclean</literal> target 时执行以下命令"
+"<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><screen>
 #, no-wrap
@@ -4834,7 +4850,7 @@ msgid ""
 "readability)."
 msgstr ""
 "<command>dh_auto_configure</command> 在 <filename>./configure</filename> 存在"
-"时通常执行以下命令(省略了部分参数以方便此处阅读)。"
+"时通常执行以下命令(省略部分参数以方便此处阅读)。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><screen>
 #, no-wrap
@@ -4860,16 +4876,19 @@ msgid ""
 "filename> out of <literal>test</literal> or <literal>check</literal>, and "
 "executes that."
 msgstr ""
+"实际上它在 <filename>Makefile</"
+"filename> 中搜索第一个可用的 target，除了 <literal>test</literal> 或 <literal>check</literal>，然后"
+"执行它。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<command>dh_auto_test</command> usually executes the following if a "
 "<filename>Makefile</filename> exists with the <literal>test</literal> "
 "target.  <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
 "<command>dh_auto_install</command> 通常在 <filename>Makefile</filename> 存在"
-"且有 <literal>install</literal> target 时执行以下命令(进行了换行以便阅读)。"
+"且有 <literal>test</literal> target 时执行以下命令。"
+"<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><screen>
 #, no-wrap
@@ -4877,7 +4896,6 @@ msgid "make test\n"
 msgstr "make test\n"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<command>dh_auto_install</command> usually executes the following if a "
 "<filename>Makefile</filename> exists with the <literal>install</literal> "
@@ -4896,17 +4914,15 @@ msgstr ""
 "  DESTDIR=<replaceable>/path/to</replaceable>/<replaceable>package</replaceable>_<replaceable>version</replaceable>-<replaceable>revision</replaceable>/debian/<replaceable>package</replaceable>\n"
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
 msgid ""
 "All targets which require the <command>fakeroot</command> command will "
 "contain <command>dh_testroot</command>, which exits with an error if you are "
 "not using this command to pretend to be root."
 msgstr ""
-"需要 <command>fakeroot</command> 命令的都包含了 <command>dh_testroot</"
-"command>。如果你没有假装为 root，将会报错并退出。"
+"所有需要 <command>fakeroot</command> 命令的都包含了 <command>dh_testroot</"
+"command>。如果你没有使用 fakeroot，那将会报错并退出。"
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
 msgid ""
 "The important part to know about the <filename>rules</filename> file created "
 "by <command>dh_make</command> is that it is just a suggestion.  It will work "
@@ -4915,11 +4931,9 @@ msgid ""
 msgstr ""
 "关于 <command>dh_make</command> 生成的 <filename>rules</filename> 文件，你应"
 "该知道的最重要的事是，它仅仅是一个建议。它对多数简单的软件包有效，但对于更复"
-"杂的则要大胆对其进行定制以满足需要。只有一件事不应改变，就是它们的名字，这些"
-"名称由 Debian Policy 定义且被所有工具使用。"
+"杂的则要大胆对其进行定制以满足需要。"
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
 msgid ""
 "Although <literal>install</literal> is not a required target, it is "
 "supported.  <literal>fakeroot dh install</literal> behaves like "
@@ -4943,7 +4957,6 @@ msgstr ""
 "filename> 文件。"
 
 #. type: Content of: <book><chapter><section><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "If a package installs the <filename>/usr/share/perl5/Debian/Debhelper/"
 "Sequence/<replaceable>custom_name</replaceable>.pm</filename> file, you "
@@ -4952,45 +4965,42 @@ msgid ""
 msgstr ""
 "如果一个软件包安装了 <filename>/usr/share/perl5/Debian/Debhelper/Sequence/"
 "<replaceable>custom_name</replaceable>.pm</filename> 文件，你应当使用 "
-"<literal>dh --with <replaceable>custom-name</replaceable> $@</literal> 命令激"
+"<literal>dh $@ --with <replaceable>custom-name</replaceable></literal> 命令激"
 "活其功能。"
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
 msgid ""
 "The <literal>dh $@</literal> command can be customized as follows: "
 "<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-"<literal>dh $@</literal> 命令可以按以下方式定制。<placeholder type=\"footnote"
-"\" id=\"0\"/>"
+"<literal>dh $@</literal> 命令可以按以下方式定制："
+"<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para><footnote><para>
-#, fuzzy
 msgid ""
 "Use of the <command>dh_python2</command> command is preferred over use of "
 "<command>dh_pysupport</command> or <command>dh_pycentral</command> "
 "commands.  Do not use the <command>dh_python</command> command."
 msgstr ""
-"在 <command>dh_pysupport</command> 和 <command>dh_pycentral</command> 命令之"
-"间更推荐使用前者，不要使用 <command>dh_python</command> 命令。"
+"在 <command>dh_python2</command> 和 <command>dh_pysupport</command> 以及"
+"<command>dh_pycentral</command> 命令之间更推荐使用前者。"
+"不要使用 <command>dh_python</command> 命令。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Add support for the <command>dh_python2</command> command.  (The best choice "
 "for Python.) <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-"添加 <command>dh_pysupport</command> 命令支持。(对于 Python 的最佳选"
+"为 <command>dh_python2</command> 命令添加支持。(对于 Python 的最佳选"
 "择。)<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Include the <systemitem role=\"package\">python</systemitem> package in "
 "<literal>Build-Depends</literal>."
 msgstr ""
 "在 <literal>Build-Depends</literal> 中添加 <systemitem role=\"package"
-"\">python-support</systemitem> 软件包。"
+"\">python</systemitem> 软件包。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
 #, fuzzy
