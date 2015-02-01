@@ -3413,7 +3413,7 @@ msgstr ""
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "To find out what packages your package needs to be built run the command:"
-msgstr "要找出编译你的软件所需的软件包可以使用这个命令："
+msgstr "要找出编译你的软件所需的软件包可以使用这个命令(译注：来自devscripts包)："
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -3421,13 +3421,12 @@ msgid "$ dpkg-depcheck -d ./configure\n"
 msgstr "$ dpkg-depcheck -d ./configure\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "To manually find exact build dependencies for <command><replaceable>/usr/bin/"
 "foo</replaceable></command>, execute"
 msgstr ""
 "要手工地找到 <command><replaceable>/usr/bin/foo</replaceable></command> 的编"
-"译依赖，可以执行："
+"译依赖，可以执行"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -3437,7 +3436,7 @@ msgstr "$ objdump -p <replaceable>/usr/bin/foo</replaceable> | grep NEEDED\n"
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "and for each library listed, e.g., <command>libfoo.so.6</command>, execute"
-msgstr "对于列出的每个库，例如 <command>libfoo.so.6</command>，运行："
+msgstr "对于列出的每个库，例如 <command>libfoo.so.6</command>，运行"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
