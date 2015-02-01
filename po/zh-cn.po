@@ -3210,9 +3210,11 @@ msgid ""
 "\"</ulink> and <ulink url=\"&sections-unstable;\">List of sections in "
 "<literal>sid</literal></ulink>."
 msgstr ""
+"参见 <ulink url=\"&policy-subsections;\">Debian Policy Manual, 2.4 \"Sections"
+"\"</ulink> 以及 <ulink url=\"&sections-unstable;\">List of sections in "
+"<literal>sid</literal></ulink>."
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "As you may have noticed, the Debian archive is divided into multiple areas: "
 "<literal>main</literal> (the free software), <literal>non-free</literal> "
@@ -3229,14 +3231,12 @@ msgstr ""
 "你可能已经注意到，Debian 仓库被分为几个类别：<literal>main</literal> (自由软"
 "件)、<literal>non-free</literal> (非自由软件)以及 <literal>contrib</literal> "
 "(依赖于非自由软件的自由软件)。在这些大的分类之下还有多个逻辑上的子分类，用以"
-"简短描述软件包的用途类别。<literal>admin</literal> 为仅供系统管理员使用的程"
-"序，<literal>base</literal> 为基本工具，<literal>devel</literal> 为开发工具，"
-"<literal>doc</literal> 为文档，<literal>libs</literal> 为库，<literal>mail</"
-"literal> 为电子邮件阅读器或邮件系统守护程序，<literal>net</literal> 为网络应"
-"用程序或网络服务守护进程，<literal>x11</literal> 为不属于其他分类的为 X11 程"
-"序。更多的子分类见 <ulink url=\"&policy-subsections;\">Debian Policy Manual, "
-"2.4 'Sections'</ulink> 和 <ulink url=\"&sections-unstable;\">List of "
-"sections in 'sid'</ulink>"
+"简短描述软件包的用途类别。<literal>admin</literal> 为供系统管理员使用的程"
+"序，<literal>devel</literal> 为开发工具，<literal>doc</literal> 为文档，"
+"<literal>libs</literal> 为库，<literal>mail</literal> 为电子邮件阅读器或"
+"邮件系统守护程序，<literal>net</literal> 为网络应用程序或网络服务守护进程，"
+"<literal>x11</literal> 为不属于其他分类的为 X11 程序，此外还有很多很多。"
+"<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -3246,33 +3246,30 @@ msgstr ""
 "我们将本例设置为 x11。( <literal>main/</literal> 前缀是默认值，可以省略。)"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "See <ulink url=\"&policy-priorities;\">Debian Policy Manual, 2.5 \"Priorities"
 "\"</ulink>."
 msgstr ""
-"第 3 行描述了用户安装此软件包的优先级。具体说明参看 <ulink url=\"&policy-"
-"priorities;\">Debian Policy Manual, 2.5 'Priorities'</ulink>"
+"参见 <ulink url=\"&policy-priorities;\">Debian Policy Manual, 2.5 \"Priorities"
+"\"</ulink>。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Line 3 describes how important it is that the user installs this package.  "
 "<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-"第 3 行描述了用户安装此软件包的优先级。具体说明参看 <ulink url=\"&policy-"
-"priorities;\">Debian Policy Manual, 2.5 'Priorities'</ulink>"
+"第 3 行描述了用户安装此软件包的优先级。"
+"<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "The <literal>optional</literal> priority will usually work for new packages "
 "that do not conflict with others claiming <literal>required</literal>, "
 "<literal>important</literal>, or <literal>standard</literal> priority."
 msgstr ""
-"<literal>optional</literal> 优先级适用于不与优先级为 <literal>required</"
+"<literal>optional</literal> 优先级适用于与优先级为 <literal>required</"
 "literal>、<literal>important</literal> 或 <literal>standard</literal> 的软件"
-"包冲突的新软件包。"
+"包不冲突的新软件包。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -3283,7 +3280,6 @@ msgstr ""
 "软件包冲突的新软件包。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Section and priority are used by front-ends like <command>aptitude</command> "
 "when they sort packages and select defaults.  Once you upload the package to "
@@ -3291,8 +3287,8 @@ msgid ""
 "maintainers, in which case you will be notified by email."
 msgstr ""
 "Section 和 Priority 常被如 <command>aptitude</command> 的前端所使用，以分类软"
-"件包并计算默认值。一旦你把软件包上传到 Debian，这两项的值可以被仓库维护人员修"
-"改，在被修改时你将收到邮件。"
+"件包并选择默认值。一旦你把软件包上传到 Debian，这两项的值可以被仓库维护人员修"
+"改，此时你将收到提示邮件。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
