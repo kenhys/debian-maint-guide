@@ -3514,6 +3514,7 @@ msgid ""
 "The generated binary package is an architecture dependent one usually in a "
 "compiled language."
 msgstr ""
+"一般而言，包含 编译型语言编写的程序 生成的二进制包依赖于具体的体系结构。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<literal>Architecture: all</literal>"
@@ -3524,19 +3525,19 @@ msgid ""
 "The generated binary package is an architecture independent one usually "
 "consisting of text, images, or scripts in an interpreted language."
 msgstr ""
+"一般而言，包含 文本、图像、或解释型语言脚本 生成的二进制包独立于体系结构。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "We leave line 10 as is since this is written in C.  "
 "<citerefentry><refentrytitle>dpkg-gencontrol</refentrytitle><manvolnum>1</"
 "manvolnum></citerefentry> will fill in the appropriate architecture value "
 "for any machine this source package gets compiled on."
 msgstr ""
-"第 10 行描述了这个软件包可以在哪些 CPU 构架上编译。我们将保持它为 "
-"<literal>any</literal>，因为 <citerefentry> <refentrytitle>dpkg-gencontrol</"
-"refentrytitle> <manvolnum>1</manvolnum> </citerefentry> 将在这个软件包可以编"
-"译的平台上为此处填写合适的信息。"
+"我们不管第 10 行，鉴于本程序是用 C 语言编写的。 "
+"<citerefentry> <refentrytitle>dpkg-gencontrol</refentrytitle> <manvolnum>1"
+"</manvolnum> </citerefentry> 命令将根据这个软件包可以编译的平台"
+" 而为此处填写合适的信息。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -3567,7 +3568,6 @@ msgstr ""
 "<literal>Provides</literal> 和 <literal>Replaces</literal>。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "The package management tools usually behave the same way when dealing with "
 "these relations; if not, it will be explained.  (See <citerefentry> "
@@ -3578,7 +3578,7 @@ msgid ""
 "<refentrytitle>aptitude</refentrytitle> <manvolnum>1</manvolnum> </"
 "citerefentry>, etc.)"
 msgstr ""
-"软件包管理工具通常对这些关系采取相同的操作，如果不是，我将会详细解释。(参看 "
+"软件包管理工具通常对这些关系采取相同的操作；如果有例外，本教程将会详细解释。(参看 "
 "<citerefentry> <refentrytitle>dpkg</refentrytitle> <manvolnum>8</manvolnum> "
 "</citerefentry>、<citerefentry> <refentrytitle>dselect</refentrytitle> "
 "<manvolnum>8</manvolnum> </citerefentry>、<citerefentry> <refentrytitle>apt</"
@@ -3587,22 +3587,20 @@ msgstr ""
 "citerefentry> 等。)"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "See <ulink url=\"&policy-relationships;\">Debian Policy Manual, 7 "
 "\"Declaring relationships between packages\"</ulink>."
 msgstr ""
-"第 3 行描述了用户安装此软件包的优先级。具体说明参看 <ulink url=\"&policy-"
-"priorities;\">Debian Policy Manual, 2.5 'Priorities'</ulink>"
+"参见 <ulink url=\"&policy-relationships;\">Debian Policy Manual, 7 "
+"\"Declaring relationships between packages\"</ulink>。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Here is a simplified description of package relationships: <placeholder type="
 "\"footnote\" id=\"0\"/>"
 msgstr ""
-"<literal>dh $@</literal> 命令可以按以下方式定制。<placeholder type=\"footnote"
-"\" id=\"0\"/>"
+"这里有一篇关于软件包关系的简述： <placeholder type="
+"\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<literal>Depends</literal>"
