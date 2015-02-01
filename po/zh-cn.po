@@ -5003,24 +5003,21 @@ msgstr ""
 "\">python</systemitem> 软件包。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid "Use <literal>dh $@ --with python2</literal>."
-msgstr "使用 <literal>dh --with python-central $@</literal>"
+msgstr "使用 <literal>dh $@ --with python2</literal>."
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "This handles Python modules using the <systemitem role=\"package\">python</"
 "systemitem> framework."
 msgstr ""
-"这会使用 <systemitem role=\"package\">python-support</systemitem> 框架处理 "
+"这会使用 <systemitem role=\"package\">python</systemitem> 框架处理 "
 "Python 模块。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Add support for the <command>dh_pysupport</command> command. (deprecated)"
-msgstr "添加 <command>dh_dkms</command> 命令支持。"
+msgstr "添加 <command>dh_pusuppor</command> 命令的支持。(已废弃)"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
 #, fuzzy
