@@ -4003,7 +4003,6 @@ msgstr ""
 "证下。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "You must fill in missing information to complete this file, such as the "
 "place you got the package from, the actual copyright notice, and the "
@@ -4013,15 +4012,14 @@ msgid ""
 "<filename>/usr/share/common-licenses/</filename> directory that exists on "
 "every Debian system.  Otherwise, you must include the complete license."
 msgstr ""
-"你必须填写上其余的信息，如你从何处获得此软件，实际的版权声明和它们的许可证。"
+"你必须填写上空缺的信息，如你从何处获得此软件，实际的版权声明和它们的许可证。"
 "对于常见的自由软件许可证，如 GNU GPL-1、GNU GPL-2、GNU GPL-3、LGPL-2、"
 "LGPL-2.1、LGPL-3、GNU FDL-1.2、GNU FDL-1.3、Apache-2.0 或 Artistic 许可证，你"
-"可以直接将其指向存在于所有 Debian 系统的 <filename>/usr/share/common-"
-"licenses/</filename> 目录下的相关文件。其他的许可证则必须包含完整的许可证文"
+"可以直接将其指向所有 Debian 系统都有的 <filename>/usr/share/common-"
+"licenses/</filename> 目录下的文件。否则，许可证则必须包含完整的许可证文"
 "本。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "In short, here's what <systemitem role=\"package\">gentoo</systemitem>'s "
 "<filename>copyright</filename> file should look like:"
@@ -4103,21 +4101,18 @@ msgstr ""
 "34  `/usr/share/common-licenses/GPL-2'.\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Please follow the HOWTO provided by the ftpmasters and sent to debian-devel-"
 "announce: <ulink url=\"&howto-copyright;\"/>."
 msgstr ""
-"另外还可以参看 ftpmasters 发送到 debian-devel-announce 的 HOWTO： <ulink url="
-"\"&debian-devel-announce-ldo;2006/03/msg00023.html\">&debian-devel-announce-"
-"ldo;2006/03/msg00023.html</ulink>"
+"另外还可以参看 ftpmasters 发送到 debian-devel-announce 的 HOWTO： "
+"announce: <ulink url=\"&howto-copyright;\"/>."
 
 #. type: Content of: <book><chapter><section><title>
 msgid "<filename>changelog</filename>"
 msgstr "<filename>changelog</filename>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "This is a required file, which has a special format described in <ulink url="
 "\"&policy-dpkgchangelog;\">Debian Policy Manual, 4.4 \"debian/changelog\"</"
@@ -4125,9 +4120,9 @@ msgid ""
 "to obtain the version number, revision, distribution, and urgency of your "
 "package."
 msgstr ""
-"这是一个必须的文件，它的格式在 <ulink url=\"&policy-dpkgchangelog;\">Debian "
-"Policy Manual, 4.4 'debian/changelog'</ulink> 中有详细的描述。这种格式被 "
-"<command>dpkg</command> 和其他程序用以获得版本号信息、适应的发行版和紧急程"
+"这是一个必须的文件，它的特殊格式在 <ulink url=\"&policy-dpkgchangelog;\">Debian "
+"Policy Manual, 4.4 \"debian/changelog\"</ulink> 中有详细的描述。这种格式被 "
+"<command>dpkg</command> 和其他程序用以解析版本号信息、适用的发行版和紧急程"
 "度。"
 
 #. type: Content of: <book><chapter><section><para>
@@ -4143,11 +4138,11 @@ msgstr ""
 "share/doc/gentoo/changelog.Debian.gz</filename> 保存在二进制包中。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "<command>dh_make</command> created a default one, and this is what it looks "
 "like:"
-msgstr "<command>dh_make</command> 创建了一个默认的文件，这是它的样子："
+msgstr ""
+"<command>dh_make</command> 创建了一个默认的文件，这是它的容貌："
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -4167,7 +4162,6 @@ msgstr ""
 "6\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Line 1 is the package name, version, distribution, and urgency.  The name "
 "must match the source package name; distribution should be "
@@ -4175,12 +4169,10 @@ msgid ""
 "higher than <literal>low</literal>.  :-)"
 msgstr ""
 "第 1 行是软件包名、版本号、发行版和紧急程度。软件包名必须与实际的源代码包名相"
-"同，发行版可以是 <literal>unstable</literal>(甚至 <literal>experimental</"
-"literal>)<placeholder type=\"footnote\" id=\"0\"/>，紧急程度则不要使用任何高"
-"于 <literal>low</literal> 的内容。 :-)"
+"同，发行版应该是 <literal>unstable</literal>，"
+"紧急程度则不要使用任何高于 <literal>low</literal> 的内容。 :-)"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Lines 3-5 are a log entry, where you document changes made in this package "
 "revision (not the upstream changes - there is a special file for that "
@@ -4192,8 +4184,8 @@ msgid ""
 "<refentrytitle>dch</refentrytitle> <manvolnum>1</manvolnum> </citerefentry>, "
 "or manually with a text editor."
 msgstr ""
-"第 3-5 行是一个很长的条目，记录了你在这个 Debian 版本中做出的修改(不是上游)修"
-"改——上游修改由上游作者创建另外一个文件并维护，它们应被安装为 <filename>/usr/"
+"第 3-5 行是一个很长的条目，记录了你在这个 Debian 修订版本中做出的修改(非上游修"
+"改 —— 上游修改由上游作者创建并由另外一个文件维护，它们应被安装为 <filename>/usr/"
 "share/doc/gentoo/changelog.gz</filename>)。假设你的 ITP (Intent To Package，"
 "计划打包)的 Bug 号为 <literal>12345</literal>。新行必须插入在上一个以星号 "
 "<literal>*</literal> 开头的行的正下方。你可以使用 <citerefentry> "
@@ -4206,6 +4198,8 @@ msgid ""
 "the package, it is good idea to change the distribution value to an invalid "
 "distribution value <literal>UNRELEASED</literal>."
 msgstr ""
+"为了阻止软件包在打包完成之前被意外上传，将发行版值改成一个不可用的 "
+"<literal>UNRELEASED</literal> 将是一个很好的选择。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid "You will end up with something like this:"
@@ -4238,6 +4232,8 @@ msgid ""
 "please make sure to save the <filename>changelog</filename> file explicitly "
 "by the editor."
 msgstr ""
+"如果你用 <literal>dch -r</literal> 命令来使它成为最后一笔更改， "
+"请确保用编辑器显式地保存 <filename>changelog</filename> 文件。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -4247,6 +4243,11 @@ msgid ""
 "<literal>unstable</literal> (or even <literal>experimental</literal>).  "
 "<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
+"如果你已经对自己所作出的改动感到满意，而且它们都被记录在了 "
+"<filename>changelog</filename> 中，那么你就可以将发行版值由 "
+"<literal>UNRELEASED</literal> 修改至目标发行版值 "
+"<literal>unstable</literal> (甚至 <literal>experimental</literal>)。  "
+"<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -4261,7 +4262,6 @@ msgid "<filename>rules</filename>"
 msgstr "<filename>rules</filename>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Now we need to take a look at the exact rules which <citerefentry> "
 "<refentrytitle>dpkg-buildpackage</refentrytitle> <manvolnum>1</manvolnum> </"
@@ -4272,7 +4272,7 @@ msgid ""
 msgstr ""
 "现在我们需要看看 <citerefentry> <refentrytitle>dpkg-buildpackage</"
 "refentrytitle> <manvolnum>1</manvolnum> </citerefentry> 用于实际创建软件包的 "
-"rules 文件。这个文件是一个 <filename>Makefile</filename>，但不同于上游源代码"
+"rules 文件。这个文件事实上是另一个 <filename>Makefile</filename>，但不同于上游源代码"
 "中的那个。和 <filename>debian</filename> 目录中的其他文件不同，这个文件被标记"
 "为可执行。"
 
@@ -4288,15 +4288,19 @@ msgid ""
 "the <systemitem role=\"package\">make-doc</systemitem> package in the "
 "<literal>non-free</literal> archive area."
 msgstr ""
+"你可以通过该资源来学习编写 <filename>Makefile</filename> ："
+"<ulink url=\"&debref-make;\">Debian Reference, 12.2. \"Make\"</ulink>。 "
+"完整文档在 <ulink url=\"&gnu-make;\"></ulink> 或者 "
+"<systemitem role=\"package\">make-doc</systemitem> 软件包 "
+"(该包位于 <literal>non-free</literal> 类）。"
 
 #. type: Content of: <book><chapter><section><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "<ulink url=\"&policy-debianrules;\">Debian Policy Manual, 4.9 \"Main "
 "building script: debian/rules\"</ulink> explains the details."
 msgstr ""
-"第 3 行描述了用户安装此软件包的优先级。具体说明参看 <ulink url=\"&policy-"
-"priorities;\">Debian Policy Manual, 2.5 'Priorities'</ulink>"
+"<ulink url=\"&policy-debianrules;\">Debian Policy Manual, 4.9 \"Main "
+"building script: debian/rules\"</ulink> 针对细节进行了解释。"
 
 #. type: Content of: <book><chapter><section><section><para>
 msgid ""
