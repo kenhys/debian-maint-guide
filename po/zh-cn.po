@@ -2809,18 +2809,15 @@ msgstr ""
 "ICONS   = $(DESTDIR)/usr/share/gentoo\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "The exact locations that should be used for binaries, icons, documentation, "
 "etc. are specified in the Filesystem Hierarchy Standard (FHS).  You should "
 "browse through it and read the sections relevant to your package."
 msgstr ""
-"二进制文件、图标和文档等的更详细位置均在文件层级标准(FHS，参看 <filename>/"
-"usr/share/doc/debian-policy/fhs/</filename>)中作出了详尽描述。我建议阅读相关"
-"章节以了解可能影响你软件包的内容。"
+"二进制文件、图标和文档等的更确切位置均已在文件层级标准(FHS)中作出了详尽描述。"
+"本教程建议你快速浏览相关章节以获取你打包需要用到的内容。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "So, we should install executable commands in <filename>/usr/bin</filename> "
 "instead of <filename>/usr/local/bin</filename>, the manual page in "
@@ -2831,12 +2828,12 @@ msgid ""
 "we'll make one later and install it in <filename>/usr/share/man/man1</"
 "filename>."
 msgstr ""
-"因此，我们应当把二进制文件安装到 <filename>/usr/bin</filename> 而非 "
-"<filename>/usr/local/bin</filename>，man 手册页则应放在 <filename>/usr/share/"
-"man/man1</filename> 而非 <filename>/usr/local/man/man1</filename> 等。注意到 "
-"<systemitem role=\"package\">gentoo</systemitem>的 <filename>Makefile</"
+"因此，我们应当把可执行二进制文件安装到 <filename>/usr/bin</filename> 而非 "
+"<filename>/usr/local/bin</filename>，而 man 手册页则应放在 <filename>/usr/share/"
+"man/man1</filename> 而非 <filename>/usr/local/man/man1</filename>，依此类推。"
+"注意，<systemitem role=\"package\">gentoo</systemitem> 的 <filename>Makefile</"
 "filename> 里没有提及手册页，而按照 Debian Policy 的要求，每个程序都应当有一个"
-"手册页，我们将在稍后制作一个并安装到 <filename>/usr/share/man/man1</filename>"
+"手册页，我们将在稍后制作一个并安装到 <filename>/usr/share/man/man1</filename>。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -2863,13 +2860,12 @@ msgstr ""
 "号。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Edit those files and in those lines replace <literal>usr/local/lib</literal> "
 "with <literal>usr/lib</literal>.  This can be done automatically as follows:"
 msgstr ""
-"编辑那些文件，用 <literal>usr/lib</literal> 替换 <literal>usr/local/lib</"
-"literal>。"
+"编辑那些文件，在那些行中用 <literal>usr/lib</literal> 替换 <literal>usr/local/lib</"
+"literal>。这个过程可以用如下方法自动化完成："
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2885,6 +2881,7 @@ msgid ""
 "If you want to confirm each substitution instead, this can be done "
 "interactively as follows:"
 msgstr ""
+"如果你想要确认每一个替换操作，那么下边的方法可以让你交互式地达成："
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2896,25 +2893,23 @@ msgstr ""
 "        $(find . -type f -name '*.[c|h]')\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Next you should find the <literal>install</literal> target (searching for "
 "the line that starts with <literal>install:</literal> will usually work) and "
 "rename all references to directories other than ones defined at the top of "
 "the <filename>Makefile</filename>."
 msgstr ""
-"此后你应该找到 install target (通常搜索以 <literal>install:</literal> 开头的"
-"行即可)，并把所有的相关目录以及在 <filename>Makefile</filename> 顶部定义变量"
-"均做修改。"
+"紧接着你应该找到 <literal>install</literal> target (通常搜索以 "
+"<literal>install:</literal> 开头的行即可)，并把除 "
+"<filename>Makefile</filename> 顶部定义变量之外的目录引用妥当修改。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Originally, <systemitem role=\"package\">gentoo</systemitem>'s "
 "<literal>install</literal> target said:"
 msgstr ""
-"在你修复了上游的 Bug 后，<systemitem role=\"package\">gentoo</systemitem> 的 "
-"install target 应是这样："
+"原始的 <systemitem role=\"package\">gentoo</systemitem> 的 "
+"<literal>install</literal> target 是这样："
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
