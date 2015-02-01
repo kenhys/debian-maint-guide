@@ -3703,16 +3703,15 @@ msgid "<literal>Provides</literal>"
 msgstr "<literal>Provides</literal>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "For some types of packages where there are multiple alternatives virtual "
 "names have been defined.  You can get the full list in the <ulink url="
 "\"&virtual-package;\">virtual-package-names-list.txt.gz</ulink> file.  Use "
 "this if your program provides a function of an existing virtual package."
 msgstr ""
-"某些类型的软件包会定义有多个可选的虚拟名称。你可以在 <filename>/usr/share/"
-"doc/debian-policy/virtual-package-names-list.txt.gz</filename> 文件中找到完整"
-"的列表。如果你的程序提供了某个已存在的虚拟软件包的功能则使用此项。"
+"某些类型的软件包会定义有多个备用的虚拟名称。你可以在 "
+"<ulink url=\"&virtual-package;\">virtual-package-names-list.txt.gz</ulink>"
+"文件中找到完整的列表。如果你的程序提供了某个已存在的虚拟软件包的功能则使用此项。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<literal>Replaces</literal>"
@@ -3725,9 +3724,9 @@ msgid ""
 "<literal>Conflicts</literal>).  Files from the named packages will be "
 "overwritten with the files from your package."
 msgstr ""
-"当你的程序要替换其他软件包的某些文件，或是完整地替换另一个软件包(与 "
-"<literal>Conflicts</literal> 一起使用)。列出的软件包中的某些文件会被你的软件"
-"包所覆盖。"
+"当你的程序要替换其他软件包的某些文件，或是完全地替换另一个软件包(与 "
+"<literal>Conflicts</literal> 一起使用)。列出的软件包中的某些文件会被你软件"
+"包中的文件所覆盖。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -3736,12 +3735,11 @@ msgid ""
 "package names, separated by vertical bar symbols <literal>|</literal> (pipe "
 "symbols)."
 msgstr ""
-"所有的这些项都使用相同的语法。它们是一个软件包列表，软件包名称间使用半角逗号"
-"分隔。也可以写出有多个可选的软件包名称，这些软件包使用 <literal>|</literal> "
-"符号分隔。"
+"所有的这些项都使用统一的语法。它们是一个软件包列表，软件包名称间使用半角逗号"
+"分隔。也可以写出有多个备选软件包名称，这些软件包使用 <literal>|</literal> "
+"符号(管道符)分隔。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "The fields may restrict their applicability to particular versions of each "
 "named package.  The restriction of each individual package is listed in "
@@ -3752,11 +3750,11 @@ msgid ""
 "lower, lower or equal, exactly equal, greater or equal, and strictly "
 "greater, respectively.  For example,"
 msgstr ""
-"这些项内还可以指定某些软件包的版本号之间的关系。版本号在括号内，紧随软件包名"
+"这些项内还可以限定与某些软件包的某个版本区间之间的关系。版本号限定在括号内，这紧随软件包名"
 "称之后，并在以下逻辑符号后写清具体版本：<literal>&lt;&lt;</literal>、"
 "<literal>&lt;=</literal>、<literal>=</literal>、<literal>&gt;=</literal> 和 "
 "<literal>&gt;&gt;</literal>，分别代表严格小于、小于或等于、严格等于、大于或等"
-"于以及严格大于。例如："
+"于以及严格大于。例如，"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -3779,9 +3777,11 @@ msgid ""
 "literal>, <literal>${perl:Depends}</literal>, <literal>${misc:Depends}</"
 "literal>, etc."
 msgstr ""
+"最后一个需要了解的特性是 <literal>${shlibs:Depends}</"
+"literal>, <literal>${perl:Depends}</literal>, <literal>${misc:Depends}</"
+"literal>, 之类。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "<citerefentry> <refentrytitle>dh_shlibdeps</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry> calculates shared library dependencies for binary "
@@ -3790,14 +3790,11 @@ msgid ""
 "list is used for substituting <literal>${shlibs:Depends}</literal>."
 msgstr ""
 "<citerefentry> <refentrytitle>dh_shlibdeps</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry> 会在程序编译完成并被放入临时文件夹后扫描二进制文件"
-"和库文件来确定动态库的依赖关系，并检测包含它们的软件包名称。例如 <systemitem "
-"role=\"package\">libc6</systemitem> 或 <systemitem role=\"package\">xlib6g</"
-"systemitem>。 这些软件包将被列在 <literal>${shlibs:Depends}</literal> 的位"
-"置。"
+"manvolnum> </citerefentry> 会为二进制包计算共享库依赖关系。"
+"它会为每个二进制包生成一份 <ulink url=\"&elf;\">ELF</ulink> "
+"可执行文件和共享库列表。 这个列表用于替换 <literal>${shlibs:Depends}</literal>。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "<citerefentry> <refentrytitle>dh_perl</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry> calculates Perl dependencies.  It generates a "
@@ -3806,11 +3803,12 @@ msgid ""
 "<literal>${perl:Depends}</literal>."
 msgstr ""
 "<citerefentry> <refentrytitle>dh_perl</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry> 所生成的软件包列表将用于 <literal>${perl:Depends}"
-"</literal> 的位置。"
+"manvolnum> </citerefentry> 会计算 Perl 依赖。它会为每个二进制包生成"
+"一个叫作 <literal>perl</literal> 或 <literal>perlapi</"
+"literal> 的依赖列表。这个列表用于替换 "
+"<literal>${perl:Depends}</literal>。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Some <systemitem role=\"package\">debhelper</systemitem> commands may cause "
 "the generated package to depend on some additional packages.  All such "
@@ -3818,23 +3816,22 @@ msgid ""
 "list is used for substituting <literal>${misc:Depends}</literal>."
 msgstr ""
 "一些 <systemitem role=\"package\">debhelper</systemitem> 命令可能会使生成的软"
-"件包需要依赖于某些其他软件包，这些软件包将被列于 <literal>${misc:Depends}</"
-"literal> 的位置。"
+"件包需要依赖于某些其他的软件包。所有这些命令将会为每一个二进制包生成一个列表。"
+"这些列表将用于替换 <literal>${misc:Depends}</literal> 。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "<citerefentry> <refentrytitle>dh_gencontrol</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry> generates <filename>DEBIAN/control</filename> for "
 "each binary package while substituting <literal>${shlibs:Depends}</literal>, "
 "<literal>${perl:Depends}</literal>, <literal>${misc:Depends}</literal>, etc."
 msgstr ""
-"<citerefentry> <refentrytitle>dh_perl</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry> 所生成的软件包列表将用于 <literal>${perl:Depends}"
-"</literal> 的位置。"
+"<citerefentry> <refentrytitle>dh_gencontrol</refentrytitle> <manvolnum>1</"
+"manvolnum> </citerefentry> 会为每个二进制包生成 <filename>DEBIAN/control</filename> "
+"当替换 <literal>${shlibs:Depends}</literal>, "
+"<literal>${perl:Depends}</literal>, <literal>${misc:Depends}</literal>, 之类的时候。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Having said all that, we can leave the <literal>Depends</literal> field "
 "exactly as it is now, and insert another line after it saying "
@@ -3842,7 +3839,7 @@ msgid ""
 "\">gentoo</systemitem> can use some features provided by the <systemitem "
 "role=\"package\">file</systemitem> package."
 msgstr ""
-"说过这些以后，我们可以把 <literal>Depends</literal> 项保持现状不动，并在其下"
+"说过这些以后，我们可以让 <literal>Depends</literal> 项保持现状，并在其下"
 "插入一行 <literal>Suggests: file</literal>，因为 <systemitem role=\"package"
 "\">gentoo</systemitem> 可以使用 <systemitem role=\"package\">file</"
 "systemitem> 软件包提供的某些特性。"
@@ -3852,15 +3849,15 @@ msgid ""
 "Line 9 is the Homepage URL.  Let's assume this to be at <ulink url=\"&gentoo;"
 "\"/>."
 msgstr ""
+"第 9 行是主页的URL。我们假设它是 <ulink url=\"&gentoo;\"/>。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Line 12 is the short description.  Terminals are conventionally 80 columns "
 "wide so this shouldn't be longer than about 60 characters.  I'll change it "
 "to <literal>fully GUI-configurable, two-pane X file manager</literal>."
 msgstr ""
-"第 12 行是短描述。绝大多数人的屏幕是 80 列宽，所以描述不应超过 60 个字符。在"
+"第 12 行是简述。绝大多数人的屏幕是 80 列宽，所以描述不应超过 60 个字符。在"
 "这个例子里我把它写为 <literal>fully GUI-configurable, two-pane X file "
 "manager</literal>。"
 
@@ -3870,9 +3867,11 @@ msgid ""
 "provided by <ulink url=\"&ddtp;\">The Debian Description Translation Project "
 "- DDTP</ulink>."
 msgstr ""
+"这些描述都使用英语。相应的翻译由 "
+"<ulink url=\"&ddtp;\">The Debian Description Translation Project "
+"- DDTP</ulink> （Debian 描述翻译项目）项目提供。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Line 13 is where the long description goes.  This should be a paragraph "
 "which gives more details about the package.  Column 1 of each line should be "
@@ -3883,19 +3882,18 @@ msgid ""
 msgstr ""
 "第 13 行是长描述开始的地方。这应当是一段更详细地描述软件包的话。每行的第一个"
 "格应当留空。描述中不应存在空行，如果必须使用空行，则在行中仅放置一个 "
-"<literal>.</literal> (半角句点)。同时，长描述后也不应有超过一行的空白。"
+"<literal>.</literal> (半角句点)来近似。同时，长描述后也不应有超过一行的空白。"
+"<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "See <ulink url=\"&devref-bpp-vcs;\">Debian Developer's Reference, 6.2.5. "
 "\"Version Control System location\"</ulink>."
 msgstr ""
-"关于这些问题的更多帮助，查看 <ulink url=\"&developers-reference;\">Debian "
-"Developer's Reference</ulink>。"
+"参见 <ulink url=\"&devref-bpp-vcs;\">Debian Developer's Reference, 6.2.5. "
+"\"Version Control System location\"</ulink>。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "We can insert <literal>Vcs-*</literal> fields to document the Version "
 "Control System (VCS) location between lines 6 and 7.  <placeholder type="
@@ -3904,10 +3902,9 @@ msgid ""
 "Service at <literal>git://git.debian.org/git/collab-maint/gentoo.git</"
 "literal>."
 msgstr ""
-"接下来我们按照 <ulink url=\"&devref-bpp-vcs;\">Developer's Reference, "
-"6.2.5.  'Version Control System location'</ulink> 中记叙的内容在第 6 和第 7 "
-"行之间添加 <literal>Vcs-*</literal> 项。这里我们假设 <systemitem role="
-"\"package\">gentoo</systemitem> 软件包处于 Debian Alioth Git 服务的 "
+"接下来我们在第 6 和第 7 行之间添加版本控制系统位置 <literal>Vcs-*</literal> 项。"
+"<placeholder type=\"footnote\" id=\"0\"/> 这里我们假设 <systemitem role=\"package"
+"\"package\">gentoo</systemitem> 软件包的VCS 处于 Debian Alioth Git 服务的 "
 "<literal>git://git.debian.org/git/collab-maint/gentoo.git</literal>"
 
 #. type: Content of: <book><chapter><section><para>
@@ -3980,7 +3977,6 @@ msgid "<filename>copyright</filename>"
 msgstr "<filename>copyright</filename>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "This file contains information about the copyright and license of the "
 "upstream sources.  <ulink url=\"&policy-copyright;\">Debian Policy Manual, "
@@ -3988,10 +3984,11 @@ msgid ""
 "\"&dep5;\">DEP-5: Machine-parseable <filename>debian/copyright</filename></"
 "ulink> provides guidelines for its format."
 msgstr ""
-"这个文件包含了上游软件的资源、版权以及许可证信息。它的形式没有在 Debian "
-"Policy 中详述，但其内容为 (<ulink url=\"&policy-copyright;\">Debian Policy "
-"Manual, 12.5 'Copyright information'</ulink>)。你还可以查看 <ulink url="
-"\"&dep5;\">DEP-5: Machine-parseable debian/copyright</ulink>。"
+"这个文件包含了上游软件的版权以及许可证信息。"
+"<ulink url=\"&policy-copyright;\">Debian Policy Manual, "
+"12.5 \"Copyright information\"</ulink> 掌控着它的内容，另外 <ulink url="
+"\"&dep5;\">DEP-5: Machine-parseable <filename>debian/copyright</filename></"
+"ulink> 提供了关于其格式的方针。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
