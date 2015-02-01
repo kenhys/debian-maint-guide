@@ -4313,6 +4313,14 @@ msgid ""
 "(hash) are treated as comments and ignored.  <placeholder type=\"footnote\" "
 "id=\"1\"/>"
 msgstr ""
+"每一个 <filename>rules</filename> 文件， 就像其他的 <filename>Makefile</"
+"filename> 一样，包含着若干 rules，其中每一个都定义了一个 target 以及其具体 "
+"操作。 <placeholder type=\"footnote\" id=\"0\"/> 一个新的 rule  "
+"以自己的 target 声明(置于第一列)来起头。 后续的行都以 "
+"TAB 字符 (ASCII 9) 来开头，以指示 target 的具体行为。 "
+"空行和以井号 <literal>#</literal> 开头的行"
+"会被当作注释而被忽略。  <placeholder type=\"footnote\" "
+"id=\"1\"/>"
 
 #. type: Content of: <book><chapter><section><section><para>
 msgid ""
@@ -4323,56 +4331,57 @@ msgid ""
 "<literal><replaceable>build</replaceable></literal> and "
 "<literal><replaceable>binary</replaceable></literal> targets respectively."
 msgstr ""
+"当你想要执行一个 rule 的时候，就将 target 名称作为命令行参数来调用。"
+"比如说， <literal>debian/rules <replaceable>build</"
+"replaceable></literal> 以及 <literal>fakeroot make -f debian/rules "
+"<replaceable>binary</replaceable></literal> 会分别执行 "
+"<literal><replaceable>build</replaceable></literal> 和 "
+"<literal><replaceable>binary</replaceable></literal> 两个 target。"
 
 #. type: Content of: <book><chapter><section><section><para>
 msgid "Here is a simplified explanation of the targets:"
 msgstr "以下是对各 target 的简单解释："
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<literal>clean</literal> target: to clean all compiled, generated, and "
 "useless files in the build-tree.  (Required)"
 msgstr ""
-"<literal>clean</literal>：清理所有编译的、生成的或编译树中无用的文件。(必须)"
+"<literal>clean</literal> target：清理所有编译的、生成的或编译树中无用的文件。(必须)"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<literal>build</literal> target: to build the source into compiled programs "
 "and formatted documents in the build-tree.  (Required)"
 msgstr ""
-"<literal>build</literal>：在编译树中将代码编译为程序并生成格式化的文档。(必"
+"<literal>build</literal> target：在编译树中将代码编译为程序并生成格式化的文档。(必"
 "须)"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<literal>build-arch</literal> target: to build the source into arch-"
 "dependent compiled programs in the build-tree.  (Required)"
 msgstr ""
-"<literal>build</literal>：在编译树中将代码编译为程序并生成格式化的文档。(必"
+"<literal>build-arch</literal> target：在编译树中将代码编译为依赖于体系结构的程序。(必"
 "须)"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<literal>build-indep</literal> target: to build the source into arch-"
 "independent formatted documents in the build-tree.  (Required)"
 msgstr ""
-"<literal>build</literal>：在编译树中将代码编译为程序并生成格式化的文档。(必"
+"<literal>build-indep</literal> target：在编译树中将代码编译为独立于平台的格式化文档。(必"
 "须)"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<literal>install</literal> target: to install files into a file tree for "
 "each binary package under the <filename>debian</filename> directory.  If "
 "defined, <literal>binary*</literal> targets effectively depend on this "
 "target.  (Optional)"
 msgstr ""
-"<literal>install</literal>：把文件安装到 <filename>debian</filename> 目录内为"
-"各个二进制包构建的文件树。如果有定义，<literal>binary*</literal> target 则会"
+"<literal>install</literal> target：把文件安装到 <filename>debian</filename> 目录内为"
+"各个二进制包构建的文件树。如果有定义，那么 <literal>binary*</literal> target 则会"
 "依赖于此 target。(可选)"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para><footnote><para>
@@ -4384,13 +4393,12 @@ msgstr ""
 "\"completebuild\"/> 描述的过程中。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<literal>binary</literal> target: to create all binary packages (effectively "
 "a combination of <literal>binary-arch</literal> and <literal>binary-indep</"
 "literal> targets).  (Required)<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-"<literal>binary</literal>：创建所有二进制包(是 <literal>binary-arch</"
+"<literal>binary</literal> target：创建所有二进制包(是 <literal>binary-arch</"
 "literal> 和 <literal>binary-indep</literal> 的合并)。(必须)<placeholder type="
 "\"footnote\" id=\"0\"/>"
 
@@ -4403,13 +4411,12 @@ msgstr ""
 "\"autobuilder\"/> 描述的过程中。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<literal>binary-arch</literal> target: to create arch-dependent "
 "(<literal>Architecture: any</literal>) binary packages in the parent "
 "directory.  (Required)<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-"<literal>binary-arch</literal>：在父目录中创建平台依赖"
+"<literal>binary-arch</literal> target：在父目录中创建平台依赖"
 "(<literal>Architecture: any</literal>)的二进制包。(必须)<placeholder type="
 "\"footnote\" id=\"0\"/>"
 
@@ -4418,34 +4425,30 @@ msgid "This target is used by <literal>dpkg-buildpackage -A</literal>."
 msgstr "此 target 被 <literal>dpkg-buildpackage -A</literal> 使用。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<literal>binary-indep</literal> target: to create arch-independent "
 "(<literal>Architecture: all</literal>) binary packages in the parent "
 "directory.  (Required)<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-"<literal>binary-indep</literal>：在父目录中创建平台独立"
+"<literal>binary-indep</literal> target：在父目录中创建平台独立"
 "(<literal>Architecture: all</literal>)的二进制包。(必须)<placeholder type="
 "\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<literal>get-orig-source</literal> target: to obtain the most recent version "
 "of the original source package from an upstream archive.  (Optional)"
 msgstr ""
-"<literal>get-orig-source</literal>：从上游站点获得最新的原始源代码包。(可选)"
+"<literal>get-orig-source</literal> target：从上游站点获得最新的原始源代码包。(可选)"
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
 msgid ""
 "You are probably overwhelmed by now, but things are much simpler upon "
 "examination of the <filename>rules</filename> file that <command>dh_make</"
 "command> gives us as a default."
 msgstr ""
 "可能你现在感到有些迷惑，在接下来讲解 <command>dh_make</command> 给出的默认的 "
-"<filename>rules</filename> 文件时会进行详细的讲解。你还应该阅读 "
-"<literal>info make</literal> 来了解更多信息。"
+"<filename>rules</filename> 文件时事情会变得简单。"
 
 #. type: Content of: <book><chapter><section><section><title>
 msgid "Default <filename>rules</filename> file"
@@ -4485,14 +4488,34 @@ msgid ""
 "20 %:\n"
 "21         dh $@ \n"
 msgstr ""
+" 1 #!/usr/bin/make -f\n"
+" 2 # See debhelper(7) (uncomment to enable)\n"
+" 3 # output every command that modifies files on the build system.\n"
+" 4 #DH_VERBOSE = 1\n"
+" 5 \n"
+" 6 # see EXAMPLES in dpkg-buildflags(1) and read /usr/share/dpkg/*\n"
+" 7 DPKG_EXPORT_BUILDFLAGS = 1\n"
+" 8 include /usr/share/dpkg/default.mk\n"
+" 9 \n"
+"10 # see FEATURE AREAS in dpkg-buildflags(1)\n"
+"11 #export DEB_BUILD_MAINT_OPTIONS = hardening=+all\n"
+"12\n"
+"13 # see ENVIRONMENT in dpkg-buildflags(1)\n"
+"14 # package maintainers to append CFLAGS\n"
+"15 #export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic\n"
+"16 # package maintainers to append LDFLAGS\n"
+"17 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed\n"
+"18 \n"
+"19 # main packaging script based on dh7 syntax\n"
+"20 %:\n"
+"21         dh $@ \n"
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
 msgid ""
 "(I've added the line numbers and trimmed some comments.  In the actual "
 "<filename>rules</filename> file, the leading spaces are a TAB code.)"
 msgstr ""
-"(注：我添加了行号。实际的 <filename>rules</filename> 文件里开头的空格是 TAB "
+"(注：我添加了行号并删去了一些注释。实际的 <filename>rules</filename> 文件里开头的空格是 TAB "
 "填充的。)"
 
 #. type: Content of: <book><chapter><section><section><para>
@@ -4516,6 +4539,14 @@ msgid ""
 "form a core part of the <systemitem role=\"package\">debhelper</systemitem> "
 "tools, and not to hide anything from you."
 msgstr ""
+"可以取消第 4 行的注释，以设置 <literal>DH_VERBOSE</literal> 变量为 1， "
+"于是 <command>dh</command> 命令就会输出它将要使用的 <command>dh_*</"
+"command> 命令。 你也可以在此添加一行 <literal>export "
+"DH_OPTIONS=-v</literal> ， 于是 <command>dh_*</command> 命令 "
+"同样也会输出它正在调用的命令。 这能帮助你理解在这个简单的 <filename>rules</filename> "
+"文件背后发生了什么，以及帮助你进行调试。新的 <command>dh</command> 被设计来"
+"作为 <systemitem role=\"package\">debhelper</systemitem> 工具的核心部分，"
+"并不向你隐藏任何东西。"
 
 #. type: Content of: <book><chapter><section><section><para><footnote><para>
 msgid ""
@@ -4534,6 +4565,20 @@ msgid ""
 "systemitem> package and does not obfuscate the package building process as "
 "the <systemitem role=\"package\">cdbs</systemitem> package tends to."
 msgstr ""
+"此处使用了新版本 <systemitem role=\"package\">debhelper</systemitem> v7+ "
+"的特性。 他的设计理念在 <ulink url=\"&debhelper-"
+"slides;\">Not Your Grandpa's Debhelper</ulink> 中进行了阐明，这在 DebConf9 中被 "
+"<systemitem role=\"package\">debhelper</systemitem> 上游进行了演示。 在 "
+"<literal>lenny</literal> 下， <command>dh_make</command> 会创建一个更为复杂 "
+"的 <filename>rules</filename> 文件，伴有许多显式的 rule 和许多为每个 rule 所用的"
+"<command>dh_*</command> 脚本，其中有大部分在现在已经是不必要的了"
+"(这也显示了软件包的年龄)。 新一代的 <command>dh</command> "
+"命令更为简洁，并能将我们从\"手工的重复工作\"中解放出来。"
+"当然，你仍然拥有完全的力量来定制整个过程，只要使用 "
+"<literal>override_dh_*</literal> target。参见 <xref linkend=\"customrules\"/"
+">。  它仅仅基建于 <systemitem role=\"package\">debhelper</"
+"systemitem> 软件包，而且不会像 "
+"<systemitem role=\"package\">cdbs</systemitem> 软件包所倾向的那样混淆软件包构建过程。"
 
 #. type: Content of: <book><chapter><section><section><para><footnote><para>
 msgid ""
@@ -4543,6 +4588,11 @@ msgid ""
 "<replaceable>target</replaceable></literal> or <literal>debian/rules -- '--"
 "no-act <replaceable>target</replaceable>'</literal>."
 msgstr ""
+"你可以检验每一个已有的 <literal><replaceable>target</replaceable></literal> "
+"所调用的实际 <command>dh_*</command> 程序序列，"
+"而并不需要真的通过 <literal>dh --no-act "
+"<replaceable>target</replaceable></literal> 或 <literal>debian/rules -- '--"
+"no-act <replaceable>target</replaceable>'</literal> 来执行以查看。"
 
 #. type: Content of: <book><chapter><section><section><para>
 msgid ""
@@ -4553,6 +4603,11 @@ msgid ""
 "script which runs appropriate sequences of <command>dh_*</command> programs "
 "depending on its argument.  <placeholder type=\"footnote\" id=\"1\"/>"
 msgstr ""
+"第 20 和 21 行使用了 pattern rule，以此隐式地完成所有工作。 "
+"其中的百分号意味着 \"任何 targets\"， 它会以 target 名称作参数调用单个程序 "
+" <command>dh</command>。  <placeholder type=\"footnote\" id=\"0\"/> "
+"<command>dh</command> 命令是一个包装脚本，它会根据参数执行妥当的 "
+"<command>dh_*</command> 程序序列。 <placeholder type=\"footnote\" id=\"1\"/>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
 #, fuzzy
