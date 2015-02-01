@@ -3106,6 +3106,8 @@ msgid ""
 "referred to without the leading <filename>debian/</filename> for simplicity "
 "whenever the meaning is obvious."
 msgstr ""
+"在本章节中， 只要不产生歧义，所有提及的 <filename>debian</filename> 目录下的文件"
+"均会省去 <filename>debian/</filename> 前缀以求简洁方便。"
 
 #. type: Content of: <book><chapter><para>
 msgid ""
@@ -3117,13 +3119,18 @@ msgid ""
 "<filename>rules</filename>, which are required for all packages.  "
 "<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
+"在程序源代码目录下有一个叫做 <filename>debian</filename> 的新的子目录。"
+"这个目录中存放着许多文件，我们将要修改这些文件来定制软件包行为。"
+"其中最重要的文件当属 <filename>control</filename>, "
+"<filename>changelog</filename>, <filename>copyright</filename>, 以及 "
+"<filename>rules</filename>, 所有的软件包都必须有这几个文件。"
+"<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><title>
 msgid "<filename>control</filename>"
 msgstr "<filename>control</filename>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "This file contains various values which <command>dpkg</command>, "
 "<command>dselect</command>, <command>apt-get</command>, <command>apt-cache</"
@@ -3134,15 +3141,17 @@ msgid ""
 msgstr ""
 "这个文件包含了很多供 <command>dpkg</command>、<command>dselect</command>、"
 "<command>apt-get</command>、<command>apt-cache</command>、<command>aptitude</"
-"command> 等软件包管理工具提取信息以进行管理时所使用的变量。这些变量均在 "
-"<ulink url=\"&policy-control;\">Debian Policy Manual, 5 'Control files and "
-"their fields'</ulink> 中定义。"
+"command> 等包管理工具进行管理时所使用的许多变量。这些变量均在 "
+"<ulink url=\"&policy-control;\">Debian Policy Manual, 5 \"Control files and "
+"their fields\"</ulink> 中被定义。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "Here is the <filename>control</filename> file <command>dh_make</command> "
 "created for us:"
 msgstr ""
+"这里的 <filename>control</filename> 文件是 <command>dh_make</command> "
+"命令为我们创建的："
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -3180,11 +3189,12 @@ msgid "(I've added the line numbers.)"
 msgstr "(注：我为它添加了行号。)"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Lines 1-7 are the control information for the source package.  Lines 9-13 "
 "are the control information for the binary package."
-msgstr "第 1-6 行是源代码包的控制信息。"
+msgstr ""
+"第 1-7 行是源代码包的控制信息。"
+"第 9-13 行是二进制包的控制信息。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid "Line 1 is the name of the source package."
