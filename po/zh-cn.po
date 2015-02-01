@@ -2715,7 +2715,6 @@ msgstr ""
 "<filename><replaceable>package-2</replaceable>_*.deb</filename> 等二进制软件包。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "For a source package generating a single binary package, the temporary "
 "directory used by the <command>dh_auto_install</command> command will be set "
@@ -2726,14 +2725,13 @@ msgid ""
 "will be installing the files to paths relative to the root directory rather "
 "than your working directory."
 msgstr ""
-"对于单个二进制包 <command>dh_auto_install</command> 将临时目录设置为 "
+"对于从源码包生成单个二进制包， <command>dh_auto_install</command> 将临时目录设置为 "
 "<filename>debian/<replaceable>package</replaceable></filename>。<placeholder "
-"type=\"footnote\" id=\"0\"/> 临时目录中的全部文件都将在用户安装软件包时被安装"
+"type=\"footnote\" id=\"0\"/> 临时目录中的全部文件都将在安装软件包时被安装"
 "到用户系统，唯一的区别是 <command>dpkg</command> 会把文件安装到真实的根目录树"
-"中。"
+"中，而不是你的工作目录。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Bear in mind that even though your program installs in <filename>debian/"
 "<replaceable>package</replaceable></filename>, it still needs to behave "
@@ -2744,14 +2742,13 @@ msgid ""
 "replaceable></literal> into files in the package."
 msgstr ""
 "请记住，即使你的程序正确安装到了<filename>debian/<replaceable>package</"
-"replaceable></filename>，仍然要考虑它可以在在实际的根目录中安装的情形，即从"
-"<filename>.deb</filename> 软件包文件安装的情形。所以绝对不允许将诸如 "
+"replaceable></filename>，仍然要考虑将 <filename>.deb</filename> 软件包"
+"文件安装到根目录下的情形。所以绝对不允许构建系统同将诸如 "
 "<literal>/home/me/deb/<replaceable>package</replaceable>-"
 "<replaceable>version</replaceable>/usr/share/<replaceable>package</"
-"replaceable></literal> 的内容硬编码到编译系统中并装入软件包文件。"
+"replaceable></literal> 这种诡异的内容硬编码到软件包文件中。"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "This is just an example to show what a <filename>Makefile</filename> should "
 "look like.  If the <filename>Makefile</filename> is created by the "
@@ -2760,20 +2757,19 @@ msgid ""
 "from the <command>dh_auto_configure</command> command with default options "
 "including <literal>--prefix=/usr</literal>."
 msgstr ""
-"这只是一个 <filename>Makefile</filename> 的例子。如果 <filename>Makefile</"
-"filename> 是通过 <command>./configure</command> 命令生成的，修复该类的 "
-"<filename>Makefile</filename> 的方法是通过 <command>dh_auto_configure</"
-"command> 执行 <command>./configure</command>，并带上如 <literal>--prefix=/"
-"usr</literal> 的默认选项。"
+"这只是一个演示 <filename>Makefile</filename> 正常形态的例子。"
+"如果 <filename>Makefile</filename> 是通过 <command>./configure</command> "
+" 命令生成的，那么修复该类 <filename>Makefile</filename> 的方法是通过 "
+"<command>dh_auto_configure</command> 来执行 <command>./configure</command>，"
+"并带上包括 <literal>--prefix=/usr</literal> 的默认选项。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Here's the relevant part of <systemitem role=\"package\">gentoo</"
 "systemitem>'s <filename>Makefile</filename><placeholder type=\"footnote\" id="
 "\"0\"/>:"
 msgstr ""
-"以下是 <systemitem role=\"package\">gentoo</systemitem> 的 "
+"以下是 <systemitem role=\"package\">gentoo</systemitem> 软件包的 "
 "<filename>Makefile</filename> 文件中的相关部分<placeholder type=\"footnote\" "
 "id=\"0\"/>："
 
@@ -2791,13 +2787,13 @@ msgstr ""
 "ICONS   = /usr/local/share/gentoo\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "We see that the files are set to install under <filename>/usr/local</"
 "filename>.  As explained above, that directory hierarchy is reserved for "
 "local use on Debian, so change those paths to:"
 msgstr ""
-"可以看到文件被放到了 <filename>/usr/local</filename> 下。把他们改变为："
+"可以看到文件被放到了 <filename>/usr/local</filename> 下。"
+"按照上边的解释，该目录被 Debian 保留作本地用途，所以请把他们改为："
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
