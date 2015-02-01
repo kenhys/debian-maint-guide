@@ -3444,16 +3444,15 @@ msgid "$ dpkg -S libfoo.so.6\n"
 msgstr "$ dpkg -S libfoo.so.6\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Then just take the <literal>-dev</literal> version of every package as a "
 "<literal>Build-Depends</literal> entry.  If you use <command>ldd</command> "
 "for this purpose, it will report indirect lib dependencies as well, "
 "resulting in the problem of excessive build dependencies."
 msgstr ""
-"接下来直接将相应的 <literal>-dev</literal> 软件包的名称放到 <literal>Build-"
-"Depends</literal> 项内。如果你使用 <command>ldd</command>，它也会报告出间接的"
-"库依赖关系，这可能造成填写了某些不必要的依赖。"
+"接下来直接将相应的 <literal>-dev</literal> 版本的软件包名称放到 "
+"<literal>Build-Depends</literal> 项内。如果你使用 <command>ldd</command>，"
+"它也会报告出间接的库依赖关系，这可能造成填写依赖时画蛇添足。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -3479,9 +3478,8 @@ msgstr ""
 "Manual</ulink> 标准版本号。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid "On line 7 you can put the URL of the software's upstream homepage."
-msgstr "在第 7 行你可以放置上游项目的首页地址。"
+msgstr "在第 7 行你可以放置上游项目首页的URL。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -3490,13 +3488,12 @@ msgid ""
 msgstr "第 9 行是二进制软件包的名称。通常情况下与源代码包相同，但不是必须的。"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "See <ulink url=\"&policy-architecture;\">Debian Policy Manual, 5.6.8 "
 "\"Architecture\"</ulink> for exact details."
 msgstr ""
-"第 3 行描述了用户安装此软件包的优先级。具体说明参看 <ulink url=\"&policy-"
-"priorities;\">Debian Policy Manual, 2.5 'Priorities'</ulink>"
+"确切信息请参见 <ulink url=\"&policy-architecture;\">Debian Policy Manual, 5.6.8 "
+"\"Architecture\"</ulink>。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -3504,6 +3501,9 @@ msgid ""
 "This value is usually one of the following depending on the type of the "
 "binary package: <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
+"第 10 行描述了可以编译本二进制包的体系结构。"
+"根据二进制包的类型，这个值常常是下列中的一个："
+" <placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<literal>Architecture: any</literal>"
