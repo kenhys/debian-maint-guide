@@ -2912,13 +2912,12 @@ msgstr ""
 "<literal>install</literal> target 是这样："
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Let's fix this upstream bug and record it with the <command>dquilt</command> "
 "command as <filename>debian/patches/install.patch</filename>."
 msgstr ""
-"让我们把这些修改使用 <command>quilt</command> 记录到<filename>debian/patches/"
-"install.patch</filename>。"
+"让我们来修复这个上游BUG，并把修改使用 <command>dquilt</command> 命令记录到"
+"<filename>debian/patches/install.patch</filename>。"
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2930,9 +2929,8 @@ msgstr ""
 "$ dquilt add Makefile\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid "In your editor, change this for the Debian package as follows:"
-msgstr "我们使用编辑器按照以下内容为 Debian 软件包做修改："
+msgstr "使用你喜欢的编辑器按照以下内容为 Debian 软件包作修改："
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2950,7 +2948,6 @@ msgstr ""
 "        install -m644 gentoorc-example $(DESTDIR)/etc/gentoorc\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "You'll have noticed that there's now an <literal>install -d</literal> "
 "command before the other commands in the rule.  The original "
@@ -2960,11 +2957,11 @@ msgid ""
 "installing into a newly created private directory tree, we will have to "
 "create each and every one of those directories."
 msgstr ""
-"你一定会注意到在其他命令前有了一个 <literal>install -d</literal> 命令。原始"
-"的 <filename>Makefile</filename> 文件中没有它，因为通常情况下 <literal>/usr/"
-"local/bin</literal> 和用到的其他目录早已存在于系统，使用 <literal>make "
-"install</literal> 时不用对此处理。然而因为我们要向空目录或尚不存在的目录中安"
-"装，我们必须创建每一个目录。"
+"你一定会注意到规则里在其他命令前有了一个 <literal>install -d</literal> 命令。原始"
+"的 <filename>Makefile</filename> 文件中没有它，因为通常情况下当你执行 "
+"<literal>make install</literal> 命令时， <literal>/usr/local/bin</literal> "
+"和用到的其他目录早已存在于系统中。然而当我们要向新建的私有目录树中安装时，"
+"我们必须创建其中的每一个目录。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -2983,18 +2980,17 @@ msgstr ""
 "        cp -a docs/* $(DESTDIR)/usr/share/doc/gentoo/html\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Check carefully, and if everything is okay, ask <command>dquilt</command> to "
 "generate the patch to create <filename>debian/patches/install.patch</"
 "filename> and add its description:"
 msgstr ""
-"仔细检查后如果没有问题，使用 <command>quilt</command> 刷新补丁以创建 "
-"<filename>debian/patches/install.patch</filename> 文件并添加对它的描述。"
+"仔细检查后如果没有问题，使用 <command>dquilt</command> 创建 "
+"<filename>debian/patches/install.patch</filename> 补丁文件并添加对它的描述："
 
 #. type: Content of: <book><chapter><section><para>
 msgid "Now you have a series of patches."
-msgstr "现在你有了一格系列的补丁。"
+msgstr "现在你有了一系列的补丁。"
 
 #. type: Content of: <book><chapter><section><orderedlist><listitem><para>
 msgid ""
