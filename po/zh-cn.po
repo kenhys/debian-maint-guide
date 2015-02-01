@@ -2430,7 +2430,6 @@ msgid "Setting up <command>quilt</command>"
 msgstr "设置 <command>quilt</command>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "The program <command>quilt</command> offers a basic method for recording "
 "modifications to the upstream source for Debian packaging.  It's useful to "
@@ -2440,9 +2439,11 @@ msgid ""
 "completion feature of the <command>quilt</command> command to the "
 "<command>dquilt</command> command:"
 msgstr ""
-"<command>quilt</command> 程序为 Debian 工作提供了对源码修改的基本记录方法。由"
-"于我们的需求与默认配置相当的不同，我们把 <filename>~/.quiltrc</filename> 设置"
-"成如下的样子。<placeholder type=\"footnote\" id=\"0\"/>"
+"<command>quilt</command> 程序为 Debian 打包工作提供了记录上游源码修改的基本方法。"
+"对默认配置加以少许修改往往非常有用，所以我们来创建一个别名 "
+"<command>dquilt</command>，以用于打包： 添加以下几行内容到 "
+"<filename>~/.bashrc</filename> 文件中。其中第二行可以给 <command>dquilt</command> "
+"命令提供与 <command>quilt</command> 命令相同的 shell 补全特性："
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2454,9 +2455,8 @@ msgstr ""
 "complete -F _quilt_completion $_quilt_complete_opt dquilt\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid "Then let's create <filename>~/.quiltrc-dpkg</filename> as follows:"
-msgstr "现在将 <filename>Makefile</filename> 修改为如下的样子。"
+msgstr "现在按下面的方法来创建 <filename>~/.quiltrc-dpkg</filename> 文件："
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -2484,15 +2484,14 @@ msgstr ""
 "fi\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "See <citerefentry> <refentrytitle>quilt</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry> and <filename>&quilt-pdf;</filename> on how to "
 "use <command>quilt</command>."
 msgstr ""
-"参看 <citerefentry> <refentrytitle>quilt</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry> 和 <filename>/usr/share/doc/quilt/quilt.html</"
-"filename> 来了解如何使用 <command>quilt</command>。"
+"参见 <citerefentry> <refentrytitle>quilt</refentrytitle> <manvolnum>1</"
+"manvolnum> </citerefentry> 以及 <filename>&quilt-pdf;</filename> "
+"来获取有关 <command>quilt</command> 命令用法的信息。"
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Fixing upstream bugs"
