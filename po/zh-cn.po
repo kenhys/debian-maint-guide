@@ -3903,7 +3903,7 @@ msgid ""
 "literal>."
 msgstr ""
 "接下来我们在第 6 和第 7 行之间添加版本控制系统位置 <literal>Vcs-*</literal> 项。"
-"<placeholder type=\"footnote\" id=\"0\"/> 这里我们假设 <systemitem role=\"package"
+"<placeholder type=\"footnote\" id=\"0\"/> 这里我们假设 <systemitem role="
 "\"package\">gentoo</systemitem> 软件包的VCS 处于 Debian Alioth Git 服务的 "
 "<literal>git://git.debian.org/git/collab-maint/gentoo.git</literal>"
 
@@ -5308,6 +5308,7 @@ msgstr ""
 "\"package\">debhelper</systemitem> 的许多智能特性无法体现。"
 
 #. type: Content of: <book><chapter><section><section><para>
+#, fuzzy
 msgid ""
 "So, for instance, if you want to store system configuration data in the "
 "<filename>/etc/gentoo</filename> directory instead of the usual <filename>/"
