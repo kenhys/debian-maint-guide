@@ -6009,9 +6009,8 @@ msgid "If you don't need these, remove them."
 msgstr "如果你不需要这些，就删除它们。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename><replaceable>package</replaceable>.examples</filename>"
-msgstr "<filename><replaceable>package</replaceable>.examples</filename> 文件"
+msgstr "<filename><replaceable>package</replaceable>.examples</filename>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -6024,16 +6023,14 @@ msgstr ""
 "装。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid ""
 "<filename><replaceable>package</replaceable>.init</filename> and "
 "<filename><replaceable>package</replaceable>.default</filename>"
 msgstr ""
 "<filename><replaceable>package</replaceable>.init</filename> 和 "
-"<filename><replaceable>package</replaceable>.default</filename> 文件"
+"<filename><replaceable>package</replaceable>.default</filename>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "If your package is a daemon that needs to be run at system start-up, you've "
 "obviously disregarded my initial recommendation, haven't you? :-)"
@@ -6042,7 +6039,6 @@ msgstr ""
 "议做事，不是吗？ :-)"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "The <filename><replaceable>package</replaceable>.init</filename> file is "
 "installed as the <filename>/etc/init.d/<replaceable>package</replaceable></"
@@ -6055,12 +6051,13 @@ msgid ""
 "<manvolnum>1</manvolnum> </citerefentry>."
 msgstr ""
 "<filename><replaceable>package</replaceable>.init</filename> 文件会被安装为 "
-"<filename>/etc/init.d/<replaceable>package</replaceable></filename> 脚本。"
+"<filename>/etc/init.d/<replaceable>package</replaceable></filename> 脚本，"
+"该脚本可用于启动和停止守护进程。"
 "<command>dh_make</command> 创建的 <filename>init.d.ex</filename> 是一个很好的"
-"骨架文件。你可能要对其改名并做很多修改，同时还要提供文件系统层级标准(FHS，参"
-"看 <filename>/usr/share/doc/debian-policy/fhs/</filename>)所要求的文件头。它"
-"们会被 <citerefentry> <refentrytitle>dh_installinit</refentrytitle> "
-"<manvolnum>1</manvolnum> </citerefentry> 安装到临时目录。"
+"骨架模板。你可能要对其改名并做很多修改，同时还要提供 <ulink url=\"&lsb;\">"
+"Linux Standard Base</ulink> (LSB，Linux标准规范) 的兼容头文件。 用 "
+"<citerefentry> <refentrytitle>dh_installinit</refentrytitle> "
+"<manvolnum>1</manvolnum> </citerefentry> 可以将它安装到临时目录中。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -6076,7 +6073,6 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "If your upstream program provides a file for the init script, you can either "
 "use it or not.  If you don't use their init script then create a new one in "
@@ -6086,11 +6082,11 @@ msgid ""
 "will need to override <command>dh_installinit</command> in the "
 "<filename>rules</filename> file with the following lines:"
 msgstr ""
-"如果你的上游程序中包含了 init 文件，你可以选择是否使用它。如果不使用，则创建"
-"相应的 <filename>debian/<replaceable>package</replaceable>.init</filename> 文"
-"件；如果上游的 init 脚本很好且被安装到正确的位置，你仍然需要设置 "
+"如果你的上游程序中包含了给 init 用的脚本文件，那用不用它都可以。如果不使用，则创建"
+"相应的 <filename><replaceable>package</replaceable>.init</filename> 文"
+"件；然而如果上游的 init 脚本很好且被安装到正确的位置，你仍然需要设置 "
 "<filename>rc*</filename> 符号链接。你需要按照以下的方法在 <filename>rules</"
-"filename> 文件中覆盖 <command>dh_installinit</command>："
+"filename> 文件中凌驾 <command>dh_installinit</command>："
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -6106,9 +6102,8 @@ msgid "If you don't need this, remove the files."
 msgstr "如果你不需要这些，就删除它们。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename>install</filename>"
-msgstr "<filename>install</filename> 文件"
+msgstr "<filename>install</filename>"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -6154,9 +6149,9 @@ msgstr ""
 "制文件没有被默认安装，则应在 <filename>install</filename> 文件添加如下内容："
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "src/<replaceable>bar</replaceable> usr/bin\n"
-msgstr "$ debc <replaceable>package</replaceable>.changes\n"
+msgstr "src/<replaceable>bar</replaceable> usr/bin\n"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -6195,9 +6190,8 @@ msgstr ""
 "<filename>debian/tmp</filename> 目录。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename><replaceable>package</replaceable>.info</filename>"
-msgstr "<filename><replaceable>package</replaceable>.info</filename> 文件"
+msgstr "<filename><replaceable>package</replaceable>.info</filename>"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -6213,9 +6207,8 @@ msgstr ""
 "replaceable>.info</filename> 文件中。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename><replaceable>package</replaceable>.links</filename>"
-msgstr "<filename><replaceable>package</replaceable>.info</filename> 文件"
+msgstr "<filename><replaceable>package</replaceable>.links</filename>"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -6232,13 +6225,12 @@ msgstr ""
 "replaceable>.info</filename> 文件中。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid ""
 "<filename>{<replaceable>package</replaceable>.,source/}lintian-overrides</"
 "filename>"
 msgstr ""
-"<filename>{<replaceable>package</replaceable>.|source/}lintian-overrides</"
-"filename> 文件"
+"<filename>{<replaceable>package</replaceable>.,source/}lintian-overrides</"
+"filename>"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -6279,9 +6271,8 @@ msgstr ""
 "<filename>source/lintian-overrides</filename> 是针对源代码包的，不会安装。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename>manpage.*</filename>"
-msgstr "<filename>manpage.*</filename> 文件"
+msgstr "<filename>manpage.*</filename>"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -6296,9 +6287,8 @@ msgstr ""
 "编辑，并且要删除未使用的模板。"
 
 #. type: Content of: <book><chapter><section><section><title>
-#, fuzzy
 msgid "<filename>manpage.1.ex</filename>"
-msgstr "<filename>manpage.1.ex</filename> 文件"
+msgstr "<filename>manpage.1.ex</filename>"
 
 #. type: Content of: <book><chapter><section><section><para>
 msgid ""
@@ -6327,128 +6317,123 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><thead><row><entry>
 msgid "Section"
-msgstr ""
+msgstr "Section(部分)"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><thead><row><entry>
 msgid "Description"
-msgstr ""
+msgstr "Description(描述)"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><thead><row><entry>
 msgid "Notes"
-msgstr ""
+msgstr "Notes(提示)"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "User commands"
-msgstr ""
+msgstr "User commands(用户命令)"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "Executable commands or scripts"
-msgstr ""
+msgstr "Executable commands or scripts(可执行命令或脚本)"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "System calls"
-msgstr ""
+msgstr "System calls(系统调用)"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "Functions provided by the kernel"
-msgstr ""
+msgstr "Functions provided by the kernel(由内核提供的功能)"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid "Library calls"
-msgstr "库软件包；"
+msgstr "Library calls(库调用)"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "Functions within system libraries"
-msgstr ""
+msgstr "Functions within system libraries(系统库中的功能)"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "Special files"
-msgstr ""
+msgstr "Special files(特殊文件)"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid "Usually found in <filename>/dev</filename>"
-msgstr "<filename>debian</filename> 目录下的其他文件"
+msgstr "经常在 <filename>/dev</filename> 目录中出没"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "File formats"
-msgstr ""
+msgstr "File formats(文件格式)"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid "E.g. <filename>/etc/passwd</filename>'s format"
-msgstr "<filename>compat</filename> 文件"
+msgstr "例如， <filename>/etc/passwd</filename> 的格式"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "6"
-msgstr ""
+msgstr "6"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "Games"
-msgstr ""
+msgstr "Games(游戏)"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "Games or other frivolous programs"
-msgstr ""
+msgstr "Games or other frivolous programs(游戏或无聊的程序)"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "7"
-msgstr ""
+msgstr "7"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid "Macro packages"
-msgstr "库软件包；"
+msgstr "Macro packages(宏包)"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid "Such as <command>man</command> macros"
-msgstr "<command>mc</command> 命令"
+msgstr "比如 <command>man</command> 宏"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "System administration"
-msgstr ""
+msgstr "System administrarion(系统管理)"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "Programs typically only run by root"
-msgstr ""
+msgstr "Programs typically only run by root(典型的root专用程序)"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "9"
-msgstr ""
+msgstr "9"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "Kernel routines"
-msgstr ""
+msgstr "Kernel routines(内核惯例)"
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><tbody><row><entry>
 msgid "Non-standard calls and internals"
-msgstr ""
+msgstr "Non-standard calls and internals(非标准调用及内部构建)"
 
 #. type: Content of: <book><chapter><section><section><para>
 #, fuzzy
@@ -6489,9 +6474,8 @@ msgstr ""
 "<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><section><title>
-#, fuzzy
 msgid "<filename>manpage.sgml.ex</filename>"
-msgstr "<filename>manpage.sgml.ex</filename> 文件"
+msgstr "<filename>manpage.sgml.ex</filename>"
 
 #. type: Content of: <book><chapter><section><section><para>
 msgid ""
@@ -6519,7 +6503,6 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "add an <literal>override_dh_auto_build</literal> target to your "
 "<filename>rules</filename> file:"
@@ -6539,9 +6522,8 @@ msgstr ""
 "        dh_auto_build\n"
 
 #. type: Content of: <book><chapter><section><section><title>
-#, fuzzy
 msgid "<filename>manpage.xml.ex</filename>"
-msgstr "<filename>manpage.xml.ex</filename> 文件"
+msgstr "<filename>manpage.xml.ex</filename>"
 
 #. type: Content of: <book><chapter><section><section><para>
 msgid ""
@@ -6573,7 +6555,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "override_dh_auto_build:\n"
 "        xsltproc --nonet \\\n"
@@ -6591,14 +6573,13 @@ msgstr ""
 "         --param make.single.year.ranges 1 \\\n"
 "         --param man.charmap.use.subset 0 \\\n"
 "         -o debian/ \\\n"
-" http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl\\\n"
+"http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl\\\n"
 "        debian/gentoo.1.xml\n"
 "        dh_auto_build\n"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename><replaceable>package</replaceable>.manpages</filename>"
-msgstr "<filename><replaceable>package</replaceable>.manpages</filename> 文件"
+msgstr "<filename><replaceable>package</replaceable>.manpages</filename>"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -6630,9 +6611,8 @@ msgid "docs/gentoo.1\n"
 msgstr "docs/gentoo.1\n"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename>menu</filename>"
-msgstr "<filename>menu</filename> 文件"
+msgstr "<filename>menu</filename>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -6745,9 +6725,8 @@ msgstr ""
 "filename> 了解更多信息。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename>NEWS</filename>"
-msgstr "<filename>NEWS</filename> 文件"
+msgstr "<filename>NEWS</filename>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -6758,9 +6737,8 @@ msgstr ""
 "<manvolnum>1</manvolnum> </citerefentry> 命令会安装这个文件。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename>{pre,post}{inst,rm}</filename>"
-msgstr "<filename>{post|pre}{inst|rm}</filename> 文件"
+msgstr "<filename>{pre,post}{inst,rm}</filename>"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -6881,9 +6859,8 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename>TODO</filename>"
-msgstr "<filename>TODO</filename> 文件"
+msgstr "<filename>TODO</filename>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -6894,9 +6871,8 @@ msgstr ""
 "manvolnum> </citerefentry> 命令会安装这个文件。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename>watch</filename>"
-msgstr "<filename>watch</filename> 文件"
+msgstr "<filename>watch</filename>"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -6918,7 +6894,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><para>
 msgid "Here are its contents:"
-msgstr ""
+msgstr "它的内容如下："
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -6985,9 +6961,8 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename>source/format</filename>"
-msgstr "<filename>source/format</filename> 文件"
+msgstr "<filename>source/format</filename>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -7003,9 +6978,8 @@ msgstr ""
 "literal> 后，它应该是以下二者之一："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "<literal>3.0 (native)</literal> for native Debian packages or"
-msgstr "<literal>3.0 (native)</literal> - Debian native 软件"
+msgstr "<literal>3.0 (native)</literal> - Debian 本土软件或者"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<literal>3.0 (quilt)</literal> for everything else."
@@ -7108,11 +7082,12 @@ msgid ""
 "unapply-patches\n"
 "abort-on-upstream-changes\n"
 msgstr ""
+"unapply-patches\n"
+"abort-on-upstream-changes\n"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename>source/options</filename>"
-msgstr "<filename>source/local-options</filename> 文件"
+msgstr "<filename>source/options</filename>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -7147,12 +7122,11 @@ msgstr ""
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
 msgid "extend-diff-ignore = \"(^|/)(config\\.sub|config\\.guess|Makefile)$\"\n"
-msgstr ""
+msgstr "extend-diff-ignore = \"(^|/)(config\\.sub|config\\.guess|Makefile)$\"\n"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename>patches/*</filename>"
-msgstr "<filename>patches/*</filename> 文件"
+msgstr "<filename>patches/*</filename>"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -7252,7 +7226,7 @@ msgstr ""
 "filename>，对于 <literal>3.0 (quilt)</literal> 源代码包格式可以很容易修改："
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "$ dpkg-source -x gentoo_0.9.12.dsc\n"
 "$ cd gentoo-0.9.12\n"
@@ -7264,10 +7238,10 @@ msgid ""
 msgstr ""
 "$ dpkg-source -x gentoo_0.9.12.dsc\n"
 "$ cd gentoo-0.9.12\n"
-"$ quilt import ../<replaceable>foo</replaceable>.patch\n"
-"$ quilt push\n"
-"$ quilt refresh\n"
-"$ quilt header -e\n"
+"$ dquilt import ../<replaceable>foo</replaceable>.patch\n"
+"$ dquilt push\n"
+"$ dquilt refresh\n"
+"$ dquilt header -e\n"
 "... describe patch\n"
 
 #. type: Content of: <book><chapter><section><para>
