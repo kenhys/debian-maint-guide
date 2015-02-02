@@ -5020,7 +5020,6 @@ msgid ""
 msgstr "添加 <command>dh_pusuppor</command> 命令的支持。(已废弃)"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Include the <systemitem role=\"package\">python-support</systemitem> package "
 "in <literal>Build-Depends</literal>."
@@ -5029,9 +5028,8 @@ msgstr ""
 "\">python-support</systemitem> 软件包。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid "Use <literal>dh $@ --with pysupport</literal>."
-msgstr "使用 <literal>dh --with quilt $@</literal>"
+msgstr "使用 <literal>dh $@ --with pysupport</literal>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -5042,13 +5040,11 @@ msgstr ""
 "Python 模块。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Add support for the <command>dh_pycentral</command> command. (deprecated)"
-msgstr "添加 <command>dh_pycentral</command> 命令支持。"
+msgstr "添加 <command>dh_pycentral</command> 命令支持。(已废弃)"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Include the <systemitem role=\"package\">python-central</systemitem> package "
 "in <literal>Build-Depends</literal>."
@@ -5057,9 +5053,8 @@ msgstr ""
 "\">python-central</systemitem> 软件包。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid "Use <literal>dh $@ --with python-central</literal> instead."
-msgstr "使用 <literal>dh --with python-central $@</literal>"
+msgstr "使用 <literal>dh $@ --with python-central</literal>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "This also deactivates the <command>dh_pysupport</command> command."
@@ -5074,12 +5069,10 @@ msgstr ""
 "Python 模块。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "Add support for the <command>dh_installtex</command> command."
 msgstr "添加 <command>dh_installtex</command> 命令支持。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Include the <systemitem role=\"package\">tex-common</systemitem> package in "
 "<literal>Build-Depends</literal>."
@@ -5088,18 +5081,15 @@ msgstr ""
 "common</systemitem> 软件包。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid "Use <literal>dh $@ --with tex</literal> instead."
-msgstr "使用 <literal>dh --with tex $@</literal>"
+msgstr "使用 <literal>dh $@ --with tex</literal>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "This registers Type 1 fonts, hyphenation patterns, and formats with TeX."
-msgstr "这样会注册 Type 1 字体、断句样式或其他使用 TeX 的格式。"
+msgstr "这样会注册 Type 1 字体、断句样式及其他 TeX 格式。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Add support for the <command>dh_quilt_patch</command> and "
 "<command>dh_quilt_unpatch</command> commands."
@@ -5108,7 +5098,6 @@ msgstr ""
 "command> 命令支持。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Include the <systemitem role=\"package\">quilt</systemitem> package in "
 "<literal>Build-Depends</literal>."
@@ -5121,7 +5110,6 @@ msgid "Use <literal>dh $@ --with quilt</literal> instead."
 msgstr "使用 <literal>dh $@ --with quilt </literal>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "This applies and un-applies patches to the upstream source from files in the "
 "<filename>debian/patches</filename> directory for a source package in the "
@@ -5131,19 +5119,17 @@ msgstr ""
 "<filename>debian/patches</filename> 目录中的补丁。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "This is not needed if you use the new <literal>3.0 (quilt)</literal> source "
 "package format."
 msgstr ""
-"如果你使用新的 <literal>3.0 (quilt)</literal> 源代码包格式时不需要这些。"
+"如果你使用新的 <literal>3.0 (quilt)</literal> 源代码包格式则不需要这些。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
 msgid "Add support for the <command>dh_dkms</command> command."
 msgstr "为 <command>dh_dkms</command> 命令添加支持。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Include the <systemitem role=\"package\">dkms</systemitem> package in "
 "<literal>Build-Depends</literal>."
@@ -5160,7 +5146,6 @@ msgid "This correctly handles DKMS usage by kernel module packages."
 msgstr "这能使内核模块软件包正确使用 DKMS。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Add support for the <command>dh_autotools-dev_updateconfig</command> and "
 "<command>dh_autotools-dev_restoreconfig</command> commands."
@@ -5169,7 +5154,6 @@ msgstr ""
 "<command>dh_autotools-dev_restoreconfig</command> 命令支持。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Include the <systemitem role=\"package\">autotools-dev</systemitem> package "
 "in <literal>Build-Depends</literal>."
@@ -5178,9 +5162,8 @@ msgstr ""
 "\">autotools-dev</systemitem> 软件包。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid "Use <literal>dh $@ --with autotools-dev</literal> instead."
-msgstr "使用 <literal>dh --with autotools-dev $@</literal>"
+msgstr "使用 <literal>dh $@ --with autotools-dev</literal>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -5191,7 +5174,6 @@ msgstr ""
 "guess</filename> 文件。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Add support for the <command>dh_autoreconf</command> and "
 "<command>dh_autoreconf_clean</command> commands."
@@ -5200,7 +5182,6 @@ msgstr ""
 "command> 命令支持。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Include the <systemitem role=\"package\">dh-autoreconf</systemitem> package "
 "in <literal>Build-Depends</literal>."
@@ -5209,9 +5190,8 @@ msgstr ""
 "autoreconf</systemitem> 软件包。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid "Use <literal>dh $@ --with autoreconf</literal> instead."
-msgstr "使用 <literal>dh --with autoreconf $@</literal>"
+msgstr "使用 <literal>dh $@ --with autoreconf</literal>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -5219,38 +5199,37 @@ msgid ""
 msgstr "这样会在编译时更新 GNU 编译系统文件并在编译后对其进行恢复。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "Add support for the <command>dh_girepository</command> command."
-msgstr "添加 <command>dh_dkms</command> 命令支持。"
+msgstr "添加 <command>dh_girepository</command> 命令支持。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Includes the <systemitem role=\"package\">gobject-introspection</systemitem> "
 "package in <literal>Build-Depends</literal>."
 msgstr ""
-"在 <literal>Build-Depends</literal> 中添加 <systemitem role=\"package\">bash-"
-"completion</systemitem> 软件包。"
+"在 <literal>Build-Depends</literal> 中添加 <systemitem role=\"package\">"
+"gobject-introspection</systemitem> 软件包。"
+
+#. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
+msgid "Use <literal>dh $@ --with gir</literal> instead."
+msgstr "使用 <literal>dh $@ --with quilt</literal>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
 #, fuzzy
-msgid "Use <literal>dh $@ --with gir</literal> instead."
-msgstr "使用 <literal>dh --with quilt $@</literal>"
-
-#. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
 "This computes dependencies for packages shipping GObject introspection data "
 "and generates the <literal>${gir:Depends}</literal> substitution variable "
 "for the package dependency."
 msgstr ""
+"This computes dependencies for packages shipping GObject introspection data "
+"and generates the <literal>${gir:Depends}</literal> substitution variable "
+"for the package dependency."
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "Add support for the <command>bash</command> completion feature."
 msgstr "添加 <command>bash</command> 补全特性支持。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Includes the <systemitem role=\"package\">bash-completion</systemitem> "
 "package in <literal>Build-Depends</literal>."
@@ -5259,19 +5238,17 @@ msgstr ""
 "completion</systemitem> 软件包。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid "Use <literal>dh $@ --with bash-completion</literal> instead."
-msgstr "使用 <literal>dh --with bash-completion $@</literal>"
+msgstr "使用 <literal>dh $@ --with bash-completion</literal>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "This installs <command>bash</command> completions using a configuration file "
 "at <filename>debian/<replaceable>package</replaceable>.bash-completion</"
 "filename>."
 msgstr ""
 "这会使用 <filename>debian/<replaceable>package</replaceable>.bash-"
-"completion</filename> 中的配置文件安装 <command>bash</command> 补全。"
+"completion</filename> 中的配置文件来安装 <command>bash</command> 补全。"
 
 #. type: Content of: <book><chapter><section><section><para>
 msgid ""
@@ -5294,7 +5271,6 @@ msgstr ""
 "本的行为，你需要在 <filename>rules</filename> 中找到相应的行然后进行调整。"
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
 msgid ""
 "You may need to run <command>dh_*</command> commands invoked via the new "
 "<command>dh</command> with added arguments, or to run additional commands "
@@ -5307,15 +5283,15 @@ msgid ""
 "<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
 "某些由新的 <command>dh</command> 命令所触发的 <command>dh_*</command> 命令可"
-"能需要额外的参数使其一同执行或者跳过执行。对于这类情况，你可以在 "
+"能需要额外的参数，或需要附加执行或者跳过执行。对于这类情况，你可以在 "
 "<filename>rules</filename> 文件中创建一个 "
-"<literal>override_dh_<replaceable>foo</replaceable></literal> target 来使其完"
-"成你想要的 <command>dh_<replaceable>foo</replaceable></command> 命令。它的作"
-"用简单说就是 <emphasis>把运行的命令换成我</emphasis>。<placeholder type="
-"\"footnote\" id=\"0\"/>"
+"<literal>override_dh_<replaceable>foo</replaceable></literal> target，"
+"并在其中定义一个 <literal>override_dh_<replaceable>foo</replaceable></literal>"
+"来使其完成你想要 <command>dh_<replaceable>foo</replaceable></command> 命令作出的改变。它的作"
+"用简单说就是 <emphasis>run me instead (把运行的命令换成我)</emphasis>。"
+"<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
 msgid ""
 "Please note that the <command>dh_auto_*</command> commands tend to do more "
 "than what has been discussed in this (over)simplified explanation to take "
@@ -5325,13 +5301,13 @@ msgid ""
 "since it may bypass such smart <systemitem role=\"package\">debhelper</"
 "systemitem> features."
 msgstr ""
-"请注意 <command>dh_auto_*</command> 命令所做的比上述简化的步骤中介绍的内容更"
+"请注意 <command>dh_auto_*</command> 命令为了照顾所有的边缘情况，它实际所做的"
+"比上述(过度)简化的步骤中介绍的内容更"
 "多。除了 <literal>override_dh_auto_clean</literal> 外把上面的简化命令写成 "
 "<literal>override_dh_*</literal> 中是不明智的，这样会使得 <systemitem role="
 "\"package\">debhelper</systemitem> 的许多智能特性无法体现。"
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
 msgid ""
 "So, for instance, if you want to store system configuration data in the "
 "<filename>/etc/gentoo</filename> directory instead of the usual <filename>/"
@@ -5341,9 +5317,10 @@ msgid ""
 "command> command to the <command>./configure</command> command by the "
 "following:"
 msgstr ""
-"如果你希望把 <systemitem role=\"package\">gentoo</systemitem> 软件包的配置文"
-"件安装到 <filename>/etc/gentoo</filename> 而非默认的 <filename>/etc</"
-"filename> 目录，你可以覆盖 <command>dh_auto_configure</command> 默认的使用的 "
+"最近的<systemitem role=\"package\">gentoo</systemitem> 软件包使用了 Autotools，"
+"如果你希望把系统配置配置文"
+"件安装到 <filename>/etc/gentoo</filename> 而非通常的 <filename>/etc</"
+"filename> 目录，你可以凌驾 <command>dh_auto_configure</command> 默认的使用的 "
 "<literal>--sysconfig=/etc</literal> 参数，改为向 <command>./configure</"
 "command> 命令传递以下参数：<placeholder type=\"footnote\" id=\"0\"/>"
 
@@ -5365,9 +5342,14 @@ msgid ""
 "override the <literal>--sysconfig</literal> argument and retains any other, "
 "benign arguments to the <command>./configure</command> command."
 msgstr ""
+"在 <literal>--</literal> 其后给出的参数会被追加到被自动执行的程序默认 "
+"参数后，以此凌驾它们。 使用 "
+"<command>dh_auto_configure</command> 命令要比直接调用 "
+"<command>./configure</command> 命令好很多，因为 "
+"它只凌驾 <literal>--sysconfig</literal> 参数，同时保留其他任何对 "
+"<command>./configure</command> 命令良性的参数。"
 
 #. type: Content of: <book><chapter><section><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "<command>dh_auto_build</command> without any arguments will execute the "
 "first target in the <filename>Makefile</filename>."
@@ -5376,7 +5358,6 @@ msgstr ""
 "filename> 中的第一个 target。"
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
 msgid ""
 "If the <filename>Makefile</filename> in the source for <systemitem role="
 "\"package\">gentoo</systemitem> requires you to specify <literal>build</"
@@ -5399,17 +5380,15 @@ msgstr ""
 "        dh_auto_build -- build\n"
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
 msgid ""
 "This ensures <literal>$(MAKE)</literal> is run with all the default "
 "arguments given by the <command>dh_auto_build</command> command plus the "
 "<literal>build</literal> argument."
 msgstr ""
-"这保证了 $(MAKE) 会使用 <command>dh_auto_build</command> 传递的所有参数并编译"
+"这保证了 <literal>$(MAKE)</literal> 会使用 <command>dh_auto_build</command> 传递的所有默认参数并编译"
 "处理 <literal>build</literal> 这个 target。"
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
 msgid ""
 "If the <filename>Makefile</filename> in the source for <systemitem role="
 "\"package\">gentoo</systemitem> requires you to specify the "
@@ -5419,9 +5398,10 @@ msgid ""
 "to enable it."
 msgstr ""
 "如果 <systemitem role=\"package\">gentoo</systemitem> 的 <filename>Makefile</"
-"filename> 需要指定 <literal>build</literal> 作为其编译用的 "
-"target<placeholder type=\"footnote\" id=\"0\"/>，你可以创建一个 "
-"<literal>override_dh_auto_build</literal> target 来启用它。"
+"filename> 需要指定 <literal>packageclean</literal> target 来为 Debian 软件包作清理，"
+"而非 <literal>distclean</literal> 或 <literal>clean</literal> "
+"target，那你就可以创建一个 <literal>override_dh_auto_clean</literal> target "
+"来启用它。"
 
 #. type: Content of: <book><chapter><section><section><screen>
 #, no-wrap
