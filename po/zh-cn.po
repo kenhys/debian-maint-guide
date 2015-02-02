@@ -2044,7 +2044,6 @@ msgstr ""
 "如果可能的话，最好把它的长度控制在8字符以内。 <placeholder type="
 "\"footnote\" id=\"1\"/>"
 
-
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "If upstream does not use a normal versioning scheme such as "
@@ -2102,7 +2101,6 @@ msgstr ""
 "版本字符串 <placeholder type=\"footnote\" id=\"0\"/> 可以用 "
 "<citerefentry> <refentrytitle>dpkg</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry> 来进行比较："
-
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -5513,7 +5511,7 @@ msgstr ""
 "<command>dh_make</command> 命令会在 <filename>debian</filename> 目录中创建一"
 "些配置文件模板，它们的文件名多带有 <literal>.ex</literal> 后缀。其中的一些"
 "可能以二进制包名作为前缀，如 <literal><replaceable>package</replaceable></"
-"literal>。现在我们来对它们进行一个大致的了解。"
+"literal>。现在我们来对它们进行一个大致的了解。<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><para>
 msgid ""
