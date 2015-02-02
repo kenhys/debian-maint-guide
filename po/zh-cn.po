@@ -6699,7 +6699,6 @@ msgstr ""
 "        title=Gentoo command=gentoo\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "You can also add other fields like <literal>longtitle</literal>, "
 "<literal>icon</literal>, <literal>hints</literal> etc.  See <citerefentry> "
@@ -6711,13 +6710,13 @@ msgid ""
 "ulink> for more information."
 msgstr ""
 "你还可以添加诸如 <literal>longtitle</literal>、<literal>icon</literal>、"
-"<literal>hints</literal> 等域。参看 <citerefentry> "
+"<literal>hints</literal> 等字段。参看 <citerefentry> "
 "<refentrytitle>dh_installmenu</refentrytitle> <manvolnum>1</manvolnum> </"
 "citerefentry>、<citerefentry> <refentrytitle>menufile</refentrytitle> "
 "<manvolnum>5</manvolnum> </citerefentry>、<citerefentry> "
 "<refentrytitle>update-menus</refentrytitle> <manvolnum>1</manvolnum> </"
-"citerefentry> 和 <filename>/usr/share/doc/debian-policy/menu-policy.html/</"
-"filename> 了解更多信息。"
+"citerefentry>, 以及 <ulink url=\"&policy-menu;\">The Debian Menu sub-policy</"
+"ulink> 以获取更多信息。"
 
 #. type: Content of: <book><chapter><section><title>
 msgid "<filename>NEWS</filename>"
@@ -6744,7 +6743,6 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "These <filename>postinst</filename>, <filename>preinst</filename>, "
 "<filename>postrm</filename>, and <filename>prerm</filename> files "
@@ -6756,11 +6754,10 @@ msgstr ""
 "<filename>postinst</filename>、<filename>preinst</filename>、"
 "<filename>postrm</filename> 和 <filename>prerm</filename> 文件 <placeholder "
 "type=\"footnote\" id=\"0\"/> 被称为 <emphasis>maintainer scripts</emphasis>。"
-"它们是放置于软件包控制信息区域，并由 <command>dpkg</command> 在软件包安装、升"
+"它们是放置于软件包控制区域，并由 <command>dpkg</command> 在软件包安装、升"
 "级或卸载时执行的脚本。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "As a novice maintainer, you should avoid any manual editing of maintainer "
 "scripts because they are problematic.  For more information refer to the "
@@ -6768,14 +6765,13 @@ msgid ""
 "maintainer scripts and installation procedure\"</ulink>, and take a look at "
 "the example files provided by <command>dh_make</command>."
 msgstr ""
-"作为一个新维护人员，你应当避免手工编辑 <emphasis>maintainer scripts</"
-"emphasis>，因为它们常存在各种问题。更多信息请阅读 <ulink url=\"&policy-"
-"mantainerscripts;\">Debian Policy Manual, 6 'Package maintainer scripts and "
-"installation procedure'</ulink> 并查看 <command>dh_make</command> 给出的示"
-"例。"
+"作为一个新维护人员，你应当避免手工编辑 maintainer scripts "
+"，因为它们常存在各种问题。更多信息请阅读 <ulink url=\"&policy-"
+"mantainerscripts;\">Debian Policy Manual, 6 \"Package maintainer scripts and "
+"installation procedure\"</ulink> 并查看 <command>dh_make</command> 给出的示"
+"例文件。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "If you did not listen to me and have created custom maintainer scripts for a "
 "package, you should make sure to test them not only for <emphasis role="
@@ -6783,23 +6779,21 @@ msgid ""
 "emphasis> but also for <emphasis role=\"strong\">remove</emphasis> and "
 "<emphasis role=\"strong\">purge</emphasis>."
 msgstr ""
-"如果你不听我的劝告，自己为一个软件包创建了 <emphasis>maintainer scripts</"
-"emphasis>，你必须保证不仅测试 <emphasis role=\"strong\">install</emphasis> "
+"如果你不听我的劝告，自己为一个软件包创建并定制了 maintainer scripts"
+"，你必须保证不仅测试 <emphasis role=\"strong\">install</emphasis> "
 "和 <emphasis role=\"strong\">upgrade</emphasis>，还应测试 <emphasis role="
 "\"strong\">remove</emphasis> 和 <emphasis role=\"strong\">purge</emphasis>。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Upgrades to the new version should be silent and non-intrusive (existing "
 "users should not notice the upgrade except by discovering that old bugs have "
 "been fixed and perhaps that there are new features)."
 msgstr ""
-"升级到新版本应当是静默的(已有用户应当只在发现旧的 Bug 被修复或有新特性时注意"
+"升级到新版本应当是静默且非侵入式的(已有用户应当只在发现旧的 Bug 被修复或有新特性时注意"
 "到升级的变化)。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "When the upgrade is necessarily intrusive (eg., config files scattered "
 "through various home directories with totally different structure), you may "
@@ -6809,14 +6803,13 @@ msgid ""
 "filename>).  Don't bother the user with <command>debconf</command> notes "
 "invoked from these maintainer scripts for upgrades."
 msgstr ""
-"当更新必须以非静默模式进行时(例如多个主目录中的配置文件都要改为完全不同的结构"
-"时)，你应该考虑将软件包设置到安全的默认配置(例如禁用服务)并按照 Debian "
+"当更新必须以非静默模式进行时(例如分散在多个主目录中的配置文件都要改为完全不同的结构"
+"时)，作为最后的手段，你应该考虑将软件包设置到安全的回退状态(例如禁用服务)并按照 Debian "
 "Policy 提供相应的文档(<filename>README.Debian</filename> 和 <filename>NEWS."
-"Debian</filename>)。不要在升级时使用 <emphasis>maintainer scripts</emphasis> "
+"Debian</filename>)。不要在升级时使用 maintainer scripts "
 "触发 <command>debconf</command> 来打扰用户。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "The <systemitem role=\"package\">ucf</systemitem> package provides a "
 "<emphasis>conffile-like</emphasis> handling infrastructure to preserve user "
@@ -6825,25 +6818,22 @@ msgid ""
 "issues associated with them."
 msgstr ""
 "<systemitem role=\"package\">ucf</systemitem> 软件包提供了 <emphasis>类似 "
-"conffile</emphasis> 的对不应标记为 <emphasis>conffiles</emphasis> 的文件的保"
-"留机制。这可以将与 <emphasis>maintainer scripts</emphasis> 相关的问题减少到最"
-"低。"
+"conffile</emphasis> 对可能不标记为 <emphasis>conffiles</emphasis> 的文件的保"
+"留机制，比如由 maintainer scripts 来管理的配置文件。这可以把最大程度减少相关的问题。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "These maintainer scripts are among the Debian enhancements that explain "
 "<emphasis role=\"strong\">why people choose Debian</emphasis>.  You must be "
 "very careful not to turn them into a source of annoyance."
 msgstr ""
-"这些 <emphasis>maintainer scripts</emphasis> 是 Debian 对于软件系统的增强特"
+"这些 maintainer scripts 是 Debian 的增强特"
 "性，它们解释了 <emphasis role=\"strong\">人们为什么选择 Debian</emphasis>。你"
 "必须非常小心，保证人们不因此产生烦恼。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename><replaceable>package</replaceable>.symbols</filename>"
-msgstr "<filename><replaceable>package</replaceable>.examples</filename> 文件"
+msgstr "<filename><replaceable>package</replaceable>.examples</filename>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -6852,6 +6842,10 @@ msgid ""
 "<filename>debian/<replaceable>package</replaceable>.symbols</filename> "
 "files. See <xref linkend=\"librarysymbols\"/>."
 msgstr ""
+"对于新维护者而言，打包一个库非常不易，因此不建议尝试。 "
+"这样说吧，如果你的软件包有库，那你应该处理好 "
+"<filename>debian/<replaceable>package</replaceable>.symbols</filename> "
+"文件。 参见 <xref linkend=\"librarysymbols\"/>."
 
 #. type: Content of: <book><chapter><section><title>
 msgid "<filename>TODO</filename>"
@@ -6870,7 +6864,6 @@ msgid "<filename>watch</filename>"
 msgstr "<filename>watch</filename>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "The <filename>watch</filename> file format is documented in the "
 "<citerefentry> <refentrytitle>uscan</refentrytitle> <manvolnum>1</manvolnum> "
@@ -6883,9 +6876,9 @@ msgstr ""
 "<filename>watch</filename> 文件的格式被详述于 <citerefentry> "
 "<refentrytitle>uscan</refentrytitle> <manvolnum>1</manvolnum> </"
 "citerefentry> man 手册页中。<filename>watch</filename> 文件配置了 "
-"<command>uscan</command> 程序(<systemitem role=\"package\">devscripts</"
+"<command>uscan</command> 程序(它在 <systemitem role=\"package\">devscripts</"
 "systemitem> 中)以便监视你获得原始源代码的网站。它还被用于 <ulink url=\"&dehs;"
-"\">Debian External Health Status (DEHS)</ulink>。"
+"\">Debian External Health Status (DEHS)</ulink> 服务。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid "Here are its contents:"
@@ -6903,7 +6896,6 @@ msgstr ""
 "&sf-net;/gentoo/gentoo-(.+)\\.tar\\.gz debian uupdate\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Normally with a <filename>watch</filename> file, the URL at <literal>&sf-"
 "net;/gentoo</literal> is downloaded and searched for links of the form "
@@ -6916,8 +6908,8 @@ msgid ""
 "program is run to create an updated source tree."
 msgstr ""
 "通常，在按照这个 <filename>watch</filename> 文件执行时，URL <literal>&sf-"
-"net;/gentoo</literal> 会被下载，程序在其中搜搜 <literal>&lt;a href=...&gt;</"
-"literal>。<literal>/</literal> 后的基本名称会按照 Perl 正则表达式匹配(参看 "
+"net;/gentoo</literal> 会被下载，程序会在其中搜索 <literal>&lt;a href=...&gt;</"
+"literal>。最后一个斜杠 <literal>/</literal> 后的基本名称会按照 Perl 正则表达式匹配(参看 "
 "<citerefentry> <refentrytitle>perlre</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry>)  <literal>gentoo-(.+)\\.tar\\.gz</literal>。在所"
 "有匹配的文件里，将会下载带有最大版本号的，此后由 <command>uupdate</command> "
@@ -6981,14 +6973,13 @@ msgid "<literal>3.0 (quilt)</literal> for everything else."
 msgstr "<literal>3.0 (quilt)</literal> - 其他所有软件"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "See <ulink url=\"&debsrc3;\">DebSrc3.0</ulink> for a summary on the switch "
 "to the new <literal>3.0 (quilt)</literal> and <literal>3.0 (native)</"
 "literal> source formats."
 msgstr ""
-"参看 <ulink url=\"&debsrc3;\">DebSrc3.0</ulink> 了解转换到新的 <literal>3.0 "
-"(quilt)</literal> 和 <literal>3.0 (native)</literal> 源代码格式时的总结考虑。"
+"参看 <ulink url=\"&debsrc3;\">DebSrc3.0</ulink> 以了解转换到新的 <literal>3.0 "
+"(quilt)</literal> 和 <literal>3.0 (native)</literal> 源代码格式时的总结。"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -7160,14 +7151,13 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "If you are asking a sponsor to upload your package, this kind of clear "
 "separation and documentation of your changes is very important to expedite "
 "the package review by your sponsor."
 msgstr ""
-"如果你需要一个 sponsor 上传你的软件包，这种情况下，清晰的软件包分解和对你做出"
-"的更改的描述对于软件包的审查都非常重要。"
+"如果你需要一个 sponsor 上传你的软件包，这种情况下，清晰的软件包分离和记录"
+"更改的文档对于软件包审查过程的顺利程度非常重要。"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -7191,7 +7181,6 @@ msgstr ""
 "<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "For <xref linkend=\"modify\"/>, we created three patches in <filename>debian/"
 "patches</filename>."
@@ -7294,9 +7283,9 @@ msgid "Then you issue the following command in the source directory:"
 msgstr "然后在源代码目录中执行以下命令："
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "$ dpkg-buildpackage -us -uc\n"
-msgstr "$ dpkg-buildpackage -B\n"
+msgstr "$ dpkg-buildpackage -us -uc\n"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -7321,18 +7310,15 @@ msgid "build binary packages (<literal>fakeroot debian/rules binary</literal>)"
 msgstr "构建二进制包(<literal>fakeroot debian/rules binary</literal>)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid "make the <filename>.dsc</filename> file"
-msgstr "<filename>rules</filename> 文件中的 target"
+msgstr "制作 <filename>.dsc</filename> 文件"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "make the <filename>.changes</filename> file, using <command>dpkg-genchanges</"
 "command>"
 msgstr ""
-"使用 <command>dpkg-genchanges</command> 和 <command>gpg</command> 创建并签署"
-"上传用的 <filename>.changes</filename> 文件"
+"用 <command>dpkg-genchanges</command> 命令制作 <filename>.changes</filename> 文件。"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -7494,7 +7480,7 @@ msgstr ""
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
 msgid "DEBSIGN_KEYID=Your_GPG_keyID\n"
-msgstr ""
+msgstr "DEBSIGN_KEYID=Your_GPG_keyID\n"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -7657,16 +7643,15 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "DEBUILD_DPKG_BUILDPACKAGE_OPTS=\"-us -uc -I -i\"\n"
 "DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
 msgstr ""
-"DEBSIGN_KEYID=Your_GPG_keyID\n"
+"DEBUILD_DPKG_BUILDPACKAGE_OPTS=\"-us -uc -I -i\"\n"
 "DEBUILD_LINTIAN_OPTS=\"-i -I --show-overrides\"\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Cleaning the source and rebuilding the package from your user account is as "
 "simple as:"
@@ -7678,9 +7663,8 @@ msgid "$ debuild\n"
 msgstr "$ debuild\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid "You can clean the source tree as simply as:"
-msgstr "还可以简单地清理源代码树："
+msgstr "还可以这样简单地清理源代码树："
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -7692,21 +7676,19 @@ msgid "<systemitem role=\"package\">pbuilder</systemitem> package"
 msgstr "<systemitem role=\"package\">pbuilder</systemitem> 软件包"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "Since the <systemitem role=\"package\">pbuilder</systemitem> package is "
 "still evolving, you should check the actual configuration situation by "
 "consulting the latest official documentation."
 msgstr ""
-"<systemitem role=\"package\">pbuilder</systemitem> 软件包仍然在改进中，你可以"
-"查看最新的官方文档来检查实际的配置状况。"
+"由于 <systemitem role=\"package\">pbuilder</systemitem> 软件包仍然在进化，你应当"
+"查阅最新的官方文档来检查实际的配置状况。"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "See <ulink url=\"&buildd-do;\"/> for more on Debian package auto-building."
 msgstr ""
-"<ulink url=\"&git-dpm;\">git-dpm: Debian packages in Git manager</ulink>"
+"参见 <ulink url=\"&buildd-do;\"/> 以获取更多关于 Debian 软件包 auto-building 的信息。"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -7728,7 +7710,6 @@ msgstr ""
 "更多了解 Debian 软件包自动编译系统。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Let's customize the <systemitem role=\"package\">pbuilder</systemitem> "
 "package as follows:"
@@ -7737,11 +7718,10 @@ msgstr ""
 "件包。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "setting the <filename>/var/cache/pbuilder/result</filename> directory "
 "writable by your user account."
-msgstr "设置 <filename>/var/cache/pbuilder/result</filename> 对用户可写。"
+msgstr "设置 <filename>/var/cache/pbuilder/result</filename> 对当前用户可写。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
@@ -7763,21 +7743,20 @@ msgstr ""
 "filename> 中添加以下内容："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "AUTO_DEBSIGN=${AUTO_DEBSIGN:-no}\n"
 "HOOKDIR=<replaceable>/var/cache/pbuilder/hooks</replaceable>\n"
 msgstr ""
-"AUTO_DEBSIGN=yes\n"
+"AUTO_DEBSIGN=${AUTO_DEBSIGN:-no}\n"
 "HOOKDIR=<replaceable>/var/cache/pbuilder/hooks</replaceable>\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "First let's initialize the local <systemitem role=\"package\">pbuilder</"
 "systemitem> <command>chroot</command> system as follows:"
 msgstr ""
-"使用以下命令初始化 <systemitem role=\"package\">pbuilder</systemitem> "
+"首先使用以下命令初始化本地 <systemitem role=\"package\">pbuilder</systemitem> "
 "<command>chroot</command> 系统："
 
 #. type: Content of: <book><chapter><section><screen>
@@ -7802,13 +7781,13 @@ msgstr ""
 "systemitem> <command>chroot</command> 系统以便执行构建。"
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "$ sudo pbuilder --update\n"
 "$ sudo pbuilder --build <replaceable>foo_version</replaceable>.dsc\n"
 msgstr ""
 "$ sudo pbuilder --update\n"
-"$ sudo pbuilder --build <replaceable>foo</replaceable>.dsc\n"
+"$ sudo pbuilder --build <replaceable>foo_version</replaceable>.dsc\n"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -7827,11 +7806,13 @@ msgid ""
 msgstr "<filename>.tar.gz</filename> 扩展名前有 <filename>.orig</filename>。"
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "$ cd /var/cache/pbuilder/result/\n"
 "$ debsign <replaceable>foo_version_arch</replaceable>.changes\n"
-msgstr "$ debdiff <replaceable>old-package</replaceable>.changes <replaceable>new-package</replaceable>.changes\n"
+msgstr ""
+"$ cd /var/cache/pbuilder/result/\n"
+"$ debsign <replaceable>foo_version_arch</replaceable>.changes\n"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -7888,7 +7869,7 @@ msgstr ""
 "<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "#!/bin/sh\n"
 "set -e\n"
@@ -7905,14 +7886,14 @@ msgstr ""
 "#!/bin/sh\n"
 "set -e\n"
 "install_packages() {\n"
-"    apt-get -y --force-yes install $@\n"
-"    }\n"
+"        apt-get -y --force-yes install \"$@\"\n"
+"        }\n"
 "install_packages lintian\n"
-"echo +++ lintian output +++\n"
-"su -c lintian -i -I --show-overrides /tmp/buildd/*.changes - pbuilder\n"
+"echo \"+++ lintian output +++\"\n"
+"su -c \"lintian -i -I --show-overrides /tmp/buildd/*.changes\" - pbuilder\n"
 "# use this version if you don't want lintian to fail the build\n"
-"#su -c lintian -i -I --show-overrides /tmp/buildd/*.changes; : - pbuilder\n"
-"echo +++ end of lintian output +++\n"
+"#su -c \"lintian -i -I --show-overrides /tmp/buildd/*.changes; :\" - pbuilder\n"
+"echo \"+++ end of lintian output +++\"\n"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -7933,7 +7914,7 @@ msgstr ""
 msgid ""
 "There are some restrictions for such updates of your <literal>stable</"
 "literal> package."
-msgstr "升级你的 <literal>stable</literal> 软件包有规定限制。"
+msgstr "升级你的 <literal>stable</literal> 软件包有一些规定的限制。"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -7955,7 +7936,6 @@ msgstr ""
 "Debian 和 Debian 衍生版系统。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "See <ulink url=\"&pbuilder;\"/>, <citerefentry> <refentrytitle>pdebuild</"
 "refentrytitle> <manvolnum>1</manvolnum> </citerefentry>, <citerefentry> "
@@ -7963,21 +7943,21 @@ msgid ""
 "citerefentry>, and <citerefentry> <refentrytitle>pbuilder</refentrytitle> "
 "<manvolnum>8</manvolnum> </citerefentry>."
 msgstr ""
-"参看 <ulink url=\"&pbuilder;\">&pbuilder;</ulink>、<citerefentry> "
-"<refentrytitle>pdebuild</refentrytitle> <manvolnum>1</manvolnum> </"
-"citerefentry>、<citerefentry> <refentrytitle>pbuilderrc</refentrytitle> "
-"<manvolnum>5</manvolnum> </citerefentry> 和 <citerefentry> "
-"<refentrytitle>pbuilder</refentrytitle> <manvolnum>8</manvolnum> </"
-"citerefentry>"
+"参见 <ulink url=\"&pbuilder;\"/>, <citerefentry> <refentrytitle>pdebuild</"
+"refentrytitle> <manvolnum>1</manvolnum> </citerefentry>, <citerefentry> "
+"<refentrytitle>pbuilderrc</refentrytitle> <manvolnum>5</manvolnum> </"
+"citerefentry>, 和 <citerefentry> <refentrytitle>pbuilder</refentrytitle> "
+"<manvolnum>8</manvolnum> </citerefentry>."
 
 #. type: Content of: <book><chapter><section><title>
 msgid "<command>git-buildpackage</command> command and similars"
-msgstr "<command>git-buildpackage</command> 和相似命令"
+msgstr "<command>git-buildpackage</command> 及其相似命令"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
 "See <ulink url=\"&debref-vcs;\">Version control systems</ulink> for more."
 msgstr ""
+"参见 <ulink url=\"&debref-vcs;\">Version control systems</ulink> 以获取更多信息。"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -7993,13 +7973,12 @@ msgstr ""
 "有多个为不同 VCS 设计的脚本软件包来协助 Debian 软件包构建。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">git-buildpackage</systemitem>: a suite to help "
 "with Debian packages in Git repositories."
 msgstr ""
 "<systemitem role=\"package\">git-buildpackage</systemitem>：帮助维护 Git 仓库"
-"中软件包的套件。"
+"中 Debian 软件包的套件。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -8007,10 +7986,9 @@ msgid ""
 "to maintain Debian packages with Subversion."
 msgstr ""
 "<systemitem role=\"package\">svn-buildpackage</systemitem>：帮助维护 "
-"Subversion 仓库中软件包的程序。"
+"Subversion 仓库中 Debian 软件包的程序。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">cvs-buildpackage</systemitem>: a set of Debian "
 "package scripts for CVS source trees."
@@ -8023,6 +8001,8 @@ msgid ""
 "<ulink url=\"&debian-alioth-wiki;\">Debian wiki Alioth</ulink> documents how "
 "to use the <ulink url=\"&debian-alioth;\">alioth.debian.org</ulink> service."
 msgstr ""
+"<ulink url=\"&debian-alioth-wiki;\">Debian wiki Alioth</ulink> 这里说明了 "
+"如何使用 <ulink url=\"&debian-alioth;\">alioth.debian.org</ulink> 服务。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -8034,14 +8014,13 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<citerefentry> <refentrytitle>git-import-dsc</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry>: import a previous Debian package to a Git "
 "repository."
 msgstr ""
-"<citerefentry> <refentrytitle>dh_installdocs</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry> 命令会安装这个文件。"
+"<citerefentry> <refentrytitle>git-import-dsc</refentrytitle> <manvolnum>1</"
+"manvolnum> </citerefentry>: 将一个早先的 Debian 软件包导入到 Git 仓库中。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
@@ -8146,12 +8125,12 @@ msgstr ""
 "<ulink url=\"&git-dpm;\">git-dpm: Debian packages in Git manager</ulink>"
 
 #. type: Content of: <book><chapter><section><para><footnote><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<ulink url=\"&topgit;\">Using TopGit to generate quilt series for Debian "
 "packaging</ulink>"
 msgstr ""
-"<ulink url=\"&git-debian-packaging;\">Using Git for Debian Packaging</ulink>"
+"<ulink url=\"&topgit;\">Using TopGit to generate quilt series for Debian "
+"packaging</ulink>"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -8167,7 +8146,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Quick rebuild"
-msgstr "快速重构建"
+msgstr "快速重建"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -8198,9 +8177,8 @@ msgid "$ fakeroot debian/rules binary\n"
 msgstr "$ fakeroot debian/rules binary\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid "Or simply do the following to see if it builds or not:"
-msgstr "或者可以仅查看它是否能通过编译："
+msgstr "或者可以通过以下方法验证它是否能通过编译："
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -8218,7 +8196,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Command hierarchy"
-msgstr ""
+msgstr "命令层级"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -8231,12 +8209,13 @@ msgid ""
 "<filename>debian/rules</filename> = maintainer script for the package "
 "building"
 msgstr ""
+"<filename>debian/rules</filename> = 软件包构建过程的专用 maintainer script "
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<command>dpkg-buildpackage</command> = core of the package building tool"
-msgstr "<command>git-buildpackage</command> 和相似命令"
+msgstr ""
+"<command>dpkg-buildpackage</command> = 软件包构建之核心工具 "
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -8248,6 +8227,7 @@ msgstr ""
 msgid ""
 "<command>pbuilder</command> = core of the Debian chroot environment tool"
 msgstr ""
+"<command>pbuilder</command> = Debian chroot 环境核心工具"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -8260,6 +8240,7 @@ msgid ""
 "<command>cowbuilder</command> = speed up the <command>pbuilder</command> "
 "execution"
 msgstr ""
+"<command>cowbuilder</command> = 加速 <command>pbuilder</command> 执行"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -8269,7 +8250,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<command>gbp</command> = manage the Debian source under the git repo"
-msgstr ""
+msgstr "<command>gbp</command> = 在 Git 仓库中管理 Debian 源码"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -8309,7 +8290,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Suspicious changes"
-msgstr ""
+msgstr "诡异可疑的改动"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -8324,9 +8305,8 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "Verifying a package's installation"
-msgstr "检验软件包安装过程"
+msgstr "校验软件包安装过程"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -8370,9 +8350,8 @@ msgstr ""
 "<literal>Conflicts</literal> 条目。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "Verifying a package's maintainer scripts"
-msgstr "检验 <emphasis>maintainer scripts</emphasis>"
+msgstr "检验软件包的 maintainer scripts"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -8415,9 +8394,8 @@ msgstr ""
 "$ sudo dpkg -i gentoo_<replaceable>version</replaceable>-<replaceable>revision</replaceable>_<replaceable>i386</replaceable>.deb\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid "This should be done with sequences such as the following:"
-msgstr "整个测试过程应按照以下序列操作："
+msgstr "整个测试过程应按照以下操作序列完成："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "install the previous version (if needed)."
@@ -8466,16 +8444,14 @@ msgstr ""
 "Debian 发布里的版本升级，所以也要测试从那个版本升级到当前的版本。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Although downgrading is not officially supported, supporting it is a "
 "friendly gesture."
-msgstr "尽管降级没有被正式支持，支持它也总是不错的。"
+msgstr "尽管降级没有被正式支持，支持它也总是友好的。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "Using <systemitem role=\"package\">lintian</systemitem>"
-msgstr "<systemitem role=\"package\">lintian</systemitem> 软件包"
+msgstr "使用 <systemitem role=\"package\">lintian</systemitem>"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -8581,7 +8557,6 @@ msgstr ""
 "<command>lintian</command> 合并到一个命令里。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "The <command>debc</command> command"
 msgstr "<command>debc</command> 命令"
 
@@ -8601,7 +8576,6 @@ msgid "$ debc <replaceable>package</replaceable>.changes\n"
 msgstr "$ debc <replaceable>package</replaceable>.changes\n"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "The <command>debdiff</command> command"
 msgstr "<command>debdiff</command> 命令"
 
@@ -8645,7 +8619,6 @@ msgstr ""
 "有文件被意外替换或删除，或在更新二进制包时检查是否有其他没有被提及的变更。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "The <command>interdiff</command> command"
 msgstr "<command>interdiff</command> 命令"
 
@@ -8676,7 +8649,6 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "The <command>mc</command> command"
 msgstr "<command>mc</command> 命令"
 
@@ -9257,6 +9229,8 @@ msgid ""
 "<ulink url=\"&cdbs-tutorial;\">The Common Debian Build System (CDBS), FOSDEM "
 "2009</ulink>"
 msgstr ""
+"<ulink url=\"&cdbs-tutorial;\">The Common Debian Build System (CDBS), FOSDEM "
+"2009</ulink>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
@@ -9350,7 +9324,7 @@ msgstr "当然你还需要按照 <xref linkend=\"newupstream\"/> 完成其他的
 
 #. type: Content of: <book><chapter><section><title>
 msgid "UTF-8 conversion"
-msgstr ""
+msgstr "UTF-8 转换"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -9384,12 +9358,15 @@ msgstr ""
 "装。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "LC_ALL=en_US.UTF-8 w3m -o display_charset=UTF-8 \\\n"
 "        -cols 70 -dump -no-graph -T text/html \\\n"
 "        &lt; <replaceable>foo_in.html</replaceable> &gt; <replaceable>foo_out.txt</replaceable>\n"
-msgstr "$ debdiff <replaceable>old-package</replaceable>.dsc <replaceable>new-package</replaceable>.dsc\n"
+msgstr ""
+"LC_ALL=en_US.UTF-8 w3m -o display_charset=UTF-8 \\\n"
+"        -cols 70 -dump -no-graph -T text/html \\\n"
+"        &lt; <replaceable>foo_in.html</replaceable> &gt; <replaceable>foo_out.txt</replaceable>\n"
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Reminders for updating packages"
@@ -9472,7 +9449,7 @@ msgstr "上传到 Debian 仓库"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid "See <xref linkend=\"socialdynamics\"/>."
-msgstr ""
+msgstr "参见 <xref linkend=\"socialdynamics\"/>。"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
 msgid ""
@@ -9599,7 +9576,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "-----BEGIN PGP SIGNED MESSAGE-----\n"
 "Hash: SHA1\n"
@@ -9614,17 +9591,15 @@ msgid ""
 "-----END PGP SIGNATURE-----\n"
 msgstr ""
 "-----BEGIN PGP SIGNED MESSAGE-----\n"
+"Hash: SHA1\n"
 "Uploader: Foo Bar &lt;Foo.Bar@example.org&gt;\n"
 "Commands: \n"
 " rm hello_1.0-1_i386.deb\n"
 " mv hello_1.0-1.dsx hello_1.0-1.dsc\n"
 "-----BEGIN PGP SIGNATURE-----\n"
-"Version: 2.6.3ia\n"
-"iQCVAwUBNFiQSXVhJ0HiWnvJAQG58AP+IDJVeSWmDvzMUphScg1EK0mvChgnuD7h\n"
-"BRiVQubXkB2DphLJW5UUSRnjw1iuFcYwH/lFpNpl7XP95LkLX3iFza9qItw4k2/q\n"
-"tvylZkmIA9jxCyv/YB6zZCbHmbvUnL473eLRoxlnYZd3JFaCZMJ86B0Ph4GFNPAf\n"
-"Z4jxNrgh7Bc=\n"
-"=pH94\n"
+"Version: GnuPG v1.4.10 (GNU/Linux)\n"
+"\n"
+"[...]\n"
 "-----END PGP SIGNATURE-----\n"
 
 #. type: Content of: <book><chapter><section><title>
@@ -9652,9 +9627,9 @@ msgid "For the <command>dpkg-buildpackage</command> command:"
 msgstr "<command>debc</command> 命令"
 
 #. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "$ dpkg-buildpackage -sa\n"
-msgstr "$ dpkg-buildpackage -B\n"
+msgstr "$ dpkg-buildpackage -sa\n"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -9719,9 +9694,8 @@ msgid "$ pdebuild --debbuildopts \"-v<replaceable>1.2</replaceable>\"\n"
 msgstr "$ sudo pbuilder --build --debbuildopts -sa <replaceable>foo</replaceable>.dsc\n"
 
 #. type: Content of: <book><appendix><title>
-#, fuzzy
 msgid "Advanced packaging"
-msgstr "更新打包风格"
+msgstr "高级打包"
 
 #. type: Content of: <book><appendix><para>
 msgid ""
@@ -9739,9 +9713,8 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><appendix><section><title>
-#, fuzzy
 msgid "Shared libraries"
-msgstr "不一样的库名称"
+msgstr "共享库"
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -10172,6 +10145,10 @@ msgid ""
 "$ sed -e 's/1\\.3-1/1\\.3/' libfoo1-tmp/DEBIAN/symbols \\\n"
 "        >libfoo-1.3/debian/libfoo1.symbols\n"
 msgstr ""
+"$ cd ..\n"
+"$ dpkg-deb -R  libfoo1_1.3_amd64.deb libfoo1-tmp\n"
+"$ sed -e 's/1\\.3-1/1\\.3/' libfoo1-tmp/DEBIAN/symbols \\\n"
+"        >libfoo-1.3/debian/libfoo1.symbols\n"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 #, fuzzy
