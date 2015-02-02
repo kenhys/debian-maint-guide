@@ -6116,7 +6116,6 @@ msgstr ""
 "<filename>files</filename> 文件所配置的。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "If there are files that need to be installed into your package but your "
 "standard <literal>make install</literal> won't do it, put the filenames and "
@@ -6131,11 +6130,10 @@ msgstr ""
 "把文件名和目标路径写入 <filename>install</filename> 文件，它们将被 "
 "<citerefentry> <refentrytitle>dh_install</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry> 安装。<placeholder type=\"footnote\" id=\"0\"/> 你"
-"需要首先检查要安装的文件是否有更有针对性的特定工具会对其进行安装，例如示例、"
-"文档应写在 <filename>docs</filename> 文件中安装。"
+"需要首先检查要安装的文件是否有更有针对性的特定工具会对其进行安装。例如，"
+"文档应写在 <filename>docs</filename> 文件中安装，而不是这一个。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "This <filename>install</filename> file has one line per file installed, with "
 "the name of the file (relative to the top build directory) then a space then "
@@ -6145,8 +6143,9 @@ msgid ""
 "filename> file might look like:"
 msgstr ""
 "这个 <filename>install</filename> 文件每行安装一份文件，格式上先是相对于编译"
-"目录的源目录，然后是一个空格，接下来是相对于安装目录的目标目录。假设某个二进"
-"制文件没有被默认安装，则应在 <filename>install</filename> 文件添加如下内容："
+"目录的文件路径，然后是一个空格，接下来是相对于安装目录的目标目录。例如，假设某个二进"
+"制文件 <filename>src/<replaceable>bar</replaceable></filename>没有被默认安装，"
+"则应让 <filename>install</filename> 呈现成这样："
 
 #. type: Content of: <book><chapter><section><screen>
 #, no-wrap
@@ -6154,13 +6153,12 @@ msgid "src/<replaceable>bar</replaceable> usr/bin\n"
 msgstr "src/<replaceable>bar</replaceable> usr/bin\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "This means when this package is installed, there will be an executable "
 "command <filename>/usr/bin/<replaceable>bar</replaceable></filename>."
 msgstr ""
-"这意味着安装这个软件包时将有一个二进制文件 <filename>/usr/bin/mybin</"
-"filename>"
+"这意味着安装这个软件包时，将有一个二进制文件 "
+"<filename>/usr/bin/<replaceable>bar</replaceable></filename>."
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -6172,13 +6170,12 @@ msgid ""
 "<filename><replaceable>package-1</replaceable>.install</filename>, "
 "<filename><replaceable>package-2</replaceable>.install</filename>, etc."
 msgstr ""
-"当然 <filename>install</filename> 文件也可以只包含相对的源路径而不带目标位"
+"当然，在相对路径保持不变的情况下 <filename>install</filename> 文件也可以只包含相对的源路径而不带目标位"
 "置。这样的格式通常用于使用 <filename><replaceable>package-1</replaceable>."
 "install</filename>、<filename><replaceable>package-2</replaceable>.install</"
 "filename> 等将大软件包分割为多个二进制包的情况。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "The <command>dh_install</command> command will fall back to looking in "
 "<filename>debian/tmp</filename> for files, if it doesn't find them in the "
@@ -6194,7 +6191,6 @@ msgid "<filename><replaceable>package</replaceable>.info</filename>"
 msgstr "<filename><replaceable>package</replaceable>.info</filename>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "If your package has info pages, you should install them using <citerefentry> "
 "<refentrytitle>dh_installinfo</refentrytitle> <manvolnum>1</manvolnum> </"
@@ -6211,7 +6207,6 @@ msgid "<filename><replaceable>package</replaceable>.links</filename>"
 msgstr "<filename><replaceable>package</replaceable>.links</filename>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "If you need to create additional symlinks in package build directories as "
 "package maintainer, you should install them using <citerefentry> "
@@ -6219,9 +6214,9 @@ msgid ""
 "citerefentry> by listing their full paths of source and destination files in "
 "a <filename><replaceable>package</replaceable>.links</filename> file."
 msgstr ""
-"如果你的软件包有 info 信息页，应该使用 <citerefentry> "
-"<refentrytitle>dh_installinfo</refentrytitle> <manvolnum>1</manvolnum> </"
-"citerefentry> 安装，要安装的文件列于 <filename><replaceable>package</"
+"如果你作为包维护者需要在包中创建附加的符号链接，你应该使用 <citerefentry> "
+"<refentrytitle>dh_link</refentrytitle> <manvolnum>1</manvolnum> </"
+"citerefentry> 来安装，要安装的文件完整路径列于 <filename><replaceable>package</"
 "replaceable>.info</filename> 文件中。"
 
 #. type: Content of: <book><chapter><section><title>
@@ -6233,7 +6228,6 @@ msgstr ""
 "filename>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "If <systemitem role=\"package\">lintian</systemitem> reports an erroneous "
 "diagnostic for a case where Debian policy allows exceptions to some rule, "
@@ -6242,14 +6236,13 @@ msgid ""
 "Please read Lintian User's Manual (<filename>&lintian-doc;</filename>) and "
 "refrain from abusing this."
 msgstr ""
-"如果 <systemitem role=\"package\">lintian</systemitem> 报告了一个 Debian "
-"Policy 允许的例外的错误诊断，你可以使用 <filename><replaceable>package</"
+"如果 <systemitem role=\"package\">lintian</systemitem> 根据 Debian "
+"Policy 的某些规则允许例外从而报告了错误诊断，你可以使用 <filename><replaceable>package</"
 "replaceable>.lintian-overrides</filename> 或 <filename>source/lintian-"
-"overrides</filename> 使其不再警告。请阅读 <filename>/usr/share/doc/lintian/"
-"lintian.html/index.html</filename> 并应严格避免滥用。"
+"overrides</filename> 使其不再警告。请认真阅读 Lintian 用户手册页(<filename>&lintian-doc;</filename>) "
+"并避免滥用。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "<filename><replaceable>package</replaceable>.lintian-overrides</filename> is "
 "for the binary package named <systemitem role=\"package"
@@ -6259,9 +6252,9 @@ msgid ""
 msgstr ""
 "<filename><replaceable>package</replaceable>.lintian-overrides</filename> 是"
 "对于名为 <systemitem role=\"package\"><replaceable>package</replaceable></"
-"systemitem> 有效的配置，会由 <command>dh_lintian</command> 命令安装到"
+"systemitem> 的二进制包的有效配置，会由 <command>dh_lintian</command> 命令安装到"
 "<filename>usr/share/lintian/overrides/<replaceable>package</replaceable></"
-"filename>"
+"filename>。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -6275,7 +6268,6 @@ msgid "<filename>manpage.*</filename>"
 msgstr "<filename>manpage.*</filename>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Your program(s) should have a manual page.  If they don't, you should create "
 "them.  The <command>dh_make</command> command creates some template files "
@@ -6283,8 +6275,9 @@ msgid ""
 "missing its manual page.  Please make sure to remove unused templates."
 msgstr ""
 "你的程序应该有 man 手册页，如果它们没有自带则需要由你来创建。"
-"<command>dh_make</command> 命令创建了几个 man 手册页的模板。它们需要被妥善地"
-"编辑，并且要删除未使用的模板。"
+"<command>dh_make</command> 命令创建了几个 man 手册页的模板。"
+"为每一个缺手册的命令拷贝一份模板，并妥善地编写，"
+"并且要删除未使用的模板。"
 
 #. type: Content of: <book><chapter><section><section><title>
 msgid "<filename>manpage.1.ex</filename>"
@@ -6314,6 +6307,12 @@ msgid ""
 "command.  Be sure to verify that this section is indeed the correct one.  "
 "Here's a short list of manual page sections:"
 msgstr ""
+"最终的 man 手册页文件的名称，应当为其对应的程序名称。 "
+"所以我们将 <literal>manpage</literal> 重命名为 "
+"<literal>gentoo</literal>。 同时，它的文件名当然要以 <literal>.1</"
+"literal> 作为第一个后缀，这表示本手册页是为一个用户命令而攒写的。 "
+"再者，请校验本 man 手册处在正确的节(section)。"
+"这个简短的列表列举了 man 手册页的章节："
 
 #. type: Content of: <book><chapter><section><section><informaltable><tgroup><thead><row><entry>
 msgid "Section"
@@ -6436,7 +6435,6 @@ msgid "Non-standard calls and internals"
 msgstr "Non-standard calls and internals(非标准调用及内部构建)"
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
 msgid ""
 "So <systemitem role=\"package\">gentoo</systemitem>'s man page should be "
 "called <filename>gentoo.1</filename>.  If there was no <filename>gentoo.1</"
@@ -6451,26 +6449,25 @@ msgstr ""
 "<filename>gentoo.1</filename> 并按照示例和上游文档编辑它。"
 
 #. type: Content of: <book><chapter><section><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "Note that <command>help2man</command>'s placeholder man page will claim that "
 "more detailed documentation is available in the info system. If the command "
 "is missing an <command>info</command> page, you should manually edit the man "
 "page created by the <command>help2man</command> command."
 msgstr ""
-"如果命令没有 <command>info</command> 信息页但在 <filename>/usr/share/"
-"<replaceable>package</replaceable></filename> 目录中有其他文档，你应该手工编"
-"辑 <command>help2man</command> 命令所创建的 man 手册页。"
+"注意， <command>help2man</command> 的占位符性质 man 手册页会声称 "
+"在 info 系统中有着更为详尽的细节。如果命令 "
+"缺少 <command>info</command> 页，那你应该手工编辑由 "
+"<command>help2man</command> 命令创建的 man 手册页。"
 
 #. type: Content of: <book><chapter><section><section><para>
-#, fuzzy
 msgid ""
 "You can use the <command>help2man</command> command to generate a man page "
 "out of the <literal>--help</literal> and <literal>--version</literal> output "
 "of each program, too.  <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-"你也可以使用 <command>help2man</command> 命令来通过程序的 <literal>--help</"
-"literal> 和 <literal>--version</literal> 参数的输出创建 man 手册页。"
+"你也可以使用 <command>help2man</command> 命令来借助每个程序的 <literal>--help</"
+"literal> 和 <literal>--version</literal> 参数的输出来生成 man 手册页。"
 "<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><section><title>
@@ -6582,7 +6579,6 @@ msgid "<filename><replaceable>package</replaceable>.manpages</filename>"
 msgstr "<filename><replaceable>package</replaceable>.manpages</filename>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "If your package has manual pages, you should install them using "
 "<citerefentry> <refentrytitle>dh_installman</refentrytitle> <manvolnum>1</"
@@ -6592,10 +6588,9 @@ msgstr ""
 "如果你的软件包有 man 手册页，你应该将它们列在 "
 "<filename><replaceable>package</replaceable>.manpages</filename> 文件中以便 "
 "<citerefentry> <refentrytitle>dh_installman</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry> 安装。"
+"manvolnum> </citerefentry> 进行安装。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "To install <filename>docs/gentoo.1</filename> as a manpage for the "
 "<systemitem role=\"package\">gentoo</systemitem> package, create a "
@@ -6626,7 +6621,6 @@ msgstr ""
 "个系统中所有已安装软件的一系列菜单将会被自动创建。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Here's the default <filename>menu.ex</filename> file that <command>dh_make</"
 "command> created:"
@@ -6652,7 +6646,7 @@ msgid ""
 "of the listed alternatives, e.g.  <literal>text</literal> or <literal>X11</"
 "literal>."
 msgstr ""
-"冒号后的第一个域是 <literal>needs</literal>，它指定了程序需要何种界面。修改此"
+"冒号后的第一个字段是 <literal>needs</literal>，它指定了程序需要何种界面。修改此"
 "处为列出的选项之一，例如 <literal>text</literal> 或 <literal>X11</literal>。"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
@@ -6661,16 +6655,17 @@ msgid ""
 "Debian Menu sub-policy, 2.1 \"Preferred menu structure\"</ulink>.  There was "
 "a major reorganization of menu structure for <literal>squeeze</literal>."
 msgstr ""
+"当前的章节(Section)列表可以在 <ulink url=\"&menu-structure;\">The "
+"Debian Menu sub-policy, 2.1 \"Preferred menu structure\"</ulink> 中找到。 "
+"<literal>squeeze</literal> 的菜单结构则被一定幅度重新组织过。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "The next is the <literal>section</literal> that the menu and submenu entry "
 "should appear in.  <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-"接下来是 <literal>section</literal>，包含菜单和子菜单项。当前可用的章节列表"
-"<placeholder type=\"footnote\" id=\"0\"/>位于：<filename>/usr/share/doc/"
-"debian-policy/menu-policy.html/ch2.html#s2.1</filename>"
+"接下来是 <literal>section</literal>，它包含菜单和子菜单项。"
+" <placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
