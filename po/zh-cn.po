@@ -5808,7 +5808,6 @@ msgstr ""
 "manvolnum> </citerefentry>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "No explicit <filename>cron.*</filename> file is needed to set up log "
 "rotation; for that, see <citerefentry><refentrytitle>dh_installlogrotate</"
@@ -5816,54 +5815,49 @@ msgid ""
 "<citerefentry><refentrytitle>logrotate</refentrytitle><manvolnum>8</"
 "manvolnum></citerefentry>."
 msgstr ""
-"注意这里的操作不包含日志旋转，如果需要日志旋转，参看 <citerefentry> "
-"<refentrytitle>dh_installlogrotate</refentrytitle> <manvolnum>1</manvolnum> "
-"</citerefentry> 和 <citerefentry> <refentrytitle>logrotate</refentrytitle> "
-"<manvolnum>8</manvolnum> </citerefentry>"
+"有必要显式地用 <filename>cron.*</filename> 文件来设置日志轮转； "
+"关于这个问题，请参见 <citerefentry><refentrytitle>dh_installlogrotate</"
+"refentrytitle> <manvolnum>1</manvolnum></citerefentry> 和 "
+"<citerefentry><refentrytitle>logrotate</refentrytitle><manvolnum>8</"
+"manvolnum></citerefentry>."
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename>dirs</filename>"
-msgstr "<filename>dirs</filename> 文件"
+msgstr "<filename>dirs</filename>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "This file specifies any directories which we need but which are not created "
 "by the normal installation procedure (<literal>make install DESTDIR=...</"
 "literal> invoked by <literal>dh_auto_install</literal>).  This generally "
 "means there is a problem with the <filename>Makefile</filename>."
 msgstr ""
-"这个文件指定了我们需要，但正常安装过程(<literal>dh_auto_install</literal> 触"
-"发 <literal>make install DESTDIR=...</literal>)里没有被安装的目录。通常这是由"
+"这个文件指定了我们需要，但在正常安装过程(<literal>dh_auto_install</literal> 触"
+"发的 <literal>make install DESTDIR=...</literal>)里没有被安装的目录。通常这是由"
 "于 <filename>Makefile</filename> 中存在问题。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Files listed in an <filename>install</filename> file don't need their "
 "directories created first.  See <xref linkend=\"install\"/>."
 msgstr ""
-"<filename>install</filename> 文件中列出的文件不需要提前创建目录，参看 <xref "
-"linkend=\"install\"/>"
+"<filename>install</filename> 文件中列出的文件不需要为其提前创建目录，参看 <xref "
+"linkend=\"install\"/>。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "It is best to try to run the installation first and only use this if you run "
 "into trouble.  There is no preceding slash on the directory names listed in "
 "the <filename>dirs</filename> file."
 msgstr ""
-"最好是先尝试安装，如果遇到了相关的问题再使用这个文件。目录名中不应有前导的 / "
-"符号。"
+"最好是先尝试安装，如果遇到了问题再使用这个文件。在 <filename>dirs</filename>"
+"中列出的目录名中不应有前导的 / (斜杠)符号。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename><replaceable>package</replaceable>.doc-base</filename>"
-msgstr "<filename><replaceable>package</replaceable>.doc-base</filename> 文件"
+msgstr "<filename><replaceable>package</replaceable>.doc-base</filename>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "If your package has documentation other than manual and info pages, you "
 "should use the <systemitem role=\"package\">doc-base</systemitem> file to "
@@ -5891,7 +5885,6 @@ msgstr ""
 "<replaceable>packagename</replaceable>/</filename>。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "This is what <systemitem role=\"package\">gentoo</systemitem>'s doc-base "
 "file <filename>gentoo.doc-base</filename> looks like:"
@@ -5921,7 +5914,6 @@ msgstr ""
 "Files: /usr/share/doc/gentoo/html/*.html\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "For information on the file format, see <citerefentry> "
 "<refentrytitle>install-docs</refentrytitle> <manvolnum>8</manvolnum> </"
@@ -5930,9 +5922,10 @@ msgid ""
 "provided by the <systemitem role=\"package\">doc-base</systemitem> package."
 msgstr ""
 "关于文件格式的更多信息，参看 <citerefentry> <refentrytitle>install-docs</"
-"refentrytitle> <manvolnum>8</manvolnum> </citerefentry> 和 <filename>/usr/"
-"share/doc/doc-base/doc-base.html/</filename> 中的 <systemitem role=\"package"
-"\">doc-base</systemitem> 手册。"
+"refentrytitle> <manvolnum>8</manvolnum> </citerefentry> 以及 Debian "
+"<systemitem role=\"package\">doc-base</systemitem> 手册页，在 "
+"<filename>&doc-base;</filename> 有一份本地拷贝，这是由 "
+"<systemitem role=\"package\">doc-base</systemitem> 软件包提供的。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -5941,9 +5934,8 @@ msgid ""
 msgstr "关于安装附加文档的更多信息，查看 <xref linkend=\"destdir\"/>。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename>docs</filename>"
-msgstr "<filename>docs</filename> 文件"
+msgstr "<filename>docs</filename>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -5951,8 +5943,8 @@ msgid ""
 "<citerefentry> <refentrytitle>dh_installdocs</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry> install into the temporary directory for us."
 msgstr ""
-"这个文件制定了我们使用 <citerefentry> <refentrytitle>dh_installdocs</"
-"refentrytitle> <manvolnum>1</manvolnum> </citerefentry> 安装到临时目录的文件"
+"这个文件指定了我们使用 <citerefentry> <refentrytitle>dh_installdocs</"
+"refentrytitle> <manvolnum>1</manvolnum> </citerefentry> 安装到临时目录的文档文件"
 "名。"
 
 #. type: Content of: <book><chapter><section><para>
@@ -5965,12 +5957,11 @@ msgstr ""
 "<filename>README*</filename>、<filename>TODO</filename> 等的文件。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "For <systemitem role=\"package\">gentoo</systemitem>, some other files are "
 "also included:"
 msgstr ""
-"对于 <systemitem role=\"package\">gentoo</systemitem>，我还加入了一些其他文"
+"对于 <systemitem role=\"package\">gentoo</systemitem>，这里还加入了一些其他文"
 "件："
 
 #. type: Content of: <book><chapter><section><screen>
@@ -5993,9 +5984,8 @@ msgstr ""
 "TODO\n"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
 msgid "<filename>emacsen-*</filename>"
-msgstr "<filename>emacsen-*</filename> 文件"
+msgstr "<filename>emacsen-*</filename>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
