@@ -8336,7 +8336,6 @@ msgid "$ sudo debi gentoo_0.9.12-1_i386.changes\n"
 msgstr "$ sudo debi gentoo_0.9.12-1_i386.changes\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "To prevent installation problem on different systems, you must make sure "
 "that there are no filenames conflicting with other existing packages, using "
@@ -8352,9 +8351,9 @@ msgid ""
 "filename> file."
 msgstr ""
 "你必须使用从 Debian 仓库下载的 <filename>Contents-<replaceable>i386</"
-"replaceable></filename> 文件校验是否在不同系统上存在文件覆盖的问题。"
-"<command>apt-file</command> 命令正适合完成这个任务。如果存在问题，请通过与受"
-"影响的软件包合作使用 alternatives 机制来避免实际问题(参看 <citerefentry> "
+"replaceable></filename> 文件校验是否在与不同包存在文件冲突，以阻止在不同的系统上发生安装故障。"
+"<command>apt-file</command> 命令正适合完成这个任务。如果存在碰撞，请通过"
+"重命名，将公共文件分离到另一个受其他包依赖的包中，与受影响的软件包的维护者合作使用 alternatives 机制来避免实际问题(参看 <citerefentry> "
 "<refentrytitle>update-alternatives</refentrytitle> <manvolnum>1</manvolnum> "
 "</citerefentry>)或在 <filename>debian/control</filename> 文件中设置 "
 "<literal>Conflicts</literal> 条目。"
@@ -8797,7 +8796,6 @@ msgstr ""
 "你喜欢的编辑器插入信息。<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Include a short description of the bug and the solution in the changelog "
 "entry, followed by <literal>Closes: #654321</literal>.  That way, the bug "
@@ -8806,7 +8804,7 @@ msgid ""
 "archive."
 msgstr ""
 "在 changlog 条目中简要描述 Bug 和相应的解决办法，并在后面添加 "
-"<literal>Closes: #54321</literal>。这样 Bug 报告会在你的软件包被 Debian 仓库"
+"<literal>Closes: #654321</literal>。这样 Bug 报告会在你的软件包被 Debian 仓库"
 "接受的同时被仓库管理软件 <emphasis>自动关闭</emphasis>。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
@@ -8934,7 +8932,6 @@ msgstr ""
 "replaceable>.diff.gz|patch -p1</literal> 来完成。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "If a package <systemitem role=\"package\"><replaceable>foo</replaceable></"
 "systemitem> is properly packaged in the newer <literal>3.0 (native)</"
@@ -8953,7 +8950,7 @@ msgstr ""
 "目录里运行 <literal>tar xvzf /<replaceable>path</replaceable>/"
 "<replaceable>to</replaceable>/<replaceable>foo</"
 "replaceable>_<replaceable>oldversion</replaceable>.debian.tar.gz</literal> 完"
-"成。<placeholder type=\"footnote\" id=\"0\"/>当然，你需要做几个很显然的杂事。"
+"成。<placeholder type=\"footnote\" id=\"0\"/>当然，你需要做几个很显然的杂事："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -9191,7 +9188,6 @@ msgstr ""
 "<filename>debian/control</filename> 文件。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "If you want to update the <filename>rules</filename> file created with the "
 "<filename>Makefile</filename> inclusion mechanism of the Common Debian Build "
@@ -9200,10 +9196,9 @@ msgid ""
 "literal> configuration variables."
 msgstr ""
 "如果你希望将使用 <systemitem role=\"package\">cdbs</systemitem> 的 "
-"<filename>makefile</filename> 语法创建的 <filename>rules</filename> 文件更新"
-"为 <command>dh</command> 语法，参看 <filename>/usr/share/doc/cdbs/cdbs-doc."
-"html</filename> 并理解各 <literal>deb_*</literal> 配置变量。<placeholder "
-"type=\"footnote\" id=\"0\"/>"
+"<filename>Makefile</filename> 包含机制创建的 <filename>rules</filename> 文件更新"
+"为 <command>dh</command> 语法，参看下文"
+"并理解各 <literal>DEB_*</literal> 配置变量。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "local copy of <filename>&cdbs-doc;</filename>"
@@ -9241,7 +9236,6 @@ msgstr ""
 "分割为多个增量补丁。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "If you have a <literal>1.0</literal> source package with the "
 "<filename><replaceable>foo</replaceable>.diff.gz</filename> file, you can "
