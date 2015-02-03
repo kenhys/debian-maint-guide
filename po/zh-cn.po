@@ -9750,34 +9750,39 @@ msgstr ""
 "priorities;\">Debian Policy Manual, 2.5 'Priorities'</ulink>"
 
 #. type: Content of: <book><appendix><section><para>
-#, fuzzy
 msgid "Here are some oversimplified hints for you to get started:"
-msgstr "以下是对各 target 的简单解释："
+msgstr "以下是帮助你开始的极简解释："
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
 "Shared libraries are <ulink url=\"&elf;\">ELF</ulink> object files "
 "containing compiled code."
 msgstr ""
+"共享库均为 <ulink url=\"&elf;\">ELF</ulink> 对象文件，其包含编译好的机器码。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Shared libraries are distributed as <filename>*.so</filename> files. "
 "(Neither <filename>*.a</filename> files nor <filename>*.la</filename> files)"
-msgstr "<filename>.tar.gz</filename> 扩展名前有 <filename>.orig</filename>。"
+msgstr ""
+"共享库以 <filename>*.so</filename> 文件的形式发放。"
+"(既非 <filename>*.a</filename> 文件也非 <filename>*.la</filename> 文件)"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
 "Shared libraries are mainly used to share common codes among multiple "
 "executables with the <command>ld</command> mechanism."
 msgstr ""
+"共享库主要用于在不同的二进制可执行程序之间共享代码，"
+"这背后使用了 <command>ld</command> （译注：链接）机制。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
 "Shared libraries are sometimes used to provide multiple plugins to an "
 "executable with the <command>dlopen</command> mechanism."
 msgstr ""
+"共享库有时会为一个可执行程序提供多个插件，"
+"使用 <command>dlopen</command> 机制。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -9787,13 +9792,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
-#, fuzzy
 msgid ""
 "Alternatively: <literal>readelf -d lib<replaceable>foo</replaceable>.so."
 "<replaceable>1</replaceable> | grep SONAME</literal>"
 msgstr ""
-"使用 <literal>dch -v <replaceable>newversion</replaceable>-<replaceable>1</"
-"replaceable></literal> 更新 Debian <filename>changelog</filename> 文件。"
+"或者这样： <literal>readelf -d lib<replaceable>foo</replaceable>.so."
+"<replaceable>1</replaceable> | grep SONAME</literal>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -9803,21 +9807,27 @@ msgid ""
 "<replaceable>1</replaceable> | grep SONAME</literal> <placeholder type="
 "\"footnote\" id=\"0\"/>"
 msgstr ""
+"共享库 "
+"<filename>lib<replaceable>foo</replaceable>.so</filename>.<replaceable>1</"
+"replaceable> 中的 <ulink url=\"&soname;\">SONAME</ulink> : "
+"<literal>objdump -p lib<replaceable>foo</replaceable>.so."
+"<replaceable>1</replaceable> | grep SONAME</literal> <placeholder type="
+"\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
 "The SONAME of a shared library usually matches the library file name (but "
 "not always)."
 msgstr ""
+"共享库的 SONAME 常常与库文件自身文件名一致(不过有特例)。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
-#, fuzzy
 msgid ""
 "Alternatively: <literal>readelf -d lib<replaceable>foo</replaceable>.so."
 "<replaceable>1</replaceable> | grep NEEDED</literal>"
 msgstr ""
-"使用 <literal>dch -v <replaceable>newversion</replaceable>-<replaceable>1</"
-"replaceable></literal> 更新 Debian <filename>changelog</filename> 文件。"
+"或者这样： <literal>readelf -d lib<replaceable>foo</replaceable>.so."
+"<replaceable>1</replaceable> | grep NEEDED</literal>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -9828,13 +9838,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
-#, fuzzy
 msgid ""
 "See <ulink url=\"&policy-runtime;\">Debian Policy Manual, 8.1 \"Run-time "
 "shared libraries\"</ulink>."
 msgstr ""
-"第 3 行描述了用户安装此软件包的优先级。具体说明参看 <ulink url=\"&policy-"
-"priorities;\">Debian Policy Manual, 2.5 'Priorities'</ulink>"
+"参见 <ulink url=\"&policy-runtime;\">Debian Policy Manual, 8.1 \"Run-time "
+"shared libraries\"</ulink>."
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 #, fuzzy
@@ -9852,13 +9861,12 @@ msgstr ""
 "replaceable>.diff.gz|patch -p1</literal> 来完成。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
-#, fuzzy
 msgid ""
 "See <ulink url=\"&policy-ldconfig;\">Debian Policy Manual, 8.1.1 \"ldconfig"
 "\"</ulink>."
 msgstr ""
-"第 3 行描述了用户安装此软件包的优先级。具体说明参看 <ulink url=\"&policy-"
-"priorities;\">Debian Policy Manual, 2.5 'Priorities'</ulink>"
+"参见 <ulink url=\"&policy-ldconfig;\">Debian Policy Manual, 8.1.1 \"ldconfig"
+"\"</ulink>."
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -9883,6 +9891,9 @@ msgid ""
 "libraries\"</ulink> and <ulink url=\"&policy-dev;\">Debian Policy Manual, "
 "8.4 \"Development files\"</ulink>."
 msgstr ""
+"参见 <ulink url=\"&policy-static;\">Debian Policy Manual, 8.3 \"Static "
+"libraries\"</ulink> and <ulink url=\"&policy-dev;\">Debian Policy Manual, "
+"8.4 \"Development files\"</ulink>."
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 #, fuzzy
@@ -9903,6 +9914,7 @@ msgstr ""
 msgid ""
 "See <ulink url=\"&removela;\">Debian wiki ReleaseGoals/LAFileRemoval</ulink>."
 msgstr ""
+"参见 <ulink url=\"&removela;\">Debian wiki ReleaseGoals/LAFileRemoval</ulink>."
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -9911,16 +9923,16 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
-#, fuzzy
 msgid "See <ulink url=\"&rpathissues;\">Debian wiki RpathIssue</ulink>."
-msgstr "<ulink url=\"&debian-packages-git;\">debian packages in git</ulink>"
+msgstr "参见 <ulink url=\"&rpathissues;\">Debian wiki RpathIssue</ulink>."
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Debian package should not use RPATH in general.<placeholder type=\"footnote"
 "\" id=\"0\"/>"
-msgstr "如果你需要更详细地了解术语，请阅读其他手册。"
+msgstr ""
+"一般来说，Debian 软件包不应当使用 RPATH 。<placeholder type=\"footnote"
+"\" id=\"0\"/>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -9930,17 +9942,19 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><appendix><section><title>
-#, fuzzy
 msgid ""
 "Managing <filename>debian/<replaceable>package</replaceable>.symbols</"
 "filename>"
-msgstr "<filename><replaceable>package</replaceable>.examples</filename> 文件"
+msgstr ""
+"管理 <filename>debian/<replaceable>package</replaceable>.symbols</"
+"filename>"
 
 #. type: Content of: <book><appendix><section><para><footnote><para>
 msgid ""
 "Backward-incompatible ABI changes normally require you to update the SONAME "
 "of the library and the shared library package name to new ones."
 msgstr ""
+"向后不兼容的 ABI 变更常常需要你更新共享库的 SONAME，并把共享库名称换成新的。"
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -9958,6 +9972,9 @@ msgid ""
 "difficult, follow <ulink url=\"&policy-library-shlibs;\">Debian Policy "
 "Manual, 8.6.4 \"The shlibs system\"</ulink>, instead."
 msgstr ""
+"对于 C++ 库和其他追踪单个符号过于困难的情况下，请遵循 "
+" <ulink url=\"&policy-library-shlibs;\">Debian Policy "
+"Manual, 8.6.4 \"The shlibs system\"</ulink>。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 #, fuzzy
@@ -10020,17 +10037,18 @@ msgid ""
 "Prepare the skeleton debianized source tree using the upstream "
 "<filename>libfoo-1.3.tar.gz</filename> file."
 msgstr ""
+"使用上游提供的 "
+"<filename>libfoo-1.3.tar.gz</filename> 文件来准备 Debian化 的源码骨架。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "If this is the first packaging of the <systemitem role=\"package\">libfoo1</"
 "systemitem> package, create the <filename>debian/libfoo1.symbols</filename> "
 "file with empty content."
 msgstr ""
-"要将 <filename>doc/gentoo.1</filename> 安装为 <systemitem role=\"package"
-"\">gentoo</systemitem> 的 man 手册页，创建一个 <filename>gentoo.manpages</"
-"filename>，内容如下："
+"如果这是库软件包 <systemitem role=\"package\">libfoo1</"
+"systemitem> 的第一次打包，那么以空内容创建 <filename>debian/libfoo1.symbols</filename> "
+"文件。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -10173,13 +10191,12 @@ msgstr ""
 "...\n"
 
 #. type: Content of: <book><appendix><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "See <ulink url=\"&policy-library-abi;\">Debian Policy Manual, 8.6.2 \"Shared "
 "library ABI changes\"</ulink>."
 msgstr ""
-"第 3 行描述了用户安装此软件包的优先级。具体说明参看 <ulink url=\"&policy-"
-"priorities;\">Debian Policy Manual, 2.5 'Priorities'</ulink>"
+"参见 <ulink url=\"&policy-library-abi;\">Debian Policy Manual, 8.6.2 \"Shared "
+"library ABI changes\"</ulink>."
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -10210,23 +10227,26 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<ulink url=\"&multiarchspec;\">Ubuntu wiki MultiarchSpec</ulink> (upstream)"
 msgstr ""
-"<ulink url=\"&debianwikihelp;\">Debian Wiki, HelpDebian</ulink> (补充材料)"
+"<ulink url=\"&multiarchspec;\">Ubuntu wiki MultiarchSpec</ulink> (上游)"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
 "<ulink url=\"&multiarchimplementation;\">Debian wiki Multiarch/"
 "Implementation</ulink> (Debian situation)"
 msgstr ""
+"<ulink url=\"&multiarchimplementation;\">Debian wiki Multiarch/"
+"Implementation</ulink> (Debian 的局势)"
 
 #. type: Content of: <book><appendix><section><para><footnote><para>
 msgid ""
 "Old special purpose library paths such as <filename>/lib32/</filename> and "
 "<filename>/lib64/</filename> are not used any more."
 msgstr ""
+"老旧且具有特殊用途的库路径，比如 <filename>/lib32/</filename> 和 "
+"<filename>/lib64/</filename> 不再被使用。"
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -10283,27 +10303,26 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "a library source <filename>lib<replaceable>foo</replaceable>-1.tar.gz</"
 "filename>"
-msgstr "<filename><replaceable>package</replaceable>.cron.*</filename> 文件"
+msgstr ""
+"库源码 <filename>lib<replaceable>foo</replaceable>-1.tar.gz</"
+"filename>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "a tool source <filename><replaceable>bar</replaceable>-1.tar.gz</filename> "
 "written in a compiled language"
 msgstr ""
-"创建一份上游源代码的副本，命名为 <filename>foo_<replaceable>newversion</"
-"replaceable>.orig.tar.gz</filename>"
+"一个用编译型语言编写的工具的源码 <filename><replaceable>bar</replaceable>-1.tar.gz</filename>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "a tool source <filename><replaceable>baz</replaceable>-1.tar.gz</filename> "
 "written in an interpreted language"
-msgstr "<filename><replaceable>package</replaceable>.info</filename> 文件"
+msgstr ""
+"一个用解释型语言编写的工具的源码 <filename><replaceable>bar</replaceable>-1.tar.gz</filename>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><thead><row><entry>
 msgid "Package"
