@@ -10456,7 +10456,7 @@ msgstr "更新 <filename>debian/control</filename>。"
 msgid ""
 "Add <literal>Build-Depends: debhelper (>=9)</literal> for the source package "
 "section."
-msgstr "<literal>3.0 (native)</literal> - Debian native 软件"
+msgstr ""
 "为源码包部分添加 <literal>Build-Depends: debhelper (>=9)</literal> 部分。 "
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para>
@@ -10588,7 +10588,7 @@ msgid ""
 "linkend=\"workflow\"/>.  This is the normal way which some people encourage "
 "to use."
 msgstr ""
-"你可以将除You can make the upstream tarball by excluding the <filename>debian/*</"
+"你可以将除 <filename>debian/*</"
 "filename> 文件之外的部分制作成上游 tarball，然后将其作为非本土 Debian 软件包来打包，正如 <xref "
 "linkend=\"workflow\"/> 所述。 这是一些人鼓励使用的普通方法。 "
 
