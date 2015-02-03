@@ -8266,6 +8266,8 @@ msgid ""
 "<command>debuild</command> = <command>dpkg-buildpackage</command> + "
 "<command>lintian</command> (build under the sanitized environment variables)"
 msgstr ""
+"<command>debuild</command> = <command>dpkg-buildpackage</command> + "
+"<command>lintian</command> (在干净的环境变量下构建)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -8880,13 +8882,12 @@ msgstr ""
 "Debian <filename>changelog</filename> 文件。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Repeat what you did in <xref linkend=\"completebuild\"/> and <xref linkend="
 "\"checkit\"/>."
 msgstr ""
-"重复 <xref linkend=\"completebuild\"/> 、<xref linkend=\"checkit\"/> 和 "
-"<xref linkend=\"upload\"/> 中的操作，即可发布此更新的软件包。"
+"重复你在 <xref linkend=\"completebuild\"/> 和 <xref linkend="
+"\"checkit\"/> 中所做的事情。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -8895,6 +8896,10 @@ msgid ""
 "target distribution value <literal>unstable</literal> (or even "
 "<literal>experimental</literal>).<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
+"一旦你满意了，那就将 "
+"<filename>changelog</filename> 中的发行版值由 <literal>UNRELEASED</literal> 修改成 "
+"目标发行版值 <literal>unstable</literal> (或者是 "
+"<literal>experimental</literal>)。<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
@@ -9197,34 +9202,34 @@ msgstr ""
 "码、下载并运行 <command>uupdate</command> 命令。<placeholder type=\"footnote"
 "\" id=\"0\"/>"
 
-#. type: Content of: <book><chapter><section><para>
+#. type: content of: <book><chapter><section><para>
 msgid ""
-"You can release this updated source by repeating what you did in <xref "
+"you can release this updated source by repeating what you did in <xref "
 "linkend=\"completebuild\"/>, <xref linkend=\"checkit\"/>, and <xref linkend="
 "\"upload\"/>."
 msgstr ""
 "重复 <xref linkend=\"completebuild\"/> 、<xref linkend=\"checkit\"/> 和 "
 "<xref linkend=\"upload\"/> 中的操作，即可发布此更新的软件包。"
 
-#. type: Content of: <book><chapter><section><title>
-msgid "Updating the packaging style"
+#. type: content of: <book><chapter><section><title>
+msgid "updating the packaging style"
 msgstr "更新打包风格"
 
-#. type: Content of: <book><chapter><section><para><footnote><para>
+#. type: content of: <book><chapter><section><para><footnote><para>
 #, fuzzy
 msgid ""
-"If your sponsor or other maintainers object to updating the existing "
-"packaging style, don't bother arguing.  There are more important things to "
+"if your sponsor or other maintainers object to updating the existing "
+"packaging style, don't bother arguing.  there are more important things to "
 "do."
 msgstr ""
 "如果你的 sponsor 或其他维护者一定反对更新已有的打包风格，则不值得去为此烦恼或"
 "争论，总是有更重要的事要做。"
 
-#. type: Content of: <book><chapter><section><para>
+#. type: content of: <book><chapter><section><para>
 #, fuzzy
 msgid ""
-"Updating the package style is not a required activity for the update of a "
-"package.  However, doing so lets you use the full capabilities of the modern "
+"updating the package style is not a required activity for the update of a "
+"package.  however, doing so lets you use the full capabilities of the modern "
 "<systemitem role=\"package\">debhelper</systemitem> system and the "
 "<literal>3.0</literal> source format.  <placeholder type=\"footnote\" id="
 "\"0\"/>"
@@ -9233,66 +9238,66 @@ msgstr ""
 "<systemitem role=\"package\">debhelper</systemitem> 系统和 <literal>3.0</"
 "literal> 源代码包格式完整的兼容性。<placeholder type=\"footnote\" id=\"0\"/>"
 
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#. type: content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
 msgid ""
-"If you need to recreate deleted template files for any reason, you can run "
-"<command>dh_make</command> again in the same Debian package source tree with "
-"the <literal>--addmissing</literal> option.  Then edit them appropriately."
+"if you need to recreate deleted template files for any reason, you can run "
+"<command>dh_make</command> again in the same debian package source tree with "
+"the <literal>--addmissing</literal> option.  then edit them appropriately."
 msgstr ""
-"如果你需要重新添加已删除的模板文件，可以在同一个 Debian 软件包源代码树中运行 "
+"如果你需要重新添加已删除的模板文件，可以在同一个 debian 软件包源代码树中运行 "
 "<command>dh_make</command>，并添加 <literal>--addmissing</literal> 选项。然后"
 "对模板进行相应的编辑。"
 
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#. type: content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
 msgid ""
-"If the package has not been updated to use the <systemitem role=\"package"
+"if the package has not been updated to use the <systemitem role=\"package"
 "\">debhelper</systemitem> v7+ <command>dh</command> syntax for the "
 "<filename>debian/rules</filename> file, update it to use <command>dh</"
-"command>.  Update the <filename>debian/control</filename> file accordingly."
+"command>.  update the <filename>debian/control</filename> file accordingly."
 msgstr ""
 "如果软件包的 <filename>debian/rules</filename> 文件没有更新为使用 "
-"<systemitem role=\"package\">debhelper</systemitem> V7 的 <command>dh</"
+"<systemitem role=\"package\">debhelper</systemitem> v7 的 <command>dh</"
 "command> 语法，则更新它使用 <command>dh</command>。在需要的时候更新 "
 "<filename>debian/control</filename> 文件。"
 
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#. type: content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
 msgid ""
-"If you want to update the <filename>rules</filename> file created with the "
-"<filename>Makefile</filename> inclusion mechanism of the Common Debian Build "
-"System (<systemitem role=\"package\">cdbs</systemitem>) to the <command>dh</"
-"command> syntax, see the following to understand its <literal>DEB_*</"
+"if you want to update the <filename>rules</filename> file created with the "
+"<filename>makefile</filename> inclusion mechanism of the common debian build "
+"system (<systemitem role=\"package\">cdbs</systemitem>) to the <command>dh</"
+"command> syntax, see the following to understand its <literal>deb_*</"
 "literal> configuration variables."
 msgstr ""
 "如果你希望将使用 <systemitem role=\"package\">cdbs</systemitem> 的 "
-"<filename>Makefile</filename> 语法创建的 <filename>rules</filename> 文件更新"
+"<filename>makefile</filename> 语法创建的 <filename>rules</filename> 文件更新"
 "为 <command>dh</command> 语法，参看 <filename>/usr/share/doc/cdbs/cdbs-doc."
-"html</filename> 并理解各 <literal>DEB_*</literal> 配置变量。<placeholder "
+"html</filename> 并理解各 <literal>deb_*</literal> 配置变量。<placeholder "
 "type=\"footnote\" id=\"0\"/>"
 
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
+#. type: content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 #, fuzzy
 msgid "local copy of <filename>&cdbs-doc;</filename>"
 msgstr "<filename>docs</filename> 文件"
 
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
+#. type: content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
-"<ulink url=\"&cdbs-tutorial;\">The Common Debian Build System (CDBS), FOSDEM "
+"<ulink url=\"&cdbs-tutorial;\">the common debian build system (cdbs), fosdem "
 "2009</ulink>"
 msgstr ""
-"<ulink url=\"&cdbs-tutorial;\">The Common Debian Build System (CDBS), FOSDEM "
+"<ulink url=\"&cdbs-tutorial;\">the common debian build system (cdbs), fosdem "
 "2009</ulink>"
 
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#. type: content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
 msgid ""
-"If you have a <literal>1.0</literal> source package without the "
+"if you have a <literal>1.0</literal> source package without the "
 "<filename><replaceable>foo</replaceable>.diff.gz</filename> file, you can "
 "update it to the newer <literal>3.0 (native)</literal> source format by "
 "creating <filename>debian/source/format</filename> with <literal>3.0 "
-"(native)</literal>.  The rest of the <filename>debian/*</filename> files can "
+"(native)</literal>.  the rest of the <filename>debian/*</filename> files can "
 "just be copied."
 msgstr ""
 "如果你有一个不带有 <filename><replaceable>foo</replaceable>.diff.gz</"
@@ -9301,24 +9306,24 @@ msgstr ""
 "(native)</literal> 来将其更新为新的 <literal>3.0 (native)</literal> 源代码包"
 "格式。<filename>debian</filename> 目录中的其他文件可以直接复制过来。"
 
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para><footnote><para>
+#. type: content of: <book><chapter><section><itemizedlist><listitem><para><footnote><para>
 #, fuzzy
 msgid ""
-"You can split <filename>big.diff</filename> into many small incremental "
+"you can split <filename>big.diff</filename> into many small incremental "
 "patches using the <command>splitdiff</command> command."
 msgstr ""
 "你可能使用 <command>splitdiff</command> 命令将 <filename>big.diff</filename> "
 "分割为多个有各自作用的补丁。"
 
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#. type: content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
 msgid ""
-"If you have a <literal>1.0</literal> source package with the "
+"if you have a <literal>1.0</literal> source package with the "
 "<filename><replaceable>foo</replaceable>.diff.gz</filename> file, you can "
 "update it to the newer <literal>3.0 (quilt)</literal> source format by "
 "creating <filename>debian/source/format</filename> with <literal>3.0 "
-"(quilt)</literal>.  The rest of the <filename>debian/*</filename> files can "
-"just be copied.  Import the <filename>big.diff</filename> file generated by "
+"(quilt)</literal>.  the rest of the <filename>debian/*</filename> files can "
+"just be copied.  import the <filename>big.diff</filename> file generated by "
 "the command <literal>filterdiff -z -x '*/debian/*' <replaceable>foo</"
 "replaceable>.diff.gz &gt; big.diff</literal> to your <command>quilt</"
 "command> system, if needed.  <placeholder type=\"footnote\" id=\"0\"/>"
@@ -9332,10 +9337,10 @@ msgstr ""
 "diff.gz &gt; big.diff</literal> 生成的 <filename>big.diff</filename> 文件导入"
 "到 <command>quilt</command> 系统。<placeholder type=\"footnote\" id=\"0\"/>"
 
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#. type: content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
 msgid ""
-"If it was packaged using another patch system such as <systemitem role="
+"if it was packaged using another patch system such as <systemitem role="
 "\"package\">dpatch</systemitem>, <systemitem role=\"package\">dbs</"
 "systemitem>, or <systemitem role=\"package\">cdbs</systemitem> with "
 "<literal>-p0</literal>, <literal>-p1</literal>, or <literal>-p2</literal>, "
@@ -9349,10 +9354,10 @@ msgstr ""
 "\">&deb3;</ulink> 的 <filename>deb3</filename> 命令将其转换到 <systemitem "
 "role=\"package\">quilt</systemitem> 系统。"
 
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#. type: content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
 msgid ""
-"If it was packaged with the <command>dh</command> command with the "
+"if it was packaged with the <command>dh</command> command with the "
 "<literal>--with quilt</literal> option or with the <command>dh_quilt_patch</"
 "command> and <command>dh_quilt_unpatch</command> commands, remove these and "
 "make it use the newer <literal>3.0 (quilt)</literal> source format."
@@ -9362,99 +9367,101 @@ msgstr ""
 "command> 命令，删除它们并使其使用新的 <literal>3.0 (native)</literal> 源代码"
 "包格式。"
 
-#. type: Content of: <book><chapter><section><para>
+#. type: content of: <book><chapter><section><para>
 msgid ""
-"You should check <ulink url=\"&dep;\">DEP - Debian Enhancement Proposals</"
-"ulink> and adopt ACCEPTED proposals."
+"you should check <ulink url=\"&dep;\">dep - debian enhancement proposals</"
+"ulink> and adopt accepted proposals."
 msgstr ""
-"你应当查看 <ulink url=\"&dep;\">DEP - Debian Enhancement Proposals</"
-"ulink> 并采纳 ACCEPTED 建议。"
+"你应当查看 <ulink url=\"&dep;\">dep - debian enhancement proposals</"
+"ulink> 并采纳 accepted 建议。"
 
-#. type: Content of: <book><chapter><section><para>
+#. type: content of: <book><chapter><section><para>
 #, fuzzy
 msgid ""
-"You need to do the other tasks described in <xref linkend=\"newupstream\"/>, "
+"you need to do the other tasks described in <xref linkend=\"newupstream\"/>, "
 "too."
 msgstr "当然你还需要按照 <xref linkend=\"newupstream\"/> 完成其他的步骤。"
 
-#. type: Content of: <book><chapter><section><title>
-msgid "UTF-8 conversion"
-msgstr "UTF-8 转换"
+#. type: content of: <book><chapter><section><title>
+msgid "utf-8 conversion"
+msgstr "utf-8 转换"
 
-#. type: Content of: <book><chapter><section><para>
+#. type: content of: <book><chapter><section><para>
 msgid ""
-"If upstream documents are encoded in old encoding schemes, converting them "
-"to <ulink url=\"&utf8;\">UTF-8</ulink> is a good idea."
+"if upstream documents are encoded in old encoding schemes, converting them "
+"to <ulink url=\"&utf8;\">utf-8</ulink> is a good idea."
 msgstr ""
+"如果上游文档采用了老式编码，那么将其转换为 "
+"<ulink url=\"&utf8;\">utf-8</ulink> 不失为一良方。"
 
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#. type: content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
 msgid ""
-"Use <citerefentry> <refentrytitle>iconv</refentrytitle> <manvolnum>1</"
+"use <citerefentry> <refentrytitle>iconv</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry> to convert encodings of plain text files."
 msgstr ""
 "<citerefentry> <refentrytitle>dh_installdocs</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry> 命令会安装这个文件。"
 
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><screen>
+#. type: content of: <book><chapter><section><itemizedlist><listitem><screen>
 #, fuzzy, no-wrap
 msgid "iconv -f latin1 -t utf8 <replaceable>foo_in.txt</replaceable> &gt; <replaceable>foo_out.txt</replaceable>\n"
 msgstr "$ debdiff <replaceable>old-package</replaceable>.dsc <replaceable>new-package</replaceable>.dsc\n"
 
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#. type: content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
 msgid ""
-"Use <citerefentry> <refentrytitle>w3m</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry> to convert from HTML files to UTF-8 plain text "
-"files.  When you do this, make sure to execute it under UTF-8 locale."
+"use <citerefentry> <refentrytitle>w3m</refentrytitle> <manvolnum>1</"
+"manvolnum> </citerefentry> to convert from html files to utf-8 plain text "
+"files.  when you do this, make sure to execute it under utf-8 locale."
 msgstr ""
 "<citerefentry> <refentrytitle>dh_installexamples</refentrytitle> "
 "<manvolnum>1</manvolnum> </citerefentry> 会将列出的文件和目录作为示例文件安"
 "装。"
 
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><screen>
+#. type: content of: <book><chapter><section><itemizedlist><listitem><screen>
 #, no-wrap
 msgid ""
-"LC_ALL=en_US.UTF-8 w3m -o display_charset=UTF-8 \\\n"
-"        -cols 70 -dump -no-graph -T text/html \\\n"
+"lc_all=en_us.utf-8 w3m -o display_charset=utf-8 \\\n"
+"        -cols 70 -dump -no-graph -t text/html \\\n"
 "        &lt; <replaceable>foo_in.html</replaceable> &gt; <replaceable>foo_out.txt</replaceable>\n"
 msgstr ""
-"LC_ALL=en_US.UTF-8 w3m -o display_charset=UTF-8 \\\n"
-"        -cols 70 -dump -no-graph -T text/html \\\n"
+"lc_all=en_us.utf-8 w3m -o display_charset=utf-8 \\\n"
+"        -cols 70 -dump -no-graph -t text/html \\\n"
 "        &lt; <replaceable>foo_in.html</replaceable> &gt; <replaceable>foo_out.txt</replaceable>\n"
 
-#. type: Content of: <book><chapter><section><title>
-msgid "Reminders for updating packages"
+#. type: content of: <book><chapter><section><title>
+msgid "reminders for updating packages"
 msgstr "对更新软件包的几点提示"
 
-#. type: Content of: <book><chapter><section><para>
+#. type: content of: <book><chapter><section><para>
 #, fuzzy
-msgid "Here are few reminders for updating packages:"
+msgid "here are few reminders for updating packages:"
 msgstr "以下是对更新软件包的几点提示。"
 
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#. type: content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
 msgid ""
-"Preserve old <filename>changelog</filename> entries (sounds obvious, but "
+"preserve old <filename>changelog</filename> entries (sounds obvious, but "
 "there have been cases of people typing <literal>dch</literal> when they "
 "should have typed <literal>dch -i</literal>.)"
 msgstr ""
 "保留旧的 <filename>changelog</filename> 条目(看似显然，但是总有可能把 "
 "<literal>dch -i</literal> 输入为 <literal>dch</literal>)。"
 
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#. type: content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
-"Existing Debian changes need to be reevaluated; throw away stuff that "
+"existing debian changes need to be reevaluated; throw away stuff that "
 "upstream has incorporated (in one form or another) and remember to keep "
 "stuff that hasn't been incorporated by upstream, unless there is a "
 "compelling reason not to."
 msgstr ""
-"已存在的 Debian 修改需要被重新校验，去除上游已经接受的东西，除非有必要的原"
+"已存在的 debian 修改需要被重新校验，去除上游已经接受的东西，除非有必要的原"
 "因，还要记录尚未被上游接受的部分。"
 
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#. type: content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
-"If any changes were made to the build system (hopefully you'd know from "
+"if any changes were made to the build system (hopefully you'd know from "
 "inspecting upstream changes) then update the <filename>debian/rules</"
 "filename> and <filename>debian/control</filename> build dependencies if "
 "necessary."
@@ -9463,95 +9470,99 @@ msgstr ""
 "时更新 <filename>debian/rules</filename> 和 <filename>debian/control</"
 "filename> 编译依赖关系。"
 
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#. type: content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
 msgid ""
-"Check the <ulink url=\"&bts;\">Debian Bug Tracking System (BTS)</ulink> to "
+"check the <ulink url=\"&bts;\">debian bug tracking system (bts)</ulink> to "
 "see if someone has provided patches to bugs that are currently open."
 msgstr ""
-"检查 <ulink url=\"&bts;\">Debian Bug Tracking System (BTS)</ulink> 是否有人为"
-"某些仍然未修复的 Bug 提供了补丁。"
+"检查 <ulink url=\"&bts;\">debian bug tracking system (bts)</ulink> 是否有人为"
+"某些仍然未修复的 bug 提供了补丁。"
 
-#. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
+#. type: content of: <book><chapter><section><itemizedlist><listitem><para>
 #, fuzzy
 msgid ""
-"Check the contents of the <filename>.changes</filename> file to make sure "
+"check the contents of the <filename>.changes</filename> file to make sure "
 "you are uploading to the correct distribution, the proper bug closures are "
-"listed in the <literal>Closes</literal> field, the <literal>Maintainer</"
-"literal> and <literal>Changed-By</literal> fields match, the file is GPG-"
+"listed in the <literal>closes</literal> field, the <literal>maintainer</"
+"literal> and <literal>changed-by</literal> fields match, the file is gpg-"
 "signed, etc."
 msgstr ""
 "检查 <filename>.changes</filename> 文件以确保你正要上传到正确的发行版、正确的"
-"列于 <literal>Closes</literal> 域的 Bug、<literal>Maintainer</literal> 和 "
-"<literal>Changed-By</literal> 域相匹配，且该文件已经使用 GPG 签署等。"
+"列于 <literal>closes</literal> 域的 bug、<literal>maintainer</literal> 和 "
+"<literal>changed-by</literal> 域相匹配，且该文件已经使用 gpg 签署等。"
 
-#. type: Content of: <book><chapter><title>
-msgid "Uploading the package"
+#. type: content of: <book><chapter><title>
+msgid "uploading the package"
 msgstr "上传软件包"
 
-#. type: Content of: <book><chapter><para>
+#. type: content of: <book><chapter><para>
 #, fuzzy
 msgid ""
-"Now that you have tested your new package thoroughly, you want to release it "
+"now that you have tested your new package thoroughly, you want to release it "
 "to a public archive to share it."
 msgstr ""
-"当你完成了对软件包的彻底测试，在技术上你已经满足了申请 Debian 新维护人员的要"
+"当你完成了对软件包的彻底测试，在技术上你已经满足了申请 debian 新维护人员的要"
 "求，详细的描述参看 <ulink url=\"&nm-join;\">&nm-join;</ulink>"
 
-#. type: Content of: <book><chapter><section><title>
-msgid "Uploading to the Debian archive"
-msgstr "上传到 Debian 仓库"
+#. type: content of: <book><chapter><section><title>
+msgid "uploading to the debian archive"
+msgstr "上传到 debian 仓库"
 
-#. type: Content of: <book><chapter><section><para><footnote><para>
-msgid "See <xref linkend=\"socialdynamics\"/>."
+#. type: content of: <book><chapter><section><para><footnote><para>
+msgid "see <xref linkend=\"socialdynamics\"/>."
 msgstr "参见 <xref linkend=\"socialdynamics\"/>。"
 
-#. type: Content of: <book><chapter><section><para><footnote><para>
+#. type: content of: <book><chapter><section><para><footnote><para>
 msgid ""
-"There are publicly accessible archives such as <ulink url=\"&mentors-dn;\"/> "
-"which work almost the same way as the Debian archive and provide an upload "
-"area for non-DDs.  You can set up an equivalent archive by yourself using "
-"the tools listed at <ulink url=\"&deb-archive;\"/>.  So this section is "
-"useful for non-DDs, too."
+"there are publicly accessible archives such as <ulink url=\"&mentors-dn;\"/> "
+"which work almost the same way as the debian archive and provide an upload "
+"area for non-dds.  you can set up an equivalent archive by yourself using "
+"the tools listed at <ulink url=\"&deb-archive;\"/>.  so this section is "
+"useful for non-dds, too."
 msgstr ""
+"有许多公开的档案比如 <ulink url=\"&mentors-dn;\"/> ，"
+"它们的运作方式几乎与 debian 档案一致，并提供了一个非开发者的上传区域。"
+"你可以自己建立一个等效档案，只要使用 "
+"<ulink url=\"&deb-archive;\"/> 里边列举出来的工具。  所以这一小节也对非开发者特别有用。"
 
-#. type: Content of: <book><chapter><section><para><footnote><para>
+#. type: content of: <book><chapter><section><para><footnote><para>
 #, fuzzy
 msgid ""
-"The <systemitem role=\"package\">dput</systemitem> package seems to come "
+"the <systemitem role=\"package\">dput</systemitem> package seems to come "
 "with more features and to be becoming more popular than the <systemitem role="
-"\"package\">dupload</systemitem> package.  It uses the file <filename>/etc/"
+"\"package\">dupload</systemitem> package.  it uses the file <filename>/etc/"
 "dput</filename> for its global configuration and the file <filename>~/.dput."
-"cf</filename> for per-user configuration.  It supports Ubuntu-related "
+"cf</filename> for per-user configuration.  it supports ubuntu-related "
 "services out-of-the-box, too."
 msgstr ""
 "<systemitem role=\"package\">dput</systemitem> 软件包提供了更多的特性，相比"
 "于 <systemitem role=\"package\">dupload</systemitem> 也越来越受欢迎。它使用 "
 "<filename>/etc/dput</filename> 文件作为全局配置文件、<filename>~/.dput.cf</"
-"filename> 作为用户配置文件。它也直接支持 Ubuntu 相关的服务。"
+"filename> 作为用户配置文件。它也直接支持 ubuntu 相关的服务。"
 
-#. type: Content of: <book><chapter><section><para>
+#. type: content of: <book><chapter><section><para>
 #, fuzzy
 msgid ""
-"Once you become an official developer, <placeholder type=\"footnote\" id="
-"\"0\"/> you can upload the package to the Debian archive.  <placeholder type="
-"\"footnote\" id=\"1\"/> You can do this manually, but it's easier to use the "
+"once you become an official developer, <placeholder type=\"footnote\" id="
+"\"0\"/> you can upload the package to the debian archive.  <placeholder type="
+"\"footnote\" id=\"1\"/> you can do this manually, but it's easier to use the "
 "existing automated tools, like <citerefentry> <refentrytitle>dupload</"
 "refentrytitle> <manvolnum>1</manvolnum> </citerefentry> or <citerefentry> "
 "<refentrytitle>dput</refentrytitle> <manvolnum>1</manvolnum> </"
-"citerefentry>.  We'll describe how it's done with <command>dupload</"
+"citerefentry>.  we'll describe how it's done with <command>dupload</"
 "command>.  <placeholder type=\"footnote\" id=\"2\"/>"
 msgstr ""
-"当你成为正式的开发人员，你会需要把软件包上传到 Debian 仓库。你可以手工进行这"
+"当你成为正式的开发人员，你会需要把软件包上传到 debian 仓库。你可以手工进行这"
 "项工作，但使用例如 <citerefentry> <refentrytitle>dupload</refentrytitle> "
 "<manvolnum>1</manvolnum> </citerefentry> 或 <citerefentry> "
 "<refentrytitle>dput</refentrytitle> <manvolnum>1</manvolnum> </citerefentry> "
 "的自动化工具可以帮你更好地完成这项操作。在此我们将叙述如何使用 "
 "<command>dupload</command> 操作。<placeholder type=\"footnote\" id=\"0\"/>"
 
-#. type: Content of: <book><chapter><section><para>
+#. type: content of: <book><chapter><section><para>
 msgid ""
-"First you have to set up <command>dupload</command>'s config file.  You can "
+"first you have to set up <command>dupload</command>'s config file.  you can "
 "either edit the system-wide <filename>/etc/dupload.conf</filename> file, or "
 "have your own <filename>~/.dupload.conf</filename> file override the few "
 "things you want to change."
@@ -9560,28 +9571,28 @@ msgstr ""
 "<filename>/etc/dupload.conf</filename> 文件，也可以使用自己的 <filename>~/."
 "dupload.conf</filename> 文件覆盖一些需要修改的设置。"
 
-#. type: Content of: <book><chapter><section><para>
+#. type: content of: <book><chapter><section><para>
 msgid ""
-"You can read the <citerefentry> <refentrytitle>dupload.conf</refentrytitle> "
+"you can read the <citerefentry> <refentrytitle>dupload.conf</refentrytitle> "
 "<manvolnum>5</manvolnum> </citerefentry> manual page to understand what each "
 "of these options means."
 msgstr ""
 "你可以阅读 <citerefentry> <refentrytitle>dupload.conf</refentrytitle> "
 "<manvolnum>5</manvolnum> </citerefentry> man 手册页来了解各选项的含义。"
 
-#. type: Content of: <book><chapter><section><para><footnote><para>
+#. type: content of: <book><chapter><section><para><footnote><para>
 #, fuzzy
 msgid ""
-"See <ulink url=\"&devref-upload;\">Debian Developer's Reference 5.6. "
-"\"Uploading a package\"</ulink>."
+"see <ulink url=\"&devref-upload;\">debian developer's reference 5.6. "
+"\"uploading a package\"</ulink>."
 msgstr ""
-"关于这些问题的更多帮助，查看 <ulink url=\"&developers-reference;\">Debian "
-"Developer's Reference</ulink>。"
+"关于这些问题的更多帮助，查看 <ulink url=\"&developers-reference;\">debian "
+"developer's reference</ulink>。"
 
-#. type: Content of: <book><chapter><section><para>
+#. type: content of: <book><chapter><section><para>
 #, fuzzy
 msgid ""
-"The <literal>$default_host</literal> option determines which of the upload "
+"the <literal>$default_host</literal> option determines which of the upload "
 "queues will be used by default.  <literal>anonymous-ftp-master</literal> is "
 "the primary one, but it's possible that you will want to use another one.  "
 "<placeholder type=\"footnote\" id=\"0\"/>"
@@ -9590,82 +9601,90 @@ msgstr ""
 "<literal>anonymous-ftp-master</literal> 是最基本的一个，但你很可能希望改用其"
 "他的。"
 
-#. type: Content of: <book><chapter><section><para>
+#. type: content of: <book><chapter><section><para>
 #, fuzzy
 msgid ""
-"While connected to the Internet, you can upload your package as follows:"
+"while connected to the internet, you can upload your package as follows:"
 msgstr "连接到互联网后，可以使用以下命令上传你的软件包："
 
-#. type: Content of: <book><chapter><section><screen>
+#. type: content of: <book><chapter><section><screen>
 #, no-wrap
 msgid "$ dupload gentoo_0.9.12-1_i386.changes\n"
 msgstr "$ dupload gentoo_0.9.12-1_i386.changes\n"
 
-#. type: Content of: <book><chapter><section><para>
+#. type: content of: <book><chapter><section><para>
 #, fuzzy
 msgid ""
-"<command>dupload</command> checks that the SHA1/SHA256 file checksums match "
-"those listed in the <filename>.changes</filename> file.  If they do not "
+"<command>dupload</command> checks that the sha1/sha256 file checksums match "
+"those listed in the <filename>.changes</filename> file.  if they do not "
 "match, it will warn you to rebuild it as described in <xref linkend="
 "\"completebuild\"/> so it can be properly uploaded."
 msgstr ""
-"<command>dupload</command> 会检查文件的 MD5/SHA1/SHA256 校验和是否与 "
+"<command>dupload</command> 会检查文件的 md5/sha1/sha256 校验和是否与 "
 "<filename>.changes</filename> 文件中的相匹配，如果不匹配它会做出警告。你应按"
 "照如 <xref linkend=\"completebuild\"/> 所述来重构建软件包使得它可以被正常上"
 "传。"
 
-#. type: Content of: <book><chapter><section><para><footnote><para>
+#. type: content of: <book><chapter><section><para><footnote><para>
 msgid ""
-"See <ulink url=\"&uploadqueue-readme;\"/>.  Alternatively, you can use the "
+"see <ulink url=\"&uploadqueue-readme;\"/>.  alternatively, you can use the "
 "<command>dcut</command> command from the <systemitem role=\"package\">dput</"
 "systemitem> package."
 msgstr ""
+"参见 <ulink url=\"&uploadqueue-readme;\"/>。 或者是， 你可以使用 "
+"<command>dcut</command> 命令，它来自 <systemitem role=\"package\">dput</"
+"systemitem> 软件包。"
 
-#. type: Content of: <book><chapter><section><para>
+#. type: content of: <book><chapter><section><para>
 msgid ""
-"If you encounter an upload problem at <ulink url=\"&uploadqueue;\"/>, you "
-"can fix this by manually uploading a GPG-signed <filename>*.commands</"
+"if you encounter an upload problem at <ulink url=\"&uploadqueue;\"/>, you "
+"can fix this by manually uploading a gpg-signed <filename>*.commands</"
 "filename> file to there with <command>ftp</command>.  <placeholder type="
-"\"footnote\" id=\"0\"/> For example, using <filename>hello.commands</"
+"\"footnote\" id=\"0\"/> for example, using <filename>hello.commands</"
 "filename>:"
 msgstr ""
+"如果你在 <ulink url=\"&uploadqueue;\"/> 遇到了上传问题，你 "
+"可以通过 <command>ftp</command> 来手动上传 gpg签署的 <filename>*.commands</"
+"filename> 文件。  <placeholder type="
+"\"footnote\" id=\"0\"/> 比如说，使用 <filename>hello.commands</"
+"filename> 命令："
 
-#. type: Content of: <book><chapter><section><screen>
+#. type: content of: <book><chapter><section><screen>
 #, no-wrap
 msgid ""
-"-----BEGIN PGP SIGNED MESSAGE-----\n"
-"Hash: SHA1\n"
-"Uploader: Foo Bar &lt;Foo.Bar@example.org&gt;\n"
-"Commands: \n"
+"-----begin pgp signed message-----\n"
+"hash: sha1\n"
+"uploader: foo bar &lt;foo.bar@example.org&gt;\n"
+"commands: \n"
 " rm hello_1.0-1_i386.deb\n"
 " mv hello_1.0-1.dsx hello_1.0-1.dsc\n"
-"-----BEGIN PGP SIGNATURE-----\n"
-"Version: GnuPG v1.4.10 (GNU/Linux)\n"
+"-----begin pgp signature-----\n"
+"version: gnupg v1.4.10 (gnu/linux)\n"
 "\n"
 "[...]\n"
-"-----END PGP SIGNATURE-----\n"
+"-----end pgp signature-----\n"
 msgstr ""
-"-----BEGIN PGP SIGNED MESSAGE-----\n"
-"Hash: SHA1\n"
-"Uploader: Foo Bar &lt;Foo.Bar@example.org&gt;\n"
-"Commands: \n"
+"-----begin pgp signed message-----\n"
+"hash: sha1\n"
+"uploader: foo bar &lt;foo.bar@example.org&gt;\n"
+"commands: \n"
 " rm hello_1.0-1_i386.deb\n"
 " mv hello_1.0-1.dsx hello_1.0-1.dsc\n"
-"-----BEGIN PGP SIGNATURE-----\n"
-"Version: GnuPG v1.4.10 (GNU/Linux)\n"
+"-----begin pgp signature-----\n"
+"version: gnupg v1.4.10 (gnu/linux)\n"
 "\n"
 "[...]\n"
-"-----END PGP SIGNATURE-----\n"
+"-----end pgp signature-----\n"
 
-#. type: Content of: <book><chapter><section><title>
-msgid "Including <filename>orig.tar.gz</filename> for upload"
+#. type: content of: <book><chapter><section><title>
+msgid "including <filename>orig.tar.gz</filename> for upload"
 msgstr "在上传时包含 <filename>orig.tar.gz</filename> 文件"
 
-#. type: Content of: <book><chapter><section><para>
+#. type: content of: <book><chapter><section><para>
 #, fuzzy
 msgid ""
-"When you first upload the package to the archive, you need to include the "
-"original <filename>orig.tar.gz</filename> source, too.  If the Debian "
+"when you first upload the package to the archive, you need to include the "
+"original <filename>orig.tar.gz</filename> source, too.  if the debian "
 "revision number of this package is neither <literal>1</literal> nor "
 "<literal>0</literal>, you must provide the <command>dpkg-buildpackage</"
 "command> option <literal>-sa</literal>."
@@ -9676,55 +9695,55 @@ msgstr ""
 "反，<literal>-sd</literal> 选项会强制将原始的 <filename>orig.tar.gz</"
 "filename> 源代码归档排除在外。"
 
-#. type: Content of: <book><chapter><section><para>
+#. type: content of: <book><chapter><section><para>
 #, fuzzy
-msgid "For the <command>dpkg-buildpackage</command> command:"
+msgid "for the <command>dpkg-buildpackage</command> command:"
 msgstr "<command>debc</command> 命令"
 
-#. type: Content of: <book><chapter><section><screen>
+#. type: content of: <book><chapter><section><screen>
 #, no-wrap
 msgid "$ dpkg-buildpackage -sa\n"
 msgstr "$ dpkg-buildpackage -sa\n"
 
-#. type: Content of: <book><chapter><section><para>
+#. type: content of: <book><chapter><section><para>
 #, fuzzy
-msgid "For the <command>debuild</command> command:"
+msgid "for the <command>debuild</command> command:"
 msgstr "<command>debuild</command> 命令"
 
-#. type: Content of: <book><chapter><section><screen>
+#. type: content of: <book><chapter><section><screen>
 #, no-wrap
 msgid "$ debuild -sa\n"
 msgstr "$ debuild -sa\n"
 
-#. type: Content of: <book><chapter><section><para>
+#. type: content of: <book><chapter><section><para>
 #, fuzzy
-msgid "For the <command>pdebuild</command> command:"
+msgid "for the <command>pdebuild</command> command:"
 msgstr "<command>debuild</command> 命令"
 
-#. type: Content of: <book><chapter><section><screen>
+#. type: content of: <book><chapter><section><screen>
 #, no-wrap
 msgid "$ pdebuild --debbuildopts -sa\n"
 msgstr "$ pdebuild --debbuildopts -sa\n"
 
-#. type: Content of: <book><chapter><section><para>
+#. type: content of: <book><chapter><section><para>
 #, fuzzy
 msgid ""
-"On the other hand, the <literal>-sd</literal> option will force the "
+"on the other hand, the <literal>-sd</literal> option will force the "
 "exclusion of the original <filename>orig.tar.gz</filename> source."
 msgstr ""
 "请注意用于包含 <filename>orig.tar.gz</filename> 源代码归档的 <command>dpkg-"
 "buildpackage</command> 参数 <literal>-sa</literal> 可以这样传递："
 
-#. type: Content of: <book><chapter><section><title>
-msgid "Skipped uploads"
+#. type: content of: <book><chapter><section><title>
+msgid "skipped uploads"
 msgstr "跳过的上传"
 
-#. type: Content of: <book><chapter><section><para>
+#. type: content of: <book><chapter><section><para>
 #, fuzzy
 msgid ""
-"If you created multiple entries in <filename>debian/changelog</filename> by "
+"if you created multiple entries in <filename>debian/changelog</filename> by "
 "skipping uploads, you must create a proper <filename>*_.changes</filename> "
-"file which includes all changes since the last upload.  This can be done by "
+"file which includes all changes since the last upload.  this can be done by "
 "specifying the <command>dpkg-buildpackage</command> option <literal>-v</"
 "literal> with the version, e.g., <literal><replaceable>1.2</replaceable></"
 "literal>."
@@ -9733,164 +9752,177 @@ msgstr ""
 "必须创建一个对应的 <filename>*_.changes</filename> 文件，其中包含自上次上传以"
 "来的全部变更记录。"
 
-#. type: Content of: <book><chapter><section><screen>
+#. type: content of: <book><chapter><section><screen>
 #, fuzzy, no-wrap
 msgid "$ dpkg-buildpackage -v<replaceable>1.2</replaceable>\n"
 msgstr "$ debc <replaceable>package</replaceable>.changes\n"
 
-#. type: Content of: <book><chapter><section><screen>
+#. type: content of: <book><chapter><section><screen>
 #, fuzzy, no-wrap
 msgid "$ debuild -v<replaceable>1.2</replaceable>\n"
 msgstr "$ debc <replaceable>package</replaceable>.changes\n"
 
-#. type: Content of: <book><chapter><section><screen>
-#, fuzzy, no-wrap
+#. type: content of: <book><chapter><section><screen>
+#, no-wrap
 msgid "$ pdebuild --debbuildopts \"-v<replaceable>1.2</replaceable>\"\n"
-msgstr "$ sudo pbuilder --build --debbuildopts -sa <replaceable>foo</replaceable>.dsc\n"
+msgstr "$ pdebuild --debbuildopts \"-v<replaceable>1.2</replaceable>\"\n"
 
-#. type: Content of: <book><appendix><title>
-msgid "Advanced packaging"
+#. type: content of: <book><appendix><title>
+msgid "advanced packaging"
 msgstr "高级打包"
 
-#. type: Content of: <book><appendix><para>
+#. type: content of: <book><appendix><para>
 msgid ""
-"Here are some hints and pointers for advanced packaging topics which you are "
-"most likely to deal with.  You are strongly advised to read all the "
+"here are some hints and pointers for advanced packaging topics which you are "
+"most likely to deal with.  you are strongly advised to read all the "
 "references suggested here."
 msgstr ""
+"这里有一些关于你可能遇到的高级打包问题的提示。"
+"如果有需要的话，本教程强烈建议阅读这里引用和建议的文档。"
 
-#. type: Content of: <book><appendix><para>
+#. type: content of: <book><appendix><para>
 msgid ""
-"You may need to manually edit the packaging template files generated by the "
+"you may need to manually edit the packaging template files generated by the "
 "<command>dh_make</command> command to address topics covered in this "
-"chapter.  The newer <command>debmake</command> command should address these "
+"chapter.  the newer <command>debmake</command> command should address these "
 "topics better."
 msgstr ""
+"你可能需要手工编辑由 <command>dh_make</command> 命令生成的打包模板文件，"
+"以此来解决本章中所讨论的问题。 "
+"新的 <command>debmake</command> 命令应该能更好地解决这些问题。"
 
-#. type: Content of: <book><appendix><section><title>
-msgid "Shared libraries"
+#. type: content of: <book><appendix><section><title>
+msgid "shared libraries"
 msgstr "共享库"
 
-#. type: Content of: <book><appendix><section><para>
+#. type: content of: <book><appendix><section><para>
 msgid ""
-"Before packaging shared <ulink url=\"&library;\">libraries</ulink>, you "
+"before packaging shared <ulink url=\"&library;\">libraries</ulink>, you "
 "should read the following primary references in detail:"
 msgstr ""
+"在打包 <ulink url=\"&library;\">共享库</ulink> 之前，你 "
+"应该阅读以下的主要参考资料："
 
-#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+#. type: content of: <book><appendix><section><itemizedlist><listitem><para>
 #, fuzzy
 msgid ""
-"<ulink url=\"&policy-sharedlibraries;\">Debian Policy Manual, 8 \"Shared "
+"<ulink url=\"&policy-sharedlibraries;\">debian policy manual, 8 \"shared "
 "libraries\"</ulink>"
 msgstr ""
 "第 3 行描述了用户安装此软件包的优先级。具体说明参看 <ulink url=\"&policy-"
-"priorities;\">Debian Policy Manual, 2.5 'Priorities'</ulink>"
+"priorities;\">debian policy manual, 2.5 'priorities'</ulink>"
 
-#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+#. type: content of: <book><appendix><section><itemizedlist><listitem><para>
 #, fuzzy
 msgid ""
-"<ulink url=\"&policy-fhs;\">Debian Policy Manual, 9.1.1 \"File System "
-"Structure\"</ulink>"
+"<ulink url=\"&policy-fhs;\">debian policy manual, 9.1.1 \"file system "
+"structure\"</ulink>"
 msgstr ""
 "第 3 行描述了用户安装此软件包的优先级。具体说明参看 <ulink url=\"&policy-"
-"priorities;\">Debian Policy Manual, 2.5 'Priorities'</ulink>"
+"priorities;\">debian policy manual, 2.5 'priorities'</ulink>"
 
-#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+#. type: content of: <book><appendix><section><itemizedlist><listitem><para>
 #, fuzzy
 msgid ""
-"<ulink url=\"&policy-libraries;\">Debian Policy Manual, 10.2 \"Libraries\"</"
+"<ulink url=\"&policy-libraries;\">debian policy manual, 10.2 \"libraries\"</"
 "ulink>"
 msgstr ""
 "第 3 行描述了用户安装此软件包的优先级。具体说明参看 <ulink url=\"&policy-"
-"priorities;\">Debian Policy Manual, 2.5 'Priorities'</ulink>"
+"priorities;\">debian policy manual, 2.5 'priorities'</ulink>"
 
-#. type: Content of: <book><appendix><section><para>
-msgid "Here are some oversimplified hints for you to get started:"
+#. type: content of: <book><appendix><section><para>
+msgid "here are some oversimplified hints for you to get started:"
 msgstr "以下是帮助你开始的极简解释："
 
-#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+#. type: content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
-"Shared libraries are <ulink url=\"&elf;\">ELF</ulink> object files "
+"shared libraries are <ulink url=\"&elf;\">elf</ulink> object files "
 "containing compiled code."
 msgstr ""
-"共享库均为 <ulink url=\"&elf;\">ELF</ulink> 对象文件，其包含编译好的机器码。"
+"共享库均为 <ulink url=\"&elf;\">elf</ulink> 对象文件，其包含编译好的机器码。"
 
-#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+#. type: content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
-"Shared libraries are distributed as <filename>*.so</filename> files. "
-"(Neither <filename>*.a</filename> files nor <filename>*.la</filename> files)"
+"shared libraries are distributed as <filename>*.so</filename> files. "
+"(neither <filename>*.a</filename> files nor <filename>*.la</filename> files)"
 msgstr ""
 "共享库以 <filename>*.so</filename> 文件的形式发放。"
 "(既非 <filename>*.a</filename> 文件也非 <filename>*.la</filename> 文件)"
 
-#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+#. type: content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
-"Shared libraries are mainly used to share common codes among multiple "
+"shared libraries are mainly used to share common codes among multiple "
 "executables with the <command>ld</command> mechanism."
 msgstr ""
 "共享库主要用于在不同的二进制可执行程序之间共享代码，"
 "这背后使用了 <command>ld</command> （译注：链接）机制。"
 
-#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+#. type: content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
-"Shared libraries are sometimes used to provide multiple plugins to an "
+"shared libraries are sometimes used to provide multiple plugins to an "
 "executable with the <command>dlopen</command> mechanism."
 msgstr ""
 "共享库有时会为一个可执行程序提供多个插件，"
 "使用 <command>dlopen</command> 机制。"
 
-#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+#. type: content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
-"Shared libraries export <ulink url=\"&symbol;\">symbols</ulink> which "
+"shared libraries export <ulink url=\"&symbol;\">symbols</ulink> which "
 "represent compiled objects such as variables, functions, and classes; and "
 "enables access to them from the linked executables."
 msgstr ""
+"共享库能导出代表着变量，函数和类的 <ulink url=\"&symbol;\">symbols</ulink> (符号);"
+"并让链接到的可执行文件访问。"
 
-#. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
+#. type: content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
 msgid ""
-"Alternatively: <literal>readelf -d lib<replaceable>foo</replaceable>.so."
-"<replaceable>1</replaceable> | grep SONAME</literal>"
+"alternatively: <literal>readelf -d lib<replaceable>foo</replaceable>.so."
+"<replaceable>1</replaceable> | grep soname</literal>"
 msgstr ""
 "或者这样： <literal>readelf -d lib<replaceable>foo</replaceable>.so."
-"<replaceable>1</replaceable> | grep SONAME</literal>"
+"<replaceable>1</replaceable> | grep soname</literal>"
 
-#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+#. type: content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
-"The <ulink url=\"&soname;\">SONAME</ulink> of a shared library "
+"the <ulink url=\"&soname;\">soname</ulink> of a shared library "
 "<filename>lib<replaceable>foo</replaceable>.so</filename>.<replaceable>1</"
 "replaceable>: <literal>objdump -p lib<replaceable>foo</replaceable>.so."
-"<replaceable>1</replaceable> | grep SONAME</literal> <placeholder type="
+"<replaceable>1</replaceable> | grep soname</literal> <placeholder type="
 "\"footnote\" id=\"0\"/>"
 msgstr ""
 "共享库 "
 "<filename>lib<replaceable>foo</replaceable>.so</filename>.<replaceable>1</"
-"replaceable> 中的 <ulink url=\"&soname;\">SONAME</ulink> : "
+"replaceable> 中的 <ulink url=\"&soname;\">soname</ulink> : "
 "<literal>objdump -p lib<replaceable>foo</replaceable>.so."
-"<replaceable>1</replaceable> | grep SONAME</literal> <placeholder type="
+"<replaceable>1</replaceable> | grep soname</literal> <placeholder type="
 "\"footnote\" id=\"0\"/>"
 
-#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+#. type: content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
-"The SONAME of a shared library usually matches the library file name (but "
+"the soname of a shared library usually matches the library file name (but "
 "not always)."
 msgstr ""
-"共享库的 SONAME 常常与库文件自身文件名一致(不过有特例)。"
+"共享库的 soname 常常与库文件自身文件名一致(不过有特例)。"
 
-#. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
+#. type: content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
 msgid ""
-"Alternatively: <literal>readelf -d lib<replaceable>foo</replaceable>.so."
-"<replaceable>1</replaceable> | grep NEEDED</literal>"
+"alternatively: <literal>readelf -d lib<replaceable>foo</replaceable>.so."
+"<replaceable>1</replaceable> | grep needed</literal>"
 msgstr ""
 "或者这样： <literal>readelf -d lib<replaceable>foo</replaceable>.so."
-"<replaceable>1</replaceable> | grep NEEDED</literal>"
+"<replaceable>1</replaceable> | grep needed</literal>"
 
-#. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
+#. type: content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
 "The SONAME of shared libraries linked to <filename><replaceable>/usr/bin/"
 "foo</replaceable></filename>: <literal>objdump -p <replaceable>/usr/bin/foo</"
 "replaceable> | grep NEEDED</literal> <placeholder type=\"footnote\" id=\"0\"/"
 ">"
 msgstr ""
+"链接到 <filename><replaceable>/usr/bin/"
+"foo</replaceable></filename> 的共享库的 SONAME ： <literal>objdump -p <replaceable>/usr/bin/foo</"
+"replaceable> | grep NEEDED</literal> <placeholder type=\"footnote\" id=\"0\"/"
+">"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
 msgid ""
@@ -9976,6 +10008,8 @@ msgid ""
 "Debian package should not contain <filename>*.la</filename> Libtool archive "
 "files in general.<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
+"一般而言，Debian 软件包不应当包含 <filename>*.la</filename> Libtool 归档文件。 "
+"<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
 msgid "See <ulink url=\"&rpathissues;\">Debian wiki RpathIssue</ulink>."
@@ -10112,6 +10146,9 @@ msgid ""
 "<filename>debian/libfoo1.symbols</filename> in its source package, use it "
 "again."
 msgstr ""
+"如果之前的上游版本 <literal>1.2</literal> 已经被 "
+"<systemitem role=\"package\">libfoo1</systemitem> 软件包打包了，并且其源码包中有妥当的 "
+"<filename>debian/libfoo1.symbols</filename>， 再用它一次。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para><footnote><para>
 msgid ""
@@ -10122,6 +10159,12 @@ msgid ""
 "<literal>1.1-1</literal> and <literal>1.2</literal> &lt;&lt; "
 "<literal>1.2-1~bpo70+1</literal> &lt;&lt; <literal>1.2-1</literal>"
 msgstr ""
+"所有先前的 Debian 软件包版本都能在 <ulink url="
+"\"&snapshot;\">http://snapshot.debian.org/</ulink> 找到。不过 Debian 修订号 "
+"被去掉了，以使软件包的 backport 更为容易： "
+"<literal>1.1</literal> &lt;&lt; <literal>1.1-1~bpo70+1</literal> &lt;&lt; "
+"<literal>1.1-1</literal> and <literal>1.2</literal> &lt;&lt; "
+"<literal>1.2-1~bpo70+1</literal> &lt;&lt; <literal>1.2-1</literal>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -10201,6 +10244,9 @@ msgid ""
 "backport the package: <literal>1.3</literal> &lt;&lt; "
 "<literal>1.3-1~bpo70+1</literal> &lt;&lt; <literal>1.3-1</literal>"
 msgstr ""
+"Debian 修订号已被从版本中去掉，这能让软件包的 backport 更为容易： "
+"<literal>1.3</literal> &lt;&lt; "
+"<literal>1.3-1~bpo70+1</literal> &lt;&lt; <literal>1.3-1</literal>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -10209,6 +10255,9 @@ msgid ""
 "generated binary package of the shared library.  <placeholder type=\"footnote"
 "\" id=\"0\"/>"
 msgstr ""
+"如果你如上述看见由 <command>dpkg-gensymbols</command> 命令打印出来的差异， "
+"那就从生成的二进制库包中抽取妥当更新的 <filename>symbols</filename> 文件。"
+" <placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><screen>
 #, no-wrap
@@ -10259,6 +10308,9 @@ msgid ""
 "further and bump versions for some symbols manually as needed.  <placeholder "
 "type=\"footnote\" id=\"0\"/>"
 msgstr ""
+"对上边这个例子补充一点，我们需要进一步检查 ABI (应用程序二进制接口) 兼容性 "
+"并在需要的时候手动更新一些符号的版本。  <placeholder "
+"type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -10266,6 +10318,8 @@ msgid ""
 "\">Debian wiki UsingSymbolsFiles</ulink> and its linked web pages may be "
 "useful."
 msgstr ""
+"虽然这只是第二参考， <ulink url=\"&usingsymbolsfiles;"
+"\">Debian wiki UsingSymbolsFiles</ulink> 和它指向的页面可能会有所帮助。"
 
 #. type: Content of: <book><appendix><section><title>
 msgid "Multiarch"
@@ -10356,6 +10410,7 @@ msgid ""
 "Here are some typical multiarch package split scenario examples for the "
 "followings:"
 msgstr ""
+"下面是一些典型的多体系结构软件包分离情景："
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -10508,6 +10563,10 @@ msgid ""
 "number</emphasis>.  E.g.: <filename>/usr/lib/x86_64-linux-gnu/libfoo.so</"
 "filename> -&gt; <filename>libfoo.so.1</filename>"
 msgstr ""
+"请注意，开发软件包应该包含一个指向共享库的符号链接并且 "
+"<emphasis role=\"strong\">不带有版本号</emphasis>。 "
+"比如： <filename>/usr/lib/x86_64-linux-gnu/libfoo.so</"
+"filename> -&gt; <filename>libfoo.so.1</filename>"
 
 #. type: Content of: <book><appendix><section><title>
 msgid "Building a shared library package"
@@ -10556,6 +10615,8 @@ msgid ""
 "multiarch <literal>/usr/lib/$(DEB_HOST_MULTIARCH)/</literal> for all "
 "packaging scripts."
 msgstr ""
+"将所有打包脚本中的路径从普通的 <literal>/usr/lib/</literal> 调整到 "
+"多体系结构的 <literal>/usr/lib/$(DEB_HOST_MULTIARCH)/</literal>。 "
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -10603,6 +10664,9 @@ msgid ""
 "lib/*/</literal> in <filename>debian/<replaceable>foo</replaceable>.install</"
 "filename> files."
 msgstr ""
+"在<filename>debian/<replaceable>foo</replaceable>.install</"
+"filename> 文件中将所有 <literal>/usr/lib/</literal> 的事件替换为 <literal>/usr/"
+"lib/*/</literal> 。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -10612,6 +10676,10 @@ msgid ""
 "<literal>override_dh_auto_configure</literal> target in <filename>debian/"
 "rules</filename>."
 msgstr ""
+"欲从 <filename>debian/<replaceable>foo</replaceable>.links.in</"
+"filename> 动态地生成像 <filename>debian/<replaceable>foo</replaceable>.links</"
+"filename> 这样的文件，可以添加一个脚本到 <filename>debian/"
+"rules</filename> 文件的 <literal>override_dh_auto_configure</literal> target 中。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><screen>
 #, no-wrap
