@@ -9724,10 +9724,6 @@ msgstr ""
 "filename> 文件也非 <filename>*.la</filename> 文件)"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid ""
-#| "shared libraries are mainly used to share common codes among multiple "
-#| "executables with the <command>ld</command> mechanism."
 msgid ""
 "Shared libraries are mainly used to share common codes among multiple "
 "executables with the <command>ld</command> mechanism."
@@ -9736,51 +9732,31 @@ msgstr ""
 "<command>ld</command> （译注：链接）机制。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid ""
-#| "shared libraries are sometimes used to provide multiple plugins to an "
-#| "executable with the <command>dlopen</command> mechanism."
 msgid ""
 "Shared libraries are sometimes used to provide multiple plugins to an "
 "executable with the <command>dlopen</command> mechanism."
 msgstr ""
-"共享库有时会为一个可执行程序提供多个插件，使用 <command>dlopen</command> 机"
-"制。"
+"共享库有时会为一个可执行程序提供多个插件，这背后使用了 <command>dlopen</"
+"command> 机制。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid ""
-#| "shared libraries export <ulink url=\"&symbol;\">symbols</ulink> which "
-#| "represent compiled objects such as variables, functions, and classes; and "
-#| "enables access to them from the linked executables."
 msgid ""
 "Shared libraries export <ulink url=\"&symbol;\">symbols</ulink> which "
 "represent compiled objects such as variables, functions, and classes; and "
 "enables access to them from the linked executables."
 msgstr ""
 "共享库能导出代表着变量，函数和类的 <ulink url=\"&symbol;\">symbols</ulink> "
-"(符号);并让链接到的可执行文件访问。"
+"(符号); 并让链接到它的可执行文件访问。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
-#, fuzzy
-#| msgid ""
-#| "alternatively: <literal>readelf -d lib<replaceable>foo</replaceable>.so."
-#| "<replaceable>1</replaceable> | grep soname</literal>"
 msgid ""
 "Alternatively: <literal>readelf -d lib<replaceable>foo</replaceable>.so."
 "<replaceable>1</replaceable> | grep SONAME</literal>"
 msgstr ""
 "或者这样： <literal>readelf -d lib<replaceable>foo</replaceable>.so."
-"<replaceable>1</replaceable> | grep soname</literal>"
+"<replaceable>1</replaceable> | grep SONAME</literal>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid ""
-#| "the <ulink url=\"&soname;\">soname</ulink> of a shared library "
-#| "<filename>lib<replaceable>foo</replaceable>.so</filename>.<replaceable>1</"
-#| "replaceable>: <literal>objdump -p lib<replaceable>foo</replaceable>.so."
-#| "<replaceable>1</replaceable> | grep soname</literal> <placeholder type="
-#| "\"footnote\" id=\"0\"/>"
 msgid ""
 "The <ulink url=\"&soname;\">SONAME</ulink> of a shared library "
 "<filename>lib<replaceable>foo</replaceable>.so</filename>.<replaceable>1</"
@@ -9789,32 +9765,24 @@ msgid ""
 "\"footnote\" id=\"0\"/>"
 msgstr ""
 "共享库 <filename>lib<replaceable>foo</replaceable>.so</filename>."
-"<replaceable>1</replaceable> 中的 <ulink url=\"&soname;\">soname</ulink> : "
+"<replaceable>1</replaceable> 中的 <ulink url=\"&soname;\">SONAME</ulink> : "
 "<literal>objdump -p lib<replaceable>foo</replaceable>.so.<replaceable>1</"
-"replaceable> | grep soname</literal> <placeholder type=\"footnote\" id=\"0\"/"
+"replaceable> | grep SONAME</literal> <placeholder type=\"footnote\" id=\"0\"/"
 ">"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid ""
-#| "the soname of a shared library usually matches the library file name (but "
-#| "not always)."
 msgid ""
 "The SONAME of a shared library usually matches the library file name (but "
 "not always)."
-msgstr "共享库的 soname 常常与库文件自身文件名一致(不过有特例)。"
+msgstr "共享库的 SONAME 常常与库文件自身文件名一致(不过有特例)。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
-#, fuzzy
-#| msgid ""
-#| "alternatively: <literal>readelf -d lib<replaceable>foo</replaceable>.so."
-#| "<replaceable>1</replaceable> | grep soname</literal>"
 msgid ""
 "Alternatively: <literal>readelf -d lib<replaceable>foo</replaceable>.so."
 "<replaceable>1</replaceable> | grep NEEDED</literal>"
 msgstr ""
 "或者这样： <literal>readelf -d lib<replaceable>foo</replaceable>.so."
-"<replaceable>1</replaceable> | grep soname</literal>"
+"<replaceable>1</replaceable> | grep NEEDED</literal>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -9836,7 +9804,6 @@ msgstr ""
 "shared libraries\"</ulink>."
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">lib<replaceable>foo</"
 "replaceable><replaceable>1</replaceable></systemitem>: the library package "
@@ -9844,11 +9811,11 @@ msgid ""
 "<replaceable>1</replaceable></filename> with the SONAME ABI version "
 "<replaceable>1</replaceable>.<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-"如果软件包 <systemitem role=\"package\"><replaceable>foo</replaceable></"
-"systemitem> 是使用旧的 <literal>1.0</literal> 格式的，可以在新解压的源代码目"
-"录里运行 <literal>zcat /<replaceable>path</replaceable>/<replaceable>to</"
-"replaceable>/<replaceable>foo</replaceable>_<replaceable>oldversion</"
-"replaceable>.diff.gz|patch -p1</literal> 来完成。"
+"<systemitem role=\"package\">lib<replaceable>foo</"
+"replaceable><replaceable>1</replaceable></systemitem>:  共享库 "
+"<filename>lib<replaceable>foo</replaceable>.so.<replaceable>1</replaceable></"
+"filename> 的库文件包，其 SONAME ABI 版本为 <replaceable>1</replaceable>."
+"<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
 msgid ""
@@ -9893,7 +9860,6 @@ msgstr ""
 "8.4 \"Development files\"</ulink>."
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<systemitem role=\"package\">lib<replaceable>foo</replaceable>-dev</"
 "systemitem>: the development package which contains the header files etc. "
@@ -9901,11 +9867,10 @@ msgid ""
 "<replaceable>1</replaceable></filename>.<placeholder type=\"footnote\" id="
 "\"0\"/>"
 msgstr ""
-"如果软件包 <systemitem role=\"package\"><replaceable>foo</replaceable></"
-"systemitem> 是使用旧的 <literal>1.0</literal> 格式的，可以在新解压的源代码目"
-"录里运行 <literal>zcat /<replaceable>path</replaceable>/<replaceable>to</"
-"replaceable>/<replaceable>foo</replaceable>_<replaceable>oldversion</"
-"replaceable>.diff.gz|patch -p1</literal> 来完成。"
+"<systemitem role=\"package\">lib<replaceable>foo</replaceable>-dev</"
+"systemitem>: 包含了头文件等内容的开发包。用于 <filename>lib<replaceable>foo</"
+"replaceable>.so.<replaceable>1</replaceable></filename>.<placeholder type="
+"\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para><footnote><para>
 msgid ""
@@ -9981,60 +9946,54 @@ msgstr ""
 "library-shlibs;\">Debian Policy Manual, 8.6.4 \"The shlibs system\"</ulink>。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<ulink url=\"&policy-library-symbols;\">Debian Policy Manual, 8.6.3 \"The "
 "symbols system\"</ulink><placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-"第 3 行描述了用户安装此软件包的优先级。具体说明参看 <ulink url=\"&policy-"
-"priorities;\">Debian Policy Manual, 2.5 'Priorities'</ulink>"
+"<ulink url=\"&policy-library-symbols;\">Debian Policy Manual, 8.6.3 \"The "
+"symbols system\"</ulink><placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<citerefentry> <refentrytitle>dh_makeshlibs</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry>"
 msgstr ""
-"<citerefentry> <refentrytitle>dh_installdocs</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry> 命令会安装这个文件。"
+"<citerefentry> <refentrytitle>dh_makeshlibs</refentrytitle> <manvolnum>1</"
+"manvolnum> </citerefentry>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<citerefentry> <refentrytitle>dpkg-gensymbols</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry>"
 msgstr ""
-"<citerefentry> <refentrytitle>dh_installdocs</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry> 命令会安装这个文件。"
+"<citerefentry> <refentrytitle>dpkg-gensymbols</refentrytitle> <manvolnum>1</"
+"manvolnum> </citerefentry>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<citerefentry> <refentrytitle>dpkg-shlibdeps</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry>"
 msgstr ""
-"<citerefentry> <refentrytitle>dh_installdocs</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry> 命令会安装这个文件。"
+"<citerefentry> <refentrytitle>dpkg-shlibdeps</refentrytitle> <manvolnum>1</"
+"manvolnum> </citerefentry>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "<citerefentry> <refentrytitle>deb-symbols</refentrytitle> <manvolnum>5</"
 "manvolnum> </citerefentry>"
 msgstr ""
-"<citerefentry> <refentrytitle>dh_installdocs</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry> 命令会安装这个文件。"
+"<citerefentry> <refentrytitle>deb-symbols</refentrytitle> <manvolnum>5</"
+"manvolnum> </citerefentry>"
 
 #. type: Content of: <book><appendix><section><para>
-#, fuzzy
 msgid ""
 "Here is a rough example to create the <systemitem role=\"package\">libfoo1</"
 "systemitem> package to the upstream version <literal>1.3</literal> with the "
 "proper <filename>debian/libfoo1.symbols</filename> file:"
 msgstr ""
-"要将 <filename>doc/gentoo.1</filename> 安装为 <systemitem role=\"package"
-"\">gentoo</systemitem> 的 man 手册页，创建一个 <filename>gentoo.manpages</"
-"filename>，内容如下："
+"这是个粗略的例子来演示创建 <systemitem role=\"package\">libfoo1</systemitem> "
+"软件包，对应上游版本 <literal>1.3</literal> ，并有着妥当的<filename>debian/"
+"libfoo1.symbols</filename> 文件："
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
@@ -10190,13 +10149,12 @@ msgstr ""
 "        >libfoo-1.3/debian/libfoo1.symbols\n"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Build release packages with tools such as <command>debuild</command> and "
 "<command>pdebuild</command>."
 msgstr ""
-"添加 <command>dh_quilt_patch</command> 和 <command>dh_quilt_unpatch</"
-"command> 命令支持。"
+"使用像 <command>debuild</command> 和 <command>pdebuild</command> 这样的工具来"
+"构建发行软件包。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><screen>
 #, no-wrap
