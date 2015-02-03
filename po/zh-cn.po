@@ -9281,76 +9281,60 @@ msgid ""
 msgstr "当然你还需要按照 <xref linkend=\"newupstream\"/> 完成其他的步骤。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
-#| msgid "utf-8 conversion"
 msgid "UTF-8 conversion"
-msgstr "utf-8 转换"
+msgstr "UTF-8 转换"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
-#| msgid ""
-#| "if upstream documents are encoded in old encoding schemes, converting "
-#| "them to <ulink url=\"&utf8;\">utf-8</ulink> is a good idea."
 msgid ""
 "If upstream documents are encoded in old encoding schemes, converting them "
 "to <ulink url=\"&utf8;\">UTF-8</ulink> is a good idea."
 msgstr ""
-"如果上游文档采用了老式编码，那么将其转换为 <ulink url=\"&utf8;\">utf-8</"
+"如果上游文档采用了老式编码，那么将其转换为 <ulink url=\"&utf8;\">UTF-8</"
 "ulink> 不失为一良方。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Use <citerefentry> <refentrytitle>iconv</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry> to convert encodings of plain text files."
 msgstr ""
-"<citerefentry> <refentrytitle>dh_installdocs</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry> 命令会安装这个文件。"
+"用 <citerefentry> <refentrytitle>iconv</refentrytitle> <manvolnum>1</"
+"manvolnum> </citerefentry> 来转换普通文本文件的编码。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><screen>
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "iconv -f latin1 -t utf8 <replaceable>foo_in.txt</replaceable> &gt; <replaceable>foo_out.txt</replaceable>\n"
-msgstr "$ debdiff <replaceable>old-package</replaceable>.dsc <replaceable>new-package</replaceable>.dsc\n"
+msgstr "iconv -f latin1 -t utf8 <replaceable>foo_in.txt</replaceable> &gt; <replaceable>foo_out.txt</replaceable>\n"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Use <citerefentry> <refentrytitle>w3m</refentrytitle> <manvolnum>1</"
 "manvolnum> </citerefentry> to convert from HTML files to UTF-8 plain text "
 "files.  When you do this, make sure to execute it under UTF-8 locale."
 msgstr ""
-"<citerefentry> <refentrytitle>dh_installexamples</refentrytitle> "
-"<manvolnum>1</manvolnum> </citerefentry> 会将列出的文件和目录作为示例文件安"
-"装。"
+"使用 <citerefentry> <refentrytitle>w3m</refentrytitle> <manvolnum>1</"
+"manvolnum> </citerefentry> 来把 HTML 文件转换为 UTF-8 普通文本文件。 当你这样"
+"做的时候，请确认在 UTF-8 locale 下执行。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><screen>
-#, fuzzy, no-wrap
-#| msgid ""
-#| "lc_all=en_us.utf-8 w3m -o display_charset=utf-8 \\\n"
-#| "        -cols 70 -dump -no-graph -t text/html \\\n"
-#| "        &lt; <replaceable>foo_in.html</replaceable> &gt; <replaceable>foo_out.txt</replaceable>\n"
+#, no-wrap
 msgid ""
 "LC_ALL=en_US.UTF-8 w3m -o display_charset=UTF-8 \\\n"
 "        -cols 70 -dump -no-graph -T text/html \\\n"
 "        &lt; <replaceable>foo_in.html</replaceable> &gt; <replaceable>foo_out.txt</replaceable>\n"
 msgstr ""
-"lc_all=en_us.utf-8 w3m -o display_charset=utf-8 \\\n"
-"        -cols 70 -dump -no-graph -t text/html \\\n"
+"LC_ALL=en_US.UTF-8 w3m -o display_charset=UTF-8 \\\n"
+"        -cols 70 -dump -no-graph -T text/html \\\n"
 "        &lt; <replaceable>foo_in.html</replaceable> &gt; <replaceable>foo_out.txt</replaceable>\n"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
-#| msgid "reminders for updating packages"
 msgid "Reminders for updating packages"
 msgstr "对更新软件包的几点提示"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid "Here are few reminders for updating packages:"
-msgstr "以下是对更新软件包的几点提示。"
+msgstr "以下是对更新软件包的几点提示："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Preserve old <filename>changelog</filename> entries (sounds obvious, but "
 "there have been cases of people typing <literal>dch</literal> when they "
@@ -9360,28 +9344,16 @@ msgstr ""
 "<literal>dch -i</literal> 输入为 <literal>dch</literal>)。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid ""
-#| "existing debian changes need to be reevaluated; throw away stuff that "
-#| "upstream has incorporated (in one form or another) and remember to keep "
-#| "stuff that hasn't been incorporated by upstream, unless there is a "
-#| "compelling reason not to."
 msgid ""
 "Existing Debian changes need to be reevaluated; throw away stuff that "
 "upstream has incorporated (in one form or another) and remember to keep "
 "stuff that hasn't been incorporated by upstream, unless there is a "
 "compelling reason not to."
 msgstr ""
-"已存在的 debian 修改需要被重新校验，去除上游已经接受的东西，除非有必要的原"
-"因，还要记录尚未被上游接受的部分。"
+"已存在的 debian 修改需要被重新校验，去除上游已经合并的东西 (一种或多种形式)，"
+"除非有必要的原因，还要保留尚未被上游接受的部分。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid ""
-#| "if any changes were made to the build system (hopefully you'd know from "
-#| "inspecting upstream changes) then update the <filename>debian/rules</"
-#| "filename> and <filename>debian/control</filename> build dependencies if "
-#| "necessary."
 msgid ""
 "If any changes were made to the build system (hopefully you'd know from "
 "inspecting upstream changes) then update the <filename>debian/rules</"
@@ -9393,16 +9365,14 @@ msgstr ""
 "filename> 编译依赖关系。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Check the <ulink url=\"&bts;\">Debian Bug Tracking System (BTS)</ulink> to "
 "see if someone has provided patches to bugs that are currently open."
 msgstr ""
-"检查 <ulink url=\"&bts;\">debian bug tracking system (bts)</ulink> 是否有人为"
+"检查 <ulink url=\"&bts;\">Debian Bug Tracking System (BTS)</ulink> 是否有人为"
 "某些仍然未修复的 bug 提供了补丁。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Check the contents of the <filename>.changes</filename> file to make sure "
 "you are uploading to the correct distribution, the proper bug closures are "
@@ -9411,44 +9381,28 @@ msgid ""
 "signed, etc."
 msgstr ""
 "检查 <filename>.changes</filename> 文件以确保你正要上传到正确的发行版、正确的"
-"列于 <literal>closes</literal> 域的 bug、<literal>maintainer</literal> 和 "
-"<literal>changed-by</literal> 域相匹配，且该文件已经使用 gpg 签署等。"
+"列出BUG关闭 <literal>Closes</literal> 字段、<literal>Maintainer</literal> 和 "
+"<literal>Changed-By</literal> 字段相匹配，以及文件是否已经使用 GPG 签署等。"
 
 #. type: Content of: <book><chapter><title>
-#, fuzzy
-#| msgid "uploading the package"
 msgid "Uploading the package"
 msgstr "上传软件包"
 
 #. type: Content of: <book><chapter><para>
-#, fuzzy
 msgid ""
 "Now that you have tested your new package thoroughly, you want to release it "
 "to a public archive to share it."
-msgstr ""
-"当你完成了对软件包的彻底测试，在技术上你已经满足了申请 debian 新维护人员的要"
-"求，详细的描述参看 <ulink url=\"&nm-join;\">&nm-join;</ulink>"
+msgstr "现在你完成了对软件包的彻底测试，接下来将其释出到公共归档中分享它吧。"
 
 #. type: Content of: <book><chapter><section><title>
-#, fuzzy
-#| msgid "uploading to the debian archive"
 msgid "Uploading to the Debian archive"
-msgstr "上传到 debian 仓库"
+msgstr "上传到 Debian 仓库"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
-#, fuzzy
-#| msgid "see <xref linkend=\"socialdynamics\"/>."
 msgid "See <xref linkend=\"socialdynamics\"/>."
 msgstr "参见 <xref linkend=\"socialdynamics\"/>。"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
-#, fuzzy
-#| msgid ""
-#| "there are publicly accessible archives such as <ulink url=\"&mentors-dn;"
-#| "\"/> which work almost the same way as the debian archive and provide an "
-#| "upload area for non-dds.  you can set up an equivalent archive by "
-#| "yourself using the tools listed at <ulink url=\"&deb-archive;\"/>.  so "
-#| "this section is useful for non-dds, too."
 msgid ""
 "There are publicly accessible archives such as <ulink url=\"&mentors-dn;\"/> "
 "which work almost the same way as the Debian archive and provide an upload "
@@ -9457,12 +9411,11 @@ msgid ""
 "useful for non-DDs, too."
 msgstr ""
 "有许多公开的档案比如 <ulink url=\"&mentors-dn;\"/> ，它们的运作方式几乎与 "
-"debian 档案一致，并提供了一个非开发者的上传区域。你可以自己建立一个等效档案，"
+"Debian 档案一致，并提供了一个非开发者的上传区域。你可以自己建立一个等效档案，"
 "只要使用 <ulink url=\"&deb-archive;\"/> 里边列举出来的工具。  所以这一小节也"
 "对非开发者特别有用。"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
-#, fuzzy
 msgid ""
 "The <systemitem role=\"package\">dput</systemitem> package seems to come "
 "with more features and to be becoming more popular than the <systemitem role="
@@ -9477,7 +9430,6 @@ msgstr ""
 "filename> 作为用户配置文件。它也直接支持 ubuntu 相关的服务。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Once you become an official developer, <placeholder type=\"footnote\" id="
 "\"0\"/> you can upload the package to the Debian archive.  <placeholder type="
@@ -9488,12 +9440,13 @@ msgid ""
 "citerefentry>.  We'll describe how it's done with <command>dupload</"
 "command>.  <placeholder type=\"footnote\" id=\"2\"/>"
 msgstr ""
-"当你成为正式的开发人员，你会需要把软件包上传到 debian 仓库。你可以手工进行这"
-"项工作，但使用例如 <citerefentry> <refentrytitle>dupload</refentrytitle> "
+"当你成为正式的开发人员<placeholder type=\"footnote\" id=\"0\"/>，你可以把软件"
+"包上传到 Debian 仓库<placeholder type=\"footnote\" id=\"1\"/>。你可以手工进行"
+"这项工作，但使用例如 <citerefentry> <refentrytitle>dupload</refentrytitle> "
 "<manvolnum>1</manvolnum> </citerefentry> 或 <citerefentry> "
 "<refentrytitle>dput</refentrytitle> <manvolnum>1</manvolnum> </citerefentry> "
 "的自动化工具可以帮你更好地完成这项操作。在此我们将叙述如何使用 "
-"<command>dupload</command> 操作。<placeholder type=\"footnote\" id=\"0\"/>"
+"<command>dupload</command> 操作。<placeholder type=\"footnote\" id=\"2\"/>"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
