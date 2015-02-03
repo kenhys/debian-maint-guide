@@ -10339,7 +10339,7 @@ msgstr "相同"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the shared library, co-installable"
-msgstr ""
+msgstr "共享库，可共同安装"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid ""
@@ -10351,7 +10351,7 @@ msgstr ""
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the shared library debug symbols, co-installable"
-msgstr ""
+msgstr "共享库调试符号，可共同安装"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid ""
@@ -10362,9 +10362,8 @@ msgstr ""
 "systemitem>"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
-#, fuzzy
 msgid "the shared library header files etc., co-installable"
-msgstr "<filename>debian</filename> 目录中的必须内容"
+msgstr "共享库头文件之类，可共同安装"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid ""
@@ -10380,7 +10379,7 @@ msgstr "外来"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the run-time support programs, not co-installable"
-msgstr ""
+msgstr "运行时支持程序，不可共同安装"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid ""
@@ -10396,7 +10395,7 @@ msgstr "全部"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the shared library documentation files"
-msgstr ""
+msgstr "共享库文档"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid ""
@@ -10406,7 +10405,7 @@ msgstr ""
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the compiled program files, not co-installable"
-msgstr ""
+msgstr "编译好的程序文件，不可共同安装"
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid ""
@@ -10426,7 +10425,7 @@ msgstr ""
 
 #. type: Content of: <book><appendix><section><informaltable><tgroup><tbody><row><entry>
 msgid "the interpreted program files"
-msgstr ""
+msgstr "解释型程序文件"
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -10441,31 +10440,31 @@ msgid "Building a shared library package"
 msgstr "构建共享库包"
 
 #. type: Content of: <book><appendix><section><para>
-#, fuzzy
 msgid ""
 "You can build a Debian library package enabling the multiarch support using "
 "<citerefentry> <refentrytitle>dh</refentrytitle> <manvolnum>1</manvolnum> </"
 "citerefentry> as follows:"
 msgstr ""
-"你可以使用 <citerefentry> <refentrytitle>debc</refentrytitle> <manvolnum>1</"
-"manvolnum> </citerefentry> 命令列出一个二进制 Debian 软件包中的文件。"
+"你可以用 <citerefentry> <refentrytitle>dh</refentrytitle> <manvolnum>1</manvolnum> </"
+"citerefentry> 通过以下方法构建一个支持多体系结构的 Debian 库软件包："
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid "Update <filename>debian/control</filename>."
 msgstr "更新 <filename>debian/control</filename>。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "Add <literal>Build-Depends: debhelper (>=9)</literal> for the source package "
 "section."
 msgstr "<literal>3.0 (native)</literal> - Debian native 软件"
+"为源码包部分添加 <literal>Build-Depends: debhelper (>=9)</literal> 部分。 "
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
 "Add <literal>Pre-Depends: ${misc:Pre-Depends}</literal> for each shared "
 "library binary package."
 msgstr ""
+"为每个二进制库软件包添加 <literal>Pre-Depends: ${misc:Pre-Depends}</literal> 。 "
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -10490,12 +10489,17 @@ msgid ""
 "qDEB_HOST_MULTIARCH)</literal> in <filename>debian/rules</filename> to set "
 "<literal>DEB_HOST_MULTIARCH</literal> variable, first."
 msgstr ""
+"首先，在 <filename>debian/rules</filename> 中调用 <literal>DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -"
+"qDEB_HOST_MULTIARCH)</literal> 以设置 "
+"<literal>DEB_HOST_MULTIARCH</literal> 变量。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
 "Replace <literal>/usr/lib/</literal> with <literal>/usr/lib/"
 "$(DEB_HOST_MULTIARCH)/</literal> in <filename>debian/rules</filename>."
 msgstr ""
+"在 <filename>debian/rules</filename> 中用 <literal>/usr/lib/"
+"$(DEB_HOST_MULTIARCH)/</literal> 替换 <literal>/usr/lib/</literal>。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para><footnote><para>
 msgid ""
@@ -10515,6 +10519,9 @@ msgid ""
 "rules</filename>, make sure to replace it with <literal>dh_auto_configure -- "
 "</literal>.  <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
+"如果 <filename>debian/rules</filename> 文件中的 <literal>override_dh_auto_configure</literal> "
+"target 使用了 <literal>./configure</literal> 文件，那么请确认用 <literal>dh_auto_configure -- "
+"</literal> 来替换它。  <placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -10550,6 +10557,7 @@ msgid ""
 "Please make sure to verify that the shared library package contains only the "
 "expected files, and that your -dev package still works."
 msgstr ""
+"请确认该共享库软件包仅仅包含预期中的文件，并且你的 -dev 软件包还奏效。"
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -10569,6 +10577,9 @@ msgid ""
 "its source may contain all the <filename>debian/*</filename> files in it.  "
 "There are 2 ways to package it."
 msgstr ""
+"如果一个软件包是仅仅为 Debian 维护的，或者是可能的本地使用，"
+"那么它的源码可以容纳所有的 <filename>debian/*<filename> 于其中。"
+"这里有它的两种打包方式。"
 
 #. type: Content of: <book><appendix><section><para>
 msgid ""
@@ -10577,16 +10588,21 @@ msgid ""
 "linkend=\"workflow\"/>.  This is the normal way which some people encourage "
 "to use."
 msgstr ""
+"你可以将除You can make the upstream tarball by excluding the <filename>debian/*</"
+"filename> 文件之外的部分制作成上游 tarball，然后将其作为非本土 Debian 软件包来打包，正如 <xref "
+"linkend=\"workflow\"/> 所述。 这是一些人鼓励使用的普通方法。 "
 
 #. type: Content of: <book><appendix><section><para>
 msgid "The alternative is the workflow of the native Debian package."
-msgstr ""
+msgstr "另一种方法就是本土 Debian 软件包的打包工作流。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid ""
 "Create a native Debian source package in the <literal>3.0 (native)</literal> "
 "format using a single compressed tar file in which all files are included."
 msgstr ""
+"用包含所有文件的，单一压缩过的 tar 文件，以 <literal>3.0 (native)</literal> "
+"格式来创建本土 Debian 源码包。"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><itemizedlist><listitem><literal>
 msgid ""
@@ -10619,6 +10635,9 @@ msgid ""
 "native Debian package for it by issuing the <command>dh_make</command> "
 "command as follows:"
 msgstr ""
+"比如说，如果你的源代码文件都存放在 <filename>~/mypackage-1.0</"
+"filename> 中，而且没有 <filename>debian/*</filename> 文件，那么你可以用它创建 "
+"一个本土 Debian 软件包，只要按照下边的方法使用 <command>dh_make</command> 命令："
 
 #. type: Content of: <book><appendix><section><screen>
 #, no-wrap
@@ -10642,6 +10661,8 @@ msgid ""
 "After execution of the <command>dpkg-buildpackage</command> command, you "
 "will see the following files in the parent directory:"
 msgstr ""
+"在执行了 <command>dpkg-buildpackage</command> 命令后，你将会"
+"在上一级目录中看到这些文件："
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid "<filename>mypackage_1.0.tar.gz</filename>"
@@ -10653,6 +10674,9 @@ msgid ""
 "filename> directory by the <command>dpkg-source</command> command.  (Its "
 "suffix is not <filename>orig.tar.gz</filename>.)"
 msgstr ""
+"这是 <command>dpkg-source</command> 命令用 <filename>mypackage-1.0</"
+"filename> 目录创建出来的源代码 tarball 。 (它的 "
+"文件名后缀不是 <filename>orig.tar.gz</filename>)"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid "<filename>mypackage_1.0.dsc</filename>"
@@ -10663,6 +10687,7 @@ msgid ""
 "This is a summary of the contents of the source code as in the non-native "
 "Debian package. (There is no Debian revision.)"
 msgstr ""
+"这是对源码内容的简述，正如在非本土 Debian 软件包中那样。(没有 Debian 修订)"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid "<filename>mypackage_1.0_i386.deb</filename>"
@@ -10673,6 +10698,7 @@ msgid ""
 "This is your completed binary package as in the non-native Debian package.  "
 "(There is no Debian revision.)"
 msgstr ""
+"这是完成的二进制包，正如在非本土 Debian 软件包中那样。(没有 Debian 修订)"
 
 #. type: Content of: <book><appendix><section><itemizedlist><listitem><para>
 msgid "<filename>mypackage_1.0_i386.changes</filename>"
