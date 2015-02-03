@@ -10578,7 +10578,7 @@ msgid ""
 "There are 2 ways to package it."
 msgstr ""
 "如果一个软件包是仅仅为 Debian 维护的，或者是可能的本地使用，"
-"那么它的源码可以容纳所有的 <filename>debian/*<filename> 于其中。"
+"那么它的源码可以容纳所有的 <filename>debian/*</filename> 于其中。"
 "这里有它的两种打包方式。"
 
 #. type: Content of: <book><appendix><section><para>
