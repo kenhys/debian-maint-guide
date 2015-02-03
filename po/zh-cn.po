@@ -7961,8 +7961,8 @@ msgid ""
 "much easier.  There are several specialized wrapper script packages for "
 "Debian package building for each VCS."
 msgstr ""
-"如果你的上游对源代码使用版本控制系统(<ulink url=\"&debref-vcs;\">VCS</"
-"ulink>)，你也应该考虑使用它们。这会使得合并和提取上游补丁更加简单。"
+"如果你的上游对源代码使用版本控制系统(VCS"
+")<placeholder type=\"footnote\" id=\"0\"/>，你也应该考虑使用它们。这会使得合并和提取上游补丁更加简单。"
 "有多个为不同 VCS 设计的包装脚本包来协助 Debian 软件包构建。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
