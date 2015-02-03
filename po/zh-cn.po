@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide HEAD\n"
 "POT-Creation-Date: 2014-07-24 21:12+0900\n"
-"PO-Revision-Date: 2015-01-29 07:00+0000\n"
+"PO-Revision-Date: 2015-02-23 00:00+0000\n"
 "Last-Translator: Zhou Mo <cdluminate@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -1518,10 +1518,8 @@ msgstr ""
 "针对性的指南。比如，一些语言有它们自己的子策略文档："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
-#| msgid "<ulink url=\"&policy-perl;\">perl policy</ulink>"
 msgid "<ulink url=\"&policy-perl;\">Perl policy</ulink>"
-msgstr "<ulink url=\"&policy-perl;\">perl policy</ulink>"
+msgstr "<ulink url=\"&policy-perl;\">Perl policy</ulink>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<ulink url=\"&policy-python;\">Python policy</ulink>"
@@ -1809,7 +1807,6 @@ msgstr ""
 "本地副本。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "<ulink url=\"&gnu-build-system;\">Autotools</ulink> is the GNU build system "
 "comprising <ulink url=\"&autoconf;\">Autoconf</ulink>, <ulink url="
@@ -2296,7 +2293,6 @@ msgstr ""
 "认。 <placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "This execution of <command>dh_make</command> creates a copy of the upstream "
 "tarball as <filename>gentoo_0.9.12.orig.tar.gz</filename> in the parent "
@@ -5181,15 +5177,13 @@ msgid "Use <literal>dh $@ --with gir</literal> instead."
 msgstr "使用 <literal>dh $@ --with quilt</literal>"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "This computes dependencies for packages shipping GObject introspection data "
 "and generates the <literal>${gir:Depends}</literal> substitution variable "
 "for the package dependency."
 msgstr ""
-"This computes dependencies for packages shipping GObject introspection data "
-"and generates the <literal>${gir:Depends}</literal> substitution variable "
-"for the package dependency."
+"这会为带有 GObject 内省数据的软件包计算依赖，并生成 <literal>${gir:Depends}</"
+"literal> 这一替换变量。"
 
 #. type: Content of: <book><chapter><section><section><itemizedlist><listitem><para>
 msgid "Add support for the <command>bash</command> completion feature."
@@ -6038,6 +6032,13 @@ msgid ""
 "<filename><replaceable>package</replaceable>.default</filename> file, "
 "instead of in the init script itself."
 msgstr ""
+"<filename><replaceable>package</replaceable>.default</filename> 文件 会被安装"
+"至 <filename>/etc/default/<replaceable>package</replaceable></filename>。 这"
+"个文件设置被 init 脚本使用的默认设置。   <filename><replaceable>package</"
+"replaceable>.default</filename> 文件最经常用于禁用一个正在运行的守护程序，或"
+"者设置 一些默认标记或者超时。 如果你的 init 脚本中有某种 可配置的特性，你可以"
+"在 <filename><replaceable>package</replaceable>.default</filename> 文件中设置"
+"它们， 而不是 init 脚本本身。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -7170,14 +7171,13 @@ msgstr ""
 "创建了三个补丁。"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "Since Debian patches are located in <filename>debian/patches</filename>, "
 "please make sure to set up the <command>dquilt</command> command properly as "
 "described in <xref linkend=\"quiltrc\"/>."
 msgstr ""
 "因为 Debian 补丁位于 <filename>debian/patches</filename>，请确定按照 <xref "
-"linkend=\"quiltrc\"/> 中的方法正确配置 <command>quilt</command>。"
+"linkend=\"quiltrc\"/> 中的方法正确配置 <command>dquilt</command>。"
 
 #. type: Content of: <book><chapter><section><para>
 #, fuzzy
@@ -7210,14 +7210,13 @@ msgstr ""
 "... describe patch\n"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "The patches stored in the newer <literal>3.0 (quilt)</literal> source format "
 "must be <emphasis>fuzz</emphasis> free.  You can ensure this with "
 "<literal>dquilt pop -a; while dquilt push; do dquilt refresh; done</literal>."
 msgstr ""
-"存储于新的 <literal>3.0 (quilt)</literal> 源代码包格式的补丁必须有 <emphasis>"
-"清晰的边界</emphasis>。你应该通过 <literal>quilt pop -a; while quilt push; "
+"用新的 <literal>3.0 (quilt)</literal> 源代码包格式存储的补丁必须有 <emphasis>"
+"清晰的边界</emphasis>。你应该通过 <literal>dquilt pop -a; while quilt push; "
 "do quilt refresh; done</literal> 来验证这点。"
 
 #. type: Content of: <book><chapter><title>
@@ -7233,11 +7232,10 @@ msgid "Complete (re)build"
 msgstr "完整的(重)构建"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "In order to perform a complete (re)build of a package properly, you need to "
 "make sure you have installed"
-msgstr "为保证完整的软件包(重)构建能顺利进行，你必须保证系统中已经安装："
+msgstr "为保证完整的软件包(重)构建能顺利进行，你必须保证系统中已经安装"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "the <systemitem role=\"package\">build-essential</systemitem> package,"
@@ -7328,12 +7326,14 @@ msgstr ""
 "你需要输入密码两次。 <placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para>
-#, fuzzy
 msgid ""
 "For a non-native Debian package, e.g., <systemitem role=\"package\">gentoo</"
 "systemitem>, you will see the following files in the parent directory "
 "(<filename>~/gentoo</filename>) after building packages:"
-msgstr "之后查看上级目录(<filename>~/gentoo</filename>)："
+msgstr ""
+"对于非本土 Debian 软件包，比如 <systemitem role=\"package\">gentoo</"
+"systemitem>， 构建软件包之后，你将会在上一级目录(<filename>~/gentoo</"
+"filename>) 中看到下列文件："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<filename>gentoo_0.9.12.orig.tar.gz</filename>"
@@ -7371,16 +7371,15 @@ msgid "<filename>gentoo_0.9.12-1.debian.tar.gz</filename>"
 msgstr "<filename>gentoo_0.9.12-1.debian.tar.gz</filename>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "This compressed tarball contains your <filename>debian</filename> directory "
 "contents.  Each and every addition you made to the original source code is "
 "stored as a <command>quilt</command> patch in <filename>debian/patches</"
 "filename>."
 msgstr ""
-"这个压缩的 Tar 归档包含你的 <filename>debian</filename> 目录。其他对于源代码"
-"的修改都由 <command>quilt</command> 补丁存储于 <filename>debian/patches</"
-"filename> 中。"
+"这个压缩的 Tar 归档包含你的 <filename>debian</filename> 目录内容。其他所有对"
+"于源代码的修改都由 <command>quilt</command> 补丁存储于 <filename>debian/"
+"patches</filename> 中。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para><footnote><para>
 #, fuzzy
@@ -7726,7 +7725,6 @@ msgid ""
 msgstr "设置 <filename>/var/cache/pbuilder/result</filename> 对当前用户可写。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "creating a directory, e.g.  <filename><replaceable>/var/cache/pbuilder/"
 "hooks</replaceable></filename>, writable by the user, to place hook scripts "
@@ -7736,7 +7734,6 @@ msgstr ""
 "pbuilder/hooks</replaceable></filename>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
-#, fuzzy
 msgid ""
 "configuring <filename>~/.pbuilderrc</filename> or <filename>/etc/pbuilderrc</"
 "filename> to include the following."
