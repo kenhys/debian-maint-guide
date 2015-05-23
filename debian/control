@@ -4,29 +4,27 @@ Priority: optional
 Maintainer: Osamu Aoki <osamu@debian.org>
 Uploaders: Josip Rodin <joy-packages@debian.org>
 Build-Depends: debhelper (>= 9)
-Build-Depends-Indep: 
- dblatex,
- docbook-xml,
- docbook-xsl,
- fonts-liberation, 
- po4a,
- texlive-xetex,
- texlive-lang-spanish,
- texlive-lang-french,
- texlive-lang-german,
- texlive-lang-italian,
- texlive-lang-cyrillic,
- lmodern,
- tipa,
- gsfonts,
- fonts-ipafont,
- w3m,
- ghostscript, 
- xsltproc,
- zip
-# ttf-arphic-gbsn00lp,
-# ttf-arphic-bsmi00lp,
-# ttf-wqy-zenhei,
+Build-Depends-Indep: dblatex,
+                     docbook-xml,
+                     docbook-xsl,
+                     fonts-ipafont,
+                     fonts-liberation,
+                     ghostscript,
+                     gsfonts,
+                     lmodern,
+                     po4a,
+                     texlive-lang-chinese,
+                     texlive-lang-cyrillic,
+                     texlive-lang-french,
+                     texlive-lang-german,
+                     texlive-lang-italian,
+                     texlive-lang-japanese,
+                     texlive-lang-spanish,
+                     texlive-xetex,
+                     tipa,
+                     w3m,
+                     xsltproc,
+                     zip
 Standards-Version: 3.9.5
 Vcs-Git: git://anonscm.debian.org/ddp/maint-guide.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=ddp/maint-guide.git
@@ -35,7 +33,16 @@ Homepage: http://www.debian.org/doc/devel-manuals#maint-guide
 Package: maint-guide
 Architecture: all
 Depends: ${misc:Depends}
-Suggests: doc-base, dh-make, devscripts, fakeroot, lintian, dupload | dput, debian-policy, developers-reference, pbuilder, quilt
+Suggests: debian-policy,
+          developers-reference,
+          devscripts,
+          dh-make,
+          doc-base,
+          dupload | dput,
+          fakeroot,
+          lintian,
+          pbuilder,
+          quilt
 Description: Debian New Maintainers' Guide
  This package contains the Debian New Maintainers' Guide.
  .
@@ -58,7 +65,16 @@ Package: maint-guide-ca
 Architecture: all
 Priority: extra
 Depends: ${misc:Depends}
-Suggests: doc-base, dh-make, devscripts, fakeroot, lintian, dupload | dput, debian-policy, developers-reference, pbuilder, quilt
+Suggests: debian-policy,
+          developers-reference,
+          devscripts,
+          dh-make,
+          doc-base,
+          dupload | dput,
+          fakeroot,
+          lintian,
+          pbuilder,
+          quilt
 Description: Debian New Maintainers' Guide (Catalan)
  This package contains the Debian New Maintainers' Guide.
  .
@@ -83,7 +99,16 @@ Package: maint-guide-de
 Architecture: all
 Priority: extra
 Depends: ${misc:Depends}
-Suggests: doc-base, dh-make, devscripts, fakeroot, lintian, dupload | dput, debian-policy, developers-reference, pbuilder, quilt
+Suggests: debian-policy,
+          developers-reference,
+          devscripts,
+          dh-make,
+          doc-base,
+          dupload | dput,
+          fakeroot,
+          lintian,
+          pbuilder,
+          quilt
 Description: Debian New Maintainers' Guide (German)
  This package contains the Debian New Maintainers' Guide.
  .
@@ -108,7 +133,16 @@ Package: maint-guide-es
 Architecture: all
 Priority: extra
 Depends: ${misc:Depends}
-Suggests: doc-base, dh-make, devscripts, fakeroot, lintian, dupload | dput, debian-policy, developers-reference, pbuilder, quilt
+Suggests: debian-policy,
+          developers-reference,
+          devscripts,
+          dh-make,
+          doc-base,
+          dupload | dput,
+          fakeroot,
+          lintian,
+          pbuilder,
+          quilt
 Description: Debian New Maintainers' Guide (Spanish)
  This package contains the Debian New Maintainers' Guide.
  .
@@ -133,7 +167,16 @@ Package: maint-guide-fr
 Architecture: all
 Priority: extra
 Depends: ${misc:Depends}
-Suggests: doc-base, dh-make, devscripts, fakeroot, lintian, dupload | dput, debian-policy, developers-reference, pbuilder, quilt
+Suggests: debian-policy,
+          developers-reference,
+          devscripts,
+          dh-make,
+          doc-base,
+          dupload | dput,
+          fakeroot,
+          lintian,
+          pbuilder,
+          quilt
 Description: Debian New Maintainers' Guide (French)
  This package contains the Debian New Maintainers' Guide.
  .
@@ -158,7 +201,16 @@ Package: maint-guide-it
 Architecture: all
 Priority: extra
 Depends: ${misc:Depends}
-Suggests: doc-base, dh-make, devscripts, fakeroot, lintian, dupload | dput, debian-policy, developers-reference, pbuilder, quilt
+Suggests: debian-policy,
+          developers-reference,
+          devscripts,
+          dh-make,
+          doc-base,
+          dupload | dput,
+          fakeroot,
+          lintian,
+          pbuilder,
+          quilt
 Description: Debian New Maintainers' Guide (Italian)
  This package contains the Debian New Maintainers' Guide.
  .
@@ -183,7 +235,16 @@ Package: maint-guide-ja
 Architecture: all
 Priority: extra
 Depends: ${misc:Depends}
-Suggests: doc-base, dh-make, devscripts, fakeroot, lintian, dupload | dput, debian-policy, developers-reference, pbuilder, quilt
+Suggests: debian-policy,
+          developers-reference,
+          devscripts,
+          dh-make,
+          doc-base,
+          dupload | dput,
+          fakeroot,
+          lintian,
+          pbuilder,
+          quilt
 Description: Debian New Maintainers' Guide (Japanese)
  This package contains the Debian New Maintainers' Guide.
  .
@@ -208,7 +269,16 @@ Package: maint-guide-ru
 Architecture: all
 Priority: extra
 Depends: ${misc:Depends}
-Suggests: doc-base, dh-make, devscripts, fakeroot, lintian, dupload | dput, debian-policy, developers-reference, pbuilder, quilt
+Suggests: debian-policy,
+          developers-reference,
+          devscripts,
+          dh-make,
+          doc-base,
+          dupload | dput,
+          fakeroot,
+          lintian,
+          pbuilder,
+          quilt
 Description: Debian New Maintainers' Guide (Russian)
  This package contains the Debian New Maintainers' Guide.
  .
@@ -229,3 +299,70 @@ Description: Debian New Maintainers' Guide (Russian)
  .
  This is Russian translation.
 
+Package: maint-guide-zh-cn
+Architecture: all
+Priority: extra
+Depends: ${misc:Depends}
+Suggests: debian-policy,
+          developers-reference,
+          devscripts,
+          dh-make,
+          doc-base,
+          dupload | dput,
+          fakeroot,
+          lintian,
+          pbuilder,
+          quilt
+Description: Debian New Maintainers' Guide (Chinese(cn))
+ This package contains the Debian New Maintainers' Guide.
+ .
+ This document tries to describe the building of a Debian package to ordinary
+ Debian users and prospective developers. It uses fairly non-technical
+ language, and it's well covered with working examples.
+ .
+ The document contains these chapters:
+     * 1 Getting started The Right Way
+     * 2 First steps
+     * 3 Modifying the source
+     * 4 Required files under debian directory
+     * 5 Other files under debian directory
+     * 6 Building the package
+     * 7 Checking the package for errors
+     * 8 Uploading the package
+     * 9 Updating the package
+ .
+ This is Chinese(cn) translation.
+
+Package: maint-guide-zh-tw
+Architecture: all
+Priority: extra
+Depends: ${misc:Depends}
+Suggests: debian-policy,
+          developers-reference,
+          devscripts,
+          dh-make,
+          doc-base,
+          dupload | dput,
+          fakeroot,
+          lintian,
+          pbuilder,
+          quilt
+Description: Debian New Maintainers' Guide (Chinese(tw))
+ This package contains the Debian New Maintainers' Guide.
+ .
+ This document tries to describe the building of a Debian package to ordinary
+ Debian users and prospective developers. It uses fairly non-technical
+ language, and it's well covered with working examples.
+ .
+ The document contains these chapters:
+     * 1 Getting started The Right Way
+     * 2 First steps
+     * 3 Modifying the source
+     * 4 Required files under debian directory
+     * 5 Other files under debian directory
+     * 6 Building the package
+     * 7 Checking the package for errors
+     * 8 Uploading the package
+     * 9 Updating the package
+ .
+ This is Chinese(tw) translation.

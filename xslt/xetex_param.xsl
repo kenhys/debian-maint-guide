@@ -54,11 +54,7 @@
         <xsl:text>\setCJKmonofont{UnDotum}&#10;</xsl:text>
       </xsl:when>
       <xsl:otherwise>
-        <!-- ja centric: otf-ipafont-mincho otf-ipafont-gothic
-        <xsl:text>\setCJKmainfont{IPAMincho}&#10;</xsl:text>
-        <xsl:text>\setCJKsansfont{IPAPGothic}&#10;</xsl:text>
-        <xsl:text>\setCJKmonofont{IPAGothic}&#10;</xsl:text>
-        -->
+        <!-- set none -->
       </xsl:otherwise>
     </xsl:choose>
   </xsl:param>

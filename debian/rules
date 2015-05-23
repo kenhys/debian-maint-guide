@@ -10,7 +10,7 @@ LANGPO		:= ca de es fr it ja ru zh-cn zh-tw
 
 # Override main Makefile to build CJK under sid
 # No PDF build for these lunguages
-LANGNOPDF	:=  
+LANGNOPDF	:= ja zh-cn zh-tw 
 
 ## comment out to build with the cleaner log (it slows!)
 #BUILDOPT	:= --parallel

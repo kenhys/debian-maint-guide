@@ -2,7 +2,16 @@ Package: maint-guide@@@XLNG@@@
 Architecture: all
 Priority: extra
 Depends: ${misc:Depends}
-Suggests: doc-base, dh-make, devscripts, fakeroot, lintian, dupload | dput, debian-policy, developers-reference, pbuilder, quilt
+Suggests: debian-policy,
+          developers-reference,
+          devscripts,
+          dh-make,
+          doc-base,
+          dupload | dput,
+          fakeroot,
+          lintian,
+          pbuilder,
+          quilt
 Description: Debian New Maintainers' Guide (@@@LNGNAME@@@)
  This package contains the Debian New Maintainers' Guide.
  .
@@ -22,4 +31,3 @@ Description: Debian New Maintainers' Guide (@@@LNGNAME@@@)
      * 9 Updating the package
  .
  This is @@@LNGNAME@@@ translation.
-
