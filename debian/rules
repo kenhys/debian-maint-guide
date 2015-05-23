@@ -6,7 +6,7 @@ MANUAL		:= maint-guide
 
 # Languages which generate DocBook XML files from PO files
 # (More conservative than the ones in Makefile)
-LANGPO		:= ca de es fr it ja ru
+LANGPO		:= ca de es fr it ja ru zh-cn zh-tw
 
 # Override main Makefile to build CJK under sid
 # No PDF build for these lunguages
