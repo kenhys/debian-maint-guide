@@ -1778,7 +1778,7 @@ msgstr ""
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Popular portable build systems"
-msgstr "普遍可移植的構建系統"
+msgstr "常见的可移植的構建系統"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -2725,7 +2725,7 @@ msgid ""
 msgstr ""
 "請記住，即使你的程序正確安裝到了<filename>debian/<replaceable>package</"
 "replaceable></filename>，仍然要考慮將 <filename>.deb</filename> 軟件包文件安"
-"裝到根目錄下的情形。所以絕對不允許構建系統同將諸如 <literal>/home/me/deb/"
+"裝到根目錄下的情形。所以絕對不允許構建系統將諸如 <literal>/home/me/deb/"
 "<replaceable>package</replaceable>-<replaceable>version</replaceable>/usr/"
 "share/<replaceable>package</replaceable></literal> 這種詭異的內容硬編碼到軟件"
 "包文件中。"
