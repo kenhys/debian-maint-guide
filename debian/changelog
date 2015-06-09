@@ -1,8 +1,10 @@
-maint-guide (1.2.36) UNRELEASED; urgency=medium
+maint-guide (1.2.36) unstable; urgency=medium
 
   * Update zh-* by lumin.  Closes: #769745, #770253, #776932
+  * Reactivate the creation of the zh-cn and zh-tw packages.
+  * Update icons and CSS matching debmake-doc.
 
- -- Osamu Aoki <osamu@debian.org>  Sun, 24 May 2015 01:09:57 +0900
+ -- Osamu Aoki <osamu@debian.org>  Tue, 09 Jun 2015 21:02:12 +0900
 
 maint-guide (1.2.35) unstable; urgency=medium
 

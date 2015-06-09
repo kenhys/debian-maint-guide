@@ -204,11 +204,9 @@ $(MANUAL).%.xml: $(DPO)/%.po $(MANUAL).en.xml
 css:
 	-rm -rf $(TMPDIR)/images
 	mkdir -p $(TMPDIR)/images
-	cp -f $(DXSL)/$(MANUAL).css $(TMPDIR)/$(MANUAL).css
+	cp -f $(DXSL)/debian.css $(TMPDIR)/debian.css
 	echo "AddCharset UTF-8 .txt" > $(TMPDIR)/.htaccess
-	#cd $(DIMG) ; cp caution.png home.png important.png next.png note.png prev.png tip.png up.gif warning.png $(TMPDIR)/images
-	cd $(DIMG) ; cp caution.png important.png note.png tip.png up.gif warning.png $(TMPDIR)/images
-	cd png ; cp home.png next.png prev.png $(TMPDIR)/images
+	cd png ; cp caution.png home.png important.png next.png note.png prev.png tip.png warning.png $(TMPDIR)/images
 
 #######################################################################
 # $ make html      # update all HTML in $(TMPDIR)
@@ -301,7 +299,7 @@ $(TMPDIR)/$(MANUAL).%.epub: $(MANUAL).%.xml $(ENT_ALL)
 	-mkdir -p $(TMPDIR)/epub-$*/
 	cd $(TMPDIR)/epub-$*/ ; $(XPINC) $(CURDIR)/$(DXSL)/style-epub.xsl $(CURDIR)/$<
 	cp -f $(DXSL)/mimetype $(TMPDIR)/epub-$*/mimetype
-	cp -f $(DXSL)/$(MANUAL).css $(TMPDIR)/epub-$*/OEBPS/$(MANUAL).css
+	cp -f $(DXSL)/debian.css $(TMPDIR)/epub-$*/OEBPS/debian.css
 	cp -f $(DXSL)/debian-openlogo.png $(TMPDIR)/epub-$*/OEBPS/debian-openlogo.png
 	cd $(TMPDIR)/epub-$*/ ; zip -r $@ ./
 

@@ -6,11 +6,10 @@
 # zh-tw by Osamu Aoki <osamu@debian.org with help by 陳侃如 <koster@debian.org> 
 # (简体中文翻译，简繁转换)Zhou Mo <cdluminate@gmail.com>
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide HEAD\n"
-"POT-Creation-Date: 2014-07-24 21:12+0900\n"
+"POT-Creation-Date: 2015-06-09 21:17+0900\n"
 "PO-Revision-Date: 2015-02-27 02:28+0000\n"
 "Last-Translator: Zhou Mo <cdluminate@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
@@ -58,13 +57,13 @@ msgstr "版本 &docversion;"
 #. type: Content of: <book><bookinfo>
 msgid ""
 "<pubdate>&docisodate;</pubdate> <copyright><year>1998-2002</year> "
-"<holder>Josip Rodin</holder></copyright> <copyright><year>2005-2013</year> "
+"<holder>Josip Rodin</holder></copyright> <copyright><year>2005-2015</year> "
 "<holder>Osamu Aoki</holder></copyright> <copyright><year>2010</year> "
 "<holder>Craig Small</holder></copyright> <copyright><year>2010</year> "
 "<holder>Raphaël Hertzog</holder></copyright>"
 msgstr ""
 "<pubdate>&docisodate;</pubdate> <copyright><year>1998-2002</year> "
-"<holder>Josip Rodin</holder></copyright> <copyright><year>2005-2013</year> "
+"<holder>Josip Rodin</holder></copyright> <copyright><year>2005-2015</year> "
 "<holder>Osamu Aoki</holder></copyright> <copyright><year>2010</year> "
 "<holder>Craig Small</holder></copyright> <copyright><year>2010</year> "
 "<holder>Raphaël Hertzog</holder></copyright>"
