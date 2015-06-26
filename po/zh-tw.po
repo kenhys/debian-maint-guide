@@ -1040,7 +1040,7 @@ msgid ""
 msgstr ""
 "在上遊程序的 <filename>debian</filename> 目錄下添加 Debian 特定的打包修改，並"
 "以 <literal>3.0 (quilt)</literal> 格式創建一個非本地源碼包。(也就是指用於構"
-"建 Debian 軟家包的輸入文件集合)"
+"建 Debian 軟件包的輸入文件集合)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><literal>
 msgid ""
