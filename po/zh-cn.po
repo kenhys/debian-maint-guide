@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maint-guide HEAD\n"
 "POT-Creation-Date: 2015-06-09 21:17+0900\n"
-"PO-Revision-Date: 2015-02-18 04:17+0000\n"
+"PO-Revision-Date: 2015-07-03 07:50+0000\n"
 "Last-Translator: Zhou Mo <cdluminate@gmail.com>\n"
 "Language-Team: Debian l10n Chinese<debian-l10n-chinese@lists.debian.org>\n"
 "Language: zh_CN\n"
@@ -23,7 +23,7 @@ msgstr "zh-cn"
 
 #. type: Content of: <book><title>
 msgid "Debian New Maintainers' Guide"
-msgstr "Debian 新维护人员手册"
+msgstr "Debian 新维护者手册"
 
 #. type: Content of: <book><bookinfo><authorgroup><author><personname>
 msgid "Josip Rodin"
@@ -104,9 +104,9 @@ msgid ""
 "exempla</emphasis> (It's a long way by the rules, but short and efficient "
 "with examples)."
 msgstr ""
-"这篇文档试图为普通 Debian 用户，和希望对 Debian 软件包有所了解的开发人员讲述"
-"如何制作 Debian 软件包。在这里，我们尽可能使用通俗的语言，并辅以大量实例来直"
-"观地展示每一个细节。正如一句古罗马谚语说得好：<emphasis>一例胜千言！</"
+"本文档致力于为普通 Debian 用户，和希望对 Debian 软件包有所了解的开发人员讲述"
+"如何制作 Debian 软件包。在这里，我们尽可能使用通俗的语言，并辅以实例来直"
+"观地展示每一个细节。有一句古罗马谚语说得好：<emphasis>一例胜千言！</"
 "emphasis>"
 
 #. type: Content of: <book><chapter><para><footnote><para>
@@ -117,8 +117,8 @@ msgid ""
 "\"package\">dpkg</systemitem> and <systemitem role=\"package\">debhelper</"
 "systemitem> packages, at least."
 msgstr ""
-"在写这份文档时，我们默认你使用 <literal>squeeze</literal> 操作系统。如果你需"
-"要在 <literal>lenny</literal> 系统上使用本文所记述的方法，则必须安装 "
+"在写这份文档时，我们默认你使用 <literal>&base-release;</literal> 或者更新的操作系统。如果你需"
+"要在 <literal>更老版本的</literal> 系统上（包括老版本的 Ubuntu 等）使用本文所记述的方法，则至少必须安装 "
 "backports 仓库中的 <systemitem role=\"package\">dpkg</systemitem> 和 "
 "<systemitem role=\"package\">debhelper</systemitem> 软件包。"
 
@@ -137,7 +137,7 @@ msgid ""
 "learn about Unix programming, too."
 msgstr ""
 "在 <ulink url=\"&debref;\">Debian Reference</ulink> 中，你可以了解到使用 "
-"Debian 系统的一些基本信息和关于 Unix 编程的一些指引。"
+"Debian 系统的一些基本方法和关于 Unix 编程的一些指引。"
 
 #. type: Content of: <book><chapter><para>
 msgid ""
@@ -152,8 +152,8 @@ msgid ""
 "\"0\"/>"
 msgstr ""
 "Debian 的软件包系统是使它跻身顶级发行版行列的重要原因之一。尽管已经有相当数量"
-"的软件被打包成 Debian 的格式，但有时还是需要安装一些不是这一格式的软件。可能"
-"你正为如何制作自己的软件包而感到迷惑，也可能正认为这么做很难。如果你是一个刚"
+"的软件被打包成 Debian 的格式，但有时还是需要安装一些并非该格式的软件。可能"
+"你正为如何制作自己的软件包而感到迷惑，也可能认为这么做很难。如果你是一个刚"
 "刚接触 Debian 的初学者，那么是的，它的确很难；不过假如你真的只是一个初入此门"
 "的新手，现在大概也不会来读这篇文档了。:-) 你的确需要对 Unix 编程有所了解，但"
 "显然没必要是这方面的天才。<placeholder type=\"footnote\" id=\"0\"/>"
@@ -171,7 +171,7 @@ msgstr ""
 #. type: Content of: <book><chapter><para>
 msgid ""
 "If you need some help on packaging, please read <xref linkend=\"helpme\"/>."
-msgstr "如果你在打包方面需要别人帮助，请阅读 <xref linkend=\"helpme\"/>。"
+msgstr "如果你在软件包制作方面需要别人帮助，请阅读 <xref linkend=\"helpme\"/>。"
 
 #. type: Content of: <book><chapter><para>
 msgid ""
@@ -194,9 +194,9 @@ msgid ""
 "patient.  I have also intentionally skipped some corner cases and provided "
 "only pointers to keep this document simple."
 msgstr ""
-"由于这篇文档是一份手把手的教程，所以在一些重要的话题上会对每个步骤都做详细的"
-"解释。因而你可能觉得它们之中有一些与你的想法毫不相干。请准备好足够的耐心来学"
-"习。同时我也有意地省略了某些不必要的细节，以使这篇文档尽可能保持简洁。"
+"由于这是一份手把手的教程，所以在一些重要的话题上会对每个步骤都做详细的"
+"解释。虽然你可能觉得它们之中有一些与你的想法毫不相干。请准备好足够的耐心来学"
+"习。另外，我也有意地省略了某些不必要的细节，以使这篇文档尽可能保持简洁。"
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Social dynamics of Debian"
@@ -207,12 +207,12 @@ msgid ""
 "Here are some observations of Debian's social dynamics, presented in the "
 "hope that it will prepare you for interactions with Debian:"
 msgstr ""
-"以下是一些有关 Debian 的社会动力学报告，希望它们有助于你掌握与 Debian 项目进"
-"行互动的方法。"
+"以下是一些有关 Debian 的社会动力学报告，希望它们能够帮助你做好准备，以与 Debian 进"
+"行交互。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "We all are volunteers."
-msgstr "我们都是志愿者。"
+msgstr "大家都是志愿者。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "You cannot impose on others what to do."
@@ -220,44 +220,44 @@ msgstr "任何人都不能把事情强加给他人。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "You should be motivated to do things by yourself."
-msgstr "你应该主动地做自己的事情。"
+msgstr "你应该主动地做自己想做的事情。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "Friendly cooperation is the driving force."
-msgstr "友好合作是我们前行的动力。"
+msgstr "友好的合作是我们前行的动力。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "Your contribution should not overstrain others."
-msgstr "你的贡献不应致使他人过劳。"
+msgstr "你的贡献不应致使他人增加负担。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "Your contribution is valuable only when others appreciate it."
-msgstr "只有当别人欣赏你的贡献时，它才真正有价值。"
+msgstr "只有当别人欣赏和感激你的贡献时，它才有真正的价值。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "Debian is not your school where you get automatic attention of teachers."
-msgstr "Debian 不是一所学校，没有老师会自动地注意你。"
+msgstr "Debian 并不是一所学校，在这里没有所谓的老师会自动地注意到你。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "You should be able to learn many things by yourself."
-msgstr "你需要有自学大量知识的能力。"
+msgstr "你需要有自学大量知识和技能的能力。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "Attention from other volunteers is a very scarce resource."
-msgstr "其他志愿者的注意是非常稀缺的资源。"
+msgstr "其他志愿者的关注是非常稀缺的资源。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "Debian is constantly improving."
-msgstr "Debian 在不断进步。"
+msgstr "Debian 一直在不断进步。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "You are expected to make high quality packages."
-msgstr "Debian 期望你制作出高质量的软件包。"
+msgstr "Debian 期望你制作高质量的软件包。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "You should adapt yourself to change."
-msgstr "你应该适时改变自己来适应变化。"
+msgstr "你应该调整或改变自己来适应世界的变化。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -287,7 +287,7 @@ msgid ""
 "Debian package of the program."
 msgstr ""
 "<emphasis role=\"strong\">Maintainer</emphasis> (软件包维护者)：制作并维护该"
-"程序的 Debian 软件包的人。"
+"程序 Debian 软件包的人。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -295,15 +295,15 @@ msgid ""
 "to upload packages to the official Debian package archive (after checking "
 "their contents)."
 msgstr ""
-"<emphasis role=\"strong\">Sponsor</emphasis> (保证人)：检查内容后帮助维护者上"
-"传软件包到 Debian 官方仓库的人。"
+"<emphasis role=\"strong\">Sponsor</emphasis> (赞助者)：帮助维护者上"
+"传软件包到 Debian 官方仓库的人（在通过内容检查之后）。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "<emphasis role=\"strong\">mentor</emphasis>: a person who helps novice "
 "maintainers with packaging etc."
 msgstr ""
-"<emphasis role=\"strong\">Mentor</emphasis> (指导者)：帮助维护者熟悉和深入打"
+"<emphasis role=\"strong\">Mentor</emphasis> (导师)：帮助新手维护者熟悉和深入打"
 "包的人。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
@@ -312,7 +312,7 @@ msgid ""
 "Debian project with full upload rights to the official Debian package "
 "archive."
 msgstr ""
-"<emphasis role=\"strong\">Debian Developer</emphasis> (DD)：Debian 社区的官方"
+"<emphasis role=\"strong\">Debian Developer</emphasis> (DD，Debian开发者)：Debian 社区的官方"
 "成员。DD 拥有向 Debian 官方仓库上传的全部权限。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
@@ -320,7 +320,7 @@ msgid ""
 "<emphasis role=\"strong\">Debian Maintainer</emphasis> (DM): a person with "
 "limited upload rights to the official Debian package archive."
 msgstr ""
-"<emphasis role=\"strong\">Debian Maintainer</emphasis> (DM)：拥有对 Debian 官"
+"<emphasis role=\"strong\">Debian Maintainer</emphasis> (DM，Debian维护者)：拥有对 Debian 官"
 "方仓库部分上传权限的人。"
 
 #. type: Content of: <book><chapter><section><para>
@@ -333,7 +333,7 @@ msgid ""
 "emphasis> or as a <emphasis role=\"strong\">Debian Maintainer</emphasis>."
 msgstr ""
 "注意，你不可能在一夜之间成为 <emphasis role=\"strong\">Debian Developer</"
-"emphasis>，因为成为 DD 所需要的远不只是技术技巧。别因此气馁，如果你的软件包对"
+"emphasis>，因为成为 DD 所需要的远不只是技术技巧。不过别因此而气馁，如果你的软件包对"
 "其他人有用，你可以作为软件包的 <emphasis role=\"strong\">Maintainer</"
 "emphasis>，通过一位 <emphasis role=\"strong\">Sponsor</emphasis> 来上传它，或"
 "者申请成为 <emphasis role=\"strong\">Debian Maintainer</emphasis>。"
@@ -355,8 +355,8 @@ msgid ""
 "please refer to the following to learn how Debian functions and how you can "
 "get involved:"
 msgstr ""
-"在这篇文档里，我们的重点在于打包的技术细节，所以请参考以下的文档来了解 "
-"Debian 是如何运转的，以及如何才能参与到其中："
+"在这篇文档里，我们的重点在于制作软件包的技术细节。有关 "
+"Debian 是如何运转的，以及如何才能参与到其中之类的话题，请参考下边的文档："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -364,7 +364,7 @@ msgid ""
 "\", and democracy</ulink> (Introductory slides)"
 msgstr ""
 "<ulink url=\"&logiciellibre;\">Debian: 17 years of Free Software, \"do-ocracy"
-"\", and democracy</ulink> (介绍性幻灯片)"
+"\", and democracy</ulink> (幻灯片介绍)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -398,7 +398,7 @@ msgstr "<ulink url=\"&debianmentorfaq;\">Debian Mentors FAQ</ulink> (补充文�
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Programs needed for development"
-msgstr "开发时需要的软件"
+msgstr "需要的开发工具"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -408,9 +408,9 @@ msgid ""
 "<literal>required</literal> - we expect that you have those installed "
 "already."
 msgstr ""
-"在开始之前，你需要确认你是否已经正确安装了开发所需要的附加软件包。注意这些软"
-"件包不包含任何已经被标记为 <literal>essential</literal> 或 "
-"<literal>required</literal> —— 我们假设你已经安装了它们。"
+"在开始之前，请确认你是否已经正确安装了开发所需要的工具集。注意这些软"
+"件包中没有任何一个会被标记为 <literal>essential</literal> 或 "
+"<literal>required</literal> —— 这里假设你已经安装了它们。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -423,7 +423,7 @@ msgstr ""
 "以下这些软件包已经随标准的 Debian 安装而在系统中，所以你可能不需要再动手安装"
 "它们(以及任何附加的依赖软件包)。然而，你还是应该用 <literal>aptitude show "
 "<replaceable>package</replaceable></literal> 或者 <literal>dpkg -s "
-"<replaceable>package</replaceable></literal> 来检查一下。"
+"<replaceable>package</replaceable></literal> 来检查一下。（译注：apt show PACKAGE 亦可）"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -432,9 +432,9 @@ msgid ""
 "try to install that, it will <emphasis>pull in</emphasis> other packages "
 "required to have a basic build environment."
 msgstr ""
-"在你的开发环境中，需要安装的最重要的软件包是 <systemitem role=\"package"
-"\">build-essential</systemitem>。一旦你 尝试安装该包，它将 <emphasis>拉来</"
-"emphasis> 其他基本构建环境所需的基本软件。"
+"在你的开发环境中，最重要的软件包是 <systemitem role=\"package"
+"\">build-essential</systemitem>。一旦你尝试安装该包，它将 <emphasis>拉取</"
+"emphasis> 其他基本构建环境所需的工具链。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -442,8 +442,8 @@ msgid ""
 "another set of packages that while not essential for all package builds are "
 "useful to have installed or may be required by your package:"
 msgstr ""
-"对于某些类型的软件，以上的就是所需要的全部。然而还有一组软件包虽不是对于所有"
-"软件包都必须，却可能对你有用或被你的软件包所需要："
+"对于某些类型的软件，以上的就是所需要的全部。然而还有一组工具虽不是对于所有"
+"软件包都必须，却可能对你有用，或者你的软件包制作过程中会需要它们："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -470,7 +470,7 @@ msgid ""
 "<systemitem role=\"package\">dh-make-perl</systemitem>, <systemitem role="
 "\"package\">dh-make-php</systemitem>, etc."
 msgstr ""
-"还有几个类似但更针对某一类软件的软件包，如 <systemitem role=\"package\">dh-"
+"还有几个类似但更针对某一类软件的工具，如 <systemitem role=\"package\">dh-"
 "make-perl</systemitem>、<systemitem role=\"package\">dh-make-php</"
 "systemitem> 等。"
 
@@ -488,12 +488,12 @@ msgid ""
 "refentrytitle> <manvolnum>1</manvolnum> </citerefentry>.) <placeholder type="
 "\"footnote\" id=\"0\"/>"
 msgstr ""
-"<systemitem role=\"package\">dh-make</systemitem> 和 <systemitem role="
-"\"package\">debhelper</systemitem> - <systemitem role=\"package\">dh-make</"
+"<systemitem role=\"package\">debhelper</systemitem> 和 <systemitem role="
+"\"package\">dh-make</systemitem> - <systemitem role=\"package\">dh-make</"
 "systemitem> 是用于创建我们示例软件包骨架所必须的，它会使用 <systemitem role="
 "\"package\">debhelper</systemitem> 中的一些工具来创建软件包。他们不是创建软件"
-"包所必须的，但对新维护人员而言，我们 <emphasis>强烈推荐</emphasis> 使用。它使"
-"得整个过程极为简化，并易于在将来维护。(参看 <citerefentry> "
+"包所必须的，但对新维护人员而言，我们 <emphasis>强烈推荐</emphasis>。它可以使"
+"整个过程极为简化，并易于在将来维护。(参看 <citerefentry> "
 "<refentrytitle>dh_make</refentrytitle> <manvolnum>8</manvolnum> </"
 "citerefentry>、<citerefentry> <refentrytitle>debhelper</refentrytitle> "
 "<manvolnum>1</manvolnum> </citerefentry>、<filename>/usr/share/doc/debhelper/"
@@ -507,8 +507,8 @@ msgid ""
 "packaging examples."
 msgstr ""
 "新的 <systemitem role=\"package\">debmake</systemitem> 可以作为标准 "
-"<systemitem role=\"package\">dh-make</systemitem> 的代替品。 然而它能做的事情"
-"更多，并且拥有包含足量实例的HTML文档。 "
+"<systemitem role=\"package\">dh-make</systemitem> 的代替品。debmake 能做的事情"
+"更多，并且拥有包含非常多打包实例的HTML文档。 "
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
