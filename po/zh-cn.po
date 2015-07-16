@@ -993,7 +993,7 @@ msgid ""
 "emphasis> for details).  Good luck!"
 msgstr ""
 "放松一点并准备好处理 Bug 报告，在你的软件包完全符合 Debian 的各项规范前你还需要"
-"付出很多努力，处理 Bug 也是对你很好的锻炼 (再一次提醒，阅读那些 <emphasis>必须"
+"付出很多努力，处理 Bug 对你也是很好的锻炼 (再一次提醒，阅读那些 <emphasis>必须"
 "的文档</emphasis> 来了解详情)。祝你好运！"
 
 #. type: Content of: <book><chapter><title>
@@ -1004,11 +1004,11 @@ msgstr "第一步"
 msgid ""
 "Let's start by creating a package of your own (or, even better, adopting an "
 "existing one)."
-msgstr "让我们尝试创建一个自己的软件包(或者，“收养”一个已存在的软件包则更好)。"
+msgstr "让我们来创建一个自己的软件包 (更好的是，“领养”一个已存在的软件包)。"
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Debian package building workflow"
-msgstr "Debian 软件包构建流程"
+msgstr "Debian 软件包制作流程"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1016,13 +1016,13 @@ msgid ""
 "workflow of Debian package building involves generating several specifically "
 "named files for each step as follows:"
 msgstr ""
-"如果你要基于某个上游程序构建软件包，那么典型的Debian软件包构建流程就会包含生"
-"成几个特定的文件，如下："
+"如果你的工作基于某个上游程序，那么典型的 Debian 软件包制作流程就会需要如下几个"
+"特定的文件："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "Get a copy of the upstream software, usually in a compressed tar format."
-msgstr "获取上游软件的拷贝，通常为压缩过的tar格式。"
+msgstr "获取一份上游软件的拷贝，它通常为压缩过的 tar 格式。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><literal>
 msgid ""
@@ -1037,9 +1037,9 @@ msgid ""
 "package (that is, the set of input files used for Debian package building) "
 "in <literal>3.0 (quilt)</literal> format."
 msgstr ""
-"在上游程序的 <filename>debian</filename> 目录下添加 Debian 特定的打包修改，并"
-"以 <literal>3.0 (quilt)</literal> 格式创建一个非本地源码包。(也就是指用于构"
-"建 Debian 软件包的输入文件集合)"
+"在上游源码的 <filename>debian</filename> 目录下添加 Debian 打包的专用文件"
+" （构建 Debian 软件包它们会被读取），"
+"同时以 <literal>3.0 (quilt)</literal> 格式创建一个非本地源码包。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><literal>
 msgid ""
@@ -1064,9 +1064,9 @@ msgid ""
 "replaceable>_<replaceable>version</replaceable>-<replaceable>revision</"
 "replaceable>.diff.gz</literal> is used instead."
 msgstr ""
-"对于旧式的 <literal>1.0</literal> 格式非本地 Debian 源码包，应当使用 "
+"对于老式的 <literal>1.0</literal> 格式非本地 Debian 源码包，应当使用 "
 "<literal><replaceable>package</replaceable>_<replaceable>version</"
-"replaceable>-<replaceable>revision</replaceable>.diff.gz</literal> 。"
+"replaceable>-<replaceable>revision</replaceable>.diff.gz</literal> 这个命名规则。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><literal>
 msgid ""
@@ -1082,7 +1082,7 @@ msgid ""
 "in <literal>.deb</literal> format (or <literal>.udeb</literal> format, used "
 "by the Debian Installer) from the Debian source package."
 msgstr ""
-"从 Debian 源码包构建 Debian 二进制包；二进制包的格式通常是<literal>.deb</"
+"用 Debian 源码包构建 Debian 二进制包；这些二进制包的格式通常是<literal>.deb</"
 "literal> (或者 <literal>.udeb</literal>，Debian Installer 专用)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><literal>
@@ -1100,9 +1100,9 @@ msgid ""
 "literal> was changed from <literal>-</literal> (hyphen) in the tarball name "
 "to <literal>_</literal> (underscore) in the Debian package filenames."
 msgstr ""
-"请注意，在 Debian 软件包文件名中，分隔 <literal><replaceable>package</"
+"请注意一个细节，在 Debian 软件包的文件名中，分隔 <literal><replaceable>package</"
 "replaceable></literal> 和 <literal><replaceable>version</replaceable></"
-"literal> 的字符从 tarball 名称的 <literal>-</literal> (连字符)换成了 "
+"literal> 的字符从 tarball 名称中的 <literal>-</literal> (连字符)换成了 "
 "<literal>_</literal> (下划线)。"
 
 #. type: Content of: <book><chapter><section><para><footnote><para>
@@ -1133,25 +1133,25 @@ msgid ""
 "role=\"strong\">package architecture</emphasis>, as defined in the Debian "
 "Policy Manual.  <placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-"在上述的文件名中，将 <literal><replaceable>package</replaceable></literal> 部"
+"在上述的文件名中，请根据 Debian Policy，将 <literal><replaceable>package</replaceable></literal> 这个部"
 "分替换为 <emphasis role=\"strong\">package name</emphasis>， 将 "
-"<literal><replaceable>version</replaceable></literal> 部分替换为 <emphasis "
+"<literal><replaceable>version</replaceable></literal> 这个部分替换为 <emphasis "
 "role=\"strong\">upstream version</emphasis>， 将"
-"<literal><replaceable>revision</replaceable></literal> 部分替换为 <emphasis "
+"<literal><replaceable>revision</replaceable></literal> 这个部分替换为 <emphasis "
 "role=\"strong\">Debian revision</emphasis>，以及将 "
-"<literal><replaceable>arch</replaceable></literal> 部分替换为 <emphasis role="
-"\"strong\">package architecture</emphasis>，根据 Debian 方针手册。 "
+"<literal><replaceable>arch</replaceable></literal> 这个部分替换为 <emphasis role="
+"\"strong\">package architecture</emphasis>。 "
 "<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "Each step of this outline is explained with detailed examples in later "
 "sections."
-msgstr "本大纲中的每一步都会在后续的章节中辅以详细的例子进行解释。"
+msgstr "本概要中的每一步，我们都会在后续的章节中辅以详细的例子进行解释。"
 
 #. type: Content of: <book><chapter><section><title>
 msgid "Choose your program"
-msgstr "选择你的程序"
+msgstr "挑一个你喜欢的程序"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1159,8 +1159,8 @@ msgid ""
 "you need to do is check if the package is in the distribution archive "
 "already by using the following:"
 msgstr ""
-"可能你已经选好了要制作的软件包。第一件要做的事是检查它是否已经存在于发行版仓"
-"库中了，参考方法如下："
+"可能你已经想好了要制作的软件包。那此时第一件要做的事，就是检查它是否已经被别人打包，并已经安置于发行版仓"
+"库中。这里有几种检查方法供您参考："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "the <command>aptitude</command> command"
@@ -1195,10 +1195,10 @@ msgid ""
 "maintainer has filed a Request for Adoption (<emphasis role=\"strong\">RFA</"
 "emphasis>).<placeholder type=\"footnote\" id=\"0\"/>"
 msgstr ""
-"如果软件包已经存在，直接安装就好了！:-) 如果它是被 <emphasis role=\"strong\">"
-"抛弃(orphaned)</emphasis> 的——也就是说它的维护者被设置为 <ulink url=\"&qa-do;"
-"\">Debian QA Group</ulink>，那么你可以尝试接手维护它。你也可以“收养”维护者发"
-"出“Request for Adoption”(<emphasis role=\"strong\">RFA</emphasis>)请求的软件"
+"如果软件包已经存在于仓库中，那直接装上它就可以了呀！:-) 如果它是被 <emphasis role=\"strong\">"
+"甩掉了(orphaned)</emphasis> 的 —— 也就是说它的维护者被设置为 <ulink url=\"&qa-do;"
+"\">Debian QA Group</ulink>，这时候你可以尝试接手维护它。另外，你也可以“领养”那些维护者"
+"发送过“Request for Adoption”(<emphasis role=\"strong\">RFA</emphasis>)请求的软件"
 "包。<placeholder type=\"footnote\" id=\"0\"/>"
 
 #. type: Content of: <book><chapter><section><para>
@@ -1224,7 +1224,7 @@ msgid ""
 "literal></ulink>"
 msgstr ""
 "<ulink url=\"&wnpp-bts;\">Debian Bug report logs: Bugs in pseudo-package "
-"<systemitem role=\"package\">wnpp</systemitem> 于 <literal>unstable</"
+"<systemitem role=\"package\">wnpp</systemitem> 位于 <literal>unstable</"
 "literal></ulink>"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
@@ -1243,7 +1243,7 @@ msgstr ""
 msgid ""
 "Having said that, there will of course always be new programs that are worth "
 "packaging."
-msgstr "当然了，总有值得打包的新软件。"
+msgstr "当然了，无论何时，总会有一些值得打包，而且并未进入 Debian 仓库的新软件。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1254,26 +1254,26 @@ msgid ""
 "(and more likely to receive sponsorship) by other developers <placeholder "
 "type=\"footnote\" id=\"0\"/>.  You can contribute in various ways:"
 msgstr ""
-"作为旁注必须指出，Debian 已经拥有了绝大多数类型软件的软件包，仓库中软件包的数"
-"量也远远超过了有上传权限的贡献者的数量。因此，为已经在仓库中的软件包贡献力量"
-"是非常受其他开发者欢迎的(且更容易获得 sponsorship)<placeholder type="
-"\"footnote\" id=\"0\"/>。你可以通过非常多的方式来实现这一目的："
+"作为旁注必须指出，Debian 已经拥有了海量各种类型的软件包，而且处在仓库中软件包的数"
+"量也远远超过了拥有上传权限的贡献者数量。因此，为已经在仓库中的软件包贡献力量"
+"是非常受其他开发者欢迎的 (且更容易获得 sponsorship)<placeholder type="
+"\"footnote\" id=\"0\"/>。有非常多的方式可以实现这一目的："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "taking over orphaned, yet actively used, packages"
-msgstr "接手被抛弃而仍然被很多人使用的软件包。"
+msgstr "接手那些已经被甩掉，而仍然有很多人在使用的软件包。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "joining <ulink url=\"&teams;\">packaging teams</ulink>"
-msgstr "加入 <ulink url=\"&teams;\">打包小组</ulink>。"
+msgstr "加入一些 <ulink url=\"&teams;\">打包小组</ulink>。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "triaging bugs of very popular packages"
-msgstr "为某些常用的软件包分类 Bug。"
+msgstr "帮忙为某些常用软件分类 Bug。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "preparing <ulink url=\"&devref-nmu;\">QA or NMU uploads</ulink>"
-msgstr "在需要时准备 <ulink url=\"&devref-nmu;\">QA 或 NMU 上传</ulink>。"
+msgstr "在必要时，帮忙准备 <ulink url=\"&devref-nmu;\">QA 或 NMU 上传</ulink>。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1285,10 +1285,10 @@ msgid ""
 "initial setup for you.  Keep reading, though; a lot of the advice below will "
 "still be applicable for your case."
 msgstr ""
-"如果你有能力“收养”那个软件包，下载(使用 <literal>apt-get source "
+"如果你有能力“领养”那个软件包，那就先下载 (使用 <literal>apt-get source "
 "<replaceable>packagename</replaceable></literal> 或其他类似的工具)并分析它的"
-"代码。这篇文档没有包含有关如何接手软件包的详细信息，但幸运的是由于接手软件包"
-"时起始的工作已经有人完成，接手的工作应比从头开始轻松得多。尽管如此，请继续阅"
+"源代码。这篇文档不会详细说明如何领养软件包，不过幸运的是，领养软件包"
+"时，打包的起始工作已经有人完成，接手的工作应比从头开始轻松得多。尽管如此也请您不要轻敌，请继续阅"
 "读，下面给出的建议会对你很有帮助。"
 
 #. type: Content of: <book><chapter><section><para>
@@ -1296,14 +1296,13 @@ msgid ""
 "If the package is new, and you decide you'd like to see it in Debian, "
 "proceed as follows:"
 msgstr ""
-"如果你要制作的软件包是全新的，并且希望它出现在 Debian 中，请按照以下的步骤进"
-"行："
+"如果您要制作的软件包是完全崭新的，而您又希望它出现在 Debian 中，那请遵循以下的步骤："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "First, you must know that the program works, and have tried it for some time "
 "to confirm its usefulness."
-msgstr "首先，你必须知道这个软件的可用性，并且需要试用一段时间。"
+msgstr "首先，你必须知道这个软件能不能干活，而且你需要亲自试用一段时间来确保其可用性。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
@@ -1315,16 +1314,16 @@ msgid ""
 "them if you feel you need to.  If not - find another interesting program "
 "that nobody is maintaining."
 msgstr ""
-"你必须在 <ulink url=\"&wnpp-do;being_packaged\">Work-Needing and Prospective "
-"Packages</ulink> 上查看以确定没有其他人已经开始了工作。如果没有，则提交一份 "
-"ITP (Intent To Package) Bug 报告到 <systemitem role=\"package\">wnpp</"
-"systemitem> 伪软件包(可以使用 <command>reportbug</command>)。如果已经有人在处"
-"理，则在需要的情况下联系他或他们。如果不需要你的帮助，就寻找其他你感兴趣且没"
-"有人维护的软件包吧。"
+"一定要在 <ulink url=\"&wnpp-do;being_packaged\">Work-Needing and Prospective "
+"Packages</ulink> 上仔细查看，以确定并没有其他人已经开始相关的工作。如果没有的话，则可以提交一份 "
+"ITP (Intent To Package) Bug 报告给 <systemitem role=\"package\">wnpp</"
+"systemitem> 虚包 (可以使用 <command>reportbug</command>)。如果你看到已经有人在处"
+"理相关事宜，则在有需要的情况下再联系他(们)。如果他(们)不需要你的帮助，那就寻找其他你感兴趣，而且没"
+"有人维护的软件包咯。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "The software <emphasis role=\"strong\">must have a license</emphasis>."
-msgstr "该软件 <emphasis role=\"strong\">必须有一个许可证</emphasis>。"
+msgstr "软件 <emphasis role=\"strong\">必须有许可证</emphasis>。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -1334,11 +1333,11 @@ msgid ""
 "role=\"strong\">not to require a package outside of <literal>main</literal></"
 "emphasis> for compilation or execution.  This is the desired case."
 msgstr ""
-"对于 <literal>main</literal> 类的软件， Debian 方针要求它 <emphasis role="
+"对于仓库中 <literal>main</literal> 区的软件， Debian Policy 要求其 <emphasis role="
 "\"strong\"> 完全兼容 Debian Free Software Guidelines （Debian 自由软件准则）"
-"</emphasis> (<ulink url=\"&dfsg;\">DFSG</ulink>) 并且 <emphasis role=\"strong"
-"\"> 不要求用 <literal>main</literal></emphasis> 类以外的软件来编译或执行。这"
-"是最理想的状况。"
+"</emphasis> (<ulink url=\"&dfsg;\">DFSG</ulink>) 并且它 <emphasis role=\"strong"
+"\"> 不能要求使用 <literal>main</literal></emphasis> 区以外的软件来编译或执行。"
+"这即是最理想的状况。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -1346,16 +1345,16 @@ msgid ""
 "it may require a package outside of <literal>main</literal> for compilation "
 "or execution."
 msgstr ""
-"对于 <literal>contrib</literal> 类的软件，其许可证必须满足 DFSG 的全部条件，"
-"但可以依赖于 <literal>main</literal> 之外的软件包以完成编译或运行。"
+"对于仓库中 <literal>contrib</literal> 区的软件，其许可证必须满足 DFSG 的全部条件，"
+"不同于 main 区软件的一点是，它们可以依赖于 <literal>main</literal> 之外的软件包来完成编译或运行。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
 "For the <literal>non-free</literal> section, it may be non-compliant with "
 "the DFSG but it <emphasis role=\"strong\">must be distributable</emphasis>."
 msgstr ""
-"对于 <literal>non-free</literal> 类的软件，其许可证可以不满足 DFSG 中的一些条"
-"件，但至少 <emphasis role=\"strong\">必须是可分发的</emphasis>。"
+"对于仓库中 <literal>non-free</literal> 区的软件，其许可证可以不满足 DFSG 中的一部分条"
+"件。其中坚决不能违背的一点是，该软件 <emphasis role=\"strong\">必须是可分发的</emphasis>。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -1363,22 +1362,22 @@ msgid ""
 "url=\"&debian-legal-ldo;\">debian-legal@lists.debian.org</ulink> and ask for "
 "advice."
 msgstr ""
-"如果你不清楚你的软件应该分入哪一类，则把许可证文本发送到 <ulink url="
-"\"&debian-legal-ldo;\">debian-legal@lists.debian.org</ulink> 以寻求意见。"
+"如果你不确定你的软件应该归入仓库的哪一个区，那你可以把许可证文本发送到 <ulink url="
+"\"&debian-legal-ldo;\">debian-legal@lists.debian.org</ulink> 邮件列表上寻求意见。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
 "The program should <emphasis role=\"strong\">not</emphasis> introduce "
 "security and maintenance concerns to the Debian system."
 msgstr ""
-"程序 <emphasis role=\"strong\">不应该</emphasis> 给 Debian 系统带来安全和维护"
-"上的问题。"
+"程序 <emphasis role=\"strong\">不能</emphasis> 给 Debian 系统带来安全或维护"
+"问题。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
 "The program should be well documented and its code needs to be "
 "understandable (i.e.  not obfuscated)."
-msgstr "程序应当有良好的文档，最好源代码也容易理解(比如，不混乱)。"
+msgstr "程序应当带有良好的文档，最好是源代码也容易理解 (比如，不混乱)。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -1387,9 +1386,9 @@ msgid ""
 "consult with the author(s)  in case of any problems with the program, so "
 "don't try to package unmaintained software."
 msgstr ""
-"你应该与程序的作者取得联系问一下他是否认为程序应当被打包，以及他是否对 "
-"Debian 友好。能够询问作者关于程序的任何问题是非常重要的，所以不要尝试打包一个"
-"无人维护的软件。"
+"你应该与程序的作者取得联系，问问他是否认为程序应当被打包，以及他是否对 "
+"Debian 持友好态度。能够询问作者关于程序的任何问题都非常重要，所以千万不要尝试打包一个"
+"无人维护的软件 （遇到麻烦找谁去呢）。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -1397,8 +1396,8 @@ msgid ""
 "setuid root, or even better, it shouldn't need to be setuid or setgid to "
 "anything."
 msgstr ""
-"程序一定 <emphasis role=\"strong\">不应该</emphasis> setuid 到 root 。更好的"
-"情况是它不 setuid 或 setgid 到任何用户或组。"
+"程序一定 <emphasis role=\"strong\">不能</emphasis> setuid 到 root 。"
+"如果它不 setuid 或 setgid 到任何用户或组的话，那就再好不过了。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
