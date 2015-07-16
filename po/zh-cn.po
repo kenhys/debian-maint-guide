@@ -1404,8 +1404,8 @@ msgid ""
 "The program should not be a daemon, or go in an <filename>*/sbin</filename> "
 "directory, or open a port as root."
 msgstr ""
-"程序不应该是守护进程，也不应该进入 <filename>*/sbin</filename> 目录或者以 "
-"root 打开任何端口。"
+"程序不应该是守护进程，也不应该进入任何一个 <filename>*/sbin</filename> 目录，不应该以 "
+"root 权限打开任何端口。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1414,16 +1414,16 @@ msgid ""
 "you gain more experience in packaging, you'll be able to package such "
 "software."
 msgstr ""
-"当然，这些问题都只是为了安全，并试图让你不至于在比如 setuid 守护进程等问题上"
-"犯错误而激怒了用户...  当你在打包方面有了更多经验时，就可以处理这样的软件包"
-"了。"
+"当然，这些都是为了安全，并试图避免你在，比如 setuid 守护进程等问题上"
+"犯错误而激怒了用户 ...  当你在打包方面有了更多经验时，就能够处理这样的软件包"
+"了，不必着急。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
 "As a new maintainer, you are encouraged to get some experience in packaging "
 "with easier packages and discouraged from creating complicated packages."
 msgstr ""
-"我们鼓励你，作为一个新维护人员，选择易于打包和维护的软件包，而不鼓励选择复杂"
+"我们鼓励你，作为一个新维护者，选择易于打包和维护的软件，而不鼓励选择复杂"
 "的软件包。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
@@ -1434,15 +1434,15 @@ msgstr "简单软件包"
 msgid ""
 "single binary package, arch = all (collection of data such as wallpaper "
 "graphics)"
-msgstr "单二进制软件包，arch = all （比如像壁纸那样的资料集）"
+msgstr "生成单个二进制包，arch = all （比如像壁纸那样的资料集）"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
 "single binary package, arch = all (executables written in an interpreted "
 "language such as POSIX shell)"
 msgstr ""
-"单二进制软件包，arch = all （用解释型语言编写的可执行脚本文件，比如 POSIX "
-"shell）"
+"生成单个二进制包，arch = all （用解释型语言编写的可执行脚本文件，比如 POSIX "
+"shell 语言）"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "Intermediate complexity packages"
@@ -1453,14 +1453,14 @@ msgid ""
 "single binary package, arch = any (ELF binary executables compiled from "
 "languages such as C and C++)"
 msgstr ""
-"单二进制软件包，arch = any （用C/C++等语言编写的 ELF 二进制可执行文件）"
+"生成单个二进制包，arch = any （用C/C++等语言编写的 ELF 二进制可执行文件）"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
 "multiple binary packages, arch = any + all (packages for ELF binary "
 "executables + documentation)"
 msgstr ""
-"复合二进制软件包，arch = any + all （包含ELF二进制可执行程序+文档的软件包）"
+"生成多个二进制包，arch = any + all （包含ELF二进制可执行程序+文档）"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid ""
@@ -1468,15 +1468,15 @@ msgid ""
 "<filename>tar.bz2</filename>"
 msgstr ""
 "既不是 <filename>tar.gz</filename> 也不是 <filename>tar.bz2</filename> 格式的"
-"上有源代码"
+"上游源代码包"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "upstream source containing undistributable contents"
-msgstr "源代码中包含不可分发的内容。"
+msgstr "包含不可分发的内容物的源码包"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "High complexity packages"
-msgstr "高复杂软件包"
+msgstr "高复杂度软件包"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "interpreter module package used by other packages"
@@ -1484,27 +1484,27 @@ msgstr "被其他软件包使用的解释器模块包"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "generic ELF library package used by other packages"
-msgstr "被其他软件包使用的一般ELF库文件包"
+msgstr "被其他软件包使用的ELF库文件包"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "multiple binary packages including an ELF library package"
-msgstr "复合二进制的软件包，包含ELF库文件包"
+msgstr "生成多个二进制包，其中包含括ELF库文件"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "source package with multiple upstream sources"
-msgstr "多上游的源码包"
+msgstr "有多个上游的源码包"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "kernel module packages"
-msgstr "内核模块软件包"
+msgstr "内核模块包"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "kernel patch packages"
-msgstr "内核补丁软件包"
+msgstr "内核补丁包"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "any package with non-trivial maintainer scripts"
-msgstr "包含冷门维护者脚本的软件包"
+msgstr "含有关键维护者脚本的软件包"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -1512,8 +1512,8 @@ msgid ""
 "more knowledge. You should seek specific guidance for every complex feature. "
 "For example, some languages have their own sub-policy documents:"
 msgstr ""
-"打包高复杂软件包并非难如登天，但需要更多知识。你应该针对每一个复杂特性来搜寻"
-"针对性的指南。比如，一些语言有它们自己的子策略文档："
+"打包高复杂软件包并非难如登天，但这个过程需要用到更多知识。你应该针对每一个所谓的复杂特性来搜寻"
+"相应的指南。比如，一些语言有它们自己的子策略文档："
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid "<ulink url=\"&policy-perl;\">Perl policy</ulink>"
