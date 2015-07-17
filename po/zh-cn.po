@@ -253,11 +253,11 @@ msgstr "Debian 一直在不断进步。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "You are expected to make high quality packages."
-msgstr "Debian 期望你制作高质量的软件包。"
+msgstr "Debian 期望你制作出高质量的软件包。"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><itemizedlist><listitem><para>
 msgid "You should adapt yourself to change."
-msgstr "你应该调整或改变自己来适应世界的变化。"
+msgstr "你应该随时调整自己来适应世界的变化。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -334,9 +334,9 @@ msgid ""
 msgstr ""
 "注意，你不可能在一夜之间成为 <emphasis role=\"strong\">Debian Developer</"
 "emphasis>，因为成为 DD 所需要的远不只是技术技巧。不过别因此而气馁，如果你的软件包对"
-"其他人有用，你可以作为软件包的 <emphasis role=\"strong\">Maintainer</"
-"emphasis>，通过一位 <emphasis role=\"strong\">Sponsor</emphasis> 来上传它，或"
-"者申请成为 <emphasis role=\"strong\">Debian Maintainer</emphasis>。"
+"其他人有用，你可以当这个软件包的 <emphasis role=\"strong\">Maintainer</"
+"emphasis>，然后通过一位 <emphasis role=\"strong\">Sponsor</emphasis> 来上传这份软件，或"
+"者你可以申请成为 <emphasis role=\"strong\">Debian Maintainer</emphasis>。"
 
 #. type: Content of: <book><chapter><section><para>
 msgid ""
@@ -921,7 +921,7 @@ msgid ""
 "list</ulink>. (This mailing list is for the expert.)"
 msgstr ""
 "<ulink url=\"&debian-devel-ldo;\">debian-devel@lists.debian.org </ulink>. (该"
-"邮件列表汇集各路神通广大之人士。)"
+"邮件列表汇集各路神仙。)"
 
 #. type: Content of: <book><chapter><section><itemizedlist><listitem><para>
 msgid ""
